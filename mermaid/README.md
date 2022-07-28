@@ -265,7 +265,7 @@ Mermaidをデプロイするために：
 
 mermaidをbundlerなしで展開するには、次のように絶対アドレスと`mermaidAPI`呼び出しを持つ`script`タグをHTMLに挿入します。
 
-```
+```html
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({startOnLoad:true});
 </script>
