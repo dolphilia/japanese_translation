@@ -1127,21 +1127,21 @@ SameValue アルゴリズムは、ユーザー・コードから呼び出すの�
 
 カスタム型は、型変換とテストについて説明したECMAScriptの強制力に対して、以下のように動作します（すでに上で説明したSameValueは除く）。
 
-|  | buffer | pointer | lightfunc |
-| ---- | ---- | ---- | ---- | ---- |
-| DefaultValue | Usually "[object Uint8Array]"; like Uint8Array | TypeError | "light_<PTR>_<FLAGS>" (toString/valueOf) |
-| ToPrimitive  | Usually "[object Uint8Array]"; like Uint8Array | identity | "light_<PTR>_<FLAGS>" (toString/valueOf) |
-| ToBoolean    | true | false for NULL pointer, true otherwise | true |
-| ToNumber     | ToNumber(String(buffer)), usually ToNumber("[object Uint8Array]") = NaN | 0 for NULL pointer, 1 otherwise | NaN |
-| ToInteger    | same as ToNumber; usually 0 | same as ToNumber | 0 |
-| ToInt32      | same as ToNumber; usually 0 | same as ToNumber | 0 |
-| ToUint32     | same as ToNumber; usually 0 | same as ToNumber | 0 |
-| ToUint16     | same as ToNumber; usually 0 | same as ToNumber | 0 |
-| ToString     | Usually [object Uint8Array]; like Uint8Array | sprintf() with %p format (platform specific) | "light_<PTR>_<FLAGS>" |
-| ToObject     | Uint8Array object (backs to argument plain buffer) | Pointer object | Function object |
-| CheckObjectCoercible | allow (no error) | allow (no error) | allow (no error) |
-| IsCallable   | false | false | true | 
-| SameValue    | (covered above) | (covered above) | (covered above) |
+|                      | buffer                                                                  | pointer                                      | lightfunc                                    |
+| -------------------- | ----------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| DefaultValue         | Usually "[object Uint8Array]"; like Uint8Array                          | TypeError                                    | "light_\<PTR\>_\<FLAGS\>" (toString/valueOf) |
+| ToPrimitive          | Usually "[object Uint8Array]"; like Uint8Array                          | identity                                     | "light_\<PTR\>_\<FLAGS\>" (toString/valueOf) |
+| ToBoolean            | true                                                                    | false for NULL pointer, true otherwise       | true                                         |
+| ToNumber             | ToNumber(String(buffer)), usually ToNumber("[object Uint8Array]") = NaN | 0 for NULL pointer, 1 otherwise              | NaN                                          |
+| ToInteger            | same as ToNumber; usually 0                                             | same as ToNumber                             | 0                                            |
+| ToInt32              | same as ToNumber; usually 0                                             | same as ToNumber                             | 0                                            |
+| ToUint32             | same as ToNumber; usually 0                                             | same as ToNumber                             | 0                                            |
+| ToUint16             | same as ToNumber; usually 0                                             | same as ToNumber                             | 0                                            |
+| ToString             | Usually [object Uint8Array]; like Uint8Array                            | sprintf() with %p format (platform specific) | "light_\<PTR\>_\<FLAGS\>"                    |
+| ToObject             | Uint8Array object (backs to argument plain buffer)                      | Pointer object                               | Function object                              |
+| CheckObjectCoercible | allow (no error)                                                        | allow (no error)                             | allow (no error)                             |
+| IsCallable           | false                                                                   | false                                        | true                                         | 
+| SameValue            | (covered above)                                                         | (covered above)                              | (covered above)                              |
 
 
 バッファが文字列強制されると、Uint8Arrayのように振る舞い、その結果は通常"[object Uint8Array]"となります。この動作はDuktape 2.0で変更されました。バッファの内容から文字列を生成するには、Node.jsのBufferバインディングやEncoding APIなどを使用します。
@@ -1170,17 +1170,17 @@ ToPointer() の強制は、例えば、duk_to_pointer() の呼び出しで使用
 オブジェクトが作成され、仮想プロパティ（名前と長さ、および内部の「マジック」値）が Function オブジェクトにコピーされます。
 
 
-|  | ToBuffer | ToPointer |
-| ---- | ---- | ---- |
-|undefined | buffer with "undefined" | NULL |
-|null | buffer with "null" | NULL |
-|boolean | buffer with "true" or "false" | NULL |
-|number | buffer with string coerced number | NULL |
-|string | buffer with copy of string data | ptr to heap hdr |
-|object | buffer with ToString(value) | ptr to heap hdr |
-|buffer | identity | ptr to heap hdr |
-|pointer | sprintf() with %p format (platform specific) | identity |
-|lightfunc | buffer with ToString(value) | NULL |
+|          | ToBuffer                                     | ToPointer       |
+| -------- | -------------------------------------------- | --------------- |
+|undefined | buffer with "undefined"                      | NULL            |
+|null      | buffer with "null"                           | NULL            |
+|boolean   | buffer with "true" or "false"                | NULL            |
+|number    | buffer with string coerced number            | NULL            |
+|string    | buffer with copy of string data              | ptr to heap hdr |
+|object    | buffer with ToString(value)                  | ptr to heap hdr |
+|buffer    | identity                                     | ptr to heap hdr |
+|pointer   | sprintf() with %p format (platform specific) | identity        |
+|lightfunc | buffer with ToString(value)                  | NULL            |
 
 > 現在、ToLightFunc()の強制はありません。Lightfuncは、Duktape C APIを使ってのみ作成することができます。
 
@@ -1756,4 +1756,91 @@ print('Hello world!');
 この機能は、DUK_USE_SHEBANG_COMMENTS の定義を解除することで無効にすることができます。
 
 
-## 
+## カスタム JSON フォーマット
+
+### ECMAScript の JSON の欠点
+
+標準の JSON フォーマットは、ECMAScript で使用する場合、いくつかの欠点があります。
+
+-未定義値や関数値はサポートされていません。
+-NaN と無限大の値はサポートされていません。
+-Duktapeのカスタム・タイプは、もちろんサポートされていません。
+-BMP以上のコードポイントは、サロゲート・ペアとしてしか表現できない
+-U+10FFFF以上のコードポイントは、サロゲート・ペアとしても表現できません。
+-出力が印刷可能なASCIIでないため、不便なことが多い
+
+これらの制限は、ECMAScript仕様の一部であり、より甘い動作を明示的に禁止しています。Duktapeは、よりプログラマフレンドリーな2種類のカスタムJSONフォーマットを提供しています。JXとJCで、以下に説明します。
+
+### カスタムJXフォーマット
+
+JXは、すべての値を非常に読みやすい方法でエンコードし、ほとんどすべての値を忠実にパースして返します（関数値は最も重要な例外です）。出力は純粋に印刷可能なASCIIで、U+FFFF以上のコードポイントはカスタムエスケープ形式でエンコードされ、オブジェクトキーの周りの引用符はほとんどの場合省略されます。JXはJSON互換ではありませんが、非常に読みやすいフォーマットで、デバッグやロギングなどに最も適しています。
+
+JXは以下のように使用します。
+
+```javascript
+var obj = { foo: 0/0, bar: [ 1, undefined, 3 ] };
+print(Duktape.enc('jx', obj));
+// prints out: {foo:NaN,bar:[1,undefined,3]}
+
+var dec = Duktape.dec('jx', '{ foo: 123, bar: undefined, quux: NaN }');
+print(dec.foo, dec.bar, dec.quux);
+// prints out: 123 undefined NaN
+```
+
+
+### カスタム JC フォーマット§。
+
+JCは、すべての値を標準的なJSONにエンコードします。標準的なJSONでサポートされていない値は、アンダースコアで始まるマーカーキーを持つオブジェクトとしてエンコードされます（例： {"_ptr": "0xdeadbeef"}）。このような値は、通常のオブジェクトとしてパースバックされます。しかし、多かれ少なかれ、手動でそれらを復活させることができます。U+FFFF以上のコードポイントは、"U+nnnnn "のフォーマットでプレーンな文字列データとしてエンコードされます(例: U+0010fedc)。
+
+JCは以下のように使用します。
+
+```javascript
+var obj = { foo: 0/0, bar: [ 1, undefined, 3 ] };
+print(Duktape.enc('jc', obj));
+// prints out: {"foo":{"_nan":true},"bar":[1,{"_undef":true},3]}
+
+var dec = Duktape.dec('jc', '{ "foo": 123, "bar": {"_undef":true}, "quux": {"_nan":true} }');
+print(dec.foo, dec.bar, dec.quux);
+// prints out: 123 [object Object] [object Object]
+```
+
+
+JCデコーダは、現時点では、基本的に標準のJSONデコーダと同じです。すべてのJC出力は有効なJSONであり、カスタム構文は必要ありません。例で示したように、カスタム値（{"_undef":true}など）は自動的には復活しません。それらは、代わりに普通のオブジェクトとしてパースバックされます。
+
+
+### U+FFFF以上のコードポイントと無効なUTF-8データについて
+
+すべての標準ECMAScript文字列は、内部的には有効なCESU-8データなので、U+FFFF以上のコードポイントに対する動作は、コンプライアンス上の問題を引き起こすことはありません。しかし、Duktapeの文字列は、拡張UTF-8コードポイントを含み、さらに無効なUTF-8データを含む可能性があります。
+
+標準のECMAScript JSON APIを含むDuktape JSON実装は、無効なUTF-8データを処理するために置換文字を使用します。結果として得られる文字列は少し奇妙に見えるかもしれませんが、この動作はエラーを投げるよりも望ましいものです。
+
+
+### JSONフォーマット例
+
+以下の表は、各エンコーディングで異なる値がどのようにエンコードされるかをまとめたものです。
+
+
+| Value        | Standard JSON  | JX            | JC                    | Notes |
+| ------------ | -------------- | ------------- | --------------------- | ----- |
+| undefined    | n/a            | undefined     | {"_undef":true}       | Standard JSON: encoded as null inside arrays, otherwise omitted |
+| null         | null           | null          | null                  | standard JSON |
+| true         | true           | true          | true                  | standard JSON |
+| false        | false          | false         | false                 | standard JSON |
+| 123.4        | 123.4          | 123.4         | 123.4                 | standard JSON |
+| +0           | 0              | 0             | 0                     | standard JSON |
+| -0           | 0              | -0            | -0                    | Standard JSON allows -0 but serializes negative zero as 0 (losing the sign unnecessarily) |
+| NaN          | null           | NaN           | {"_nan":true}         | Standard JSON: always encoded as null |
+| Infinity     | null           | Infinity      | {"_inf":true}         | Standard JSON: always encoded as null |
+| -Infinity    | null           | -Infinity     | {"_ninf":true}        | Standard JSON: always encoded as null |
+| "köhä"       | "köhä"         | "k\xf6h\xe4"  | "k\u00f6h\u00e4"      |   |
+| U+00FC       | "\u00fc"       | "\xfc"        | "\u00fc"              |   |
+| U+ABCD       | "\uabcd"       | "\uabcd"      | "\uabcd"              |   |
+| U+1234ABCD   | "U+1234abcd"   | "\U1234abcd"  | "U+1234abcd"          | Non-BMP characters are not standard ECMAScript, JX format borrowed from Python |
+| object       | {"my_key":123} | {my_key:123}  | {"my_key":123}        | ASCII keys matching identifer requirements encoded without quotes in JX |
+| array	       | ["foo","bar"]  | ["foo","bar"] | ["foo","bar"]         |   |	
+| buffer	   | n/a            | \|deadbeef\|  | {"_buf":"deadbeef"}   |   |
+| pointer	   | n/a            | (0xdeadbeef)  | {"_ptr":"0xdeadbeef"} |   |
+|              |                | (DEADBEEF)    | {"_ptr":"DEADBEEF"}   | Representation inside parentheses or quotes is platform specific |
+| NULL pointer | n/a            | (null)        | {"_ptr":"null"}       |   |
+| function     | n/a            | {_func:true}  | {"_func":true}        | Standard JSON: encoded as null inside arrays, otherwise omitted |
+| lightfunc    | n/a            | {_func:true}  | {"_func":true}        | Formats like ordinary functions |
