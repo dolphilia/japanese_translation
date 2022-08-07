@@ -1256,3 +1256,502 @@ var bound = myLightFunc.bind('dummy', 123);
 | Thread｜スレッド コンストラクタ（関数）。 |
 
 
+#### version
+
+versionプロパティは、バージョンに基づく機能の検出と動作を可能にします。バージョン番号は直接比較することができます：論理的に高いバージョンは、数値的にも高くなります。例えば
+
+```javascript
+if (typeof Duktape !== 'object') {
+    print('not Duktape');
+} else if (Duktape.version >= 20403) {
+    print('Duktape 2.4.3 or higher');
+} else if (Duktape.version >= 10500) {
+    print('Duktape 1.5.0 or higher (but lower than 2.4.3)');
+} else {
+    print('Duktape lower than 1.5.0');
+}
+```
+
+
+プレリリースのバージョンの値は、実際のリリースより1つ少なくなります。例えば、0.12.0プレリリースは1199、1.3.0プレリリースは10299となります。バージョニングを参照してください。
+
+機能検出を行う際には、Duktapeが存在するかどうかを確認することを忘れないでください。あなたのコードは通常、できるだけ多くのエンジンで動作するはずです。チェックの際に、識別子の直接参照を使うというよくある落とし穴は避けてください。
+
+```javascript
+// Bad idea: ReferenceError if missing
+if (!Duktape) {
+    print('not Duktape');
+}
+
+// Better: check through 'this' (bound to global)
+if (!this.Duktape) {
+    print('not Duktape');
+}
+
+// Better: use typeof to check also type explicitly
+if (typeof Duktape !== 'object') {
+    print('not Duktape');
+}
+```
+
+
+#### env
+
+envは、最も重要で効果的なコンパイルオプションを、バージョン固有の、かなり不可解な方法で要約したものです。この形式はバージョンに依存し、プログラム的に解析することは意図されていません。これは主に開発者のために役立ちます（値を設定するコードについては duk_hthread_builtins.c を参照してください）。
+
+Duktape 1.1.0 の例です。
+
+```c
+ll u n p2 a4 x64 linux gcc     // l|b|m integer endianness, l|b|m IEEE double endianness
+                               // p|u packed/unpacked tval
+                               // n|various, memory optimization options (n = none)
+                               // p1|p2|p3 prop memory layout
+                               // a1|a4|a8: align target
+                               // x64|x86|arm|etc: architecture
+                               // linux|windows|etc: operating system
+                               // gcc|clang|msvc|etc: compiler
+```
+
+
+エンディアンは、lがリトルエンディアン、bがビッグエンディアン、mがミックスエンディアン（レガシーARMデバイス、The FPAアーキテクチャなど参照）を表わします。
+
+
+#### fin()
+
+単一の引数で呼び出された場合、オブジェクトの現在のファイナライザを取得します。
+
+```javascript
+var currFin = Duktape.fin(o);
+```
+
+
+2つの引数で呼ばれた場合、オブジェクトのファイナライザを設定する（未定義を返す）。
+
+```javascript
+Duktape.fin(o, function(x) { print('finalizer called'); });
+Duktape.fin(o, undefined);  // disable
+```
+
+#### enc
+
+enc() は、その引数の値を選択されたフォーマットにエンコードします。最初の引数はフォーマット（現在サポートされているのは "hex", "base64", "jx", "jc"）、2番目の引数はエンコードする値、それ以降の引数はフォーマットに依存するものである。
+
+hex "と "base64 "の場合、バッファの値はそのままエンコードされ、その他の値は文字列強制された後、内部バイト表現（拡張UTF-8）がエンコードされる。その結果が文字列となる。例えば、ある文字列をbase64にエンコードする場合。
+
+```javascript
+var result = Duktape.enc('base64', 'foo');
+print(result);  // prints 'Zm9v'
+```
+
+
+jx"、"jc "の場合、フォーマット名に続く引数リストは、JSON.stringify()と同様、value、replacer（オプション）、スペース（オプション）である。たとえば
+
+```javascript
+var result = Duktape.enc('jx', { foo: 123 }, null, 4);
+print(result);  // prints JX encoded {foo:123} with 4-space indent
+```
+
+
+#### dec()
+
+dec() は enc() の逆機能を提供します。
+
+hex" と "base64" については、入力値はまず文字列強制されます (文字列をデコードすることにのみ意味があります)。結果は常にプレーンなバッファとなります。たとえば
+
+```javascript
+var result = Duktape.dec('base64', 'Zm9v');
+print(typeof result, result);  // prints 'object foo'
+```
+
+
+もし、プレーンなバッファよりも完全なUint8Arrayを好むのであれば、以下のように結果を強制することができます。
+
+```javascript
+var result = Object(Duktape.dec('base64', 'Zm9v'));
+print(typeof result, result);  // prints 'object foo'
+```
+
+
+文字列の値を取得したい場合は、以下のようにプレーンバッファを文字列に変換することができます。
+
+```javascript
+// Use TextDecoder which decodes the input as UTF-8.  You can also use
+// the Node.js Buffer binding to achieve a similar result.
+
+var result = new TextDecoder().decode(Duktape.dec('base64', 'Zm9v'));
+print(typeof result, result);  // prints 'string foo'
+```
+
+
+jx"、"jc "の場合、フォーマット名に続く引数リストは、JSON.parse()と同様、text、reviver（オプション）である。例えば
+
+```javascript
+var result = Duktape.dec('jx', "{foo:123}");
+print(result.foo);  // prints 123
+```
+
+
+#### info()
+
+Duktape.info()は、その引数値に関連する内部情報を公開するオブジェクトを返します。現在のフィールドの説明については、 duk_inspect_value() を参照してください。
+
+> 結果オブジェクトのプロパティはバージョン保証の対象外であり、マイナーバージョン（パッチバージョンは除く）であっても互換性のない形で変更される可能性があります。
+
+
+#### act()
+
+コールスタックのエントリに関する情報を取得します。1 は最上位 (最内周) のエントリ、-2 はその下のエントリなどです。コールスタックエントリを記述したオブジェクトを返すか、エントリが存在しない場合は未定義を返す。現在のフィールドの説明については、 duk_inspect_callstack_entry() を参照してください。
+
+> 結果オブジェクトのプロパティはバージョン保証の対象外であり、マイナーバージョンでも互換性のない形で変更される可能性がある（パッチバージョンは不可）。
+
+例:
+
+```javascript
+function dump() {
+    var i, t;
+    for (i = -1; ; i--) {
+        t = Duktape.act(i);
+        if (!t) { break; }
+        print(i, t.lineNumber, t.function.name, Duktape.enc('jx', t));
+    }
+}
+
+dump();
+```
+
+
+この例をコマンドラインツールで実行すると、現在、次のようなものが表示されます。
+
+```javascript
+-1 0 act {lineNumber:0,pc:0,function:{_func:true}}
+-2 4 dump {lineNumber:4,pc:16,function:{_func:true}}
+-3 10 global {lineNumber:10,pc:5,function:{_func:true}}
+```
+
+
+興味深い項目は lineNumber と function で、これは例えば関数名などを提供します。
+
+Duktape.act() を使って、現在の行番号を取得するヘルパーを実装することも可能です。
+
+```javascript
+function getCurrentLine() {
+    'use duk notail';
+
+    /* Tail calls are prevented to ensure calling activation exists.
+     * Call stack indices: -1 = Duktape.act, -2 = getCurrentLine, -3 = caller
+     */
+
+    var a = Duktape.act(-3) || {};
+    return a.lineNumber;
+}
+print('running on line:', getCurrentLine());
+```
+
+
+#### gc()
+
+強制的なマーク＆スイープ収集のトリガーをかける。この呼び出しは、オプションで整数の flags フィールドを取る。定数については、 duktape.h を参照のこと。
+
+
+#### compact()
+
+ターゲットオブジェクトに割り当てられたメモリを最小にする。C API コール duk_compact() と同じですが、ECMAScript コードからアクセス可能です。オブジェクト以外の引数で呼び出された場合、この呼び出しはノー・オペレーションです。引数の値は関数によって返され、これにより、以下のようなコードが可能になります。
+
+```javascript
+var obj = {
+    foo: Duktape.compact({ bar: 123 })
+}
+```
+
+
+この呼び出しは、オブジェクトが新しいプロパティを獲得する可能性が低いことがわかっているが、万が一獲得した場合にオブジェクトを封印またはフリーズしたくない場合に有用である。
+
+
+#### errCreate() と errThrow()
+
+これらは、ユーザーコードによって設定され、エラー作成時（errCreate）またはエラースロー時（errThrow）に処理/置換することができる。どちらの値も初期状態では存在しません。
+
+詳細はエラーハンドラ(errCreateとerrThrow)を参照してください。
+
+
+### Duktape.Pointer (コンストラクタ) 
+
+| プロパティ | 説明 |
+| ---- | ---- |
+| prototype | Pointer オブジェクトのプロトタイプ |
+
+
+Pointer コンストラクタは、通常の関数としてもコンストラクタとしても呼び出すことができる関数です。
+
+- 関数として呼び出された場合は、カスタムの ToPointer クラスタを使って最初の引数をポインタに変換します。戻り値は普通のポインタです（Pointerオブジェクトではありません）。
+- コンストラクタとして呼び出された場合、カスタムのToPointer強制を使って最初の引数をポインタに強制変換します。内部値は、強制終了の結果得られたポインタである Pointer オブジェクトを返す。新しく作成されたPointerの内部プロトタイプはDuktape.Pointer.prototypeオブジェクトになります。
+
+
+### Duktape.Pointer.prototype
+
+| プロパティ | 説明 |
+| ---- | ---- |
+| toString | Pointer を印字可能な文字列に変換する |
+| valueOf | Pointer が保持するプリミティブポインタの値を返す |
+
+
+toString() と valueOf は、プレーンなポインタと Pointer オブジェクトの両方をこのバインディングとして受け付けます。これにより、次のようなコードが可能になります。
+
+```javascript
+var plain_ptr = Duktape.Pointer({ test: 'object' });
+print(plain_ptr.toString());
+```
+
+
+### Duktape.Thread (コンストラクタ)
+
+| プロパティ | 説明 |
+| ---- | ---- |
+| prototype | Thread オブジェクトのプロトタイプ |
+| resume | 値またはエラーでターゲットスレッドを再開する。引数： ターゲットスレッド、値、値を投げるかどうかを示すフラグ（オプション、デフォルトfalse） |
+| yield | 現在のスレッドから値またはエラーを投げる。引数： value、value を投げるかどうかのフラグ（オプション、デフォルトfalse） |
+| current | 現在実行中のスレッドオブジェクト |
+
+
+Threadコンストラクタは、通常の関数としてもコンストラクタとしても呼び出すことができる関数です。動作はどちらの場合も同じです。
+
+最初の引数は関数であるかどうかチェックされます（もしそうでなければ TypeError が投げられます）。この関数は ECMAScript の関数でなければなりません（バインドまたは非バインド）。戻り値は、初期関数が引数関数であると記録された新しいスレッドである（この関数は新しいスレッドが最初に再開されたときに実行を開始する）。新しく作られたスレッドの内部プロトタイプは、Duktape.Thread.prototypeオブジェクトになります。
+
+
+### Duktape.Thread.prototype
+
+| Property | Description |
+| ---- | ---- |
+| No properties at the moment. | |
+
+
+### CBOR
+
+CBOR (Concise Binary Object Representation) は、任意の構造化された値のためのコンパクトなバイナリ符号化方式です。JSONよりも高速で、一部のECMAScriptの値をより正確に符号化することができる。JSONの代替として、状態のシリアライゼーションやIPCなどに適している。参照。
+
+CBOR - Concise Binary Object Representation (cbor.io) を参照。
+コンサイスバイナリオブジェクト表現(CBOR) (RFC 7049)
+CBORオブジェクトは、任意のECMAScriptの値をCBORに、またはその逆に変換するエンコード/デコード関数を提供します。公式のCBOR APIはまだないので、今のところAPIはcbor-jsをベースにしています。また、CBORのためのC言語のAPIもあります。
+
+> このバインディングは現在実験的なものであり、詳細は時間の経過とともに変更される可能性があります。例えば、ECMAScript の値をより正確にシリアライズするためのカスタム CBOR タグが登録されつつあります。
+
+例:
+
+```javascript
+var enc = CBOR.encode([ 'foo', 'bar', { quux: true } ]);
+print(Duktape.enc('hex', enc));  // = 8363666f6f63626172a16471757578f5
+var dec = CBOR.decode(enc);
+print(Duktape.enc('jx', dec));   // = ["foo","bar",{quux:true}]
+```
+
+
+### TextEncoder
+
+TextEncoder() は WHATWG エンコーディング API の一部で、 文字列を UTF-8 エンコーディングでバッファ (Uint8Array) に格納するためのクリーンな方法を提供します。サロゲートペアは処理中に結合されます。例えば
+
+```javascript
+var str = '\u{1f4a9}';                   // non-BMP codepoint
+print(str.length);                       // length is 2, represented as a surrogate pair
+var u8 = new TextEncoder().encode(str);
+print(u8.length);                        // length is 4, a single UTF-8 codepoint
+print(Duktape.enc('jx', u8));            // |f09f92a9|, UTF-8 bytes F0 9F 92 A9
+```
+
+
+# TextDecoder
+
+TextDecoder() は WHATWG エンコーディング API の一部で、バッファを UTF-8 エンコーディングの文字列にデコードするためのすっきりした方法を提供します。BMP 以外のコードポイントは、結果の文字列の中でサロゲートペアとして表現されます。例えば
+
+```javascript
+var u8 = new Uint8Array([ 0xf0, 0x9f, 0x92, 0xa9 ]);  // a single non-BMP codepoint
+var str = new TextDecoder().decode(u8);
+print(str.length);                       // length is 2, represented as a surrogate pair
+print(str.charCodeAt(0));                // 55357, high surrogate
+print(str.charCodeAt(1));                // 56489, low surrogate
+```
+
+
+### performance
+
+performance.now() は、指定されない原点からのミリ秒単位の単調時間 (利用可能な場合は端数を含む) を提供します。返り値は DUK_USE_GET_MONOTONIC_TIME() のもので、 DUK_USE_DATE_GET_NOW() にフォールバックしています。実際のモノトニック時間プロバイダが利用可能な場合、戻り値は日付/時間の調整による「タイムジャンプ」なしでリアルタイムで進むことが保証されます。これは、パフォーマンス測定、壁時計時間ではなく現在時刻を基準としたイベントのスケジューリング、レート制限などに有用です。例
+
+```javascript
+function testFunction() {
+    for (var i = 0; i < 1e6; i++) {}
+}
+
+var t1 = performance.now();
+testFunction();
+var t2 = performance.now();
+print('test took:', (t2 - t1), 'milliseconds');
+```
+
+
+performance.timeOriginは、現在（Duktape 2.2.0）、Duktapeでのセマンティクスが決定されるまで、意図的に欠落させています。
+
+performance.timingのようなNavigation Timingバインディングは、現在サポートされていません。
+
+
+## ポストES5の特徴
+
+DuktapeはES2015（ES6）、ES2016（ES7）、およびそれ以降の仕様ドラフトからの機能を実装しています。現在の状況については、Wikiの記事「Post-ES5 features」を参照してください。
+
+Duktapeのステータスはkangax/compat-tableの新しいリリースでも更新されます。
+
+
+## カスタム動作
+
+E5.1やその他の関連仕様から逸脱したDuktapeの動作についてまとめます。
+
+
+### Duktapeビルトインとカスタム・タイプ 
+
+Duktape組み込みは（もちろん）非標準であり、Duktape固有の機能へのアクセスを提供します。また、バッファ、ポインター、lightfunc タイプはカスタムです。
+
+
+### 隠しシンボル
+
+オブジェクトは、隠された Symbol キーを持つプロパティを持つことができます。これらは ES2015 Symbols に似ていますが、列挙されたり、Object.getOwnPropertySymbols()からも返されません。キーが意図的に無効な (拡張) UTF-8 表現を使用しているため、通常の ECMAScript コードはこのようなプロパティを参照することができません。
+
+
+### "use duk notail" ディレクティブ
+
+use duk notail" 指令は非標準です。これは、関数がテールコールされるのを防ぐものです。
+
+### "const" はほとんど "var" のように扱われます
+
+const キーワードは、最小限の非標準のセマンティクスでサポートされています (ECMAScript 6 で公式に定義されています)。詳しくは Const 変数を参照してください。
+
+### Error オブジェクトと Function オブジェクトの追加プロパティ
+
+Error オブジェクトと Function オブジェクトを参照してください。
+
+非厳格な関数インスタンスは、E5/E5.1 仕様では呼び出し元のプロパティを持ちません。現実のコードではこのプロパティを期待するものがありますので、 DUK_USE_NONSTD_FUNC_CALLER_PROPERTY という設定オプションで有効にすることができます。
+
+### 関数文
+
+E5.1では、関数宣言がプログラムまたは関数のトップレベル表現の外側に現れることを許可していません。
+
+```javascript
+function test() {
+    // point A
+    try {
+        throw new Error('test');
+    } catch (e) {
+        // This is a SyntaxError in E5.1
+        function func() {
+            print(typeof e);
+        }
+        // point B
+    }
+    // point C
+}
+```
+
+
+これらの宣言は「関数文」とも呼ばれ、実世界のコード（test262テスト・スイートを含む）では非常に頻繁に登場するので、Duktapeでは許可しています。残念ながら、Javascriptエンジンによって使用されるセマンティクスがいくつかあります（ES2015では、残念ながら関数文のセマンティクスは指定されていません）。Duktapeは、V8の関数文の挙動に従います。
+
+- Strict function: SyntaxErrorが投げられます（標準的な動作）。
+- 非厳格な関数：関数文を通常の関数宣言のように扱い、概念的には関数の先頭に「持ち上げる」。
+例として、上記の例では以下のような挙動となります。
+
+```javascript
+function test() {
+    function func() {
+        print(typeof e);
+    }
+ 
+    try {
+        throw new Error('test');
+    } catch (e) {
+    }
+}
+```
+
+上記の例のfunc()は、すでにポイントAで宣言され、呼び出し可能であり、ポイントA、B、Cのいずれにおいてもeバインディングにアクセスすることはできないだろう。
+
+
+### RegExpのリニエンシー
+
+ほとんどの ECMAScript エンジンは ECMAScript E5.1 仕様 (セクション 15.10.1 パターン) で保証されているよりも多くの構文をサポートしています。その結果、厳密な ECMAScript E5.1 正規表現構文では動作しないコードがかなり多くなっています。ウェブブラウザエンジンに期待される追加構文の多くは、ES2015 Annex B.1.4 Regular Expression Patterns に記載されています。しかし、Annex B Additional ECMAScript Features for Web Browsers の機能は、新しいコードには推奨されないことに注意してください。「これらの機能は、ECMAScript のコア言語の一部とはみなされません。プログラマは新しい ECMAScript コードを書くときに、これらの機能や動作を使用したり仮定したりしてはいけません。ECMAScript の実装は、その実装が Web ブラウザの一部であるか、または Web ブラウザが遭遇するのと同じレガシー ECMAScript コードを実行する必要がある場合を除いて、これらの機能を実装しないように推奨されています。"
+
+Duktapeは、既存のコードをより良くサポートするために、一部のES2015 Annex Bの構文も許可しています。この非標準的な動作は、必要に応じて設定オプションでオフにすることができます。サポートされる追加構文の例をいくつか挙げます。
+
+```javascript
+  /{(\d+)}/    // unescaped left curly, digits, unescaped right curly; ES2015 Annex B
+  /\{(\d+)\}/  // same, ES5 compliant
+
+  /]/          // unescaped right bracket; ES2015 Annex B
+  /\]/         // same, ES5 compliant
+
+  /\$/         // literal dollar using escape; ES2015 Annex B
+  /\u0024/     // same, ES5 compliant
+```
+
+
+### Setter/getter key 引数
+
+ECMAScript の標準的な動作は、セッターとゲッターにはアクセスされるプロパティの名前を与えないことです。このため、複数のプロパティに対して一つのセッターやゲッターを再利用することができません。各プロパティに対して別々の関数が必要となり、不便であったり、メモリを浪費したりします。
+
+Duktapeでは、プロパティ・キー名をセッターやゲッター関数への非標準の追加引数として提供しています。詳しくは、test-dev-nonstd-setget-key-argument.jsとProperty virtualizationを参照してください。DUK_USE_NONSTD_GETTER_KEY_ARGUMENT と DUK_USE_NONSTD_SETTER_KEY_ARGUMENT という設定オプションを無効にすると、標準に準拠した厳格な動作が可能になります。
+
+
+### Object.setPrototypeOf and Object.prototype.__proto__ (ES2015)
+
+[Object.setPrototypeOf and Object.prototype.\_\_proto\_\_]() を参照
+
+
+### プロキシオブジェクト(ES2015)
+
+Proxyオブジェクト（サブセット）を参照。
+
+
+### JSON.stringify() は U+2028 と U+2029 をエスケープする
+
+JSON.stringify()の標準的な動作は、U+2028とU+2029をエスケープせずに出力することです。これは、出力がウェブ・ページで使われたり、eval()で解析されたりしたときに、直感に反する動作につながります：U+2028とU+2029文字は行末とみなされ、構文エラー（終端がない文字列）につながります。Duktapeはこの問題を避けるために、デフォルトでU+2028とU+2029をエスケープします。設定オプションDUK_USE_NONSTD_JSON_ESC_U2028_U2029を無効にすると、準拠した動作をオンにすることができます。
+
+
+### String.fromCharCode()は32ビットコードポイントを受け付けます
+
+String.fromCharCode() の標準的な動作は、コードポイント値に対して ToUInt16() 強制を使用することです。DuktapeはデフォルトでToUint32()を使用し、非BMP文字列をより良くサポートします。DUK_USE_NONSTD_STRING_FROMCHARCODE_32BIT という設定項目を無効にすれば、強制的に準拠した動作をさせることが可能です。
+
+### 配列インスタンスの数値インデックスの書き込み
+
+デフォルトでは、Duktapeは、Arrayインスタンスへの書き込みに高速パスを提供します。高速パスは、数値インデックスが使用され（例： arr[7] = 'foo'）、いくつかの内部条件が満たされたときに有効になります。高速パスが採用された場合、DuktapeはArray.prototypeに矛盾するプロパティがないかチェックしません（実際のコードでは非常に稀です）。これにより、一般的な配列の書き込みが高速になります。この動作は非準拠ですが、Array.prototypeが数値キーを持つプロパティを持たない限り、外見上の差はありません。DUK_USE_NONSTD_ARRAY_WRITE と DUK_USE_ARRAY_PROP_FASTPATH という設定オプションを無効にすると、準拠した挙動をオンにすることができます。高速パスの動作の詳細については、以下を参照してください： test-misc-array-fast-write.js.
+
+
+### TypedArrayバインディング
+
+DuktapeはES2015 TypedArrayバインディングを提供しますが、いくつかの詳細はまだ修正されていません。例えば、オフセットと長さの値に対する引数の強制の小さな違いなどです。
+
+プレーンバッファーのカスタムタイプは、ECMAScriptコードではUint8Arrayオブジェクトのように振る舞いますが、Duktape C APIでは別のタイプを持っています。
+
+
+### Node.jsのBufferバインディング §。
+
+DuktapeはNode.jsライクなBufferバインディングを提供します。Node.jsの動作とDuktapeの動作には、いくつかの違いがあります。これらの違いは以下の通りです。
+
+- 他のバッファ・タイプとの相互運用性。ArrayBuffer、DataView、または型付き配列（Uint8Arrayなど）は、Node.jsのBufferが許されるところであれば、通常どこでも許されます。
+^ バッファのデータは、割り当て時および連結時の totalLength が入力バッファの合計サイズを超えたときに、常にゼロになります。
+- 読み込み/書き込みのオフセットと長さの引数は、noAssert が真であっても、メモリセーフな動作を保証するために常に検証されます。読み出しに失敗した場合はNaNを、書き込みに失敗した場合は0を返す。
+- 部分的な読み込み/書き込みは決して行われない: 読み込み/書き込みの一部が有効なバッファの外にある場合、それは拒否される。
+- オフセットや長さなどの引数の強制に若干の違いがある。
+- 例えば、writeUInt8()を使って0x100を書き込む場合、TypeErrorを投げるのではなく、0x00に静かに強制されます。
+- Duktapeは "utf8 "エンコーディングのみをサポートします（そして、スペリングのバリエーションは一切受け付けません）。ほとんどのAPIコールはエンコーディングの引数を無視し、文字列からバッファへの強制変換に暗黙のうちにUTF-8を使用します。
+- UTF-8デコードの置換文字のアプローチは、Unicode Technical Committee Recommended Practice for Replacement Charactersに従っており、WHATWG Encoding API仕様と一致していますが、Node.js（少なくともバージョンv6.9.1まで）とは異なっています。
+
+
+### Shebang コメントのサポート
+
+duk_compile() フラグ DUK_COMPILE_SHEBANG により、shebang コメントのパースが可能になります。最初の行の最初のカラムに #!を付けると、その行はコメントとして扱われます。例えば
+
+```ruby
+#!/usr/bin/duk
+print('Hello world!');
+```
+
+
+この機能は、DUK_USE_SHEBANG_COMMENTS の定義を解除することで無効にすることができます。
+
+
+## 
