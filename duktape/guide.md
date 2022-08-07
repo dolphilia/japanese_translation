@@ -1127,7 +1127,7 @@ SameValue アルゴリズムは、ユーザー・コードから呼び出すの�
 
 カスタム型は、型変換とテストについて説明したECMAScriptの強制力に対して、以下のように動作します（すでに上で説明したSameValueは除く）。
 
-| | buffer | pointer | lightfunc |
+|  | buffer | pointer | lightfunc |
 | ---- | ---- | ---- | ---- | ---- |
 | DefaultValue | Usually "[object Uint8Array]"; like Uint8Array | TypeError | "light_<PTR>_<FLAGS>" (toString/valueOf) |
 | ToPrimitive  | Usually "[object Uint8Array]"; like Uint8Array | identity | "light_<PTR>_<FLAGS>" (toString/valueOf) |
@@ -1141,7 +1141,7 @@ SameValue アルゴリズムは、ユーザー・コードから呼び出すの�
 | ToObject     | Uint8Array object (backs to argument plain buffer) | Pointer object | Function object |
 | CheckObjectCoercible | allow (no error) | allow (no error) | allow (no error) |
 | IsCallable   | false | false | true | 
-| SameValue    | (covered above) | (covered above)	(covered above)
+| SameValue    | (covered above) | (covered above) | (covered above) |
 
 
 バッファが文字列強制されると、Uint8Arrayのように振る舞い、その結果は通常"[object Uint8Array]"となります。この動作はDuktape 2.0で変更されました。バッファの内容から文字列を生成するには、Node.jsのBufferバインディングやEncoding APIなどを使用します。
@@ -1170,7 +1170,8 @@ ToPointer() の強制は、例えば、duk_to_pointer() の呼び出しで使用
 オブジェクトが作成され、仮想プロパティ（名前と長さ、および内部の「マジック」値）が Function オブジェクトにコピーされます。
 
 
-| | ToBuffer | ToPointer |
+|  | ToBuffer | ToPointer |
+| ---- | ---- | ---- |
 |undefined | buffer with "undefined" | NULL |
 |null | buffer with "null" | NULL |
 |boolean | buffer with "true" or "false" | NULL |
@@ -1191,7 +1192,7 @@ ECMAScript の加算演算子は The Addition operator (+) で指定されてい
 - 標準の型では、オブジェクトの値は最初に ToPrimitive() で強制され、プレーン バッファと lightfuncs は通常 ToString() で強制されます。プレーン バッファの場合、結果は通常 "[object Uint8Array]" になり、lightfuncs の場合は "[object Function]" になります。
 - ポインタの値は、デフォルトの数値加算のケースに該当します。これらは ToNumber() で強制された後、数値として追加されます。NULL ポインタは 0 に、NULL 以外は 1 になります。
 
-加算は、一般にカスタム型には有用ではありません。たとえば、2 つのプレーンなバッファを加算すると、結果は通常 "\[object Uint8Array\]\[object Uint8Array\]" となり、これは 2 つの Uint8Array インスタンスに対する標準的な加算の動作と同じになります。
+加算は、一般にカスタム型には有用ではありません。たとえば、2 つのプレーンなバッファを加算すると、結果は通常 "[object Uint8Array] [object Uint8Array]" となり、これは 2 つの Uint8Array インスタンスに対する標準的な加算の動作と同じになります。
 
 
 ### プロパティ・アクセス
@@ -1241,19 +1242,20 @@ var bound = myLightFunc.bind('dummy', 123);
 ### Duktapeオブジェクト
 
 | プロパティ | 説明 |
-| version｜Duktapeのバージョン番号：(メジャー * 10000) + (マイナー * 100) + patch. |
-| env｜エンディアンとアーキテクチャのような最も重要で効果的なオプションのバージョン依存の要約。 |
-| fin｜オブジェクトのファイナライザーを設定または取得する。 |
-| enc｜値をエンコードする(hex, base-64, JX, JC)。Duktape.enc('hex', 'foo')。 |
-| dec｜値（hex、base-64、JX、JC）をデコードする。Duktape.dec('base64', 'Zm9v')。 |
+| ----  | ---- |
+| version | Duktapeのバージョン番号：(メジャー * 10000) + (マイナー * 100) + patch. |
+| env | エンディアンとアーキテクチャのような最も重要で効果的なオプションのバージョン依存の要約。 |
+| fin | オブジェクトのファイナライザーを設定または取得する。 |
+| enc | 値をエンコードする(hex, base-64, JX, JC)。Duktape.enc('hex', 'foo')。 |
+| dec | 値（hex、base-64、JX、JC）をデコードする。Duktape.dec('base64', 'Zm9v')。 |
 | info | 値の内部情報（ヒープアドレスやアロックサイズなど）をバージョン固有のフォーマットで取得する。C API の同等品は duk_inspect_value() である。 |
-| act｜コールスタックエントリに関する情報を取得する。C APIでは、duk_inspect_callstack_entry()がこれに相当する。 |
-| gc｜ マーク・アンド・スイープ・ガベージ・コレクションをトリガする。 |
-| compact｜値（オブジェクト）に割り当てられたメモリをコンパクトにする。 |
-| errCreate｜作成されたエラーを修正/置換するためのコールバック。 |
-| errThrow｜スローされようとしているエラーを修正／置換するためのコールバック。 |
-| Pointer｜ポインタのコンストラクタ(関数)。 |
-| Thread｜スレッド コンストラクタ（関数）。 |
+| act | コールスタックエントリに関する情報を取得する。C APIでは、duk_inspect_callstack_entry()がこれに相当する。 |
+| gc | マーク・アンド・スイープ・ガベージ・コレクションをトリガする。 |
+| compact | 値（オブジェクト）に割り当てられたメモリをコンパクトにする。 |
+| errCreate | 作成されたエラーを修正/置換するためのコールバック。 |
+| errThrow | スローされようとしているエラーを修正／置換するためのコールバック。 |
+| Pointer | ポインタのコンストラクタ(関数)。 |
+| Thread | スレッド コンストラクタ（関数）。 |
 
 
 #### version
