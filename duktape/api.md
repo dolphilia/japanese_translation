@@ -347,7 +347,7 @@ duk_error() などで使用されるエラーコードです。
 - DUK_EXEC_ERROR: Call failed, error was caught
 
 
-### duk_compile() のためのコンパイルフラグ §。
+### duk_compileのためのコンパイルフラグ
 
 duk_compile() や duk_eval() などのためのコンパイルフラグです。
 
@@ -356,7 +356,7 @@ duk_compile() や duk_eval() などのためのコンパイルフラグです。
 - DUK_COMPILE_STRICT: Use strict (outer) context for program, eval, or function
 
 
-### duk_def_prop() のフラグについて
+### duk_def_propのフラグについて
 
 duk_def_prop() とその派生型のためのフラグです。
 
@@ -380,7 +380,7 @@ duk_def_prop() とその派生型のためのフラグです。
 いくつかの便利なバリアントは省略され、 duk_def_prop() を参照。
 
 
-### duk_enum() の列挙型フラグ
+### duk_enumの列挙型フラグ
 
 duk_enum() の列挙フラグ。
 
@@ -394,7 +394,7 @@ duk_enum() の列挙フラグ。
 - DUK_ENUM_NO_PROXY_BEHAVIOR: Enumerate a proxy object itself without invoking proxy behavior
 
 
-### duk_gc() のガーベッジコレクションフラグ
+### duk_gcのガーベッジコレクションフラグ
 
 duk_gc() のフラグ。
 
@@ -1392,7 +1392,9 @@ duk_gc() のフラグ。
   - [duk_uri_error_va](#duk_uri_error_va)
 
 
-## duk_alloc()
+## duk_alloc() 
+
+
 
 1.0.0 memory
 
@@ -1433,7 +1435,12 @@ if (buf) {
 - duk_alloc_raw
 
 
-## duk_alloc_raw()
+## duk_alloc_raw() 
+
+
+
+1.0.0 memory
+
 
 ### プロトタイプ
 
@@ -1467,7 +1474,11 @@ if (buf) {
 - duk_alloc
 
 
-## duk_base64_decode() 1.0.0codecbase64§
+## duk_base64_decode() 
+
+ 
+
+ 1.0.0codecbase64§
 
 ### プロトタイプ
 
@@ -1501,7 +1512,9 @@ duk_pop(ctx);
 duk_base64_encode
 
 
-## duk_base64_encode() 1.0.0codecbase64§
+## duk_base64_encode() 
+
+ 1.0.0codecbase64§
 
 ### プロトタイプ
 
@@ -1535,7 +1548,9 @@ printf("base-64 encoded: %s\n", duk_base64_encode(ctx, -1));
 duk_base64_decode
 
 
-## duk_buffer_to_string() 2.0.0stringstackbuffer§
+## duk_buffer_to_string() 
+
+ 2.0.0stringstackbuffer§
 
 ### プロトタイプ
 
@@ -1572,7 +1587,9 @@ duk_pop(ctx);
 
 
 
-## duk_call() 1.0.0call§
+## duk_call() 
+
+ 1.0.0call§
 
 ### プロトタイプ
 
@@ -1624,7 +1641,9 @@ duk_call_method
 duk_call_prop
 
 
-## duk_call_method() 1.0.0call§
+## duk_call_method() 
+
+ 1.0.0call§
 
 ### プロトタイプ
 
@@ -1672,7 +1691,9 @@ duk_pop(ctx);
 
 
 
-## duk_call_prop() 1.0.0propertycall§
+## duk_call_prop() 
+
+ 1.0.0propertycall§
 
 ### プロトタイプ
 
@@ -1721,7 +1742,9 @@ duk_pop(ctx);
 
 
 
-## duk_cbor_decode() 2.5.0experimentalcodeccbor§
+## duk_cbor_decode() 
+
+ 2.5.0experimentalcodeccbor§
 
 ### プロトタイプ
 
@@ -1750,7 +1773,9 @@ duk_cbor_decode(ctx, -1, 0);
 duk_cbor_encode
 
 
-## duk_cbor_encode() 2.5.0experimentalcodeccbor§
+## duk_cbor_encode() 
+
+ 2.5.0experimentalcodeccbor§
 
 ### プロトタイプ
 
@@ -1788,7 +1813,9 @@ duk_pop(ctx);
 duk_cbor_decode
 
 
-## duk_char_code_at() 1.0.0string§
+## duk_char_code_at() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -1813,7 +1840,9 @@ printf("char code at char index 12: %ld\n", (long) duk_char_code_at(ctx, -3, 12)
 
 
 
-## duk_check_stack() 1.0.0stack§
+## duk_check_stack() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -1857,7 +1886,9 @@ if (!duk_check_stack(ctx, nargs)) {
 duk_require_stack
 
 
-## duk_check_stack_top() 1.0.0stack§
+## duk_check_stack_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -1894,7 +1925,9 @@ if (duk_check_stack_top(ctx, 100)) {
 duk_require_stack_top
 
 
-## duk_check_type() 1.0.0stack§
+## duk_check_type() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -1920,7 +1953,9 @@ if (duk_check_type(ctx, -3, DUK_TYPE_NUMBER)) {
 ```
 
 
-## duk_check_type_mask() 1.0.0stack§
+## duk_check_type_mask() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -1947,7 +1982,9 @@ if (duk_check_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 ```
 
 
-## duk_compact() 1.0.0propertyobjectmemory§
+## duk_compact() 
+
+ 1.0.0propertyobjectmemory§
 
 ### プロトタイプ
 
@@ -1982,7 +2019,9 @@ duk_compact(ctx, -1);                           /* [ ... obj ] */
 
 
 
-## duk_compile() 1.0.0compile§
+## duk_compile() 
+
+ 1.0.0compile§
 
 ### プロトタイプ
 
@@ -2107,7 +2146,9 @@ duk_compile_lstring
 duk_compile_lstring_filename
 
 
-## duk_compile_lstring() 1.0.0stringcompile§
+## duk_compile_lstring() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -2135,7 +2176,9 @@ duk_compile_lstring(ctx, 0, src, len);
 ```
 
 
-## duk_compile_lstring_filename() 1.0.0stringcompile§
+## duk_compile_lstring_filename() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -2164,7 +2207,9 @@ duk_compile_lstring_filename(ctx, 0, src, len);
 ```
 
 
-## duk_compile_string() 1.0.0stringcompile§
+## duk_compile_string() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -2189,7 +2234,9 @@ duk_compile_string(ctx, 0, "print('program code');");
 ```
 
 
-## duk_compile_string_filename() 1.0.0stringcompile§
+## duk_compile_string_filename() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -2215,7 +2262,9 @@ duk_compile_string_filename(ctx, 0, "print('program code');");
 ```
 
 
-## duk_components_to_time() 2.0.0time§
+## duk_components_to_time() 
+
+ 2.0.0time§
 
 ### プロトタイプ
 
@@ -2264,7 +2313,9 @@ printf("2016-01-02 03:04:05.006Z -> %lf\n", (double) time);
 duk_time_to_components
 
 
-## duk_concat() 1.0.0string§
+## duk_concat() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -2301,7 +2352,9 @@ duk_pop(ctx);
 duk_join
 
 
-## duk_config_buffer() 1.3.0stackbuffer§
+## duk_config_buffer() 
+
+ 1.3.0stackbuffer§
 
 ### プロトタイプ
 
@@ -2333,7 +2386,9 @@ duk_config_buffer(ctx, -1, my_buffer, my_length);
 duk_push_external_buffer
 
 
-## duk_copy() 1.0.0stack§
+## duk_copy() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -2372,7 +2427,9 @@ duk_insert
 duk_replace
 
 
-## duk_create_heap() 1.0.0heap§
+## duk_create_heap() 
+
+ 1.0.0heap§
 
 ### プロトタイプ
 
@@ -2438,7 +2495,9 @@ duk_create_heap_default
 duk_destroy_heap
 
 
-## duk_create_heap_default() 1.0.0heap§
+## duk_create_heap_default() 
+
+ 1.0.0heap§
 
 ### プロトタイプ
 
@@ -2476,7 +2535,9 @@ if (ctx) {
 ```
 
 
-## duk_debugger_attach() 1.2.0debugger§
+## duk_debugger_attach() 
+
+ 1.2.0debugger§
 
 ### プロトタイプ
 
@@ -2536,7 +2597,9 @@ duk_debugger_cooperate
 duk_debugger_notify
 
 
-## duk_debugger_cooperate() 1.2.0debugger§
+## duk_debugger_cooperate() 
+
+ 1.2.0debugger§
 
 ### プロトタイプ
 
@@ -2566,7 +2629,9 @@ duk_debugger_attach
 duk_debugger_detach
 
 
-## duk_debugger_detach() 1.2.0debugger§
+## duk_debugger_detach() 
+
+ 1.2.0debugger§
 
 ### プロトタイプ
 
@@ -2596,7 +2661,9 @@ duk_debugger_attach
 duk_debugger_cooperate
 
 
-## duk_debugger_notify() 1.5.0debugger§
+## duk_debugger_notify() 
+
+ 1.5.0debugger§
 
 ### プロトタイプ
 
@@ -2638,7 +2705,9 @@ if (duk_debugger_notify(ctx, 4 /*nvalues*/)) {
 ```
 
 
-## duk_debugger_pause() 1.5.0debugger§
+## duk_debugger_pause() 
+
+ 1.5.0debugger§
 
 ### プロトタイプ
 
@@ -2669,7 +2738,9 @@ if (key_pressed == KEY_F12) {
 ```
 
 
-## duk_decode_string() 1.0.0string§
+## duk_decode_string() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -2702,7 +2773,9 @@ duk_decode_string(ctx, -1, decode_char, NULL);
 duk_map_string
 
 
-## duk_def_prop() 1.1.0sandboxproperty§
+## duk_def_prop() 
+
+ 1.1.0sandboxproperty§
 
 ### プロトタイプ
 
@@ -2926,7 +2999,9 @@ duk_def_prop(ctx,
 duk_get_prop_desc
 
 
-## duk_del_prop() 1.0.0property§
+## duk_del_prop() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -2977,7 +3052,9 @@ duk_del_prop_literal
 duk_del_prop_heapptr
 
 
-## duk_del_prop_heapptr() 2.2.0propertyheapptrborrowed§
+## duk_del_prop_heapptr() 
+
+ 2.2.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -3017,7 +3094,9 @@ duk_del_prop_lstring
 duk_del_prop_literal
 
 
-## duk_del_prop_index() 1.0.0property§
+## duk_del_prop_index() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -3054,7 +3133,9 @@ duk_del_prop_literal
 duk_del_prop_heapptr
 
 
-## duk_del_prop_literal() 2.3.0propertyliteral§
+## duk_del_prop_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -3089,7 +3170,9 @@ duk_del_prop_lstring
 duk_del_prop_heapptr
 
 
-## duk_del_prop_lstring() 2.0.0stringproperty§
+## duk_del_prop_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -3124,7 +3207,9 @@ duk_del_prop_literal
 duk_del_prop_heapptr
 
 
-## duk_del_prop_string() 1.0.0stringproperty§
+## duk_del_prop_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -3159,7 +3244,9 @@ duk_del_prop_literal
 duk_del_prop_heapptr
 
 
-## duk_destroy_heap() 1.0.0heap§
+## duk_destroy_heap() 
+
+ 1.0.0heap§
 
 ### プロトタイプ
 
@@ -3186,7 +3273,9 @@ duk_destroy_heap(ctx);
 ```
 
 
-## duk_dump_function() 1.3.0stackbytecode§
+## duk_dump_function() 
+
+ 1.3.0stackbytecode§
 
 ### プロトタイプ
 
@@ -3217,7 +3306,9 @@ duk_dump_function(ctx);
 duk_load_function
 
 
-## duk_dup() 1.0.0stack§
+## duk_dup() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -3247,7 +3338,9 @@ duk_dup(ctx, -2);        /* -> [ ... 123 234 123 ] */
 duk_dup_top
 
 
-## duk_dup_top() 1.0.0stack§
+## duk_dup_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -3275,7 +3368,9 @@ duk_dup_top(ctx);        /* -> [ ... 123 234 234 ] */
 ```
 
 
-## duk_enum() 1.0.0propertyobject§
+## duk_enum() 
+
+ 1.0.0propertyobject§
 
 ### プロトタイプ
 
@@ -3326,7 +3421,9 @@ duk_pop(ctx);  /* pop enum object */
 duk_next
 
 
-## duk_equals() 1.0.0compare§
+## duk_equals() 
+
+ 1.0.0compare§
 
 ### プロトタイプ
 
@@ -3360,7 +3457,9 @@ if (duk_equals(ctx, -3, -7)) {
 duk_strict_equals
 
 
-## duk_error() 1.0.0error§
+## duk_error() 
+
+ 1.0.0error§
 
 ### プロトタイプ
 
@@ -3416,7 +3515,9 @@ duk_type_error
 duk_uri_error
 
 
-## duk_error_va() 1.1.0varargerror§
+## duk_error_va() 
+
+ 1.1.0varargerror§
 
 ### プロトタイプ
 
@@ -3460,7 +3561,9 @@ duk_type_error_va
 duk_uri_error_va
 
 
-## duk_eval() 1.0.0compile§
+## duk_eval() 
+
+ 1.0.0compile§
 
 ### プロトタイプ
 
@@ -3512,7 +3615,9 @@ duk_eval_lstring
 duk_eval_lstring_noresult
 
 
-## duk_eval_error() 2.0.0error§
+## duk_eval_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -3540,7 +3645,9 @@ return duk_eval_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_eval_error_va() 2.0.0varargerror§
+## duk_eval_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -3575,7 +3682,9 @@ void my_eval_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_eval_lstring() 1.0.0stringcompile§
+## duk_eval_lstring() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -3609,7 +3718,9 @@ duk_pop(ctx);
 duk_eval_lstring_noresult
 
 
-## duk_eval_lstring_noresult() 1.0.0stringcompile§
+## duk_eval_lstring_noresult() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -3637,7 +3748,9 @@ duk_eval_lstring_noresult(ctx, src, len);
 ```
 
 
-## duk_eval_noresult() 1.0.0compile§
+## duk_eval_noresult() 
+
+ 1.0.0compile§
 
 ### プロトタイプ
 
@@ -3667,7 +3780,9 @@ duk_eval_string_noresult
 duk_eval_lstring_noresult
 
 
-## duk_eval_string() 1.0.0stringcompile§
+## duk_eval_string() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -3698,7 +3813,9 @@ duk_pop(ctx);
 duk_eval_string_noresult
 
 
-## duk_eval_string_noresult() 1.0.0stringcompile§
+## duk_eval_string_noresult() 
+
+ 1.0.0stringcompile§
 
 ### プロトタイプ
 
@@ -3723,7 +3840,9 @@ duk_eval_string_noresult(ctx, "print('testString'.toUpperCase())");
 ```
 
 
-## duk_fatal() 1.0.0error§
+## duk_fatal() 
+
+ 1.0.0error§
 
 ### プロトタイプ
 
@@ -3757,7 +3876,9 @@ duk_fatal(ctx, "assumption failed");
 ```
 
 
-## duk_free() 1.0.0memory§
+## duk_free() 
+
+ 1.0.0memory§
 
 ### プロトタイプ
 
@@ -3792,7 +3913,9 @@ duk_free(ctx, buf);  /* safe even if 'buf' is NULL */
 duk_free_raw
 
 
-## duk_free_raw() 1.0.0memory§
+## duk_free_raw() 
+
+ 1.0.0memory§
 
 ### プロトタイプ
 
@@ -3826,7 +3949,9 @@ duk_free_raw(ctx, buf);  /* safe even if 'buf' is NULL */
 duk_free
 
 
-## duk_freeze() 2.2.0propertyobject§
+## duk_freeze() 
+
+ 2.2.0propertyobject§
 
 ### プロトタイプ
 
@@ -3851,7 +3976,9 @@ duk_freeze(ctx, -3);
 ```
 
 
-## duk_gc() 1.0.0memoryheap§
+## duk_gc() 
+
+ 1.0.0memoryheap§
 
 ### プロトタイプ
 
@@ -3883,7 +4010,9 @@ duk_gc(ctx, 0);
 ```
 
 
-## duk_generic_error() 2.0.0error§
+## duk_generic_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -3911,7 +4040,9 @@ return duk_generic_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_generic_error_va() 2.0.0varargerror§
+## duk_generic_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -3946,7 +4077,9 @@ void my_generic_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_get_boolean() 1.0.0stack§
+## duk_get_boolean() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -3978,7 +4111,9 @@ if (duk_get_boolean(ctx, -3)) {
 duk_get_boolean_default
 
 
-## duk_get_boolean_default() 2.1.0stack§
+## duk_get_boolean_default() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -4006,7 +4141,9 @@ duk_bool_t flag_xyz = duk_get_boolean_default(ctx, 2, 1);  /* default: true */
 duk_get_boolean
 
 
-## duk_get_buffer() 1.0.0stackbuffer§
+## duk_get_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -4043,7 +4180,9 @@ duk_get_buffer_data
 duk_require_buffer_data
 
 
-## duk_get_buffer_data() 1.3.0stackbufferobjectbuffer§
+## duk_get_buffer_data() 
+
+ 1.3.0stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -4089,7 +4228,9 @@ duk_get_buffer
 duk_require_buffer
 
 
-## duk_get_buffer_data_default() 2.1.0stackbuffer§
+## duk_get_buffer_data_default() 
+
+ 2.1.0stackbuffer§
 
 ### プロトタイプ
 
@@ -4124,7 +4265,9 @@ duk_get_buffer_data
 duk_get_buffer_default
 
 
-## duk_get_buffer_default() 2.1.0stackbuffer§
+## duk_get_buffer_default() 
+
+ 2.1.0stackbuffer§
 
 ### プロトタイプ
 
@@ -4159,7 +4302,9 @@ duk_get_buffer
 duk_get_buffer_data_default
 
 
-## duk_get_c_function() 1.0.0stackfunction§
+## duk_get_c_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -4191,7 +4336,9 @@ funcptr = duk_get_c_function(ctx, -3);
 duk_get_c_function_default
 
 
-## duk_get_c_function_default() 2.1.0stackfunction§
+## duk_get_c_function_default() 
+
+ 2.1.0stackfunction§
 
 ### プロトタイプ
 
@@ -4222,7 +4369,9 @@ funcptr = duk_get_c_function_default(ctx, -3, nop_callback);
 duk_get_c_function
 
 
-## duk_get_context() 1.0.0stackborrowed§
+## duk_get_context() 
+
+ 1.0.0stackborrowed§
 
 ### プロトタイプ
 
@@ -4274,7 +4423,9 @@ duk_pop(ctx);
 duk_get_context_default
 
 
-## duk_get_context_default() 2.1.0stackborrowed§
+## duk_get_context_default() 
+
+ 2.1.0stackborrowed§
 
 ### プロトタイプ
 
@@ -4305,7 +4456,9 @@ target_ctx = duk_get_context_default(ctx, 2, default_ctx);
 duk_get_context
 
 
-## duk_get_current_magic() 1.0.0magicfunction§
+## duk_get_current_magic() 
+
+ 1.0.0magicfunction§
 
 ### プロトタイプ
 
@@ -4347,7 +4500,9 @@ duk_get_magic
 duk_set_magic
 
 
-## duk_get_error_code() 1.1.0stackerror§
+## duk_get_error_code() 
+
+ 1.1.0stackerror§
 
 ### プロトタイプ
 
@@ -4373,7 +4528,9 @@ if (duk_get_error_code(ctx, -3) == DUK_ERR_URI_ERROR) {
 ```
 
 
-## duk_get_finalizer() 1.0.0objectfinalizer§
+## duk_get_finalizer() 
+
+ 1.0.0objectfinalizer§
 
 ### プロトタイプ
 
@@ -4402,7 +4559,9 @@ duk_get_finalizer(ctx, -3);
 duk_set_finalizer
 
 
-## duk_get_global_heapptr() 2.3.0propertyheapptrborrowed§
+## duk_get_global_heapptr() 
+
+ 2.3.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4433,7 +4592,9 @@ duk_get_global_lstring
 duk_get_global_literal
 
 
-## duk_get_global_literal() 2.3.0propertyliteral§
+## duk_get_global_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -4468,7 +4629,9 @@ duk_get_global_lstring
 duk_get_global_heapptr
 
 
-## duk_get_global_lstring() 2.0.0stringproperty§
+## duk_get_global_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -4499,7 +4662,9 @@ duk_get_global_literal
 duk_get_global_heapptr
 
 
-## duk_get_global_string() 1.0.0stringproperty§
+## duk_get_global_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -4542,7 +4707,9 @@ duk_get_global_literal
 duk_get_global_heapptr
 
 
-## duk_get_heapptr() 1.1.0stackheapptrborrowed§
+## duk_get_heapptr() 
+
+ 1.1.0stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4592,7 +4759,9 @@ duk_push_heapptr
 duk_get_heapptr_default
 
 
-## duk_get_heapptr_default() 2.1.0stackheapptrborrowed§
+## duk_get_heapptr_default() 
+
+ 2.1.0stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4623,7 +4792,9 @@ ptr = duk_get_heapptr_default(ctx, 2, default_ptr);
 duk_get_heapptr
 
 
-## duk_get_int() 1.0.0stack§
+## duk_get_int() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -4664,7 +4835,9 @@ printf("int value: %ld\n", (long) duk_get_int(ctx, -3));
 duk_get_int_default
 
 
-## duk_get_int_default() 2.1.0stack§
+## duk_get_int_default() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -4692,7 +4865,9 @@ int port = (int) duk_get_int_default(ctx, 1, 80);  /* default: 80 */
 duk_get_int
 
 
-## duk_get_length() 1.0.0stack§
+## duk_get_length() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -4728,7 +4903,9 @@ if (duk_is_string(ctx, -3)) {
 duk_set_length
 
 
-## duk_get_lstring() 1.0.0stringstack§
+## duk_get_lstring() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -4767,7 +4944,9 @@ duk_get_lstring_default
 duk_get_string_default
 
 
-## duk_get_lstring_default() 2.1.0stringstack§
+## duk_get_lstring_default() 
+
+ 2.1.0stringstack§
 
 ### プロトタイプ
 
@@ -4799,7 +4978,9 @@ str = duk_get_lstring_default(ctx, -3, &len, "foo" "\x00" "bar", 7);
 duk_get_string_default
 
 
-## duk_get_magic() 1.0.0magicfunction§
+## duk_get_magic() 
+
+ 1.0.0magicfunction§
 
 ### プロトタイプ
 
@@ -4829,7 +5010,9 @@ duk_get_current_magic
 duk_set_magic
 
 
-## duk_get_memory_functions() 1.0.0memoryheap§
+## duk_get_memory_functions() 
+
+ 1.0.0memoryheap§
 
 ### プロトタイプ
 
@@ -4858,7 +5041,9 @@ duk_get_memory_functions(ctx, &funcs);
 ```
 
 
-## duk_get_now() 2.0.0time§
+## duk_get_now() 
+
+ 2.0.0time§
 
 ### プロトタイプ
 
@@ -4886,7 +5071,9 @@ print("timestamp: %lf\n", (double) now);
 ```
 
 
-## duk_get_number() 1.0.0stack§
+## duk_get_number() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -4914,7 +5101,9 @@ printf("value: %lf\n", (double) duk_get_number(ctx, -3));
 duk_get_number_default
 
 
-## duk_get_number_default() 2.1.0stack§
+## duk_get_number_default() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -4942,7 +5131,9 @@ duk_double_t backoff_multiplier = duk_get_number_default(ctx, 2, 1.5);  /* defau
 duk_get_number
 
 
-## duk_get_pointer() 1.0.0stack§
+## duk_get_pointer() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -4969,7 +5160,9 @@ printf("my pointer is: %p\n", ptr);
 ```
 
 
-## duk_get_pointer_default() 2.1.0stack§
+## duk_get_pointer_default() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -5000,7 +5193,9 @@ printf("my pointer is: %p\n", ptr);
 duk_get_pointer
 
 
-## duk_get_prop() 1.0.0property§
+## duk_get_prop() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -5065,7 +5260,9 @@ duk_get_prop_literal
 duk_get_prop_heapptr
 
 
-## duk_get_prop_desc() 2.0.0sandboxproperty§
+## duk_get_prop_desc() 
+
+ 2.0.0sandboxproperty§
 
 ### プロトタイプ
 
@@ -5111,7 +5308,9 @@ if (duk_is_object(ctx, -1)) {
 duk_def_prop
 
 
-## duk_get_prop_heapptr() 2.2.0propertyheapptrborrowed§
+## duk_get_prop_heapptr() 
+
+ 2.2.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -5152,7 +5351,9 @@ duk_get_prop_lstring
 duk_get_prop_literal
 
 
-## duk_get_prop_index() 1.0.0property§
+## duk_get_prop_index() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -5189,7 +5390,9 @@ duk_get_prop_literal
 duk_get_prop_heapptr
 
 
-## duk_get_prop_literal() 2.3.0propertyliteral§
+## duk_get_prop_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -5224,7 +5427,9 @@ duk_get_prop_lstring
 duk_get_prop_heapptr
 
 
-## duk_get_prop_lstring() 2.0.0stringproperty§
+## duk_get_prop_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -5259,7 +5464,9 @@ duk_get_prop_literal
 duk_get_prop_heapptr
 
 
-## duk_get_prop_string() 1.0.0stringproperty§
+## duk_get_prop_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -5294,7 +5501,9 @@ duk_get_prop_literal
 duk_get_prop_heapptr
 
 
-## duk_get_prototype() 1.0.0prototypeobject§
+## duk_get_prototype() 
+
+ 1.0.0prototypeobject§
 
 ### プロトタイプ
 
@@ -5323,7 +5532,9 @@ duk_get_prototype(ctx, -3);
 duk_set_prototype
 
 
-## duk_get_string() 1.0.0stringstack§
+## duk_get_string() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -5362,7 +5573,9 @@ duk_get_string_default
 duk_get_lstring_default
 
 
-## duk_get_string_default() 2.1.0stringstack§
+## duk_get_string_default() 
+
+ 2.1.0stringstack§
 
 ### プロトタイプ
 
@@ -5391,7 +5604,9 @@ const char *host = duk_get_string_default(ctx, 3, "localhost");
 duk_get_lstring_default
 
 
-## duk_get_top() 1.0.0stack§
+## duk_get_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5416,7 +5631,9 @@ printf("stack top is %ld\n", (long) duk_get_top(ctx));
 ```
 
 
-## duk_get_top_index() 1.0.0stack§
+## duk_get_top_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5452,7 +5669,9 @@ if (idx_top == DUK_INVALID_INDEX) {
 duk_require_top_index
 
 
-## duk_get_type() 1.0.0stack§
+## duk_get_type() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5485,7 +5704,9 @@ duk_get_type_mask
 duk_check_type_mask
 
 
-## duk_get_type_mask() 1.0.0stack§
+## duk_get_type_mask() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5520,7 +5741,9 @@ duk_get_type
 duk_check_type_mask
 
 
-## duk_get_uint() 1.0.0stack§
+## duk_get_uint() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5561,7 +5784,9 @@ printf("unsigned int value: %lu\n", (unsigned long) duk_get_uint(ctx, -3));
 duk_get_uint_default
 
 
-## duk_get_uint_default() 2.1.0stack§
+## duk_get_uint_default() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -5589,7 +5814,9 @@ unsigned int count = (unsigned int) duk_get_uint_default(ctx, 1, 3);  /* default
 duk_get_uint
 
 
-## duk_has_prop() 1.0.0property§
+## duk_has_prop() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -5638,7 +5865,9 @@ duk_has_prop_literal
 duk_has_prop_heapptr
 
 
-## duk_has_prop_heapptr() 2.2.0propertyheapptrborrowed§
+## duk_has_prop_heapptr() 
+
+ 2.2.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -5680,7 +5909,9 @@ duk_has_prop_lstring
 duk_has_prop_literal
 
 
-## duk_has_prop_index() 1.0.0property§
+## duk_has_prop_index() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -5718,7 +5949,9 @@ duk_has_prop_literal
 duk_has_prop_heapptr
 
 
-## duk_has_prop_literal() 2.3.0propertyliteral§
+## duk_has_prop_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -5754,7 +5987,9 @@ duk_has_prop_lstring
 duk_has_prop_heapptr
 
 
-## duk_has_prop_lstring() 2.0.0stringproperty§
+## duk_has_prop_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -5790,7 +6025,9 @@ duk_has_prop_literal
 duk_has_prop_heapptr
 
 
-## duk_has_prop_string() 1.0.0stringproperty§
+## duk_has_prop_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -5826,7 +6063,9 @@ duk_has_prop_literal
 duk_has_prop_heapptr
 
 
-## duk_hex_decode() 1.0.0hexcodec§
+## duk_hex_decode() 
+
+ 1.0.0hexcodec§
 
 ### プロトタイプ
 
@@ -5861,7 +6100,9 @@ duk_pop(ctx);
 duk_hex_encode
 
 
-## duk_hex_encode() 1.0.0hexcodec§
+## duk_hex_encode() 
+
+ 1.0.0hexcodec§
 
 ### プロトタイプ
 
@@ -5895,7 +6136,9 @@ printf("hex encoded: %s\n", duk_hex_encode(ctx, -1));
 duk_hex_decode
 
 
-## duk_insert() 1.0.0stack§
+## duk_insert() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -5929,7 +6172,9 @@ duk_pull
 duk_replace
 
 
-## duk_inspect_callstack_entry() 2.0.0stackinspect§
+## duk_inspect_callstack_entry() 
+
+ 2.0.0stackinspect§
 
 ### プロトタイプ
 
@@ -5963,7 +6208,9 @@ duk_pop_2(ctx);
 ```
 
 
-## duk_inspect_value() 2.0.0stackinspect§
+## duk_inspect_value() 
+
+ 2.0.0stackinspect§
 
 ### プロトタイプ
 
@@ -6009,7 +6256,9 @@ duk_pop_2(ctx);
 ```
 
 
-## duk_instanceof() 1.3.0compare§
+## duk_instanceof() 
+
+ 1.3.0compare§
 
 ### プロトタイプ
 
@@ -6040,7 +6289,9 @@ if (duk_instanceof(ctx, idx_val, -1)) {
 ```
 
 
-## duk_is_array() 1.0.0stack§
+## duk_is_array() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6071,7 +6322,9 @@ if (duk_is_array(ctx, -3)) {
 ```
 
 
-## duk_is_boolean() 1.0.0stack§
+## duk_is_boolean() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6097,7 +6350,9 @@ if (duk_is_boolean(ctx, -3)) {
 ```
 
 
-## duk_is_bound_function() 1.0.0stackfunction§
+## duk_is_bound_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -6125,7 +6380,9 @@ if (duk_is_bound_function(ctx, -3)) {
 ```
 
 
-## duk_is_buffer() 1.0.0stackbuffer§
+## duk_is_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -6155,7 +6412,9 @@ if (duk_is_buffer(ctx, -3)) {
 duk_is_buffer_data
 
 
-## duk_is_buffer_data() 2.0.0stackbufferobjectbuffer§
+## duk_is_buffer_data() 
+
+ 2.0.0stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -6185,7 +6444,9 @@ if (duk_is_buffer_data(ctx, -3)) {
 duk_is_buffer
 
 
-## duk_is_c_function() 1.0.0stackfunction§
+## duk_is_c_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -6211,7 +6472,9 @@ if (duk_is_c_function(ctx, -3)) {
 ```
 
 
-## duk_is_callable() 1.0.0stack§
+## duk_is_callable() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6239,7 +6502,9 @@ if (duk_is_callable(ctx, -3)) {
 ```
 
 
-## duk_is_constructable() 2.2.0stack§
+## duk_is_constructable() 
+
+ 2.2.0stack§
 
 ### プロトタイプ
 
@@ -6265,7 +6530,9 @@ if (duk_is_constructable(ctx, -3)) {
 ```
 
 
-## duk_is_constructor_call() 1.0.0stack§
+## duk_is_constructor_call() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6296,7 +6563,9 @@ if (duk_is_constructor_call(ctx)) {
 ```
 
 
-## duk_is_dynamic_buffer() 1.0.0stackbuffer§
+## duk_is_dynamic_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -6322,7 +6591,9 @@ if (duk_is_dynamic_buffer(ctx, -3)) {
 ```
 
 
-## duk_is_ecmascript_function() 1.0.0stackfunction§
+## duk_is_ecmascript_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -6350,7 +6621,9 @@ if (duk_is_ecmascript_function(ctx, -3)) {
 ```
 
 
-## duk_is_error() 1.1.0stackerror§
+## duk_is_error() 
+
+ 1.1.0stackerror§
 
 ### プロトタイプ
 
@@ -6379,7 +6652,9 @@ if (duk_is_error(ctx, -3)) {
 ```
 
 
-## duk_is_eval_error() 1.4.0stackerror§
+## duk_is_eval_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6405,7 +6680,9 @@ if (duk_is_eval_error(ctx, -3)) {
 ```
 
 
-## duk_is_fixed_buffer() 1.0.0stackbuffer§
+## duk_is_fixed_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -6431,7 +6708,9 @@ if (duk_is_fixed_buffer(ctx, -3)) {
 ```
 
 
-## duk_is_function() 1.0.0stackfunction§
+## duk_is_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -6468,7 +6747,9 @@ if (duk_is_function(ctx, -3)) {
 ```
 
 
-## duk_is_lightfunc() stack§
+## duk_is_lightfunc() 
+
+ stack§
 
 ### プロトタイプ
 
@@ -6494,7 +6775,9 @@ if (duk_is_lightfunc(ctx, -3)) {
 ```
 
 
-## duk_is_nan() 1.0.0stack§
+## duk_is_nan() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6522,7 +6805,9 @@ if (duk_is_nan(ctx, -3)) {
 ```
 
 
-## duk_is_null() 1.0.0stack§
+## duk_is_null() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6548,7 +6833,9 @@ if (duk_is_null(ctx, -3)) {
 ```
 
 
-## duk_is_null_or_undefined() 1.0.0stack§
+## duk_is_null_or_undefined() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6576,7 +6863,9 @@ if (duk_is_null_or_undefined(ctx, -3)) {
 ```
 
 
-## duk_is_number() 1.0.0stack§
+## duk_is_number() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6602,7 +6891,9 @@ if (duk_is_number(ctx, -3)) {
 ```
 
 
-## duk_is_object() 1.0.0stackobject§
+## duk_is_object() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -6638,7 +6929,9 @@ if (duk_is_object(ctx, -3)) {
 ```
 
 
-## duk_is_object_coercible() 1.0.0stackobject§
+## duk_is_object_coercible() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -6666,7 +6959,9 @@ if (duk_is_object_coercible(ctx, -3)) {
 ```
 
 
-## duk_is_pointer() 1.0.0stack§
+## duk_is_pointer() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6692,7 +6987,9 @@ if (duk_is_pointer(ctx, -3)) {
 ```
 
 
-## duk_is_primitive() 1.0.0stack§
+## duk_is_primitive() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6720,7 +7017,9 @@ if (duk_is_primitive(ctx, -3)) {
 ```
 
 
-## duk_is_range_error() 1.4.0stackerror§
+## duk_is_range_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6746,7 +7045,9 @@ if (duk_is_range_error(ctx, -3)) {
 ```
 
 
-## duk_is_reference_error() 1.4.0stackerror§
+## duk_is_reference_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6772,7 +7073,9 @@ if (duk_is_reference_error(ctx, -3)) {
 ```
 
 
-## duk_is_strict_call() 1.0.0function§
+## duk_is_strict_call() 
+
+ 1.0.0function§
 
 ### プロトタイプ
 
@@ -6801,7 +7104,9 @@ if (duk_is_strict_call(ctx)) {
 ```
 
 
-## duk_is_string() 1.0.0stringstack§
+## duk_is_string() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -6828,7 +7133,9 @@ if (duk_is_string(ctx, -3)) {
 ```
 
 
-## duk_is_symbol() 2.0.0symbolstringstack§
+## duk_is_symbol() 
+
+ 2.0.0symbolstringstack§
 
 ### プロトタイプ
 
@@ -6855,7 +7162,9 @@ if (duk_is_symbol(ctx, -3)) {
 ```
 
 
-## duk_is_syntax_error() 1.4.0stackerror§
+## duk_is_syntax_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6881,7 +7190,9 @@ if (duk_is_syntax_error(ctx, -3)) {
 ```
 
 
-## duk_is_thread() 1.0.0threadstack§
+## duk_is_thread() 
+
+ 1.0.0threadstack§
 
 ### プロトタイプ
 
@@ -6907,7 +7218,9 @@ if (duk_is_thread(ctx, -3)) {
 ```
 
 
-## duk_is_type_error() 1.4.0stackerror§
+## duk_is_type_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6933,7 +7246,9 @@ if (duk_is_type_error(ctx, -3)) {
 ```
 
 
-## duk_is_undefined() 1.0.0stack§
+## duk_is_undefined() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -6959,7 +7274,9 @@ if (duk_is_undefined(ctx, -3)) {
 ```
 
 
-## duk_is_uri_error() 1.4.0stackerror§
+## duk_is_uri_error() 
+
+ 1.4.0stackerror§
 
 ### プロトタイプ
 
@@ -6985,7 +7302,9 @@ if (duk_is_uri_error(ctx, -3)) {
 ```
 
 
-## duk_is_valid_index() 1.0.0stack§
+## duk_is_valid_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -7017,7 +7336,9 @@ if (duk_is_valid_index(ctx, -3)) {
 duk_require_valid_index
 
 
-## duk_join() 1.0.0string§
+## duk_join() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -7054,7 +7375,9 @@ duk_pop(ctx);
 duk_concat
 
 
-## duk_json_decode() 1.0.0jsoncodec§
+## duk_json_decode() 
+
+ 1.0.0jsoncodec§
 
 ### プロトタイプ
 
@@ -7090,7 +7413,9 @@ duk_pop_2(ctx);
 duk_json_encode
 
 
-## duk_json_encode() 1.0.0jsoncodec§
+## duk_json_encode() 
+
+ 1.0.0jsoncodec§
 
 ### プロトタイプ
 
@@ -7126,7 +7451,9 @@ duk_pop(ctx);
 duk_json_decode
 
 
-## duk_load_function() 1.3.0stackbytecode§
+## duk_load_function() 
+
+ 1.3.0stackbytecode§
 
 ### プロトタイプ
 
@@ -7161,7 +7488,9 @@ duk_pop(ctx);
 duk_dump_function
 
 
-## duk_map_string() 1.0.0string§
+## duk_map_string() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -7200,7 +7529,9 @@ duk_pop(ctx);
 duk_decode_string
 
 
-## duk_new() 1.0.0objectcall§
+## duk_new() 
+
+ 1.0.0objectcall§
 
 ### プロトタイプ
 
@@ -7240,7 +7571,9 @@ duk_pop(ctx);
 duk_pnew
 
 
-## duk_next() 1.0.0propertyobject§
+## duk_next() 
+
+ 1.0.0propertyobject§
 
 ### プロトタイプ
 
@@ -7275,7 +7608,9 @@ while (duk_next(ctx, enum_idx, 1)) {
 duk_enum
 
 
-## duk_normalize_index() 1.0.0stack§
+## duk_normalize_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -7303,7 +7638,9 @@ duk_idx_t idx = duk_normalize_index(ctx, -3);
 duk_require_normalize_index
 
 
-## duk_opt_boolean() 2.1.0stack§
+## duk_opt_boolean() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -7327,7 +7664,9 @@ duk_bool_t flag_xyz = duk_opt_boolean(ctx, 2, 1);  /* default: true */
 ```
 
 
-## duk_opt_buffer() 2.1.0stackbuffer§
+## duk_opt_buffer() 
+
+ 2.1.0stackbuffer§
 
 ### プロトタイプ
 
@@ -7363,7 +7702,9 @@ printf("buf=%p, size=%lu\n", ptr, (unsigned long) sz);
 duk_opt_buffer_data
 
 
-## duk_opt_buffer_data() 2.1.0stackbufferobjectbuffer§
+## duk_opt_buffer_data() 
+
+ 2.1.0stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -7399,7 +7740,9 @@ ptr = duk_opt_buffer_data(ctx, 2, &sz, (void *) buf, sizeof(buf));
 duk_opt_buffer
 
 
-## duk_opt_c_function() 2.1.0stackfunction§
+## duk_opt_c_function() 
+
+ 2.1.0stackfunction§
 
 ### プロトタイプ
 
@@ -7426,7 +7769,9 @@ funcptr = duk_opt_c_function(ctx, -3, nop_callback);
 ```
 
 
-## duk_opt_context() 2.1.0stackborrowed§
+## duk_opt_context() 
+
+ 2.1.0stackborrowed§
 
 ### プロトタイプ
 
@@ -7453,7 +7798,9 @@ target_ctx = duk_opt_context(ctx, 2, default_ctx);
 ```
 
 
-## duk_opt_heapptr() 2.1.0stackheapptrborrowed§
+## duk_opt_heapptr() 
+
+ 2.1.0stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -7480,7 +7827,9 @@ ptr = duk_opt_heapptr(ctx, 2, default_ptr);
 ```
 
 
-## duk_opt_int() 2.1.0stack§
+## duk_opt_int() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -7504,7 +7853,9 @@ int port = (int) duk_opt_int(ctx, 1, 80);  /* default: 80 */
 ```
 
 
-## duk_opt_lstring() 2.1.0stringstack§
+## duk_opt_lstring() 
+
+ 2.1.0stringstack§
 
 ### プロトタイプ
 
@@ -7537,7 +7888,9 @@ str = duk_opt_lstring(ctx, -3, &len, "foo" "\x00" "bar", 7);
 duk_opt_string
 
 
-## duk_opt_number() 2.1.0stack§
+## duk_opt_number() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -7561,7 +7914,9 @@ double backoff_multiplier = (double) duk_opt_number(ctx, 2, 1.5);  /* default: 1
 ```
 
 
-## duk_opt_pointer() 2.1.0stack§
+## duk_opt_pointer() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -7588,7 +7943,9 @@ printf("my pointer is: %p\n", ptr);
 ```
 
 
-## duk_opt_string() 2.1.0stringstack§
+## duk_opt_string() 
+
+ 2.1.0stringstack§
 
 ### プロトタイプ
 
@@ -7621,7 +7978,9 @@ const char *host = duk_opt_string(ctx, 3, "localhost");
 duk_opt_lstring
 
 
-## duk_opt_uint() 2.1.0stack§
+## duk_opt_uint() 
+
+ 2.1.0stack§
 
 ### プロトタイプ
 
@@ -7645,7 +8004,9 @@ unsigned int count = (unsigned int) duk_opt_uint(ctx, 1, 3);  /* default: 3 */
 ```
 
 
-## duk_pcall() 1.0.0protectedcall§
+## duk_pcall() 
+
+ 1.0.0protectedcall§
 
 ### プロトタイプ
 
@@ -7730,7 +8091,9 @@ duk_pcall_method
 duk_pcall_prop
 
 
-## duk_pcall_method() 1.0.0protectedcall§
+## duk_pcall_method() 
+
+ 1.0.0protectedcall§
 
 ### プロトタイプ
 
@@ -7777,7 +8140,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_pcall_prop() 1.0.0protectedpropertycall§
+## duk_pcall_prop() 
+
+ 1.0.0protectedpropertycall§
 
 ### プロトタイプ
 
@@ -7815,7 +8180,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_pcompile() 1.0.0protectedcompile§
+## duk_pcompile() 
+
+ 1.0.0protectedcompile§
 
 ### プロトタイプ
 
@@ -7858,7 +8225,9 @@ duk_pcompile_lstring
 duk_pcompile_lstring_filename
 
 
-## duk_pcompile_lstring() 1.0.0stringprotectedcompile§
+## duk_pcompile_lstring() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -7893,7 +8262,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_pcompile_lstring_filename() 1.0.0stringprotectedcompile§
+## duk_pcompile_lstring_filename() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -7929,7 +8300,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_pcompile_string() 1.0.0stringprotectedcompile§
+## duk_pcompile_string() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -7961,7 +8334,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_pcompile_string_filename() 1.0.0stringprotectedcompile§
+## duk_pcompile_string_filename() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -7994,7 +8369,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_peval() 1.0.0protectedcompile§
+## duk_peval() 
+
+ 1.0.0protectedcompile§
 
 ### プロトタイプ
 
@@ -8036,7 +8413,9 @@ duk_peval_lstring
 duk_peval_lstring_noresult
 
 
-## duk_peval_lstring() 1.0.0stringprotectedcompile§
+## duk_peval_lstring() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8074,7 +8453,9 @@ duk_pop(ctx);
 duk_peval_lstring_noresult
 
 
-## duk_peval_lstring_noresult() 1.0.0stringprotectedcompile§
+## duk_peval_lstring_noresult() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8106,7 +8487,9 @@ if (duk_peval_lstring_noresult(ctx, src, len) != 0) {
 ```
 
 
-## duk_peval_noresult() 1.0.0protectedcompile§
+## duk_peval_noresult() 
+
+ 1.0.0protectedcompile§
 
 ### プロトタイプ
 
@@ -8140,7 +8523,9 @@ duk_peval_string_noresult
 duk_peval_lstring_noresult
 
 
-## duk_peval_string() 1.0.0stringprotectedcompile§
+## duk_peval_string() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8175,7 +8560,9 @@ duk_pop(ctx);
 duk_peval_string_noresult
 
 
-## duk_peval_string_noresult() 1.0.0stringprotectedcompile§
+## duk_peval_string_noresult() 
+
+ 1.0.0stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8204,7 +8591,9 @@ if (duk_peval_string_noresult(ctx, "print('testString'.toUpperCase());") != 0) {
 ```
 
 
-## duk_pnew() 1.3.0protectedobjectcall§
+## duk_pnew() 
+
+ 1.3.0protectedobjectcall§
 
 ### プロトタイプ
 
@@ -8247,7 +8636,9 @@ duk_pop(ctx);
 duk_new
 
 
-## duk_pop() 1.0.0stack§
+## duk_pop() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8279,7 +8670,9 @@ duk_pop_3
 duk_pop_n
 
 
-## duk_pop_2() 1.0.0stack§
+## duk_pop_2() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8303,7 +8696,9 @@ duk_pop_2(ctx);
 ```
 
 
-## duk_pop_3() 1.0.0stack§
+## duk_pop_3() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8327,7 +8722,9 @@ duk_pop_3(ctx);
 ```
 
 
-## duk_pop_n() 1.0.0stack§
+## duk_pop_n() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8351,7 +8748,9 @@ duk_pop_n(ctx, 10);
 ```
 
 
-## duk_pull() 2.5.0stack§
+## duk_pull() 
+
+ 2.5.0stack§
 
 ### プロトタイプ
 
@@ -8384,7 +8783,9 @@ duk_insert
 duk_remove
 
 
-## duk_push_array() 1.0.0stackobject§
+## duk_push_array() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -8422,7 +8823,9 @@ duk_pop(ctx);  /* pop array */
 ```
 
 
-## duk_push_bare_array() 2.4.0stackobject§
+## duk_push_bare_array() 
+
+ 2.4.0stackobject§
 
 ### プロトタイプ
 
@@ -8453,7 +8856,9 @@ duk_push_array
 duk_push_bare_object
 
 
-## duk_push_bare_object() 2.0.0stackobject§
+## duk_push_bare_object() 
+
+ 2.0.0stackobject§
 
 ### プロトタイプ
 
@@ -8484,7 +8889,9 @@ duk_push_object
 duk_push_bare_array
 
 
-## duk_push_boolean() 1.0.0stack§
+## duk_push_boolean() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8511,7 +8918,9 @@ duk_push_boolean(ctx, 123);  /* -> [ ... false true true ] */
 ```
 
 
-## duk_push_buffer() 1.0.0stackbuffer§
+## duk_push_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -8553,7 +8962,9 @@ duk_push_dynamic_buffer
 duk_push_external_buffer
 
 
-## duk_push_buffer_object() 1.3.0stackbufferobject§
+## duk_push_buffer_object() 
+
+ 1.3.0stackbufferobject§
 
 ### プロトタイプ
 
@@ -8623,7 +9034,9 @@ duk_push_dynamic_buffer
 duk_push_external_buffer
 
 
-## duk_push_c_function() 1.0.0stackfunction§
+## duk_push_c_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -8683,7 +9096,9 @@ void test(void) {
 duk_push_c_lightfunc
 
 
-## duk_push_c_lightfunc() stacklightfuncfunction§
+## duk_push_c_lightfunc() 
+
+ stacklightfuncfunction§
 
 ### プロトタイプ
 
@@ -8725,7 +9140,9 @@ func_idx = duk_push_c_lightfunc(ctx, my_addtwo, 2 /*nargs*/, 2 /*length*/, 0 /*m
 duk_push_c_function
 
 
-## duk_push_context_dump() 1.0.0stackdebug§
+## duk_push_context_dump() 
+
+ 1.0.0stackdebug§
 
 ### プロトタイプ
 
@@ -8760,7 +9177,9 @@ duk_pop(ctx);
 ```
 
 
-## duk_push_current_function() 1.0.0stackfunction§
+## duk_push_current_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -8789,7 +9208,9 @@ duk_push_current_function(ctx);
 ```
 
 
-## duk_push_current_thread() 1.0.0threadstackfunctionborrowed§
+## duk_push_current_thread() 
+
+ 1.0.0threadstackfunctionborrowed§
 
 ### プロトタイプ
 
@@ -8818,7 +9239,9 @@ duk_push_thread(ctx);
 ```
 
 
-## duk_push_dynamic_buffer() 1.0.0stackbuffer§
+## duk_push_dynamic_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -8845,7 +9268,9 @@ printf("allocated buffer, data area: %p\n", p);
 ```
 
 
-## duk_push_error_object() 1.0.0stackobjecterror§
+## duk_push_error_object() 
+
+ 1.0.0stackobjecterror§
 
 ### プロトタイプ
 
@@ -8877,7 +9302,9 @@ err_idx = duk_push_error_object(ctx, DUK_ERR_TYPE_ERROR, "invalid argument value
 duk_push_error_object_va
 
 
-## duk_push_error_object_va() 1.1.0varargstackobjecterror§
+## duk_push_error_object_va() 
+
+ 1.1.0varargstackobjecterror§
 
 ### プロトタイプ
 
@@ -8915,7 +9342,9 @@ duk_idx_t my_type_error(duk_context *ctx, const char *fmt, ...) {
 duk_push_error_object
 
 
-## duk_push_external_buffer() 1.3.0stackbuffer§
+## duk_push_external_buffer() 
+
+ 1.3.0stackbuffer§
 
 ### プロトタイプ
 
@@ -8965,7 +9394,9 @@ duk_config_buffer(ctx, -1, p, len);
 duk_config_buffer
 
 
-## duk_push_false() 1.0.0stack§
+## duk_push_false() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -8989,7 +9420,9 @@ duk_push_false(ctx);
 ```
 
 
-## duk_push_fixed_buffer() 1.0.0stackbuffer§
+## duk_push_fixed_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -9016,7 +9449,9 @@ printf("allocated buffer, data area: %p\n", p);
 ```
 
 
-## duk_push_global_object() 1.0.0stackobject§
+## duk_push_global_object() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -9040,7 +9475,9 @@ duk_push_global_object(ctx);
 ```
 
 
-## duk_push_global_stash() 1.0.0stashstacksandboxobjectmodule§
+## duk_push_global_stash() 
+
+ 1.0.0stashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -9074,7 +9511,9 @@ duk_push_heap_stash
 duk_push_thread_stash
 
 
-## duk_push_heap_stash() 1.0.0stashstacksandboxobjectmodule§
+## duk_push_heap_stash() 
+
+ 1.0.0stashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -9103,7 +9542,9 @@ duk_push_global_stash
 duk_push_thread_stash
 
 
-## duk_push_heapptr() 1.1.0stackobjectheapptrborrowed§
+## duk_push_heapptr() 
+
+ 1.1.0stackobjectheapptrborrowed§
 
 ### プロトタイプ
 
@@ -9145,7 +9586,9 @@ duk_get_heapptr
 duk_require_heapptr
 
 
-## duk_push_int() 1.0.0stack§
+## duk_push_int() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9171,7 +9614,9 @@ duk_push_int(ctx, 123);
 ```
 
 
-## duk_push_literal() 2.3.0stackliteral§
+## duk_push_literal() 
+
+ 2.3.0stackliteral§
 
 ### プロトタイプ
 
@@ -9214,7 +9659,9 @@ duk_push_literal(ctx, DUK_HIDDEN_SYMBOL("mySymbol"));
 ```
 
 
-## duk_push_lstring() 1.0.0stringstack§
+## duk_push_lstring() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -9249,7 +9696,9 @@ duk_push_lstring(ctx, NULL, 10);  /* push empty string */
 ```
 
 
-## duk_push_nan() 1.0.0stack§
+## duk_push_nan() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9275,7 +9724,9 @@ printf("NaN is number: %d\n", (int) duk_is_number(ctx, -1));
 ```
 
 
-## duk_push_new_target() 2.3.0stackfunction§
+## duk_push_new_target() 
+
+ 2.3.0stackfunction§
 
 ### プロトタイプ
 
@@ -9300,7 +9751,9 @@ duk_push_new_target(ctx);
 ```
 
 
-## duk_push_null() 1.0.0stack§
+## duk_push_null() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9324,7 +9777,9 @@ duk_push_null(ctx);
 ```
 
 
-## duk_push_number() 1.0.0stack§
+## duk_push_number() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9350,7 +9805,9 @@ duk_push_number(ctx, 123.0);
 ```
 
 
-## duk_push_object() 1.0.0stackobject§
+## duk_push_object() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -9388,7 +9845,9 @@ duk_pop(ctx);  /* pop object */
 duk_push_bare_object
 
 
-## duk_push_pointer() 1.0.0stack§
+## duk_push_pointer() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9414,7 +9873,9 @@ duk_push_pointer(ctx, (void *) p);
 ```
 
 
-## duk_push_proxy() 2.2.0stackobject§
+## duk_push_proxy() 
+
+ 2.2.0stackobject§
 
 ### プロトタイプ
 
@@ -9444,7 +9905,9 @@ proxy_idx = duk_push_proxy(ctx, 0);  /* [ target handler ] -> [ proxy ] */
 ```
 
 
-## duk_push_sprintf() 1.0.0stringstack§
+## duk_push_sprintf() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -9473,7 +9936,9 @@ duk_push_sprintf(ctx, "meaning of life: %d, name: %s", 42, "Zaphod");
 ```
 
 
-## duk_push_string() 1.0.0stringstack§
+## duk_push_string() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -9506,7 +9971,9 @@ duk_push_string(ctx, NULL);        /* push 'null' */
 ```
 
 
-## duk_push_this() 1.0.0stackfunction§
+## duk_push_this() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -9530,7 +9997,9 @@ duk_push_this(ctx);
 ```
 
 
-## duk_push_thread() 1.0.0threadstackborrowed§
+## duk_push_thread() 
+
+ 1.0.0threadstackborrowed§
 
 ### プロトタイプ
 
@@ -9564,7 +10033,9 @@ new_ctx = duk_get_context(ctx, thr_idx);
 duk_push_thread_new_globalenv
 
 
-## duk_push_thread_new_globalenv() 1.0.0threadstackborrowed§
+## duk_push_thread_new_globalenv() 
+
+ 1.0.0threadstackborrowed§
 
 ### プロトタイプ
 
@@ -9598,7 +10069,9 @@ new_ctx = duk_get_context(ctx, thr_idx);
 duk_push_thread
 
 
-## duk_push_thread_stash() 1.0.0threadstashstacksandboxobjectmodule§
+## duk_push_thread_stash() 
+
+ 1.0.0threadstashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -9629,7 +10102,9 @@ duk_push_heap_stash
 duk_push_global_stash
 
 
-## duk_push_true() 1.0.0stack§
+## duk_push_true() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9653,7 +10128,9 @@ duk_push_true(ctx);
 ```
 
 
-## duk_push_uint() 1.0.0stack§
+## duk_push_uint() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9679,7 +10156,9 @@ duk_push_uint(ctx, 123);
 ```
 
 
-## duk_push_undefined() 1.0.0stack§
+## duk_push_undefined() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -9703,7 +10182,9 @@ duk_push_undefined(ctx);
 ```
 
 
-## duk_push_vsprintf() 1.0.0varargstringstack§
+## duk_push_vsprintf() 
+
+ 1.0.0varargstringstack§
 
 ### プロトタイプ
 
@@ -9744,7 +10225,9 @@ void test(duk_context *ctx) {
 ```
 
 
-## duk_put_function_list() 1.0.0propertymodule§
+## duk_put_function_list() 
+
+ 1.0.0propertymodule§
 
 ### プロトタイプ
 
@@ -9789,7 +10272,9 @@ duk_pop(ctx);
 duk_put_number_list
 
 
-## duk_put_global_heapptr() 2.3.0propertyheapptrborrowed§
+## duk_put_global_heapptr() 
+
+ 2.3.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -9820,7 +10305,9 @@ duk_put_global_lstring
 duk_put_global_literal
 
 
-## duk_put_global_literal() 2.3.0propertyliteral§
+## duk_put_global_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -9851,7 +10338,9 @@ duk_put_global_lstring
 duk_put_global_heapptr
 
 
-## duk_put_global_lstring() 2.0.0stringproperty§
+## duk_put_global_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -9882,7 +10371,9 @@ duk_put_global_literal
 duk_put_global_heapptr
 
 
-## duk_put_global_string() 1.0.0stringproperty§
+## duk_put_global_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -9922,7 +10413,9 @@ duk_put_global_literal
 duk_put_global_heapptr
 
 
-## duk_put_number_list() 1.0.0propertymodule§
+## duk_put_number_list() 
+
+ 1.0.0propertymodule§
 
 ### プロトタイプ
 
@@ -9960,7 +10453,9 @@ duk_put_number_list(ctx, -3, my_module_consts);
 duk_put_function_list
 
 
-## duk_put_prop() 1.0.0property§
+## duk_put_prop() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -10011,7 +10506,9 @@ duk_put_prop_literal
 duk_put_prop_heapptr
 
 
-## duk_put_prop_heapptr() 2.2.0propertyheapptrborrowed§
+## duk_put_prop_heapptr() 
+
+ 2.2.0propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -10052,7 +10549,9 @@ duk_put_prop_lstring
 duk_put_prop_literal
 
 
-## duk_put_prop_index() 1.0.0property§
+## duk_put_prop_index() 
+
+ 1.0.0property§
 
 ### プロトタイプ
 
@@ -10088,7 +10587,9 @@ duk_put_prop_literal
 duk_put_prop_heapptr
 
 
-## duk_put_prop_literal() 2.3.0propertyliteral§
+## duk_put_prop_literal() 
+
+ 2.3.0propertyliteral§
 
 ### プロトタイプ
 
@@ -10124,7 +10625,9 @@ duk_put_prop_lstring
 duk_put_prop_heapptr
 
 
-## duk_put_prop_lstring() 2.0.0stringproperty§
+## duk_put_prop_lstring() 
+
+ 2.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -10160,7 +10663,9 @@ duk_put_prop_literal
 duk_put_prop_heapptr
 
 
-## duk_put_prop_string() 1.0.0stringproperty§
+## duk_put_prop_string() 
+
+ 1.0.0stringproperty§
 
 ### プロトタイプ
 
@@ -10196,7 +10701,9 @@ duk_put_prop_literal
 duk_put_prop_heapptr
 
 
-## duk_random() 2.3.0random§
+## duk_random() 
+
+ 2.3.0random§
 
 ### プロトタイプ
 
@@ -10223,7 +10730,9 @@ if (duk_random(ctx) <= 0.01) {
 ```
 
 
-## duk_range_error() 2.0.0error§
+## duk_range_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -10251,7 +10760,9 @@ return duk_range_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_range_error_va() 2.0.0varargerror§
+## duk_range_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -10286,7 +10797,9 @@ void my_range_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_realloc() 1.0.0memory§
+## duk_realloc() 
+
+ 1.0.0memory§
 
 ### プロトタイプ
 
@@ -10325,7 +10838,9 @@ if (buf) {
 duk_realloc_raw
 
 
-## duk_realloc_raw() 1.0.0memory§
+## duk_realloc_raw() 
+
+ 1.0.0memory§
 
 ### プロトタイプ
 
@@ -10370,7 +10885,9 @@ if (buf) {
 duk_realloc
 
 
-## duk_reference_error() 2.0.0error§
+## duk_reference_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -10398,7 +10915,9 @@ return duk_reference_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_reference_error_va() 2.0.0varargerror§
+## duk_reference_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -10433,7 +10952,9 @@ void my_reference_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_remove() 1.0.0stack§
+## duk_remove() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10460,7 +10981,9 @@ duk_remove(ctx, -2);          /* -> [ 123 345 ] */
 ```
 
 
-## duk_replace() 1.0.0stack§
+## duk_replace() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10493,7 +11016,9 @@ duk_replace(ctx, -3);         /* -> [ 123 "foo" 345 ] */
 duk_insert
 
 
-## duk_require_boolean() 1.0.0stack§
+## duk_require_boolean() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10519,7 +11044,9 @@ if (duk_require_boolean(ctx, -3)) {
 ```
 
 
-## duk_require_buffer() 1.0.0stackbuffer§
+## duk_require_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -10553,7 +11080,9 @@ duk_require_buffer_data
 duk_get_buffer_data
 
 
-## duk_require_buffer_data() 1.3.0stackbufferobjectbuffer§
+## duk_require_buffer_data() 
+
+ 1.3.0stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -10587,7 +11116,9 @@ duk_require_buffer
 duk_get_buffer
 
 
-## duk_require_c_function() 1.0.0stackfunction§
+## duk_require_c_function() 
+
+ 1.0.0stackfunction§
 
 ### プロトタイプ
 
@@ -10613,7 +11144,9 @@ funcptr = duk_require_c_function(ctx, -3);
 ```
 
 
-## duk_require_callable() 1.4.0stack§
+## duk_require_callable() 
+
+ 1.4.0stack§
 
 ### プロトタイプ
 
@@ -10638,7 +11171,9 @@ duk_require_callable(ctx, -3);
 ```
 
 
-## duk_require_constructable() 2.4.0stack§
+## duk_require_constructable() 
+
+ 2.4.0stack§
 
 ### プロトタイプ
 
@@ -10662,7 +11197,9 @@ duk_require_constructable(ctx, 3);
 ```
 
 
-## duk_require_constructor_call() 2.4.0stack§
+## duk_require_constructor_call() 
+
+ 2.4.0stack§
 
 ### プロトタイプ
 
@@ -10687,7 +11224,9 @@ duk_require_constructor_call(ctx);
 ```
 
 
-## duk_require_context() 1.0.0stackborrowed§
+## duk_require_context() 
+
+ 1.0.0stackborrowed§
 
 ### プロトタイプ
 
@@ -10714,7 +11253,9 @@ new_ctx = duk_require_context(ctx, -1);
 ```
 
 
-## duk_require_function() 1.4.0stack§
+## duk_require_function() 
+
+ 1.4.0stack§
 
 ### プロトタイプ
 
@@ -10739,7 +11280,9 @@ duk_require_function(ctx, -3);
 ```
 
 
-## duk_require_heapptr() 1.1.0stackheapptrborrowed§
+## duk_require_heapptr() 
+
+ 1.1.0stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -10770,7 +11313,9 @@ duk_get_heapptr
 duk_push_heapptr
 
 
-## duk_require_int() 1.0.0stack§
+## duk_require_int() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10794,7 +11339,9 @@ printf("int value: %ld\n", (long) duk_require_int(ctx, -3));
 ```
 
 
-## duk_require_lstring() 1.0.0stringstack§
+## duk_require_lstring() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -10827,7 +11374,9 @@ printf("value is a string, %lu bytes\n", (unsigned long) len);
 duk_require_string
 
 
-## duk_require_normalize_index() 1.0.0stack§
+## duk_require_normalize_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10855,7 +11404,9 @@ duk_idx_t idx = duk_require_normalize_index(-3);
 duk_normalize_index
 
 
-## duk_require_null() 1.0.0stack§
+## duk_require_null() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10880,7 +11431,9 @@ duk_require_null(ctx, -3);
 ```
 
 
-## duk_require_number() 1.0.0stack§
+## duk_require_number() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10904,7 +11457,9 @@ printf("value: %lf\n", (double) duk_require_number(ctx, -3));
 ```
 
 
-## duk_require_object() 2.2.0stack§
+## duk_require_object() 
+
+ 2.2.0stack§
 
 ### プロトタイプ
 
@@ -10929,7 +11484,9 @@ duk_require_object(ctx, -3);
 ```
 
 
-## duk_require_object_coercible() 1.0.0stackobject§
+## duk_require_object_coercible() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -10953,7 +11510,9 @@ duk_require_object_coercible(ctx, -3);
 ```
 
 
-## duk_require_pointer() 1.0.0stack§
+## duk_require_pointer() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -10980,7 +11539,9 @@ printf("my pointer is: %p\n", ptr);
 ```
 
 
-## duk_require_stack() 1.0.0stack§
+## duk_require_stack() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11016,7 +11577,9 @@ duk_require_stack(ctx, nargs);
 duk_check_stack
 
 
-## duk_require_stack_top() 1.0.0stack§
+## duk_require_stack_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11048,7 +11611,9 @@ printf("value stack guaranteed up to index 99\n");
 duk_check_stack_top
 
 
-## duk_require_string() 1.0.0stringstack§
+## duk_require_string() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -11081,7 +11646,9 @@ printf("value is a string: %s\n", buf);
 duk_require_lstring
 
 
-## duk_require_top_index() 1.0.0stack§
+## duk_require_top_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11114,7 +11681,9 @@ printf("index of top element: %ld\n", (long) idx_top);
 duk_get_top_index
 
 
-## duk_require_type_mask() 1.0.0stack§
+## duk_require_type_mask() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11139,7 +11708,9 @@ duk_require_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 ```
 
 
-## duk_require_uint() 1.0.0stack§
+## duk_require_uint() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11163,7 +11734,9 @@ printf("unsigned int value: %lu\n", (unsigned long) duk_require_uint(ctx, -3));
 ```
 
 
-## duk_require_undefined() 1.0.0stack§
+## duk_require_undefined() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11188,7 +11761,9 @@ duk_require_undefined(ctx, -3);
 ```
 
 
-## duk_require_valid_index() 1.0.0stack§
+## duk_require_valid_index() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11217,7 +11792,9 @@ printf("index -3 is valid\n");
 duk_is_valid_index
 
 
-## duk_resize_buffer() 1.0.0stackbuffer§
+## duk_resize_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -11243,7 +11820,9 @@ ptr = duk_resize_buffer(ctx, -3, 4096);
 ```
 
 
-## duk_resume() 1.6.0thread§
+## duk_resume() 
+
+ 1.6.0thread§
 
 ### プロトタイプ
 
@@ -11271,7 +11850,9 @@ duk_suspend() で一時停止した Duktape の実行を再開します。state 
 duk_suspend
 
 
-## duk_safe_call() 1.0.0protectedcall§
+## duk_safe_call() 
+
+ 1.0.0protectedcall§
 
 ### プロトタイプ
 
@@ -11374,7 +11955,9 @@ duk_pop_2(ctx);
 ```
 
 
-## duk_safe_to_lstring() 1.0.0stringstack§
+## duk_safe_to_lstring() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -11419,7 +12002,9 @@ duk_pop(ctx);
 duk_to_lstring
 
 
-## duk_safe_to_stacktrace() 2.4.0stringstackprotected§
+## duk_safe_to_stacktrace() 
+
+ 2.4.0stringstackprotected§
 
 ### プロトタイプ
 
@@ -11468,7 +12053,9 @@ duk_safe_to_string
 duk_to_stacktrace
 
 
-## duk_safe_to_string() 1.0.0stringstackprotected§
+## duk_safe_to_string() 
+
+ 1.0.0stringstackprotected§
 
 ### プロトタイプ
 
@@ -11540,7 +12127,9 @@ duk_pop(ctx);
 duk_to_string
 
 
-## duk_samevalue() 2.0.0compare§
+## duk_samevalue() 
+
+ 2.0.0compare§
 
 ### プロトタイプ
 
@@ -11566,7 +12155,9 @@ if (duk_samevalue(ctx, -3, -7)) {
 ```
 
 
-## duk_seal() 2.2.0propertyobject§
+## duk_seal() 
+
+ 2.2.0propertyobject§
 
 ### プロトタイプ
 
@@ -11591,7 +12182,9 @@ duk_seal(ctx, -3);
 ```
 
 
-## duk_set_finalizer() 1.0.0objectfinalizer§
+## duk_set_finalizer() 
+
+ 1.0.0objectfinalizer§
 
 ### プロトタイプ
 
@@ -11629,7 +12222,9 @@ duk_set_finalizer(ctx, -2);
 duk_get_finalizer
 
 
-## duk_set_global_object() 1.0.0threadstacksandbox§
+## duk_set_global_object() 
+
+ 1.0.0threadstacksandbox§
 
 ### プロトタイプ
 
@@ -11665,7 +12260,9 @@ duk_set_global_object(ctx);
 ```
 
 
-## duk_set_length() 2.0.0stack§
+## duk_set_length() 
+
+ 2.0.0stack§
 
 ### プロトタイプ
 
@@ -11694,7 +12291,9 @@ duk_set_length(ctx, -3, 0);
 duk_get_length
 
 
-## duk_set_magic() 1.0.0magicfunction§
+## duk_set_magic() 
+
+ 1.0.0magicfunction§
 
 ### プロトタイプ
 
@@ -11723,7 +12322,9 @@ duk_get_current_magic
 duk_get_magic
 
 
-## duk_set_prototype() 1.0.0prototypeobject§
+## duk_set_prototype() 
+
+ 1.0.0prototypeobject§
 
 ### プロトタイプ
 
@@ -11757,7 +12358,9 @@ duk_set_prototype(ctx, -2);  /* [ obj proto ] -> [ obj ] */
 duk_get_prototype
 
 
-## duk_set_top() 1.0.0stack§
+## duk_set_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -11788,7 +12391,9 @@ duk_set_top(ctx, 0);     /* -> top=0, stack: [ ] */
 ```
 
 
-## duk_steal_buffer() 1.3.0stackbuffer§
+## duk_steal_buffer() 
+
+ 1.3.0stackbuffer§
 
 ### プロトタイプ
 
@@ -11845,7 +12450,9 @@ duk_free(ctx, ptr);
 ```
 
 
-## duk_strict_equals() 1.0.0compare§
+## duk_strict_equals() 
+
+ 1.0.0compare§
 
 ### プロトタイプ
 
@@ -11879,7 +12486,9 @@ if (duk_strict_equals(ctx, -3, -7)) {
 duk_equals
 
 
-## duk_substring() 1.0.0string§
+## duk_substring() 
+
+ 1.0.0string§
 
 ### プロトタイプ
 
@@ -11909,7 +12518,9 @@ printf("substring: %s\n", duk_get_string(ctx, -3));
 ```
 
 
-## duk_suspend() 1.6.0thread§
+## duk_suspend() 
+
+ 1.6.0thread§
 
 ### プロトタイプ
 
@@ -11983,7 +12594,9 @@ duk_ret_t my_blocking_connect(duk_context *ctx) {
 duk_resume
 
 
-## duk_swap() 1.0.0stack§
+## duk_swap() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12011,7 +12624,9 @@ duk_swap(ctx, -5, -1);
 duk_swap_top
 
 
-## duk_swap_top() 1.0.0stack§
+## duk_swap_top() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12035,7 +12650,9 @@ duk_swap_top(ctx, -3);
 ```
 
 
-## duk_syntax_error() 2.0.0error§
+## duk_syntax_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -12063,7 +12680,9 @@ return duk_syntax_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_syntax_error_va() 2.0.0varargerror§
+## duk_syntax_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -12098,7 +12717,9 @@ void my_syntax_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_throw() 1.0.0error§
+## duk_throw() 
+
+ 1.0.0error§
 
 ### プロトタイプ
 
@@ -12150,7 +12771,9 @@ duk_error
 duk_push_error_object
 
 
-## duk_time_to_components() 2.0.0time§
+## duk_time_to_components() 
+
+ 2.0.0time§
 
 ### プロトタイプ
 
@@ -12199,7 +12822,9 @@ printf("Weekday is: %s\n", weekdays[(int) comp.weekday]);  /* 0=Sunday */
 duk_components_to_time
 
 
-## duk_to_boolean() 1.0.0stack§
+## duk_to_boolean() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12227,7 +12852,9 @@ if (duk_to_boolean(ctx, -3)) {
 ```
 
 
-## duk_to_buffer() 1.0.0stackbuffer§
+## duk_to_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -12265,7 +12892,9 @@ duk_to_fixed_buffer
 duk_to_dynamic_buffer
 
 
-## duk_to_dynamic_buffer() 1.0.0stackbuffer§
+## duk_to_dynamic_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -12290,7 +12919,9 @@ void *buf = duk_to_dynamic_buffer(ctx, -3, &sz);
 ```
 
 
-## duk_to_fixed_buffer() 1.0.0stackbuffer§
+## duk_to_fixed_buffer() 
+
+ 1.0.0stackbuffer§
 
 ### プロトタイプ
 
@@ -12315,7 +12946,9 @@ void *buf = duk_to_fixed_buffer(ctx, -3, &sz);
 ```
 
 
-## duk_to_int() 1.0.0stack§
+## duk_to_int() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12352,7 +12985,9 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 ```
 
 
-## duk_to_int32() 1.0.0stack§
+## duk_to_int32() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12378,7 +13013,9 @@ printf("ToInt32(): %ld\n", (long) duk_to_int32(ctx, -3));
 ```
 
 
-## duk_to_lstring() 1.0.0stringstack§
+## duk_to_lstring() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -12412,7 +13049,9 @@ printf("coerced string: %s (length %lu)\n", ptr, (unsigned long) sz);
 duk_safe_to_lstring
 
 
-## duk_to_null() 1.0.0stack§
+## duk_to_null() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12437,7 +13076,9 @@ duk_to_null(ctx, -3);
 ```
 
 
-## duk_to_number() 1.0.0stack§
+## duk_to_number() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12463,7 +13104,9 @@ printf("coerced number: %lf\n", (double) duk_to_number(ctx, -3));
 ```
 
 
-## duk_to_object() 1.0.0stackobject§
+## duk_to_object() 
+
+ 1.0.0stackobject§
 
 ### プロトタイプ
 
@@ -12494,7 +13137,9 @@ duk_to_object(ctx, -3);
 ```
 
 
-## duk_to_pointer() 1.0.0stack§
+## duk_to_pointer() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12525,7 +13170,9 @@ printf("coerced pointer: %p\n", duk_to_pointer(ctx, -3));
 ```
 
 
-## duk_to_primitive() 1.0.0stack§
+## duk_to_primitive() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12557,7 +13204,9 @@ duk_to_primitive(ctx, -3, DUK_HINT_NUMBER);
 ```
 
 
-## duk_to_stacktrace() 2.4.0stringstack§
+## duk_to_stacktrace() 
+
+ 2.4.0stringstack§
 
 ### プロトタイプ
 
@@ -12609,7 +13258,9 @@ duk_to_string
 duk_safe_to_stacktrace
 
 
-## duk_to_string() 1.0.0stringstack§
+## duk_to_string() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -12642,7 +13293,9 @@ duk_safe_to_string
 duk_buffer_to_string
 
 
-## duk_to_uint() 1.0.0stack§
+## duk_to_uint() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12668,7 +13321,9 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 ```
 
 
-## duk_to_uint16() 1.0.0stack§
+## duk_to_uint16() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12694,7 +13349,9 @@ printf("ToUint16(): %u\n", (unsigned int) duk_to_uint16(ctx, -3));
 ```
 
 
-## duk_to_uint32() 1.0.0stack§
+## duk_to_uint32() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12720,7 +13377,9 @@ printf("ToUint32(): %lu\n", (unsigned long) duk_to_uint32(ctx, -3));
 ```
 
 
-## duk_to_undefined() 1.0.0stack§
+## duk_to_undefined() 
+
+ 1.0.0stack§
 
 ### プロトタイプ
 
@@ -12745,7 +13404,9 @@ duk_to_undefined(ctx, -3);
 ```
 
 
-## duk_trim() 1.0.0stringstack§
+## duk_trim() 
+
+ 1.0.0stringstack§
 
 ### プロトタイプ
 
@@ -12771,7 +13432,9 @@ duk_trim(ctx, -3);
 ```
 
 
-## duk_type_error() 2.0.0error§
+## duk_type_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -12799,7 +13462,9 @@ return duk_type_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_type_error_va() 2.0.0varargerror§
+## duk_type_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -12834,7 +13499,9 @@ void my_type_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_uri_error() 2.0.0error§
+## duk_uri_error() 
+
+ 2.0.0error§
 
 ### プロトタイプ
 
@@ -12862,7 +13529,9 @@ return duk_uri_error(ctx, "my error: %d", (int) argval);
 duk_error
 
 
-## duk_uri_error_va() 2.0.0varargerror§
+## duk_uri_error_va() 
+
+ 2.0.0varargerror§
 
 ### プロトタイプ
 
@@ -12897,7 +13566,9 @@ void my_uri_error(duk_context *ctx, const char *fmt, ...) {
 duk_error_va
 
 
-## duk_xcopy_top() 1.0.0stackslice§
+## duk_xcopy_top() 
+
+ 1.0.0stackslice§
 
 ### プロトタイプ
 
@@ -12927,7 +13598,9 @@ duk_xcopy_top(new_ctx, ctx, 7);
 duk_xmove_top
 
 
-## duk_xmove_top() 1.0.0stackslice§
+## duk_xmove_top() 
+
+ 1.0.0stackslice§
 
 ### プロトタイプ
 
