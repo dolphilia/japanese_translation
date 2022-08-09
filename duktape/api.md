@@ -431,7 +431,7 @@ duk_gc() のフラグ。
 ### タグ別APIコール
 
 - 1.0.0
- - [duk_alloc]
+ - [duk_alloc](#duk_alloc)
  - [duk_alloc_raw]
  - [duk_base64_decode]
  - [duk_base64_encode]
@@ -1392,6 +1392,8 @@ duk_gc() のフラグ。
 
 
 ## duk_alloc()
+
+1.0.0 memory
 
 ### プロトタイプ
 
