@@ -316,60 +316,60 @@ typedef struct duk_number_list_entry duk_number_list_entry;
 
 duk_error() などで使用されるエラーコードです。
 
-- DUK_ERR_NONE: No error, e.g. from duk_get_error_code()
-- DUK_ERR_ERROR: Error
-- DUK_ERR_EVAL_ERROR: EvalError
-- DUK_ERR_RANGE_ERROR: RangeError
-- DUK_ERR_REFERENCE_ERROR: ReferenceError
-- DUK_ERR_SYNTAX_ERROR: SyntaxError
-- DUK_ERR_TYPE_ERROR: TypeError
-- DUK_ERR_URI_ERROR: URIError
+- duk_err_none:エラーなし。例えば duk_get_error_code() から。
+- DUK_ERR_ERROR: エラー。
+- DUK_ERR_EVAL_ERROR: EvalError。
+- DUK_ERR_RANGE_ERROR:RangeError：レンジエラー
+- DUK_ERR_REFERENCE_ERROR:リファレンス・エラー
+- DUK_ERR_SYNTAX_ERROR: 構文エラー
+- DUK_ERR_TYPE_ERROR: TypeError (タイプエラー)
+- DUK_ERR_URI_ERROR: URIエラー
 
 
 ### Duktape/C関数のリターンコード
 
 例えば return DUK_RET_TYPE_ERROR は duk_type_error() を呼び出すのと似ていますが、より短いものです。
 
-- DUK_RET_ERROR: Similar to throwing with DUK_ERR_ERROR
-- DUK_RET_EVAL_ERROR: Similar to throwing with DUK_ERR_EVAL_ERROR
-- DUK_RET_RANGE_ERROR: Similar to throwing with DUK_ERR_RANGE_ERROR
-- DUK_RET_REFERENCE_ERROR: Similar to throwing with DUK_ERR_REFERENCE_ERROR
-- DUK_RET_SYNTAX_ERROR: Similar to throwing with DUK_ERR_SYNTAX_ERROR
-- DUK_RET_TYPE_ERROR: Similar to throwing with DUK_ERR_TYPE_ERROR
-- DUK_RET_URI_ERROR: Similar to throwing with DUK_ERR_URI_ERROR
+- DUK_RET_ERROR: DUK_ERR_ERROR と一緒に投げるのと似ています。
+- DUK_RET_EVAL_ERROR: DUK_ERR_EVAL_ERROR での投擲と同様です。
+- DUK_RET_RANGE_ERROR: DUK_ERR_RANGE_ERROR でのスローイングに似ている
+- DUK_RET_REFERENCE_ERROR: DUK_ERR_REFERENCE_ERROR と一緒に投げるのと似ている
+- DUK_RET_SYNTAX_ERROR: DUK_ERR_SYNTAX_ERROR とスローするのと似ています。
+- DUK_RET_TYPE_ERROR: DUK_ERR_TYPE_ERROR とスローするのと似ている
+- DUK_RET_URI_ERROR: DUK_ERR_URI_ERROR とスローするのと似ている
 
 
 ### 保護された呼び出しのためのリターンコード
 
 保護された呼び出し（例：duk_safe_call()、duk_pcall()）に対するリターンコード。
 
-- DUK_EXEC_SUCCESS: Call finished without error
-- DUK_EXEC_ERROR: Call failed, error was caught
+- duk_exec_success:呼び出しはエラーなしで終了
+- duk_exec_error:呼び出しに失敗、エラーは捕捉された
 
 
 ### duk_compileのためのコンパイルフラグ
 
 duk_compile() や duk_eval() などのためのコンパイルフラグです。
 
-- DUK_COMPILE_EVAL: Compile eval code (instead of program)
-- DUK_COMPILE_FUNCTION: Compile function code (instead of program)
-- DUK_COMPILE_STRICT: Use strict (outer) context for program, eval, or function
+- DUK_COMPILE_EVAL: (プログラムではなく)評価コードをコンパイルする
+- DUK_COMPILE_FUNCTION: (プログラムの代わりに)関数コードをコンパイルする
+- DUK_COMPILE_STRICT:プログラム、eval、または関数に対して、厳密な（外側の）コンテキストを使用する
 
 
 ### duk_def_propのフラグについて
 
 duk_def_prop() とその派生型のためのフラグです。
 
-- DUK_DEFPROP_WRITABLE: Set writable (effective if DUK_DEFPROP_HAVE_WRITABLE set)
-- DUK_DEFPROP_ENUMERABLE: Set enumerable (effective if DUK_DEFPROP_HAVE_ENUMERABLE set)
-- DUK_DEFPROP_CONFIGURABLE: Set configurable (effective if DUK_DEFPROP_HAVE_CONFIGURABLE set)
-- DUK_DEFPROP_HAVE_WRITABLE: Set/clear writable
-- DUK_DEFPROP_HAVE_ENUMERABLE: Set/clear enumerable
-- DUK_DEFPROP_HAVE_CONFIGURABLE: Set/clear configurable
-- DUK_DEFPROP_HAVE_VALUE: Set value (given on value stack)
-- DUK_DEFPROP_HAVE_GETTER: Set getter (given on value stack)
-- DUK_DEFPROP_HAVE_SETTER: Set setter (given on value stack)
-- DUK_DEFPROP_FORCE: Force change if possible, may still fail for e.g. virtual properties
+- DUK_DEFPROP_WRITABLE: 書き込み可能に設定する (DUK_DEFPROP_HAVE_WRITABLE が設定されている場合のみ有効)。
+- DUK_DEFPROP_ENUMERABLE: 列挙可能に設定する（DUK_DEFPROP_HAVE_ENUMERABLEが設定されている場合に有効）。
+- DUK_DEFPROP_CONFIGURABLE: 設定可能 (DUK_DEFPROP_HAVE_CONFIGURABLE が設定されている場合のみ有効)
+- DUK_DEFPROP_HAVE_WRITABLE: 書き込み可能かどうかを設定/解除する
+- DUK_DEFPROP_HAVE_ENUMERABLE: 列挙可能を設定または解除します。
+- DUK_DEFPROP_HAVE_CONFIGURABLE: コンフィギュラブルを設定/解除します。
+- DUK_DEFPROP_HAVE_VALUE: 値を設定します (値スタックで指定されます)。
+- DUK_DEFPROP_HAVE_GETTER: ゲッターを設定します (値スタックに保存されます)
+- DUK_DEFPROP_HAVE_SETTER: (値スタックにある)セッターを設定する
+- DUK_DEFPROP_FORCE:可能であれば変更を強制。仮想プロパティなどではまだ失敗する可能性がある。
 - DUK_DEFPROP_SET_WRITABLE: (DUK_DEFPROP_HAVE_WRITABLE | DUK_DEFPROP_WRITABLE)
 - DUK_DEFPROP_CLEAR_WRITABLE: DUK_DEFPROP_HAVE_WRITABLE
 - DUK_DEFPROP_SET_ENUMERABLE: (DUK_DEFPROP_HAVE_ENUMERABLE | DUK_DEFPROP_ENUMERABLE)
@@ -384,48 +384,48 @@ duk_def_prop() とその派生型のためのフラグです。
 
 duk_enum() の列挙フラグ。
 
-- DUK_ENUM_INCLUDE_NONENUMERABLE: Enumerate non-numerable properties in addition to enumerable
-- DUK_ENUM_INCLUDE_HIDDEN: Enumerate hidden Symbols too (in Duktape 1.x called internal properties)
-- DUK_ENUM_INCLUDE_SYMBOLS: Enumerate Symbol keys (default is not to enumerate them)
-- DUK_ENUM_EXCLUDE_STRINGS: Do not enumerate string keys (default is to enumerate them)
-- DUK_ENUM_OWN_PROPERTIES_ONLY: Don't walk prototype chain, only check own properties
-- DUK_ENUM_ARRAY_INDICES_ONLY: Only enumerate array indices
-- DUK_ENUM_SORT_ARRAY_INDICES: Sort array indices (applied to full enumeration result, including inherited array indices)
-- DUK_ENUM_NO_PROXY_BEHAVIOR: Enumerate a proxy object itself without invoking proxy behavior
+- DUK_ENUM_INCLUDE_NONENUMERABLE: 列挙可能なプロパティに加え、列挙不可能なプロパティも列挙する。
+- DUK_ENUM_INCLUDE_HIDDEN: 隠されたシンボルも列挙する (Duktape 1.x では内部プロパティと呼ばれる)
+- DUK_ENUM_INCLUDE_SYMBOLS: シンボルを列挙する。Symbolのキーを列挙する (デフォルトは列挙しない)
+- DUK_ENUM_EXCLUDE_STRINGS: 文字列のキーを列挙しない（デフォルトは列挙する）
+- DUK_ENUM_OWN_PROPERTIES_ONLY: プロトタイプチェーンは歩かず、自身のプロパティのみをチェックする
+- DUK_ENUM_ARRAY_INDICES_ONLY: 配列のインデックスのみを列挙する
+- DUK_ENUM_SORT_ARRAY_INDICES: 配列インデックスのソート(継承された配列インデックスを含む全列挙結果に適用)
+- DUK_ENUM_NO_PROXY_BEHAVIOR: プロキシ動作を起動せず、プロキシオブジェクト自体を列挙する。
 
 
 ### duk_gcのガーベッジコレクションフラグ
 
 duk_gc() のフラグ。
 
-- DUK_GC_COMPACT: Compact heap objects
+- DUK_GC_COMPACT: ヒープオブジェクトをコンパクトに
 
 
 ### 強制力のヒント
 
 強制力のヒント
 
-- DUK_HINT_NONE: Prefer number, unless coercion input is a Date, in which case prefer string (E5 Section 8.12.8)
-- DUK_HINT_STRING: Prefer string
-- DUK_HINT_NUMBER: Prefer number
+- DUK_HINT_NONE: 強制入力が Date でない場合は、String を優先する（E5 8.12.8 セクション）。
+- DUK_HINT_STRING: 文字列を優先する
+- DUK_HINT_NUMBER: 数値を優先する
 
 
 ### シンボルリテラルマクロ
 
 以下のマクロは、C リテラルとして内部 Symbol 表現を作成するために定義されています。すべての引数は文字列リテラルでなければならず、計算値であってはなりません。
 
-- DUK_HIDDEN_SYMBOL(x): A C literal for a Duktape specific hidden Symbol
-- DUK_GLOBAL_SYMBOL(x): A C literal for a global symbol, equivalent to Symbol.for(x)
-- DUK_LOCAL_SYMBOL(x,uniq): A C literal for a local symbol, equivalent to Symbol(x), unique part provided in 'uniq' must not conflict with Duktape internal format, recommendation is to prefix the unique part with a "!"
-- DUK_WELLKNOWN_SYMBOL(x): A C literal for a well-known symbol like Symbol.iterator
-- DUK_INTERNAL_SYMBOL(x): A C literal for a Duktape internal symbol; an application shouldn't normally use this macro at all, it is reserved for Duktape internal symbols only (with no versioning guarantees)
+- DUK_HIDDEN_SYMBOL(x): Duktape固有の隠しシンボルのCリテラル。
+- DUK_GLOBAL_SYMBOL(x): グローバルシンボルのCリテラル。Symbol.for(x)と同等。
+- DUK_LOCAL_SYMBOL(x,uniq): ローカルシンボルのCリテラル、Symbol(x)と同等、'uniq'で提供されるユニークパートはDuktape内部フォーマットと衝突してはならない、推奨はユニークパートの前に"!"をつけること。
+- DUK_WELLKNOWN_SYMBOL(x): Symbol.iteratorのようなよく知られたシンボルを表すCリテラル
+- DUK_INTERNAL_SYMBOL(x): Duktape内部シンボルのCリテラル。アプリケーションは通常このマクロを全く使うべきでなく、Duktape内部シンボルのみに予約されています（バージョン保証なし）。
 
 
 ### その他の定義
 
-- DUK_INVALID_INDEX: Stack index is invalid, missing, or n/a
-- DUK_VARARGS: Function takes variable arguments
-- DUK_API_ENTRY_STACK: Number of value stack entries guaranteed to be reserved at function entry
+- DUK_INVALID_INDEX: スタックインデックスが無効、なし、またはn/aです。
+- DUK_VARARGS: 関数が変数の引数を取る
+- DUK_API_ENTRY_STACK: 関数エントリ時に確保が保証されている値スタックエントリ数
 
 
 ### タグ別APIコール
