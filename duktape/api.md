@@ -6148,7 +6148,7 @@ void duk_insert(duk_context *ctx, duk_idx_t to_idx);
 
 ### スタック
 
-| ... | old(to_idx) | ... | val -> | ... | val(to_idx) | old | ... |
+| ... | old(to_idx) | ... | val | -> | ... | val(to_idx) | old | ... |
 
 ### 要約
 
@@ -10284,7 +10284,7 @@ duk_bool_t duk_put_global_heapptr(duk_context *ctx, void *ptr);
 
 ### スタック
 
-| ... | val -> | ... |
+| ... | val | -> | ... |
 
 ### 要約
 
@@ -10317,7 +10317,7 @@ duk_bool_t duk_put_global_literal(duk_context *ctx, const char *key_literal);
 
 ### スタック
 
-| ... | val -> | ... |
+| ... | val | -> | ... |
 
 ### 要約
 
@@ -10350,7 +10350,7 @@ duk_bool_t duk_put_global_lstring(duk_context *ctx, const char *key, duk_size_t 
 
 ### スタック
 
-| ... | val -> | ... |
+| ... | val | -> | ... |
 
 ### 要約
 
@@ -10383,7 +10383,7 @@ duk_bool_t duk_put_global_string(duk_context *ctx, const char *key);
 
 ### スタック
 
-| ... | val -> | ... |
+| ... | val | -> | ... |
 
 ### 要約
 
