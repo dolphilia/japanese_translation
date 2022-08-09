@@ -1396,7 +1396,7 @@ duk_gc() のフラグ。
 
 
 
-1.0.0 memory
+1.0.0  memory
 
 ### プロトタイプ
 
@@ -1439,7 +1439,7 @@ if (buf) {
 
 
 
-1.0.0 memory
+1.0.0  memory
 
 
 ### プロトタイプ
@@ -1478,7 +1478,7 @@ if (buf) {
 
  
 
- 1.0.0codecbase64§
+1.0.0 codecbase64§
 
 ### プロトタイプ
 
@@ -1514,7 +1514,7 @@ duk_base64_encode
 
 ## duk_base64_encode() 
 
- 1.0.0codecbase64§
+1.0.0 codecbase64§
 
 ### プロトタイプ
 
@@ -1550,7 +1550,7 @@ duk_base64_decode
 
 ## duk_buffer_to_string() 
 
- 2.0.0stringstackbuffer§
+2.0.0 stringstackbuffer§
 
 ### プロトタイプ
 
@@ -1589,7 +1589,7 @@ duk_pop(ctx);
 
 ## duk_call() 
 
- 1.0.0call§
+1.0.0 call§
 
 ### プロトタイプ
 
@@ -1643,7 +1643,7 @@ duk_call_prop
 
 ## duk_call_method() 
 
- 1.0.0call§
+1.0.0 call§
 
 ### プロトタイプ
 
@@ -1693,7 +1693,7 @@ duk_pop(ctx);
 
 ## duk_call_prop() 
 
- 1.0.0propertycall§
+1.0.0 propertycall§
 
 ### プロトタイプ
 
@@ -1744,7 +1744,7 @@ duk_pop(ctx);
 
 ## duk_cbor_decode() 
 
- 2.5.0experimentalcodeccbor§
+2.5.0 experimentalcodeccbor§
 
 ### プロトタイプ
 
@@ -1775,7 +1775,7 @@ duk_cbor_encode
 
 ## duk_cbor_encode() 
 
- 2.5.0experimentalcodeccbor§
+2.5.0 experimentalcodeccbor§
 
 ### プロトタイプ
 
@@ -1815,7 +1815,7 @@ duk_cbor_decode
 
 ## duk_char_code_at() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -1842,7 +1842,7 @@ printf("char code at char index 12: %ld\n", (long) duk_char_code_at(ctx, -3, 12)
 
 ## duk_check_stack() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -1888,7 +1888,7 @@ duk_require_stack
 
 ## duk_check_stack_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -1927,7 +1927,7 @@ duk_require_stack_top
 
 ## duk_check_type() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -1955,7 +1955,7 @@ if (duk_check_type(ctx, -3, DUK_TYPE_NUMBER)) {
 
 ## duk_check_type_mask() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -1984,7 +1984,7 @@ if (duk_check_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 
 ## duk_compact() 
 
- 1.0.0propertyobjectmemory§
+1.0.0 propertyobjectmemory§
 
 ### プロトタイプ
 
@@ -2021,7 +2021,7 @@ duk_compact(ctx, -1);                           /* [ ... obj ] */
 
 ## duk_compile() 
 
- 1.0.0compile§
+1.0.0 compile§
 
 ### プロトタイプ
 
@@ -2148,7 +2148,7 @@ duk_compile_lstring_filename
 
 ## duk_compile_lstring() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -2178,7 +2178,7 @@ duk_compile_lstring(ctx, 0, src, len);
 
 ## duk_compile_lstring_filename() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -2209,7 +2209,7 @@ duk_compile_lstring_filename(ctx, 0, src, len);
 
 ## duk_compile_string() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -2236,7 +2236,7 @@ duk_compile_string(ctx, 0, "print('program code');");
 
 ## duk_compile_string_filename() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -2264,7 +2264,7 @@ duk_compile_string_filename(ctx, 0, "print('program code');");
 
 ## duk_components_to_time() 
 
- 2.0.0time§
+2.0.0 time§
 
 ### プロトタイプ
 
@@ -2315,7 +2315,7 @@ duk_time_to_components
 
 ## duk_concat() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -2354,7 +2354,7 @@ duk_join
 
 ## duk_config_buffer() 
 
- 1.3.0stackbuffer§
+1.3.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -2388,7 +2388,7 @@ duk_push_external_buffer
 
 ## duk_copy() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -2429,7 +2429,7 @@ duk_replace
 
 ## duk_create_heap() 
 
- 1.0.0heap§
+1.0.0 heap§
 
 ### プロトタイプ
 
@@ -2497,7 +2497,7 @@ duk_destroy_heap
 
 ## duk_create_heap_default() 
 
- 1.0.0heap§
+1.0.0 heap§
 
 ### プロトタイプ
 
@@ -2537,7 +2537,7 @@ if (ctx) {
 
 ## duk_debugger_attach() 
 
- 1.2.0debugger§
+1.2.0 debugger§
 
 ### プロトタイプ
 
@@ -2599,7 +2599,7 @@ duk_debugger_notify
 
 ## duk_debugger_cooperate() 
 
- 1.2.0debugger§
+1.2.0 debugger§
 
 ### プロトタイプ
 
@@ -2631,7 +2631,7 @@ duk_debugger_detach
 
 ## duk_debugger_detach() 
 
- 1.2.0debugger§
+1.2.0 debugger§
 
 ### プロトタイプ
 
@@ -2663,7 +2663,7 @@ duk_debugger_cooperate
 
 ## duk_debugger_notify() 
 
- 1.5.0debugger§
+1.5.0 debugger§
 
 ### プロトタイプ
 
@@ -2707,7 +2707,7 @@ if (duk_debugger_notify(ctx, 4 /*nvalues*/)) {
 
 ## duk_debugger_pause() 
 
- 1.5.0debugger§
+1.5.0 debugger§
 
 ### プロトタイプ
 
@@ -2740,7 +2740,7 @@ if (key_pressed == KEY_F12) {
 
 ## duk_decode_string() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -2775,7 +2775,7 @@ duk_map_string
 
 ## duk_def_prop() 
 
- 1.1.0sandboxproperty§
+1.1.0 sandboxproperty§
 
 ### プロトタイプ
 
@@ -3001,7 +3001,7 @@ duk_get_prop_desc
 
 ## duk_del_prop() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -3054,7 +3054,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_heapptr() 
 
- 2.2.0propertyheapptrborrowed§
+2.2.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -3096,7 +3096,7 @@ duk_del_prop_literal
 
 ## duk_del_prop_index() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -3135,7 +3135,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -3172,7 +3172,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -3209,7 +3209,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -3246,7 +3246,7 @@ duk_del_prop_heapptr
 
 ## duk_destroy_heap() 
 
- 1.0.0heap§
+1.0.0 heap§
 
 ### プロトタイプ
 
@@ -3275,7 +3275,7 @@ duk_destroy_heap(ctx);
 
 ## duk_dump_function() 
 
- 1.3.0stackbytecode§
+1.3.0 stackbytecode§
 
 ### プロトタイプ
 
@@ -3308,7 +3308,7 @@ duk_load_function
 
 ## duk_dup() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -3340,7 +3340,7 @@ duk_dup_top
 
 ## duk_dup_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -3370,7 +3370,7 @@ duk_dup_top(ctx);        /* -> [ ... 123 234 234 ] */
 
 ## duk_enum() 
 
- 1.0.0propertyobject§
+1.0.0 propertyobject§
 
 ### プロトタイプ
 
@@ -3423,7 +3423,7 @@ duk_next
 
 ## duk_equals() 
 
- 1.0.0compare§
+1.0.0 compare§
 
 ### プロトタイプ
 
@@ -3459,7 +3459,7 @@ duk_strict_equals
 
 ## duk_error() 
 
- 1.0.0error§
+1.0.0 error§
 
 ### プロトタイプ
 
@@ -3517,7 +3517,7 @@ duk_uri_error
 
 ## duk_error_va() 
 
- 1.1.0varargerror§
+1.1.0 varargerror§
 
 ### プロトタイプ
 
@@ -3563,7 +3563,7 @@ duk_uri_error_va
 
 ## duk_eval() 
 
- 1.0.0compile§
+1.0.0 compile§
 
 ### プロトタイプ
 
@@ -3617,7 +3617,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -3647,7 +3647,7 @@ duk_error
 
 ## duk_eval_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -3684,7 +3684,7 @@ duk_error_va
 
 ## duk_eval_lstring() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -3720,7 +3720,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_lstring_noresult() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -3750,7 +3750,7 @@ duk_eval_lstring_noresult(ctx, src, len);
 
 ## duk_eval_noresult() 
 
- 1.0.0compile§
+1.0.0 compile§
 
 ### プロトタイプ
 
@@ -3782,7 +3782,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_string() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -3815,7 +3815,7 @@ duk_eval_string_noresult
 
 ## duk_eval_string_noresult() 
 
- 1.0.0stringcompile§
+1.0.0 stringcompile§
 
 ### プロトタイプ
 
@@ -3842,7 +3842,7 @@ duk_eval_string_noresult(ctx, "print('testString'.toUpperCase())");
 
 ## duk_fatal() 
 
- 1.0.0error§
+1.0.0 error§
 
 ### プロトタイプ
 
@@ -3878,7 +3878,7 @@ duk_fatal(ctx, "assumption failed");
 
 ## duk_free() 
 
- 1.0.0memory§
+1.0.0 memory§
 
 ### プロトタイプ
 
@@ -3915,7 +3915,7 @@ duk_free_raw
 
 ## duk_free_raw() 
 
- 1.0.0memory§
+1.0.0 memory§
 
 ### プロトタイプ
 
@@ -3951,7 +3951,7 @@ duk_free
 
 ## duk_freeze() 
 
- 2.2.0propertyobject§
+2.2.0 propertyobject§
 
 ### プロトタイプ
 
@@ -3978,7 +3978,7 @@ duk_freeze(ctx, -3);
 
 ## duk_gc() 
 
- 1.0.0memoryheap§
+1.0.0 memoryheap§
 
 ### プロトタイプ
 
@@ -4012,7 +4012,7 @@ duk_gc(ctx, 0);
 
 ## duk_generic_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -4042,7 +4042,7 @@ duk_error
 
 ## duk_generic_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -4079,7 +4079,7 @@ duk_error_va
 
 ## duk_get_boolean() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -4113,7 +4113,7 @@ duk_get_boolean_default
 
 ## duk_get_boolean_default() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -4143,7 +4143,7 @@ duk_get_boolean
 
 ## duk_get_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -4182,7 +4182,7 @@ duk_require_buffer_data
 
 ## duk_get_buffer_data() 
 
- 1.3.0stackbufferobjectbuffer§
+1.3.0 stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -4230,7 +4230,7 @@ duk_require_buffer
 
 ## duk_get_buffer_data_default() 
 
- 2.1.0stackbuffer§
+2.1.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -4267,7 +4267,7 @@ duk_get_buffer_default
 
 ## duk_get_buffer_default() 
 
- 2.1.0stackbuffer§
+2.1.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -4304,7 +4304,7 @@ duk_get_buffer_data_default
 
 ## duk_get_c_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -4338,7 +4338,7 @@ duk_get_c_function_default
 
 ## duk_get_c_function_default() 
 
- 2.1.0stackfunction§
+2.1.0 stackfunction§
 
 ### プロトタイプ
 
@@ -4371,7 +4371,7 @@ duk_get_c_function
 
 ## duk_get_context() 
 
- 1.0.0stackborrowed§
+1.0.0 stackborrowed§
 
 ### プロトタイプ
 
@@ -4425,7 +4425,7 @@ duk_get_context_default
 
 ## duk_get_context_default() 
 
- 2.1.0stackborrowed§
+2.1.0 stackborrowed§
 
 ### プロトタイプ
 
@@ -4458,7 +4458,7 @@ duk_get_context
 
 ## duk_get_current_magic() 
 
- 1.0.0magicfunction§
+1.0.0 magicfunction§
 
 ### プロトタイプ
 
@@ -4502,7 +4502,7 @@ duk_set_magic
 
 ## duk_get_error_code() 
 
- 1.1.0stackerror§
+1.1.0 stackerror§
 
 ### プロトタイプ
 
@@ -4530,7 +4530,7 @@ if (duk_get_error_code(ctx, -3) == DUK_ERR_URI_ERROR) {
 
 ## duk_get_finalizer() 
 
- 1.0.0objectfinalizer§
+1.0.0 objectfinalizer§
 
 ### プロトタイプ
 
@@ -4561,7 +4561,7 @@ duk_set_finalizer
 
 ## duk_get_global_heapptr() 
 
- 2.3.0propertyheapptrborrowed§
+2.3.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4594,7 +4594,7 @@ duk_get_global_literal
 
 ## duk_get_global_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -4631,7 +4631,7 @@ duk_get_global_heapptr
 
 ## duk_get_global_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -4664,7 +4664,7 @@ duk_get_global_heapptr
 
 ## duk_get_global_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -4709,7 +4709,7 @@ duk_get_global_heapptr
 
 ## duk_get_heapptr() 
 
- 1.1.0stackheapptrborrowed§
+1.1.0 stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4761,7 +4761,7 @@ duk_get_heapptr_default
 
 ## duk_get_heapptr_default() 
 
- 2.1.0stackheapptrborrowed§
+2.1.0 stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -4794,7 +4794,7 @@ duk_get_heapptr
 
 ## duk_get_int() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -4816,7 +4816,7 @@ Input	Output
 -Infinity	DUK_INT_MIN
 DUK_INT_MIN - 1	DUK_INT_MIN
 -3.9	-3
-3.9	3
+3.9	3 
 DUK_INT_MAX + 1	DUK_INT_MAX
 +Infinity	DUK_INT_MAX
 NaN	0
@@ -4837,7 +4837,7 @@ duk_get_int_default
 
 ## duk_get_int_default() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -4867,7 +4867,7 @@ duk_get_int
 
 ## duk_get_length() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -4905,7 +4905,7 @@ duk_set_length
 
 ## duk_get_lstring() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -4946,7 +4946,7 @@ duk_get_string_default
 
 ## duk_get_lstring_default() 
 
- 2.1.0stringstack§
+2.1.0 stringstack§
 
 ### プロトタイプ
 
@@ -4980,7 +4980,7 @@ duk_get_string_default
 
 ## duk_get_magic() 
 
- 1.0.0magicfunction§
+1.0.0 magicfunction§
 
 ### プロトタイプ
 
@@ -5012,7 +5012,7 @@ duk_set_magic
 
 ## duk_get_memory_functions() 
 
- 1.0.0memoryheap§
+1.0.0 memoryheap§
 
 ### プロトタイプ
 
@@ -5043,7 +5043,7 @@ duk_get_memory_functions(ctx, &funcs);
 
 ## duk_get_now() 
 
- 2.0.0time§
+2.0.0 time§
 
 ### プロトタイプ
 
@@ -5073,7 +5073,7 @@ print("timestamp: %lf\n", (double) now);
 
 ## duk_get_number() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5103,7 +5103,7 @@ duk_get_number_default
 
 ## duk_get_number_default() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -5133,7 +5133,7 @@ duk_get_number
 
 ## duk_get_pointer() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5162,7 +5162,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_get_pointer_default() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -5195,7 +5195,7 @@ duk_get_pointer
 
 ## duk_get_prop() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -5262,7 +5262,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_desc() 
 
- 2.0.0sandboxproperty§
+2.0.0 sandboxproperty§
 
 ### プロトタイプ
 
@@ -5310,7 +5310,7 @@ duk_def_prop
 
 ## duk_get_prop_heapptr() 
 
- 2.2.0propertyheapptrborrowed§
+2.2.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -5353,7 +5353,7 @@ duk_get_prop_literal
 
 ## duk_get_prop_index() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -5392,7 +5392,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -5429,7 +5429,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -5466,7 +5466,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -5503,7 +5503,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prototype() 
 
- 1.0.0prototypeobject§
+1.0.0 prototypeobject§
 
 ### プロトタイプ
 
@@ -5534,7 +5534,7 @@ duk_set_prototype
 
 ## duk_get_string() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -5575,7 +5575,7 @@ duk_get_lstring_default
 
 ## duk_get_string_default() 
 
- 2.1.0stringstack§
+2.1.0 stringstack§
 
 ### プロトタイプ
 
@@ -5606,7 +5606,7 @@ duk_get_lstring_default
 
 ## duk_get_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5633,7 +5633,7 @@ printf("stack top is %ld\n", (long) duk_get_top(ctx));
 
 ## duk_get_top_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5671,7 +5671,7 @@ duk_require_top_index
 
 ## duk_get_type() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5706,7 +5706,7 @@ duk_check_type_mask
 
 ## duk_get_type_mask() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5743,7 +5743,7 @@ duk_check_type_mask
 
 ## duk_get_uint() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -5765,7 +5765,7 @@ Input	Output
 -Infinity	0
 -1	0
 -3.9	0
-3.9	3
+3.9	3 
 DUK_UINT_MAX + 1	DUK_UINT_MAX
 +Infinity	DUK_UINT_MAX
 NaN	0
@@ -5786,7 +5786,7 @@ duk_get_uint_default
 
 ## duk_get_uint_default() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -5816,7 +5816,7 @@ duk_get_uint
 
 ## duk_has_prop() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -5867,7 +5867,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_heapptr() 
 
- 2.2.0propertyheapptrborrowed§
+2.2.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -5911,7 +5911,7 @@ duk_has_prop_literal
 
 ## duk_has_prop_index() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -5951,7 +5951,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -5989,7 +5989,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -6027,7 +6027,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -6065,7 +6065,7 @@ duk_has_prop_heapptr
 
 ## duk_hex_decode() 
 
- 1.0.0hexcodec§
+1.0.0 hexcodec§
 
 ### プロトタイプ
 
@@ -6102,7 +6102,7 @@ duk_hex_encode
 
 ## duk_hex_encode() 
 
- 1.0.0hexcodec§
+1.0.0 hexcodec§
 
 ### プロトタイプ
 
@@ -6138,7 +6138,7 @@ duk_hex_decode
 
 ## duk_insert() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6174,7 +6174,7 @@ duk_replace
 
 ## duk_inspect_callstack_entry() 
 
- 2.0.0stackinspect§
+2.0.0 stackinspect§
 
 ### プロトタイプ
 
@@ -6210,7 +6210,7 @@ duk_pop_2(ctx);
 
 ## duk_inspect_value() 
 
- 2.0.0stackinspect§
+2.0.0 stackinspect§
 
 ### プロトタイプ
 
@@ -6258,7 +6258,7 @@ duk_pop_2(ctx);
 
 ## duk_instanceof() 
 
- 1.3.0compare§
+1.3.0 compare§
 
 ### プロトタイプ
 
@@ -6291,7 +6291,7 @@ if (duk_instanceof(ctx, idx_val, -1)) {
 
 ## duk_is_array() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6324,7 +6324,7 @@ if (duk_is_array(ctx, -3)) {
 
 ## duk_is_boolean() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6352,7 +6352,7 @@ if (duk_is_boolean(ctx, -3)) {
 
 ## duk_is_bound_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -6382,7 +6382,7 @@ if (duk_is_bound_function(ctx, -3)) {
 
 ## duk_is_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -6414,7 +6414,7 @@ duk_is_buffer_data
 
 ## duk_is_buffer_data() 
 
- 2.0.0stackbufferobjectbuffer§
+2.0.0 stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -6446,7 +6446,7 @@ duk_is_buffer
 
 ## duk_is_c_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -6474,7 +6474,7 @@ if (duk_is_c_function(ctx, -3)) {
 
 ## duk_is_callable() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6504,7 +6504,7 @@ if (duk_is_callable(ctx, -3)) {
 
 ## duk_is_constructable() 
 
- 2.2.0stack§
+2.2.0 stack§
 
 ### プロトタイプ
 
@@ -6532,7 +6532,7 @@ if (duk_is_constructable(ctx, -3)) {
 
 ## duk_is_constructor_call() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6565,7 +6565,7 @@ if (duk_is_constructor_call(ctx)) {
 
 ## duk_is_dynamic_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -6593,7 +6593,7 @@ if (duk_is_dynamic_buffer(ctx, -3)) {
 
 ## duk_is_ecmascript_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -6623,7 +6623,7 @@ if (duk_is_ecmascript_function(ctx, -3)) {
 
 ## duk_is_error() 
 
- 1.1.0stackerror§
+1.1.0 stackerror§
 
 ### プロトタイプ
 
@@ -6654,7 +6654,7 @@ if (duk_is_error(ctx, -3)) {
 
 ## duk_is_eval_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -6682,7 +6682,7 @@ if (duk_is_eval_error(ctx, -3)) {
 
 ## duk_is_fixed_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -6710,7 +6710,7 @@ if (duk_is_fixed_buffer(ctx, -3)) {
 
 ## duk_is_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -6777,7 +6777,7 @@ if (duk_is_lightfunc(ctx, -3)) {
 
 ## duk_is_nan() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6807,7 +6807,7 @@ if (duk_is_nan(ctx, -3)) {
 
 ## duk_is_null() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6835,7 +6835,7 @@ if (duk_is_null(ctx, -3)) {
 
 ## duk_is_null_or_undefined() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6865,7 +6865,7 @@ if (duk_is_null_or_undefined(ctx, -3)) {
 
 ## duk_is_number() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6893,7 +6893,7 @@ if (duk_is_number(ctx, -3)) {
 
 ## duk_is_object() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -6931,7 +6931,7 @@ if (duk_is_object(ctx, -3)) {
 
 ## duk_is_object_coercible() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -6961,7 +6961,7 @@ if (duk_is_object_coercible(ctx, -3)) {
 
 ## duk_is_pointer() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -6989,7 +6989,7 @@ if (duk_is_pointer(ctx, -3)) {
 
 ## duk_is_primitive() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -7019,7 +7019,7 @@ if (duk_is_primitive(ctx, -3)) {
 
 ## duk_is_range_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -7047,7 +7047,7 @@ if (duk_is_range_error(ctx, -3)) {
 
 ## duk_is_reference_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -7075,7 +7075,7 @@ if (duk_is_reference_error(ctx, -3)) {
 
 ## duk_is_strict_call() 
 
- 1.0.0function§
+1.0.0 function§
 
 ### プロトタイプ
 
@@ -7106,7 +7106,7 @@ if (duk_is_strict_call(ctx)) {
 
 ## duk_is_string() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -7135,7 +7135,7 @@ if (duk_is_string(ctx, -3)) {
 
 ## duk_is_symbol() 
 
- 2.0.0symbolstringstack§
+2.0.0 symbolstringstack§
 
 ### プロトタイプ
 
@@ -7164,7 +7164,7 @@ if (duk_is_symbol(ctx, -3)) {
 
 ## duk_is_syntax_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -7192,7 +7192,7 @@ if (duk_is_syntax_error(ctx, -3)) {
 
 ## duk_is_thread() 
 
- 1.0.0threadstack§
+1.0.0 threadstack§
 
 ### プロトタイプ
 
@@ -7220,7 +7220,7 @@ if (duk_is_thread(ctx, -3)) {
 
 ## duk_is_type_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -7248,7 +7248,7 @@ if (duk_is_type_error(ctx, -3)) {
 
 ## duk_is_undefined() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -7276,7 +7276,7 @@ if (duk_is_undefined(ctx, -3)) {
 
 ## duk_is_uri_error() 
 
- 1.4.0stackerror§
+1.4.0 stackerror§
 
 ### プロトタイプ
 
@@ -7304,7 +7304,7 @@ if (duk_is_uri_error(ctx, -3)) {
 
 ## duk_is_valid_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -7338,7 +7338,7 @@ duk_require_valid_index
 
 ## duk_join() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -7377,7 +7377,7 @@ duk_concat
 
 ## duk_json_decode() 
 
- 1.0.0jsoncodec§
+1.0.0 jsoncodec§
 
 ### プロトタイプ
 
@@ -7415,7 +7415,7 @@ duk_json_encode
 
 ## duk_json_encode() 
 
- 1.0.0jsoncodec§
+1.0.0 jsoncodec§
 
 ### プロトタイプ
 
@@ -7453,7 +7453,7 @@ duk_json_decode
 
 ## duk_load_function() 
 
- 1.3.0stackbytecode§
+1.3.0 stackbytecode§
 
 ### プロトタイプ
 
@@ -7490,7 +7490,7 @@ duk_dump_function
 
 ## duk_map_string() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -7531,7 +7531,7 @@ duk_decode_string
 
 ## duk_new() 
 
- 1.0.0objectcall§
+1.0.0 objectcall§
 
 ### プロトタイプ
 
@@ -7573,7 +7573,7 @@ duk_pnew
 
 ## duk_next() 
 
- 1.0.0propertyobject§
+1.0.0 propertyobject§
 
 ### プロトタイプ
 
@@ -7610,7 +7610,7 @@ duk_enum
 
 ## duk_normalize_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -7640,7 +7640,7 @@ duk_require_normalize_index
 
 ## duk_opt_boolean() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -7666,7 +7666,7 @@ duk_bool_t flag_xyz = duk_opt_boolean(ctx, 2, 1);  /* default: true */
 
 ## duk_opt_buffer() 
 
- 2.1.0stackbuffer§
+2.1.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -7704,7 +7704,7 @@ duk_opt_buffer_data
 
 ## duk_opt_buffer_data() 
 
- 2.1.0stackbufferobjectbuffer§
+2.1.0 stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -7742,7 +7742,7 @@ duk_opt_buffer
 
 ## duk_opt_c_function() 
 
- 2.1.0stackfunction§
+2.1.0 stackfunction§
 
 ### プロトタイプ
 
@@ -7771,7 +7771,7 @@ funcptr = duk_opt_c_function(ctx, -3, nop_callback);
 
 ## duk_opt_context() 
 
- 2.1.0stackborrowed§
+2.1.0 stackborrowed§
 
 ### プロトタイプ
 
@@ -7800,7 +7800,7 @@ target_ctx = duk_opt_context(ctx, 2, default_ctx);
 
 ## duk_opt_heapptr() 
 
- 2.1.0stackheapptrborrowed§
+2.1.0 stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -7829,7 +7829,7 @@ ptr = duk_opt_heapptr(ctx, 2, default_ptr);
 
 ## duk_opt_int() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -7855,7 +7855,7 @@ int port = (int) duk_opt_int(ctx, 1, 80);  /* default: 80 */
 
 ## duk_opt_lstring() 
 
- 2.1.0stringstack§
+2.1.0 stringstack§
 
 ### プロトタイプ
 
@@ -7890,7 +7890,7 @@ duk_opt_string
 
 ## duk_opt_number() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -7916,7 +7916,7 @@ double backoff_multiplier = (double) duk_opt_number(ctx, 2, 1.5);  /* default: 1
 
 ## duk_opt_pointer() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -7945,7 +7945,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_opt_string() 
 
- 2.1.0stringstack§
+2.1.0 stringstack§
 
 ### プロトタイプ
 
@@ -7980,7 +7980,7 @@ duk_opt_lstring
 
 ## duk_opt_uint() 
 
- 2.1.0stack§
+2.1.0 stack§
 
 ### プロトタイプ
 
@@ -8006,7 +8006,7 @@ unsigned int count = (unsigned int) duk_opt_uint(ctx, 1, 3);  /* default: 3 */
 
 ## duk_pcall() 
 
- 1.0.0protectedcall§
+1.0.0 protectedcall§
 
 ### プロトタイプ
 
@@ -8093,7 +8093,7 @@ duk_pcall_prop
 
 ## duk_pcall_method() 
 
- 1.0.0protectedcall§
+1.0.0 protectedcall§
 
 ### プロトタイプ
 
@@ -8142,7 +8142,7 @@ duk_pop(ctx);
 
 ## duk_pcall_prop() 
 
- 1.0.0protectedpropertycall§
+1.0.0 protectedpropertycall§
 
 ### プロトタイプ
 
@@ -8182,7 +8182,7 @@ duk_pop(ctx);
 
 ## duk_pcompile() 
 
- 1.0.0protectedcompile§
+1.0.0 protectedcompile§
 
 ### プロトタイプ
 
@@ -8227,7 +8227,7 @@ duk_pcompile_lstring_filename
 
 ## duk_pcompile_lstring() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8264,7 +8264,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_lstring_filename() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8302,7 +8302,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_string() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8336,7 +8336,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_string_filename() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8371,7 +8371,7 @@ duk_pop(ctx);
 
 ## duk_peval() 
 
- 1.0.0protectedcompile§
+1.0.0 protectedcompile§
 
 ### プロトタイプ
 
@@ -8415,7 +8415,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_lstring() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8455,7 +8455,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_lstring_noresult() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8489,7 +8489,7 @@ if (duk_peval_lstring_noresult(ctx, src, len) != 0) {
 
 ## duk_peval_noresult() 
 
- 1.0.0protectedcompile§
+1.0.0 protectedcompile§
 
 ### プロトタイプ
 
@@ -8525,7 +8525,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_string() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8562,7 +8562,7 @@ duk_peval_string_noresult
 
 ## duk_peval_string_noresult() 
 
- 1.0.0stringprotectedcompile§
+1.0.0 stringprotectedcompile§
 
 ### プロトタイプ
 
@@ -8593,7 +8593,7 @@ if (duk_peval_string_noresult(ctx, "print('testString'.toUpperCase());") != 0) {
 
 ## duk_pnew() 
 
- 1.3.0protectedobjectcall§
+1.3.0 protectedobjectcall§
 
 ### プロトタイプ
 
@@ -8638,7 +8638,7 @@ duk_new
 
 ## duk_pop() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -8672,7 +8672,7 @@ duk_pop_n
 
 ## duk_pop_2() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -8698,7 +8698,7 @@ duk_pop_2(ctx);
 
 ## duk_pop_3() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -8724,7 +8724,7 @@ duk_pop_3(ctx);
 
 ## duk_pop_n() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -8750,7 +8750,7 @@ duk_pop_n(ctx, 10);
 
 ## duk_pull() 
 
- 2.5.0stack§
+2.5.0 stack§
 
 ### プロトタイプ
 
@@ -8785,7 +8785,7 @@ duk_remove
 
 ## duk_push_array() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -8825,7 +8825,7 @@ duk_pop(ctx);  /* pop array */
 
 ## duk_push_bare_array() 
 
- 2.4.0stackobject§
+2.4.0 stackobject§
 
 ### プロトタイプ
 
@@ -8858,7 +8858,7 @@ duk_push_bare_object
 
 ## duk_push_bare_object() 
 
- 2.0.0stackobject§
+2.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -8891,7 +8891,7 @@ duk_push_bare_array
 
 ## duk_push_boolean() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -8920,7 +8920,7 @@ duk_push_boolean(ctx, 123);  /* -> [ ... false true true ] */
 
 ## duk_push_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -8964,7 +8964,7 @@ duk_push_external_buffer
 
 ## duk_push_buffer_object() 
 
- 1.3.0stackbufferobject§
+1.3.0 stackbufferobject§
 
 ### プロトタイプ
 
@@ -9036,7 +9036,7 @@ duk_push_external_buffer
 
 ## duk_push_c_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -9142,7 +9142,7 @@ duk_push_c_function
 
 ## duk_push_context_dump() 
 
- 1.0.0stackdebug§
+1.0.0 stackdebug§
 
 ### プロトタイプ
 
@@ -9179,7 +9179,7 @@ duk_pop(ctx);
 
 ## duk_push_current_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -9210,7 +9210,7 @@ duk_push_current_function(ctx);
 
 ## duk_push_current_thread() 
 
- 1.0.0threadstackfunctionborrowed§
+1.0.0 threadstackfunctionborrowed§
 
 ### プロトタイプ
 
@@ -9241,7 +9241,7 @@ duk_push_thread(ctx);
 
 ## duk_push_dynamic_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -9270,7 +9270,7 @@ printf("allocated buffer, data area: %p\n", p);
 
 ## duk_push_error_object() 
 
- 1.0.0stackobjecterror§
+1.0.0 stackobjecterror§
 
 ### プロトタイプ
 
@@ -9304,7 +9304,7 @@ duk_push_error_object_va
 
 ## duk_push_error_object_va() 
 
- 1.1.0varargstackobjecterror§
+1.1.0 varargstackobjecterror§
 
 ### プロトタイプ
 
@@ -9344,7 +9344,7 @@ duk_push_error_object
 
 ## duk_push_external_buffer() 
 
- 1.3.0stackbuffer§
+1.3.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -9396,7 +9396,7 @@ duk_config_buffer
 
 ## duk_push_false() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9422,7 +9422,7 @@ duk_push_false(ctx);
 
 ## duk_push_fixed_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -9451,7 +9451,7 @@ printf("allocated buffer, data area: %p\n", p);
 
 ## duk_push_global_object() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -9477,7 +9477,7 @@ duk_push_global_object(ctx);
 
 ## duk_push_global_stash() 
 
- 1.0.0stashstacksandboxobjectmodule§
+1.0.0 stashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -9513,7 +9513,7 @@ duk_push_thread_stash
 
 ## duk_push_heap_stash() 
 
- 1.0.0stashstacksandboxobjectmodule§
+1.0.0 stashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -9544,7 +9544,7 @@ duk_push_thread_stash
 
 ## duk_push_heapptr() 
 
- 1.1.0stackobjectheapptrborrowed§
+1.1.0 stackobjectheapptrborrowed§
 
 ### プロトタイプ
 
@@ -9588,7 +9588,7 @@ duk_require_heapptr
 
 ## duk_push_int() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9616,7 +9616,7 @@ duk_push_int(ctx, 123);
 
 ## duk_push_literal() 
 
- 2.3.0stackliteral§
+2.3.0 stackliteral§
 
 ### プロトタイプ
 
@@ -9661,7 +9661,7 @@ duk_push_literal(ctx, DUK_HIDDEN_SYMBOL("mySymbol"));
 
 ## duk_push_lstring() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -9698,7 +9698,7 @@ duk_push_lstring(ctx, NULL, 10);  /* push empty string */
 
 ## duk_push_nan() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9726,7 +9726,7 @@ printf("NaN is number: %d\n", (int) duk_is_number(ctx, -1));
 
 ## duk_push_new_target() 
 
- 2.3.0stackfunction§
+2.3.0 stackfunction§
 
 ### プロトタイプ
 
@@ -9753,7 +9753,7 @@ duk_push_new_target(ctx);
 
 ## duk_push_null() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9779,7 +9779,7 @@ duk_push_null(ctx);
 
 ## duk_push_number() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9807,7 +9807,7 @@ duk_push_number(ctx, 123.0);
 
 ## duk_push_object() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -9847,7 +9847,7 @@ duk_push_bare_object
 
 ## duk_push_pointer() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -9875,7 +9875,7 @@ duk_push_pointer(ctx, (void *) p);
 
 ## duk_push_proxy() 
 
- 2.2.0stackobject§
+2.2.0 stackobject§
 
 ### プロトタイプ
 
@@ -9907,7 +9907,7 @@ proxy_idx = duk_push_proxy(ctx, 0);  /* [ target handler ] -> [ proxy ] */
 
 ## duk_push_sprintf() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -9938,7 +9938,7 @@ duk_push_sprintf(ctx, "meaning of life: %d, name: %s", 42, "Zaphod");
 
 ## duk_push_string() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -9973,7 +9973,7 @@ duk_push_string(ctx, NULL);        /* push 'null' */
 
 ## duk_push_this() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -9999,7 +9999,7 @@ duk_push_this(ctx);
 
 ## duk_push_thread() 
 
- 1.0.0threadstackborrowed§
+1.0.0 threadstackborrowed§
 
 ### プロトタイプ
 
@@ -10035,7 +10035,7 @@ duk_push_thread_new_globalenv
 
 ## duk_push_thread_new_globalenv() 
 
- 1.0.0threadstackborrowed§
+1.0.0 threadstackborrowed§
 
 ### プロトタイプ
 
@@ -10071,7 +10071,7 @@ duk_push_thread
 
 ## duk_push_thread_stash() 
 
- 1.0.0threadstashstacksandboxobjectmodule§
+1.0.0 threadstashstacksandboxobjectmodule§
 
 ### プロトタイプ
 
@@ -10104,7 +10104,7 @@ duk_push_global_stash
 
 ## duk_push_true() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -10130,7 +10130,7 @@ duk_push_true(ctx);
 
 ## duk_push_uint() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -10158,7 +10158,7 @@ duk_push_uint(ctx, 123);
 
 ## duk_push_undefined() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -10184,7 +10184,7 @@ duk_push_undefined(ctx);
 
 ## duk_push_vsprintf() 
 
- 1.0.0varargstringstack§
+1.0.0 varargstringstack§
 
 ### プロトタイプ
 
@@ -10227,7 +10227,7 @@ void test(duk_context *ctx) {
 
 ## duk_put_function_list() 
 
- 1.0.0propertymodule§
+1.0.0 propertymodule§
 
 ### プロトタイプ
 
@@ -10274,7 +10274,7 @@ duk_put_number_list
 
 ## duk_put_global_heapptr() 
 
- 2.3.0propertyheapptrborrowed§
+2.3.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -10307,7 +10307,7 @@ duk_put_global_literal
 
 ## duk_put_global_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -10340,7 +10340,7 @@ duk_put_global_heapptr
 
 ## duk_put_global_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -10373,7 +10373,7 @@ duk_put_global_heapptr
 
 ## duk_put_global_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -10415,7 +10415,7 @@ duk_put_global_heapptr
 
 ## duk_put_number_list() 
 
- 1.0.0propertymodule§
+1.0.0 propertymodule§
 
 ### プロトタイプ
 
@@ -10455,7 +10455,7 @@ duk_put_function_list
 
 ## duk_put_prop() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -10508,7 +10508,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_heapptr() 
 
- 2.2.0propertyheapptrborrowed§
+2.2.0 propertyheapptrborrowed§
 
 ### プロトタイプ
 
@@ -10551,7 +10551,7 @@ duk_put_prop_literal
 
 ## duk_put_prop_index() 
 
- 1.0.0property§
+1.0.0 property§
 
 ### プロトタイプ
 
@@ -10589,7 +10589,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_literal() 
 
- 2.3.0propertyliteral§
+2.3.0 propertyliteral§
 
 ### プロトタイプ
 
@@ -10627,7 +10627,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_lstring() 
 
- 2.0.0stringproperty§
+2.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -10665,7 +10665,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_string() 
 
- 1.0.0stringproperty§
+1.0.0 stringproperty§
 
 ### プロトタイプ
 
@@ -10703,7 +10703,7 @@ duk_put_prop_heapptr
 
 ## duk_random() 
 
- 2.3.0random§
+2.3.0 random§
 
 ### プロトタイプ
 
@@ -10732,7 +10732,7 @@ if (duk_random(ctx) <= 0.01) {
 
 ## duk_range_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -10762,7 +10762,7 @@ duk_error
 
 ## duk_range_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -10799,7 +10799,7 @@ duk_error_va
 
 ## duk_realloc() 
 
- 1.0.0memory§
+1.0.0 memory§
 
 ### プロトタイプ
 
@@ -10840,7 +10840,7 @@ duk_realloc_raw
 
 ## duk_realloc_raw() 
 
- 1.0.0memory§
+1.0.0 memory§
 
 ### プロトタイプ
 
@@ -10887,7 +10887,7 @@ duk_realloc
 
 ## duk_reference_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -10917,7 +10917,7 @@ duk_error
 
 ## duk_reference_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -10954,7 +10954,7 @@ duk_error_va
 
 ## duk_remove() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -10983,7 +10983,7 @@ duk_remove(ctx, -2);          /* -> [ 123 345 ] */
 
 ## duk_replace() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11018,7 +11018,7 @@ duk_insert
 
 ## duk_require_boolean() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11046,7 +11046,7 @@ if (duk_require_boolean(ctx, -3)) {
 
 ## duk_require_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -11082,7 +11082,7 @@ duk_get_buffer_data
 
 ## duk_require_buffer_data() 
 
- 1.3.0stackbufferobjectbuffer§
+1.3.0 stackbufferobjectbuffer§
 
 ### プロトタイプ
 
@@ -11118,7 +11118,7 @@ duk_get_buffer
 
 ## duk_require_c_function() 
 
- 1.0.0stackfunction§
+1.0.0 stackfunction§
 
 ### プロトタイプ
 
@@ -11146,7 +11146,7 @@ funcptr = duk_require_c_function(ctx, -3);
 
 ## duk_require_callable() 
 
- 1.4.0stack§
+1.4.0 stack§
 
 ### プロトタイプ
 
@@ -11173,7 +11173,7 @@ duk_require_callable(ctx, -3);
 
 ## duk_require_constructable() 
 
- 2.4.0stack§
+2.4.0 stack§
 
 ### プロトタイプ
 
@@ -11199,7 +11199,7 @@ duk_require_constructable(ctx, 3);
 
 ## duk_require_constructor_call() 
 
- 2.4.0stack§
+2.4.0 stack§
 
 ### プロトタイプ
 
@@ -11226,7 +11226,7 @@ duk_require_constructor_call(ctx);
 
 ## duk_require_context() 
 
- 1.0.0stackborrowed§
+1.0.0 stackborrowed§
 
 ### プロトタイプ
 
@@ -11255,7 +11255,7 @@ new_ctx = duk_require_context(ctx, -1);
 
 ## duk_require_function() 
 
- 1.4.0stack§
+1.4.0 stack§
 
 ### プロトタイプ
 
@@ -11282,7 +11282,7 @@ duk_require_function(ctx, -3);
 
 ## duk_require_heapptr() 
 
- 1.1.0stackheapptrborrowed§
+1.1.0 stackheapptrborrowed§
 
 ### プロトタイプ
 
@@ -11315,7 +11315,7 @@ duk_push_heapptr
 
 ## duk_require_int() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11341,7 +11341,7 @@ printf("int value: %ld\n", (long) duk_require_int(ctx, -3));
 
 ## duk_require_lstring() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -11376,7 +11376,7 @@ duk_require_string
 
 ## duk_require_normalize_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11406,7 +11406,7 @@ duk_normalize_index
 
 ## duk_require_null() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11433,7 +11433,7 @@ duk_require_null(ctx, -3);
 
 ## duk_require_number() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11459,7 +11459,7 @@ printf("value: %lf\n", (double) duk_require_number(ctx, -3));
 
 ## duk_require_object() 
 
- 2.2.0stack§
+2.2.0 stack§
 
 ### プロトタイプ
 
@@ -11486,7 +11486,7 @@ duk_require_object(ctx, -3);
 
 ## duk_require_object_coercible() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -11512,7 +11512,7 @@ duk_require_object_coercible(ctx, -3);
 
 ## duk_require_pointer() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11541,7 +11541,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_require_stack() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11579,7 +11579,7 @@ duk_check_stack
 
 ## duk_require_stack_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11613,7 +11613,7 @@ duk_check_stack_top
 
 ## duk_require_string() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -11648,7 +11648,7 @@ duk_require_lstring
 
 ## duk_require_top_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11683,7 +11683,7 @@ duk_get_top_index
 
 ## duk_require_type_mask() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11710,7 +11710,7 @@ duk_require_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 
 ## duk_require_uint() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11736,7 +11736,7 @@ printf("unsigned int value: %lu\n", (unsigned long) duk_require_uint(ctx, -3));
 
 ## duk_require_undefined() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11763,7 +11763,7 @@ duk_require_undefined(ctx, -3);
 
 ## duk_require_valid_index() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -11794,7 +11794,7 @@ duk_is_valid_index
 
 ## duk_resize_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -11822,7 +11822,7 @@ ptr = duk_resize_buffer(ctx, -3, 4096);
 
 ## duk_resume() 
 
- 1.6.0thread§
+1.6.0 thread§
 
 ### プロトタイプ
 
@@ -11852,7 +11852,7 @@ duk_suspend
 
 ## duk_safe_call() 
 
- 1.0.0protectedcall§
+1.0.0 protectedcall§
 
 ### プロトタイプ
 
@@ -11957,7 +11957,7 @@ duk_pop_2(ctx);
 
 ## duk_safe_to_lstring() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -12004,7 +12004,7 @@ duk_to_lstring
 
 ## duk_safe_to_stacktrace() 
 
- 2.4.0stringstackprotected§
+2.4.0 stringstackprotected§
 
 ### プロトタイプ
 
@@ -12055,7 +12055,7 @@ duk_to_stacktrace
 
 ## duk_safe_to_string() 
 
- 1.0.0stringstackprotected§
+1.0.0 stringstackprotected§
 
 ### プロトタイプ
 
@@ -12129,7 +12129,7 @@ duk_to_string
 
 ## duk_samevalue() 
 
- 2.0.0compare§
+2.0.0 compare§
 
 ### プロトタイプ
 
@@ -12157,7 +12157,7 @@ if (duk_samevalue(ctx, -3, -7)) {
 
 ## duk_seal() 
 
- 2.2.0propertyobject§
+2.2.0 propertyobject§
 
 ### プロトタイプ
 
@@ -12184,7 +12184,7 @@ duk_seal(ctx, -3);
 
 ## duk_set_finalizer() 
 
- 1.0.0objectfinalizer§
+1.0.0 objectfinalizer§
 
 ### プロトタイプ
 
@@ -12224,7 +12224,7 @@ duk_get_finalizer
 
 ## duk_set_global_object() 
 
- 1.0.0threadstacksandbox§
+1.0.0 threadstacksandbox§
 
 ### プロトタイプ
 
@@ -12262,7 +12262,7 @@ duk_set_global_object(ctx);
 
 ## duk_set_length() 
 
- 2.0.0stack§
+2.0.0 stack§
 
 ### プロトタイプ
 
@@ -12293,7 +12293,7 @@ duk_get_length
 
 ## duk_set_magic() 
 
- 1.0.0magicfunction§
+1.0.0 magicfunction§
 
 ### プロトタイプ
 
@@ -12324,7 +12324,7 @@ duk_get_magic
 
 ## duk_set_prototype() 
 
- 1.0.0prototypeobject§
+1.0.0 prototypeobject§
 
 ### プロトタイプ
 
@@ -12360,7 +12360,7 @@ duk_get_prototype
 
 ## duk_set_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -12393,7 +12393,7 @@ duk_set_top(ctx, 0);     /* -> top=0, stack: [ ] */
 
 ## duk_steal_buffer() 
 
- 1.3.0stackbuffer§
+1.3.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -12452,7 +12452,7 @@ duk_free(ctx, ptr);
 
 ## duk_strict_equals() 
 
- 1.0.0compare§
+1.0.0 compare§
 
 ### プロトタイプ
 
@@ -12488,7 +12488,7 @@ duk_equals
 
 ## duk_substring() 
 
- 1.0.0string§
+1.0.0 string§
 
 ### プロトタイプ
 
@@ -12520,7 +12520,7 @@ printf("substring: %s\n", duk_get_string(ctx, -3));
 
 ## duk_suspend() 
 
- 1.6.0thread§
+1.6.0 thread§
 
 ### プロトタイプ
 
@@ -12596,7 +12596,7 @@ duk_resume
 
 ## duk_swap() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -12626,7 +12626,7 @@ duk_swap_top
 
 ## duk_swap_top() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -12652,7 +12652,7 @@ duk_swap_top(ctx, -3);
 
 ## duk_syntax_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -12682,7 +12682,7 @@ duk_error
 
 ## duk_syntax_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -12719,7 +12719,7 @@ duk_error_va
 
 ## duk_throw() 
 
- 1.0.0error§
+1.0.0 error§
 
 ### プロトタイプ
 
@@ -12773,7 +12773,7 @@ duk_push_error_object
 
 ## duk_time_to_components() 
 
- 2.0.0time§
+2.0.0 time§
 
 ### プロトタイプ
 
@@ -12824,7 +12824,7 @@ duk_components_to_time
 
 ## duk_to_boolean() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -12854,7 +12854,7 @@ if (duk_to_boolean(ctx, -3)) {
 
 ## duk_to_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -12894,7 +12894,7 @@ duk_to_dynamic_buffer
 
 ## duk_to_dynamic_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -12921,7 +12921,7 @@ void *buf = duk_to_dynamic_buffer(ctx, -3, &sz);
 
 ## duk_to_fixed_buffer() 
 
- 1.0.0stackbuffer§
+1.0.0 stackbuffer§
 
 ### プロトタイプ
 
@@ -12948,7 +12948,7 @@ void *buf = duk_to_fixed_buffer(ctx, -3, &sz);
 
 ## duk_to_int() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -12987,7 +12987,7 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 
 ## duk_to_int32() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13015,7 +13015,7 @@ printf("ToInt32(): %ld\n", (long) duk_to_int32(ctx, -3));
 
 ## duk_to_lstring() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -13051,7 +13051,7 @@ duk_safe_to_lstring
 
 ## duk_to_null() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13078,7 +13078,7 @@ duk_to_null(ctx, -3);
 
 ## duk_to_number() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13106,7 +13106,7 @@ printf("coerced number: %lf\n", (double) duk_to_number(ctx, -3));
 
 ## duk_to_object() 
 
- 1.0.0stackobject§
+1.0.0 stackobject§
 
 ### プロトタイプ
 
@@ -13139,7 +13139,7 @@ duk_to_object(ctx, -3);
 
 ## duk_to_pointer() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13172,7 +13172,7 @@ printf("coerced pointer: %p\n", duk_to_pointer(ctx, -3));
 
 ## duk_to_primitive() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13206,7 +13206,7 @@ duk_to_primitive(ctx, -3, DUK_HINT_NUMBER);
 
 ## duk_to_stacktrace() 
 
- 2.4.0stringstack§
+2.4.0 stringstack§
 
 ### プロトタイプ
 
@@ -13260,7 +13260,7 @@ duk_safe_to_stacktrace
 
 ## duk_to_string() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -13295,7 +13295,7 @@ duk_buffer_to_string
 
 ## duk_to_uint() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13323,7 +13323,7 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 
 ## duk_to_uint16() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13351,7 +13351,7 @@ printf("ToUint16(): %u\n", (unsigned int) duk_to_uint16(ctx, -3));
 
 ## duk_to_uint32() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13379,7 +13379,7 @@ printf("ToUint32(): %lu\n", (unsigned long) duk_to_uint32(ctx, -3));
 
 ## duk_to_undefined() 
 
- 1.0.0stack§
+1.0.0 stack§
 
 ### プロトタイプ
 
@@ -13406,7 +13406,7 @@ duk_to_undefined(ctx, -3);
 
 ## duk_trim() 
 
- 1.0.0stringstack§
+1.0.0 stringstack§
 
 ### プロトタイプ
 
@@ -13434,7 +13434,7 @@ duk_trim(ctx, -3);
 
 ## duk_type_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -13464,7 +13464,7 @@ duk_error
 
 ## duk_type_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -13501,7 +13501,7 @@ duk_error_va
 
 ## duk_uri_error() 
 
- 2.0.0error§
+2.0.0 error§
 
 ### プロトタイプ
 
@@ -13531,7 +13531,7 @@ duk_error
 
 ## duk_uri_error_va() 
 
- 2.0.0varargerror§
+2.0.0 varargerror§
 
 ### プロトタイプ
 
@@ -13568,7 +13568,7 @@ duk_error_va
 
 ## duk_xcopy_top() 
 
- 1.0.0stackslice§
+1.0.0 stackslice§
 
 ### プロトタイプ
 
@@ -13600,7 +13600,7 @@ duk_xmove_top
 
 ## duk_xmove_top() 
 
- 1.0.0stackslice§
+1.0.0 stackslice§
 
 ### プロトタイプ
 
