@@ -390,20 +390,8 @@ C APIには、protectedとunprotectedのバリエーションがあります。�
 | ECMAScript idiom | Duktape C API idiom | This binding | Value stack |
 | ---- | ---- | ---- | ---- |
 | var result = func('foo', 'bar'); | duk_get_global_string(ctx, "func");<br>duk_push_string(ctx, "foo");<br>duk_push_string(ctx, "bar")<br>duk_call(ctx, 2 /nargs/);<br>/* result on stack top */ | undefined | [ func "foo" "bar" ] -> [ result ] |
-
-var result = func.call('myThis', 'foo', 'bar');	duk_get_global_string(ctx, "func");
-duk_push_string(ctx, "myThis");
-duk_push_string(ctx, "foo");
-duk_push_string(ctx, "bar")
-duk_call_method(ctx, 2 /nargs/);
-/* result on stack top */	"myThis"	[ func "myThis" "foo" "bar" ] ->
-[ result ]
-var result = obj.func('foo', 'bar');	duk_push_string(ctx, "func");
-duk_push_string(ctx, "foo");
-duk_push_string(ctx, "bar")
-duk_call_prop(ctx, obj_idx, 2 /nargs);
-/* result on stack top */	obj	[ "func" "foo" "bar" ] ->
-[ result ]
+| var result = func.call('myThis', 'foo', 'bar'); | duk_get_global_string(ctx, "func");<br>duk_push_string(ctx, "myThis");<br>duk_push_string(ctx, "foo");<br>duk_push_string(ctx, "bar")<br>duk_call_method(ctx, 2 /nargs/);<br>/* result on stack top */ | "myThis" | [ func "myThis" "foo" "bar" ] -> [ result ] |
+| var result = obj.func('foo', 'bar'); | duk_push_string(ctx, "func");<br>duk_push_string(ctx, "foo");<br>duk_push_string(ctx, "bar")<br>duk_call_prop(ctx, obj_idx, 2 /nargs);<br>/* result on stack top */ | obj | [ "func" "foo" "bar" ] -> [ result ] |
 
 
 
