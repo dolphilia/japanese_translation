@@ -71,13 +71,13 @@ Duktapeの公式Wikiへようこそ!
 - パフォーマンスを最適化する方法
 - Duktape 1.3.0のパフォーマンス測定
 - Duktape 1.4.0のパフォーマンス測定
-- Duktape 1.5.0パフォーマンス測定
-- Duktape 2.0.0パフォーマンス測定
-- Duktape 2.1.0パフォーマンス測定
-- Duktape 2.2.0パフォーマンス測定
-- Duktape 2.3.0性能測定
-- Duktape 2.4.0パフォーマンス測定
-- Duktape 2.5.0パフォーマンス測定
+- Duktape 1.5.0のパフォーマンス測定
+- Duktape 2.0.0のパフォーマンス測定
+- Duktape 2.1.0のパフォーマンス測定
+- Duktape 2.2.0のパフォーマンス測定
+- Duktape 2.3.0の性能測定
+- Duktape 2.4.0のパフォーマンス測定
+- Duktape 2.5.0のパフォーマンス測定
 
 
 ## ロー・メモリの最適化
@@ -369,3 +369,59 @@ user    0m23.573s
 sys 0m0.000s
 ```
 
+
+## 致命的なエラーの処理方法
+## 値スタック型の扱い方
+
+
+## 関数呼び出しの方法
+
+関数を呼び出すための API 呼び出しは、ほとんどが非常に簡単で、ターゲット関数と引数のリストが与えられます。しかし、以下の ECMAScript 固有の詳細が問題を少し複雑にしています。
+
+ECMAScript の関数/メソッド呼び出しには "this" バインディングが含まれますが、これは API 呼び出しと ECMAScript の呼び出しイディオムで異なります。もし与えられなければ、"this" バインディングはデフォルトで undefined になります（しかし、ターゲット関数が strict でない限り、グローバルオブジェクトに強制されます；Duktape/C 関数は常に strict です）。
+
+コンストラクタの呼び出しは、その "this "バインディングと戻り値に対して特別な動作をします。this」バインディングは「デフォルト・インスタンス」に初期化され、戻り値は特別な処理を行い、デフォルト・インスタンスを置き換えることができるようになります。内部プロトタイプと外部プロトタイプを参照してください。
+
+C APIには、protectedとunprotectedのバリエーションがあります。その違いは、protectedの呼び出しはエラーを捕捉することです。エラーはC API呼び出しの戻り値で示され、エラーオブジェクトは値スタックに配置されます。これにより、例えばエラーのトレースバックを読むことができる。
+
+以下の表は、unprotectedコールを例にしてAPIコールをまとめたものです。
+
+
+| ECMAScript idiom | Duktape C API idiom | This binding | Value stack |
+| ---- | ---- | ---- | ---- |
+| var result = func('foo', 'bar'); | duk_get_global_string(ctx, "func");<br>duk_push_string(ctx, "foo");<br>duk_push_string(ctx, "bar")<br>duk_call(ctx, 2 /nargs/);<br>/* result on stack top */ | undefined | [ func "foo" "bar" ] -> [ result ] |
+
+var result = func.call('myThis', 'foo', 'bar');	duk_get_global_string(ctx, "func");
+duk_push_string(ctx, "myThis");
+duk_push_string(ctx, "foo");
+duk_push_string(ctx, "bar")
+duk_call_method(ctx, 2 /nargs/);
+/* result on stack top */	"myThis"	[ func "myThis" "foo" "bar" ] ->
+[ result ]
+var result = obj.func('foo', 'bar');	duk_push_string(ctx, "func");
+duk_push_string(ctx, "foo");
+duk_push_string(ctx, "bar")
+duk_call_prop(ctx, obj_idx, 2 /nargs);
+/* result on stack top */	obj	[ "func" "foo" "bar" ] ->
+[ result ]
+
+
+
+## 仮想プロパティの使い方
+## ファイナライゼーションの使い方
+## バッファの扱い方 (Duktape 1.x)
+## バッファの扱い方 (Duktape 2.x)
+## lightfuncsの使い方
+## モジュールの使い方
+## コルーチンの使い方
+## ロギングの使い方
+## ネイティブ・コードでオブジェクト参照を持続させる方法
+## ネイティブのコンストラクタ関数の書き方
+## 配列の反復処理
+## エラー・オブジェクトを拡張する
+## Duktapeバイトコードのデコード方法
+## 非BMP文字を扱うには
+## グローバル・オブジェクトへの参照を取得する方法
+## ベアメタルプラットフォームで動作させる方法
+## デバッグ・プリントを有効にする方法
+## Duktape用のエディターを設定する方法
