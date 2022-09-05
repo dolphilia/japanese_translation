@@ -1,4 +1,4 @@
-# Duktape
+# Duktapeの概要 日本語訳
 
 Duktapeは、移植性とコンパクトなフットプリントに重点を置いた、組み込み可能なJavascriptエンジンです。
 
