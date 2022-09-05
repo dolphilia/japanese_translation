@@ -172,4 +172,6 @@ duk_put_global_string(ctx, "adder");
 duk_eval_string_noresult(ctx, "print('2+3=' + adder(2, 3));");
 ```
 
+---
 
+Duktape is (C) by its [authors](https://github.com/svaarala/duktape/blob/master/AUTHORS.rst) and licensed under the [MIT license](https://github.com/svaarala/duktape/blob/master/LICENSE.txt).
