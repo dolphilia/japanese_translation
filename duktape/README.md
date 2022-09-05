@@ -130,16 +130,17 @@ int main(int argc, char *argv[]) {
 ECMAScript のコードから C の関数を呼び出すには、まず C の関数を宣言します。
 
 ```c
-/* Being an embeddable engine, Duktape doesn't provide I/O
- * bindings by default.  Here's a simple one argument print()
- * function.
+/* 組み込みエンジンであるDuktapeは、
+ * デフォルトではI/Oバインディングを提供しません。
+ * 以下は引数が１つの単純なprint()関数です。
  */
+
 static duk_ret_t native_print(duk_context *ctx) {
   printf("%s\n", duk_to_string(ctx, 0));
   return 0;  /* no return value (= undefined) */
 }
 
-/* Adder: add argument values. */
+/* Adder: 引数の値を加算する。 */
 static duk_ret_t native_adder(duk_context *ctx) {
   int i;
   int n = duk_get_top(ctx);  /* #args */
