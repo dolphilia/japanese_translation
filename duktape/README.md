@@ -1,6 +1,8 @@
 # Duktapeの概要 日本語訳
 
-Duktapeは、移植性とコンパクトなフットプリントに重点を置いた、組み込み可能なJavascriptエンジンです。
+[原文](https://duktape.org/index.html)
+
+Duktapeは移植性とコンパクトなフットプリントに重点を置いた、組み込み可能なJavascriptエンジンです。
 
 DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにduktape.c、duktape.h、duk_config.hを追加し、Duktape APIを使ってCコードからECMAScriptの関数を呼び出したり、逆にECMAScriptからCコードに関数を呼び出したりすることができます。
 
@@ -8,12 +10,12 @@ DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにdu
 ## 主な特徴
 
 - 組み込み可能、ポータブル、コンパクト：160kB フラッシュと 64kB RAM のプラットフォームで実行可能。
-- ECMAScript E5/E5.1、一部のセマンティクスは ES2015+ から更新されています。
-- ECMAScript 2015 (E6) と ECMAScript 2016 (E7) を部分的にサポート、Post-ES5 feature status と kangax/compat-table を参照してください。
-- ES2015 TypedArrayおよびNode.js Bufferバインディング
-- CBORバインディング
-- WHATWG Encoding Living Standardに基づくエンコーディングAPIバインディング
-- performance.now()
+- [ECMAScript E5/E5.1](http://www.ecma-international.org/ecma-262/5.1/)、一部のセマンティクスは ES2015+ から更新されています。
+- [ECMAScript 2015 (E6)](http://www.ecma-international.org/ecma-262/6.0/index.html) と [ECMAScript 2016 (E7)](http://www.ecma-international.org/ecma-262/7.0/index.html) を部分的にサポート、[Post-ES5 feature status](http://wiki.duktape.org/PostEs5Features.html) と [kangax/compat-table](https://kangax.github.io/compat-table) を参照してください。
+- ES2015 [TypedArray](https://www.khronos.org/registry/typedarray/specs/latest/)および[Node.js Buffer](https://nodejs.org/docs/v6.9.1/api/buffer.html)バインディング
+- [CBOR](http://cbor.io/)バインディング
+- WHATWG Encoding Living Standardに基づく[エンコーディングAPI](https://encoding.spec.whatwg.org/#api)バインディング
+- [performance.now()](https://www.w3.org/TR/hr-time/#dom-performance-now)
 - ビルトインデバッガ
 - ビルトイン正規表現エンジン
 - 内蔵のUnicodeサポート
@@ -28,7 +30,7 @@ DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにdu
 
 ## コードとRAMのフットプリント
 
-"Hello world"の例:
+Hello worldの[例](https://github.com/svaarala/duktape/blob/master/util/index_page_sizes.sh):
 
 | Config | Code footprint (kB) | Startup RAM (kB) |
 | ---- | ---- | ---- |
@@ -39,25 +41,25 @@ DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにdu
 | x86 lowmem | 124 | 27 |
 | x86 full lowmem | 148 | 1.5 |
 
-コードのフットプリントを最小にするための GCC オプションを参照してください。完全なローメモリでは、"ポインタ圧縮 "とROMベースの文字列/オブジェクトを使用します。ROMベースの文字列/オブジェクトは、他のローメモリオプションなしで使うこともできます。
+コードのフットプリントを最小にするための[GCCオプション](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst#optimizing-code-footprint)を参照してください。完全な[ローメモリ](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst)では、ポインタ圧縮とROMベースの文字列/オブジェクトを使用します。ROMベースの文字列/オブジェクトは、他のローメモリオプションなしで使うこともできます。
 
 
 ## 現在の状況
 
-- 安定
+- 安定版
 
 
 ## サポート
 
-- Duktape Wiki: wiki.duktape.org
-- ユーザーコミュニティのQ&A: Stack Overflowのduktapeタグ
-- バグや機能の要望: GitHubのisslues
-- 一般的な議論: IRC #duktape on chat.freenode.net (webchat)
+- Duktape Wiki: [wiki.duktape.org](http://wiki.duktape.org/)
+- ユーザーコミュニティのQ&A: Stack Overflowの[duktape](http://stackoverflow.com/questions/tagged/duktape)タグ
+- バグや機能の要望: [GitHubのissues](https://github.com/svaarala/duktape/issues)
+- 一般的な議論: IRC #duktape on chat.freenode.net ([webchat](https://webchat.freenode.net/))
 
 
 ## Duktapeを使用したいくつかのプロジェクト
 
-ご覧ください。Duktapeを使用しているプロジェクト
+[Duktapeを使用しているプロジェクト](http://wiki.duktape.org/ProjectsUsingDuktape.html)を参照してください。
 
 もしあなたのプロジェクトでDuktapeを使っているなら、リストに追加するためにメールを送るか、GitHubのissuesを開いてください。
 
@@ -66,20 +68,20 @@ DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにdu
 
 少なくともDuktapeと同様のユースケースをターゲットにしたJavascriptエンジンは複数存在します。
 
-- Espruino (MPL v2.0)
-- JerryScript (Apache License v2.0)
-- MuJS (Affero GPL)
-- quad-wheel (MIT License)
-- QuickJS (MIT License)
-- tiny-js (MIT license)
-- v7 (GPL v2.0)
+- [Espruino](https://github.com/espruino/Espruino) (MPL v2.0)
+- [JerryScript](http://jerryscript.net/) (Apache License v2.0)
+- [MuJS](http://mujs.com/) (Affero GPL)
+- [quad-wheel](https://code.google.com/p/quad-wheel/) (MIT License)
+- [QuickJS](https://bellard.org/quickjs/) (MIT License)
+- [tiny-js](https://github.com/gfwilliams/tiny-js) (MIT license)
+- [v7](https://github.com/cesanta/v7) (GPL v2.0)
 
-ECMAScript エンジンの一覧も参照してください。
+[ECMAScriptエンジンの一覧](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines)も参照してください。
 
 
 ## 1. ビルドに追加する
 
-(詳しい紹介はGetting startedをご覧ください)
+(詳しい紹介は[Getting started](https://duktape.org/guide.html#gettingstarted)をご覧ください)
 
 Duktape Cのソースとヘッダをビルドに追加します。どのようなビルドシステムでも使用できます。配布物には、参考までにMakefileの例が含まれています。最も単純なケースでは
 
@@ -90,7 +92,7 @@ $ ./test
 ```
 
 
-Duktapeの設定をカスタマイズするには、ここでECMAScript 6 Proxyオブジェクトのサポートを無効にしてください。
+[Duktapeの設定をカスタマイズ](http://wiki.duktape.org/Configuring.html)するには、ここでECMAScript 6 Proxyオブジェクトのサポートを無効にしてください。
 
 ```
 $ python2 duktape-2.6.0/tools/configure.py --output-directory src-duktape \
