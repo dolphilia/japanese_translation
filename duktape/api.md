@@ -1,4 +1,4 @@
-# Duktape API
+# Duktape API 日本語訳
 
 
 ## はじめに
@@ -8,7 +8,7 @@
 
 ### ドキュメントスコープ
 
-Duktape API（duktape.h で定義）は、C/C++ プログラムが ECMAScript コードとインターフェースすることを可能にし、値表現のような内部詳細からそれらを保護する定数と API 呼び出しのセットです。
+Duktape API（duktape.hで定義）は定数とAPIコールのセットで、C/C++プログラムがECMAScriptコードとインターフェースできるようにし、値の表現などの内部詳細から保護するものです。
 
 この文書では、Duktape APIとそのコア・コンセプトに関する簡潔なリファレンスを提供します。Duktapeに初めて触れる方は、まず「Duktapeプログラマーズ・ガイド」をお読みください。
 
@@ -49,7 +49,9 @@ int main(int argc, const char *argv[]) {
 
 ### バリュースタック
 
-この文書では、以下のスタック表記を使用します。スタックは、右に行くほど大きくなるように視覚的に表現される。例えば、次のように。
+この文書では、以下のスタック表記を使用します。スタックは、右に行くほど大きくなるように視覚的に表現されます。
+
+例：
 
 ```c
 duk_push_number(ctx, 123);
@@ -65,7 +67,7 @@ duk_push_true(ctx);
 ```
 
 
-スタック上の要素のうち、操作に影響を与えないものは、1つの要素に省略記号（"..."）を付けて表記している。
+スタック上の要素のうち、操作に影響を与えないものは、1つの要素に省略記号（"..."）を付けて表記しています。
 
 ```
 | ... |
@@ -93,7 +95,7 @@ APIコールの明示的なインデックスで識別される要素は、ス�
 ```
 
 
-スタック変換は，矢印と2つのスタックで表現する．
+スタック変換は矢印と2つのスタックで表現します。
 
 ```
 | ... | <obj> | ... | <key> | <value> |  ->  | ... | <obj> | ... |
@@ -104,24 +106,25 @@ APIコールの明示的なインデックスで識別される要素は、ス�
 
 ### ヒープ
 
-ガベージコレクションのための単一の領域。1つ以上のコンテキストで共有される。
+ガベージコレクションのための単一の領域。1つ以上のコンテキストで共有されます。
 
 
-### コンテキスト（Context）
+### コンテキスト
 
 Duktape API で使用されるハンドルで、Duktape スレッド（コルーチン）およびそのコールスタックとバリュースタックに関連付けられます。
 
 
-### (コンテキストの)コールスタック
+### コールスタック
 
-コンテキストの）呼び出しスタック § コンテキストのアクティブな関数呼び出し連鎖の帳簿。ECMAScript と Duktape/C の両方の関数呼び出しが含まれます。
+（コンテキストの）コールスタック  コンテキストのアクティブな関数呼び出し連鎖の帳簿。ECMAScript と Duktape/C の両方の関数呼び出しが含まれます。
 
-### バリュースタック（コンテキストの）§。
-コンテキストの）値スタック § コンテキストの呼び出しスタックで、現在のアクティブ化に属するタグ付けされた値のためのストレージ。
+### バリュースタック
 
-値スタックに保持される値は、伝統的なタグ付き型です。スタック・エントリーは、最も最近の関数呼び出しの下 (>= 0) または上 (< 0) からインデックスが付けられます。
+（コンテキストの）バリュースタック  コンテキストのコールスタックで、現在のアクティブ化に属するタグ付けされた値のためのストレージ。
 
-### 値スタックのインデックス
+バリュースタックに保持される値は、伝統的なタグ付き型です。スタック・エントリーは、最も最近の関数呼び出しの下 (>= 0) または上 (< 0) からインデックスが付けられます。
+
+### バリュースタックのインデックス
 
 非負 (>= 0) のインデックスは、現在のスタックフレームのスタックエントリを、フレームの底を基準にして指します。
 
@@ -137,16 +140,16 @@ Duktape API で使用されるハンドルで、Duktape スレッド（コルー
 ```
 
 
-特殊定数 DUK_INVALID_INDEX は、無効なスタックインデックスを示す負の整数である。これは API 呼び出しから返されることがあり、また「値がない」ことを示すためにいくつかの API 呼び出しに与えられることがあります。
+特殊定数 DUK_INVALID_INDEX は、無効なスタックインデックスを示す負の整数ですこれは API 呼び出しから返されることがあり、また「値がない」ことを示すためにいくつかの API 呼び出しに与えられることがあります。
 
-値スタックトップ(または単に「トップ」)は、最高使用インデックスのすぐ上の虚数要素の非負のインデックスである。例えば、最も使用されているインデックスの上は 5 であるので、スタックトップは 6 である。 トップは現在のスタックサイズを示し、スタックにプッシュされる次の要素のインデックスでもある。
+バリュースタックトップ(または単に「トップ」)は、最高使用インデックスのすぐ上の虚数要素の非負のインデックスです。例えば、最も使用されているインデックスの上は 5 であるので、スタックトップは 6 です。 トップは現在のスタックサイズを示し、スタックにプッシュされる次の要素のインデックスでもあります。
 
 ```
 | 0 | 1 | 2 | 3 | 4 | <5> | (6) |
 ```
 
 
-> API のスタック操作は、常に現在のスタックフレームに限定される。現在のフレームより下のスタックエントリを参照する方法はない。これは、コールスタック内の関数が互いの値に影響を与えないようにするためで、意図的なものです。
+> API のスタック操作は、常に現在のスタックフレームに限定されます。現在のフレームより下のスタックエントリを参照する方法はない。これは、コールスタック内の関数が互いの値に影響を与えないようにするためで、意図的なものです。
 
 
 ### スタックタイプ
@@ -169,7 +172,9 @@ Heap alloc" カラムは、タグ付けされた値がヒープで割り当て�
 
 ### スタックタイプマスク
 
-各スタックタイプにはビットインデックスがあり、スタックタイプのセットをビットマスクとして表現することができます。呼び出し側のコードはこのようなビットセットを使って、例えばあるスタック値があるタイプのセットに属するかどうかをチェックすることができます。例
+各スタックタイプにはビットインデックスがあり、スタックタイプのセットをビットマスクとして表現することができます。呼び出し側のコードはこのようなビットセットを使って、例えばあるスタック値があるタイプのセットに属するかどうかをチェックすることができます。
+
+例：
 
 ```c
 if (duk_get_type_mask(ctx, -3) & (DUK_TYPE_MASK_NUMBER |
@@ -198,7 +203,9 @@ Duktapeは、可能な限り、配列へのアクセスにおいて明示的な�
 
 ### Duktape/C関数
 
-Duktape/C API 署名のある C 関数は、ECMAScript 関数オブジェクトまたは lightfunc 値と関連付けることができ、関連付けられた値が ECMAScript コードから呼び出されたときに呼び出されます。例
+Duktape/C API 署名のある C 関数は、ECMAScript 関数オブジェクトまたは lightfunc 値と関連付けることができ、関連付けられた値が ECMAScript コードから呼び出されたときに呼び出されます。
+
+例：
 
 ```c
 duk_ret_t my_func(duk_context *ctx) {
@@ -207,7 +214,7 @@ duk_ret_t my_func(duk_context *ctx) {
 }
 ```
 
-値スタックで与えられる引数の数は、対応する ECMAScript 関数オブジェクトが作成されるときに指定されます: 引数を "そのまま" 取得するための DUK_VARARGS の固定数の引数のどちらかです。
+バリュースタックで与えられる引数の数は、対応する ECMAScript 関数オブジェクトが作成されるときに指定されます: 引数を "そのまま" 取得するための DUK_VARARGS の固定数の引数のどちらかです。
 
 - 固定数の引数を使用する場合、余分な引数は削除され、不足する引数は必要に応じて undefined で埋められます。
 - DUK_VARARGS を使用する場合、実際の引数の数を決定するために duk_get_top() を使用します。
@@ -215,7 +222,7 @@ duk_ret_t my_func(duk_context *ctx) {
 関数の戻り値。
 
 - 戻り値1：スタックトップが戻り値を含む。
-- 戻り値0：戻り値は未定義である。
+- 戻り値0：戻り値は未定義です。
 - DUK_ERR_xxx の否定形である DUK_RET_xxx 定数を使用します。
 - 戻り値 >1: 予約済み、現在は無効。
  
@@ -330,10 +337,10 @@ duk_error() などで使用されるエラーコードです。
 
 例えば return DUK_RET_TYPE_ERROR は duk_type_error() を呼び出すのと似ていますが、より短いものです。
 
-- DUK_RET_ERROR: DUK_ERR_ERROR と一緒に投げるのと似ています。
+- DUK_RET_ERROR: DUK_ERR_ERROR と一緒に投げます。のと似ています。
 - DUK_RET_EVAL_ERROR: DUK_ERR_EVAL_ERROR での投擲と同様です。
 - DUK_RET_RANGE_ERROR: DUK_ERR_RANGE_ERROR でのスローイングに似ている
-- DUK_RET_REFERENCE_ERROR: DUK_ERR_REFERENCE_ERROR と一緒に投げるのと似ている
+- DUK_RET_REFERENCE_ERROR: DUK_ERR_REFERENCE_ERROR と一緒に投げます。のと似ている
 - DUK_RET_SYNTAX_ERROR: DUK_ERR_SYNTAX_ERROR とスローするのと似ています。
 - DUK_RET_TYPE_ERROR: DUK_ERR_TYPE_ERROR とスローするのと似ている
 - DUK_RET_URI_ERROR: DUK_ERR_URI_ERROR とスローするのと似ている
@@ -366,10 +373,10 @@ duk_def_prop() とその派生型のためのフラグです。
 - DUK_DEFPROP_HAVE_WRITABLE: 書き込み可能かどうかを設定/解除する
 - DUK_DEFPROP_HAVE_ENUMERABLE: 列挙可能を設定または解除します。
 - DUK_DEFPROP_HAVE_CONFIGURABLE: コンフィギュラブルを設定/解除します。
-- DUK_DEFPROP_HAVE_VALUE: 値を設定します (値スタックで指定されます)。
-- DUK_DEFPROP_HAVE_GETTER: ゲッターを設定します (値スタックに保存されます)
-- DUK_DEFPROP_HAVE_SETTER: (値スタックにある)セッターを設定する
-- DUK_DEFPROP_FORCE:可能であれば変更を強制。仮想プロパティなどではまだ失敗する可能性がある。
+- DUK_DEFPROP_HAVE_VALUE: 値を設定します (バリュースタックで指定されます)。
+- DUK_DEFPROP_HAVE_GETTER: ゲッターを設定します (バリュースタックに保存されます)
+- DUK_DEFPROP_HAVE_SETTER: (バリュースタックにある)セッターを設定する
+- DUK_DEFPROP_FORCE:可能であれば変更を強制。仮想プロパティなどではまだ失敗する可能性があります
 - DUK_DEFPROP_SET_WRITABLE: (DUK_DEFPROP_HAVE_WRITABLE | DUK_DEFPROP_WRITABLE)
 - DUK_DEFPROP_CLEAR_WRITABLE: DUK_DEFPROP_HAVE_WRITABLE
 - DUK_DEFPROP_SET_ENUMERABLE: (DUK_DEFPROP_HAVE_ENUMERABLE | DUK_DEFPROP_ENUMERABLE)
@@ -384,14 +391,14 @@ duk_def_prop() とその派生型のためのフラグです。
 
 duk_enum() の列挙フラグ。
 
-- DUK_ENUM_INCLUDE_NONENUMERABLE: 列挙可能なプロパティに加え、列挙不可能なプロパティも列挙する。
+- DUK_ENUM_INCLUDE_NONENUMERABLE: 列挙可能なプロパティに加え、列挙不可能なプロパティも列挙します。
 - DUK_ENUM_INCLUDE_HIDDEN: 隠されたシンボルも列挙する (Duktape 1.x では内部プロパティと呼ばれる)
-- DUK_ENUM_INCLUDE_SYMBOLS: シンボルを列挙する。Symbolのキーを列挙する (デフォルトは列挙しない)
+- DUK_ENUM_INCLUDE_SYMBOLS: シンボルを列挙します。Symbolのキーを列挙する (デフォルトは列挙しない)
 - DUK_ENUM_EXCLUDE_STRINGS: 文字列のキーを列挙しない（デフォルトは列挙する）
 - DUK_ENUM_OWN_PROPERTIES_ONLY: プロトタイプチェーンは歩かず、自身のプロパティのみをチェックする
 - DUK_ENUM_ARRAY_INDICES_ONLY: 配列のインデックスのみを列挙する
 - DUK_ENUM_SORT_ARRAY_INDICES: 配列インデックスのソート(継承された配列インデックスを含む全列挙結果に適用)
-- DUK_ENUM_NO_PROXY_BEHAVIOR: プロキシ動作を起動せず、プロキシオブジェクト自体を列挙する。
+- DUK_ENUM_NO_PROXY_BEHAVIOR: プロキシ動作を起動せず、プロキシオブジェクト自体を列挙します。
 
 
 ### duk_gcのガーベッジコレクションフラグ
@@ -425,7 +432,7 @@ duk_gc() のフラグ。
 
 - DUK_INVALID_INDEX: スタックインデックスが無効、なし、またはn/aです。
 - DUK_VARARGS: 関数が変数の引数を取る
-- DUK_API_ENTRY_STACK: 関数エントリ時に確保が保証されている値スタックエントリ数
+- DUK_API_ENTRY_STACK: 関数エントリ時に確保が保証されているバリュースタックエントリ数
 
 
 ### タグ別APIコール
@@ -1394,8 +1401,6 @@ duk_gc() のフラグ。
 
 ## duk_alloc() 
 
-
-
 1.0.0  memory
 
 ### プロトタイプ
@@ -1410,9 +1415,9 @@ void *duk_alloc(duk_context *ctx, duk_size_t size);
 
 ### 概要
 
-duk_alloc_raw() と同様ですが、要求を満たすためにガベージコレクションを起動させることがあります。しかし、割り当てられたメモリ自体は自動的にガベージコレクションされません。ガベージコレクションの後でも、割り当て要求は失敗することがあり、その場合は NULL が返される。割り当てられたメモリは自動的にゼロにされないので、任意のゴミを含む可能性があります。
+duk_alloc_raw() と同様ですが、要求を満たすためにガベージコレクションを起動させることがあります。しかし、割り当てられたメモリ自体は自動的にガベージコレクションされません。ガベージコレクションの後でも、割り当て要求は失敗することがあり、その場合は NULL が返されます。割り当てられたメモリは自動的にゼロにされないので、任意のゴミを含む可能性があります。
 
-duk_alloc() で割り当てられたメモリは、duk_free() または duk_free_raw() で解放することができる。
+duk_alloc() で割り当てられたメモリは、duk_free() または duk_free_raw() で解放することができます。
 
 ### 例
 
@@ -1437,8 +1442,6 @@ if (buf) {
 
 ## duk_alloc_raw() 
 
-
-
 1.0.0  memory
 
 
@@ -1450,11 +1453,11 @@ void *duk_alloc_raw(duk_context *ctx, duk_size_t size);
 
 ### スタック
 
-(値スタックに影響なし)
+(バリュースタックに影響なし)
 
 ### 要約
 
-コンテキストに登録された生の割り当て関数を使用して、サイズバイトを割り当てる。割り当てに失敗した場合、NULL を返す。size が 0 の場合、この呼び出しは NULL を返すか、あるいは duk_free_raw() などに安全に渡すことができる非 NULL 値を返すかもしれない。また、割り当てられたメモリは自動的にガベージコレクションされません。割り当てられたメモリは自動的にゼロにされず、任意のゴミを含む可能性があります。
+コンテキストに登録された生の割り当て関数を使用して、サイズバイトを割り当てます。割り当てに失敗した場合、NULL を返す。size が 0 の場合、この呼び出しは NULL を返すか、あるいは duk_free_raw() などに安全に渡すことができる非 NULL 値を返すかもしれない。また、割り当てられたメモリは自動的にガベージコレクションされません。割り当てられたメモリは自動的にゼロにされず、任意のゴミを含む可能性があります。
 
 duk_alloc_raw() で割り当てられたメモリは、 duk_free() か duk_free_raw() で解放することができます。
 
@@ -1476,9 +1479,7 @@ if (buf) {
 
 ## duk_base64_decode() 
 
- 
-
-1.0.0 codecbase64§
+1.0.0 codec base64
 
 ### プロトタイプ
 
@@ -1492,7 +1493,7 @@ void duk_base64_decode(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-base-64でエンコードされた値をインプレース操作でバッファにデコードする。入力が無効な場合、エラーを投げる。
+base-64でエンコードされた値をインプレース操作でバッファにデコードします。入力が無効な場合、エラーを投げます。。
 
 ### 例
 
@@ -1514,7 +1515,7 @@ duk_base64_encode
 
 ## duk_base64_encode() 
 
-1.0.0 codecbase64§
+1.0.0 codec base64
 
 ### プロトタイプ
 
@@ -1530,7 +1531,7 @@ const char *duk_base64_encode(duk_context *ctx, duk_idx_t idx);
 
 任意の値をバッファにコピーし、その結果をインプレース操作でbase-64にエンコードします。便宜上、結果の文字列へのポインタを返します。
 
-バッファへの強制は，まずバッファ以外の値を文字列に強制し，次にその文字列をバッファに強制する。結果として得られるバッファは、CESU-8エンコーディングの文字列を含む。
+バッファへの強制は，まずバッファ以外の値を文字列に強制し，次にその文字列をバッファに強制します。結果として得られるバッファは、CESU-8エンコーディングの文字列を含む。
 
 ### 例
 
@@ -1550,7 +1551,7 @@ duk_base64_decode
 
 ## duk_buffer_to_string() 
 
-2.0.0 stringstackbuffer§
+2.0.0 string stack buffer
 
 ### プロトタイプ
 
@@ -1589,7 +1590,7 @@ duk_pop(ctx);
 
 ## duk_call() 
 
-1.0.0 call§
+1.0.0 call
 
 ### プロトタイプ
 
@@ -1603,7 +1604,7 @@ void duk_call(duk_context *ctx, duk_idx_t nargs);
 
 ### 要約
 
-ターゲット関数funcをnargsの引数で呼び出す（関数自体を除く）。関数とその引数は、単一の戻り値に置き換えられる。関数呼び出し中に投げられたエラーは、自動的に捕捉されない。
+ターゲット関数funcをnargsの引数で呼び出す（関数自体を除く）。関数とその引数は、単一の戻り値に置き換えられます。関数呼び出し中に投げられたエラーは、自動的に捕捉されない。
 
 このバインディングのターゲット関数は、初期状態では未定義に設定されています。ターゲット関数が厳密でない場合、バインディングは、関数が呼び出される前にグローバルオブジェクトに置き換えられます。「関数コードの入力」を参照してください。このバインディングを制御したい場合は、代わりに duk_call_method() または duk_call_prop() を使用することができます。
 
@@ -1643,7 +1644,7 @@ duk_call_prop
 
 ## duk_call_method() 
 
-1.0.0 call§
+1.0.0 call
 
 ### プロトタイプ
 
@@ -1661,7 +1662,7 @@ void duk_call_method(duk_context *ctx, duk_idx_t nargs);
 
 ターゲット関数が厳密でない場合、ターゲット関数が見るバインディング値は、関数コードの入力で指定された処理によって変更されることがあります。
 
-本APIコールは、以下と同等である。
+本APIコールは、以下と同等です。
 
 ```javascript
 var retval = func.call(this_binding, arg1, ..., argN);
@@ -1693,7 +1694,7 @@ duk_pop(ctx);
 
 ## duk_call_prop() 
 
-1.0.0 propertycall§
+1.0.0 property call
 
 ### プロトタイプ
 
@@ -1711,7 +1712,7 @@ void duk_call_prop(duk_context *ctx, duk_idx_t obj_idx, duk_idx_t nargs);
 
 ターゲット関数が厳密でない場合、ターゲット関数が見るバインディングの値は、関数コードの入力で指定された処理によって変更されることがあります。
 
-本APIコールは、以下と同等である。
+本APIコールは、以下と同等です。
 
 ```javascript
 var retval = obj[key](arg1, ..., argN);
@@ -1724,7 +1725,7 @@ var func = obj[key];
 var retval = func.call(obj, arg1, ..., argN);
 ```
 
-プロパティアクセスの基本値は通常オブジェクトですが、技術的には任意の値を使用することができます。文字列やバッファの値には仮想的なインデックスプロパティがあり、例えば "foo"[2]にアクセスすることができる。また、ほとんどのプリミティブ値は何らかのプロトタイプオブジェクトを継承しているので、例えば (12345).toString(16) のようにメソッドを呼び出すことができます。
+プロパティアクセスの基本値は通常オブジェクトですが、技術的には任意の値を使用することができます。文字列やバッファの値には仮想的なインデックスプロパティがあり、例えば "foo"[2]にアクセスすることができます。また、ほとんどのプリミティブ値は何らかのプロトタイプオブジェクトを継承しているので、例えば (12345).toString(16) のようにメソッドを呼び出すことができます。
 
 ### 例
 
@@ -1744,7 +1745,7 @@ duk_pop(ctx);
 
 ## duk_cbor_decode() 
 
-2.5.0 experimentalcodeccbor§
+2.5.0 experimental codec cbor
 
 ### プロトタイプ
 
@@ -1775,7 +1776,7 @@ duk_cbor_encode
 
 ## duk_cbor_encode() 
 
-2.5.0 experimentalcodeccbor§
+2.5.0 experimental codec cbor
 
 ### プロトタイプ
 
@@ -1789,7 +1790,7 @@ void duk_cbor_encode(duk_context *ctx, duk_idx_t idx, duk_uint_t encode_flags);
 
 ### 要約
 
-インプレース操作で任意の値をCBOR表現にエンコードする。結果として得られる値は、（今のところ）ArrayBufferである。現時点ではフラグは定義されていないので、フラグには0を渡します。
+インプレース操作で任意の値をCBOR表現にエンコードします。結果として得られる値は、（今のところ）ArrayBufferです。現時点ではフラグは定義されていないので、フラグには0を渡します。
 
 ECMAScript の値から CBOR へのマッピングは実験的なもので、エンコーディングの結果は時間の経過とともに変化する可能性があります。例えば、ECMAScript の値のエンコードとデコードのラウンドトリッピングを改善するために、カスタム CBOR タグが追加される予定です。また、結果の型（ArrayBuffer）も後で変更されるかもしれません。
 
@@ -1815,7 +1816,7 @@ duk_cbor_decode
 
 ## duk_char_code_at() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -1829,7 +1830,7 @@ duk_codepoint_t duk_char_code_at(duk_context *ctx, duk_idx_t idx, duk_size_t cha
 
 ### 要約
 
-文字列の文字オフセット char_offset にある文字のコードポイントを idx で取得する。idxの値が文字列でない場合は、エラーがスローされます。文字列が（拡張）UTF-8デコードできない場合、結果はU+FFFD（Unicode置換文字）です。char_offset が無効な場合（文字列の外側）には、0 が返されます。
+文字列の文字オフセット char_offset にある文字のコードポイントを idx で取得します。idxの値が文字列でない場合は、エラーがスローされます。文字列が（拡張）UTF-8デコードできない場合、結果はU+FFFD（Unicode置換文字）です。char_offset が無効な場合（文字列の外側）には、0 が返されます。
 
 
 ### 例
@@ -1842,7 +1843,7 @@ printf("char code at char index 12: %ld\n", (long) duk_char_code_at(ctx, -3, 12)
 
 ## duk_check_stack() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -1857,13 +1858,13 @@ duk_bool_t duk_check_stack(duk_context *ctx, duk_idx_t extra);
 
 ### 要約
 
-値スタックに、呼び出し元が使用するために、現在のスタックの先頭から相対的に、少なくとも余分な予約（割り当て）要素があることを確認する。成功すれば1を、そうでなければ0を返す。呼び出しが成功した場合、呼び出し元は、値スタック関連のエラーなしに、追加の要素を値スタックにプッシュできることが保証される（メモリ不足などの他のエラーはまだ発生する可能性がある）。呼び出し元は、余分な値をプッシュできることに依存してはならない（MUST NOT）。
+バリュースタックに、呼び出し元が使用するために、現在のスタックの先頭から相対的に、少なくとも余分な予約（割り当て）要素があることを確認します。成功すれば1を、そうでなければ0を返す。呼び出しが成功した場合、呼び出し元は、バリュースタック関連のエラーなしに、追加の要素をバリュースタックにプッシュできることが保証される（メモリ不足などの他のエラーはまだ発生する可能性がある）。呼び出し元は、余分な値をプッシュできることに依存してはならない（MUST NOT）。
 
-Duktape/C関数に入る時、そして呼び出しの外では、値スタックの呼び出し引数に加え、呼び出し側のために（DUK_API_ENTRY_STACK要素の）自動的な予備が確保されています。より多くの値スタックスペースが必要な場合、呼び出し側は関数の最初（例えば、必要な要素数が既知であるか、引数に基づいて計算できる場合）または動的（例えば、ループ内）に明示的に多くのスペースを予約しなければなりません。現在割り当てられている値スタックを越えて値をプッシュしようとするとエラーになることに注意してください．これは，内部実装を簡略化するためである．
+Duktape/C関数に入る時、そして呼び出しの外では、バリュースタックの呼び出し引数に加え、呼び出し側のために（DUK_API_ENTRY_STACK要素の）自動的な予備が確保されています。より多くのバリュースタックスペースが必要な場合、呼び出し側は関数の最初（例えば、必要な要素数が既知であるか、引数に基づいて計算できる場合）または動的（例えば、ループ内）に明示的に多くのスペースを予約しなければなりません。現在割り当てられているバリュースタックを越えて値をプッシュしようとするとエラーになることに注意してください．これは，内部実装を簡略化するためである．
 
-Duktapeは、ユーザー予約要素に加えて、全てのAPIコールが更なる割り当てをせずに動作するのに十分な値スタック空間を確保するために、自動的に内部値スタック予備を保持します。また、メモリ再割り当ての動作を最小限に抑えるため、値スタックはある程度大きなステップで拡張されます。その結果、呼び出し元が指定した余分な値を超えて利用可能な値スタック要素の内部数は、かなり変化します。呼び出し元はこれを考慮する必要はなく、利用可能な追加要素に依存するべきでは決してない。
+Duktapeは、ユーザー予約要素に加えて、全てのAPIコールが更なる割り当てをせずに動作するのに十分なバリュースタック空間を確保するために、自動的に内部バリュースタック予備を保持します。また、メモリ再割り当ての動作を最小限に抑えるため、バリュースタックはある程度大きなステップで拡張されます。その結果、呼び出し元が指定した余分な値を超えて利用可能なバリュースタック要素の内部数は、かなり変化します。呼び出し元はこれを考慮する必要はなく、利用可能な追加要素に依存するべきでは決してない。
 
-一般的なルールとして、より多くのスタックスペースを確保するために、この関数の代わりに duk_require_stack() が使用されるべきである。値スタックを拡張できない場合、エラーを投げて巻き戻す以外に、有用な回復方法はほとんどありません。
+一般的なルールとして、より多くのスタックスペースを確保するために、この関数の代わりに duk_require_stack() が使用されるべきです。バリュースタックを拡張できない場合、エラーを投げて巻き戻す以外に、有用な回復方法はほとんどありません。
 
 
 ### 例
@@ -1888,7 +1889,7 @@ duk_require_stack
 
 ## duk_check_stack_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -1903,11 +1904,11 @@ duk_bool_t duk_check_stack_top(duk_context *ctx, duk_idx_t top);
 
 ### 要約
 
-duk_check_stack() と同様であるが、呼び出し側が使用するために、 トップまでのスペースがあることを保証する。これは、(現在のスタックの先頭からの相対的な) 追加要素の数を指定して予約するよりも便利な場合があります。
+duk_check_stack() と同様であるが、呼び出し側が使用するために、 トップまでのスペースがあることを保証します。これは、(現在のスタックの先頭からの相対的な) 追加要素の数を指定して予約するよりも便利な場合があります。
 
-呼び出し側は、呼び出し側の使用のために確保された最大のスタックトップを指定し、呼び出し側のために予約された最高値のスタックインデックスを指定しない。例えば、top が 500 の場合、呼び出し元のために予約された最高値のスタックインデックス は 499 である。
+呼び出し側は、呼び出し側の使用のために確保された最大のスタックトップを指定し、呼び出し側のために予約された最高値のスタックインデックスを指定しない。例えば、top が 500 の場合、呼び出し元のために予約された最高値のスタックインデックス は 499 です。
 
-一般論として、より多くのスタックスペースを確保するために、この関数の代わりに duk_require_stack_top() を使用するべきである。値スタックを拡張できない場合、エラーを投げて巻き戻す以外に有用な回復策はほとんどない。
+一般論として、より多くのスタックスペースを確保するために、この関数の代わりに duk_require_stack_top() を使用するべきです。バリュースタックを拡張できない場合、エラーを投げて巻き戻す以外に有用な回復策はほとんどない。
 
 
 ### 例
@@ -1927,7 +1928,7 @@ duk_require_stack_top
 
 ## duk_check_type() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -1941,7 +1942,7 @@ duk_bool_t duk_check_type(duk_context *ctx, duk_idx_t idx, duk_int_t type);
 
 ### 要約
 
-idxにある値の型とtypeをマッチさせる。型が一致する場合は1を，そうでない場合は0を返す。
+idxにある値の型とtypeをマッチさせます。型が一致する場合は1を，そうでない場合は0を返す。
 
 
 ### 例
@@ -1955,7 +1956,7 @@ if (duk_check_type(ctx, -3, DUK_TYPE_NUMBER)) {
 
 ## duk_check_type_mask() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -1969,7 +1970,7 @@ duk_bool_t duk_check_type_mask(duk_context *ctx, duk_idx_t idx, duk_uint_t mask)
 
 ### 要約
 
-idxにある値の型とmaskで与えられた型マスクビットをマッチさせる。値の型が型マスクビットの1つに一致する場合は1を，そうでない場合は0を返す。
+idxにある値の型とmaskで与えられた型マスクビットをマッチさせます。値の型が型マスクビットの1つに一致する場合は1を，そうでない場合は0を返す。
 
 
 ### 例
@@ -1984,7 +1985,7 @@ if (duk_check_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 
 ## duk_compact() 
 
-1.0.0 propertyobjectmemory§
+1.0.0 property object memory
 
 ### プロトタイプ
 
@@ -1999,7 +2000,7 @@ void duk_compact(duk_context *ctx, duk_idx_t obj_idx);
 
 ### 要約
 
-オブジェクトの内部メモリ割り当てをリサイズし、メモリ使用量を最小にする。obj_idx の値がオブジェクトでない場合は、何もしない。コンパクションは通常安全であるが、内部エラー（メモリ不足エラーなど）により失敗することがある。コンパクションは、オブジェクトの「自身のプロパティ」にのみ影響し、継承されたプロパティには影響しません。
+オブジェクトの内部メモリ割り当てをリサイズし、メモリ使用量を最小にします。obj_idx の値がオブジェクトでない場合は、何もしない。コンパクションは通常安全であるが、内部エラー（メモリ不足エラーなど）により失敗することがあります。コンパクションは、オブジェクトの「自身のプロパティ」にのみ影響し、継承されたプロパティには影響しません。
 
 コンパクションは最終的な操作ではなく、オブジェクトのセマンティクスに影響を与えることはありません。オブジェクトに新しいプロパティを追加することは可能ですが（オブジェクトが拡張可能であることが前提）、オブジェクトのサイズ変更が発生します。既存のプロパティ値は、オブジェクトの内部メモリ割り当てに影響を与えることなく変更することができます（プロパティが書き込み可能であると仮定して）。オブジェクトは複数回コンパクト化できます。例えば、以前にコンパクト化したオブジェクトに新しいプロパティを追加する場合、プロパティ追加後のメモリフットプリントを最小にするために、オブジェクトを再度コンパクト化することができます。
 
@@ -2021,7 +2022,7 @@ duk_compact(ctx, -1);                           /* [ ... obj ] */
 
 ## duk_compile() 
 
-1.0.0 compile§
+1.0.0 compile
 
 ### プロトタイプ
 
@@ -2035,7 +2036,7 @@ void duk_compile(duk_context *ctx, duk_uint_t flags);
 
 ### 要約
 
-ECMAScript のソースコードをコンパイルし、コンパイルされた関数オブジェクトに置き換えます（コードは実行されません）。filename 引数は結果の関数の fileName プロパティとして保存され、例えばトレースバックで関数を識別するために使用される名前となります。コンパイル時のエラー（メモリ不足、内部制限エラーなどの通常の内部エラーに加えて）に対しては、SyntaxError を投げることがあります。
+ECMAScript のソースコードをコンパイルし、コンパイルされた関数オブジェクトに置き換えます（コードは実行されません）。filename 引数は結果の関数の fileName プロパティとして保存され、例えばトレースバックで関数を識別するために使用される名前となります。コンパイル時のエラー（メモリ不足、内部制限エラーなどの通常の内部エラーに加えて）に対しては、SyntaxError を投げます。ことがあります。
 
 以下のフラグを指定することができます。
 
@@ -2148,7 +2149,7 @@ duk_compile_lstring_filename
 
 ## duk_compile_lstring() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -2162,7 +2163,7 @@ void duk_compile_lstring(duk_context *ctx, duk_uint_t flags, const char *src, du
 
 ### 要約
 
-duk_compile() と同様であるが、コンパイル入力は長さを明示した C 文字列として与えられる。この関数に関連するファイル名は "input" である。
+duk_compile() と同様であるが、コンパイル入力は長さを明示した C 文字列として与えられます。この関数に関連するファイル名は "input" です。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では便利です。
 
@@ -2178,7 +2179,7 @@ duk_compile_lstring(ctx, 0, src, len);
 
 ## duk_compile_lstring_filename() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -2209,7 +2210,7 @@ duk_compile_lstring_filename(ctx, 0, src, len);
 
 ## duk_compile_string() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -2223,7 +2224,7 @@ void duk_compile_string(duk_context *ctx, duk_uint_t flags, const char *src);
 
 ### 要約
 
-duk_compile() と同様であるが、コンパイル入力は C の文字列として与えられる。この関数に関連するファイル名は "input" である。
+duk_compile() と同様であるが、コンパイル入力は C の文字列として与えられますこの関数に関連するファイル名は "input" です。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では便利です。
 
@@ -2236,7 +2237,7 @@ duk_compile_string(ctx, 0, "print('program code');");
 
 ## duk_compile_string_filename() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -2250,7 +2251,7 @@ void duk_compile_string_filename(duk_context *ctx, duk_uint_t flags, const char 
 
 ### 要約
 
-duk_compile() と同様であるが、コンパイル入力は C の文字列として与えられる。
+duk_compile() と同様であるが、コンパイル入力は C の文字列として与えられます。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -2264,7 +2265,7 @@ duk_compile_string_filename(ctx, 0, "print('program code');");
 
 ## duk_components_to_time() 
 
-2.0.0 time§
+2.0.0 time
 
 ### プロトタイプ
 
@@ -2279,13 +2280,13 @@ duk_double_t duk_components_to_time(duk_context *ctx, duk_time_components *comp)
 
 ### 要約
 
-UTCで解釈される構成要素（年、月、日、など）を時間値に変換する。comp->weekday 引数は変換の際に無視される。構成要素の値が無効な場合、エラーが投げられる。
+UTCで解釈される構成要素（年、月、日、など）を時間値に変換します。comp->weekday 引数は変換の際に無視されます。構成要素の値が無効な場合、エラーが投げられます。
 
 ECMAScriptのDate.UTC()組み込みと若干の違いがあります。
 
 2桁の年号を特別に扱うことはありません。例えば、Date.UTC(99, 0, 1)は1999-01-01として解釈されます。comp->time が 99 の場合、99 年と解釈されます。
-ミリ秒成分は分数（サブミリ秒の分解能）が許され、結果として得られる時刻の値に分数を持たせることができる。
-ECMAScript のプリミティブと同様に、成分はその自然な範囲を超えることができ、正規化されます。例えば、comp->minutesを120と指定すると、時間値に2時間追加されると解釈される。成分はIEEE doublesで表現され、大きな値や負の値を使用できるようにする。
+ミリ秒成分は分数（サブミリ秒の分解能）が許され、結果として得られる時刻の値に分数を持たせることができます。
+ECMAScript のプリミティブと同様に、成分はその自然な範囲を超えることができ、正規化されます。例えば、comp->minutesを120と指定すると、時間値に2時間追加されると解釈されます。成分はIEEE doublesで表現され、大きな値や負の値を使用できるようにします。
 
 
 ### 例
@@ -2315,7 +2316,7 @@ duk_time_to_components
 
 ## duk_concat() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -2354,7 +2355,7 @@ duk_join
 
 ## duk_config_buffer() 
 
-1.3.0 stackbuffer§
+1.3.0 stack buffer
 
 ### プロトタイプ
 
@@ -2388,7 +2389,7 @@ duk_push_external_buffer
 
 ## duk_copy() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -2402,9 +2403,9 @@ void duk_copy(duk_context *ctx, duk_idx_t from_idx, duk_idx_t to_idx);
 
 ### 要約
 
-from_idxからto_idxに値をコピーし、前の値を上書きする。どちらかのインデックスが無効な場合、エラーを投げる。
+from_idxからto_idxに値をコピーし、前の値を上書きします。どちらかのインデックスが無効な場合、エラーを投げます。。
 
-これは，以下の略記法である。
+これは，以下の略記法です。
 
 ```c
 /* to_index must be normalized in case it is negative and would change its
@@ -2429,7 +2430,7 @@ duk_replace
 
 ## duk_create_heap() 
 
-1.0.0 heap§
+1.0.0 heap
 
 ### プロトタイプ
 
@@ -2448,7 +2449,7 @@ duk_context *duk_create_heap(duk_alloc_function alloc_func,
 
 ### 要約
 
-新しいDuktapeヒープを作成し、初期コンテキスト(スレッド)を返す。ヒープの初期化に失敗した場合、NULLが返される。現在のところ、より詳細なエラー情報を得る方法はない。
+新しいDuktapeヒープを作成し、初期コンテキスト(スレッド)を返す。ヒープの初期化に失敗した場合、NULLが返されます。現在のところ、より詳細なエラー情報を得る方法はない。
 
 呼び出し側は、alloc_func、realloc_func、free_func でカスタムメモリ管理関数を提供することができます。ポインタはすべてNULLでなければなりませんし、すべて非NULLでなければなりません。ポインタが NULL の場合，デフォルトのメモリ管理関数 (ANSI C の malloc(), realloc() および free()) が使用される．メモリ管理関数は、同じ不透明なユーザデータポインタである heap_udata を共有します。このユーザーデータポインターは、致命的なエラー処理や低メモリーポインター圧縮マクロなど、他のDuktape機能にも使用されています。
 
@@ -2456,7 +2457,7 @@ duk_context *duk_create_heap(duk_alloc_function alloc_func,
 
 デフォルトの設定で Duktape ヒープを作成するには、 duk_create_heap_default() を使用して下さい。
 
-同じヒープにリンクされた新しいコンテキストは、 duk_push_thread() と duk_push_thread_new_globalenv() で作成できる。
+同じヒープにリンクされた新しいコンテキストは、 duk_push_thread() と duk_push_thread_new_globalenv() で作成できます。
 
 
 ### 例
@@ -2497,7 +2498,7 @@ duk_destroy_heap
 
 ## duk_create_heap_default() 
 
-1.0.0 heap§
+1.0.0 heap
 
 ### プロトタイプ
 
@@ -2514,7 +2515,7 @@ duk_context *duk_create_heap_default(void);
 
 新しいDuktapeヒープを作成し、初期コンテキスト(スレッド)を返す。ヒープの初期化に失敗した場合は、NULLを返します。現在のところ、より詳細なエラー情報を得る方法はない。
 
-作成されたヒープには、デフォルトのメモリ管理関数と致命的なエラーハンドラ関数が使用される。このAPIコールは、以下と同等である。
+作成されたヒープには、デフォルトのメモリ管理関数と致命的なエラーハンドラ関数が使用されます。このAPIコールは、以下と同等です。
 
 ```c
 ctx = duk_create_heap(NULL, NULL, NULL, NULL, NULL);
@@ -2537,7 +2538,7 @@ if (ctx) {
 
 ## duk_debugger_attach() 
 
-1.2.0 debugger§
+1.2.0 debugger
 
 ### プロトタイプ
 
@@ -2560,7 +2561,7 @@ void duk_debugger_attach(duk_context *ctx,
 
 ### 要約
 
-Duktapeのヒープにデバッガーをアタッチします。アタッチが完了すると、デバッガは自動的にポーズ状態になる。デバッガのサポートがDuktapeにコンパイルされていない場合、エラーを投げる。デバッガー統合の詳細については、debugger.rstを参照してください。コールバックは以下のとおりです。オプションのコールバックはNULLでもかまいません。
+Duktapeのヒープにデバッガーをアタッチします。アタッチが完了すると、デバッガは自動的にポーズ状態になります。デバッガのサポートがDuktapeにコンパイルされていない場合、エラーを投げます。。デバッガー統合の詳細については、debugger.rstを参照してください。コールバックは以下のとおりです。オプションのコールバックはNULLでもかまいません。
 
 コールバック 必須 説明
 read_cb はい デバッグトランスポート読み込みコールバック
@@ -2572,7 +2573,7 @@ request_cb No アプリケーション固有のコマンド (AppRequest) コー�
 detached_cb No デバッガーを切り離すコールバック
 重要：コールバックは、以下を除き、Duktape API関数を呼び出すことはできません（そうすることで、メモリが安全でない動作が発生する可能性があります）。
 
-request_cb AppRequestコールバックは、debugger.rstに記載されているガイドラインの範囲内で、値スタックを使用することができます。
+request_cb AppRequestコールバックは、debugger.rstに記載されているガイドラインの範囲内で、バリュースタックを使用することができます。
 Duktape 1.4.0以降では、デバッガー離脱コールバックはduk_debugger_attach()を呼び出して、すぐにデバッガーを再接続することが許可されるようになりました。Duktape 1.4.0以前では、即時再接続は潜在的にいくつかの問題を引き起こしていました。
 Duk_debugger_attach_custom() と duk_debugger_attach() APIコールは、Duktape 2.xでマージされました。
 
@@ -2599,7 +2600,7 @@ duk_debugger_notify
 
 ## duk_debugger_cooperate() 
 
-1.2.0 debugger§
+1.2.0 debugger
 
 ### プロトタイプ
 
@@ -2614,7 +2615,7 @@ void duk_debugger_cooperate(duk_context *ctx);
 
 ### 要約
 
-受信したデバッグコマンドをブロックせずにチェックし、実行する。デバッグ・コマンドは、引数ctxのコンテキストで実行されます。Duktapeへの呼び出しが（どのコンテキストからも）進行中でない場合にのみ呼び出すことができる。詳細については、debugger.rst を参照してください。
+受信したデバッグコマンドをブロックせずにチェックし、実行します。デバッグ・コマンドは、引数ctxのコンテキストで実行されます。Duktapeへの呼び出しが（どのコンテキストからも）進行中でない場合にのみ呼び出すことができます。詳細については、debugger.rst を参照してください。
 
 
 ### 例
@@ -2631,7 +2632,7 @@ duk_debugger_detach
 
 ## duk_debugger_detach() 
 
-1.2.0 debugger§
+1.2.0 debugger
 
 ### プロトタイプ
 
@@ -2646,7 +2647,7 @@ void duk_debugger_detach(duk_context *ctx);
 
 ### 要約
 
-Duktapeヒープからデバッガを切り離す。デバッガ・サポートがDuktapeにコンパイルされていない場合、エラーを投げる。詳細は debugger.rst を参照のこと。
+Duktapeヒープからデバッガを切り離す。デバッガ・サポートがDuktapeにコンパイルされていない場合、エラーを投げます。。詳細は debugger.rst を参照のこと。
 
 
 ### 例
@@ -2663,7 +2664,7 @@ duk_debugger_cooperate
 
 ## duk_debugger_notify() 
 
-1.5.0 debugger§
+1.5.0 debugger
 
 ### プロトタイプ
 
@@ -2677,7 +2678,7 @@ duk_bool_t duk_debugger_notify(duk_context *ctx, duk_idx_t nvalues);
 
 ### 要約
 
-デバッグプロトコルのdvaluesにマッピングされた値スタックトップのnvalues値を含むアプリケーション固有のデバッガ通知（AppNotify）を送信します。戻り値は、notifyが正常に送信されたか(0以外)、送信されなかったか(0)を示します。引数nvaluesは常にスタックトップからポップオフされる。デバッガサポートがコンパイルされていない場合、またはデバッガが接続されていない場合、このコールはno-opである; いずれの場合も、コールはnotifyが送信されなかったことを示す0を返す。
+デバッグプロトコルのdvaluesにマッピングされたバリュースタックトップのnvalues値を含むアプリケーション固有のデバッガ通知（AppNotify）を送信します。戻り値は、notifyが正常に送信されたか(0以外)、送信されなかったか(0)を示します。引数nvaluesは常にスタックトップからポップオフされます。デバッガサポートがコンパイルされていない場合、またはデバッガが接続されていない場合、このコールはno-opである; いずれの場合も、コールはnotifyが送信されなかったことを示す0を返す。
 
 アプリケーション固有の通知の使用方法に関する詳細や例については、デバッガのドキュメントを参照してください。
 
@@ -2707,7 +2708,7 @@ if (duk_debugger_notify(ctx, 4 /*nvalues*/)) {
 
 ## duk_debugger_pause() 
 
-1.5.0 debugger§
+1.5.0 debugger
 
 ### プロトタイプ
 
@@ -2740,7 +2741,7 @@ if (key_pressed == KEY_F12) {
 
 ## duk_decode_string() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -2754,7 +2755,7 @@ void duk_decode_string(duk_context *ctx, duk_idx_t idx, duk_decode_char_function
 
 ### 要約
 
-idxの文字列を処理し、文字列の各コードポイントに対してコールバックを呼び出す。コールバックには、引数udataとコードポイントが渡される。入力文字列は変更されない。値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げる。
+idxの文字列を処理し、文字列の各コードポイントに対してコールバックを呼び出す。コールバックには、引数udataとコードポイントが渡されます。入力文字列は変更されない。値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げます。。
 
 
 ### 例
@@ -2775,7 +2776,7 @@ duk_map_string
 
 ## duk_def_prop() 
 
-1.1.0 sandboxproperty§
+1.1.0 sandbox property
 
 ### プロトタイプ
 
@@ -2795,7 +2796,7 @@ void duk_def_prop(duk_context *ctx, duk_idx_t obj_idx, duk_uint_t flags);
 
 Object.defineProperty() のようなセマンティクスで、 obj_idx にあるオブジェクトの property key の属性を作成または変更します。要求された変更が許可されない場合（例えば、プロパティが設定できない場合）、TypeErrorがスローされます。ターゲットがオブジェクトでない場合（またはインデックスが無効な場合）、エラーがスローされます。
 
-flags フィールドは、どのプロパティの属性が変更されるかを示す "have" フラグを提供し、これは Object.defineProperty() で許可される部分プロパティ記述子をモデル化したものです。書き込み可能、設定可能、および列挙可能な属性の値は flags フィールドで指定し、プロパティ値、ゲッター、およびセッターは値スタック引数として指定します。新しいプロパティを作成するとき、属性値が見つからないと、ECMAScript のデフォルトが使用されます（すべての boolean 属性に対して false、value、getter、setter に対して undefined）；既存のプロパティを修正するとき、属性値が見つからないと、既存の属性値が変更されないことを意味します。
+flags フィールドは、どのプロパティの属性が変更されるかを示す "have" フラグを提供し、これは Object.defineProperty() で許可される部分プロパティ記述子をモデル化したものです。書き込み可能、設定可能、および列挙可能な属性の値は flags フィールドで指定し、プロパティ値、ゲッター、およびセッターはバリュースタック引数として指定します。新しいプロパティを作成するとき、属性値が見つからないと、ECMAScript のデフォルトが使用されます（すべての boolean 属性に対して false、value、getter、setter に対して undefined）；既存のプロパティを修正するとき、属性値が見つからないと、既存の属性値が変更されないことを意味します。
 
 具体的な例として
 
@@ -2816,7 +2817,7 @@ duk_def_prop(ctx, obj_idx,
 
 DUK_DEFPROP_FORCE フラグを使用すると、拡張不可能なターゲットオブジェクトや設定不可能なプロパティのために操作が通常失敗する場合でも、プロパティの変更を強制することができます。これは ECMAScript コードから Object.defineProperty() で行うことはできず、例えばサンドボックスのセットアップに有用です。場合によっては、強制的な変更さえも不可能で、エラーが投げられることになります。例えば、内部で仮想プロパティとして実装されているプロパティは、変更不可能であったり（string .length や index プロパティなど）、制限がある場合があります（array .length プロパティは内部制限により設定や列挙ができないなど）。
 
-以下の基本フラグが定義されている。
+以下の基本フラグが定義されています。
 
 定義 説明
 DUK_DEFPROP_WRITABLE DUK_DEFPROP_HAVE_WRITABLE が設定されている場合のみ有効です。
@@ -2825,9 +2826,9 @@ DUK_DEFPROP_CONFIGURABLE 設定可能な属性を設定します。DUK_DEFPROP_H
 DUK_DEFPROP_HAVE_WRITABLE 書き込み可能な属性を設定または解除します （未設定の場合は変更されません）。
 DUK_DEFPROP_HAVE_ENUMERABLE 列挙可能な属性を設定または解除します (未設定の場合は変更されません)。
 DUK_DEFPROP_HAVE_CONFIGURABLE コンフィギュラブル属性を設定または解除します (未設定の場合、変更されません)。
-DUK_DEFPROP_HAVE_VALUE 値属性を設定します。値は値スタックで指定されます。
-DUK_DEFPROP_HAVE_GETTER ゲッター属性を設定し、値は値スタックに保存されます。
-DUK_DEFPROP_HAVE_SETTER セッター属性の設定、値は値スタックで指定されます。
+DUK_DEFPROP_HAVE_VALUE 値属性を設定します。値はバリュースタックで指定されます。
+DUK_DEFPROP_HAVE_GETTER ゲッター属性を設定し、値はバリュースタックに保存されます。
+DUK_DEFPROP_HAVE_SETTER セッター属性の設定、値はバリュースタックで指定されます。
 DUK_DEFPROP_FORCE 属性が設定不可能な場合でも、可能であれば属性を強制的に変更します。
 
 また、一般的なフラグの組み合わせに対応する便利な定義もあります。例えば、DUK_DEFPROP_SET_WRITABLE は DUK_DEFPROP_HAVE_WRITABLE と DUK_DEFPROP_WRITABLE に相当します。現在、以下のものが定義されています。
@@ -2844,23 +2845,23 @@ DUK_DEFPROP_{W,E,C,WE,WC,EC,WEC} 属性値を与えます（一致する "have" 
 
 いくつかの例（以下にもっと例を示します）。
 
-値を設定し、書き込み可能を設定し、列挙可能をクリアし、設定可能を設定するには、値を値スタックにプッシュして、フラグを設定します。
+値を設定し、書き込み可能を設定し、列挙可能をクリアし、設定可能を設定するには、値をバリュースタックにプッシュして、フラグを設定します。
 基本フラグ。DUK_DEFPROP_HAVE_VALUE | DUK_DEFPROP_HAVE_WRITABLE | DUK_DEFPROP_WRITABLE | DUK_DEFPROP_HAVE_ENUMERABLE | DUK_DEFPROP_HAVE_CONFIGURABLE; or DUK_DEFPROP_CONFIGURABLE。
 便利です。DUK_defprop_have_value | DUK_defprop_attr_WC.
 書き込み可能な属性を消去する（他の属性はそのままにしておく）には、 flags を設定します。
 基本フラグ。DUK_DEFPROP_HAVE_WRITABLE; または
 便利です。DUK_DEFPROP_CLEAR_WRITABLE、または
 便宜上DUK_DEFPROP_CLEAR_W.
-値を設定し、書き込み可能を消去し、列挙可能を設定するには（他の属性はそのままで）、値を値スタックにプッシュし、フラグを設定します。
+値を設定し、書き込み可能を消去し、列挙可能を設定するには（他の属性はそのままで）、値をバリュースタックにプッシュし、フラグを設定します。
 基本フラグ。DUK_DEFPROP_HAVE_VALUE | DUK_DEFPROP_HAVE_WRITABLE | DUK_DEFPROP_HAVE_ENUMERABLE | DUK_DEFPROP_ENUMERABLE; または
 便利です。DUK_DEFPROP_HAVE_VALUE | DUK_DEFPROP_CLEAR_W | DUK_DEFPROP_SET_E、または
 便利です。DUK_DEFPROP_HAVE_VALUE | DUK_DEFPROP_HAVE_WE | DUK_DEFPROP_E.
 
 このAPIコールはいろいろと便利です。
 
-Cコードから直接、非デフォルトの属性を持つプロパティを作成する。
-Cコードから直接、アクセッサ（ゲッター／セッター）プロパティを作成する。
-既存のプロパティの属性を C コードから直接変更する。
+Cコードから直接、非デフォルトの属性を持つプロパティを作成します。
+Cコードから直接、アクセッサ（ゲッター／セッター）プロパティを作成します。
+既存のプロパティの属性を C コードから直接変更します。
 より多くの例については、APIテストケースtest-def-prop.cを参照してください。
 
 ターゲットがdefinePropertyトラップを実装しているProxyオブジェクトの場合、トラップが起動するはずです。しかし、Duktapeは現在definePropertyトラップをサポートしておらず、defineProperty()オペレーションは現在ターゲットに転送されません。サポートが追加された場合、このAPIコールはトラップを呼び出したり、操作をターゲット・オブジェクトに転送したりするようになります。
@@ -3001,7 +3002,7 @@ duk_get_prop_desc
 
 ## duk_del_prop() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -3015,17 +3016,17 @@ duk_bool_t duk_del_prop(duk_context *ctx, duk_idx_t obj_idx);
 
 ### 要約
 
-obj_idx にある値のプロパティ key を削除する。 key はスタックから削除される。リターンコードとエラースローの動作。
+obj_idx にある値のプロパティ key を削除します。 key はスタックから削除されます。リターンコードとエラースローの動作。
 
 property が存在し、かつ設定可能な場合（削除可能）、property を削除し、1 を返す。
-property が存在し、設定可能でない場合、エラーを投げる（strict mode semantics）。
+property が存在し、設定可能でない場合、エラーを投げます。（strict mode semantics）。
 property が存在しない場合、1 を返す（0 ではない）。
-obj_idx の値がオブジェクト互換でない場合、エラーを投げる。
-obj_idx が無効な場合、エラーを投げる。
-プロパティの削除は、ECMAScript の式 res = delete obj[key] と等価である。正確な意味は、Property Accessors, The delete operator and [[Delete]] (P, Throw) を参照してください。戻り値とエラースローの動作は、ECMAScriptのdelete演算子の動作を反映している。対象値とキーは共に強制される。
+obj_idx の値がオブジェクト互換でない場合、エラーを投げます。。
+obj_idx が無効な場合、エラーを投げます。。
+プロパティの削除は、ECMAScript の式 res = delete obj[key] と等価です。正確な意味は、Property Accessors, The delete operator and [[Delete]] (P, Throw) を参照してください。戻り値とエラースローの動作は、ECMAScriptのdelete演算子の動作を反映しています。対象値とキーは共に強制されます。
 
-ターゲット値は、自動的にオブジェクトに強制される。しかし、このオブジェクトは一時的なものであり、そのプロパティを削除することはあまり有益ではありません。
-key引数は内部的にToPropertyKey()強制を使って強制され、結果は文字列かSymbolになる。配列と数値インデックスには、明示的な文字列強制を避ける内部高速パスがあるので、該当する場合は数値キーを使用します。
+ターゲット値は、自動的にオブジェクトに強制されます。しかし、このオブジェクトは一時的なものであり、そのプロパティを削除することはあまり有益ではありません。
+key引数は内部的にToPropertyKey()強制を使って強制され、結果は文字列かSymbolになります。配列と数値インデックスには、明示的な文字列強制を避ける内部高速パスがあるので、該当する場合は数値キーを使用します。
 ターゲットが deleteProperty トラップを実装する Proxy オブジェクトの場合、トラップが呼び出され、API 呼び出しの戻り値はトラップの戻り値に一致します。
 
 このAPIコールは、ターゲットプロパティが存在しない場合、1を返します。これはあまり直感的ではありませんが、ECMAScript のセマンティクスに従っています: delete obj.nonexistent も true と評価されます。
@@ -3054,7 +3055,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_heapptr() 
 
-2.2.0 propertyheapptrborrowed§
+2.2.0 property heap ptrborrowed
 
 ### プロトタイプ
 
@@ -3096,7 +3097,7 @@ duk_del_prop_literal
 
 ## duk_del_prop_index() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -3135,7 +3136,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -3172,7 +3173,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -3209,7 +3210,7 @@ duk_del_prop_heapptr
 
 ## duk_del_prop_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -3246,7 +3247,7 @@ duk_del_prop_heapptr
 
 ## duk_destroy_heap() 
 
-1.0.0 heap§
+1.0.0 heap
 
 ### プロトタイプ
 
@@ -3261,9 +3262,9 @@ void duk_destroy_heap(duk_context *ctx);
 
 ### 要約
 
-Duktapeヒープを破棄する。引数contextには、ヒープにリンクしている任意のcontextを指定することができます。ヒープに関連する全てのリソースは解放され、この呼び出しが完了した後は参照してはならない。これらのリソースには、ヒープにリンクされた全てのコンテキストと、ヒープ内の全ての文字列とバッファのポインタが含まれる。
+Duktapeヒープを破棄します。引数contextには、ヒープにリンクしている任意のcontextを指定することができます。ヒープに関連する全てのリソースは解放され、この呼び出しが完了した後は参照してはならない。これらのリソースには、ヒープにリンクされた全てのコンテキストと、ヒープ内の全ての文字列とバッファのポインタが含まれます。
 
-ctxがNULLの場合、この呼び出しは失敗である。
+ctxがNULLの場合、この呼び出しは失敗です。
 
 
 ### 例
@@ -3275,7 +3276,7 @@ duk_destroy_heap(ctx);
 
 ## duk_dump_function() 
 
-1.3.0 stackbytecode§
+1.3.0 stack bytecode
 
 ### プロトタイプ
 
@@ -3308,7 +3309,7 @@ duk_load_function
 
 ## duk_dup() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -3340,7 +3341,7 @@ duk_dup_top
 
 ## duk_dup_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -3354,9 +3355,9 @@ void duk_dup_top(duk_context *ctx);
 
 ### 要約
 
-スタックトップにある値の複製をスタックにプッシュする。値スタックが空の場合、エラーを投げる。
+スタックトップにある値の複製をスタックにプッシュします。バリュースタックが空の場合、エラーを投げます。。
 
-duk_dup(ctx, -1) を呼び出すのと同等である。
+duk_dup(ctx, -1) を呼び出すのと同等です。
 
 
 ### 例
@@ -3370,7 +3371,7 @@ duk_dup_top(ctx);        /* -> [ ... 123 234 234 ] */
 
 ## duk_enum() 
 
-1.0.0 propertyobject§
+1.0.0 property object
 
 ### プロトタイプ
 
@@ -3384,23 +3385,23 @@ void duk_enum(duk_context *ctx, duk_idx_t obj_idx, duk_uint_t enum_flags);
 
 ### 要約
 
-obj_idx にあるオブジェクトの列挙子を作成します。列挙の詳細はenum_flagsで制御することができる。対象値がオブジェクトでない場合は、エラーを投げる。
+obj_idx にあるオブジェクトの列挙子を作成します。列挙の詳細はenum_flagsで制御することができます。対象値がオブジェクトでない場合は、エラーを投げます。。
 
 列挙のフラグ。
 
-DUK_ENUM_INCLUDE_NONENUMERABLE 列挙不可能なプロパティも列挙する。デフォルトでは、列挙可能なプロパティのみが列挙される。
-DUK_ENUM_INCLUDE_HIDDEN 非表示のシンボルも列挙します。デフォルトでは、非表示のシンボルは列挙されません。DUK_ENUM_INCLUDE_SYMBOLS と一緒に使用する。Duktape 1.x では、このフラグは DUK_ENUM_INCLUDE_INTERNAL と呼ばれていた。
-DUK_ENUM_INCLUDE_SYMBOLS シンボルを列挙の結果に含める。DUK_ENUM_INCLUDE_HIDDEN が指定されていない限り、隠しシンボルは含まれません。
-DUK_ENUM_EXCLUDE_STRINGS 列挙結果から文字列を除外する。デフォルトでは文字列が含まれます。
+DUK_ENUM_INCLUDE_NONENUMERABLE 列挙不可能なプロパティも列挙します。デフォルトでは、列挙可能なプロパティのみが列挙されます。
+DUK_ENUM_INCLUDE_HIDDEN 非表示のシンボルも列挙します。デフォルトでは、非表示のシンボルは列挙されません。DUK_ENUM_INCLUDE_SYMBOLS と一緒に使用します。Duktape 1.x では、このフラグは DUK_ENUM_INCLUDE_INTERNAL と呼ばれていた。
+DUK_ENUM_INCLUDE_SYMBOLS シンボルを列挙の結果に含めます。DUK_ENUM_INCLUDE_HIDDEN が指定されていない限り、隠しシンボルは含まれません。
+DUK_ENUM_EXCLUDE_STRINGS 列挙結果から文字列を除外します。デフォルトでは文字列が含まれます。
 DUK_ENUM_OWN_PROPERTIES_ONLY オブジェクトの「自身の」プロパティのみを列挙します。デフォルトでは、継承されたプロパティも列挙されます。
 DUK_ENUM_ARRAY_INDICES_ONLY 配列のインデックス、すなわち "0"、"1"、"2" などの形式のプロパティ名のみを列挙します。
 DUK_ENUM_SORT_ARRAY_INDICES ES2015 [[OwnPropertyKeys]] の列挙順序を継承レベルごとではなく、列挙結果全体に適用します。また、シンボルは通常の文字列キーの後にソートされます (どちらも挿入順です)。
-DUK_ENUM_NO_PROXY_BEHAVIOR プロキシ動作を呼び出さずにプロキシオブジェクト自身を列挙する。
+DUK_ENUM_NO_PROXY_BEHAVIOR プロキシ動作を呼び出さずにプロキシオブジェクト自身を列挙します。
 フラグがない場合、列挙はfor-inのように動作します。自己および継承された列挙可能なプロパティが含まれ、列挙順はECMAScript ES2015 [[OwnPropertyKeys]] 列挙順（各相続レベルに対して適用）に従っています。
 
 列挙子を作成したら、duk_next() を使用して列挙子からキー (またはキーと値のペア) を抽出します。
 
-ES2015 [[OwnPropertyKeys]] の列挙順は、 (1) 配列インデックスの昇順、 (2) 配列インデックス以外のキーの挿入順、 (3) シンボルの挿入順となります。このルールは継承レベルごとに別々に適用されるため、配列インデックスのキーが継承された場合、結果的に順番が狂って表示されることになる。配列のインデックスが継承されることはほとんどないため、ほとんどの実用的なコードでは、これは問題ではありません。DUK_ENUM_SORT_ARRAY_INDICES を使用すると、列挙シーケンス全体を強制的にソートすることができます。
+ES2015 [[OwnPropertyKeys]] の列挙順は、 (1) 配列インデックスの昇順、 (2) 配列インデックス以外のキーの挿入順、 (3) シンボルの挿入順となります。このルールは継承レベルごとに別々に適用されるため、配列インデックスのキーが継承された場合、結果的に順番が狂って表示されることになります。配列のインデックスが継承されることはほとんどないため、ほとんどの実用的なコードでは、これは問題ではありません。DUK_ENUM_SORT_ARRAY_INDICES を使用すると、列挙シーケンス全体を強制的にソートすることができます。
 
 ### 例
 
@@ -3423,7 +3424,7 @@ duk_next
 
 ## duk_equals() 
 
-1.0.0 compare§
+1.0.0 compare
 
 ### プロトタイプ
 
@@ -3437,7 +3438,7 @@ duk_bool_t duk_equals(duk_context *ctx, duk_idx_t idx1, duk_idx_t idx2);
 
 ### 要約
 
-idx1 と idx2 の値が等しいかどうかを比較する。ECMAScript の Equals 演算子 (==) のセマンティクスを使用して値が等しいと見なされる場合は 1 を、そうでない場合は 0 を返す。また、どちらかのインデックスが無効な場合は0を返す。
+idx1 と idx2 の値が等しいかどうかを比較します。ECMAScript の Equals 演算子 (==) のセマンティクスを使用して値が等しいと見なされる場合は 1 を、そうでない場合は 0 を返す。また、どちらかのインデックスが無効な場合は0を返す。
 
 Equals 演算子が使用する Abstract Equality Comparison Algorithm は値の強制を行うため (ToNumber() および ToPrimitive()) 、この比較には副作用があり、エラーをスローする可能性があります。duk_strict_equals() で使用できる厳密な等式比較には副作用がありません。
 
@@ -3459,7 +3460,7 @@ duk_strict_equals
 
 ## duk_error() 
 
-1.0.0 error§
+1.0.0 error
 
 ### プロトタイプ
 
@@ -3487,7 +3488,7 @@ if (argvalue < 0) {
 }
 ```
 
-戻り値が無視される場合、コンパイル時の警告を避けるため、voidにキャストする。
+戻り値が無視される場合、コンパイル時の警告を避けるため、voidにキャストします。
 
 ```c
 if (argvalue < 0) {
@@ -3517,7 +3518,7 @@ duk_uri_error
 
 ## duk_error_va() 
 
-1.1.0 varargerror§
+1.1.0 vararg error
 
 ### プロトタイプ
 
@@ -3563,7 +3564,7 @@ duk_uri_error_va
 
 ## duk_eval() 
 
-1.0.0 compile§
+1.0.0 compile
 
 ### プロトタイプ
 
@@ -3577,7 +3578,7 @@ void duk_eval(duk_context *ctx);
 
 ### 要約
 
-ECMAScript のソースコードをスタックの一番上で評価し、スタックの一番上に単一の戻り値を残す。このようなエラーは自動的には捕捉されません。一時的なeval関数に関連するファイル名は "eval "である。
+ECMAScript のソースコードをスタックの一番上で評価し、スタックの一番上に単一の戻り値を残す。このようなエラーは自動的には捕捉されません。一時的なeval関数に関連するファイル名は "eval "です。
 
 このAPIコールは、基本的に次のようなショートカットになっています。
 
@@ -3587,7 +3588,7 @@ duk_compile(ctx, DUK_COMPILE_EVAL);  /* [ ... source filename ] -> [ function ] 
 duk_call(ctx, 0);
 ```
 
-ソースコードは、明示的な "use strict" 指令を含まない限り、非厳密モードで評価される。特に、現在のコンテキストの厳密性は eval のコードには反映されません。これにより、Duktape/Cの関数呼び出しの内部でevalを使うか（strictモード）、外部で使うか（non-strictモード）で、evalの厳密性が変わってしまうような混乱が避けられます。
+ソースコードは、明示的な "use strict" 指令を含まない限り、非厳密モードで評価されます。特に、現在のコンテキストの厳密性は eval のコードには反映されません。これにより、Duktape/Cの関数呼び出しの内部でevalを使うか（strictモード）、外部で使うか（non-strictモード）で、evalの厳密性が変わってしまうような混乱が避けられます。
 
 eval の入力が固定文字列の場合、duk_eval_string() を使うこともできます。
 
@@ -3617,7 +3618,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -3647,7 +3648,7 @@ duk_error
 
 ## duk_eval_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -3663,7 +3664,7 @@ duk_ret_t duk_eval_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_EVAL_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -3684,7 +3685,7 @@ duk_error_va
 
 ## duk_eval_lstring() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -3720,7 +3721,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_lstring_noresult() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -3734,7 +3735,7 @@ void duk_eval_lstring_noresult(duk_context *ctx, const char *src, duk_size_t len
 
 ### 要約
 
-duk_eval_lstring() と同様だが、値スタックに結果を残さない。
+duk_eval_lstring() と同様だが、バリュースタックに結果を残さない。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -3750,7 +3751,7 @@ duk_eval_lstring_noresult(ctx, src, len);
 
 ## duk_eval_noresult() 
 
-1.0.0 compile§
+1.0.0 compile
 
 ### プロトタイプ
 
@@ -3764,7 +3765,7 @@ void duk_eval_noresult(duk_context *ctx);
 
 ### 要約
 
-duk_eval() と同様であるが、値スタックに結果を残さない。
+duk_eval() と同様であるが、バリュースタックに結果を残さない。
 
 
 ### 例
@@ -3782,7 +3783,7 @@ duk_eval_lstring_noresult
 
 ## duk_eval_string() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -3815,7 +3816,7 @@ duk_eval_string_noresult
 
 ## duk_eval_string_noresult() 
 
-1.0.0 stringcompile§
+1.0.0 string compile
 
 ### プロトタイプ
 
@@ -3829,7 +3830,7 @@ void duk_eval_string_noresult(duk_context *ctx, const char *src);
 
 ### 要約
 
-duk_eval_string() と同様であるが、値スタックに結果を残さない。
+duk_eval_string() と同様であるが、バリュースタックに結果を残さない。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -3842,7 +3843,7 @@ duk_eval_string_noresult(ctx, "print('testString'.toUpperCase())");
 
 ## duk_fatal() 
 
-1.0.0 error§
+1.0.0 error
 
 ### プロトタイプ
 
@@ -3859,7 +3860,7 @@ duk_ret_t duk_fatal(duk_context *ctx, const char *err_msg);
 
 致命的なエラーハンドラをオプションのメッセージ付きで呼び出します (err_msg は NULL かもしれません)。Duktape のすべての文字列と同様に、エラーメッセージは UTF-8 文字列であるべきですが、純粋な ASCII が強く推奨されます。
 
-致命的なエラー・ハンドラは決して戻らず、例えば現在のプロセスを終了させるかもしれません。エラー捕捉ポイント (try-catch 文やエラー捕捉 API 呼び出しなど) は回避され、ファイナライザは実行されない。この関数は、本当に致命的な、回復不可能なエラーが発生したときにのみ呼び出すべきである。
+致命的なエラー・ハンドラは決して戻らず、例えば現在のプロセスを終了させるかもしれません。エラー捕捉ポイント (try-catch 文やエラー捕捉 API 呼び出しなど) は回避され、ファイナライザは実行されない。この関数は、本当に致命的な、回復不可能なエラーが発生したときにのみ呼び出すべきです。
 
 この関数は決して戻りませんが、プロトタイプは以下のようなコードを可能にする戻り値を記述しています。
 
@@ -3878,7 +3879,7 @@ duk_fatal(ctx, "assumption failed");
 
 ## duk_free() 
 
-1.0.0 memory§
+1.0.0 memory
 
 ### プロトタイプ
 
@@ -3915,7 +3916,7 @@ duk_free_raw
 
 ## duk_free_raw() 
 
-1.0.0 memory§
+1.0.0 memory
 
 ### プロトタイプ
 
@@ -3930,7 +3931,7 @@ void duk_free_raw(duk_context *ctx, void *ptr);
 
 ### 要約
 
-コンテキストに登録されたアロケーション機能で割り当てられたメモリを解放する。この操作は失敗しない．ptr が NULL の場合，この呼び出しは失敗です．
+コンテキストに登録されたアロケーション機能で割り当てられたメモリを解放します。この操作は失敗しない．ptr が NULL の場合，この呼び出しは失敗です．
 
 duk_free_raw() は、 duk_alloc() や duk_alloc_raw() およびそれらの再割り当て関数で割り当てられたメモリを解放するために使用できます。
 
@@ -3951,7 +3952,7 @@ duk_free
 
 ## duk_freeze() 
 
-2.2.0 propertyobject§
+2.2.0 property object
 
 ### プロトタイプ
 
@@ -3978,7 +3979,7 @@ duk_freeze(ctx, -3);
 
 ## duk_gc() 
 
-1.0.0 memoryheap§
+1.0.0 memory heap
 
 ### プロトタイプ
 
@@ -3995,7 +3996,7 @@ void duk_gc(duk_context *ctx, duk_uint_t flags);
 
 マークアンドスイープガベージコレクションラウンドを強制的に実行します。
 
-以下のフラグが定義されている。
+以下のフラグが定義されています。
 
 定義 説明
 DUK_GC_COMPACT オブジェクトプロパティテーブルの圧縮を強制します。
@@ -4012,7 +4013,7 @@ duk_gc(ctx, 0);
 
 ## duk_generic_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -4042,7 +4043,7 @@ duk_error
 
 ## duk_generic_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -4058,7 +4059,7 @@ duk_ret_t duk_generic_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)到達しないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)到達しないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -4079,7 +4080,7 @@ duk_error_va
 
 ## duk_get_boolean() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -4093,7 +4094,7 @@ duk_bool_t duk_get_boolean(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある boolean 値を、値を変更したり強制したりすることなく取得する。値が真であれば1を、値が偽であるか、booleanでないか、またはインデックスが無効であれば0を返す。
+idx にある boolean 値を、値を変更したり強制したりすることなく取得します。値が真であれば1を、値が偽であるか、booleanでないか、またはインデックスが無効であれば0を返す。
 
 値は強制されないので、ECMAScript の「真実の」値（空でない文字列など）であっても、偽として扱われることに注意してください。値を強制したい場合は、duk_to_boolean()を使用してください。
 
@@ -4113,7 +4114,7 @@ duk_get_boolean_default
 
 ## duk_get_boolean_default() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -4143,7 +4144,7 @@ duk_get_boolean
 
 ## duk_get_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -4159,7 +4160,7 @@ void *duk_get_buffer(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size);
 
 idxにある（プレーン）バッファ値のデータポインタを、値を変更したり強制したりすることなく取得します。値が0以外のサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたはNULLでないポインタを返すことがあります。値がバッファでない場合、またはインデックスが無効な場合は NULL を返す。out_size が非NULLの場合、バッファのサイズが *out_size に書き込まれます。
 
-対象が固定バッファの場合、返されるポインタは安定であり、バッファの寿命が尽きるまで変化することはない。動的および外部バッファの場合、ポインタはバッファのサイズ変更または再構成に伴って変更される可能性が ある。呼び出し側は、バッファのサイズ変更/再構成後に本APIコールから返されるポインタ値が使用され ないようにする責任を負う。
+対象が固定バッファの場合、返されるポインタは安定であり、バッファの寿命が尽きるまで変化することはない。動的および外部バッファの場合、ポインタはバッファのサイズ変更または再構成に伴って変更される可能性が あります。呼び出し側は、バッファのサイズ変更/再構成後に本APIコールから返されるポインタ値が使用され ないようにする責任を負う。
 
 サイズゼロのバッファと非バッファを返り値だけで区別する信頼できる方法はありません: 非バッファにはサイズゼロのNULLが返されます。非バッファの場合、サイズ0のNULLが返されます。サイズ0のバッファの場合、同じ値が返されるかもしれません（NULLでないポインタが返される可能性もありますが）。duk_is_buffer() や duk_is_buffer_data() 、あるいはバッファやバッファ・オブジェクトの型チェックを行う際に使用してください。
 
@@ -4182,7 +4183,7 @@ duk_require_buffer_data
 
 ## duk_get_buffer_data() 
 
-1.3.0 stackbufferobjectbuffer§
+1.3.0 stack buffer object buffer
 
 ### プロトタイプ
 
@@ -4198,7 +4199,7 @@ void *duk_get_buffer_data(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size)
 
 idxにあるプレーンバッファまたはバッファオブジェクト(ArrayBuffer, Node.js Buffer, DataView, TypedArray view)の値のデータポインタを、値を変更したり強制したりすることなく取得します。値がゼロでないサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたは非NULLポインタを返すことがあります。値がバッファでない場合、値がバッファオブジェクトで、そのバッファオブジェクトの見かけのサイズを完全にカバーしない場合、またはインデックスが無効な場合、NULLを返します。out_size が非 NULL の場合、バッファのサイズが *out_size に書き込まれます。
 
-戻り値のポインタと length が示すデータ領域は、プレーンバッファの場合はバッファ全体であり、バッファオブジェクトの場合はアクティブな「スライス」である。返される長さは(要素数ではなく)バイト数で表現され、常に ptr[0] から ptr[len - 1] にアクセスできるようにします。例えば
+戻り値のポインタと length が示すデータ領域は、プレーンバッファの場合はバッファ全体であり、バッファオブジェクトの場合はアクティブな「スライス」です。返される長さは(要素数ではなく)バイト数で表現され、常に ptr[0] から ptr[len - 1] にアクセスできるようにします。例えば
 
 例えば、new Uint8Array(16) の場合、戻り値のポインタは配列の先頭を指し、長さは 16 になります。
 new Uint32Array(16) の場合、リターンポインタは配列の先頭を指し、長さは64になります。
@@ -4230,7 +4231,7 @@ duk_require_buffer
 
 ## duk_get_buffer_data_default() 
 
-2.1.0 stackbuffer§
+2.1.0 stack buffer
 
 ### プロトタイプ
 
@@ -4246,7 +4247,7 @@ void *duk_get_buffer_data_default(duk_context *ctx, duk_idx_t idx, duk_size_t *o
 
 duk_get_buffer_data() と同様ですが、明示的にデフォルト値が設定されており、値がプレーンバッファ、バッファオブジェクトでない場合、またはインデックスが無効な場合に返されます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -4267,7 +4268,7 @@ duk_get_buffer_default
 
 ## duk_get_buffer_default() 
 
-2.1.0 stackbuffer§
+2.1.0 stack buffer
 
 ### プロトタイプ
 
@@ -4283,7 +4284,7 @@ void *duk_get_buffer_default(duk_context *ctx, duk_idx_t idx, duk_size_t *out_si
 
 duk_get_buffer() と同様ですが、デフォルト値が明示されており、値がバッファでない場合、あるいはインデックスが無効な場合に返されます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -4304,7 +4305,7 @@ duk_get_buffer_data_default
 
 ## duk_get_c_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -4318,7 +4319,7 @@ duk_c_function duk_get_c_function(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-Duktape/C関数に関連付けられたECMAScript関数オブジェクトからDuktape/C関数ポインタ（duk_c_function）を取得する。値がそのような関数でない場合、または idx が無効な場合、NULL を返します。
+Duktape/C関数に関連付けられたECMAScript関数オブジェクトからDuktape/C関数ポインタ（duk_c_function）を取得します。値がそのような関数でない場合、または idx が無効な場合、NULL を返します。
 
 もし、無効な値やインデックスに対してエラーが投げられることを望むなら、 duk_require_c_function() を使用してください。
 
@@ -4338,7 +4339,7 @@ duk_get_c_function_default
 
 ## duk_get_c_function_default() 
 
-2.1.0 stackfunction§
+2.1.0 stack function
 
 ### プロトタイプ
 
@@ -4371,7 +4372,7 @@ duk_get_c_function
 
 ## duk_get_context() 
 
-1.0.0 stackborrowed§
+1.0.0 stack borrowed
 
 ### プロトタイプ
 
@@ -4425,7 +4426,7 @@ duk_get_context_default
 
 ## duk_get_context_default() 
 
-2.1.0 stackborrowed§
+2.1.0 stack borrowed
 
 ### プロトタイプ
 
@@ -4441,7 +4442,7 @@ duk_context *duk_get_context_default(duk_context *ctx, duk_idx_t idx, duk_contex
 
 duk_get_context() と同様ですが、デフォルト値が明示されており、値が Duktapeスレッドでない場合、またはインデックスが無効な場合に返されます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタの値は、Duktape によって追跡されない。例えば、 duk_opt_string() はデフォルト文字列引数のコピーを作らない。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタの値は、Duktape によって追跡されない。例えば、 duk_opt_string() はデフォルト文字列引数のコピーを作らない。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -4458,7 +4459,7 @@ duk_get_context
 
 ## duk_get_current_magic() 
 
-1.0.0 magicfunction§
+1.0.0 magic function
 
 ### プロトタイプ
 
@@ -4502,7 +4503,7 @@ duk_set_magic
 
 ## duk_get_error_code() 
 
-1.1.0 stackerror§
+1.1.0 stack error
 
 ### プロトタイプ
 
@@ -4530,7 +4531,7 @@ if (duk_get_error_code(ctx, -3) == DUK_ERR_URI_ERROR) {
 
 ## duk_get_finalizer() 
 
-1.0.0 objectfinalizer§
+1.0.0 object finalizer
 
 ### プロトタイプ
 
@@ -4544,7 +4545,7 @@ void duk_get_finalizer(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値に関連するファイナライザを取得します。値がオブジェクトでない場合、またはファイナライザを持たないオブジェクトである場合、代わりにundefinedがスタックにプッシュされる。
+idxの値に関連するファイナライザを取得します。値がオブジェクトでない場合、またはファイナライザを持たないオブジェクトである場合、代わりにundefinedがスタックにプッシュされます。
 
 
 ### 例
@@ -4561,7 +4562,7 @@ duk_set_finalizer
 
 ## duk_get_global_heapptr() 
 
-2.3.0 propertyheapptrborrowed§
+2.3.0 property heap ptr borrowed
 
 ### プロトタイプ
 
@@ -4594,7 +4595,7 @@ duk_get_global_literal
 
 ## duk_get_global_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -4631,7 +4632,7 @@ duk_get_global_heapptr
 
 ## duk_get_global_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -4664,7 +4665,7 @@ duk_get_global_heapptr
 
 ## duk_get_global_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -4709,7 +4710,7 @@ duk_get_global_heapptr
 
 ## duk_get_heapptr() 
 
-1.1.0 stackheapptrborrowed§
+1.1.0 stack heap ptr borrowed
 
 ### プロトタイプ
 
@@ -4723,9 +4724,9 @@ void *duk_get_heapptr(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx で Duktape ヒープに割り当てられた値（オブジェクト、バッファ、文字列）への参照 を借用した void * を取得する。インデックスが無効であるか、対象の値がヒープに割り当てられていない場合は NULL を返します。返されたポインタは解釈したり再参照したりしてはならないが、 duk_push_heapptr() は、後で元の値を値スタックにプッシュするために使うことができる。
+idx で Duktape ヒープに割り当てられた値（オブジェクト、バッファ、文字列）への参照 を借用した void * を取得します。インデックスが無効であるか、対象の値がヒープに割り当てられていない場合は NULL を返します。返されたポインタは解釈したり再参照したりしてはならないが、 duk_push_heapptr() は、後で元の値をバリュースタックにプッシュするために使うことができます。
 
-返された void ポインタは、ガベージコレクションの観点から見て、元の値に到達可能な間だけ有効である。そうでない場合、duk_push_heapptr() を使用することはメモリ上安全ではありません。
+返された void ポインタは、ガベージコレクションの観点から見て、元の値に到達可能な間だけ有効です。そうでない場合、duk_push_heapptr() を使用することはメモリ上安全ではありません。
 
 
 ### 例
@@ -4761,7 +4762,7 @@ duk_get_heapptr_default
 
 ## duk_get_heapptr_default() 
 
-2.1.0 stackheapptrborrowed§
+2.1.0 stack heap ptr borrowed
 
 ### プロトタイプ
 
@@ -4777,7 +4778,7 @@ void *duk_get_heapptr_default(duk_context *ctx, duk_idx_t idx, void *def_value);
 
 duk_get_heapptr() と同様ですが、デフォルト値が明示されており、値が boolean でない場合、あるいはインデックスが無効な場合に返されます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -4794,7 +4795,7 @@ duk_get_heapptr
 
 ## duk_get_int() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -4837,7 +4838,7 @@ duk_get_int_default
 
 ## duk_get_int_default() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -4867,7 +4868,7 @@ duk_get_int
 
 ## duk_get_length() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -4881,7 +4882,7 @@ duk_size_t duk_get_length(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxにある値の型固有の "長さ "を取得する。
+idxにある値の型固有の "長さ "を取得します。
 
 String: 文字列の文字数 (バイト数ではない)
 オブジェクト。Math.floor(ToNumber(obj.length)): 結果が duk_size_t unsigned の範囲内にあれば、それ以外は 0 (配列の場合、結果は Array .length になる)
@@ -4905,7 +4906,7 @@ duk_set_length
 
 ## duk_get_lstring() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -4919,7 +4920,7 @@ const char *duk_get_lstring(duk_context *ctx, duk_idx_t idx, duk_size_t *out_len
 
 ### 要約
 
-idx にある文字列の文字データポインタと長さを、値を変更したり強制したりすることなく取得する。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非 NULL の場合)。値が文字列でない場合、またはインデックスが無効な場合は、NULL を返し、*out_len に 0 を書き込む (out_len が NULL でない場合)。
+idx にある文字列の文字データポインタと長さを、値を変更したり強制したりすることなく取得します。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非 NULL の場合)。値が文字列でない場合、またはインデックスが無効な場合は、NULL を返し、*out_len に 0 を書き込む (out_len が NULL でない場合)。
 
 文字列の文字数（バイト数ではなく）を取得するには、 duk_get_length() を使用します。
 
@@ -4946,7 +4947,7 @@ duk_get_string_default
 
 ## duk_get_lstring_default() 
 
-2.1.0 stringstack§
+2.1.0 string stack
 
 ### プロトタイプ
 
@@ -4962,7 +4963,7 @@ const char *duk_get_lstring_default(duk_context *ctx, duk_idx_t idx, duk_size_t 
 
 duk_get_lstring() と同様ですが、値が文字列でないかインデックスが無効な場合に返される、 明示的なデフォルト値があります。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -4980,7 +4981,7 @@ duk_get_string_default
 
 ## duk_get_magic() 
 
-1.0.0 magicfunction§
+1.0.0 magic function
 
 ### プロトタイプ
 
@@ -5012,7 +5013,7 @@ duk_set_magic
 
 ## duk_get_memory_functions() 
 
-1.0.0 memoryheap§
+1.0.0 memory heap
 
 ### プロトタイプ
 
@@ -5029,7 +5030,7 @@ void duk_get_memory_functions(duk_context *ctx, duk_memory_functions *out_funcs)
 
 コンテキストが使用するメモリ管理関数を取得します。
 
-通常、この関数を呼び出す理由はない。 duk_alloc(), duk_realloc(), duk_free() のようなラップされたメモリ管理関数を通して、メモリ管理プリミティブを使用することができるからである。
+通常、この関数を呼び出す理由はない。 duk_alloc(), duk_realloc(), duk_free() のようなラップされたメモリ管理関数を通して、メモリ管理プリミティブを使用することができるからです。
 
 
 ### 例
@@ -5043,7 +5044,7 @@ duk_get_memory_functions(ctx, &funcs);
 
 ## duk_get_now() 
 
-2.0.0 time§
+2.0.0 time
 
 ### プロトタイプ
 
@@ -5073,7 +5074,7 @@ print("timestamp: %lf\n", (double) now);
 
 ## duk_get_number() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5087,7 +5088,7 @@ duk_double_t duk_get_number(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある数値の値を、値を変更したり強制したりすることなく取得する。値が数値でない場合、またはインデックスが無効な場合は NaN を返す。
+idx にある数値の値を、値を変更したり強制したりすることなく取得します。値が数値でない場合、またはインデックスが無効な場合は NaN を返す。
 
 
 ### 例
@@ -5103,7 +5104,7 @@ duk_get_number_default
 
 ## duk_get_number_default() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -5133,7 +5134,7 @@ duk_get_number
 
 ## duk_get_pointer() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5147,7 +5148,7 @@ void *duk_get_pointer(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にあるポインタの値を、値を変更したり強制したりすることなく、void * として取得する。値がポインタでない場合、またはインデックスが無効な場合は NULL を返す。
+idx にあるポインタの値を、値を変更したり強制したりすることなく、void * として取得します。値がポインタでない場合、またはインデックスが無効な場合は NULL を返す。
 
 
 ### 例
@@ -5162,7 +5163,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_get_pointer_default() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -5195,7 +5196,7 @@ duk_get_pointer
 
 ## duk_get_prop() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -5212,14 +5213,14 @@ duk_bool_t duk_get_prop(duk_context *ctx, duk_idx_t obj_idx);
 
 obj_idx に指定された値のプロパティキーを取得します。リターンコードとエラースローの動作。
 
-プロパティが存在する場合、1 が返され、key は値スタック上のプロパティ値で置き換えられる。プロパティがアクセサである場合、getter 関数はエラーを投げるかもしれない。
-プロパティが存在しない場合、0 が返され、key は値スタック上の undefined に置き換えられる。
-obj_idx の値がオブジェクト互換でない場合、エラーを投げる。
-obj_idx が無効な場合、エラーがスローされる。
-プロパティの読み取りは ECMAScript 式 res = obj[key] と同等であるが、プロパティの有無は呼び出しの戻り値で示されるという例外がある。正確なセマンティクスについては、プロパティアクセサ、GetValue（V）、および [[Get]] (P) を参照してください。ターゲット値及びキーは両方とも強制される。
+プロパティが存在する場合、1 が返され、key はバリュースタック上のプロパティ値で置き換えられます。プロパティがアクセサである場合、getter 関数はエラーを投げます。かもしれない。
+プロパティが存在しない場合、0 が返され、key はバリュースタック上の undefined に置き換えられます。
+obj_idx の値がオブジェクト互換でない場合、エラーを投げます。。
+obj_idx が無効な場合、エラーがスローされます。
+プロパティの読み取りは ECMAScript 式 res = obj[key] と同等であるが、プロパティの有無は呼び出しの戻り値で示されるという例外があります。正確なセマンティクスについては、プロパティアクセサ、GetValue（V）、および [[Get]] (P) を参照してください。ターゲット値及びキーは両方とも強制されます。
 
-ターゲット値は自動的にオブジェクトにコーセーされる。例えば、文字列はStringに変換され、その "length "プロパティにアクセスすることができる。
-key 引数は内部的に ToPropertyKey() 強制変換で文字列か Symbol に変換される。配列や数値インデックスに対しては、明示的な文字列強制を回避する内部的な高速パスが存在するため、該当する場合は数値キーを使用します。
+ターゲット値は自動的にオブジェクトにコーセーされます。例えば、文字列はStringに変換され、その "length "プロパティにアクセスすることができます。
+key 引数は内部的に ToPropertyKey() 強制変換で文字列か Symbol に変換されます。配列や数値インデックスに対しては、明示的な文字列強制を回避する内部的な高速パスが存在するため、該当する場合は数値キーを使用します。
 ターゲットが get トラップを実装する Proxy オブジェクトである場合、トラップが呼び出され、API コールは常に 1 (すなわち、プロパティが存在する) を返します: プロパティの不在/存在は、get Proxy トラップで示されません。このように、ターゲットオブジェクトが潜在的にProxyである場合、APIコールの戻り値は限定的にしか利用できない場合があります。
 
 もしキーが固定文字列であれば、1回のAPIコールを回避して、 duk_get_prop_string() variant を使用することができます。同様に、キーが配列のインデックスである場合、 duk_get_prop_index() を使用することができます。
@@ -5262,7 +5263,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_desc() 
 
-2.0.0 sandboxproperty§
+2.0.0 sandbox property
 
 ### プロトタイプ
 
@@ -5279,7 +5280,7 @@ void duk_get_prop_desc(duk_context *ctx, duk_idx_t obj_idx, duk_uint_t flags);
 
 C API の Object.getOwnPropertyDescriptor() と同等： obj_idx にあるオブジェクトの名前付きプロパティに対するプロパティ記述子オブジェクトをプッシュします。ターゲットがオブジェクトでない場合 (またはインデックスが無効な場合) は、エラーがスローされます。
 
-フラグはまだ定義されていないので、フラグには 0 を使用する。
+フラグはまだ定義されていないので、フラグには 0 を使用します。
 
 
 ### 例
@@ -5310,7 +5311,7 @@ duk_def_prop
 
 ## duk_get_prop_heapptr() 
 
-2.2.0 propertyheapptrborrowed§
+2.2.0 property heap ptr borrowed
 
 ### プロトタイプ
 
@@ -5353,7 +5354,7 @@ duk_get_prop_literal
 
 ## duk_get_prop_index() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -5392,7 +5393,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -5429,7 +5430,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -5466,7 +5467,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prop_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -5503,7 +5504,7 @@ duk_get_prop_heapptr
 
 ## duk_get_prototype() 
 
-1.0.0 prototypeobject§
+1.0.0 prototy pe object
 
 ### プロトタイプ
 
@@ -5517,7 +5518,7 @@ void duk_get_prototype(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある値の内部プロトタイプを取得する。値がオブジェクトでない場合、エラーがスローされる。オブジェクトがプロトタイプを持たない場合（これは「裸のオブジェクト」に対して可能である）、代わりにundefinedがスタックにプッシュされる。
+idx にある値の内部プロトタイプを取得します。値がオブジェクトでない場合、エラーがスローされます。オブジェクトがプロトタイプを持たない場合（これは「裸のオブジェクト」に対して可能である）、代わりにundefinedがスタックにプッシュされます。
 
 
 ### 例
@@ -5534,7 +5535,7 @@ duk_set_prototype
 
 ## duk_get_string() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -5548,12 +5549,12 @@ const char *duk_get_string(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある文字列の文字データポインタを、値を変更したり強制したりすることなく取得する。読み取り専用、NUL終端の文字列データへの非NULLポインタを返す。値が文字列でない場合、またはインデックスが無効な場合はNULLを返す。
+idx にある文字列の文字データポインタを、値を変更したり強制したりすることなく取得します。読み取り専用、NUL終端の文字列データへの非NULLポインタを返す。値が文字列でない場合、またはインデックスが無効な場合はNULLを返す。
 
 文字列のバイト長を明示的に取得するには（文字列にNUL文字が埋め込まれている場合に有効）、 duk_get_lstring() を使用します。
 
 これは、バッファデータポインタの扱い方とは異なります(技術的な理由による)。
-シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol()を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol()を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -5575,7 +5576,7 @@ duk_get_lstring_default
 
 ## duk_get_string_default() 
 
-2.1.0 stringstack§
+2.1.0 string stack
 
 ### プロトタイプ
 
@@ -5591,7 +5592,7 @@ const char *duk_get_string_default(duk_context *ctx, duk_idx_t idx, const char *
 
 duk_get_string() と同様ですが、デフォルト値が明示されており、値が文字列でない場合、あるいはインデックスが無効な場合に返されます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -5606,7 +5607,7 @@ duk_get_lstring_default
 
 ## duk_get_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5621,7 +5622,7 @@ duk_idx_t duk_get_top(duk_context *ctx);
 
 ### 要約
 
-現在のスタックトップ（>= 0）を取得し、（現在の活性化の）値スタック上の現在の値の数を示す。
+現在のスタックトップ（>= 0）を取得し、（現在の活性化の）バリュースタック上の現在の値の数を示す。
 
 
 ### 例
@@ -5633,7 +5634,7 @@ printf("stack top is %ld\n", (long) duk_get_top(ctx));
 
 ## duk_get_top_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5671,7 +5672,7 @@ duk_require_top_index
 
 ## duk_get_type() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5687,7 +5688,7 @@ duk_int_t duk_get_type(duk_context *ctx, duk_idx_t idx);
 
 idx にある値の型を返します。戻り値は DUK_TYPE_xxx のいずれか、あるいは idx が無効な場合は DUK_TYPE_NONE となります。
 
-シンボル値は、C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値は、C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -5706,7 +5707,7 @@ duk_check_type_mask
 
 ## duk_get_type_mask() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5720,11 +5721,11 @@ duk_uint_t duk_get_type_mask(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxにある値の型マスクを返します。戻り値は DUK_TYPE_MASK_xxx のいずれかであり、 idx が無効な場合は DUK_TYPE_MASK_NONE である。
+idxにある値の型マスクを返します。戻り値は DUK_TYPE_MASK_xxx のいずれかであり、 idx が無効な場合は DUK_TYPE_MASK_NONE です。
 
 タイプマスクは、例えば、複数の型を一度に比較するのに便利です (この目的のためには、 duk_check_type_mask() 呼び出しがより便利です)。
 
-シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -5743,7 +5744,7 @@ duk_check_type_mask
 
 ## duk_get_uint() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -5786,7 +5787,7 @@ duk_get_uint_default
 
 ## duk_get_uint_default() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -5816,7 +5817,7 @@ duk_get_uint
 
 ## duk_has_prop() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -5830,15 +5831,15 @@ duk_bool_t duk_has_prop(duk_context *ctx, duk_idx_t obj_idx);
 
 ### 要約
 
-obj_idx の値が property key を持つかどうかを調べる。 key はスタックから取り除かれる。リターンコードとエラースローの動作
+obj_idx の値が property key を持つかどうかを調べますす。 key はスタックから取り除かれます。リターンコードとエラースローの動作
 
-プロパティが存在する場合、1 が返される。
-プロパティが存在しない場合、0 が返される。
-obj_idx の値がオブジェクトでない場合、エラーがスローされる。
-obj_idx が無効の場合、エラーがスローされる。
-プロパティの存在チェックは、ECMAScript の式 res = key in obj と同等である。セマンティクスについては、Property Accessors, The in operator, および [[HasProperty]] (P) を参照してください。キーは強制される。
+プロパティが存在する場合、1 が返されます。
+プロパティが存在しない場合、0 が返されます。
+obj_idx の値がオブジェクトでない場合、エラーがスローされます。
+obj_idx が無効の場合、エラーがスローされます。
+プロパティの存在チェックは、ECMAScript の式 res = key in obj と同等です。セマンティクスについては、Property Accessors, The in operator, および [[HasProperty]] (P) を参照してください。キーは強制されます。
 
-key 引数は、文字列または Symbol になる ToPropertyKey() 強制適用を使用して、内部で強制適用されます。配列と数値インデックスには、明示的な文字列強制を回避する内部高速パスが存在するため、該当する場合は数値キーを使用する。
+key 引数は、文字列または Symbol になる ToPropertyKey() 強制適用を使用して、内部で強制適用されます。配列と数値インデックスには、明示的な文字列強制を回避する内部高速パスが存在するため、該当する場合は数値キーを使用します。
 ターゲットがhasトラップを実装するProxyオブジェクトである場合、トラップが呼び出され、APIコールの戻り値はトラップの戻り値に一致します。
 
 ほとんどのプロパティ関連APIコールのように）任意のオブジェクト強制値を受け入れる代わりに、このコールはそのターゲット値としてオブジェクトのみを受け入れます。これは、ECMAScriptの演算子セマンティクスに従うため、意図的なものです。
@@ -5867,7 +5868,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_heapptr() 
 
-2.2.0 propertyheapptrborrowed§
+2.2.0 property heap ptr borrowed
 
 ### プロトタイプ
 
@@ -5911,7 +5912,7 @@ duk_has_prop_literal
 
 ## duk_has_prop_index() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -5951,7 +5952,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -5989,7 +5990,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -6027,7 +6028,7 @@ duk_has_prop_heapptr
 
 ## duk_has_prop_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -6065,7 +6066,7 @@ duk_has_prop_heapptr
 
 ## duk_hex_decode() 
 
-1.0.0 hexcodec§
+1.0.0 hex codec
 
 ### プロトタイプ
 
@@ -6079,7 +6080,7 @@ void duk_hex_decode(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-16進エンコードされた値をインプレース操作でバッファにデコードする。入力が無効な場合、エラーを投げる。
+16進エンコードされた値をインプレース操作でバッファにデコードします。入力が無効な場合、エラーを投げます。。
 
 
 ### 例
@@ -6102,7 +6103,7 @@ duk_hex_encode
 
 ## duk_hex_encode() 
 
-1.0.0 hexcodec§
+1.0.0 hex codec
 
 ### プロトタイプ
 
@@ -6116,9 +6117,9 @@ const char *duk_hex_encode(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-任意の値をバッファに取り込み，その結果をインプレース操作で16進数にエンコードする。便宜上、結果の文字列へのポインタを返します。
+任意の値をバッファに取り込み，その結果をインプレース操作で16進数にエンコードします。便宜上、結果の文字列へのポインタを返します。
 
-バッファへの強制は，まずバッファにない値を文字列に強制し，次にその文字列をバッファに強制する。結果として得られるバッファには、CESU-8エンコーディングの文字列が格納される。
+バッファへの強制は，まずバッファにない値を文字列に強制し，次にその文字列をバッファに強制します。結果として得られるバッファには、CESU-8エンコーディングの文字列が格納されます。
 
 ### 例
 
@@ -6138,7 +6139,7 @@ duk_hex_decode
 
 ## duk_insert() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6152,9 +6153,9 @@ void duk_insert(duk_context *ctx, duk_idx_t to_idx);
 
 ### 要約
 
-スタックトップからポップした値でto_idxに値を挿入する。to_idxにある前の値とその上の値は、スタックの上に1ステップ移動する。to_idxが無効なインデックスの場合、エラーを投げる。
+スタックトップからポップした値でto_idxに値を挿入します。to_idxにある前の値とその上の値は、スタックの上に1ステップ移動します。to_idxが無効なインデックスの場合、エラーを投げます。。
 
-負のインデックスは、スタックトップの値をポップする前に評価される。これは、例でも説明されている。
+負のインデックスは、スタックトップの値をポップする前に評価されます。これは、例でも説明されています。
 
 ### 例
 
@@ -6174,7 +6175,7 @@ duk_replace
 
 ## duk_inspect_callstack_entry() 
 
-2.0.0 stackinspect§
+2.0.0 stack inspect
 
 ### プロトタイプ
 
@@ -6188,7 +6189,7 @@ void duk_inspect_callstack_entry(duk_context *ctx, duk_int_t level);
 
 ### 要約
 
-コールスタック・エントリーをレベルで検査し、そのエントリーに関する Duktape 固有の内部情報を含むオブジェクトをプッシュします。level 引数は負でなければならず、値スタックのインデックス規則を模倣している： -1 は最も新しい（最も内側の）呼び出し、-2 はその呼び出し元、といった具合である。level 引数が無効な場合 (たとえば、現在のコールスタックの外側)、代わりに undefined がプッシュされます。
+コールスタック・エントリーをレベルで検査し、そのエントリーに関する Duktape 固有の内部情報を含むオブジェクトをプッシュします。level 引数は負でなければならず、バリュースタックのインデックス規則を模倣している： -1 は最も新しい（最も内側の）呼び出し、-2 はその呼び出し元、といった具合です。level 引数が無効な場合 (たとえば、現在のコールスタックの外側)、代わりに undefined がプッシュされます。
 
 結果オブジェクトはバージョン保証の対象外なので、そのプロパティはマイナーリリースでも変更される可能性があります(パッチリリースではありません)。これは現実的な妥協点です。内部はかなり頻繁に変更されるので、バージョニングを保証しないか、内部を全く公開しないかのどちらかを選択することになります。そのため、呼び出し側のコードは、特定のフィールドのセットが利用可能であることに依存してはいけませんし、結果フィールドを解釈する際にDUK_VERSIONをチェックする必要があるかもしれません。
 次の表は、現在のプロパティをまとめたものです。
@@ -6210,7 +6211,7 @@ duk_pop_2(ctx);
 
 ## duk_inspect_value() 
 
-2.0.0 stackinspect§
+2.0.0 stack inspect
 
 ### プロトタイプ
 
@@ -6224,7 +6225,7 @@ void duk_inspect_value(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値を検査し、そのオブジェクトに関するDuktape固有の内部情報を含む オブジェクトをプッシュする。値スタック・インデックスが無効な場合、"none "値を記述したオブジェクトをプッシュする。
+idxの値を検査し、そのオブジェクトに関するDuktape固有の内部情報を含む オブジェクトをプッシュします。バリュースタック・インデックスが無効な場合、"none "値を記述したオブジェクトをプッシュします。
 
 結果オブジェクトはバージョン保証の対象外なので、そのプロパティはマイナー・リリースでも変更される可能性があります（パッチ・リリースは不可）。これは現実的な妥協点です。内部はかなり頻繁に変更されるので、バージョニングを保証しないか、内部を全く公開しないかのどちらかを選択することになります。そのため、呼び出し側のコードは、特定のフィールドのセットが利用可能であることに依存してはいけませんし、結果フィールドを解釈する際にDUK_VERSIONをチェックする必要があるかもしれません。
 次の表は、現在のプロパティをまとめたものです。メモリのバイトサイズにはヒープオーバーヘッドは含まれておらず、使用するアロケーション関数によって0〜16バイト(またはそれ以上)の間で変化する可能性があります。
@@ -6232,19 +6233,19 @@ idxの値を検査し、そのオブジェクトに関するDuktape固有の内�
 プロパティ 説明
 type duktape.hのDUK_TYPE_xxxにマッチするタイプ番号。
 itag 内部 DUK_TAG_xxx の定義にマッチする内部型タグ。値はバージョン間で変更される可能性があり、設定オプションと、内部でタグ付けされた値に使用されるメモリレイアウトに依存します。
-hptr ヒープで割り当てられた値のためのヒープ・ポインタ。値のタイプに関連するDuktape内部ヘッダー構造体を指す。同じ値が duk_get_heapptr() から返される。
-refc 参照カウント。参照カウントは一切調整されず、duk_inspect_value()コールによる値への参照も含まれる。
-class オブジェクトの場合、内部クラス番号、内部 DUK_HOBJECT_CLASS_xxx の定義に一致する。
-hbytes メインヒープオブジェクトの割り当てのバイトサイズ。いくつかの値では、これが唯一の割り当てであり、他の値では追加の割り当てがある。
+hptr ヒープで割り当てられた値のためのヒープ・ポインタ。値のタイプに関連するDuktape内部ヘッダー構造体を指す。同じ値が duk_get_heapptr() から返されます。
+refc 参照カウント。参照カウントは一切調整されず、duk_inspect_value()コールによる値への参照も含まれます。
+class オブジェクトの場合、内部クラス番号、内部 DUK_HOBJECT_CLASS_xxx の定義に一致します。
+hbytes メインヒープオブジェクトの割り当てのバイトサイズ。いくつかの値では、これが唯一の割り当てであり、他の値では追加の割り当てがあります。
 pbytes オブジェクトのプロパティテーブルのバイトサイズ。プロパティテーブルには、配列部分、ハッシュ部分、およびキー/値エントリ部分が含まれる可能性があります。
-bcbytes ECMAScript の関数バイトコード（命令、定数）のバイトサイズ。ある関数テンプレートの全インスタンス（クロージャ）間で共有される。
+bcbytes ECMAScript の関数バイトコード（命令、定数）のバイトサイズ。ある関数テンプレートの全インスタンス（クロージャ）間で共有されます。
 dbytes ダイナミックバッファまたは外部バッファの現在の割り当てのバイトサイズ。外部バッファーの割り当ては、Duktapeのヒープの一部ではないことに注意してください。
 esize オブジェクト・エントリ部分のサイズ（要素数）。
 enext オブジェクト・エントリ部の最初の空きインデックス（＝次に使用されるプロパ ティ・スロットのインデックス）。実際には、圧縮されていない削除されたキーを持たないオブジェクトのための独自のプロパティの数に一致します。
 asize オブジェクトの配列部分のサイズを要素数で表し、配列部分がない場合や配列部分が放棄されている場合（疎な配列）には 0 となります。見かけ上の配列の長さよりも大きくても小さくてもかまいません。
 hsize 要素数で表したオブジェクトハッシュ部のサイズ。
 tstate 内部スレッド状態、内部の DUK_HTHREAD_STATE_xxx の定義にマッチします。
-variant 特定の型に対する型バリアントを識別する。文字列の場合、variant 0 は通常のヒープに割り当てられた文字列で、variant 1 は外部文字列です。バッファの場合、variant 0 は固定バッファ、1 は動的バッファ、2 は外部バッファです。
+variant 特定の型に対する型バリアントを識別します。文字列の場合、variant 0 は通常のヒープに割り当てられた文字列で、variant 1 は外部文字列です。バッファの場合、variant 0 は固定バッファ、1 は動的バッファ、2 は外部バッファです。
 
 ### 例
 
@@ -6258,7 +6259,7 @@ duk_pop_2(ctx);
 
 ## duk_instanceof() 
 
-1.3.0 compare§
+1.3.0 compare
 
 ### プロトタイプ
 
@@ -6272,9 +6273,9 @@ duk_bool_t duk_instanceof(duk_context *ctx, duk_idx_t idx1, duk_idx_t idx2);
 
 ### 要約
 
-ECMAScript の instanceof 演算子を使用して idx1 と idx2 の値を比較します。val1がval2をインスタンス化した場合は1を、そうでない場合は0を返します。どちらかのインデックスが無効な場合はエラーを投げる。instanceof自体も引数の型が無効な場合はエラーを投げる。
+ECMAScript の instanceof 演算子を使用して idx1 と idx2 の値を比較します。val1がval2をインスタンス化した場合は1を、そうでない場合は0を返します。どちらかのインデックスが無効な場合はエラーを投げます。。instanceof自体も引数の型が無効な場合はエラーを投げます。。
 
-無効なインデックスに対してエラーを投げる動作は、例えば duk_equals() の動作とは異なり、instanceof の厳密さと一致する。例えば、rval (idx2) が呼び出し可能なオブジェクトでない場合、instanceof は TypeError を投げる。インデックスが無効な場合にエラーを投げるのは、instanceofの厳密性と一致します。
+無効なインデックスに対してエラーを投げます。動作は、例えば duk_equals() の動作とは異なり、instanceof の厳密さと一致します。例えば、rval (idx2) が呼び出し可能なオブジェクトでない場合、instanceof は TypeError を投げます。。インデックスが無効な場合にエラーを投げます。のは、instanceofの厳密性と一致します。
 
 ### 例
 
@@ -6291,7 +6292,7 @@ if (duk_instanceof(ctx, idx_val, -1)) {
 
 ## duk_is_array() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6324,7 +6325,7 @@ if (duk_is_array(ctx, -3)) {
 
 ## duk_is_boolean() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6352,7 +6353,7 @@ if (duk_is_boolean(ctx, -3)) {
 
 ## duk_is_bound_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -6368,7 +6369,7 @@ duk_bool_t duk_is_bound_function(duk_context *ctx, duk_idx_t idx);
 
 idx の値が ECMAScript の Function.prototype.bind() により生成された Function オブジェクトである場合には 1 を返し、そうでない場合には 0 を返す。
 
-バインドされた関数は ECMAScript の概念であり、ターゲット関数を指し示し、this バインディングと 0 個以上の引数バインディングを提供する。Function.prototype.bind (thisArg [, arg1 [, arg2, ...]]) を参照のこと。
+バインドされた関数は ECMAScript の概念であり、ターゲット関数を指し示し、this バインディングと 0 個以上の引数バインディングを提供します。Function.prototype.bind (thisArg [, arg1 [, arg2, ...]]) を参照のこと。
 
 
 ### 例
@@ -6382,7 +6383,7 @@ if (duk_is_bound_function(ctx, -3)) {
 
 ## duk_is_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -6414,7 +6415,7 @@ duk_is_buffer_data
 
 ## duk_is_buffer_data() 
 
-2.0.0 stackbufferobjectbuffer§
+2.0.0 stack buffer object buffer
 
 ### プロトタイプ
 
@@ -6446,7 +6447,7 @@ duk_is_buffer
 
 ## duk_is_c_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -6474,7 +6475,7 @@ if (duk_is_c_function(ctx, -3)) {
 
 ## duk_is_callable() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6490,7 +6491,7 @@ duk_bool_t duk_is_callable(duk_context *ctx, duk_idx_t idx);
 
 idxの値が呼び出し可能であれば1を返し、そうでなければ0を返す。また、idxが無効な場合は0を返す。
 
-現在、これは duk_is_function() と同じである。
+現在、これは duk_is_function() と同じです。
 
 
 ### 例
@@ -6504,7 +6505,7 @@ if (duk_is_callable(ctx, -3)) {
 
 ## duk_is_constructable() 
 
-2.2.0 stack§
+2.2.0 stack
 
 ### プロトタイプ
 
@@ -6532,7 +6533,7 @@ if (duk_is_constructable(ctx, -3)) {
 
 ## duk_is_constructor_call() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6565,7 +6566,7 @@ if (duk_is_constructor_call(ctx)) {
 
 ## duk_is_dynamic_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -6593,7 +6594,7 @@ if (duk_is_dynamic_buffer(ctx, -3)) {
 
 ## duk_is_ecmascript_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -6609,7 +6610,7 @@ duk_bool_t duk_is_ecmascript_function(duk_context *ctx, duk_idx_t idx);
 
 idx の値が ECMAScript のソースコードからコンパイルされた Function オブジェクトであれば 1 を返し、そうでなければ 0 を返す。 idx が無効な場合も 0 を返す。
 
-内部的にはECMAScriptの関数はバイトコードにコンパイルされ、ECMAScriptバイトコードインタプリタによって実行される。
+内部的にはECMAScriptの関数はバイトコードにコンパイルされ、ECMAScriptバイトコードインタプリタによって実行されます。
 
 
 ### 例
@@ -6623,7 +6624,7 @@ if (duk_is_ecmascript_function(ctx, -3)) {
 
 ## duk_is_error() 
 
-1.1.0 stackerror§
+1.1.0 stack error
 
 ### プロトタイプ
 
@@ -6654,7 +6655,7 @@ if (duk_is_error(ctx, -3)) {
 
 ## duk_is_eval_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -6668,7 +6669,7 @@ duk_bool_t duk_is_eval_error(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある値が EvalError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_EVAL_ERROR を使用するための便宜的な呼び出しである。
+idx にある値が EvalError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_EVAL_ERROR を使用するための便宜的な呼び出しです。
 
 
 ### 例
@@ -6682,7 +6683,7 @@ if (duk_is_eval_error(ctx, -3)) {
 
 ## duk_is_fixed_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -6710,7 +6711,7 @@ if (duk_is_fixed_buffer(ctx, -3)) {
 
 ## duk_is_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -6749,7 +6750,7 @@ if (duk_is_function(ctx, -3)) {
 
 ## duk_is_lightfunc() 
 
- stack§
+stack
 
 ### プロトタイプ
 
@@ -6777,7 +6778,7 @@ if (duk_is_lightfunc(ctx, -3)) {
 
 ## duk_is_nan() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6793,7 +6794,7 @@ duk_bool_t duk_is_nan(duk_context *ctx, duk_idx_t idx);
 
 idx の値が NaN（特殊な数値）である場合は 1 を、そうでない場合は 0 を返す。idx が無効な場合も 0 を返す。
 
-IEEのdoublesは、多数の異なるNaN値を持っています。Duktapeは内部でNaN値を正規化することがある。この関数は、どのような種類のNaNであっても1を返す。
+IEEのdoublesは、多数の異なるNaN値を持っています。Duktapeは内部でNaN値を正規化することがあります。この関数は、どのような種類のNaNであっても1を返す。
 
 
 ### 例
@@ -6807,7 +6808,7 @@ if (duk_is_nan(ctx, -3)) {
 
 ## duk_is_null() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6835,7 +6836,7 @@ if (duk_is_null(ctx, -3)) {
 
 ## duk_is_null_or_undefined() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6851,7 +6852,7 @@ duk_bool_t duk_is_null_or_undefined(duk_context *ctx, duk_idx_t idx);
 
 idxの値がNULLまたは未定義の場合は1を、それ以外の場合は0を返す。. idx が無効な場合も 0 を返す。
 
-このAPIコールはECMAScriptの(x == null)比較と似ており、nullとundefinedの両方に対して真である。
+このAPIコールはECMAScriptの(x == null)比較と似ており、nullとundefinedの両方に対して真です。
 
 
 ### 例
@@ -6865,7 +6866,7 @@ if (duk_is_null_or_undefined(ctx, -3)) {
 
 ## duk_is_number() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6893,7 +6894,7 @@ if (duk_is_number(ctx, -3)) {
 
 ## duk_is_object() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -6931,7 +6932,7 @@ if (duk_is_object(ctx, -3)) {
 
 ## duk_is_object_coercible() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -6947,7 +6948,7 @@ duk_bool_t duk_is_object_coercible(duk_context *ctx, duk_idx_t idx);
 
 CheckObjectCoercible で定義されるように、idx の値がオブジェクトコアーシブルであれば 1 を返し、そうでなければ 0 を返す。 idx が無効な場合も 0 を返す。
 
-ECMAScript のすべての型は、undefined と null 以外はオブジェクトと互換性があります。カスタムバッファとポインタ型はオブジェクト保 持可能である。
+ECMAScript のすべての型は、undefined と null 以外はオブジェクトと互換性があります。カスタムバッファとポインタ型はオブジェクト保 持可能です。
 
 
 ### 例
@@ -6961,7 +6962,7 @@ if (duk_is_object_coercible(ctx, -3)) {
 
 ## duk_is_pointer() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -6989,7 +6990,7 @@ if (duk_is_pointer(ctx, -3)) {
 
 ## duk_is_primitive() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -7019,7 +7020,7 @@ if (duk_is_primitive(ctx, -3)) {
 
 ## duk_is_range_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -7047,7 +7048,7 @@ if (duk_is_range_error(ctx, -3)) {
 
 ## duk_is_reference_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -7061,7 +7062,7 @@ duk_bool_t duk_is_reference_error(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある値が ReferenceError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_REFERENCE_ERROR を使用するための便宜的な呼び出しである。
+idx にある値が ReferenceError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_REFERENCE_ERROR を使用するための便宜的な呼び出しです。
 
 
 ### 例
@@ -7075,7 +7076,7 @@ if (duk_is_reference_error(ctx, -3)) {
 
 ## duk_is_strict_call() 
 
-1.0.0 function§
+1.0.0 function
 
 ### プロトタイプ
 
@@ -7106,7 +7107,7 @@ if (duk_is_strict_call(ctx)) {
 
 ## duk_is_string() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -7122,7 +7123,7 @@ duk_bool_t duk_is_string(duk_context *ctx, duk_idx_t idx);
 
 idxの値が文字列であれば1を、そうでなければ0を返す。
 
-シンボル値はC APIでは文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値はC APIでは文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -7135,7 +7136,7 @@ if (duk_is_string(ctx, -3)) {
 
 ## duk_is_symbol() 
 
-2.0.0 symbolstringstack§
+2.0.0 symbol string stack
 
 ### プロトタイプ
 
@@ -7151,7 +7152,7 @@ duk_bool_t duk_is_symbol(duk_context *ctx, duk_idx_t idx);
 
 idxの値がシンボルであれば1を、そうでなければ0を返す。
 
-シンボル値はC APIでは文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値はC APIでは文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列に類似しています。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -7164,7 +7165,7 @@ if (duk_is_symbol(ctx, -3)) {
 
 ## duk_is_syntax_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -7178,7 +7179,7 @@ duk_bool_t duk_is_syntax_error(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある値が SyntaxError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、duk_get_error_code() == DUK_ERR_SYNTAX_ERROR を使用するための便利なコールである。
+idx にある値が SyntaxError を継承している場合は 1 を、そうでない場合は 0 を返します。 idx が無効な場合も 0 を返す。 これは、duk_get_error_code() == DUK_ERR_SYNTAX_ERROR を使用するための便利なコールです。
 
 
 ### 例
@@ -7192,7 +7193,7 @@ if (duk_is_syntax_error(ctx, -3)) {
 
 ## duk_is_thread() 
 
-1.0.0 threadstack§
+1.0.0 thread stack
 
 ### プロトタイプ
 
@@ -7220,7 +7221,7 @@ if (duk_is_thread(ctx, -3)) {
 
 ## duk_is_type_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -7234,7 +7235,7 @@ duk_bool_t duk_is_type_error(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx にある値が TypeError を継承している場合は 1 を、そうでない場合は 0 を返す。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_TYPE_ERROR を使用する際の便宜的な呼び出しである。
+idx にある値が TypeError を継承している場合は 1 を、そうでない場合は 0 を返す。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_TYPE_ERROR を使用する際の便宜的な呼び出しです。
 
 
 ### 例
@@ -7248,7 +7249,7 @@ if (duk_is_type_error(ctx, -3)) {
 
 ## duk_is_undefined() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -7276,7 +7277,7 @@ if (duk_is_undefined(ctx, -3)) {
 
 ## duk_is_uri_error() 
 
-1.4.0 stackerror§
+1.4.0 stack error
 
 ### プロトタイプ
 
@@ -7290,7 +7291,7 @@ duk_bool_t duk_is_uri_error(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値が URIError を継承している場合は 1 を、そうでない場合は 0 を返す。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_URI_ERROR を使用する際の便宜的な呼び出しである。
+idx の値が URIError を継承している場合は 1 を、そうでない場合は 0 を返す。 idx が無効な場合も 0 を返す。 これは、 duk_get_error_code() == DUK_ERR_URI_ERROR を使用する際の便宜的な呼び出しです。
 
 
 ### 例
@@ -7304,7 +7305,7 @@ if (duk_is_uri_error(ctx, -3)) {
 
 ## duk_is_valid_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -7338,7 +7339,7 @@ duk_require_valid_index
 
 ## duk_join() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -7377,7 +7378,7 @@ duk_concat
 
 ## duk_json_decode() 
 
-1.0.0 jsoncodec§
+1.0.0 json codec
 
 ### プロトタイプ
 
@@ -7391,7 +7392,7 @@ void duk_json_decode(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-任意の JSON 値をインプレース操作でデコードする。入力が無効な場合、エラーを投げる。
+任意の JSON 値をインプレース操作でデコードします。入力が無効な場合、エラーを投げます。。
 
 
 ### 例
@@ -7415,7 +7416,7 @@ duk_json_encode
 
 ## duk_json_encode() 
 
-1.0.0 jsoncodec§
+1.0.0 json codec
 
 ### プロトタイプ
 
@@ -7429,7 +7430,7 @@ const char *duk_json_encode(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-任意の値をインプレース操作でJSON表現にエンコードする。便宜上、結果の文字列へのポインタを返します。
+任意の値をインプレース操作でJSON表現にエンコードします。便宜上、結果の文字列へのポインタを返します。
 
 
 ### 例
@@ -7453,7 +7454,7 @@ duk_json_decode
 
 ## duk_load_function() 
 
-1.3.0 stackbytecode§
+1.3.0 stack byte code
 
 ### プロトタイプ
 
@@ -7490,7 +7491,7 @@ duk_dump_function
 
 ## duk_map_string() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -7531,7 +7532,7 @@ duk_decode_string
 
 ## duk_new() 
 
-1.0.0 objectcall§
+1.0.0 object call
 
 ### プロトタイプ
 
@@ -7573,7 +7574,7 @@ duk_pnew
 
 ## duk_next() 
 
-1.0.0 propertyobject§
+1.0.0 property object
 
 ### プロトタイプ
 
@@ -7589,9 +7590,9 @@ duk_bool_t duk_next(duk_context *ctx, duk_idx_t enum_idx, duk_bool_t get_value);
 
 ### 要約
 
-duk_enum() で作成した列挙体から、次のキー（とオプションで値）を取得する。列挙が使い果たされた場合、スタックには何もプッシュされず、この関数は 0 を返します。そうでなければ、キーがスタックに押され、 get_value が0でなければ値がそれに続き、この関数は0以外の値を返す。
+duk_enum() で作成した列挙体から、次のキー（とオプションで値）を取得します。列挙が使い果たされた場合、スタックには何もプッシュされず、この関数は 0 を返します。そうでなければ、キーがスタックに押され、 get_value が0でなければ値がそれに続き、この関数は0以外の値を返す。
 
-値を取得すると，ゲッターを呼び出したり，Proxyトラップを発生させたりして，任意の副作用が発生する可能性があることに注意してください（エラーを投げる可能性もあります）．
+値を取得すると，ゲッターを呼び出したり，Proxyトラップを発生させたりして，任意の副作用が発生する可能性があることに注意してください（エラーを投げます。可能性もあります）．
 
 
 ### 例
@@ -7610,7 +7611,7 @@ duk_enum
 
 ## duk_normalize_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -7624,7 +7625,7 @@ duk_idx_t duk_normalize_index(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-現在のフレームの底を基準として、引数のインデックスを正規化します。結果のインデックスは 0 以上となり、後のスタックの変更に影響されません。入力インデックスが無効な場合、DUK_INVALID_INDEX を返します。無効なインデックスに対してエラーを投げることを望む場合は、 duk_require_normalize_index() を使用してください。
+現在のフレームの底を基準として、引数のインデックスを正規化します。結果のインデックスは 0 以上となり、後のスタックの変更に影響されません。入力インデックスが無効な場合、DUK_INVALID_INDEX を返します。無効なインデックスに対してエラーを投げます。ことを望む場合は、 duk_require_normalize_index() を使用してください。
 
 
 ### 例
@@ -7640,7 +7641,7 @@ duk_require_normalize_index
 
 ## duk_opt_boolean() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -7654,7 +7655,7 @@ duk_bool_t duk_opt_boolean(duk_context *ctx, duk_idx_t idx, duk_bool_t def_value
 
 ### 要約
 
-idx にある boolean 値を、値を変更したり強制したりすることなく取得する。 値が真のとき1、偽のとき0を返す。値が未定義の場合，あるいはインデックスが無効な場合，def_value デフォルト値が返される。その他の場合（ヌルまたは非マッチ型）は，エラーを投げる。
+idx にある boolean 値を、値を変更したり強制したりすることなく取得します。 値が真のとき1、偽のとき0を返す。値が未定義の場合，あるいはインデックスが無効な場合，def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げます。。
 
 
 ### 例
@@ -7666,7 +7667,7 @@ duk_bool_t flag_xyz = duk_opt_boolean(ctx, 2, 1);  /* default: true */
 
 ## duk_opt_buffer() 
 
-2.1.0 stackbuffer§
+2.1.0 stack buffer
 
 ### プロトタイプ
 
@@ -7680,9 +7681,9 @@ void *duk_opt_buffer(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size, void
 
 ### 要約
 
-idxにある(プレーン)バッファ値のデータポインタを，値を変更したり強制したりすることなく取得します。値が0以外のサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたは非NULLポインタを返すことがあります。out_size が非NULLの場合、バッファのサイズは *out_size に書き込まれる。値が未定義またはインデックスが無効な場合，def_ptr のデフォルト値が返され， def_len のデフォルト長が *out_size に書き込まれる (out_size が nonNULL の場合)．その他の場合(NULLおよび型が一致しない場合)は，エラーを投げる。
+idxにある(プレーン)バッファ値のデータポインタを，値を変更したり強制したりすることなく取得します。値が0以外のサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたは非NULLポインタを返すことがあります。out_size が非NULLの場合、バッファのサイズは *out_size に書き込まれます。値が未定義またはインデックスが無効な場合，def_ptr のデフォルト値が返され， def_len のデフォルト長が *out_size に書き込まれる (out_size が nonNULL の場合)．その他の場合(NULLおよび型が一致しない場合)は，エラーを投げます。。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタ値は、Duktape によって追跡されない。例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作らない。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc で割り当てられた文字列の場合、呼び出し側は duk_opt_string() から返されたポインタが libc で割り当てられた文字列の寿命以上に使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタ値は、Duktape によって追跡されない。例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作らない。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc で割り当てられた文字列の場合、呼び出し側は duk_opt_string() から返されたポインタが libc で割り当てられた文字列の寿命以上に使用されないようにしなければなりません。
 サイズゼロのバッファと非バッファを、戻り値だけから区別する信頼できる方法はありません。非バッファの場合、サイズ0のNULLが返されます。サイズ0のバッファの場合、同じ値が返されるかもしれません（NULLでないポインタが返される可能性もありますが）。duk_is_buffer() や duk_is_buffer_data() 、あるいはバッファやバッファ・オブジェクトの型チェックを行う際に使用してください。
 
 ### 例
@@ -7704,7 +7705,7 @@ duk_opt_buffer_data
 
 ## duk_opt_buffer_data() 
 
-2.1.0 stackbufferobjectbuffer§
+2.1.0 stack buffer object buffer
 
 ### プロトタイプ
 
@@ -7718,11 +7719,11 @@ void *duk_opt_buffer_data(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size,
 
 ### 要約
 
-idxにあるプレーンバッファまたはバッファオブジェクト(ArrayBuffer, Node.js Buffer, DataView, TypedArray view)の値のデータポインタを、値を変更したり強制したりすることなく取得します。値がゼロでないサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたは非NULLポインタを返すことがあります。out_size が非NULLの場合、バッファのサイズは *out_size に書き込まれる。値が未定義またはインデックスが無効な場合，def_ptr のデフォルト値が返され， def_len のデフォルト長が *out_size に書き込まれる (out_size が nonNULL の場合)．それ以外の場合(NULLや型が一致しない場合)はエラーを投げる。また、値がバッファオブジェクトで、その「バッキングバッファ」がバッファオブジェクトの見かけのサイズを完全にカバーしていない場合にもスローされます。
+idxにあるプレーンバッファまたはバッファオブジェクト(ArrayBuffer, Node.js Buffer, DataView, TypedArray view)の値のデータポインタを、値を変更したり強制したりすることなく取得します。値がゼロでないサイズの有効なバッファである場合、非NULLポインタを返します。サイズが0のバッファの場合、NULLまたは非NULLポインタを返すことがあります。out_size が非NULLの場合、バッファのサイズは *out_size に書き込まれます。値が未定義またはインデックスが無効な場合，def_ptr のデフォルト値が返され， def_len のデフォルト長が *out_size に書き込まれる (out_size が nonNULL の場合)．それ以外の場合(NULLや型が一致しない場合)はエラーを投げます。。また、値がバッファオブジェクトで、その「バッキングバッファ」がバッファオブジェクトの見かけのサイズを完全にカバーしていない場合にもスローされます。
 
 戻り値のポインタと長さで示されるデータ領域は、プレーンバッファの場合は完全なバッファであり、バッファオブジェクトの場合はアクティブな「スライス」です。返される長さは (要素数ではなく) バイト数で表現され、常に ptr[0] から ptr[len - 1] にアクセスできるようになります。例については duk_get_buffer_data() を参照してください。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトのポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトのポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -7742,7 +7743,7 @@ duk_opt_buffer
 
 ## duk_opt_c_function() 
 
-2.1.0 stackfunction§
+2.1.0 stack function
 
 ### プロトタイプ
 
@@ -7756,7 +7757,7 @@ duk_c_function duk_opt_c_function(duk_context *ctx, duk_idx_t idx, duk_c_functio
 
 ### 要約
 
-Duktape/C関数に関連付けられたECMAScript関数オブジェクトから、Duktape/C関数ポインタ（duk_c_function）を取得する。もし値が未定義であるか、インデックスが無効であれば、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は、エラーを投げる。
+Duktape/C関数に関連付けられたECMAScript関数オブジェクトから、Duktape/C関数ポインタ（duk_c_function）を取得します。もし値が未定義であるか、インデックスが無効であれば、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は、エラーを投げます。。
 
 
 ### 例
@@ -7771,7 +7772,7 @@ funcptr = duk_opt_c_function(ctx, -3, nop_callback);
 
 ## duk_opt_context() 
 
-2.1.0 stackborrowed§
+2.1.0 stack borrowed
 
 ### プロトタイプ
 
@@ -7787,7 +7788,7 @@ duk_context *duk_opt_context(duk_context *ctx, duk_idx_t idx, duk_context *def_v
 
 idxにあるDuktapeスレッドのコンテキスト・ポインタを取得します。値が未定義であるか、インデックスが無効な場合、def_value デフォルト値が返されます。その他の場合（NULLまたは型が一致しない）には、エラーを投げます。
 
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
 ### 例
 
@@ -7800,7 +7801,7 @@ target_ctx = duk_opt_context(ctx, 2, default_ctx);
 
 ## duk_opt_heapptr() 
 
-2.1.0 stackheapptrborrowed§
+2.1.0 stack heap ptr borrowed
 
 ### プロトタイプ
 
@@ -7814,7 +7815,7 @@ void *duk_opt_heapptr(duk_context *ctx, duk_idx_t idx, void *def_value);
 
 ### 要約
 
-idxにあるDuktapeヒープに割り当てられた値(オブジェクト、バッファ、文字列)への借用された void * 参照を取得する。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返されます。その他の場合(NULLまたは型が一致しない)はエラーを投げる。
+idxにあるDuktapeヒープに割り当てられた値(オブジェクト、バッファ、文字列)への借用された void * 参照を取得します。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返されます。その他の場合(NULLまたは型が一致しない)はエラーを投げます。。
 
 duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルト・ポインタ値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
 
@@ -7829,7 +7830,7 @@ ptr = duk_opt_heapptr(ctx, 2, default_ptr);
 
 ## duk_opt_int() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -7843,7 +7844,7 @@ duk_int_t duk_opt_int(duk_context *ctx, duk_idx_t idx, duk_int_t def_value);
 
 ### 要約
 
-idx に数値を取得し、まず [DUK_INT_MIN, DUK_INT_MAX] の間で値をクランプし、次にゼロに向かって切り捨てることで C の duk_int_t に変換します。スタック上の値は変更されません。値が未定義であるかインデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げる。
+idx に数値を取得し、まず [DUK_INT_MIN, DUK_INT_MAX] の間で値をクランプし、次にゼロに向かって切り捨てることで C の duk_int_t に変換します。スタック上の値は変更されません。値が未定義であるかインデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げます。。
 
 
 ### 例
@@ -7855,7 +7856,7 @@ int port = (int) duk_opt_int(ctx, 1, 80);  /* default: 80 */
 
 ## duk_opt_lstring() 
 
-2.1.0 stringstack§
+2.1.0 string stack
 
 ### プロトタイプ
 
@@ -7869,7 +7870,7 @@ const char *duk_opt_lstring(duk_context *ctx, duk_idx_t idx, duk_size_t *out_len
 
 ### 要約
 
-idx にある文字列の文字データポインタと長さを、値を変更したり強制したりすることなく取得する。読み取り専用でNUL終端の文字列データへの非NULLポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非NULLの場合)。値が未定義またはインデックスが無効な場合、def_ptr のデフォルト値が返され、 def_len のデフォルト長が *out_len に書き込まれる (out_len が NULL でない場合)。その他の場合(NULLまたは型が一致しない場合)はエラーを投げる。
+idx にある文字列の文字データポインタと長さを、値を変更したり強制したりすることなく取得します。読み取り専用でNUL終端の文字列データへの非NULLポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非NULLの場合)。値が未定義またはインデックスが無効な場合、def_ptr のデフォルト値が返され、 def_len のデフォルト長が *out_len に書き込まれる (out_len が NULL でない場合)。その他の場合(NULLまたは型が一致しない場合)はエラーを投げます。。
 
 これは、バッファデータポインタの扱い方とは異なります(技術的な理由による)。
 duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc に割り当てられた文字列である場合、呼び出し側は、 duk_opt_string() が返すポインタが libc に割り当てられた文字列の寿命を越えて使用されないようにしなければなりません。
@@ -7890,7 +7891,7 @@ duk_opt_string
 
 ## duk_opt_number() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -7904,7 +7905,7 @@ duk_double_t duk_opt_number(duk_context *ctx, duk_idx_t idx, duk_double_t def_va
 
 ### 要約
 
-idxにある数値の値を、値を変更したり強制したりすることなく取得する。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返される。その他の場合（ヌルまたは非マッチ型）は、エラーを投げる。
+idxにある数値の値を、値を変更したり強制したりすることなく取得します。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は、エラーを投げます。。
 
 
 ### 例
@@ -7916,7 +7917,7 @@ double backoff_multiplier = (double) duk_opt_number(ctx, 2, 1.5);  /* default: 1
 
 ## duk_opt_pointer() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -7930,7 +7931,7 @@ void *duk_opt_pointer(duk_context *ctx, duk_idx_t idx, void *def_value);
 
 ### 要約
 
-idxのポインタ値を、値を変更したり強制したりすることなく、void * として取得する。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返される。その他の場合（ヌルまたは非マッチ型）は，エラーを投げる。
+idxのポインタ値を、値を変更したり強制したりすることなく、void * として取得します。値が未定義であるか、インデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げます。。
 
 
 ### 例
@@ -7945,7 +7946,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_opt_string() 
 
-2.1.0 stringstack§
+2.1.0 string stack
 
 ### プロトタイプ
 
@@ -7959,13 +7960,13 @@ const char *duk_opt_string(duk_context *ctx, duk_idx_t idx, const char *def_ptr)
 
 ### 要約
 
-idx にある文字列の文字データポインタを、値を変更したり強制したりすることなく取得する。読み取り専用でNUL終端の文字列データへのNULLでないポインタを返す。値が未定義であるか、インデックスが無効である場合、def_ptrのデフォルト値が返される。その他の場合（NULLまたは型が一致しない場合）は，エラーを投げる。
+idx にある文字列の文字データポインタを、値を変更したり強制したりすることなく取得します。読み取り専用でNUL終端の文字列データへのNULLでないポインタを返す。値が未定義であるか、インデックスが無効である場合、def_ptrのデフォルト値が返されます。その他の場合（NULLまたは型が一致しない場合）は，エラーを投げます。。
 
-文字列のバイト長を明示的に得るには（文字列に NUL 文字が埋め込まれている場合に有効）、 duk_opt_lstring() を使用する。
+文字列のバイト長を明示的に得るには（文字列に NUL 文字が埋め込まれている場合に有効）、 duk_opt_lstring() を使用します。
 
 これは、バッファデータポインタの扱い方とは異なります(技術的な理由による)。
-duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任がある。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc で割り当てられた文字列の場合、呼び出し側は duk_opt_string() から返されたポインタが libc で割り当てられた文字列の寿命以上に使われないようにする必要があります。
-シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol()を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+duk_opt_xxx() と duk_get_xxx_default() に与えられたデフォルトポインタの値は、Duktape によって追跡されません、例えば、 duk_opt_string() は、デフォルト文字列引数のコピーを作成しません。呼び出し側は、デフォルト・ポインタがその意図された用途に有効であり続けることを保証する責任があります。例えば、 duk_opt_string(ctx, 3, "localhost") は、文字列定数が常に有効であるため、問題なく動作しますが、引数が libc で割り当てられた文字列の場合、呼び出し側は duk_opt_string() から返されたポインタが libc で割り当てられた文字列の寿命以上に使われないようにする必要があります。
+シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol()を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -7980,7 +7981,7 @@ duk_opt_lstring
 
 ## duk_opt_uint() 
 
-2.1.0 stack§
+2.1.0 stack
 
 ### プロトタイプ
 
@@ -7994,7 +7995,7 @@ duk_uint_t duk_opt_uint(duk_context *ctx, duk_idx_t idx, duk_uint_t def_value);
 
 ### 要約
 
-idx で数値を取得し、まず [0, DUK_UINT_MAX] の間で値をクランプし、次に 0 に向かって切り捨てることで C の duk_uint_t に変換します。スタック上の値は変更されません。値が未定義であるかインデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げる。
+idx で数値を取得し、まず [0, DUK_UINT_MAX] の間で値をクランプし、次に 0 に向かって切り捨てることで C の duk_uint_t に変換します。スタック上の値は変更されません。値が未定義であるかインデックスが無効である場合、def_value デフォルト値が返されます。その他の場合（ヌルまたは非マッチ型）は，エラーを投げます。。
 
 
 ### 例
@@ -8006,7 +8007,7 @@ unsigned int count = (unsigned int) duk_opt_uint(ctx, 1, 3);  /* default: 3 */
 
 ## duk_pcall() 
 
-1.0.0 protectedcall§
+1.0.0 protected call
 
 ### プロトタイプ
 
@@ -8021,12 +8022,10 @@ duk_int_t duk_pcall(duk_context *ctx, duk_idx_t nargs);
 
 ### 要約
 
-ターゲット関数funcをnargsの引数で呼び出す（関数自体を除く）。関数とその引数は、単一の戻り値または単一のエラー値で置き換えられる。関数呼び出し中に投げられたエラーはキャッチされる。
+ターゲット関数funcをnargsの引数で呼び出す（関数自体を除く）。関数とその引数は、単一の戻り値または単一のエラー値で置き換えられます。関数呼び出し中に投げられたエラーはキャッチされます。
 
-戻り値は
-
-duk_exec_success (0)です。呼び出しが成功した場合、nargs 引数は単一の戻り値で置き換えられる。(この戻り値コード定数はゼロであることが保証されているので、「ゼロかゼロでないか」のチェックで成功を確認することができる)。
-DUK_EXEC_ERROR: 呼び出しに失敗、nargs 引数は単一のエラー値で置き換えられる。(例外的に、例えば値スタック上の引数が少なすぎる場合、呼び出しは投げるかもしれない)。
+戻り値はduk_exec_success (0)です。呼び出しが成功した場合、nargs 引数は単一の戻り値で置き換えられます。(この戻り値コード定数はゼロであることが保証されているので、「ゼロかゼロでないか」のチェックで成功を確認することができる)。
+DUK_EXEC_ERROR: 呼び出しに失敗、nargs 引数は単一のエラー値で置き換えられます。(例外的に、例えばバリュースタック上の引数が少なすぎる場合、呼び出しは投げます。かもしれない)。
 ほとんどのDuktape APIコールとは異なり、このコールは成功時にゼロを返します。これにより、複数のエラー・コードを後で定義することができます。
 捕捉されたエラー・オブジェクトは通常Errorのインスタンスで、.stack、.fileName、.lineNumberなどの有用なプロパティを持ちます。これらは通常のプロパティメソッドでアクセスすることができます。しかし、任意の値が投げられる可能性があるので、常にそうであると仮定することは避けるべきです。
 
@@ -8093,7 +8092,7 @@ duk_pcall_prop
 
 ## duk_pcall_method() 
 
-1.0.0 protectedcall§
+1.0.0 protected call
 
 ### プロトタイプ
 
@@ -8108,7 +8107,7 @@ duk_int_t duk_pcall_method(duk_context *ctx, duk_idx_t nargs);
 
 ### 要約
 
-duk_pcall() と同様であるが、ターゲット関数 func は、値スタック上で明示的に与えられた this バインディングで呼び出される。
+duk_pcall() と同様であるが、ターゲット関数 func は、バリュースタック上で明示的に与えられた this バインディングで呼び出されます。
 
 
 ### 例
@@ -8142,7 +8141,7 @@ duk_pop(ctx);
 
 ## duk_pcall_prop() 
 
-1.0.0 protectedpropertycall§
+1.0.0 protected property call
 
 ### プロトタイプ
 
@@ -8182,7 +8181,7 @@ duk_pop(ctx);
 
 ## duk_pcompile() 
 
-1.0.0 protectedcompile§
+1.0.0 protected compile
 
 ### プロトタイプ
 
@@ -8197,9 +8196,9 @@ duk_int_t duk_pcompile(duk_context *ctx, duk_uint_t flags);
 
 ### 要約
 
-duk_compile() と同様であるが、コンパイルに関連するエラー (ソースのシンタックスエラーなど) を捕捉する。0 の返り値は成功を示し、コンパイルされた関数はスタックトップに残される。0 以外の返り値はエラーを示し、そのエラーはスタックトップに残される。
+duk_compile() と同様であるが、コンパイルに関連するエラー (ソースのシンタックスエラーなど) を捕捉します。0 の返り値は成功を示し、コンパイルされた関数はスタックトップに残されます。0 以外の返り値はエラーを示し、そのエラーはスタックトップに残されます。
 
-スタックトップが低すぎる (2 より小さい) 場合は、エラーがスローされる。
+スタックトップが低すぎる (2 より小さい) 場合は、エラーがスローされます。
 
 
 ### 例
@@ -8227,7 +8226,7 @@ duk_pcompile_lstring_filename
 
 ## duk_pcompile_lstring() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8242,7 +8241,7 @@ duk_int_t duk_pcompile_lstring(duk_context *ctx, duk_uint_t flags, const char *s
 
 ### 要約
 
-duk_pcompile() と同様であるが、コンパイル入力は長さを明示した C 文字列として与えられる。この関数に関連するファイル名は "input" である。
+duk_pcompile() と同様であるが、コンパイル入力は長さを明示した C 文字列として与えられます。この関数に関連するファイル名は "input" です。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -8264,7 +8263,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_lstring_filename() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8302,7 +8301,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_string() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8317,7 +8316,7 @@ duk_int_t duk_pcompile_string(duk_context *ctx, duk_uint_t flags, const char *sr
 
 ### 要約
 
-duk_pcompile() と同様であるが、コンパイル時の入力は C の文字列として与えられる。この関数に関連するファイル名は "input" である。
+duk_pcompile() と同様であるが、コンパイル時の入力は C の文字列として与えられます。この関数に関連するファイル名は "input" です。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -8336,7 +8335,7 @@ duk_pop(ctx);
 
 ## duk_pcompile_string_filename() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8371,7 +8370,7 @@ duk_pop(ctx);
 
 ## duk_peval() 
 
-1.0.0 protectedcompile§
+1.0.0 protected compile
 
 ### プロトタイプ
 
@@ -8386,9 +8385,9 @@ duk_int_t duk_peval(duk_context *ctx);
 
 ### 要約
 
-duk_eval() と同様ですが、コンパイルに関連するエラー (ソースのシンタックスエラーなど) を捕捉します。0 の返り値は成功を表し、eval の結果はスタックトップに残されます。0 以外の返り値はエラーを示し、そのエラーはスタックトップに残される。
+duk_eval() と同様ですが、コンパイルに関連するエラー (ソースのシンタックスエラーなど) を捕捉します。0 の返り値は成功を表し、eval の結果はスタックトップに残されます。0 以外の返り値はエラーを示し、そのエラーはスタックトップに残されます。
 
-スタックトップが低すぎる (1より小さい) 場合は、エラーがスローされる。
+スタックトップが低すぎる (1より小さい) 場合は、エラーがスローされます。
 
 
 ### 例
@@ -8415,7 +8414,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_lstring() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8455,7 +8454,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_lstring_noresult() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8469,7 +8468,7 @@ duk_int_t duk_peval_lstring_noresult(duk_context *ctx, const char *src, duk_size
 
 ### 要約
 
-duk_peval_lstring() と同様ですが、(成功/エラーの結果に関わらず) 値スタックに結果を残しません。
+duk_peval_lstring() と同様ですが、(成功/エラーの結果に関わらず) バリュースタックに結果を残しません。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -8489,7 +8488,7 @@ if (duk_peval_lstring_noresult(ctx, src, len) != 0) {
 
 ## duk_peval_noresult() 
 
-1.0.0 protectedcompile§
+1.0.0 protected compile
 
 ### プロトタイプ
 
@@ -8525,7 +8524,7 @@ duk_peval_lstring_noresult
 
 ## duk_peval_string() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8562,7 +8561,7 @@ duk_peval_string_noresult
 
 ## duk_peval_string_noresult() 
 
-1.0.0 stringprotectedcompile§
+1.0.0 string protected compile
 
 ### プロトタイプ
 
@@ -8576,7 +8575,7 @@ duk_int_t duk_peval_string_noresult(duk_context *ctx, const char *src);
 
 ### 要約
 
-duk_peval_string() と同様であるが、(成功/エラー結果に関わらず) 値スタックに結果を残さない。
+duk_peval_string() と同様であるが、(成功/エラー結果に関わらず) バリュースタックに結果を残さない。
 
 この変種では、入力ソースコードは Duktape によってインターンされないので、 低メモリ環境では有用です。
 
@@ -8593,7 +8592,7 @@ if (duk_peval_string_noresult(ctx, "print('testString'.toUpperCase());") != 0) {
 
 ## duk_pnew() 
 
-1.3.0 protectedobjectcall§
+1.3.0 protected object call
 
 ### プロトタイプ
 
@@ -8608,9 +8607,9 @@ duk_ret_t duk_pnew(duk_context *ctx, duk_idx_t nargs);
 
 ### 要約
 
-duk_new() と同様ですが、エラーを捕捉します。0 の返り値は成功を示し、コンストラクタの結果はスタックトップに残されます。0 ではない返り値はエラーを示し、そのエラーはスタックトップに残される。
+duk_new() と同様ですが、エラーを捕捉します。0 の返り値は成功を示し、コンストラクタの結果はスタックトップに残されます。0 ではない返り値はエラーを示し、そのエラーはスタックトップに残されます。
 
-スタックトップが低すぎる (nargs + 1 より小さい) 場合、または nargs が負である場合、エラーがスローされる。
+スタックトップが低すぎる (nargs + 1 より小さい) 場合、または nargs が負である場合、エラーがスローされます。
 
 
 ### 例
@@ -8638,7 +8637,7 @@ duk_new
 
 ## duk_pop() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -8652,7 +8651,7 @@ void duk_pop(duk_context *ctx);
 
 ### 要約
 
-スタックから要素を1つ取り出します。スタックが空の場合、エラーを投げる。
+スタックから要素を1つ取り出します。スタックが空の場合、エラーを投げます。。
 
 複数の要素をポップするには、duk_pop_n() または、よくある場合のショートカットである duk_pop_2() と duk_pop_3() を使用します。
 
@@ -8672,7 +8671,7 @@ duk_pop_n
 
 ## duk_pop_2() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -8686,7 +8685,7 @@ void duk_pop_2(duk_context *ctx);
 
 ### 要約
 
-スタックから2つの要素を取り出します。スタックの要素が2つより少ない場合は、エラーを投げる。
+スタックから2つの要素を取り出します。スタックの要素が2つより少ない場合は、エラーを投げます。。
 
 
 ### 例
@@ -8698,7 +8697,7 @@ duk_pop_2(ctx);
 
 ## duk_pop_3() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -8712,7 +8711,7 @@ void duk_pop_3(duk_context *ctx);
 
 ### 要約
 
-スタックから3つの要素を取り出します。スタックの要素が3つより少ない場合は、エラーを投げる。
+スタックから3つの要素を取り出します。スタックの要素が3つより少ない場合は、エラーを投げます。。
 
 
 ### 例
@@ -8724,7 +8723,7 @@ duk_pop_3(ctx);
 
 ## duk_pop_n() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -8738,7 +8737,7 @@ void duk_pop_n(duk_context *ctx, duk_idx_t count);
 
 ### 要約
 
-スタックから count 個の要素を取り出します。スタックの要素が count より少ない場合、エラーを投げる。count が 0 の場合、この呼び出しは失敗である。負のカウントは、エラーをスローします。
+スタックから count 個の要素を取り出します。スタックの要素が count より少ない場合、エラーを投げます。。count が 0 の場合、この呼び出しは失敗です。負のカウントは、エラーをスローします。
 
 
 ### 例
@@ -8750,7 +8749,7 @@ duk_pop_n(ctx, 10);
 
 ## duk_pull() 
 
-2.5.0 stack§
+2.5.0 stack
 
 ### プロトタイプ
 
@@ -8764,9 +8763,9 @@ void duk_pull(duk_context *ctx, duk_idx_t from_idx);
 
 ### 要約
 
-from_idxの値を削除し、値スタックの先頭にプッシュする。
+from_idxの値を削除し、バリュースタックの先頭にプッシュします。
 
-from_idxが無効なインデックスの場合、エラーを投げる。
+from_idxが無効なインデックスの場合、エラーを投げます。。
 
 ### 例
 
@@ -8785,7 +8784,7 @@ duk_remove
 
 ## duk_push_array() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -8801,7 +8800,7 @@ duk_idx_t duk_push_array(duk_context *ctx);
 
 空の配列をスタックにプッシュします。押された配列の非負のインデックス（スタックの底からの相対値）を返します。
 
-生成されたオブジェクトの内部プロトタイプは Array.prototype である。これを変更するには、 duk_set_prototype() を使用する。
+生成されたオブジェクトの内部プロトタイプは Array.prototype です。これを変更するには、 duk_set_prototype() を使用します。
 
 
 ### 例
@@ -8825,7 +8824,7 @@ duk_pop(ctx);  /* pop array */
 
 ## duk_push_bare_array() 
 
-2.4.0 stackobject§
+2.4.0 stack object
 
 ### プロトタイプ
 
@@ -8858,7 +8857,7 @@ duk_push_bare_object
 
 ## duk_push_bare_object() 
 
-2.0.0 stackobject§
+2.0.0 stack object
 
 ### プロトタイプ
 
@@ -8891,7 +8890,7 @@ duk_push_bare_array
 
 ## duk_push_boolean() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -8906,7 +8905,7 @@ void duk_push_boolean(duk_context *ctx, duk_bool_t val);
 
 ### 要約
 
-真（val != 0の場合）または偽（val == 0の場合）をスタックにプッシュする。
+真（val != 0の場合）または偽（val == 0の場合）をスタックにプッシュします。
 
 
 ### 例
@@ -8920,7 +8919,7 @@ duk_push_boolean(ctx, 123);  /* -> [ ... false true true ] */
 
 ## duk_push_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -8934,7 +8933,7 @@ void *duk_push_buffer(duk_context *ctx, duk_size_t size, duk_bool_t dynamic);
 
 ### 要約
 
-サイズbyteの新しいバッファを割り当て、それを値スタックにプッシュします。ゼロサイズのバッファの場合、NULLまたは非NULLを返します。バッファデータ領域は自動的にゼロになります。dynamicが0でない場合，バッファはサイズ変更可能であり，そうでなければバッファは固定サイズになります。割り当てに失敗した場合は，エラーをスローします。
+サイズbyteの新しいバッファを割り当て、それをバリュースタックにプッシュします。ゼロサイズのバッファの場合、NULLまたは非NULLを返します。バッファデータ領域は自動的にゼロになります。dynamicが0でない場合，バッファはサイズ変更可能であり，そうでなければバッファは固定サイズになります。割り当てに失敗した場合は，エラーをスローします。
 
 duk_push_fixed_buffer() と duk_push_dynamic_buffer() というショートカットも存在します。
 
@@ -8964,7 +8963,7 @@ duk_push_external_buffer
 
 ## duk_push_buffer_object() 
 
-1.3.0 stackbufferobject§
+1.3.0 stack buffer object
 
 ### プロトタイプ
 
@@ -9036,7 +9035,7 @@ duk_push_external_buffer
 
 ## duk_push_c_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -9052,10 +9051,10 @@ duk_idx_t duk_push_c_function(duk_context *ctx, duk_c_function func, duk_idx_t n
 
 C関数に関連付けられた新しい関数オブジェクトをスタックにプッシュします。関数オブジェクトは ECMAScript の関数オブジェクトで、呼び出されると、func は Duktape/C の関数インターフェイスを使って呼び出されます。プッシュされた関数の負でないインデックス（スタックの底からの相対値）を返します。
 
-nargs 引数は、func が入力されたときに値スタックがどのように見えるかを制御します。
+nargs 引数は、func が入力されたときにバリュースタックがどのように見えるかを制御します。
 
-nargs が >= 0 であれば、それは関数が期待する引数の正確な数を示します。余分な引数は捨てられ、足りない引数は未定義値で埋められます。関数に入ると、値スタックの先頭は常にnargsと一致する。
-nargs が DUK_VARARGS に設定されている場合、値スタックは実際の（可変）呼び出し引数を含み、関数は duk_get_top() で実際の引数カウントをチェックする必要があります。
+nargs が >= 0 であれば、それは関数が期待する引数の正確な数を示します。余分な引数は捨てられ、足りない引数は未定義値で埋められます。関数に入ると、バリュースタックの先頭は常にnargsと一致します。
+nargs が DUK_VARARGS に設定されている場合、バリュースタックは実際の（可変）呼び出し引数を含み、関数は duk_get_top() で実際の引数カウントをチェックする必要があります。
 作成された関数は、通常の関数 (func()) としても、コンストラクタ (new func()) としても呼び出すことが可能です。この 2 つの呼び出し方は、 duk_is_constructor_call() を使って区別することができます。この関数はコンストラクタとして使用できますが、ECMAScript 関数のような自動的なプロトタイププロパティを持ちません。
 
 押された関数をコンストラクタとして使用するつもりであれば、通常、プロトタイプ・オブジェクトを作成し、関数のプロトタイプ・プロパティを手動で設定する必要があります。
@@ -9098,7 +9097,7 @@ duk_push_c_lightfunc
 
 ## duk_push_c_lightfunc() 
 
- stacklightfuncfunction§
+ stack light func function
 
 ### プロトタイプ
 
@@ -9121,7 +9120,7 @@ length は [0,15] でなければならず、lightfunc の仮想長プロパテ�
 magic は、[-128,127] でなければなりません。
 lightfunc は、独自のプロパティを保持できず、仮想の名前と長さのプロパティのみを持ち、その他のプロパティは Function.prototype から継承されます。
 
-nargs 引数は、func が入力されたときに値スタックがどのように見えるかを制御し、通常の Duktape/C 関数のように動作します（ duk_push_c_function() を参照してください）。
+nargs 引数は、func が入力されたときにバリュースタックがどのように見えるかを制御し、通常の Duktape/C 関数のように動作します（ duk_push_c_function() を参照してください）。
 
 作成された関数は、通常の関数 (func()) としても、コンストラクタ (new func()) としても呼び出すことが可能です。この 2 つの呼び出し方は duk_is_constructor_call() を使って区別することができます。この関数はコンストラクタとして使用できますが、通常の Function オブジェクトのようにプロトタイププロパティを持つことはできません。
 
@@ -9142,7 +9141,7 @@ duk_push_c_function
 
 ## duk_push_context_dump() 
 
-1.0.0 stackdebug§
+1.0.0 stack debug
 
 ### プロトタイプ
 
@@ -9158,7 +9157,7 @@ void duk_push_context_dump(duk_context *ctx);
 
 コンテキスト ctx の現在のアクティブ化の状態を要約した一行文字列をプッシュします。これは Duktape/C コードのデバッグに有用であり、実稼働環境での使用は意図していない。
 
-正確なダンプ内容はバージョンに依存する。現在のフォーマットでは、スタック・トップ（スタック上の要素数）を含み、現在の要素をJXフォーマット（Duktapeのカスタム拡張JSONフォーマット）の値の配列としてプリントアウトします。以下の例では、次のようなものがプリントされます。
+正確なダンプ内容はバージョンに依存します。現在のフォーマットでは、スタック・トップ（スタック上の要素数）を含み、現在の要素をJXフォーマット（Duktapeのカスタム拡張JSONフォーマット）の値の配列としてプリントアウトします。以下の例では、次のようなものがプリントされます。
 
 ```sh
 ctx: top=2, stack=[123,"foo"]
@@ -9179,7 +9178,7 @@ duk_pop(ctx);
 
 ## duk_push_current_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -9210,7 +9209,7 @@ duk_push_current_function(ctx);
 
 ## duk_push_current_thread() 
 
-1.0.0 threadstackfunctionborrowed§
+1.0.0 thread stack function borrowed
 
 ### プロトタイプ
 
@@ -9227,7 +9226,7 @@ void duk_push_current_thread(duk_context *ctx);
 
 現在実行中の Duktape スレッドをスタックにプッシュします。プッシュされる値はスレッドオブジェクトであり、ECMAScript オブジェクトでもあります。現在のスレッドがない場合、代わりに undefined がプッシュされます。
 
-現在のスレッドは (ほとんど常に) ctx ポインタによって表されるスレッドである。
+現在のスレッドは (ほとんど常に) ctx ポインタによって表されるスレッドです。
 
 スレッドに関連付けられた duk_context * を取得するには、 duk_get_context() を使用します。
 
@@ -9241,7 +9240,7 @@ duk_push_thread(ctx);
 
 ## duk_push_dynamic_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -9255,7 +9254,7 @@ void *duk_push_dynamic_buffer(duk_context *ctx, duk_size_t size);
 
 ### 要約
 
-動的な (サイズ変更可能な) バッファを割り当て、それを値スタックにプッシュします。dynamic = 1 での duk_push_buffer() のショートカットです。
+動的な (サイズ変更可能な) バッファを割り当て、それをバリュースタックにプッシュします。dynamic = 1 での duk_push_buffer() のショートカットです。
 
 
 ### 例
@@ -9270,7 +9269,7 @@ printf("allocated buffer, data area: %p\n", p);
 
 ## duk_push_error_object() 
 
-1.0.0 stackobjecterror§
+1.0.0 stack object error
 
 ### プロトタイプ
 
@@ -9284,7 +9283,7 @@ duk_idx_t duk_push_error_object(duk_context *ctx, duk_errcode_t err_code, const 
 
 ### 要約
 
-新しいエラーオブジェクトを作成し、それを値スタックにプッシュします（エラーはスローされません）。プッシュされたエラーオブジェクトの非負のインデックス（スタックの底からの相対値）を返します。
+新しいエラーオブジェクトを作成し、それをバリュースタックにプッシュします（エラーはスローされません）。プッシュされたエラーオブジェクトの非負のインデックス（スタックの底からの相対値）を返します。
 
 エラーオブジェクトの message プロパティには、fmt と残りの引数を使用して sprintf フォーマットの文字列が設定されます。作成されたエラーオブジェクトの内部プロトタイプは err_code に基づいて選択されます。例えば、DUK_ERR_RANGE_ERROR は、組み込みの RangeError プロトタイプが使用されるようにします。ユーザーエラーコードの有効範囲は [1,16777215] です。
 
@@ -9304,7 +9303,7 @@ duk_push_error_object_va
 
 ## duk_push_error_object_va() 
 
-1.1.0 varargstackobjecterror§
+1.1.0 vararg stack object error
 
 ### プロトタイプ
 
@@ -9344,7 +9343,7 @@ duk_push_error_object
 
 ## duk_push_external_buffer() 
 
-1.3.0 stackbuffer§
+1.3.0 stack buffer
 
 ### プロトタイプ
 
@@ -9358,7 +9357,7 @@ void duk_push_external_buffer(duk_context *ctx);
 
 ### 要約
 
-外部バッファを割り当て、それを値スタックにプッシュします。外部バッファとは、Duktape がメモリ管理していない、ユーザが割り当てた外部バッファを指します。最初の外部バッファ・ポインタは NULL で、サイズは 0 である。duk_config_buffer() を使って、外部バッファのポインタとサイズを更新することができます。
+外部バッファを割り当て、それをバリュースタックにプッシュします。外部バッファとは、Duktape がメモリ管理していない、ユーザが割り当てた外部バッファを指します。最初の外部バッファ・ポインタは NULL で、サイズは 0 です。duk_config_buffer() を使って、外部バッファのポインタとサイズを更新することができます。
 
 外部バッファは ECMAScript コードが外部で割り当てられたデータ構造にアクセスできるようにするのに便利です。例えば、外部で割り当てられたフレームバッファにバイトを書き込むために使用することができます。外部バッファにはアライメント要件がありません（Duktapeはアクセスする際にアライメントの仮定を行いません）。
 
@@ -9396,7 +9395,7 @@ duk_config_buffer
 
 ## duk_push_false() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9410,7 +9409,7 @@ void duk_push_false(duk_context *ctx);
 
 ### 要約
 
-false をスタックにプッシュする。duk_push_boolean(ctx, 0)を呼ぶのと同じである。
+false をスタックにプッシュします。duk_push_boolean(ctx, 0)を呼ぶのと同じです。
 
 
 ### 例
@@ -9422,7 +9421,7 @@ duk_push_false(ctx);
 
 ## duk_push_fixed_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -9436,7 +9435,7 @@ void *duk_push_fixed_buffer(duk_context *ctx, duk_size_t size);
 
 ### 要約
 
-固定サイズのバッファを割り当てて、それを値スタックにプッシュします。dynamic = 0 での duk_push_buffer() のショートカットです。
+固定サイズのバッファを割り当てて、それをバリュースタックにプッシュします。dynamic = 0 での duk_push_buffer() のショートカットです。
 
 
 ### 例
@@ -9451,7 +9450,7 @@ printf("allocated buffer, data area: %p\n", p);
 
 ## duk_push_global_object() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -9465,7 +9464,7 @@ void duk_push_global_object(duk_context *ctx);
 
 ### 要約
 
-グローバルオブジェクトをスタックにプッシュする。
+グローバルオブジェクトをスタックにプッシュします。
 
 
 ### 例
@@ -9477,7 +9476,7 @@ duk_push_global_object(ctx);
 
 ## duk_push_global_stash() 
 
-1.0.0 stashstacksandboxobjectmodule§
+1.0.0 stash stack sandbox object module
 
 ### プロトタイプ
 
@@ -9513,7 +9512,7 @@ duk_push_thread_stash
 
 ## duk_push_heap_stash() 
 
-1.0.0 stashstacksandboxobjectmodule§
+1.0.0 stash stack sandbox object module
 
 ### プロトタイプ
 
@@ -9544,7 +9543,7 @@ duk_push_thread_stash
 
 ## duk_push_heapptr() 
 
-1.1.0 stackobjectheapptrborrowed§
+1.1.0 stack object heap ptr borrowed
 
 ### プロトタイプ
 
@@ -9559,13 +9558,13 @@ duk_idx_t duk_push_heapptr(duk_context *ctx, void *ptr);
 
 ### 要約
 
-Duk_get_heapptr() またはその亜種から借用したポインタ参照を使って、 Duktape ヒープオブジェクトを値スタックにプッシュします。ptr が NULL の場合、undefined がプッシュされます。
+Duk_get_heapptr() またはその亜種から借用したポインタ参照を使って、 Duktape ヒープオブジェクトをバリュースタックにプッシュします。ptr が NULL の場合、undefined がプッシュされます。
 
 呼び出し側は、引数 ptr がプッシュされたときにまだ有効である (Duktape ガベージコレクションによって解放されていない) ことを確認する責任があります。これを怠ると、予測不可能でメモリが安全でない動作になります。
 
 これを確実にするために、2つの基本的な方法があります。
 
-強力な後方参照：関連するヒープ・オブジェクトが、duk_get_heapptr() と duk_push_heapptr() の間で Duktape ガベージコレクションのために常に到達可能であることを保証する。例えば、借用した void ポインタが使用されている間に、関連するオブジェクトがスタッ シュに書き込まれたことを確認します。要するに、アプリケーションは、強く参照される値によってバックされる借用された参照を保持しているのです。これは、Duktape 2.1以前でサポートされていた唯一の方法です。
+強力な後方参照：関連するヒープ・オブジェクトが、duk_get_heapptr() と duk_push_heapptr() の間で Duktape ガベージコレクションのために常に到達可能であることを保証します。例えば、借用した void ポインタが使用されている間に、関連するオブジェクトがスタッ シュに書き込まれたことを確認します。要するに、アプリケーションは、強く参照される値によってバックされる借用された参照を保持しているのです。これは、Duktape 2.1以前でサポートされていた唯一の方法です。
 弱い参照＋ファイナライザー：関連するヒープ・オブジェクトのために（できればネイティブの）ファイナライザーを追加し、遅くともファイナライザーが呼ばれた時点で（オブジェクトがファイナライザーによって救出されないと仮定して）voidポインターの使用を停止します。Duktape 2.1以降では、到達不可能なオブジェクトに対して、ファイナライザーを呼び出すまで、duk_push_heapptr()が許可されるようになりました。この方法によって、アプリケーションは関連するオブジェクトへの弱い参照を保持することができます。ただし、以下の制限事項を参照してください。
 ファイナライザーの呼び出しは、メモリ不足などで静かに失敗することがあります。ポインタの有効期間の終了を示すためにファイナライザコールに依存している場合、 ファイナライザコールを逃すと duk_push_heapptr() にぶら下がったポインタが与えられる可能性があります。この状況に対する回避策は今のところありません。したがって、もしメモリ不足の状態が予想されるなら、ファイナライザに基づくアプローチは確実に機能しないかもしれません。今後の課題は、少なくともネイティブファイナライザ関数へのエントリーが成功しないとオブジェクトが解放されないようにすることです。https://github.com/svaarala/duktape/issues/1456 を参照してください。
 
@@ -9588,7 +9587,7 @@ duk_require_heapptr
 
 ## duk_push_int() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9602,9 +9601,9 @@ void duk_push_int(duk_context *ctx, duk_int_t val);
 
 ### 要約
 
-valをIEEEダブルに変換し、スタックにプッシュする。
+valをIEEEダブルに変換し、スタックにプッシュします。
 
-これは duk_push_number(ctx, (duk_double_t) val) を呼び出すための省略記法である。
+これは duk_push_number(ctx, (duk_double_t) val) を呼び出すための省略記法です。
 
 
 ### 例
@@ -9616,7 +9615,7 @@ duk_push_int(ctx, 123);
 
 ## duk_push_literal() 
 
-2.3.0 stackliteral§
+2.3.0 stack literal
 
 ### プロトタイプ
 
@@ -9635,9 +9634,9 @@ C 言語のリテラルをスタックにプッシュし、インターンした
 は、例えばsizeof(str)を使って操作できる、 "foo "のような非NULLのCリテラルでなければなりません。sizeof()は、自動的なNULターミネータを含む文字列長（例えば、 sizeof("foo") は4）を生成します。
 データ内容が不変であること。すなわち、読み取り専用メモリ、または書き込み可能なメモリであるが、変更されないことが保証されていること。
 内部のNUL文字を含んではならず、Cの文字列と同様に終端NULを持たなければならない。
-引数str_literalはAPIマクロにより複数回評価される場合がある。str_literalの引数に対して、実行時のNULLポインタチェックは行われませんので、NULLを渡すとメモリセーフでない動作になります。
+引数str_literalはAPIマクロにより複数回評価される場合があります。str_literalの引数に対して、実行時のNULLポインタチェックは行われませんので、NULLを渡すとメモリセーフでない動作になります。
 
-このコールは概念的には duk_push_string() と同じである。呼び出し側のコードは、フットプリントや速度のわずかな違いが問題となる場合にのみ、これを使用する必要があります。不変のCリテラルが持つ特性により、Duktape内部でちょっとした最適化が可能です。
+このコールは概念的には duk_push_string() と同じです。呼び出し側のコードは、フットプリントや速度のわずかな違いが問題となる場合にのみ、これを使用する必要があります。不変のCリテラルが持つ特性により、Duktape内部でちょっとした最適化が可能です。
 
 文字列の長さは、コンパイル時に sizeof(str_literal) - 1 を使って、呼び出し側で計算することができます。
 デフォルトでは、Cリテラル（duk_push_literal()またはduk_get_prop_literal()のようなリテラル便利コール）を介してアクセスされるヒープ文字列は、次のマーク＆スイープラウンドまで自動的に固定され、Cリテラルアドレスを固定された内部ヒープ文字列にマップするためのルックアップキャッシュが存在します。この最適化では、文字列の重複排除（一般的ですが、保証されていません）を想定していません。
@@ -9661,7 +9660,7 @@ duk_push_literal(ctx, DUK_HIDDEN_SYMBOL("mySymbol"));
 
 ## duk_push_lstring() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -9675,11 +9674,11 @@ const char *duk_push_lstring(duk_context *ctx, const char *str, duk_size_t len);
 
 ### 要約
 
-明示的な長さの文字列をスタックにプッシュする。文字列は、内部の NUL 文字を含む任意のデータを含むことができる。内部文字列データへのポインタが返される。操作に失敗した場合は，エラーを投げる。
+明示的な長さの文字列をスタックにプッシュします。文字列は、内部の NUL 文字を含む任意のデータを含むことができます。内部文字列データへのポインタが返されます。操作に失敗した場合は，エラーを投げます。。
 
-str が NULL の場合、len に関係なく空の文字列がスタックに押され、空の文字列への非 NULL ポインタが返される。返されたポインタは再参照可能であり、NUL終端文字が保証される。この動作は、意図的に duk_push_string と異なっている。
+str が NULL の場合、len に関係なく空の文字列がスタックに押され、空の文字列への非 NULL ポインタが返されます。返されたポインタは再参照可能であり、NUL終端文字が保証されます。この動作は、意図的に duk_push_string と異なっています。
 
-Cコードは通常、有効なCESU-8文字列のみをスタックにプッシュすべきである。
+Cコードは通常、有効なCESU-8文字列のみをスタックにプッシュすべきです。
 
 
 ### 例
@@ -9698,7 +9697,7 @@ duk_push_lstring(ctx, NULL, 10);  /* push empty string */
 
 ## duk_push_nan() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9712,7 +9711,7 @@ void duk_push_nan(duk_context *ctx);
 
 ### 要約
 
-NaN (not-a-number) をスタックにプッシュする。
+NaN (not-a-number) をスタックにプッシュします。
 
 
 ### 例
@@ -9726,7 +9725,7 @@ printf("NaN is number: %d\n", (int) duk_is_number(ctx, -1));
 
 ## duk_push_new_target() 
 
-2.3.0 stackfunction§
+2.3.0 stack function
 
 ### プロトタイプ
 
@@ -9741,7 +9740,7 @@ void duk_push_new_target(duk_context *ctx);
 
 ### 要約
 
-現在実行中の関数の new.target に相当する値をスタックにプッシュします。現在の呼び出しがコンストラクタ呼び出しでない場合、または呼び出しスタックが空の場合、プッシュされる値は未定義です。
+現在実行中の関数の new.target に相当する値をスタックにプッシュします。現在の呼び出しがコンストラクタ呼び出しでない場合、またはコールスタックが空の場合、プッシュされる値は未定義です。
 
 
 ### 例
@@ -9753,7 +9752,7 @@ duk_push_new_target(ctx);
 
 ## duk_push_null() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9767,7 +9766,7 @@ void duk_push_null(duk_context *ctx);
 
 ### 要約
 
-nullをスタックにプッシュする。
+nullをスタックにプッシュします。
 
 
 ### 例
@@ -9779,7 +9778,7 @@ duk_push_null(ctx);
 
 ## duk_push_number() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9793,9 +9792,9 @@ void duk_push_number(duk_context *ctx, duk_double_t val);
 
 ### 要約
 
-数値（IEEE double）valをスタックにプッシュする。
+数値（IEEE double）valをスタックにプッシュします。
 
-val が NaN の場合、他の NaN 形式に正規化される場合がある。
+val が NaN の場合、他の NaN 形式に正規化される場合があります。
 
 
 ### 例
@@ -9807,7 +9806,7 @@ duk_push_number(ctx, 123.0);
 
 ## duk_push_object() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -9847,7 +9846,7 @@ duk_push_bare_object
 
 ## duk_push_pointer() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -9875,7 +9874,7 @@ duk_push_pointer(ctx, (void *) p);
 
 ## duk_push_proxy() 
 
-2.2.0 stackobject§
+2.2.0 stack object
 
 ### プロトタイプ
 
@@ -9889,7 +9888,7 @@ duk_idx_t duk_push_proxy(duk_context *ctx, duk_uint_t proxy_flags);
 
 ### 要約
 
-new Proxy(target, handler)に相当する、ターゲットとハンドラのテーブルに対する 新しいProxyオブジェクトを値スタックにプッシュします。proxy_flagsは現在(Duktape 2.5まで)未使用です。
+new Proxy(target, handler)に相当する、ターゲットとハンドラのテーブルに対する 新しいProxyオブジェクトをバリュースタックにプッシュします。proxy_flagsは現在(Duktape 2.5まで)未使用です。
 
 
 ### 例
@@ -9907,7 +9906,7 @@ proxy_idx = duk_push_proxy(ctx, 0);  /* [ target handler ] -> [ proxy ] */
 
 ## duk_push_sprintf() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -9921,11 +9920,11 @@ const char *duk_push_sprintf(duk_context *ctx, const char *fmt, ...);
 
 ### 要約
 
-sprintf()のように（ただし安全に）文字列をフォーマットし、その結果を値スタックにプッシュします。結果の文字列へのNULLでないポインタを返します。
+sprintf()のように（ただし安全に）文字列をフォーマットし、その結果をバリュースタックにプッシュします。結果の文字列へのNULLでないポインタを返します。
 
-fmt が NULL の場合、空文字列がスタックにプッシュされ、空文字列への非 NULL ポインタが返される (この動作は、少なくとも Linux では、NULL フォーマット文字列に対する sprintf() の動作に類似している)。返されたポインタは再参照可能で、NULターミネータ文字が保証される。
+fmt が NULL の場合、空文字列がスタックにプッシュされ、空文字列への非 NULL ポインタが返される (この動作は、少なくとも Linux では、NULL フォーマット文字列に対する sprintf() の動作に類似している)。返されたポインタは再参照可能で、NULターミネータ文字が保証されます。
 
-sprintf()とは異なり、文字列のフォーマットは結果の長さに関して安全である。具体的には、この実装は、一時的にフォーマットされた値に対して十分な大きさのバッファが見つかるまで、一時的なバッファのサイズを大きくしてみます。
+sprintf()とは異なり、文字列のフォーマットは結果の長さに関して安全です。具体的には、この実装は、一時的にフォーマットされた値に対して十分な大きさのバッファが見つかるまで、一時的なバッファのサイズを大きくしてみます。
 
 いくつかの書式指定子にはプラットフォーム特有の動作があるかもしれません。例えば、引数がNULLの場合の%sの動作は公式には未定義であり、実際の動作はプラットフォームによって異なり、メモリ的に安全でない可能性さえあります。
 
@@ -9938,7 +9937,7 @@ duk_push_sprintf(ctx, "meaning of life: %d, name: %s", 42, "Zaphod");
 
 ## duk_push_string() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -9953,11 +9952,11 @@ const char *duk_push_string(duk_context *ctx, const char *str);
 
 ### 要約
 
-C 言語の文字列をスタックに格納する。文字列の長さは、strlen()に相当するもので自動的に検出される（つまり、最初の NUL 文字を探す）。インターナルされた文字列データへのポインタが返される。操作に失敗した場合は、エラーを投げる。
+C 言語の文字列をスタックに格納します。文字列の長さは、strlen()に相当するもので自動的に検出される（つまり、最初の NUL 文字を探す）。インターナルされた文字列データへのポインタが返されます。操作に失敗した場合は、エラーを投げます。。
 
-strがNULLの場合、ECMAScriptのNULLがスタックにプッシュされ、NULLが返される。この動作は、意図的にduk_push_lstringと異なっている。
+strがNULLの場合、ECMAScriptのNULLがスタックにプッシュされ、NULLが返されます。この動作は、意図的にduk_push_lstringと異なっています。
 
-Cコードは通常、有効なCESU-8文字列のみをスタックにプッシュすべきである。無効な CESU-8/UTF-8 バイト列の中には、Symbol 値を表すような特別な用途のために予約されているものがある。このような無効なバイト列をプッシュすると、値スタック上の値は C コードでは文字列のように振る舞いますが、ECMAScript コードでは Symbol として表示されます。詳しくは、シンボルを参照してください。
+Cコードは通常、有効なCESU-8文字列のみをスタックにプッシュすべきです。無効な CESU-8/UTF-8 バイト列の中には、Symbol 値を表すような特別な用途のために予約されているものがあります。このような無効なバイト列をプッシュすると、バリュースタック上の値は C コードでは文字列のように振る舞いますが、ECMAScript コードでは Symbol として表示されます。詳しくは、シンボルを参照してください。
 入力文字列が内部 NUL 文字を含む可能性がある場合、代わりに duk_push_lstring() を使用します。
 
 
@@ -9973,7 +9972,7 @@ duk_push_string(ctx, NULL);        /* push 'null' */
 
 ## duk_push_this() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -9999,7 +9998,7 @@ duk_push_this(ctx);
 
 ## duk_push_thread() 
 
-1.0.0 threadstackborrowed§
+1.0.0 thread stack borrowed
 
 ### プロトタイプ
 
@@ -10013,9 +10012,9 @@ duk_idx_t duk_push_thread(duk_context *ctx);
 
 ### 要約
 
-新しい Duktape スレッド (コンテキスト、コルーチン) をスタックにプッシュします。プッシュされたスレッドの負でないインデックス(スタックの底からの相対値)を返します。新しいスレッドは、引数 ctx と同じ Duktape ヒープに関連付けられ、同じグローバルオブジェクト環境を共有する。
+新しい Duktape スレッド (コンテキスト、コルーチン) をスタックにプッシュします。プッシュされたスレッドの負でないインデックス(スタックの底からの相対値)を返します。新しいスレッドは、引数 ctx と同じ Duktape ヒープに関連付けられ、同じグローバルオブジェクト環境を共有します。
 
-Duktape API で新しいスレッドと対話するには、API 呼び出し用のコンテキスト・ポインタを取得するために duk_get_context() を使用する。
+Duktape API で新しいスレッドと対話するには、API 呼び出し用のコンテキスト・ポインタを取得するために duk_get_context() を使用します。
 
 
 ### 例
@@ -10035,7 +10034,7 @@ duk_push_thread_new_globalenv
 
 ## duk_push_thread_new_globalenv() 
 
-1.0.0 threadstackborrowed§
+1.0.0 thread stack borrowed
 
 ### プロトタイプ
 
@@ -10051,7 +10050,7 @@ duk_idx_t duk_push_thread_new_globalenv(duk_context *ctx);
 
 新しい Duktape スレッド (コンテキスト、コルーチン) をスタックにプッシュします。プッシュされたスレッドの負でないインデックス(スタックの底からの相対値)を返します。新しいスレッドは、引数 ctx と同じ Duktape ヒープに関連付けられますが、新しいグローバルオブジェクト環境 (ctx が使用する環境とは別) を持つことになります。
 
-Duktape API で新しいスレッドと対話するには、duk_get_context() を使って API 呼び出しのためのコンテキスト・ポインタを取得する。
+Duktape API で新しいスレッドと対話するには、duk_get_context() を使って API 呼び出しのためのコンテキスト・ポインタを取得します。
 
 
 ### 例
@@ -10071,7 +10070,7 @@ duk_push_thread
 
 ## duk_push_thread_stash() 
 
-1.0.0 threadstashstacksandboxobjectmodule§
+1.0.0 thread stash stack sandbox object module
 
 ### プロトタイプ
 
@@ -10104,7 +10103,7 @@ duk_push_global_stash
 
 ## duk_push_true() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -10118,7 +10117,7 @@ void duk_push_true(duk_context *ctx);
 
 ### 要約
 
-スタックにtrueをプッシュする。duk_push_boolean(ctx, 1)を呼ぶのと同等である。
+スタックにtrueをプッシュします。duk_push_boolean(ctx, 1)を呼ぶのと同等です。
 
 
 ### 例
@@ -10130,7 +10129,7 @@ duk_push_true(ctx);
 
 ## duk_push_uint() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -10144,9 +10143,9 @@ void duk_push_uint(duk_context *ctx, duk_uint_t val);
 
 ### 要約
 
-valをIEEEダブルに変換し、スタックにプッシュする。
+valをIEEEダブルに変換し、スタックにプッシュします。
 
-これは duk_push_number(ctx, (duk_double_t) val) を呼び出すための省略記法である。
+これは duk_push_number(ctx, (duk_double_t) val) を呼び出すための省略記法です。
 
 
 ### 例
@@ -10158,7 +10157,7 @@ duk_push_uint(ctx, 123);
 
 ## duk_push_undefined() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -10184,7 +10183,7 @@ duk_push_undefined(ctx);
 
 ## duk_push_vsprintf() 
 
-1.0.0 varargstringstack§
+1.0.0 vararg string stack
 
 ### プロトタイプ
 
@@ -10198,11 +10197,11 @@ const char *duk_push_vsprintf(duk_context *ctx, const char *fmt, va_list ap);
 
 ### 要約
 
-vsprintf()のように（ただし安全に）文字列をフォーマットし、結果の値を値スタックにプッシュする。結果の文字列へのNULLでないポインタを返します。
+vsprintf()のように（ただし安全に）文字列をフォーマットし、結果の値をバリュースタックにプッシュします。結果の文字列へのNULLでないポインタを返します。
 
-fmtがNULLの場合、空文字列がスタックにプッシュされ、空文字列へのNULLでないポインタが返される (この動作は、少なくともLinuxでは、NULLフォーマット文字列に対するvsprintf()の動作に類似している。)。返されたポインタは再参照可能であり、NULターミネータ文字が保証される。
+fmtがNULLの場合、空文字列がスタックにプッシュされ、空文字列へのNULLでないポインタが返される (この動作は、少なくともLinuxでは、NULLフォーマット文字列に対するvsprintf()の動作に類似しています。)。返されたポインタは再参照可能であり、NULターミネータ文字が保証されます。
 
-vsprintf()とは異なり、文字列のフォーマットは安全である。具体的には、この実装は、一時的にフォーマットされた値に対して十分な大きさのバッファが見つかるまで、一時的なバッファのサイズを大きくしてみます。
+vsprintf()とは異なり、文字列のフォーマットは安全です。具体的には、この実装は、一時的にフォーマットされた値に対して十分な大きさのバッファが見つかるまで、一時的なバッファのサイズを大きくしてみます。
 
 ap 引数は、複数回の呼び出しに対して安全に再利用することはできません。これは、vararg メカニズムの制限事項です。
 
@@ -10227,7 +10226,7 @@ void test(duk_context *ctx) {
 
 ## duk_put_function_list() 
 
-1.0.0 propertymodule§
+1.0.0 property module
 
 ### プロトタイプ
 
@@ -10274,7 +10273,7 @@ duk_put_number_list
 
 ## duk_put_global_heapptr() 
 
-2.3.0 propertyheapptrborrowed§
+2.3.0 property heap ptr borrowed
 
 ### プロトタイプ
 
@@ -10307,7 +10306,7 @@ duk_put_global_literal
 
 ## duk_put_global_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -10340,7 +10339,7 @@ duk_put_global_heapptr
 
 ## duk_put_global_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -10373,7 +10372,7 @@ duk_put_global_heapptr
 
 ## duk_put_global_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -10387,7 +10386,7 @@ duk_bool_t duk_put_global_string(duk_context *ctx, const char *key);
 
 ### 要約
 
-key という名前のプロパティをグローバルオブジェクトに配置します。戻り値は duk_put_prop() と同様に動作する。これは、それと同等のことをする便宜的な関数である。
+key という名前のプロパティをグローバルオブジェクトに配置します。戻り値は duk_put_prop() と同様に動作します。これは、それと同等のことをする便宜的な関数です。
 
 ```c
 duk_bool_t ret;
@@ -10415,7 +10414,7 @@ duk_put_global_heapptr
 
 ## duk_put_number_list() 
 
-1.0.0 propertymodule§
+1.0.0 property module
 
 ### プロトタイプ
 
@@ -10429,9 +10428,9 @@ void duk_put_number_list(duk_context *ctx, duk_idx_t obj_idx, const duk_number_l
 
 ### 要約
 
-複数の数値（double）プロパティを obj_idx にあるターゲットオブジェクトに設定します。数値リストは、(name, number) のペアのリストとして与えられ、name が NULL であるペアで終了する。
+複数の数値（double）プロパティを obj_idx にあるターゲットオブジェクトに設定します。数値リストは、(name, number) のペアのリストとして与えられ、name が NULL であるペアで終了します。
 
-これは、C言語で実装されたモジュールやクラスで数値定数を定義する場合などに有用である。
+これは、C言語で実装されたモジュールやクラスで数値定数を定義する場合などに有用です。
 
 
 ### 例
@@ -10455,7 +10454,7 @@ duk_put_function_list
 
 ## duk_put_prop() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -10469,15 +10468,15 @@ duk_bool_t duk_put_prop(duk_context *ctx, duk_idx_t obj_idx);
 
 ### 要約
 
-obj_idx にある値のプロパティキーに val を書き込む。 key と val はスタックから削除される。リターンコードとエラースローの動作
+obj_idx にある値のプロパティキーに val を書き込む。 key と val はスタックから削除されます。リターンコードとエラースローの動作
 
 プロパティの書き込みに成功した場合、1を返す。
-書き込みに失敗した場合、エラーを投げる（ストリクトモードセマンティクス）。また、アクセッサプロパティのセッタ関数によってもエラーがスローされる場合がある。
-obj_idx の値がオブジェクト互換でない場合、エラーを投げる。
-obj_idx が無効な場合、エラーを投げる。
-プロパティの書き込みは、ECMAScript の式 obj[key] = val と等価です。プロパティ書き込みが成功または失敗するときの正確なルールは、同等の代入を行う ECMAScript コードと同じです。正確なセマンティクスは、プロパティアクセサ、PutValue (V, W)、および [[Put]] (P, V, Throw) を参照してください。ターゲット値とキーは共に強制される。
+書き込みに失敗した場合、エラーを投げます。（ストリクトモードセマンティクス）。また、アクセッサプロパティのセッタ関数によってもエラーがスローされる場合があります。
+obj_idx の値がオブジェクト互換でない場合、エラーを投げます。。
+obj_idx が無効な場合、エラーを投げます。。
+プロパティの書き込みは、ECMAScript の式 obj[key] = val と等価です。プロパティ書き込みが成功または失敗するときの正確なルールは、同等の代入を行う ECMAScript コードと同じです。正確なセマンティクスは、プロパティアクセサ、PutValue (V, W)、および [[Put]] (P, V, Throw) を参照してください。ターゲット値とキーは共に強制されます。
 
-ターゲット値は自動的にオブジェクトに強制される。しかし、オブジェクトは一過性のものなので、そのプロパティを書いてもあまり意味がない。さらに、ECMAScript のセマンティクスはそのような一時的なオブジェクトのために新しいプロパティを作成することを防ぎます（特別な [[Put]] バリアントのステップ 7、PutValue (V, W) を参照）。
+ターゲット値は自動的にオブジェクトに強制されます。しかし、オブジェクトは一過性のものなので、そのプロパティを書いてもあまり意味がない。さらに、ECMAScript のセマンティクスはそのような一時的なオブジェクトのために新しいプロパティを作成することを防ぎます（特別な [[Put]] バリアントのステップ 7、PutValue (V, W) を参照）。
 キー引数は内部的に文字列または Symbol になる ToPropertyKey() 強制適用を使用して強制適用されます。配列と数値インデックスには、明示的な文字列強制を避ける内部高速パスがあるので、該当する場合は数値キーを使用してください。
 ターゲットがセットトラップを実装するProxyオブジェクトである場合、トラップが呼び出され、APIコールの戻り値はトラップの戻り値に一致します。
 
@@ -10508,7 +10507,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_heapptr() 
 
-2.2.0 propertyheapptrborrowed§
+2.2.0 property heap ptr borrowed
 
 ### プロトタイプ
 
@@ -10551,7 +10550,7 @@ duk_put_prop_literal
 
 ## duk_put_prop_index() 
 
-1.0.0 property§
+1.0.0 property
 
 ### プロトタイプ
 
@@ -10589,7 +10588,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_literal() 
 
-2.3.0 propertyliteral§
+2.3.0 property literal
 
 ### プロトタイプ
 
@@ -10627,7 +10626,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_lstring() 
 
-2.0.0 stringproperty§
+2.0.0 string property
 
 ### プロトタイプ
 
@@ -10665,7 +10664,7 @@ duk_put_prop_heapptr
 
 ## duk_put_prop_string() 
 
-1.0.0 stringproperty§
+1.0.0 string property
 
 ### プロトタイプ
 
@@ -10703,7 +10702,7 @@ duk_put_prop_heapptr
 
 ## duk_random() 
 
-2.3.0 random§
+2.3.0 random
 
 ### プロトタイプ
 
@@ -10732,7 +10731,7 @@ if (duk_random(ctx) <= 0.01) {
 
 ## duk_range_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -10762,7 +10761,7 @@ duk_error
 
 ## duk_range_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -10778,7 +10777,7 @@ duk_ret_t duk_range_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_RANGE_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -10799,7 +10798,7 @@ duk_error_va
 
 ## duk_realloc() 
 
-1.0.0 memory§
+1.0.0 memory
 
 ### プロトタイプ
 
@@ -10816,7 +10815,7 @@ void *duk_realloc(duk_context *ctx, void *ptr, duk_size_t size);
 
 duk_realloc_raw() と同様ですが、要求を満たすためにガベージコレクションを起動させることがあります。しかし、割り当てられたメモリ自体は、自動的にガベージコレクションされません。割り当てられたサイズが前回の割り当てから拡張された場合、新たに割り当てられたバイトは自動的にゼロにされず、任意のゴミを含む可能性があります。
 
-duk_realloc() で再割り当てされたメモリは、duk_free() または duk_free_raw() で解放することができる。
+duk_realloc() で再割り当てされたメモリは、duk_free() または duk_free_raw() で解放することができます。
 
 
 ### 例
@@ -10840,7 +10839,7 @@ duk_realloc_raw
 
 ## duk_realloc_raw() 
 
-1.0.0 memory§
+1.0.0 memory
 
 ### プロトタイプ
 
@@ -10857,13 +10856,13 @@ void *duk_realloc_raw(duk_context *ctx, void *ptr, duk_size_t size);
 
 コンテキストに登録されたアロケーション関数で作成された以前のアロケーションのサイズを変更します。ptr 引数は以前の割り当てを指し、size は新しい割り当てのサイズです。この呼び出しは、以前のものと異なるポインタを持つ可能性のある、新しい割り当てへのポインタを返します。再割り当てに失敗した場合、NULL が返され、以前の割り当てはまだ有効です。再配置の失敗は、新しいサイズが以前のサイズよりも大きい場合にのみ起こり得ます (つまり、呼び出し側が割り当てを大きくしようとした場合)。再割り当ての試みはガベージコレクションを引き起こすことはできず、割り当てられたメモリは自動的にガベージコレクションされることはありません。割り当てられたサイズが以前の割り当てから拡張された場合、新しく割り当てられたバイトは自動的にゼロにされず、任意のゴミを含む可能性があります。
 
-正確な動作は、以下のように ptr と size の引数に依存する。
+正確な動作は、以下のように ptr と size の引数に依存します。
 
 ptr が NULL でなく、size が 0 より大きい場合、以前の割り当てはサイズ変更されます。
 ptr が非 NULL で size が 0 の場合、この呼び出しは duk_free_raw() と等価です。
 ptr が NULL で size が 0 より大きい場合、この呼び出しは duk_alloc_raw() と等価です。
-ptr が NULL で size が 0 の場合、この呼び出しは size 引数が 0 の duk_alloc_raw() と等価である。
-duk_realloc_raw() で再割り当てされたメモリは、 duk_free() または duk_free_raw() で解放することができる。
+ptr が NULL で size が 0 の場合、この呼び出しは size 引数が 0 の duk_alloc_raw() と等価です。
+duk_realloc_raw() で再割り当てされたメモリは、 duk_free() または duk_free_raw() で解放することができます。
 
 
 ### 例
@@ -10887,7 +10886,7 @@ duk_realloc
 
 ## duk_reference_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -10917,7 +10916,7 @@ duk_error
 
 ## duk_reference_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -10933,7 +10932,7 @@ duk_ret_t duk_reference_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_REFERENCE_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -10954,7 +10953,7 @@ duk_error_va
 
 ## duk_remove() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -10968,7 +10967,7 @@ void duk_remove(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値を削除する。idxより上の要素は、スタックの下に一段階シフトされる。idxが無効なインデックスの場合、エラーを投げる。
+idxの値を削除します。idxより上の要素は、スタックの下に一段階シフトされます。idxが無効なインデックスの場合、エラーを投げます。。
 
 
 ### 例
@@ -10983,7 +10982,7 @@ duk_remove(ctx, -2);          /* -> [ 123 345 ] */
 
 ## duk_replace() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -10997,9 +10996,9 @@ void duk_replace(duk_context *ctx, duk_idx_t to_idx);
 
 ### 要約
 
-to_idxにある値をスタックトップからポップした値で置き換える。to_idxが無効なインデックスの場合、エラーを投げる。
+to_idxにある値をスタックトップからポップした値で置き換えます。to_idxが無効なインデックスの場合、エラーを投げます。。
 
-負のインデックスは、スタックトップにある値をポップする前に評価される。これは、例でも説明されている。
+負のインデックスは、スタックトップにある値をポップする前に評価されます。これは、例でも説明されています。
 
 ### 例
 
@@ -11018,7 +11017,7 @@ duk_insert
 
 ## duk_require_boolean() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11046,7 +11045,7 @@ if (duk_require_boolean(ctx, -3)) {
 
 ## duk_require_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -11082,7 +11081,7 @@ duk_get_buffer_data
 
 ## duk_require_buffer_data() 
 
-1.3.0 stackbufferobjectbuffer§
+1.3.0 stack buffer object buffer
 
 ### プロトタイプ
 
@@ -11118,7 +11117,7 @@ duk_get_buffer
 
 ## duk_require_c_function() 
 
-1.0.0 stackfunction§
+1.0.0 stack function
 
 ### プロトタイプ
 
@@ -11146,7 +11145,7 @@ funcptr = duk_require_c_function(ctx, -3);
 
 ## duk_require_callable() 
 
-1.4.0 stack§
+1.4.0 stack
 
 ### プロトタイプ
 
@@ -11160,7 +11159,7 @@ void duk_require_callable(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値が呼び出し可能でない場合、またはインデックスが無効な場合にエラーを投げる。
+idx の値が呼び出し可能でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 任意の callable 値に対する有用な C の戻り値がないので、"get" プリミティブ (duk_get_callable()) は存在しません。現時点では、この呼び出しはduk_require_function()の呼び出しと等価です。
 
@@ -11173,7 +11172,7 @@ duk_require_callable(ctx, -3);
 
 ## duk_require_constructable() 
 
-2.4.0 stack§
+2.4.0 stack
 
 ### プロトタイプ
 
@@ -11187,7 +11186,7 @@ void duk_require_constructable(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値が構成可能な関数でない場合、またはidxが無効な場合、エラーを投げる。それ以外の場合は返す。
+idxの値が構成可能な関数でない場合、またはidxが無効な場合、エラーを投げます。。それ以外の場合は返す。
 
 
 ### 例
@@ -11199,7 +11198,7 @@ duk_require_constructable(ctx, 3);
 
 ## duk_require_constructor_call() 
 
-2.4.0 stack§
+2.4.0 stack
 
 ### プロトタイプ
 
@@ -11226,7 +11225,7 @@ duk_require_constructor_call(ctx);
 
 ## duk_require_context() 
 
-1.0.0 stackborrowed§
+1.0.0 stack borrowed
 
 ### プロトタイプ
 
@@ -11240,7 +11239,7 @@ duk_context *duk_require_context(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_context() と同様であるが、idx の値が Duktape スレッドでない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_context() と同様であるが、idx の値が Duktape スレッドでない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 
 ### 例
@@ -11255,7 +11254,7 @@ new_ctx = duk_require_context(ctx, -1);
 
 ## duk_require_function() 
 
-1.4.0 stack§
+1.4.0 stack
 
 ### プロトタイプ
 
@@ -11269,7 +11268,7 @@ void duk_require_function(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値が関数でない場合、またはインデックスが無効な場合にエラーを投げる。
+idx の値が関数でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 任意の関数に対する有用なCの戻り値がないため、getプリミティブ(duk_get_function())は存在しない。
 
@@ -11282,7 +11281,7 @@ duk_require_function(ctx, -3);
 
 ## duk_require_heapptr() 
 
-1.1.0 stackheapptrborrowed§
+1.1.0 stack heap ptr borrowed
 
 ### プロトタイプ
 
@@ -11315,7 +11314,7 @@ duk_push_heapptr
 
 ## duk_require_int() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11329,7 +11328,7 @@ duk_int_t duk_require_int(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_int() と同様であるが、idx の値が数値でない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_int() と同様であるが、idx の値が数値でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 
 ### 例
@@ -11341,7 +11340,7 @@ printf("int value: %ld\n", (long) duk_require_int(ctx, -3));
 
 ## duk_require_lstring() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -11355,7 +11354,7 @@ const char *duk_require_lstring(duk_context *ctx, duk_idx_t idx, duk_size_t *out
 
 ### 要約
 
-duk_get_lstring() と同様であるが、idx の値が文字列でない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_lstring() と同様であるが、idx の値が文字列でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 これは、バッファデータポインタの扱い方とは (技術的な理由により) 異なります。
 
@@ -11376,7 +11375,7 @@ duk_require_string
 
 ## duk_require_normalize_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11390,7 +11389,7 @@ duk_idx_t duk_require_normalize_index(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-現在のフレームの底を基準として、引数のインデックスを正規化します。結果として得られるインデックスは0以上になり、後のスタックの変更に依存しなくなる。入力インデックスが無効な場合は、エラーを投げる。
+現在のフレームの底を基準として、引数のインデックスを正規化します。結果として得られるインデックスは0以上になり、後のスタックの変更に依存しなくなります。入力インデックスが無効な場合は、エラーを投げます。。
 
 
 ### 例
@@ -11406,7 +11405,7 @@ duk_normalize_index
 
 ## duk_require_null() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11420,9 +11419,9 @@ void duk_require_null(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値が NULL でない場合、またはインデックスが無効な場合にエラーを投げる。
+idx の値が NULL でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
-get" プリミティブ (duk_get_null()) は存在しない。なぜなら、そのような関数は無意味だからである。
+get" プリミティブ (duk_get_null()) は存在しない。なぜなら、そのような関数は無意味だからです。
 
 ### 例
 
@@ -11433,7 +11432,7 @@ duk_require_null(ctx, -3);
 
 ## duk_require_number() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11447,7 +11446,7 @@ duk_double_t duk_require_number(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_number() と同様であるが、idx の値が数値でない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_number() と同様であるが、idx の値が数値でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 
 ### 例
@@ -11459,7 +11458,7 @@ printf("value: %lf\n", (double) duk_require_number(ctx, -3));
 
 ## duk_require_object() 
 
-2.2.0 stack§
+2.2.0 stack
 
 ### プロトタイプ
 
@@ -11473,7 +11472,7 @@ void duk_require_object(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値がオブジェクトでない場合、またはインデックスが無効な場合、エラーを投げる。
+idx の値がオブジェクトでない場合、またはインデックスが無効な場合、エラーを投げます。。
 
 get" プリミティブ (duk_get_object()) は存在しません。なぜなら、そのような関数は無用だからです。
 
@@ -11486,7 +11485,7 @@ duk_require_object(ctx, -3);
 
 ## duk_require_object_coercible() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -11512,7 +11511,7 @@ duk_require_object_coercible(ctx, -3);
 
 ## duk_require_pointer() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11526,7 +11525,7 @@ void *duk_require_pointer(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_pointer() と同様であるが、idx の値がポインタでない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_pointer() と同様であるが、idx の値がポインタでない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 
 ### 例
@@ -11541,7 +11540,7 @@ printf("my pointer is: %p\n", ptr);
 
 ## duk_require_stack() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11556,9 +11555,9 @@ void duk_require_stack(duk_context *ctx, duk_idx_t extra);
 
 ### 要約
 
-duk_check_stack() と同様ですが、値スタックを再割り当てする必要があり、再割り当てに失敗した場合にエラーがスローされます。
+duk_check_stack() と同様ですが、バリュースタックを再割り当てする必要があり、再割り当てに失敗した場合にエラーがスローされます。
 
-一般的なルールとして、呼び出し側はより多くのスタック空間を確保するためにこの関数を使用する必要がある。値スタックを拡張できない場合、エラーを投げてアンワインドする以外、有用な回復策はほとんどない。
+一般的なルールとして、呼び出し側はより多くのスタック空間を確保するためにこの関数を使用する必要があります。バリュースタックを拡張できない場合、エラーを投げてアンワインドする以外、有用な回復策はほとんどない。
 
 
 ### 例
@@ -11579,7 +11578,7 @@ duk_check_stack
 
 ## duk_require_stack_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11594,9 +11593,9 @@ void duk_require_stack_top(duk_context *ctx, duk_idx_t top);
 
 ### 要約
 
-duk_check_stack_top() と同様ですが、値スタックを再割り当てする必要があり、再割り当てに失敗した場合にエラーがスローされます。
+duk_check_stack_top() と同様ですが、バリュースタックを再割り当てする必要があり、再割り当てに失敗した場合にエラーがスローされます。
 
-一般的なルールとして、呼び出し側はより多くのスタック空間を確保するためにこの関数を使用すべきである。値スタックを拡張できない場合、エラーを投げて巻き戻す以外に有用な回復策はほとんどない。
+一般的なルールとして、呼び出し側はより多くのスタック空間を確保するためにこの関数を使用すべきです。バリュースタックを拡張できない場合、エラーを投げて巻き戻す以外に有用な回復策はほとんどない。
 
 
 ### 例
@@ -11613,7 +11612,7 @@ duk_check_stack_top
 
 ## duk_require_string() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -11627,10 +11626,10 @@ const char *duk_require_string(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_string() と同様であるが、idx の値が文字列でない場合、またはインデックスが無効な場合にエラーを投げる。
+duk_get_string() と同様であるが、idx の値が文字列でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 これは、バッファデータポインタの扱い方とは (技術的な理由により) 異なります。
-シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となる。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
+シンボル値は C API では文字列として見えるので、 duk_is_symbol() と duk_is_string() の両方が真となります。この動作は、Duktape 1.xの内部文字列と同様です。duk_is_symbol() を使えば、シンボルを普通の文字列と区別することができます。内部表現については、symbols.rstを参照してください。
 
 ### 例
 
@@ -11648,7 +11647,7 @@ duk_require_lstring
 
 ## duk_require_top_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11663,7 +11662,7 @@ duk_idx_t duk_require_top_index(duk_context *ctx);
 
 ### 要約
 
-スタック上の最上位の値の絶対インデックス(>= 0)を取得します。スタックが空の場合、エラーを投げる。
+スタック上の最上位の値の絶対インデックス(>= 0)を取得します。スタックが空の場合、エラーを投げます。。
 
 
 ### 例
@@ -11683,7 +11682,7 @@ duk_get_top_index
 
 ## duk_require_type_mask() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11710,7 +11709,7 @@ duk_require_type_mask(ctx, -3, DUK_TYPE_MASK_STRING |
 
 ## duk_require_uint() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11724,7 +11723,7 @@ duk_uint_t duk_require_uint(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_get_uint() と同様であるが、idx の値が数値でない場合、あるいはインデックスが無効な場合にエラーを発生させる。
+duk_get_uint() と同様であるが、idx の値が数値でない場合、あるいはインデックスが無効な場合にエラーを発生させます。
 
 
 ### 例
@@ -11736,7 +11735,7 @@ printf("unsigned int value: %lu\n", (unsigned long) duk_require_uint(ctx, -3));
 
 ## duk_require_undefined() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11750,7 +11749,7 @@ void duk_require_undefined(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値が未定義でない場合、またはインデックスが無効な場合にエラーを投げる。
+idxの値が未定義でない場合、またはインデックスが無効な場合にエラーを投げます。。
 
 get" プリミティブ (duk_get_undefined()) は存在しません。
 
@@ -11763,7 +11762,7 @@ duk_require_undefined(ctx, -3);
 
 ## duk_require_valid_index() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -11777,7 +11776,7 @@ void duk_require_valid_index(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-引数indexの妥当性を確認する。indexが有効であればエラーをスローし、そうでなければ（戻り値なしで）リターンする。
+引数indexの妥当性を確認します。indexが有効であればエラーをスローし、そうでなければ（戻り値なしで）リターンします。
 
 
 ### 例
@@ -11794,7 +11793,7 @@ duk_is_valid_index
 
 ## duk_resize_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -11808,7 +11807,7 @@ void *duk_resize_buffer(duk_context *ctx, duk_idx_t idx, duk_size_t new_size);
 
 ### 要約
 
-idx のダイナミックバッファを new_size バイトにリサイズする。new_size が現在のサイズより大きい場合、新しく割り当てられたバイト（古いサイズより大きい）は自動的にゼロにされる。新しいバッファのデータ領域へのポインタを返す。new_size が 0 の場合、NULL または NULL 以外の値を返す。サイズ変更に失敗した場合、idxの値がダイナミックバッファでない場合、 idxが無効な場合、エラーを投げる。
+idx のダイナミックバッファを new_size バイトにリサイズします。new_size が現在のサイズより大きい場合、新しく割り当てられたバイト（古いサイズより大きい）は自動的にゼロにされます。新しいバッファのデータ領域へのポインタを返す。new_size が 0 の場合、NULL または NULL 以外の値を返す。サイズ変更に失敗した場合、idxの値がダイナミックバッファでない場合、 idxが無効な場合、エラーを投げます。。
 
 
 ### 例
@@ -11822,7 +11821,7 @@ ptr = duk_resize_buffer(ctx, -3, 4096);
 
 ## duk_resume() 
 
-1.6.0 thread§
+1.6.0 thread
 
 ### プロトタイプ
 
@@ -11836,7 +11835,7 @@ void duk_resume(duk_context *ctx, const duk_thread_state *state);
 
 ### 要約
 
-duk_suspend() で一時停止した Duktape の実行を再開します。state 引数は NULL であってはならない。Value スタックと state は、 duk_suspend() によって残された状態でなければならない； そうでない場合、メモリ不安全な動作が起こる。
+duk_suspend() で一時停止した Duktape の実行を再開します。state 引数は NULL であってはならない。Value スタックと state は、 duk_suspend() によって残された状態でなければならない； そうでない場合、メモリ不安全な動作が起こります。
 
 
 ### 例
@@ -11852,7 +11851,7 @@ duk_suspend
 
 ## duk_safe_call() 
 
-1.0.0 protectedcall§
+1.0.0 protected call
 
 ### プロトタイプ
 
@@ -11866,16 +11865,16 @@ duk_int_t duk_safe_call(duk_context *ctx, duk_safe_call_function func, void *uda
 
 ### 要約
 
-現在の値スタックフレーム内で保護された純粋な C 関数呼び出しを実行します (呼び出しは呼び出しスタック上で見えません)。現在の値スタックフレーム内の nargs 最上位値は呼び出し引数として識別され、nrets 戻り値は呼び出しが戻った後に提供されます。呼び出し元のコードは、例えば duk_check_stack() を使用して、値スタックが nrets のために予約されていること、および予約エラーを処理することを確認する必要があります。
+現在のバリュースタックフレーム内で保護された純粋な C 関数呼び出しを実行します (呼び出しはコールスタック上で見えません)。現在のバリュースタックフレーム内の nargs 最上位値は呼び出し引数として識別され、nrets 戻り値は呼び出しが戻った後に提供されます。呼び出し元のコードは、例えば duk_check_stack() を使用して、バリュースタックが nrets のために予約されていること、および予約エラーを処理することを確認する必要があります。
 
-udata (userdata) ポインタは、そのまま func に渡され、値スタックを使用せずに、1つまたは複数の C 値をターゲット関数に簡単に渡すことができます。複数の値を渡すには、スタックに確保されたC構造体に値を詰め、その構造体へのポインタをuserdataとして渡します。userdata引数はDuktapeでは解釈されません。もしそれが必要でなければ、単にNULLを渡して、セーフコールターゲットのudata引数を無視してください。
+udata (userdata) ポインタは、そのまま func に渡され、バリュースタックを使用せずに、1つまたは複数の C 値をターゲット関数に簡単に渡すことができます。複数の値を渡すには、スタックに確保されたC構造体に値を詰め、その構造体へのポインタをuserdataとして渡します。userdata引数はDuktapeでは解釈されません。もしそれが必要でなければ、単にNULLを渡して、セーフコールターゲットのudata引数を無視してください。
 
 戻り値は
 
-DUK_EXEC_SUCCESS (0) です。call が成功した場合、nargs 引数は nrets の戻り値に置き換えられる。(この戻り値コード定数はゼロであることが保証されているので、「ゼロかゼロ以外か」のチェックで成功を確認することができる)
-DUK_EXEC_ERROR: 呼び出しに失敗、nargs 引数は nrets 値に置き換えられ、そのうちの最初の値はエラー値で、残りは未定義である。(例外的なケースとして、例えば値スタック上の引数が少なすぎる場合、呼び出しは投げるかもしれない)。
+DUK_EXEC_SUCCESS (0) です。call が成功した場合、nargs 引数は nrets の戻り値に置き換えられます。(この戻り値コード定数はゼロであることが保証されているので、「ゼロかゼロ以外か」のチェックで成功を確認することができる)
+DUK_EXEC_ERROR: 呼び出しに失敗、nargs 引数は nrets 値に置き換えられ、そのうちの最初の値はエラー値で、残りは未定義です。(例外的なケースとして、例えばバリュースタック上の引数が少なすぎる場合、呼び出しは投げます。かもしれない)。
 ほとんどのDuktape APIコールとは異なり、このコールは成功時にゼロを返します。これにより、複数のエラーコードを後で定義することができます。
-このコールは現在の値スタック・フレーム上で動作するため、スタックの動作とリターン・コードの処理は、他のコール・タイプと少し異なっています。
+このコールは現在のバリュースタック・フレーム上で動作するため、スタックの動作とリターン・コードの処理は、他のコール・タイプと少し異なっています。
 
 スタックtopのnargs要素は、funcへの引数として識別され、戻りスタックのための「ベース・インデックス」を確立するように。
 
@@ -11883,13 +11882,13 @@ DUK_EXEC_ERROR: 呼び出しに失敗、nargs 引数は nrets 値に置き換え
 (duk_get_top() - nargs)
 ```
 
-func が戻るとき、その戻り値で、スタックの一番上にプッシュした戻り値の数を示す；複数またはゼロの戻り値も可能である。スタックは、呼び出し前に設定された「基本インデックス」から始まるちょうどnrets個の値が存在するように操作される。
+func が戻るとき、その戻り値で、スタックの一番上にプッシュした戻り値の数を示す；複数またはゼロの戻り値も可能です。スタックは、呼び出し前に設定された「基本インデックス」から始まるちょうどnrets個の値が存在するように操作されます。
 
-func は値スタックへのフルアクセスを持っているので、意図した引数の下のスタックを変更し、スタックから「ベースインデックス」の下の要素をポップすることさえできることに注意してください。このような要素は、リターン時にスタックが常に一貫した状態になるように、リターン前に未定義の値でリストアされます。
+func はバリュースタックへのフルアクセスを持っているので、意図した引数の下のスタックを変更し、スタックから「ベースインデックス」の下の要素をポップすることさえできることに注意してください。このような要素は、リターン時にスタックが常に一貫した状態になるように、リターン前に未定義の値でリストアされます。
 
-エラーが発生した場合、スタックは「ベースインデックス」にnretsの値を持つことになる。nrets が 0 の場合、スタック上にエラーは存在しない (戻り値のスタックトップは "base index" に等しい) ので、 nrets を 0 としてこの関数を呼び出すと、起こりうるエラーの原因がわからなくなり、あまり役に立たないかもしれない。
+エラーが発生した場合、スタックは「ベースインデックス」にnretsの値を持つことになります。nrets が 0 の場合、スタック上にエラーは存在しない (戻り値のスタックトップは "base index" に等しい) ので、 nrets を 0 としてこの関数を呼び出すと、起こりうるエラーの原因がわからなくなり、あまり役に立たないかもしれない。
 
-nargs = 3, nrets = 2, func returns 4 での値スタックの動作例。パイプ文字は論理的な値スタックの境界を示す。
+nargs = 3, nrets = 2, func returns 4 でのバリュースタックの動作例。パイプ文字は論理的なバリュースタックの境界を示す。
 
 ```sh
       .--- frame bottom
@@ -11957,7 +11956,7 @@ duk_pop_2(ctx);
 
 ## duk_safe_to_lstring() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -11971,9 +11970,9 @@ const char *duk_safe_to_lstring(duk_context *ctx, duk_idx_t idx, duk_size_t *out
 
 ### 要約
 
-duk_to_lstring() と同様であるが、最初の文字列強制に失敗した場合、エラー値を文字列に強制する。それも失敗した場合、固定されたエラー文字列が返されます。
+duk_to_lstring() と同様であるが、最初の文字列強制に失敗した場合、エラー値を文字列に強制します。それも失敗した場合、固定されたエラー文字列が返されます。
 
-呼び出し側は、この関数を使って安全に値を文字列に強制することができ、 Cコードでは、printf()で安全に戻り値をプリントアウトするのに便利です。捕捉されないエラーは、メモリ不足とその他の内部エラーだけである。
+呼び出し側は、この関数を使って安全に値を文字列に強制することができ、 Cコードでは、printf()で安全に戻り値をプリントアウトするのに便利です。捕捉されないエラーは、メモリ不足とその他の内部エラーだけです。
 
 
 ### 例
@@ -12004,7 +12003,7 @@ duk_to_lstring
 
 ## duk_safe_to_stacktrace() 
 
-2.4.0 stringstackprotected§
+2.4.0 string stack protected
 
 ### プロトタイプ
 
@@ -12018,9 +12017,9 @@ const char *duk_safe_to_stacktrace(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_to_stacktrace() と同様であるが、もし coercion が失敗した場合、 duk_to_stacktrace() が coercion エラーに適用される。これも失敗した場合、代わりにあらかじめ確保された固定エラー文字列 "Error" が使用されます (この文字列はあらかじめ確保されているので、メモリ不足で失敗することはありません)。
+duk_to_stacktrace() と同様であるが、もし coercion が失敗した場合、 duk_to_stacktrace() が coercion エラーに適用されます。これも失敗した場合、代わりにあらかじめ確保された固定エラー文字列 "Error" が使用されます (この文字列はあらかじめ確保されているので、メモリ不足で失敗することはありません)。
 
-ECMAScript に相当する。
+ECMAScript に相当します。
 
 ```javascript
 function duk_safe_to_stacktrace(val) {
@@ -12055,7 +12054,7 @@ duk_to_stacktrace
 
 ## duk_safe_to_string() 
 
-1.0.0 stringstackprotected§
+1.0.0 string stack protected
 
 ### プロトタイプ
 
@@ -12069,7 +12068,7 @@ const char *duk_safe_to_string(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_to_string() と同様であるが、最初の文字列強制に失敗した場合、エラー値を文字列に強制する。これも失敗した場合、あらかじめ確保された固定エラー文字列 "Error" が代わりに使用される (文字列はあらかじめ確保されているので、メモリ不足で失敗することはない)。
+duk_to_string() と同様であるが、最初の文字列強制に失敗した場合、エラー値を文字列に強制します。これも失敗した場合、あらかじめ確保された固定エラー文字列 "Error" が代わりに使用される (文字列はあらかじめ確保されているので、メモリ不足で失敗することはない)。
 
 呼び出し側は、この関数を使って安全に値を文字列に変換することができます。これは、Cコードでprintf()を使って安全に戻り値をプリントアウトするのに便利な機能です。捕捉されないエラーは、メモリ不足とその他の内部エラーのみです。
 
@@ -12129,7 +12128,7 @@ duk_to_string
 
 ## duk_samevalue() 
 
-2.0.0 compare§
+2.0.0 compare
 
 ### プロトタイプ
 
@@ -12143,7 +12142,7 @@ duk_bool_t duk_samevalue(duk_context *ctx, duk_idx_t idx1, duk_idx_t idx2);
 
 ### 要約
 
-idx1 と idx2 の値が等しいかどうかを比較する。ECMAScript の SameValue アルゴリズム (ES2015 では Object.is()) のセマンティクスを使用して値が等しいと見なされる場合は 1 を返し、そうでない場合は 0 を返します。また、どちらかのインデックスが無効な場合は 0 を返す。
+idx1 と idx2 の値が等しいかどうかを比較します。ECMAScript の SameValue アルゴリズム (ES2015 では Object.is()) のセマンティクスを使用して値が等しいと見なされる場合は 1 を返し、そうでない場合は 0 を返します。また、どちらかのインデックスが無効な場合は 0 を返す。
 
 
 ### 例
@@ -12157,7 +12156,7 @@ if (duk_samevalue(ctx, -3, -7)) {
 
 ## duk_seal() 
 
-2.2.0 propertyobject§
+2.2.0 property object
 
 ### プロトタイプ
 
@@ -12184,7 +12183,7 @@ duk_seal(ctx, -3);
 
 ## duk_set_finalizer() 
 
-1.0.0 objectfinalizer§
+1.0.0 object finalizer
 
 ### プロトタイプ
 
@@ -12198,7 +12197,7 @@ void duk_set_finalizer(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値のファイナライザをスタックトップにある値に設定する。対象がオブジェクトでない場合は、エラーを投げる。ファイナライザの値は任意であり、関数以外の値は、ファイナライザが設定されていないものとして扱われる。オブジェクトからファイナライザを削除するには、undefinedを設定する。
+idx の値のファイナライザをスタックトップにある値に設定します。対象がオブジェクトでない場合は、エラーを投げます。。ファイナライザの値は任意であり、関数以外の値は、ファイナライザが設定されていないものとして扱われます。オブジェクトからファイナライザを削除するには、undefinedを設定します。
 
 Proxyオブジェクトのファイナライザは現在未対応です。オブジェクトが拡張不可能な場合、ファイナライザを設定することはできませんので、オブジェクトを封印/凍結する前にファイナライザを設定してください。
 
@@ -12224,7 +12223,7 @@ duk_get_finalizer
 
 ## duk_set_global_object() 
 
-1.0.0 threadstacksandbox§
+1.0.0 thread stack sandbox
 
 ### プロトタイプ
 
@@ -12238,7 +12237,7 @@ void duk_set_global_object(duk_context *ctx);
 
 ### 要約
 
-現在のコンテキストのグローバルオブジェクトを、値スタックの一番上にあるオブジェクトで置き換えます。値がオブジェクトでない場合は、エラーがスローされる。
+現在のコンテキストのグローバルオブジェクトを、バリュースタックの一番上にあるオブジェクトで置き換えます。値がオブジェクトでない場合は、エラーがスローされます。
 
 この操作は、他のコンテキストのグローバルオブジェクトには影響しないことに注意してください。たとえ、この時点まで同じグローバル環境を共有していたとしてもです。他のコンテキストに変更を継承するには、duk_push_thread() を呼び出す前に、まずグローバルオブジェクトを置き換えます。
 
@@ -12262,7 +12261,7 @@ duk_set_global_object(ctx);
 
 ## duk_set_length() 
 
-2.0.0 stack§
+2.0.0 stack
 
 ### プロトタイプ
 
@@ -12276,7 +12275,7 @@ void duk_set_length(duk_context *ctx, duk_idx_t idx, duk_size_t len);
 
 ### 要約
 
-idxの値に対して "length "を設定する。ECMAScriptのobj.length = len;と等価である。
+idxの値に対して "length "を設定します。ECMAScriptのobj.length = len;と等価です。
 
 
 ### 例
@@ -12293,7 +12292,7 @@ duk_get_length
 
 ## duk_set_magic() 
 
-1.0.0 magicfunction§
+1.0.0 magic function
 
 ### プロトタイプ
 
@@ -12324,7 +12323,7 @@ duk_get_magic
 
 ## duk_set_prototype() 
 
-1.0.0 prototypeobject§
+1.0.0 prototype object
 
 ### プロトタイプ
 
@@ -12338,9 +12337,9 @@ void duk_set_prototype(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値の内部プロトタイプをスタックの先頭の値（オブジェクトまたは未定義でなければならない）に設定する。対象値がオブジェクトでない場合、またはプロトタイプ値がオブジェクトまたは未定義 でない場合は、エラーをスローする。
+idx の値の内部プロトタイプをスタックの先頭の値（オブジェクトまたは未定義でなければならない）に設定します。対象値がオブジェクトでない場合、またはプロトタイプ値がオブジェクトまたは未定義 でない場合は、エラーをスローします。
 
-ECMAScript のプロトタイプ操作プリミティブと異なり、本 API コールはプロトタイプループを作成することができる。Duktapeは長いプロトタイプ・チェーンやループしたプロトタイプ・チェーンを検出してエラーを投げますが、そのような動作は無限ループを避けるための最後の手段としてのみ意図されています。
+ECMAScript のプロトタイプ操作プリミティブと異なり、本 API コールはプロトタイプループを作成することができます。Duktapeは長いプロトタイプ・チェーンやループしたプロトタイプ・チェーンを検出してエラーを投げますが、そのような動作は無限ループを避けるための最後の手段としてのみ意図されています。
 
 ### 例
 
@@ -12360,7 +12359,7 @@ duk_get_prototype
 
 ## duk_set_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -12374,9 +12373,9 @@ void duk_set_top(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-スタックトップ（スタックサイズ）を引数idxに一致するように設定し、負のインデックス値を正規化する。値スタックが縮小する場合、新しいスタックトップより上の値は削除される。値スタックが拡大する場合、未定義の値は新しいスタックスロットにプッシュされる。
+スタックトップ（スタックサイズ）を引数idxに一致するように設定し、負のインデックス値を正規化します。バリュースタックが縮小する場合、新しいスタックトップより上の値は削除されます。バリュースタックが拡大する場合、未定義の値は新しいスタックスロットにプッシュされます。
 
-負のインデックス値は、他のAPIコールと同様に、現在のスタックトップを基準として解釈される。例えば、インデックス -1 は、スタックトップを 1 つ減らすことになる。
+負のインデックス値は、他のAPIコールと同様に、現在のスタックトップを基準として解釈されます。例えば、インデックス -1 は、スタックトップを 1 つ減らすことになります。
 
 
 ### 例
@@ -12393,7 +12392,7 @@ duk_set_top(ctx, 0);     /* -> top=0, stack: [ ] */
 
 ## duk_steal_buffer() 
 
-1.3.0 stackbuffer§
+1.3.0 stack buffer
 
 ### プロトタイプ
 
@@ -12407,7 +12406,7 @@ void *duk_steal_buffer(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size);
 
 ### 要約
 
-idx にあるダイナミックバッファの現在のアロケーションを盗用します。具体的には、Duktape は以前の割り当てを忘れ、バッファをゼロサイズ (および NULL データポインタ) にリセットします。以前の割り当てへのポインタが返され、以前の割り当ての長さは、非NULLの場合、out_sizeに書き込まれます。ダイナミックバッファ自体は値スタック上に残り、再利用することができます。呼び出し元は、duk_free() を使用して前の割り当てを解放する責任があります。Duktapeは、ガベージコレクションやDuktapeヒープが破壊されたときでさえ、以前の割り当てを解放しません。
+idx にあるダイナミックバッファの現在のアロケーションを盗用します。具体的には、Duktape は以前の割り当てを忘れ、バッファをゼロサイズ (および NULL データポインタ) にリセットします。以前の割り当てへのポインタが返され、以前の割り当ての長さは、非NULLの場合、out_sizeに書き込まれます。ダイナミックバッファ自体はバリュースタック上に残り、再利用することができます。呼び出し元は、duk_free() を使用して前の割り当てを解放する責任があります。Duktapeは、ガベージコレクションやDuktapeヒープが破壊されたときでさえ、以前の割り当てを解放しません。
 
 このAPIコールは、動的バッファがバッファ操作アルゴリズムにおいて安全な一時的バッファと して使用される場合に便利です（エラーが発生した場合に備えて、自動的にメモリ管 理されます）。このようなアルゴリズムの最後に、呼び出し元はバッファを盗んで、ダイナミック・バッファ自体が解放されても、Duktapeガベージ・コレクションによって解放されないようにしたい場合があります。
 
@@ -12452,7 +12451,7 @@ duk_free(ctx, ptr);
 
 ## duk_strict_equals() 
 
-1.0.0 compare§
+1.0.0 compare
 
 ### プロトタイプ
 
@@ -12466,7 +12465,7 @@ duk_bool_t duk_strict_equals(duk_context *ctx, duk_idx_t idx1, duk_idx_t idx2);
 
 ### 要約
 
-idx1 と idx2 の値が等しいかどうかを比較する。ECMAScript Strict Equals operator (===)のセマンティクスにより、値が等しいとみなされた場合は1を、そうでない場合は0を返す。また、どちらかのインデックスが無効な場合は0を返す。
+idx1 と idx2 の値が等しいかどうかを比較します。ECMAScript Strict Equals operator (===)のセマンティクスにより、値が等しいとみなされた場合は1を、そうでない場合は0を返す。また、どちらかのインデックスが無効な場合は0を返す。
 
 Strict Equals 演算子が使用する Strict Equality Comparison Algorithm は値の強制を行わないので、比較に副作用はなく、エラーを発生させることもありません。
 
@@ -12488,7 +12487,7 @@ duk_equals
 
 ## duk_substring() 
 
-1.0.0 string§
+1.0.0 string
 
 ### プロトタイプ
 
@@ -12502,9 +12501,9 @@ void duk_substring(duk_context *ctx, duk_idx_t idx, duk_size_t start_char_offset
 
 ### 要約
 
-idx にある文字列を、文字列自身の部分文字列 [start_char_offset, end_char_offset[ ]で置換する。idxの値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げる。
+idx にある文字列を、文字列自身の部分文字列 [start_char_offset, end_char_offset[ ]で置換します。idxの値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げます。。
 
-部分文字列操作は、バイトではなく文字で動作し、オフセットは文字オフセットである。この呼び出しのセマンティクスは String.prototype.substring (start, end) に類似している。オフセット値は文字列長にクランプされ（size_t は符号なしなので負の値をクランプする必要はない）、開始オフセットが終了オフセットより大きい場合、結果は空文字列である。
+部分文字列操作は、バイトではなく文字で動作し、オフセットは文字オフセットです。この呼び出しのセマンティクスは String.prototype.substring (start, end) に類似しています。オフセット値は文字列長にクランプされ（size_t は符号なしなので負の値をクランプする必要はない）、開始オフセットが終了オフセットより大きい場合、結果は空文字列です。
 
 バイト単位の部分文字列を得るには、 duk_get_lstring() で文字列データポインタと長さを取得し、 duk_push_lstring() でバイトのスライスをプッシュします。
 
@@ -12520,7 +12519,7 @@ printf("substring: %s\n", duk_get_string(ctx, -3));
 
 ## duk_suspend() 
 
-1.6.0 thread§
+1.6.0 thread
 
 ### プロトタイプ
 
@@ -12534,7 +12533,7 @@ void duk_suspend(duk_context *ctx, duk_thread_state *state);
 
 ### 要約
 
-別のネイティブ・スレッドが同じDuktapeヒープ上で操作できるように、現在のコール・スタックを一時停止する。必要な内部状態は、値スタックや提供された状態割り当てに格納されます。状態ポインタはNULLであってはならず、さもなければメモリ不安全な動作が発生します。実行は、後で duk_resume() を使って再開されなければなりません。後で実行が再開されない場合、いくつかの内部帳簿が矛盾した状態で残されます。Duktapeの実行が中断されている間、（duk_suspend()を呼び出した）現在のネイティブ・スレッドのネイティブ・コール・スタックは巻き戻されてはいけません。
+別のネイティブ・スレッドが同じDuktapeヒープ上で操作できるように、現在のコール・スタックを一時停止します。必要な内部状態は、バリュースタックや提供された状態割り当てに格納されます。状態ポインタはNULLであってはならず、さもなければメモリ不安全な動作が発生します。実行は、後で duk_resume() を使って再開されなければなりません。後で実行が再開されない場合、いくつかの内部帳簿が矛盾した状態で残されます。Duktapeの実行が中断されている間、（duk_suspend()を呼び出した）現在のネイティブ・スレッドのネイティブ・コール・スタックは巻き戻されてはいけません。
 
 このAPIコールは、直接または間接的に、以下の場所から使用してはならない。
 
@@ -12596,7 +12595,7 @@ duk_resume
 
 ## duk_swap() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -12610,7 +12609,7 @@ void duk_swap(duk_context *ctx, duk_idx_t idx1, duk_idx_t idx2);
 
 ### 要約
 
-インデックス idx1 と idx2 の値を入れ替える。インデックスが同じであれば、この呼び出しは失敗である。どちらかのインデックスが無効な場合、エラーを投げる。
+インデックス idx1 と idx2 の値を入れ替えます。インデックスが同じであれば、この呼び出しは失敗です。どちらかのインデックスが無効な場合、エラーを投げます。。
 
 
 ### 例
@@ -12626,7 +12625,7 @@ duk_swap_top
 
 ## duk_swap_top() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -12640,7 +12639,7 @@ void duk_swap_top(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-スタックの先頭とidxの値を入れ替える。idxがスタックの先頭を参照している場合、この呼び出しはノー・オペレーションである。値スタックが空であるか、idxが無効である場合、エラーを投げる。
+スタックの先頭とidxの値を入れ替えます。idxがスタックの先頭を参照している場合、この呼び出しはノー・オペレーションです。バリュースタックが空であるか、idxが無効である場合、エラーを投げます。。
 
 
 ### 例
@@ -12652,7 +12651,7 @@ duk_swap_top(ctx, -3);
 
 ## duk_syntax_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -12682,7 +12681,7 @@ duk_error
 
 ## duk_syntax_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -12698,7 +12697,7 @@ duk_ret_t duk_syntax_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_SYNTAX_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -12719,7 +12718,7 @@ duk_error_va
 
 ## duk_throw() 
 
-1.0.0 error§
+1.0.0 error
 
 ### プロトタイプ
 
@@ -12733,7 +12732,7 @@ duk_ret_t duk_throw(duk_context *ctx);
 
 ### 要約
 
-スタックの一番上にある値を投げる。この呼び出しは決して戻りません。
+スタックの一番上にある値を投げます。。この呼び出しは決して戻りません。
 
 この関数は決して戻りませんが、プロトタイプは戻り値を記述しており、次のようなコードを可能にします。
 
@@ -12744,7 +12743,7 @@ if (argvalue < 0) {
 }
 ```
 
-戻り値が無視される場合、コンパイル時の警告を避けるため、voidにキャストする。
+戻り値が無視される場合、コンパイル時の警告を避けるため、voidにキャストします。
 
 ```c
 if (argvalue < 0) {
@@ -12773,7 +12772,7 @@ duk_push_error_object
 
 ## duk_time_to_components() 
 
-2.0.0 time§
+2.0.0 time
 
 ### プロトタイプ
 
@@ -12824,7 +12823,7 @@ duk_components_to_time
 
 ## duk_to_boolean() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -12838,7 +12837,7 @@ duk_bool_t duk_to_boolean(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値を ECMAScript の ToBoolean() で強制された値で置き換えます。強制の結果が真であれば1を、そうでなければ0を返します。idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToBoolean() で強制された値で置き換えます。強制の結果が真であれば1を、そうでなければ0を返します。idx が無効な場合、エラーを投げます。。
 
 カスタム型強制は型変換とテストに記載されています。
 
@@ -12854,7 +12853,7 @@ if (duk_to_boolean(ctx, -3)) {
 
 ## duk_to_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -12868,7 +12867,7 @@ void *duk_to_buffer(duk_context *ctx, duk_idx_t idx, duk_size_t *out_size);
 
 ### 要約
 
-idxの値をバッファで強制された値で置き換える。バッファデータへのポインタ (サイズゼロのバッファの場合はNULLかもしれない) を返し、バッファのサイズを *out_size に書き込む (out_size が非NULLの場合)。idx が無効な場合，エラーを投げる。
+idxの値をバッファで強制された値で置き換えます。バッファデータへのポインタ (サイズゼロのバッファの場合はNULLかもしれない) を返し、バッファのサイズを *out_size に書き込む (out_size が非NULLの場合)。idx が無効な場合，エラーを投げます。。
 
 強制適用ルール。
 
@@ -12894,7 +12893,7 @@ duk_to_dynamic_buffer
 
 ## duk_to_dynamic_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -12921,7 +12920,7 @@ void *buf = duk_to_dynamic_buffer(ctx, -3, &sz);
 
 ## duk_to_fixed_buffer() 
 
-1.0.0 stackbuffer§
+1.0.0 stack buffer
 
 ### プロトタイプ
 
@@ -12948,7 +12947,7 @@ void *buf = duk_to_fixed_buffer(ctx, -3, &sz);
 
 ## duk_to_int() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -12962,7 +12961,7 @@ duk_int_t duk_to_int(duk_context *ctx, duk_int_t index);
 
 ### 要約
 
-index の値を ECMAScript の ToInteger() で強制された値で置き換えます。duk_get_int() で説明したアルゴリズムを用いて、 ToInteger() の結果からさらに強制された duk_int_t を返します (この 2 番目の強制は、新しいスタック値には反映されません)。index が無効な場合、エラーを投げる。
+index の値を ECMAScript の ToInteger() で強制された値で置き換えます。duk_get_int() で説明したアルゴリズムを用いて、 ToInteger() の結果からさらに強制された duk_int_t を返します (この 2 番目の強制は、新しいスタック値には反映されません)。index が無効な場合、エラーを投げます。。
 
 カスタムの型強制は、型変換とテストに記載されています。
 
@@ -12975,7 +12974,7 @@ double d;
 d = (double) duk_get_number(ctx, -3);
 ```
 
-duk_get_int() の int coercion は戻り値のみに適用され、値スタックには反映されない。例えば、値スタックに文字列 "Infinity" がある場合、スタック上の値は数値 Infinity に強制され、DUK_INT_MAX が API コールから返される。
+duk_get_int() の int coercion は戻り値のみに適用され、バリュースタックには反映されない。例えば、バリュースタックに文字列 "Infinity" がある場合、スタック上の値は数値 Infinity に強制され、DUK_INT_MAX が API コールから返されます。
 
 ### 例
 
@@ -12987,7 +12986,7 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 
 ## duk_to_int32() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13001,7 +13000,7 @@ duk_int32_t duk_to_int32(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値を ECMAScript の ToInt32() で強制された値で置き換えます。強制された値を返す。idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToInt32() で強制された値で置き換えます。強制された値を返す。idx が無効な場合、エラーを投げます。。
 
 カスタム型強制は型変換とテストに記載されています。
 
@@ -13015,7 +13014,7 @@ printf("ToInt32(): %ld\n", (long) duk_to_int32(ctx, -3));
 
 ## duk_to_lstring() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -13029,7 +13028,7 @@ const char *duk_to_lstring(duk_context *ctx, duk_idx_t idx, duk_size_t *out_len)
 
 ### 要約
 
-idx の値を ECMAScript の ToString() で強制された値で置き換える。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非 NULL の場合)。idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToString() で強制された値で置き換えます。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返し、文字列のバイト長を *out_len に書き込む (out_len が非 NULL の場合)。idx が無効な場合、エラーを投げます。。
 
 カスタムの型強制については、型変換とテストに記載されています。
 
@@ -13051,7 +13050,7 @@ duk_safe_to_lstring
 
 ## duk_to_null() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13065,9 +13064,9 @@ void duk_to_null(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-前の値に関係なく、idxの値をnullに置き換える。indexが無効な場合はエラーを投げる。
+前の値に関係なく、idxの値をnullに置き換えます。indexが無効な場合はエラーを投げます。。
 
-duk_push_null() に続いて、ターゲット・インデックスに duk_replace() を実行するのと同等である。
+duk_push_null() に続いて、ターゲット・インデックスに duk_replace() を実行するのと同等です。
 
 ### 例
 
@@ -13078,7 +13077,7 @@ duk_to_null(ctx, -3);
 
 ## duk_to_number() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13092,7 +13091,7 @@ duk_double_t duk_to_number(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値を ECMAScript の ToNumber() で強制された値で置き換えます。強制された値を返す。idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToNumber() で強制された値で置き換えます。強制された値を返す。idx が無効な場合、エラーを投げます。。
 
 カスタム型強制は型変換とテストに記載されています。
 
@@ -13106,7 +13105,7 @@ printf("coerced number: %lf\n", (double) duk_to_number(ctx, -3));
 
 ## duk_to_object() 
 
-1.0.0 stackobject§
+1.0.0 stack object
 
 ### プロトタイプ
 
@@ -13120,7 +13119,7 @@ void duk_to_object(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値を ECMAScript の ToObject() で強制された値で置き換える。戻り値はない。idx の値がオブジェクト強制でない場合、または idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToObject() で強制された値で置き換えます。戻り値はない。idx の値がオブジェクト強制でない場合、または idx が無効な場合、エラーを投げます。。
 
 以下の型はオブジェクト互換性がない。
 
@@ -13139,7 +13138,7 @@ duk_to_object(ctx, -3);
 
 ## duk_to_pointer() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13153,14 +13152,14 @@ void *duk_to_pointer(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値をポインタに強制された値で置き換える。結果として得られる void * 値を返す。idxが無効な場合、エラーを投げる。
+idxの値をポインタに強制された値で置き換えます。結果として得られる void * 値を返す。idxが無効な場合、エラーを投げます。。
 
 強制適用ルール。
 
 ポインタ: それ自身に強制され、変更はない。
 すべてのヒープ割り当てオブジェクト（文字列、オブジェクト、バッファ）： Duktape内部ヒープ・ヘッダを指すポインタに強制されます（デバッグにのみ使用、読み書きは不可）。
 その他の型：NULLに変換
-このAPIコールは、実際にはデバッグにのみ有用です。特に、内部ヒープヘッダを指しているため、返されたポインタにアクセスしてはならないことに注意。これは、文字列/バッファ値の場合でも同様である。返されるポインタは、 duk_get_string() や duk_get_buffer() が返すものとは異なる。
+このAPIコールは、実際にはデバッグにのみ有用です。特に、内部ヒープヘッダを指しているため、返されたポインタにアクセスしてはならないことに注意。これは、文字列/バッファ値の場合でも同様です。返されるポインタは、 duk_get_string() や duk_get_buffer() が返すものとは異なります。
 
 ### 例
 
@@ -13172,7 +13171,7 @@ printf("coerced pointer: %p\n", duk_to_pointer(ctx, -3));
 
 ## duk_to_primitive() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13190,8 +13189,8 @@ idx のオブジェクトを ECMAScript の ToPrimitive() で強制された値�
 
 カスタム型強制。
 
-バッファ値 (プレーン): Uint8Array のように扱われ、通常は文字列 [object Uint8Array] に強制される。
-ポインタ値(プレーン): 既存の値を保持する。
+バッファ値 (プレーン): Uint8Array のように扱われ、通常は文字列 [object Uint8Array] に強制されます。
+ポインタ値(プレーン): 既存の値を保持します。
 ポインタオブジェクト: その下のプレーンなポインタ値に強制されます。
 Lightfunc 値 (プレーン): 関数のように扱われ、通常、文字列 [object Function] に強制されます。
 カスタムの型強制については、型変換とテストに記載されています。
@@ -13206,7 +13205,7 @@ duk_to_primitive(ctx, -3, DUK_HINT_NUMBER);
 
 ## duk_to_stacktrace() 
 
-2.4.0 stringstack§
+2.4.0 string stack
 
 ### プロトタイプ
 
@@ -13260,7 +13259,7 @@ duk_safe_to_stacktrace
 
 ## duk_to_string() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -13274,7 +13273,7 @@ const char *duk_to_string(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idx の値を ECMAScript の ToString() で強制された値で置き換えます。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返します。idx が無効な場合、エラーを投げる。
+idx の値を ECMAScript の ToString() で強制された値で置き換えます。読み取り専用で NUL 終端の文字列データへの非 NULL ポインタを返します。idx が無効な場合、エラーを投げます。。
 
 カスタムの型強制については、型変換とテストに記載されています。
 
@@ -13295,7 +13294,7 @@ duk_buffer_to_string
 
 ## duk_to_uint() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13309,9 +13308,9 @@ duk_uint_t duk_to_uint(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-duk_to_int() と同様だが、戻り値の強制は duk_get_uint() と同様である。
+duk_to_int() と同様だが、戻り値の強制は duk_get_uint() と同様です。
 
-duk_get_uint() の int強制は戻り値のみに適用され、値スタックには反映されない。例えば、値スタックに文字列 "Infinity" があった場合、スタック上の値は数値 Infinity に強制され、APIコールから DUK_UINT_MAX が返されることになる。
+duk_get_uint() の int強制は戻り値のみに適用され、バリュースタックには反映されない。例えば、バリュースタックに文字列 "Infinity" があった場合、スタック上の値は数値 Infinity に強制され、APIコールから DUK_UINT_MAX が返されることになります。
 
 ### 例
 
@@ -13323,7 +13322,7 @@ printf("ToInteger() coercion: %lf\n", (double) duk_get_number(ctx, -3));
 
 ## duk_to_uint16() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13337,7 +13336,7 @@ duk_uint16_t duk_to_uint16(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値をECMAScriptのToUint16()で強制された値で置き換えます。強制された値を返します。idxが無効な場合、エラーを投げる。
+idxの値をECMAScriptのToUint16()で強制された値で置き換えます。強制された値を返します。idxが無効な場合、エラーを投げます。。
 
 カスタム型強制は型変換とテストに記載されています。
 
@@ -13351,7 +13350,7 @@ printf("ToUint16(): %u\n", (unsigned int) duk_to_uint16(ctx, -3));
 
 ## duk_to_uint32() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13365,7 +13364,7 @@ duk_uint32_t duk_to_uint32(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの値をECMAScriptのToUint32()で強制された値で置き換えます。強制された値を返します。idxが無効な場合、エラーを投げる。
+idxの値をECMAScriptのToUint32()で強制された値で置き換えます。強制された値を返します。idxが無効な場合、エラーを投げます。。
 
 カスタム型強制は型変換とテストに記載されています。
 
@@ -13379,7 +13378,7 @@ printf("ToUint32(): %lu\n", (unsigned long) duk_to_uint32(ctx, -3));
 
 ## duk_to_undefined() 
 
-1.0.0 stack§
+1.0.0 stack
 
 ### プロトタイプ
 
@@ -13393,7 +13392,7 @@ void duk_to_undefined(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-前の値に関係なく、idxの値をundefinedに置き換える。indexが無効な場合はエラーを投げる。
+前の値に関係なく、idxの値をundefinedに置き換えます。indexが無効な場合はエラーを投げます。。
 
 duk_push_undefined() の後に duk_replace() を実行し、対象インデックスを指定するのと 同等。
 
@@ -13406,7 +13405,7 @@ duk_to_undefined(ctx, -3);
 
 ## duk_trim() 
 
-1.0.0 stringstack§
+1.0.0 string stack
 
 ### プロトタイプ
 
@@ -13420,9 +13419,9 @@ void duk_trim(duk_context *ctx, duk_idx_t idx);
 
 ### 要約
 
-idxの文字列をトリミングする。idx の値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げる。
+idxの文字列をトリミングします。idx の値が文字列でない場合、またはインデックスが無効な場合は、エラーを投げます。。
 
-トリミングは、文字列の先頭と末尾の空白文字を削除する。文字列がすべて空白文字で構成されている場合、結果は空文字列となる。ホワイトスペースとみなされる文字のセットは、WhiteSpaceとLineTerminatorの両方を含むStrWhiteSpaceプロダクションによって定義されます。トリミングの動作は String.prototype.trim(), parseInt(), parseFloat() の動作と一致する。
+トリミングは、文字列の先頭と末尾の空白文字を削除します。文字列がすべて空白文字で構成されている場合、結果は空文字列となります。ホワイトスペースとみなされる文字のセットは、WhiteSpaceとLineTerminatorの両方を含むStrWhiteSpaceプロダクションによって定義されます。トリミングの動作は String.prototype.trim(), parseInt(), parseFloat() の動作と一致します。
 
 
 ### 例
@@ -13434,7 +13433,7 @@ duk_trim(ctx, -3);
 
 ## duk_type_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -13464,7 +13463,7 @@ duk_error
 
 ## duk_type_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -13480,7 +13479,7 @@ duk_ret_t duk_type_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_TYPE_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)到達しないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)到達しないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -13501,7 +13500,7 @@ duk_error_va
 
 ## duk_uri_error() 
 
-2.0.0 error§
+2.0.0 error
 
 ### プロトタイプ
 
@@ -13531,7 +13530,7 @@ duk_error
 
 ## duk_uri_error_va() 
 
-2.0.0 varargerror§
+2.0.0 vararg error
 
 ### プロトタイプ
 
@@ -13547,7 +13546,7 @@ duk_ret_t duk_uri_error_va(duk_context *ctx, const char *fmt, va_list ap);
 
 エラーコード DUK_ERR_URI_ERROR を持つ duk_error_va() と同等の便宜的な API 呼び出し。
 
-このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからである。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
+このAPIコールは完全には移植性がない。なぜなら、呼び出し側のコードの va_end() マクロは(例えばエラースローにより)決して到達できないかもしれないからです。いくつかの実装は、例えば va_start() によって割り当てられたメモリを解放するために va_end() に依存します; https://stackoverflow.com/questions/11645282/do-i-need-to-va-end-when-an-exception-is-thrown を参照してください。しかし、そのような実装はまれであり、これは通常実用的な懸念ではありません。
 
 ### 例
 
@@ -13568,7 +13567,7 @@ duk_error_va
 
 ## duk_xcopy_top() 
 
-1.0.0 stackslice§
+1.0.0 stack slice
 
 ### プロトタイプ
 
@@ -13600,7 +13599,7 @@ duk_xmove_top
 
 ## duk_xmove_top() 
 
-1.0.0 stackslice§
+1.0.0 stack slice
 
 ### プロトタイプ
 
@@ -13615,7 +13614,7 @@ void duk_xmove_top(duk_context *to_ctx, duk_context *from_ctx, duk_idx_t count);
 
 ### 要約
 
-ソーススタックの最上位から count 引数を取り除き、ターゲットスタックにプッシュする。呼び出し側は、例えば duk_require_stack() を使って、ターゲット・スタックに十分な割り当て領域があることを確認しなければなりません。ソースとターゲットの両方のスタックは、同じ Duktape ヒープに存在しなければなりません。
+ソーススタックの最上位から count 引数を取り除き、ターゲットスタックにプッシュします。呼び出し側は、例えば duk_require_stack() を使って、ターゲット・スタックに十分な割り当て領域があることを確認しなければなりません。ソースとターゲットの両方のスタックは、同じ Duktape ヒープに存在しなければなりません。
 
 もしソースとターゲットのスタックが同じであれば、現在エラーが投げられています。
 
