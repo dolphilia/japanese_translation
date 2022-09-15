@@ -26,9 +26,9 @@ ANGLEの目標は、OpenGL ES APIコールをそのプラットフォームで�
 | GGP (Stadia) |                |                |               |             |   complete  |             |
 | Fuchsia      |                |                |               |             |   complete  |             |
 
-ANGLE v1.0.772 was certified compliant by passing the OpenGL ES 2.0.3 conformance tests in October 2011.
+ANGLE v1.0.772は、2011年10月にOpenGL ES 2.0.3のコンフォーマンステストに合格し、準拠が証明されています。
 
-ANGLE has received the following certifications with the Vulkan backend:
+ANGLEは、Vulkanバックエンドで以下の認定を受けています。
 
 * OpenGL ES 2.0: ANGLE 2.1.0.d46e2fb1e341 (Nov, 2019)
 * OpenGL ES 3.0: ANGLE 2.1.0.f18ff947360d (Feb, 2020)
