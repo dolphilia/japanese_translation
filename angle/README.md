@@ -2,6 +2,7 @@
 
 ANGLEの目標は、OpenGL ES APIコールをそのプラットフォームで利用可能なハードウェアサポートAPIのいずれかに変換することにより、複数のオペレーティングシステムのユーザーがWebGLおよびその他のOpenGL ESコンテンツをシームレスに実行できるようにすることです。ANGLEは現在、OpenGL ES 2.0、3.0、3.1からVulkan、デスクトップOpenGL、OpenGL ES、Direct3D 9、Direct3D 11への変換を提供しています。将来的には、ES 3.2、MetalとMacOSへの翻訳、Chrome OS、Fuchsiaのサポートが予定されています。
 
+
 ### バックレンダラーによるOpenGL ESのサポートレベル
 
 |                |  Direct3D 9   |  Direct3D 11     |   Desktop GL   |    GL ES      |    Vulkan     |    Metal      |
@@ -10,6 +11,7 @@ ANGLEの目標は、OpenGL ES APIコールをそのプラットフォームで�
 | OpenGL ES 3.0  |               |    complete      |    complete    |    complete   |    complete   |  in progress  |
 | OpenGL ES 3.1  |               | [incomplete](doc/ES31StatusOnD3D11.md) |    complete    |    complete   |    complete   |               |
 | OpenGL ES 3.2  |               |                  |  in progress   |  in progress  |  in progress  |               |
+
 
 ### バックレンダラーによるプラットフォーム対応
 
@@ -27,6 +29,7 @@ ANGLEの目標は、OpenGL ES APIコールをそのプラットフォームで�
 ANGLE v1.0.772 was certified compliant by passing the OpenGL ES 2.0.3 conformance tests in October 2011.
 
 ANGLE has received the following certifications with the Vulkan backend:
+
 * OpenGL ES 2.0: ANGLE 2.1.0.d46e2fb1e341 (Nov, 2019)
 * OpenGL ES 3.0: ANGLE 2.1.0.f18ff947360d (Feb, 2020)
 * OpenGL ES 3.1: ANGLE 2.1.0.f5dace0f1e57 (Jul, 2020)
@@ -36,6 +39,7 @@ ANGLE has received the following certifications with the Vulkan backend:
 ANGLEは、Windowsプラットフォーム上のGoogle ChromeとMozilla Firefoxの両方で、デフォルトのWebGLバックエンドとして使用されています。Chromeは、高速化されたCanvas2D実装やNative Clientサンドボックス環境など、Windows上のすべてのグラフィックスレンダリングにANGLEを使用しています。
 
 ANGLE シェーダーコンパイラの一部は、複数のプラットフォームにまたがる WebGL の実装でシェーダー検証およびトランスレータとして使用されています。Mac OS X、Linux、およびブラウザのモバイル版で使用されています。1 つのシェーダバリデータを持つことで、ブラウザやプラットフォーム間で一貫した GLSL ES シェーダのセットを受け入れることができます。シェーダ・トランスレータは、シェーダを他のシェーディング言語に翻訳したり、ネイティブ・グラフィック・ドライバのバグや癖に対処するためにシェーダの修正をオプションで適用したりするために使用できます。トランスレータは、Desktop GLSL、Vulkan GLSL、Direct3D HLSL、およびネイティブGLES2プラットフォーム用のESSLもターゲットにしています。
+
 
 ## 情報源
 
@@ -47,6 +51,7 @@ ANGLEリポジトリはChromiumプロジェクトによってホストされて�
 ## ビルド
 
 [Devセットアップ説明書](doc/DevSetup.md)をご覧ください。
+
 
 ## 貢献
 
