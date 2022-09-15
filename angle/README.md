@@ -67,7 +67,7 @@ ANGLEリポジトリはChromiumプロジェクトによってホストされて�
 * ANGLEの[コーディング規約](doc/CodingStandard.md)を使用する。
 * [Chromium開発用ANGLEのビルド方法](doc/BuildingAngleForChromiumDevelopment.md)はこちらです。
 * [ANGLEのデバッグ](doc/DebuggingTips.md)のヘルプを取得する。
-* ANGLEの方向性](doc/Orientation.md)に目を通し、[スタータープロジェクト](https://bugs.chromium.org/p/angleproject/issues/list?q=Hotlist%3DStarterBug)をふるいにかけてみてください。何か作業を引き受けると決めたら、私たちと連絡が取れるようにコメントを書き、さらに重要なことは、あなた自身をそのバグの「所有者」に設定することです。こうすることで、複数の人が誤って同じ問題に取り組むことを避けることができます。
+* [ANGLEの方向性](doc/Orientation.md)に目を通し、[スタータープロジェクト](https://bugs.chromium.org/p/angleproject/issues/list?q=Hotlist%3DStarterBug)をふるいにかけてみてください。何か作業を引き受けると決めたら、私たちと連絡が取れるようにコメントを書き、さらに重要なことは、あなた自身をそのバグの「所有者」に設定することです。こうすることで、複数の人が誤って同じ問題に取り組むことを避けることができます。
 
 
 * WebGLについては、[Khronos WebGL Wiki](http://khronos.org/webgl/wiki/Main_Page)でお読みください。
