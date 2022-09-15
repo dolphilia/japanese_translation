@@ -56,7 +56,7 @@ ANGLEリポジトリはChromiumプロジェクトによってホストされて�
 ## 貢献
 
 * [Googleグループ](https://groups.google.com/group/angleproject)に参加し、最新情報を入手することができます。
-* Slack】(https://chromium.slack.com) の #angle チャンネルに参加してください。Slackチャンネルに参加する手順は[Chromium開発者ページ](https://www.chromium.org/developers/slack)の説明に従ってください。Googler の方は、こちらの [ドキュメント](https://docs.google.com/document/d/1wWmRm-heDDBIkNJnureDiRO7kqcRouY2lSXlO6N2z6M/edit?usp=sharing) の指示に従って、google または chromium のメールを使用して Slack チャンネルに参加してください。
+* [Slack](https://chromium.slack.com) の #angle チャンネルに参加してください。Slackチャンネルに参加する手順は[Chromium開発者ページ](https://www.chromium.org/developers/slack)の説明に従ってください。Googler の方は、こちらの [ドキュメント](https://docs.google.com/document/d/1wWmRm-heDDBIkNJnureDiRO7kqcRouY2lSXlO6N2z6M/edit?usp=sharing) の指示に従って、google または chromium のメールを使用して Slack チャンネルに参加してください。
 * [問題追跡システム](https://bugs.chromium.org/p/angleproject/issues/list) の [バグを報告](http://anglebug.com/new) (できれば孤立したテストケース付き)。
 * [ANGLEブランチの選択](doc/ChoosingANGLEBranch.md)を使って、自分のプロジェクトでトラッキングを行うことができます。
 
