@@ -2,17 +2,24 @@
 
 MetalANGLEはOpenGL ES 2.0 (ES 3.0の一部をサポート) およびEGL 1.4 ライブラリを提供します。  これらを使って、MacやiOS上でMetal APIを利用したOpenGL ES 2.0アプリケーションを構築し、実行することができます。
 
+
 ## 開発体制
 
+
 ### バージョン管理
+
 ANGLEはバージョン管理にgitを使用しています。gitに慣れていない方は、[http://git-scm.com/documentation](http://git-scm.com/documentation)に有用なドキュメントがあります。
 
+
 ### Xcodeプロジェクトでクイックビルド
+
 ANGLEのテストスイートやOpenGL ESのコンフォーマンステストでMetalANGLEをテストしたくない場合は、`mac/xcode` と `ios/xcode` フォルダにあるXcodeプロジェクトを使って、 `MetalANGLE.framework` といくつかのサンプルアプリを素早くビルドすることができます。
+
 
 依存関係を取得する:
 
 - サードパーティの依存関係を取得するために `ios/xcode/fetchDepedencies.sh` スクリプトを実行します。
+
 
 MacOS版:
 
@@ -21,6 +28,7 @@ MacOS版:
 - [MGLKit](#MGLKit)ライブラリを使ってサンプルアプリをビルドする場合。`OpenGLES.xcodeproj`ではなく、`MGKitSamples.xcodeproj`を開いてください（両方を同時に開かないでください）。`MGKitSamples.xcodeproj`はワークスペース内にある`OpenGLES.xcodeproj`を開くためです。
 - サンプルアプリ `MGLKitSampleApp_mac` は、`MGLKit` を使って macOS 上でビューと GL コンテキストを設定する方法を示しています。
 - `EAGL`/`GLKit` から `MGLKit` へアプリを移植する方法については [MGLKit](#MGLKit) の項を参照してください。
+
 
 iOS版:
 
@@ -39,6 +47,7 @@ iOS版:
 
 以下はANGLEプロジェクトの標準的なビルドプロセスで、MetalANGLEの実装を検証するための広範なテストターゲットが含まれています。標準的なANGLEのビルドプロセスでは、`MetalANGLE.framework`の代わりに `libEGL.dylib`, `libGLESv2.dylib`, `libGLESv1CM.dylib` を生成することに注意してください。.dylib`バージョンはフレームワーク版のように[MGLKit](#MGLKit)のラッパークラスを含んでいません。現在のところ、MacOS版のビルドのみサポートしています。
 
+
 ##### 必要なツール
 
 すべてのプラットフォームで。
@@ -49,14 +58,16 @@ iOS版:
  * [Xcode](https://developer.apple.com/xcode/) をClangと開発用ファイルとして使用します。
  * Bisonとflexは、Windowsでの翻訳文法生成のみをサポートするため、必要ありません。
 
+
 MacOSビルドの場合:
 
  * GNはデフォルトのビルドシステムです。  GYPのサポートは削除されました。GNはdepot_toolsのインストールで利用できます。
  * Clangはビルドシステムによってセットアップされ、デフォルトで使用されます。
 
+
 ##### ソースの取得
 
-```
+```sh
 git clone https://github.com/kakashidinho/metalangle
 cd metalangle
 python scripts/bootstrap.py
@@ -65,7 +76,8 @@ git checkout master
 ```
 
 `gclient sync` を実行すると、"gs://chromium-clang-format ..." の取得に失敗したというエラーが報告されることがあります。このような場合は、ルートディレクトリにある `DEPS` ファイルを開き、以下のコードスニペットを削除してください。
-```
+
+```json
   {
     'name': 'clang_format_mac',
     'pattern': '.',
@@ -80,20 +92,23 @@ git checkout master
   },
 ```
 
+
 ##### MacOS版のビルド
 
+
 無事にソースを取得したら、ninjaファイルを生成する準備が整いました。
-```
+
+```sh
 gn gen out/Debug --ide=xcode --args='mac_deployment_target="10.13" angle_enable_metal=true'
 ```
 
 GN はデフォルトで ninja ファイルを生成します。  デフォルトのビルドオプションを変更するには、 `gn args out/Debug` を実行します。  よく使われるオプションは以下の通りです。
 
-```
-target_cpu = "x64"  (or "x86")
-is_clang = false    (to use system default compiler instead of clang)
-is_debug = true     (enable debugging, true is the default)
-strip_absolute_paths_from_debug_symbols = false (disable this flag will allow xcode to debug the output binaries)
+```sh
+target_cpu = "x64"  (または "x86")
+is_clang = false    (clang の代わりにシステムのデフォルトコンパイラを使うようにする)
+is_debug = true     (デバッグを有効にする、trueがデフォルト)
+strip_absolute_paths_from_debug_symbols = false (このフラグを無効にすると、xcodeが出力バイナリをデバッグできるようになります。)
 ```
 
 `out/Debug`フォルダにGNが生成したXcodeワークスペースを開いてコードをブラウズしたり、テストやサンプルアプリケーションのデバッグを行うことができます。
@@ -103,23 +118,31 @@ strip_absolute_paths_from_debug_symbols = false (disable this flag will allow xc
 GNに関するより詳しい情報は `gn help` を実行してください。
 
 Ninjaは、以下のいずれかのコマンドでコンパイルすることができます。
-```
+
+```sh
 ninja -C out/Debug
 ninja -C out/Release
 ```
+
 Ninjaは設定を変更すると、自動的にGNを呼び出してビルドファイルを再生成します。depot_tools` は ninja を提供するので、パスに入っていることを確認すること。
 
+
 ## ANGLEによるアプリケーション開発
+
 ここでは、ANGLEを使用してOpenGL ESアプリケーションを構築する方法について説明します。
 
+
 ### バックエンドの選択
+
 ANGLEは、プラットフォームに応じて様々なバックレンダラーを使用することができます。  MacOSとiOSでは、デフォルトでMetalが使用されます。
 
 ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、特別な列挙型を使用してeglGetPlatformDisplayEXTを呼び出すことにより、EGL初期化時に使用するレンダラーを選択することができるようになっています。この拡張機能の詳細は `extensions/ANGLE_platform_angle.txt` と `extensions/ANGLE_platform_angle_*.txt` にある仕様書をご覧ください。また、ANGLE のサンプルやテスト、特に `util/EGLWindow.cpp` で使用例を見ることができます。現在、iOS版では、デフォルト（Metal）以外のレンダラーを選択することができません。
 
+
 ### アプリケーションでMetalANGLEを使用するには
 
 ビルド環境が `include` フォルダにアクセスできるように設定し、クロノスの標準的なEGLおよびGLES2ヘッダーファイルへのアクセスを提供します。
+
 
 #### MacOSの場合（標準ANGLEビルドシステムでビルドされた`libGLESv2.dylib`を使用）
 
@@ -127,12 +150,16 @@ ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、�
  - アプリケーションを `libGLESv2.dylib` と `libEGL.dylib` に対してリンクします。
  - アプリケーションをKhronos [OpenGL ES 2.0](http://www.khronos.org/registry/gles/) および [EGL 1.4](http://www.khronos.org/registry/egl/) のAPIにコーディングします。
 
+
 #### iOSとMacOSの場合（付属のXcodeプロジェクトでビルドした`MetalANGLE.framework`を使用）
 
  - アプリケーションを `MetalANGLE.framework` にリンクします。
 
+
 ##### MGLKit
+
  - また、`MetalANGLE.framework`には、`MGLContext`、`MGLLayer`、`MGLKView`、`MGLKViewController` などのMGLKitユーティリティクラスが含まれており、Appleが提供する `CAEAGLContext` 、 `CAEAGLLayer` 、 `GLKView` 、 `GLKViewController` などの GLKit クラスと同様のクラスが用意されています。このMGLKitのクラスを利用したサンプルアプリは `MGLKitSamples.xcodeproj` にありますので、ご覧ください。
+
 
 ##### AppleのEAGLとGLKitからMGLKitへのポーティング
 
@@ -154,7 +181,8 @@ ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、�
 | GLKViewDrawableMultisample    | MGLDrawableMultisample   |
 
 - 典型的な古いコードでは、通常 `[GLKViewController viewDidLoad]` を `EAGLContext` と `GLKView` で構成しています。
-```
+
+```objective-c
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -169,8 +197,10 @@ ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、�
     view.drawableMultisample = GLKViewDrawableMultisample4X;
 }
 ```
+
 - MetalANGLE`を移植する場合、上記を以下のように `[MGLKViewController viewDidLoad]`に変更する必要があります。
-```
+
+```objective-c
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -187,7 +217,8 @@ ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、�
 ```
 
 - あるいは、アプリが `CAEAGLLayer` をカスタム `UIView` で直接使用する場合など。
-```
+
+```objective-c
 @interface PaintingView()
 {
     EAGLContext *context;
@@ -251,7 +282,8 @@ ANGLEは `EGL_ANGLE_platform_angle` というEGL拡張を提供しており、�
 ```
 
 - もし、`MetalANGLE`を使うなら、上記は以下のように変更される（注意：`CAEAGLLayer`と違って、`MGLLayer`は自動的にデフォルトのフレームバッファを作成するので、`[EAGLContext renderbufferStorage: fromDrawable:]` でカスタムレンダバッファを作る必要はない）。
-```
+
+```objective-c
 @interface PaintingView()
 {
     MGLContext *context;
