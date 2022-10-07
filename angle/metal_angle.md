@@ -1,5 +1,7 @@
 # MetalANGLE - OpenGL ESからApple Metal APIへの変換レイヤー
 
+[原文](https://github.com/kakashidinho/metalangle/blob/master/README.md)
+
 [![ビルド状況](https://ci.appveyor.com/api/projects/status/github/kakashidinho/metalangle?svg=true&branch=master)](https://ci.appveyor.com/project/kakashidinho/metalangle)
 [![ビルド状況](https://github.com/kakashidinho/metalangle/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/kakashidinho/metalangle/actions?query=branch%3Amaster)
 
