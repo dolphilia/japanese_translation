@@ -1,5 +1,7 @@
 # ANGLE開発
 
+[原文](https://chromium.googlesource.com/angle/angle/+/main/doc/DevSetup.md)
+
 ANGLEは、OpenGL ES 3.1およびEGL 1.5のライブラリとテストを提供しています。これらを使って、Windows、Linux、Mac、Android上でOpenGL ESアプリケーションを構築し、実行することができます。
 
 ## 開発セットアップ
