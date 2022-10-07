@@ -1,98 +1,127 @@
-Context guide
+# コンテキストガイド（日本語訳）
 
-This guide introduces the OpenGL and OpenGL ES context related functions of GLFW. For details on a specific function in this category, see the Context reference. There are also guides for the other areas of the GLFW API.
+[原文](https://www.glfw.org/docs/latest/context_guide.html)
 
-Introduction to the API
-Window guide
-Vulkan guide
-Monitor guide
-Input guide
-Context objects
+このガイドでは，GLFWのOpenGLおよびOpenGL ESのコンテキスト関連機能を紹介する．このカテゴリの特定の関数の詳細については、[コンテキストのリファレンス](https://www.glfw.org/docs/latest/group__context.html)を参照してください。また、GLFW API の他の領域のガイドもあります。
 
-A window object encapsulates both a top-level window and an OpenGL or OpenGL ES context. It is created with glfwCreateWindow and destroyed with glfwDestroyWindow or glfwTerminate. See Window creation for more information.
+- [API紹介](https://www.glfw.org/docs/latest/intro_guide.html)
+- [ウィンドウズガイド](https://www.glfw.org/docs/latest/window_guide.html)
+- [Vulkanガイド](https://www.glfw.org/docs/latest/vulkan_guide.html)
+- [モニターガイド](https://www.glfw.org/docs/latest/monitor_guide.html)
+- [入力ガイド](https://www.glfw.org/docs/latest/input_guide.html)
 
-As the window and context are inseparably linked, the window object also serves as the context handle.
+## コンテキストオブジェクト
 
-To test the creation of various kinds of contexts and see their properties, run the glfwinfo test program.
+ウィンドウオブジェクトはトップレベルのウィンドウとOpenGLまたはOpenGL ESのコンテキストをカプセル化します。作成は[glfwCreateWindow](https://www.glfw.org/docs/latest/group__window.html#ga3555a418df92ad53f917597fe2f64aeb)で、破棄は[glfwDestroyWindow](https://www.glfw.org/docs/latest/group__window.html#gacdf43e51376051d2c091662e9fe3d7b2)または[glfwTerminate](https://www.glfw.org/docs/latest/group__init.html#gaaae48c0a18607ea4a4ba951d939f0901)で行います。より詳細な情報は[ウィンドウの作成](https://www.glfw.org/docs/latest/window_guide.html#window_creation)を参照してください．
 
-Note
-Vulkan does not have a context and the Vulkan instance is created via the Vulkan API itself. If you will be using Vulkan to render to a window, disable context creation by setting the GLFW_CLIENT_API hint to GLFW_NO_API. For more information, see the Vulkan guide.
-Context creation hints
-There are a number of hints, specified using glfwWindowHint, related to what kind of context is created. See context related hints in the window guide.
+ウィンドウとコンテキストは不可分にリンクされているので、ウィンドウオブジェクトはコンテキストハンドルとßしても機能します。
 
-Context object sharing
-When creating a window and its OpenGL or OpenGL ES context with glfwCreateWindow, you can specify another window whose context the new one should share its objects (textures, vertex and element buffers, etc.) with.
+さまざまな種類のコンテキストの作成をテストし、そのプロパティを見るには、glfwinfo テストプログラムを実行してください。
 
+> Vulkan はコンテキストを持たず、Vulkan インスタンスは Vulkan API 自体を経由して作成されます。Vulkan を使用してウィンドウにレンダリングする場合は、GLFW_CLIENT_API ヒントを GLFW_NO_API に設定することで、コンテキストの生成を無効にしてください。詳細については、Vulkan ガイドを参照してください。
+
+### コンテキスト作成のヒント
+
+どのようなコンテキストが作成されるかに関連する、[glfwWindowHint](https://www.glfw.org/docs/latest/group__window.html#ga7d9c8c62384b1e2821c4dc48952d2033)を使用して指定されるいくつかのヒントがあります。ウィンドウガイドの[コンテキスト関連のヒント](https://www.glfw.org/docs/latest/window_guide.html#window_hints_ctx)を参照してください。
+
+## コンテキストオブジェクトの共有
+
+[glfwCreateWindow](https://www.glfw.org/docs/latest/group__window.html#ga3555a418df92ad53f917597fe2f64aeb)でウィンドウとそのOpenGLまたはOpenGL ESコンテキストを作成するとき、新しいウィンドウがそのオブジェクト（テクスチャ、頂点と要素バッファなど）を共有する必要がある別のウィンドウのコンテキストを指定することができます。
+
+```c
 GLFWwindow* second_window = glfwCreateWindow(640, 480, "Second Window", NULL, first_window);
-Object sharing is implemented by the operating system and graphics driver. On platforms where it is possible to choose which types of objects are shared, GLFW requests that all types are shared.
+```
 
-See the relevant chapter of the OpenGL or OpenGL ES reference documents for more information. The name and number of this chapter unfortunately varies between versions and APIs, but has at times been named Shared Objects and Multiple Contexts.
+オブジェクトの共有は、オペレーティングシステムとグラフィックスドライバによって実装されます。どのタイプのオブジェクトを共有するかを選択できるプラットフォームでは、GLFWはすべてのタイプのオブジェクトを共有するよう要求する。
 
-GLFW comes with a barebones object sharing example program called sharing.
+詳しくは[OpenGL](https://www.opengl.org/registry/)または[OpenGL ES](https://www.khronos.org/opengles/)のリファレンスドキュメントの関連する章を参照してください。この章の名前と番号は、残念ながらバージョンとAPIによって異なりますが、共有オブジェクトとマルチコンテキストという名前だったこともあります。
 
-Offscreen contexts
-GLFW doesn't support creating contexts without an associated window. However, contexts with hidden windows can be created with the GLFW_VISIBLE window hint.
+GLFWには、sharingと呼ばれる素のオブジェクト共有のサンプルプログラムが付属しています。
 
+###オフスクリーンコンテキスト
+
+GLFW は、関連するウィンドウのないコンテキストの作成をサポートしていない。しかし、隠されたウィンドウを持つコンテキストは、[GLFW_VISIBLE](https://www.glfw.org/docs/latest/window_guide.html#GLFW_VISIBLE_hint)ウィンドウヒントを用いて作成することができる。
+
+```c
 glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
  
 GLFWwindow* offscreen_context = glfwCreateWindow(640, 480, "", NULL, NULL);
-The window never needs to be shown and its context can be used as a plain offscreen context. Depending on the window manager, the size of a hidden window's framebuffer may not be usable or modifiable, so framebuffer objects are recommended for rendering with such contexts.
+```
 
-You should still process events as long as you have at least one window, even if none of them are visible.
+ウィンドウは決して表示する必要がなく、そのコンテキストはプレーンなオフスクリーンコンテキストとして使用することができます。ウィンドウマネージャによっては、隠されたウィンドウのフレームバッファのサイズを使用または変更できないことがあるので、そのようなコンテキストでレンダリングする場合はフレームバッファオブジェクトを使用することをお勧めします。
 
-macOS: The first time a window is created the menu bar is created. This is not desirable for example when writing a command-line only application. Menu bar creation can be disabled with the GLFW_COCOA_MENUBAR init hint.
+少なくとも1つのウィンドウがある限り、たとえどのウィンドウも表示されていなくても、[イベントを処理](https://www.glfw.org/docs/latest/input_guide.html#events)する必要があります。
 
-Windows without contexts
-You can disable context creation by setting the GLFW_CLIENT_API hint to GLFW_NO_API. Windows without contexts must not be passed to glfwMakeContextCurrent or glfwSwapBuffers.
+macOS: 最初にウィンドウを作成するときに、メニューバーが作成されます。これは、例えば、コマンドラインのみのアプリケーションを書くときには望ましくありません。メニューバーの作成は、[GLFW_COCOA_MENUBAR](https://www.glfw.org/docs/latest/group__init.html#ga71e0b4ce2f2696a84a9b8c5e12dc70cf)initヒントで無効にすることができます。
 
-Current context
+### コンテキストのないウィンドウ
 
-Before you can make OpenGL or OpenGL ES calls, you need to have a current context of the correct type. A context can only be current for a single thread at a time, and a thread can only have a single context current at a time.
+[GLFW_CLIENT_API](https://www.glfw.org/docs/latest/window_guide.html#GLFW_CLIENT_API_hint)ヒントを GLFW_NO_API に設定することにより、 コンテキストの生成を無効にすることができる。コンテキストのない Windows は [glfwMakeContextCurrent](https://www.glfw.org/docs/latest/group__context.html#ga1c04dc242268f827290fe40aa1c91157) や [glfwSwapBuffers](https://www.glfw.org/docs/latest/group__window.html#ga15a5a1ee5b3c2ca6b15ca209a12efd14) に渡してはならない．
 
-When moving a context between threads, you must make it non-current on the old thread before making it current on the new one.
+## 現在の状況
 
-The context of a window is made current with glfwMakeContextCurrent.
+OpenGLやOpenGL ESの呼び出しを行う前に、正しいタイプの現在のコンテキストを持つ必要があります。コンテキストは一度に1つのスレッドに対してのみカレントとなり、スレッドは一度に1つのコンテキストしかカレントとすることができません。
 
+スレッド間でコンテキストを移動する場合、古いスレッドで非カレントにしてから新しいスレッドでカレントにする必要があります。
+
+ウィンドウのコンテキストは [glfwMakeContextCurrent](https://www.glfw.org/docs/latest/group__context.html#ga1c04dc242268f827290fe40aa1c91157) でカレントにされる。
+
+```c
 glfwMakeContextCurrent(window);
-The window of the current context is returned by glfwGetCurrentContext.
+```
 
+現在のコンテキストのウィンドウは [glfwGetCurrentContext](https://www.glfw.org/docs/latest/group__context.html#gad94e80185397a6cf5fe2ab30567af71c) で返されます。
+
+```c
 GLFWwindow* window = glfwGetCurrentContext();
-The following GLFW functions require a context to be current. Calling any these functions without a current context will generate a GLFW_NO_CURRENT_CONTEXT error.
+```
 
-glfwSwapInterval
-glfwExtensionSupported
-glfwGetProcAddress
-Buffer swapping
+以下の GLFW 関数は、現在のコンテキストを必要とします。現在のコンテキストを持たずにこれらの関数を呼び出すと、 [GLFW_NO_CURRENT_CONTEXT](https://www.glfw.org/docs/latest/group__errors.html#gaa8290386e9528ccb9e42a3a4e16fc0d0) エラーが発生する。
 
-See Buffer swapping in the window guide.
+- [glfwSwapInterval](https://www.glfw.org/docs/latest/group__context.html#ga6d4e0cdf151b5e579bd67f13202994ed)
+- [glfwExtensionSupported](https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa)
+- [glfwGetProcAddress](https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163)
 
-OpenGL and OpenGL ES extensions
+## バッファスワッピング
 
-One of the benefits of OpenGL and OpenGL ES is their extensibility. Hardware vendors may include extensions in their implementations that extend the API before that functionality is included in a new version of the OpenGL or OpenGL ES specification, and some extensions are never included and remain as extensions until they become obsolete.
+ウィンドウガイドの[バッファスワッピング](https://www.glfw.org/docs/latest/window_guide.html#buffer_swap)を参照してください。
 
-An extension is defined by:
+## OpenGLおよびOpenGL ESの拡張機能
 
-An extension name (e.g. GL_ARB_gl_spirv)
-New OpenGL tokens (e.g. GL_SPIR_V_BINARY_ARB)
-New OpenGL functions (e.g. glSpecializeShaderARB)
-Note the ARB affix, which stands for Architecture Review Board and is used for official extensions. The extension above was created by the ARB, but there are many different affixes, like NV for Nvidia and AMD for, well, AMD. Any group may also use the generic EXT affix. Lists of extensions, together with their specifications, can be found at the OpenGL Registry and OpenGL ES Registry.
+OpenGLとOpenGL ESの利点の1つは、その拡張性です。ハードウェアベンダは、その機能がOpenGLまたはOpenGL ES仕様の新バージョンに含まれる前に、APIを拡張する拡張機能をその実装に含めることができます。また、拡張機能の中には、決して含まれず、陳腐化するまで拡張機能のままであるものもあります。
 
-Loading extension with a loader library
-An extension loader library is the easiest and best way to access both OpenGL and OpenGL ES extensions and modern versions of the core OpenGL or OpenGL ES APIs. They will take care of all the details of declaring and loading everything you need. One such library is glad and there are several others.
+拡張機能は次のように定義されます。
 
-The following example will use glad but all extension loader libraries work similarly.
+- An extension name (e.g. GL_ARB_gl_spirv)
+- New OpenGL tokens (e.g. GL_SPIR_V_BINARY_ARB)
+- New OpenGL functions (e.g. glSpecializeShaderARB)
 
-First you need to generate the source files using the glad Python script. This example generates a loader for any version of OpenGL, which is the default for both GLFW and glad, but loaders for OpenGL ES, as well as loaders for specific API versions and extension sets can be generated. The generated files are written to the output directory.
+ARBのアフィックスは、Architecture Review Boardの略で、公式の拡張子に使用されることに注意してください。上の拡張子はARBによって作成されたものですが、NvidiaにはNV、AMDにはAMDというように、さまざまな接頭辞が存在します。また、どのグループも一般的なEXT接頭辞を使用することができます。拡張機能の一覧とその仕様は、[OpenGL Registry](https://www.opengl.org/registry/)と[OpenGL ES Registry](https://www.khronos.org/registry/gles/)に掲載されています。
 
+### ローダーライブラリで拡張機能をロードする
+
+拡張ローダーライブラリは、OpenGLとOpenGL ESの拡張と、コアOpenGLまたはOpenGL ES APIの現代版の両方にアクセスする最も簡単で最良の方法です。彼らは、あなたが必要とするすべてのものを宣言し、ロードするためのすべての詳細を引き受けます。そのようなライブラリの1つがgladで、他にもいくつかあります。
+
+以下の例では、gladを使用しますが、すべての拡張ローダーライブラリは同様に動作します。
+
+まず、glad Pythonスクリプトを使用してソースファイルを生成する必要があります。この例では、任意のバージョンのOpenGL用のローダーを生成しています。これはGLFWとgladの両方のデフォルトですが、OpenGL ES用のローダーや、特定のAPIバージョンと拡張セット用のローダーも生成可能です。生成されたファイルは出力ディレクトリに書き込まれます。
+
+```c
 python main.py --generator c --no-loader --out-path output
-The --no-loader option is added because GLFW already provides a function for loading OpenGL and OpenGL ES function pointers, one that automatically uses the selected context creation API, and glad can call this instead of having to implement its own. There are several other command-line options as well. See the glad documentation for details.
+```
 
-Add the generated output/src/glad.c, output/include/glad/glad.h and output/include/KHR/khrplatform.h files to your build. Then you need to include the glad header file, which will replace the OpenGL header of your development environment. By including the glad header before the GLFW header, it suppresses the development environment's OpenGL or OpenGL ES header.
+--no-loader オプションが追加されたのは、GLFWがすでにOpenGLとOpenGL ESの関数ポインタを読み込むための関数を提供しており、選択したコンテキスト作成APIを自動的に使用するもので、gladは独自に実装する代わりにこれを呼び出すことができるからです。他にもいくつかのコマンドラインオプションがあります。詳しくはgladのドキュメントを参照してください。
 
+生成された output/src/glad.c, output/include/glad/glad.h, output/include/KHR/khrplatform.h ファイルをビルドに追加してください。次に、開発環境のOpenGLヘッダを置き換えるgladヘッダファイルをインクルードする必要があります。gladヘッダをGLFWヘッダの前にインクルードすることで、開発環境のOpenGLまたはOpenGL ESヘッダを抑制することができます。
+
+```c
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-Finally you need to initialize glad once you have a suitable current context.
+```
 
+最後に、適切な現在のコンテキストが得られたら、gladを初期化する必要があります。
+
+```c
 window = glfwCreateWindow(640, 480, "My Window", NULL, NULL);
 if (!window)
 {
@@ -102,53 +131,75 @@ if (!window)
 glfwMakeContextCurrent(window);
  
 gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
-Once glad has been loaded, you have access to all OpenGL core and extension functions supported by both the context you created and the glad loader you generated and you are ready to start rendering.
+```
 
-You can specify a minimum required OpenGL or OpenGL ES version with context hints. If your needs are more complex, you can check the actual OpenGL or OpenGL ES version with context attributes, or you can check whether a specific version is supported by the current context with the GLAD_GL_VERSION_x_x booleans.
+gladがロードされると、作成したコンテキストと生成したgladローダーの両方がサポートするすべてのOpenGLコアおよび拡張関数にアクセスできるようになり、レンダリングを開始する準備ができます。
 
+[コンテキストヒント](https://www.glfw.org/docs/latest/window_guide.html#window_hints_ctx)で、最低限必要なOpenGLまたはOpenGL ESバージョンを指定することができます。より複雑なニーズがある場合は、[コンテキスト属性](https://www.glfw.org/docs/latest/window_guide.html#window_attribs_ctx)で実際のOpenGLまたはOpenGL ESのバージョンを確認するか、またはGLAD_GL_VERSION_x_xブール値を使用して特定のバージョンが現在のコンテキストでサポートされているかどうかを確認することができます。
+
+```c
 if (GLAD_GL_VERSION_3_2)
 {
     // Call OpenGL 3.2+ specific code
 }
-To check whether a specific extension is supported, use the GLAD_GL_xxx booleans.
+```
 
+特定の拡張機能がサポートされているかどうかを確認するには、GLAD_GL_xxxブール値を使用します。
+
+```c
 if (GLAD_GL_ARB_gl_spirv)
 {
     // Use GL_ARB_gl_spirv
 }
-Loading extensions manually
-Do not use this technique unless it is absolutely necessary. An extension loader library will save you a ton of tedious, repetitive, error prone work.
+```
 
-To use a certain extension, you must first check whether the context supports that extension and then, if it introduces new functions, retrieve the pointers to those functions. GLFW provides glfwExtensionSupported and glfwGetProcAddress for manual loading of extensions and new API functions.
+### 拡張機能を手動で読み込む
 
-This section will demonstrate manual loading of OpenGL extensions. The loading of OpenGL ES extensions is identical except for the name of the extension header.
+絶対に必要な場合以外は、このテクニックを使わないでください。[拡張ローダーライブラリ](https://www.glfw.org/docs/latest/context_guide.html#context_glext_auto)を使えば、面倒で繰り返しの多い、エラーを起こしやすい作業を大幅に減らすことができます。
 
-The glext.h header
-The glext.h extension header is a continually updated file that defines the interfaces for all OpenGL extensions. The latest version of this can always be found at the OpenGL Registry. There are also extension headers for the various versions of OpenGL ES at the OpenGL ES Registry. It it strongly recommended that you use your own copy of the extension header, as the one included in your development environment may be several years out of date and may not include the extensions you wish to use.
+ある拡張機能を使うには、まずコンテキストがその拡張機能をサポートしているか どうか確認し、新しい関数が導入されていれば、その関数へのポインタを取得する必要があ ります。GLFW は，拡張や新しい API 関数を手動で読み込むために，[glfwExtensionSupported](https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa) と [glfwGetProcAddress](https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163) を提供しています．
 
-The header defines function pointer types for all functions of all extensions it supports. These have names like PFNGLSPECIALIZESHADERARBPROC (for glSpecializeShaderARB), i.e. the name is made uppercase and PFN (pointer to function) and PROC (procedure) are added to the ends.
+このセクションでは、OpenGL拡張の手動ロードを実演します。OpenGL ES拡張のロードは、拡張ヘッダーの名前以外は同じです。
 
-To include the extension header, define GLFW_INCLUDE_GLEXT before including the GLFW header.
+#### glext.h ヘッダー
 
+glext.h拡張ヘッダーは、すべてのOpenGL拡張のためのインターフェイスを定義する継続的に更新されるファイルです。これの最新版は、常に[OpenGLレジストリ](https://www.opengl.org/registry/)で見つけることができます。また、OpenGL ESのさまざまなバージョンのための拡張ヘッダが[OpenGL ES Registry](https://www.khronos.org/registry/gles/)にあります。開発環境に含まれているものは数年前のものであったり、使いたい拡張機能が含まれていない可能性があるので、拡張ヘッダーのコピーを自分で使うことを強くお勧めします。
+
+ヘッダーは、サポートするすべての拡張機能のすべての関数に対する関数ポインタの型を定義しています。これらはPFNGLSPECIALIZESHADERARBPROC（glSpecializeShaderARB用）のような名前で、つまり名前を大文字にしてPFN（関数へのポインタ）とPROC（手続き）を末尾に追加しています。
+
+拡張ヘッダをインクルードするには、GLFWヘッダをインクルードする前に、[GLFW_INCLUDE_GLEXT](https://www.glfw.org/docs/latest/build_guide.html#GLFW_INCLUDE_GLEXT)を定義してください。
+
+```c
 #define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
-Checking for extensions
-A given machine may not actually support the extension (it may have older drivers or a graphics card that lacks the necessary hardware features), so it is necessary to check at run-time whether the context supports the extension. This is done with glfwExtensionSupported.
+```
 
+#### 拡張子のチェック
+
+与えられたマシンは、実際には拡張機能をサポートしていないかもしれません (古いドライバや必要なハードウェア機能が不足しているグラフィックカードを使っているかもしれません) 。これは [glfwExtensionSupported](https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa) で行われます。
+
+```c
 if (glfwExtensionSupported("GL_ARB_gl_spirv"))
 {
     // The extension is supported by the current context
 }
-The argument is a null terminated ASCII string with the extension name. If the extension is supported, glfwExtensionSupported returns GLFW_TRUE, otherwise it returns GLFW_FALSE.
+```
 
-Fetching function pointers
-Many extensions, though not all, require the use of new OpenGL functions. These functions often do not have entry points in the client API libraries of your operating system, making it necessary to fetch them at run time. You can retrieve pointers to these functions with glfwGetProcAddress.
+引数はヌル文字で終端する ASCII 文字列で、拡張機能名を指定する。拡張機能がサポートされている場合、[glfwExtensionSupported](https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa) は GLFW_TRUE を返し、そうでない場合は GLFW_FALSE を返します。
 
+#### 関数ポインタの取得
+
+すべてではありませんが、多くの拡張機能では、新しい OpenGL 関数を使用する必要があります。これらの関数は、オペレーティングシステムのクライアントAPIライブラリにエントリポイントを持たないことが多く、実行時にそれらを取得する必要があります。これらの関数へのポインタは、[glfwGetProcAddress](https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163)で取得することができます。
+
+```c
 PFNGLSPECIALIZESHADERARBPROC pfnSpecializeShaderARB = glfwGetProcAddress("glSpecializeShaderARB");
-In general, you should avoid giving the function pointer variables the (exact) same name as the function, as this may confuse your linker. Instead, you can use a different prefix, like above, or some other naming scheme.
+```
 
-Now that all the pieces have been introduced, here is what they might look like when used together.
+一般に、関数ポインタ変数に関数と（全く）同じ名前をつけるのは避けるべきです。その代わり、上記のような別の接頭辞をつけるか、他の命名法を用いることができます。
 
+さて、すべてのパーツが紹介されましたが、これらを一緒に使用するとどのようになるでしょうか。
+
+```cß
 #define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
  
@@ -176,3 +227,4 @@ void some_function(void)
         glSpecializeShaderARB(...);
     }
 }
+```
