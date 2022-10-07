@@ -1,4 +1,4 @@
-# コンテキストガイド（日本語訳）
+# GLFWコンテキストガイド（日本語訳）
 
 [原文](https://www.glfw.org/docs/latest/context_guide.html)
 
