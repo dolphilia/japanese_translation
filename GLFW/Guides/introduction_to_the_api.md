@@ -1,4 +1,6 @@
-# API紹介
+# GLFWのAPI紹介
+
+[原文](https://www.glfw.org/docs/latest/intro_guide.html)
 
 このガイドでは、GLFWの基本的な概念を紹介し、初期化、エラー処理、APIの保証と制限について説明します。広く、しかし浅いチュートリアルは、代わりに[Getting started](https://www.glfw.org/docs/latest/quick_guide.html)を参照してください。このカテゴリの特定の関数の詳細については、[初期化・バージョン・エラーのリファレンス](https://www.glfw.org/docs/latest/group__init.html)を参照してください。
 
