@@ -1,5 +1,7 @@
 # MetalANGLE開発
 
+[原文](https://github.com/kakashidinho/metalangle/blob/master/src/libANGLE/renderer/metal/DevSetup.md)
+
 MetalANGLEはOpenGL ES 2.0 (ES 3.0の一部をサポート) およびEGL 1.4 ライブラリを提供します。  これらを使って、MacやiOS上でMetal APIを利用したOpenGL ES 2.0アプリケーションを構築し、実行することができます。
 
 
