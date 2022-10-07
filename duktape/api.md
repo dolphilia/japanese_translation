@@ -1,3 +1,5 @@
+[原文](https://duktape.org/api.html)
+
 # Duktape API 日本語訳
 
 
