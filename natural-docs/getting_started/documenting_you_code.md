@@ -1,4 +1,4 @@
-# コードの文書化
+# Natural Docsによるコードの文書化（日本語訳）
 
 [原文](https://www.naturaldocs.org/getting_started/documenting_your_code/)
 
