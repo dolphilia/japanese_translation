@@ -1,4 +1,6 @@
-# モジュールの使用方法
+# Duktapeでモジュールを使用する方法（日本語訳）
+
+[原文](https://wiki.duktape.org/howtomodules)
 
 ## はじめに
 
