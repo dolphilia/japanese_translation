@@ -1,20 +1,20 @@
 # AsciiDoc
 
-Since version `2.0.0`, HonKit can also accept AsciiDoc as an input format.
+バージョン `2.0.0` 以降、HonKit は入力フォーマットとして AsciiDoc も受け入れることができるようになりました。
 
-Please refer to the [AsciiDoc Syntax Quick Reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/) for more informations about the format.
+フォーマットの詳細については、[AsciiDoc Syntax Quick Reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/)を参照してください。
 
-Just like for markdown, HonKit is using some special files to extract structures: `README.adoc`, `SUMMARY.adoc`, `LANGS.adoc` and `GLOSSARY.adoc`.
+マークダウンと同じように、HonKitは構造を抽出するためにいくつかの特別なファイルを使用しています。`README.adoc`・`SUMMARY.adoc`・`LANGS.adoc`・`GLOSSARY.adoc`です。
 
 ### README.adoc
 
-This is the main entry of your book: the introduction. This file is **required**.
+本のメインとなる「はじめに」の部分です。このファイルは **必須** です。
 
 ### SUMMARY.adoc
 
-This file defines the list of chapters and subchapters. Just like  in Markdown, the `SUMMARY.adoc`'s format is simply a list of links, the name of the link is used as the chapter's name, and the target is a path to that chapter's file.
+このファイルはチャプターとサブチャプターのリストを定義します。Markdownと同じように、`SUMMARY.adoc`のフォーマットは単にリンクのリストで、リンクの名前は章の名前として使われ、ターゲットはその章のファイルへのパスとなります。
 
-Subchapters are defined simply by adding a nested list to a parent chapter.
+サブチャプターは、親チャプターにネストしたリストを追加するだけで定義できます。
 
 ```asciidoc
 = Summary
@@ -32,9 +32,9 @@ Subchapters are defined simply by adding a nested list to a parent chapter.
 
 ### LANGS.adoc
 
-For [Multi-Languages](./languages.md) books, this file is used to define the different supported languages and translations.
+[多言語](./languages.md)では、このファイルを使って、さまざまなサポート言語と翻訳を定義します。
 
-This file is following the same syntax as the `SUMMARY.adoc`:
+このファイルは `SUMMARY.adoc` と同じシンタックスに従っています。
 
 ```asciidoc
 = Languages
@@ -45,7 +45,7 @@ This file is following the same syntax as the `SUMMARY.adoc`:
 
 ### GLOSSARY.adoc
 
-This file is used to define terms. [See the glossary section](./lexicon.md).
+このファイルは、用語の定義に使用されます。[用語集の項を参照](./lexicon.md)。
 
 ```asciidoc
 = Glossary
@@ -60,6 +60,7 @@ observer producing a sense of wonder.
 A popular web programming language, used by many large websites such
 as Facebook. Rasmus Lerdorf originally created PHP in 1994 to power
 his personal homepage (PHP originally stood for "Personal Home Page"
-but now stands for "PHP: Hypertext Preprocessor"). ```
+but now stands for "PHP: Hypertext Preprocessor"). 
+```
 
 

@@ -1,12 +1,12 @@
-# Extend Blocks
+# ブロックの拡張
 
-Extending templating blocks is the best way to provide extra functionalities to authors.
+テンプレートブロックを拡張することは、作者に追加機能を提供するための最良の方法です。
 
-The most common usage is to process the content within some tags at runtime. It's like [filters](./filters.md), but on steroids because you aren't confined to a single expression.
+最も一般的な使用法は、実行時にいくつかのタグ内のコンテンツを処理することです。これは [filters](./filters.md) のようなものですが、単一の式に制限されないので、ステロイドのようなものです。
 
-### Defining a new block
+### 新規ブロックの定義
 
-Blocks are defined by the plugin, blocks is a map of name associated with a block descriptor. The block descriptor needs to contain at least a `process` method.
+ブロックはプラグインによって定義され、ブロックはブロックディスクリプタに関連付けられた名前のマップである。ブロックディスクリプタは、少なくとも `process` メソッドを含む必要があります。
 
 ```js
 module.exports = {
@@ -20,19 +20,19 @@ module.exports = {
 };
 ```
 
-The `process` should return the html content that will replace the tag. Refer to [Context and APIs](./api.md) to learn more about `this` and HonKit API.
+`process`は、タグを置き換えるhtmlコンテンツを返す必要があります。this` と HonKit API については [Context and APIs](./api.md) を参照してください。
 
-### Handling block arguments
+### ブロック引数の扱い
 
-Arguments can be passed to blocks:
+ブロックに引数を渡すことができる。
 
 ```
 {% tag1 "argument 1", "argument 2", name="Test" %}
-This is the body of the block.
+これがブロックの本体です。
 {% endtag1 %}
 ```
 
-And arguments are easily accessible in the `process` method:
+そして引数は`process`メソッドで簡単にアクセスできます。
 
 ```js
 module.exports = {
@@ -47,16 +47,16 @@ module.exports = {
 };
 ```
 
-### Handling sub-blocks
+### サブブロックの取り扱い
 
-A defined block can be parsed into different sub-blocks, for example let's consider the source:
+定義されたブロックは異なるサブブロックに解析することができます。例えばソースを考えてみましょう。
 
 ```
 {% myTag %}
-    Main body
+    本体
     {% subblock1 %}
-    Body of sub-block 1
+    サブブロック本体 1
     {% subblock 2 %}
-    Body of sub-block 1
+    サブブロック本体 1
 {% endmyTag %}
 ```

@@ -1,14 +1,14 @@
-# Create and publish a plugin
+# プラグインの作成と公開
 
-A HonKit plugin is a node package published on NPM that follow a defined convention.
+HonKitプラグインとは、NPMで公開されている定義された規約に従ったノードパッケージのことです。
 
-## Structure
+## 構造
 
 #### package.json
 
-The `package.json` is a manifest format for describing **Node.js modules**. HonKit plugins are built on top of Node modules. It declares dependencies, version, ownership, and other information required to run a plugin in HonKit. This document describes the schema in detail.
+`package.json` は、**Node.js モジュール** を記述するためのマニフェスト形式です。HonKitプラグインは、Nodeモジュールの上に構築されます。これは依存関係・バージョン・所有権・HonKitでプラグインを実行するために必要なその他の情報を宣言します。このドキュメントでは、スキーマの詳細を説明します。
 
-A plugin manifest `package.json` can also contain details about the required configuration. The configuration schema is defined in the `honkit` field of the `package.json` (This field follow the [JSON-Schema](http://json-schema.org) guidelines):
+プラグインマニフェスト `package.json` には、必要な設定についての詳細を含めることができます。設定スキーマは `package.json` の `honkit` フィールドで定義されます（このフィールドは [JSON-Schema](http://json-schema.org) ガイドラインに従います）。
 
 ```js
 {
@@ -30,20 +30,20 @@ A plugin manifest `package.json` can also contain details about the required con
 }
 ```
 
-You can learn more about `package.json` from the [NPM documentation](https://docs.npmjs.com/files/package.json).
+`package.json`については、[NPMドキュメント](https://docs.npmjs.com/files/package.json)で詳しく説明されています。
 
-The **package name** must begin with following patterns:
+**パッケージ名**は、以下のパターンで始まる必要があります。
 
 - `@<scope>/honkit-plugin-`
 - `honkit-plugin-`
 - `@<scope>/gitbook-plugin-`
 - `gitbook-plugin-`
 
-Also, the **package engines** should contain `honkit` or `gitbook`.
+また、**パッケージエンジン** には `honkit` または `gitbook` が含まれている必要があります。
 
 #### index.js
 
-The `index.js` is main entry point of your plugin runtime:
+index.js`はプラグインランタイムの主要なエントリポイントです。
 
 ```js
 module.exports = {
@@ -58,19 +58,19 @@ module.exports = {
 };
 ```
 
-## Publish your plugin
+## プラグインを公開する
 
-HonKit plugins can be published on [NPM](https://www.npmjs.com).
+HonKitプラグインは[NPM](https://www.npmjs.com)で公開することができます。
 
-To publish a new plugin, you need to create an account on [npmjs.com](https://www.npmjs.com) then publish it from the command line:
+新しいプラグインを公開するには、[npmjs.com](https://www.npmjs.com)にアカウントを作成し、コマンドラインから公開する必要があります。
 
 ```
 $ npm publish
 ```
 
-## Private plugins
+## プライベートプラグイン
 
-Private plugins can be hosted on GitHub and included using `git` urls:
+プライベートプラグインはGitHubでホストされ、`git` URLを使用してインクルードすることができます。
 
 ```
 {

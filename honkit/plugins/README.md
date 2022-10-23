@@ -1,16 +1,16 @@
-# Plugins
+# プラグイン
 
-Plugins are the best way to extend HonKit functionalities (ebook and website). There exist plugins to do a lot of things: bring math formulas display support, track visits using Google Analytic, etc.
+プラグインは、HonKitの機能（電子書籍やウェブサイト）を拡張するための最良の方法です。数学の公式の表示サポートを持って来る、Google Analyticを使用して訪問を追跡するなど：多くのことを行うためのプラグインが存在します。
 
-### How to find plugins?
+### プラグインを探すには？
 
-Plugins can be easily searched on [npmjs.com](https://www.npmjs.com/).
+プラグインは[npmjs.com](https://www.npmjs.com/)で簡単に検索することができます。
 
-Search on npm with keywords: `gitbook-plugin` or `honkit-plugin`
+キーワードでnpmで検索してください。`gitbook-plugin` または `honkit-plugin` とする。
 
-### How to install a plugin?
+### プラグインをインストールするには？
 
-Once you find a plugin that you want to install, you need to add it to your `book.json`:
+インストールしたいプラグインが見つかったら、それを `book.json` に追加する必要があります。
 
 ```
 {
@@ -18,8 +18,8 @@ Once you find a plugin that you want to install, you need to add it to your `boo
 }
 ```
 
-You can also specify a specific version using: `"myPlugin@0.3.1"`. By default HonKit will resolve the latest version of the plugin compatbile with the current HonKit version.
+を使って、特定のバージョンを指定することもできます。`"myPlugin@0.3.1"`：デフォルトでは、HonKitは現在のHonKitのバージョンと互換性のある最新バージョンのプラグインを解決します。
 
-### Configuring plugins
+### プラグインを設定する
 
-Plugins specific configurations are stored in `pluginsConfig`. You have to refer to the documentation of the plugin itself for details about the available options.
+プラグイン固有の設定は `pluginsConfig` に格納される。利用可能なオプションの詳細については、プラグイン自体のドキュメントを参照する必要があります。

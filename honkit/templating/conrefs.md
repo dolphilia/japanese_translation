@@ -1,55 +1,55 @@
-# Content References
+# コンテンツ参照
 
-Content referencing (conref) is a convenient mechanism to reuse content from other files or books.
+コンテンツ参照（conref）は、他のファイルや書籍からコンテンツを再利用するのに便利な仕組みです。
 
-### Importing local files
+### ローカルファイルの取り込み
 
-Importing an other file's content is easy using the `include` tag:
+他のファイルの内容を取り込むには`include`タグを使うと簡単です。
 
 ```
 {% include "./test.md" %}
 ```
 
-### Importing file from another book
+### 他の本からファイルを取り込む
 
-HonKit can also resolve the include path by using git:
+HonKitはgitを使用してインクルードパスを解決することもできます。
 
 ```
 {% include "git+https://github.com/GitbookIO/documentation.git/README.md#0.0.1" %}
 ```
 
-The format of git url is:
+git urlのフォーマットは以下の通りです。
 
 ```
 git+https://user@hostname/owner/project.git/file#commit-ish
 ```
 
-The real git url part should finish with `.git`, the filename to import is extracted after the `.git` till the fragment of the url.
+実際のgitのurl部分は `.git` で終わっている必要があり、インポートするファイル名は `.git` の後にurlの断片まで抽出されます。
 
-The `commit-ish` can be any tag, sha, or branch which can be supplied as an argument to `git checkout`. The default is `master`.
+commit-ish` には、 `git checkout` の引数として与えられるタグ、sha、ブランチを指定することができます。デフォルトは `master` です。
 
-### Inheritance
+### 継承
 
-Template inheritance is a way to make it easy to reuse templates. When writing a template, you can define "blocks" that child templates can override. The inheritance chain can be as long as you like.
+テンプレート継承は、テンプレートの再利用を容易にするための方法です。テンプレートを書くときに、子テンプレートがオーバーライドできる"block"を定義することができます。継承の連鎖は好きなだけ長くすることができます。
 
-`block` defines a section on the template and identifies it with a name. Base templates can specify blocks and child templates can override them with new content.
+`block`はテンプレートのセクションを定義し、名前を付けて識別します。ベーステンプレートはブロックを指定することができ、子テンプレートは新しいコンテンツでブロックをオーバーライドすることができます。
 
 ```
 {% extends "./mypage.md" %}
 
 {% block pageContent %}
-# This is my page content
+# これは私のページのコンテンツです。
 {% endblock %}
 ```
 
-In the file `mypage.md`, you should specify the blocks that can be extended:
+ファイル`mypage.md` では拡張可能なブロックを指定する必要があります。
 
 ```
 {% block pageContent %}
-This is the default content
+これはデフォルトのコンテンツです
 {% endblock %}
 
-# License
+# ライセンス
 
 {% include "./LICENSE" %}
 ```

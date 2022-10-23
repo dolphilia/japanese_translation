@@ -1,39 +1,39 @@
-# Theming
+# テーマ
 
-Since version 3.0.0, HonKit can be easily themed. Books use the [theme-default](https://github.com/honkit/honkit/tree/master/packages/%40honkit/theme-default) theme by default.
+バージョン3.0.0以降、HonKitは簡単にテーマを設定することができるようになりました。書籍では、デフォルトで [theme-default](https://github.com/honkit/honkit/tree/master/packages/%40honkit/theme-default) というテーマが使用されます。
 
-> **Caution**: Custom theming can block some plugins from working correctly.
+> **ご注意ください**: カスタムテーマにより、一部のプラグインが正しく動作しない場合があります。
 
-### Structure of a theme
+### テーマの構成
 
-A theme is a plugin containing templates and assets. Overriding any individual template is optional, since themes always extend the default theme.
+テーマとは、テンプレートとアセットを含むプラグインのことです。テーマは常にデフォルトのテーマを拡張するので、個々のテンプレートのオーバーライドは任意です。
 
-| Folder | Description |
+| フォルダ | 説明 |
 | -------- | ----------- |
-| `_layouts` | Main folder containing all the templates |
-| `_layouts/website/page.html` | Template for a normal page |
-| `_layouts/ebook/page.html` | Template for a normal page during ebook generation (PDF< ePub, Mobi) |
+| `_layouts` | すべてのテンプレートが格納されているメインフォルダー |
+| `_layouts/website/page.html` | 通常ページのテンプレート |
+| `_layouts/ebook/page.html` | 電子書籍生成時の通常ページ用テンプレート（PDF, ePub, Mobi） |
 
 
-### Extend/Customize theme in a book
+### ブックのテーマを拡張・カスタマイズする
 
-Authors can extend the templates of a theme directly from their book's source (without creating an external theme). Templates will be resolved in the `_layouts` folder of the book first, then in the installed plugins/themes.
+ブックのソースから直接テーマのテンプレートを拡張することができます（外部テーマを作成することなく）。テンプレートはまず本の `_layouts` フォルダに、次にインストールされた plugins/themes に解決されます。
 
-### Extend instead of Forking
+### Forkingの代わりにExtend
 
-When you want to make your theme changes available to multiple books, instead of forking the default theme, you can extend it using the [templating syntax](../templating/README.md):
+テーマの変更を複数のブックで利用できるようにしたい場合、デフォルトのテーマをフォークするのではなく、[templating syntax](../templating/README.md) を使って拡張することが可能です。
 
 ```html
 {% extends template.self %}
 
 {% block body %}
     {{ super() }}
-    ... This will be added to the "body" block
+    ... これは"body "ブロックに追加されます。
 {% endblock %}
 ```
 
-Take a look at the [API](https://github.com/GitbookIO/theme-api) theme for a more complete example.
+より完全な例として[API](https://github.com/GitbookIO/theme-api)テーマを見てみましょう。
 
-### Publish a theme
+### テーマを公開する
 
-Themes are published as plugins ([see related docs](../plugins/README.md)) with a `theme-` prefix. For example the theme `awesome` will be loaded from the `theme-awesome` plugin, and then from the `honkit-plugin-theme-awesome` NPM package.
+テーマはプラグイン ([関連ドキュメント](../plugins/README.md)) として `theme-` というプレフィックスを付けて公開されています。例えば、テーマ `awesome` はプラグイン `theme-awesome` からロードされ、NPM パッケージ `honkit-plugin-theme-awesome` からロードされます。

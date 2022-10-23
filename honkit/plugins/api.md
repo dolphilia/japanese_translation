@@ -1,97 +1,97 @@
-# Context and APIs
+# コンテキストとAPI
 
-HonKits provides different APIs and contexts to plugins. These APIs can vary according to the HonKit version being used, your plugin should specify the `engines.gitbook` field in `package.json` accordingly.
+HonKitsはプラグインに様々なAPIとコンテキストを提供します。これらのAPIは使用するHonKitのバージョンによって異なる可能性があるので、プラグインはそれに応じて `package.json` の `engines.gitbook` フィールドを指定しなければなりません。
 
-#### Book instance
+#### ブックインスタンス
 
-The `Book` class is the central point of HonKit, it centralize all access read methods. This class is defined in [book.js](https://github.com/honkit/honkit/blob/master/lib/book.js).
+`Book` クラスは、HonKit の中心的な存在であり、すべてのアクセス・リード・メソッドを集約しています。このクラスは [book.js] (https://github.com/honkit/honkit/blob/master/lib/book.js) で定義されている。
 
 ```js
-// Read configuration from book.json
+// book.jsonから設定を読み込む
 var value = book.config.get('title', 'Default Value');
 
-// Resolve a filename to an absolute path
+// ファイル名を絶対パスに変換する。
 var filepath = book.resolve('README.md');
 
-// Render an inline markup string
+// インラインのマークアップ文字列をレンダリングする
 book.renderInline('markdown', 'This is **Markdown**')
     .then(function(str) { ... })
 
-// Render a markup string (block mode)
+// マークアップ文字列をレンダリングする（ブロックモード）
 book.renderBlock('markdown', '* This is **Markdown**')
     .then(function(str) { ... })
 ```
 
-#### Output instance
+#### 出力インスタンス
 
-The `Output` class represent the output/write process.
+`Output`クラスは、出力/書き込み処理を表す。
 
 ```js
-// Return root folder for the output
+// 出力のルートフォルダを返す
 var root = output.root();
 
-// Resolve a file in the output folder
+// 出力フォルダー内のファイルを解決する
 var filepath = output.resolve('myimage.png');
 
-// Convert a filename to an URL (returns a path to an html file)
+// ファイル名をURLに変換する（htmlファイルへのパスを返す）。
 var fileurl = output.toURL('mychapter/README.md');
 
-// Write a file in the output folder
+// 出力フォルダにファイルを書き込む
 output.writeFile('hello.txt', 'Hello World')
     .then(function() { ... });
 
-// Copy a file to the output folder
+// ファイルを出力先フォルダにコピーする
 output.copyFile('./myfile.jpg', 'cover.jpg')
     .then(function() { ... });
 
-// Verify that a file exists
+// ファイルが存在することを確認する
 output.hasFile('hello.txt')
     .then(function(exists) { ... });
 ```
 
-#### Page instance
+#### ページインスタンス
 
-A page instance represent the current parsed page.
+現在解析されているページを表すページインスタンス。
 
 ```js
-// Title of the page (from SUMMARY)
+// ページのタイトル (SUMMARYより)
 page.title
 
-// Content of the page (Markdown/Asciidoc/HTML according to the stage)
+// ページの内容（ステージに応じたMarkdown/Asciidoc/HTML)
 page.content
 
-// Relative path in the book
+// ブックの相対パス
 page.path
 
-// Absolute path to the file
+// ファイルへの絶対パス
 page.rawPath
 
-// Type of parser used for this file
+// このファイルに使用されたパーサーの種類
 page.type ('markdown' or 'asciidoc')
 ```
 
-#### Context for Blocks and Filters
+#### ブロックとフィルタのコンテキスト
 
-Blocks and filters have access to the same context, this context is bind to the template engine execution:
+ブロックとフィルターは同じコンテキストにアクセスでき、このコンテキストはテンプレート・エンジンの実行にバインドされます。
 
 ```js
 {
-    // Current templating syntax
+    // 現在のテンプレート構文
     "ctx": {
         // For example, after a {% set message = "hello" %}
         "message": "hello"
     },
 
-    // Book instance
+    // ブックインスタンス
     "book" <Book>,
 
-    // Output instance
+    // 出力インスタンス
     "output": <Output>
 }
 ```
 
-For example a filter or block function can access the current book using: `this.book`.
+例えば、フィルタやブロック関数は、`this.book`のように現在のブックにアクセスできます。
 
-#### Context for Hooks
+#### フックのコンテキスト
 
-Hooks only have access to the `<Book>` instance using `this.book`.
+フックは `this.book` を使って `<Book>` インスタンスにのみアクセスすることができます。

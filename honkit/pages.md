@@ -1,104 +1,104 @@
-# Pages and Summary
+# ページと概要
 
-### Summary
+### 概要
 
-HonKit uses a `SUMMARY.md` file to define the structure of chapters and subchapters of the book. The `SUMMARY.md` file is used to generate the book's table of contents.
+HonKitは本のチャプターとサブチャプターの構造を定義するために`SUMMARY.md`ファイルを使用します。`SUMMARY.md`ファイルは本の目次を生成するために使用されます。
 
-The format of `SUMMARY.md` is just a list of links. The link's title is used as the chapter's title, and the link's target is a path to that chapter's file.
+`SUMMARY.md` のフォーマットは単なるリンクのリストです。リンクのタイトルはその章のタイトルとして使われ、リンクのターゲットはその章のファイルへのパスとなります。
 
-Adding a nested list to a parent chapter will create subchapters.
+各章にインデントしたリストを追加するとサブチャプターが作成されます。
 
-##### Simple example
+##### 簡単な例
 
 ```markdown
-# Summary
+# 概要
 
-* [Part I](part1/README.md)
-    * [Writing is nice](part1/writing.md)
-    * [HonKit is nice](part1/honkit.md)
-* [Part II](part2/README.md)
-    * [We love feedback](part2/feedback_please.md)
-    * [Better tools for authors](part2/better_tools.md)
+* [第一部](part1/README.md)
+    * [書くことは素晴らしい](part1/writing.md)
+    * [HonKitは優れている](part1/honkit.md)
+* [第二部](part2/README.md)
+    * [大好きなフィードバック](part2/feedback_please.md)
+    * [執筆者のための最良のツール](part2/better_tools.md)
 ```
 
-Each chapter has a dedicated page (`part#/README.md`) and is split into subchapters.
+各章には専用のページ(`part#/README.md`)があり、サブチャプターに分かれています。
 
-##### Anchors
+##### アンカー
 
-Chapters in the Table of Contents can be pointing to specific part of a file using anchor.
+目次の各章はアンカーを使用してファイルの特定の部分を指すことができます。
 
 ```markdown
-# Summary
+# 概要
 
-### Part I
+### 前編
 
-* [Part I](part1/README.md)
-    * [Writing is nice](part1/README.md#writing)
-    * [HonKit is nice](part1/README.md#honkit)
-* [Part II](part2/README.md)
-    * [We love feedback](part2/README.md#feedback)
-    * [Better tools for authors](part2/README.md#tools)
+* [第一部](part1/README.md)
+    * [書くことは素晴らしい](part1/README.md#writing)
+    * [HonKitは優れている](part1/README.md#honkit)
+* [第二部](part2/README.md)
+    * [大好きなフィードバック](part2/README.md#feedback)
+    * [執筆者のための最良のツール](part2/README.md#tools)
 ```
 
 
-##### Parts
+##### パーツ
 
-The Table of Contents can be divided into parts separated by headings or horizontal lines:
+目次は見出しや横線で区切られたパーツに分割することができます。
 
 ```markdown
-# Summary
+# 概要
 
-### Part I
+### 第一部
 
-* [Writing is nice](part1/writing.md)
-* [HonKit is nice](part1/honkit.md)
+* [書くことは素晴らしい](part1/writing.md)
+* [HonKitは優れている](part1/honkit.md)
 
-### Part II
+### 第二部
 
-* [We love feedback](part2/feedback_please.md)
-* [Better tools for authors](part2/better_tools.md)
+* [大好きなフィードバック](part2/feedback_please.md)
+* [執筆者のための最良のツール](part2/better_tools.md)
 
 ----
 
-* [Last part without title](part3/title.md)
+* [タイトルなしの最後の部分](part3/title.md)
 ```
 
-Parts are just groups of chapters and do not have dedicated pages, but according to the theme, it will show in the navigation.
+パートは単なる章の集まりで専用ページはありませんが、テーマによってはナビゲーションに表示されます。
 
-### Pages
+### ページ
 
-#### Markdown syntax
+#### Markdownの構文
 
-Most of the files for HonKit use the Markdown syntax by default. HonKit infers your pages's structure from it. The syntax used is similar to the [GitHub Flavored Markdown syntax](https://guides.github.com/features/mastering-markdown/). One can also opt for the [AsciiDoc syntax](asciidoc.md).
+HonKitのほとんどのファイルではデフォルトでMarkdown構文が使用されています。HonKitはそこからページの構造を推論します。使用される構文は[GitHub Flavored Markdown syntax](https://guides.github.com/features/mastering-markdown/)に似ています。また[AsciiDoc syntax](asciidoc.md)を選択することもできます。
 
-##### Example of a chapter file
+##### チャプターファイルの例
 
 ``` markdown
-# Title of the chapter
+# 章のタイトル
 
-This is a great introduction.
+これは素晴らしい入門書です。
 
-## Section 1
+## セクション１
 
-Markdown will dictates _most_ of your **book's structure**
+Markdownは**本の構造**のほとんどを決定します。
 
-## Section 2
+## セクション２
 
 ...
 
 ```
 
-#### Front Matter
+#### フロントマター
 
-Pages can contain an optional front matter. It can be used to define the page's description. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. Here is a basic example:
+ページはオプションでフロントマターを含むことができます。これはページの説明を定義するために使用することができます。前書きはファイルの最初のものでなければならず、三重の破線で囲まれた有効な YAML の形式をとらなければなりません。以下は基本的な例です。
 
 ```yaml
 ---
-description: This is a short description of my page
+description: マイページについて簡単に説明します。
 ---
 
-# The content of my page
+# マイページの内容
 ...
 ```
 
-The front matter can define variables of your own, they will be added to the [page variable](templating/variables.md) so you can use them in your templating.
+フロントマターで独自の変数を定義すると[ページ変数](templating/variables.md)に追加されるので、テンプレート化して使用することができるようになります。

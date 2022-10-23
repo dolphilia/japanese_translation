@@ -1,23 +1,23 @@
-# HonKit Toolchain Documentation
+# HonKit Toolchain ドキュメント
 
-This document aims to be a comprehensive guide to the HonKit command line tool.
+本書はコマンドラインツールHonKitの包括的なガイドとなることを目的としています。
 
-### What is HonKit?
+### HonKitとは？
 
-`honkit` is a command line tool (and Node.js library) for building beautiful books using GitHub/Git and Markdown (or AsciiDoc). This documentation has been generated using `honkit`.
+`honkit` は GitHub/Git と Markdown (または AsciiDoc) を使って美しい本を作るためのコマンドラインツール (および Node.js ライブラリ) です。このドキュメントは `honkit` を使って生成されています。
 
-`honkit` can output your content as a website ([customizable](themes/README.md) and [extensibles](plugins/README.md)) or as an ebook (PDF, ePub or Mobi).
+`honkit`はコンテンツをウェブサイト（[customizable](themes/README.md)・[extensibles](plugins/README.md)）や電子書籍（PDF・ePub・Mobi）として出力することが可能です。
 
-`honkit` is a fork of [GitBook (Legacy)](https://github.com/GitbookIO/gitbook).
+`honkit` は [GitBook (Legacy)](https://github.com/GitbookIO/gitbook) をフォークしたものです。
 
-### Help and Support
+### ヘルプ＆サポート
 
-If you have problems with the toolchain, you can search for or open a discussion on [GitHub](https://github.com/honkit/honkit).
+ツールチェインに問題がある場合は、[GitHub](https://github.com/honkit/honkit)で検索したり、ディスカッションを開いたりしてください。
 
-### FAQ
+### よくあるご質問
 
-Some questions are frequently asked. If you have a problem you should  [check this out](faq.md) first.
+よくある質問もあります。問題がある場合は[まずこちら](faq.md)を確認してください。
 
-### Contribute to this documentation
+### このドキュメントに貢献する
 
-You can contribute to improve this documentation on [GitHub](https://github.com/honkit/honkit) by signaling issues or proposing changes.
+[GitHub](https://github.com/honkit/honkit)で問題を指摘したり変更を提案したりして、このドキュメントの改善に貢献することができます。

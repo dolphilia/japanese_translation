@@ -1,73 +1,73 @@
-# Hooks
+# フック
 
-Hooks is a method of augmenting or altering the behavior of the process, with custom callbacks.
+フックとは、カスタムコールバックにより、プロセスの動作を補強したり、変更したりする手法です。
 
-### List of hooks
+### フック一覧
 
-### Relative to the global pipeline
+### グローバルパイプラインとの相対比較
 
-| Name | Description | Arguments |
+| 名前 | 説明 | 引数 |
 | ---- | ----------- | --------- |
-| `init` | Called after parsing the book, before generating output and pages. | None |
-| `finish:before` | Called after generating the pages, before copying assets, cover, ... | None |
-| `finish` | Called after everything else. | None |
+| `init` | ブックをパースした後、出力とページを生成する前に呼び出されます。 | None |
+| `finish:before` | ページ生成後、アセット、カバー、...をコピーする前に呼び出されます。 | None |
+| `finish` | 他のすべての後に呼び出されます。 | None |
 
-### Relative to the page pipeline
+### ページパイプラインとの相対的な関係
 
-> It is recommended using [templating](./templating.md) to extend page parsing.
+> ページの解析を拡張するために、[templating](./templating.md)を使用することが推奨されます。
 
-| Name | Description | Arguments |
+| 名前 | 説明 | 引数 |
 | ---- | ----------- | --------- |
-| `page:before` | Called before running the templating engine on the page | Page Object |
-| `page` | Called before outputting and indexing the page. | Page Object |
+| `page:before` | ページでテンプレートエンジンを実行する前に呼び出される | ページオブジェクト |
+| `page` | ページを出力してインデックスを作成する前に呼び出される。 | ページオブジェクト |
 
-:memo: HonKit may skip these pages hooks on non-changed page when incremental mode(`honkit serve`)
+:memo: インクリメンタルモード(`honkit serve`)では、非変更ページのフックをスキップすることがある。
 
-##### Page Object
+##### ページオブジェクト
 
 ```js
 {
-    // Parser named
+    // パーサー名
     "type": "markdown",
 
-    // File Path relative to book root
+    // ブックルートからの相対的なファイルパス
     "path": "page.md",
 
-    // Absolute file path
+    // 絶対ファイルパス
     "rawpath": "/usr/...",
 
-    // Title of the page in the SUMMARY
+    // SUMMARYのページタイトル
     "title": "",
 
-    // Content of the page
+    // ページの内容
     // Markdown/Asciidoc in "page:before"
     // HTML in "page"
     "content": "<h1>Hello</h1>"
 
-    // Level of the page
+    // ページのレベル
     "level": "1.5.3.1"
 
-    // Depth of the page
+    // ページの深さ
     "depth": "3"
 
-    // Other attributes appear in the .md between two '---' at the beginning of the content
-    // For example in the front of the markdown:
+    // その他の属性は.mdの中で、コンテンツの先頭にある2つの「---」の間に表示されます。 
+    // 例えばマークダウンの先頭では
     // ---
     // description: This is a description
     // ---
     "description": "This is a description"
 
-    // Previous article
+    // 前の記事
     "previous": Article Object
 
-    // Next article
+    // 次の記事
     "next": Article Object
 }
 ```
 
-##### Example to add a title
+##### タイトルを追加する例
 
-In the `page:before` hook, `page.content` is the markdown/asciidoc content.
+`page:before` フックでは、 `page.content` が markdown/asciidoc のコンテンツになります。
 
 ```js
 {
@@ -78,9 +78,9 @@ In the `page:before` hook, `page.content` is the markdown/asciidoc content.
 }
 ```
 
-##### Example to replace some html
+##### 一部のhtmlを置き換える例
 
-In the `page` hook, `page.content` is the HTML generated from the markdown/asciidoc conversion.
+`page` フックでは、 `page.content` が markdown/asciidoc 変換で生成された HTML になります。
 
 ```js
 {
@@ -93,11 +93,11 @@ In the `page` hook, `page.content` is the HTML generated from the markdown/ascii
 ```
 
 
-### Asynchronous Operations
+### 非同期操作
 
-Hooks callbacks can be asynchronous and return promises.
+フック・コールバックは非同期でプロミスを返すことができます。
 
-Example:
+例:
 
 ```js
 {

@@ -1,8 +1,8 @@
-# Directory Structure
+# ディレクトリ構造
 
-HonKit uses a simple directory structure. All Markdown/Asciidoc files listed in the [SUMMARY](pages.md) will be transformed as HTML. Multi-Lingual books have a slightly [different structure](languages.md).
+HonKitはシンプルなディレクトリ構造を使用しています。[SUMMARY](pages.md)にリストされたすべてのMarkdown/AsciidocファイルはHTMLに変換されます。多言語の書籍は若干[異なる構造](languages.md)になっています。
 
-A basic HonKit usually looks something like this:
+基本的なHonKitは通常、次のようなものです。
 
 ```
 .
@@ -17,37 +17,37 @@ A basic HonKit usually looks something like this:
     └── something.md
 ```
 
-An overview of what each of these does:
+それぞれの役割の概要を説明します。
 
-| File | Description |
+| ファイル | 説明 |
 | -------- | ----------- |
-| `book.json` | Stores [configuration](config.md) data (__optional__) |
-| `README.md` | Preface / Introduction for your book (**required**) |
-| `SUMMARY.md` | Table of Contents (See [Pages](pages.md)) (__optional__) |
-| `GLOSSARY.md` | Lexicon / List of terms to annotate (See [Glossary](lexicon.md)) (__optional__) |
+| `book.json` | [設定](config.md)データを格納する(__任意__) |
+| `README.md` | 本の序文 / 紹介文 (**必須**) |
+| `SUMMARY.md` | 目次（[ページ](pages.md)を参照） (__任意__) |
+| `GLOSSARY.md` | 用語集 / 注釈を付ける用語のリスト（[用語集](lexicon.md)を参照） (__任意__) |
 
-### Static files and Images
+### 静止画ファイル・画像
 
-A static file is a file that is not listed in the `SUMMARY.md`. All static files, unless [ignored](#ignore), are copied to the output.
+静的ファイルとは`SUMMARY.md`にリストされていないファイルのことです。[無視](#ignore)されない限り、すべての静的ファイルは出力にコピーされます。
 
-### Ignoring files & folders {#ignore}
+### ファイル＆フォルダの無視 {#ignore}
 
-HonKit will read the `.gitignore`, `.bookignore` and `.ignore` files to get a list of files and folders to skip.
-The format inside those files, follows the same convention as `.gitignore`:
+HonKitは`.gitignore`・`.bookignore`・`.ignore` ファイルを読み込んでスキップするファイルやフォルダのリストを取得します。
+これらのファイル内のフォーマットは`.gitignore`と同じ規則に従います。
 
 ```
-# This is a comment
+# これはコメントです
 
-# Ignore the file test.md
+# test.md ファイルを無視します
 test.md
 
-# Ignore everything in the directory "bin"
+# binディレクトリにあるものはすべて無視する。
 bin/*
 ```
 
-### Project integration with subdirectory {#subdirectory}
+### サブディレクトリを使ったプロジェクト統合 {#subdirectory}
 
-For software projects, you can use a subdirectory (like `docs/`) to store the book for the project's documentation. You can configure the [`root` option](config.md) to indicate the folder where HonKit can find the book's files:
+ソフトウェアプロジェクトでは、プロジェクトのドキュメント用のブックを保存するためにサブディレクトリ（`docs/`など）を使用することができます。また、[`root` オプション](config.md)でHonKitがブックのファイルを見つけることができるフォルダを設定することができます。
 
 ```
 .
@@ -57,7 +57,7 @@ For software projects, you can use a subdirectory (like `docs/`) to store the bo
     └── SUMMARY.md
 ```
 
-With `book.json` containing:
+`book.json`に含めます。
 
 ```
 {

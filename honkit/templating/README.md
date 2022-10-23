@@ -1,31 +1,31 @@
-# Templating
+# テンプレート化
 
-HonKit uses the [Nunjucks templating language](https://mozilla.github.io/nunjucks/) to process pages and theme's templates.
+HonKitは、ページやテーマのテンプレートを処理するために、[Nunjucks templating language](https://mozilla.github.io/nunjucks/)を使用しています。
 
-The Nunjucks syntax is very similar to **Jinja2** or **Liquid**. Its syntax uses surrounding braces `{ }` to mark content that needs to be processed.
+Nunjucksの構文は、**Jinja2** や **Liquid** に非常によく似ています。この構文では、中括弧 `{ }` を使って、処理する必要のあるコンテンツをマークします。
 
-### Variables
+### 変数
 
-A variable looks up a value from the template context. If you wanted to simply display a variable, you would use the `{{ variable }}` syntax. For example :
+変数はテンプレートのコンテキストから値を探します。単に変数を表示したい場合は、 `{{ variable }}` という構文を使用します。例えば．
 
 ```twig
-My name is {{ name }}, nice to meet you
+はじめまして。{{ name }}と申します。
 ```
 
-This looks up username from the context and displays it. Variable names can have dots in them which lookup properties, just like JavaScript. You can also use the square bracket syntax.
+これはコンテキストからユーザー名を検索して表示します。変数名には、JavaScriptと同じようにプロパティを検索するドットを入れることができます。また、角括弧の構文も使えます。
 
 ```twig
 {{ foo.bar }}
 {{ foo["bar"] }}
 ```
 
-If a value is undefined, nothing is displayed. The following all output nothing if foo is undefined: `{{ foo }}`, `{{ foo.bar }}`, `{{ foo.bar.baz }}`.
+値が未定義の場合は何も表示しません。以下は全てfooが未定義の場合、何も出力しません。 `{{ foo }}`, `{{ foo.bar }}`, `{{ foo.bar.baz }}`.
 
-HonKit provides a set of [predefined  variables](variables.md) from the context.
+HonKitはコンテキストから[定義済み変数](variables.md)のセットを提供します。
 
-### Filters
+### フィルター
 
-Filters are essentially functions that can be applied to variables. They are called with a pipe operator (`|`) and can take arguments.
+フィルタは基本的に変数に適用することができる関数です。パイプ演算子 (`|`) を使って呼び出され、引数を取ることができます。
 
 ```twig
 {{ foo | title }}
@@ -33,13 +33,13 @@ Filters are essentially functions that can be applied to variables. They are cal
 {{ foo | replace("foo", "bar") | capitalize }}
 ```
 
-The third example shows how you can chain filters. It would display "Bar", by first replacing "foo" with "bar" and then capitalizing it.
+3つ目の例は、フィルタを連鎖させる方法を示しています。この例では、まず "foo "を "bar "に置き換えてから大文字にして、"Bar "と表示させる。
 
-### Tags
+### タグ
 
 ##### if
 
-`if` tests a condition and lets you selectively display content. It behaves exactly as JavaScript's `if` behaves.
+`if` は条件をテストし、選択的にコンテンツを表示することができます。JavaScriptの `if` と全く同じ動作をします。
 
 ```twig
 {% if variable %}
@@ -47,9 +47,9 @@ The third example shows how you can chain filters. It would display "Bar", by fi
 {% endif %}
 ```
 
-If variable is defined and evaluates to true, "It is true" will be displayed. Otherwise, nothing will be.
+変数が定義されており、評価値がtrueであれば、"It is true "と表示されます。そうでなければ、何も表示されません。
 
-You can specify alternate conditions with `elif` and `else`:
+`elif` と `else` で代替条件を指定することができる。
 
 ```twig
 {% if hungry %}
@@ -63,10 +63,10 @@ You can specify alternate conditions with `elif` and `else`:
 
 ##### for
 
-`for` iterates over arrays and dictionaries.
+`for` は配列や辞書を繰り返し処理します。
 
 ```twig
-# Chapters about HonKit
+# HonKitに関する章
 
 {% for article in glossary.terms['gitbook'].articles %}
 * [{{ article.title }}]({{ article.path }})
@@ -75,7 +75,7 @@ You can specify alternate conditions with `elif` and `else`:
 
 ##### set
 
-`set` lets you create/modify a variable.
+set` は、変数を作成/変更することができます。
 
 ```twig
 {% set softwareVersion = "1.0.0" %}
@@ -84,13 +84,13 @@ Current version is {{ softwareVersion }}.
 [Download it](website.com/download/{{ softwareVersion }})
 ```
 
-##### include and block
+##### インクルード・ブロック
 
-Inclusion and inheritance is detailled in the [Content References](conrefs.md) section.
+インクルージョンと継承については[コンテンツ参照](conrefs.md) のセクションで詳しく説明しています。
 
-### Escaping
+### エスケープ
 
-If you want HonKit to ignore any of the special templating tags, you can use raw and anything inside of it will be output as plain text.
+もしHonKitに特別なテンプレートタグを無視させたい場合はrawを使用すれば、その中のものはプレーンテキストとして出力されます。
 
 ``` twig
 {% raw %}

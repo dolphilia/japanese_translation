@@ -1,168 +1,168 @@
-# Markdown
+# マークダウン
 
-Most of the examples from this documentation are in Markdown. Markdown is default parser for HonKit, but one can also opt for the [AsciiDoc syntax](asciidoc.md).
+このドキュメントの例のほとんどはMarkdownで書かれています。MarkdownはHonKitのデフォルトのパーサーですが、[AsciiDoc syntax](asciidoc.md)を選択することもできます。
 
-Here’s an overview of Markdown syntax that you can use with HonKit (same as GitHub with some additions).
+HonKitで使えるMarkdown構文の概要を説明します（GitHubと同じですが、一部追加されています）。
 
-### Headings
+### 見出し
 
-To create a heading, add one to six `#` symbols before your heading text. The number of # you use will determine the size of the heading.
+見出しを作成するには、見出しテキストの前に1～6個の`#`記号を付けます。この#の数によって、見出しの大きさが決まります。
 
 ```markdown
-# This is an <h1> tag
-## This is an <h2> tag
-###### This is an <h6> tag
+# これは<h1>タグです
+## これは<h2>タグです
+###### これは<h6>タグです
 ```
 
-HonKit supports a nice way for explicitly setting the header ID. If you follow the header text with an opening curly bracket (separated from the text with a least one space), a hash, the ID and a closing curly bracket, the ID is set on the header. If you use the trailing hash feature of atx style headers, the header ID has to go after the trailing hashes. For example:
+HonKitは、ヘッダIDを明示的に設定するための素晴らしい方法をサポートしています。ヘッダテキストに続けて、開きの中括弧（テキストとは少なくとも1つのスペースで区切られる）、ハッシュ、ID、閉じの中括弧を記述すると、IDがヘッダに設定されます。atxスタイルのヘッダーの末尾のハッシュの機能を使用する場合、ヘッダーIDは末尾のハッシュの後に行かなければなりません。例えば
 
 ```markdown
-Hello {#id}
+こんにちは {#id}
 -----
 
-# Hello {#id}
+# こんにちは {#id}
 
-# Hello # {#id}
+# こんにちは # {#id}
 ```
 
-### Paragraphs and Line Breaks {#paragraphs}
+### 段落と改行 {#paragraphs}
 
-A paragraph is simply one or more consecutive lines of text, separated by one or more blank lines. (A blank line is any line that looks like a blank line — a line containing nothing but spaces or tabs is considered blank.) Normal paragraphs should not be indented with spaces or tabs.
+段落とは、1行以上の連続したテキストを、1行以上の空白行で区切ったものです。(空白行とは、空白のように見える行のことで、スペースやタブ以外何もない行は空白とみなされます)。通常の段落は、スペースやタブでインデントしてはいけません。
 
 ```
-Here's a line for us to start with.
+ここでまずは1行だけご紹介します。
 
-This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
+この行は上の行と2つの改行で区切られているので*分離された段落*となります。
 ```
 
-### Emphasis {#emphasis}
+### 強調 {#emphasis}
 
 ```markdown
-*This text will be italic*
-_This will also be italic_
+*このテキストはイタリックになります*
+_これもイタリックになります_
 
-**This text will be bold**
-__This will also be bold__
+**このテキストは太字になります**
+__これも太字になります__
 
-~~This text will be crossed out.~~
+~~このテキストは取り消されます~~
 
-_You **can** combine them_
+_組み合わせることが**できます**_
 ```
 
-### Lists {#lists}
+### リスト {#lists}
 
-Markdown supports ordered (numbered) and unordered (bulleted) lists.
+Markdownは順序付き（番号付き）リストと順序なし（箇条書き）リストをサポートしています。
 
-##### Unordered
+##### 順不同
 
-Unordered lists use asterisks, pluses, and hyphens — interchangably — as list markers:
+順序なしリストでは、アスタリスク、プラス、ハイフンをリストの目印として使い分けます。
 
 ```markdown
-* Item 1
-* Item 2
-  * Item 2a
-  * Item 2b
+* 項目 1
+* 項目 2
+  * 項目 2a
+  * 項目 2b
 ```
 
-##### Ordered
+##### 順序付き
 
-Ordered lists use numbers followed by periods:
+順序付きリストでは、番号の後にピリオドを使用します。
 
 ```markdown
-1. Item 1
-2. Item 2
-3. Item 3
-   * Item 3a
-   * Item 3b
+1. 項目 1
+2. 項目 2
+3. 項目 3
+   * 項目 3a
+   * 項目 3b
 ```
 
-### Links {#links}
+### リンク {#links}
 
-Markdown supports two style of links: inline and reference.
+Markdownはインラインとリファレンスの2つのスタイルのリンクをサポートしています。
 
-A simple link can be created by surrounding the text with square brackets and the link URL with parentheses:
+テキストを角括弧で囲み、リンク先のURLを括弧で囲むと、簡単なリンクが作成できます。
 
 ```markdown
-This is [an example](http://example.com/ "Title") inline link with a title.
+これは[例](http://example.com/ "タイトル")のインラインリンクで、タイトルがあります。
 
-[This link](http://example.net/) has no title attribute.
+[このリンク](http://example.net/)にはtitle属性がありません。
 ```
 
-Links can point to relative paths, anchors or absolute urls.
+リンクは相対パス・アンカー・絶対URLを指すことができます。
 
 
-### References
+### 参考文献
 
-There is another way to create links which does not interrupt the text flow. The URL and title are defined using a reference name and this reference name is then used in square brackets instead of the link URL:
+テキストフローを妨げないリンクを作成する別の方法があります。URLとタイトルを参照名で定義し、この参照名をリンクURLの代わりに角括弧で囲みます。
 
 ```markdown
-This is [an example][id] reference-style link.
+これは[例][id]参照スタイルのリンクです。
 ```
 
-Then, anywhere in the document, you define your link label like this, on a line by itself:
+そして、文書内の任意の場所にこのようなリンクラベルを1行で定義します。
 
 ```markdown
-[id]: http://example.com/  "Optional Title Here"
+[id]: http://example.com/  "オプションのタイトルはこちら"
 ```
 
-### Images {#images}
+### 画像 {#images}
 
-Images can be created in a similar way than links: just use an exclamation mark before the square brackets. The link text will become the alternative text of the image and the link URL specifies the image source:
+画像はリンクと同様の方法で作成できます。角括弧の前に感嘆符を使用するだけです。リンクテキストは画像の代替テキストになり、リンクURLは画像のソースを指定します。
 
 ```markdown
-An image: ![gras](img/image.jpg)
+画像: ![gras](img/image.jpg)
 ```
 
-### Blockquotes {#blockquotes}
+### ブロッククォート {#blockquotes}
 
-A blockquote is started using the `>` marker followed by an optional space; all following lines that are also started with the blockquote marker belong to the blockquote. You can use any block-level elements inside a blockquote:
+ブロッククオートは `>` マーカとオプションのスペースで開始されます。ブロッククオートの中では、どのようなブロックレベルの要素でも使うことができます。
 
 ```markdown
-As Kanye West said:
+カニエ・ウェストが言ったように:
 
-> We're living the future so
-> the present is our past.
+> 私たちは未来を生きているのだから
+> 現在が過去である。
 ```
 
-### Tables {#tables}
+### テーブル {#tables}
 
-You can create tables by assembling a list of words and dividing them with hyphens `-` (for the first row), and then separating each column with a pipe `|`:
+単語のリストを組み立て、ハイフン `-` で区切り（最初の行の場合）、各列をパイプ `|` で区切ることでテーブルを作成することができます。
 
 ```markdown
-| First Header  | Second Header |
+| ファーストヘッダー  | セカンドヘッダー |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| コンテンツセル  | コンテンツセル  |
+| コンテンツセル  | コンテンツセル  |
 ```
 
-The pipes on either end of the table are optional. Cells can vary in width and do not need to be perfectly aligned within columns. There must be at least three hyphens in each column of the header row.
+表の両端にあるパイプはオプションです。セルの幅は様々で列の中で完全に揃える必要はありません。ヘッダー行の各列には少なくとも3つのハイフンが必要です。
 
-### Code {#code}
+### コード {#code}
 
-Markdown supports two different code block styles. One uses lines indented with either four spaces or one tab whereas the other uses lines with tilde characters as delimiters – therefore the content does not need to be indented:
+Markdownは2つの異なるコードブロックスタイルをサポートします。一方は4つのスペースまたは1つのタブでインデントされた行を使用し、もう一方はチルダ文字を区切り文字として使用します - したがって、コンテンツはインデントされる必要がありません。
 
 ```markdown
-This is a sample code block.
+これはサンプルコードブロックです。
 
-    Continued here.
+    続きはこちら
 
 ```
 
-##### Fenced code blocks
+##### フェンス付きコードブロック
 
-You can create fenced code blocks by placing triple backticks ` ``` ` before and after the code block. We recommend placing a blank line before and after code blocks to make the raw formatting easier to read.
+コードブロックの前後にトリプルバックティック ` ``` `を置くと、フェンス付きのコードブロックを作成することができます。生の書式を読みやすくするために、コードブロックの前後に空白行を置くことをお勧めします。
 
     ```
     function test() {
-      console.log("notice the blank line before this function?");
+      console.log("この関数の前に空白行があることにお気づきでしょうか？");
     }
     ```
 
-##### Syntax highlighting
+##### シンタックスハイライト
 
-You can add an optional language identifier to enable syntax highlighting in your fenced code block.
+オプションで言語識別子を追加すると、フェンスで囲まれたコードブロックのシンタックスハイライトを有効にすることができます。
 
-For example, to syntax highlight Ruby code:
+例えば、Rubyのコードをシンタックスハイライトする場合。
 
     ```ruby
     require 'redcarpet'
@@ -170,53 +170,53 @@ For example, to syntax highlight Ruby code:
     puts markdown.to_html
     ```
 
-##### Inline code
+##### インラインコード
 
-Text phrases can be marked up as code by surrounding them with backticks:
+テキストフレーズは、バックティックで囲むことにより、コードとしてマークアップすることができます。
 
     Use `honkit` to convert the `text` in markdown
     syntax to HTML.
 
-### Footnotes
+### 脚注
 
-HonKit supports a simple syntax for such footnotes. Footnotes are relative to each pages.
+HonKitは、このような脚注のための簡単な構文をサポートしています。脚注は、各ページからの相対参照です。
 
 ```markdown
-Text prior to footnote reference.[^2]
+脚注参照前のテキスト。[^2]
 
-[^2]: Comment to include in footnote.
+[^2]: 脚注に入れるべきコメント
 ```
 
 ### HTML
 
-HonKit supports use of raw HTML in your text, Markdown syntax in HTML is not processed:
+HonKitはテキスト中の生のHTMLの使用をサポートします。HTML中のMarkdownシンタックスは処理されません。
 
 ```
 <div>
-Markdown here will not be **parsed**
+このマークダウンは **パースされません** 。
 </div>
 ```
 
-### Horizontal Rule
+### 水平方向の罫線
 
-Horizontal Rules can be inserted using three or more asterisks, dashes or underscores, optionally separated by spaces or tabs, on an otherwise blank line:
+水平方向の罫線は、空白行に3つ以上のアスタリスク、ダッシュ、アンダースコアを使用し、オプションでスペースまたはタブで区切って挿入することができます。
 
 ```markdown
-Three or more...
+3つ以上の...
 
 ---
 
-Hyphens
+ハイフン
 
 ***
 
-Asterisks
+アスタリスク
 
 ```
 
-### Ignoring Markdown formatting
+### Markdownのフォーマットを無視する
 
-You can tell HonKit to ignore (or escape) Markdown formatting by using `\` before the Markdown character.
+Markdown文字の前に`\`を使用することで、Markdownフォーマットを無視（またはエスケープ）するようにHonKitに指示することができます。
 
 ```
 Let's rename \*our-new-project\* to \*our-old-project\*.

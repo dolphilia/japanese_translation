@@ -1,14 +1,14 @@
-# Glossary
+# 用語集
 
-Allows you to specify terms and their respective definitions to be displayed as annotations. Based on those terms, HonKit will automatically build an index and highlight those terms in pages.
+アノテーションとして表示する用語とその定義を指定することができます。これらの用語に基づき、HonKitは自動的に索引を作成し、ページ内でこれらの用語を強調表示します。
 
-The `GLOSSARY.md` format is a list of `h2` headings, along with a description paragraph:
+`GLOSSARY.md` のフォーマットは `h2` の見出しと説明の段落のリストです。
 
 ```markdown
-## Term
-Definition for this term
+## 用語
+この用語の定義
 
-## Another term
-With it's definition, this can contain bold text
-and all other kinds of inline markup ...
+## 別の用語
+この定義では、太字のテキストを含むことができます。
+その他あらゆるインラインマークアップが可能です。
 ```

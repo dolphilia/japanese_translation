@@ -1,6 +1,6 @@
-# Extend Filters
+# フィルタの拡張
 
-Filters are essentially functions that can be applied to variables. They are called with a pipe operator (`|`) and can take arguments.
+フィルタは基本的に変数に適用することができる関数です。パイプ演算子 (`|`) を使って呼び出され、引数を取ることができます。
 
 ```
 {{ foo | title }}
@@ -8,12 +8,12 @@ Filters are essentially functions that can be applied to variables. They are cal
 {{ foo | replace("foo", "bar") | capitalize }}
 ```
 
-### Defining a new filter
+### 新規フィルターの定義
 
-Plugins can extend filters by defining custom functions in their entry point under the `filters` scope.
+プラグインは、そのエントリポイントで `filters` スコープの下にカスタム関数を定義することで、フィルタを拡張することができます。
 
-A filter function takes as first argument the content to filter, and should return the new content.
-Refer to [Context and APIs](./api.md) to learn more about `this` and HonKit API.
+フィルタリング関数は、フィルタリングするコンテンツを第一引数として受け取り、新しいコンテンツを返す必要があります。
+`this` と HonKit API について詳しくは [Context and APIs](./api.md) を参照してください。
 
 ```js
 module.exports = {
@@ -25,21 +25,21 @@ module.exports = {
 };
 ```
 
-The filter `hello` can then be used in the book:
+すると`hello`というフィルターが本の中で使えるようになります。
 
 ```
 {{ "Aaron"|hello }}, how are you?
 ```
 
-### Handling block arguments
+### ブロック引数の扱い
 
-Arguments can be passed to filters:
+フィルターに引数を渡すことができます。
 
 ```
 Hello {{ "Samy"|fullName("Pesse", man=true}} }}
 ```
 
-Arguments are passed to the function, named-arguments are passed as a last argument (object).
+引数は関数に渡され、名前付き引数は最後の引数（オブジェクト）として渡されます。
 
 ```js
 module.exports = {

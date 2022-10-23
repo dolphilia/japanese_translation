@@ -1,27 +1,27 @@
-# HonKit FAQ
+# HonKitのよくある質問
 
-This page gathers common questions and answers concerning the HonKit format and toolchain.
+このページではHonKitのフォーマットやツールチェーンに関するよくある質問とその回答をまとめています。
 
-#### How can I host/publish my book?
+#### ブックのホスト/出版はどのようにすればよいですか？
 
-Publish to [GitHub Pages](https://pages.github.com/) or [Netlify](https://www.netlify.com/), and more.
+[GitHub Pages](https://pages.github.com/)や[Netlify](https://www.netlify.com/)へのパブリッシュなど。
 
-#### Does not reload plugins?
+#### プラグインを再読み込みしない？
 
-HonKit use file cache per text content file by default.
+HonKitはデフォルトでテキストコンテンツファイルごとにファイルキャッシュを使用します。
 
-This file cache check file changes and reload it automatically.
-In some case, HonKit cannot detect the changes of plugins.
+このファイルキャッシュは、ファイルの変更をチェックし、自動的に再読み込みを行います。
+プラグインの変更を検知できない場合があります。
 
-If you want to refresh force, please use `--reload` flag.
+もし、強制的に更新したい場合は、`--reload`フラグを使用してください。
 
 ```
 $ honkit build --reload
 ```
 
-#### Does HonKit supports RTL/bi-directional text ?
+#### HonKitはRTL/双方向のテキストをサポートしていますか？
 
-The HonKit format supports right to left, and bi-directional writing. To enable it, you either need to specify a language (ex: `ar`), or force HonKit to use RTL in your `book.json`:
+HonKitのフォーマットは、右から左への双方向の書き込みをサポートしています。これを有効にするには、言語（例：`ar`）を指定するか、`book.json`でRTLを使用するようにHonKitを強制する必要があります。
 
 ``` json
 {
@@ -30,31 +30,31 @@ The HonKit format supports right to left, and bi-directional writing. To enable 
 }
 ```
 
-With version 3.0 of HonKit, it's automatically detected according to the content.
-_Note that, while the output book will indeed respect RTL, the Editor doesn't support RTL writing yet_.
+HonKitのバージョン3.0では、内容に応じて自動的に検出されるようになっています。
+_出力される本は確かにRTLを尊重しますが、エディタはまだRTLの書き込みをサポートしていないことに注意してください_。
 
-#### Should I use an `.html` or `.md` extensions in my links?
+#### リンクの拡張子は `.html` と `.md` のどちらを使用すればよいですか？
 
-You should always use paths and the `.md` extensions when linking to your files, HonKit will automatically replace these paths by the appropriate link when the pointing file is referenced in the Table of Contents.
+ファイルへのリンクには常にパスと `.md` 拡張子を使用する必要があります。HonKit は目次でポインティングファイルが参照されるときに、これらのパスを自動的に適切なリンクに置き換えます。
 
-#### Can I create a HonKit in a sub-directory of my repository?
+#### リポジトリのサブディレクトリにHonKitを作成することはできますか？
 
-Yes, HonKits can be created in [sub-directories](structure.md#subdirectory). 
+HonKitは[サブディレクトリ](structure.md#subdirectory)に作成することができます。
 
-#### Does HonKit supports RTL languages?
+#### HonKitはRTL言語に対応していますか？
 
-Yes, HonKit automatically detect the direction in your pages (`rtl` or `ltr`) and adjust the layout accordingly. The direction can also be specified globally in the [book.json](config.md).
+はい、HonKitはページ内の方向(`rtl`または`ltr`)を自動的に検出し、それに応じてレイアウトを調整します。また、[book.json](config.md)でグローバルに向きを指定することもできます。
 
 ---
 
-#### Does HonKit support Math equations?
+#### HonKitはMath equationに対応していますか？
 
-HonKit supports math equations and TeX thanks to plugins. There are currently 2 official plugins to display math: [mathjax](https://plugins.honkit.com/plugin/mathjax) and [katex](https://plugins.honkit.com/plugin/katex).
+HonKitはプラグインによって数式やTeXをサポートしています。現在、数式を表示するための公式プラグインは2つあります。[mathjax](https://plugins.honkit.com/plugin/mathjax)と[katex](https://plugins.honkit.com/plugin/katex)です。
 
-#### Can I customize/theme the output?
+#### 出力のカスタマイズやテーマは可能ですか？
 
-Yes, both the website and ebook outputs can be customized using [themes](themes/README.md).
+はい、[テーマ](themes/README.md)を使って、ウェブサイトと電子書籍の両方の出力をカスタマイズすることができます。
 
-#### Can I add interactive content (videos, etc)?
+#### インタラクティブなコンテンツ（動画など）を追加することはできますか？
 
-HonKit is very [extensible](plugins/README.md). You can use [existing plugins](https://plugins.honkit.com) or create your own!
+HonKitは非常に[拡張性](plugins/README.md)に富んでいます。[既存のプラグイン](https://plugins.honkit.com)を使うこともできますし、自分で作ることもできます!

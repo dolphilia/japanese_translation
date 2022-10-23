@@ -1,12 +1,12 @@
 ---
-description: Real world examples of content published using HonKit.
+description: HonKitを使って公開されたコンテンツの実例をご紹介します。
 ---
 
-# Examples
+# 例
 
-Real world examples of content published using HonKit.
+HonKitを使って公開されたコンテンツの実例をご紹介します。
 
-## Who's using HonKit
+## HonKitを使用している人
 
 - JavaScript Primer
     - [Website](https://jsprimer.net/)
@@ -21,8 +21,8 @@ Real world examples of content published using HonKit.
     - [Website](https://www.circl.lu/doc/misp/)
     - [Source](https://github.com/MISP/misp-book)
 
-## Add to examples
+## 例に追加する
 
-Is your project using HonKit?
+あなたのプロジェクトはHonKitを使用していますか？
 
-Please [Edit this page](https://github.com/honkit/honkit/edit/master/docs/examples.md) with a Pull Request to add your book!
+あなたのブックを追加するには、Pull Requestで[このページを編集](https://github.com/honkit/honkit/edit/master/docs/examples.md)してください!

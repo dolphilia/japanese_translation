@@ -1,89 +1,89 @@
-# Variables
+# 変数
 
-The following is a reference of the available data during book's parsing and theme generation.
+以下はブックのパースとテーマ生成時に利用可能なデータの参考例です。
 
-### Global Variables
+### グローバル変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `book` | Book-wide information + configuration settings from `book.json`. See below for details. |
-| `honkit` | HonKit specific information |
-| `gitbook` | HonKit specific information. It's alias to `honkit` |
-| `page` | Current page specific information |
-| `file` | File associated with the current page specific information |
-| `readme` | Information about the Readme |
-| `glossary` | Information about the Glossary |
-| `summary` | Information about the table of contents |
-| `languages` | List of languages for multi-lingual books |
-| `output` | Information about the output generator |
-| `config` | Dump of the `book.json` |
+| `book` | 本全体の情報 + 設定を `book.json` から取得します。詳細は以下を参照。 |
+| `honkit` | HonKitの具体的な情報 |
+| `gitbook` | HonKit固有の情報です。これは `honkit` のエイリアスです。 |
+| `page` | 現在のページ固有の情報 |
+| `file` | 現在のページの特定情報に関連するファイル |
+| `readme` | Readmeに関する情報 |
+| `glossary` | 用語集に関する情報 |
+| `summary` | 目次に関する情報 |
+| `languages` | 多言語ブックの言語一覧 |
+| `output` | 出力ジェネレーターに関する情報 |
+| `config` | `book.json`をダンプする。 |
 
-### Book Variables
+### Book変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `book.[CONFIGURATION_DATA]` | All the `variables` set via the `book.json` are available through the book variable. |
-| `book.language` | Current language for a multilingual book |
+| `book.[CONFIGURATION_DATA]` | `book.json`で設定したすべての`変数`は、book変数を通して利用することができます。 |
+| `book.language` | 多言語ブックの現在の言語 |
 
-### HonKit Variables
+### HonKit変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `honkit.time` | The current time (when you run the `honkit` command) . |
-| `gitbook.time` | The current time (when you run the `honkit` command) . |
-| `honkit.version` | Version of HonKit used to generate the book |
-| `gitbook.version` | Version of HonKit used to generate the book |
+| `honkit.time` | 現在の時刻（`honkit`コマンドを実行したとき）。 |
+| `gitbook.time` | 現在の時刻（`honkit`コマンドを実行したとき）。 |
+| `honkit.version` | ブックの生成に使用したHonKitのバージョン |
+| `gitbook.version` | ブックの生成に使用したHonKitのバージョン |
 
-### File Variables
+### File変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `file.path` | The path to the raw page |
-| `file.mtime` | Modified Time. Last time the file was modified |
-| `file.type` | The name of the parser used to compile this file (ex: `markdown`, `asciidoc`, etc) |
+| `file.path` | rawページへのパス |
+| `file.mtime` | 修正時刻。ファイルが最後に変更された時間 |
+| `file.type` | このファイルをコンパイルするために使用したパーサーの名前 (例: `markdown`, `asciidoc`, など) |
 
-#### Page Variables
+#### Page変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `page.title` | Title of the page |
-| `page.previous` | Previous page in the Table of Contents (can be `null`) |
-| `page.next` | Next page in the Table of Contents (can be `null`) |
-| `page.dir` | Text direction, based on configuration or detected from content (`rtl` or `ltr`) |
+| `page.title` | ページのタイトル |
+| `page.previous` | 目次の前のページ (`null` も可) |
+| `page.next` | 目次の次のページ (`null` も可) |
+| `page.dir` | 設定に基づくか、コンテンツから検出されたテキストの方向 (`rtl` または `ltr`)|
 
-#### Table of Contents Variables
+#### 目次変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `summary.parts` | List of sections in the Table of Contents |
+| `summary.parts` | 目次のセクションのリスト |
 
-The whole table of contents (`SUMMARY.md`) can be accessed:
+目次(`SUMMARY.md`)全体にアクセスすることができる。
 
-`summary.parts[0].articles[0].title` will return the title of the first article.
+`summary.parts[0].articles[0].title`は、最初の記事のタイトルを返します。
 
-#### Multi-lingual book Variable
+#### 多言語ブック変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `languages.list` | List of languages for this book |
+| `languages.list` | ブックの言語一覧 |
 
-Languages are defined by `{ id: 'en', title: 'English' }`.
+言語は `{ id: 'en', title: 'English' }` で定義されます。
 
-### Output Variables
+### 出力変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `output.name` | Name of the output generator, possible values are `website`, `json`, `ebook` |
-| `output.format` | When `output.name == "ebook"`, `format` defines the ebook format that will be generated, possible values are `pdf`, `epub` or `mobi` |
+| `output.name` | 出力ジェネレータの名前。指定可能な値は`website`・`json`・`ebook`です。 |
+| `output.format` | `output.name == "ebook"` の場合、`format` は生成される電子書籍の形式を定義します。可能な値は`pdf`・`epub`・`mobi` です。 |
 
-### Readme Variables
+### Readme変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `readme.path` | Path to the Readme in the book |
+| `readme.path` | ブック内のReadmeへのパス |
 
-### Glossary Variables
+### 用語集変数
 
-| Variable | Description |
+| 変数 | 説明 |
 | -------- | ----------- |
-| `glossary.path` | Path to the Glossary in the book |
+| `glossary.path` | ブックに掲載されている用語集へのパス |

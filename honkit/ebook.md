@@ -1,6 +1,6 @@
-# Generating eBooks and PDFs
+# 電子ブックやPDFの生成
 
-HonKit can generates a website, but can also output content as ebook (ePub, Mobi, PDF).
+HonKitはウェブサイトを生成するだけでなく、電子書籍（ePub・Mobi・PDF）としてコンテンツを出力することができます。
 
 ```
 # Generate a PDF file
@@ -13,29 +13,29 @@ $ honkit epub ./ ./mybook.epub
 $ honkit mobi ./ ./mybook.mobi
 ```
 
-### Installing ebook-convert
+### ebook-convertのインストール
 
-`ebook-convert` is required to generate ebooks (epub, mobi, pdf).
+電子書籍(epub, mobi, pdf)を生成するには`ebook-convert`が必要です。
 
 ##### OS X
 
-Download the [Calibre application](https://calibre-ebook.com/download). After moving the `calibre.app` to your Applications folder create a symbolic link to the ebook-convert tool:
+[キャリバーアプリケーション](https://calibre-ebook.com/download)をダウンロードします。`calibre.app`をアプリケーションフォルダに移動した後、電子書籍変換ツールへのシンボリックリンクを作成します。
 
 ```
 $ sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
 ```
 
-You can replace `/usr/bin` with any directory that is in your $PATH.
+`usr/bin` は、$PATH にある任意のディレクトリに置き換えることができます。
 
-### Cover
+### カバー
 
-Covers are used for all the ebook formats.
+カバーはすべての電子書籍のフォーマットに使用されています。
 
-To provide a cover, place a **`cover.jpg`** file at the root directory of your book. Adding a **`cover_small.jpg`** will specify a smaller version of the cover. The cover should be a **JPEG** file.
+表紙を付けるには、本のルートディレクトリに **`cover.jpg`** ファイルを配置します。**cover_small.jpg`**を追加すると、より小さいバージョンの表紙を指定することができます。表紙は **JPEG** ファイルである必要があります。
 
-A good cover should respect the following guidelines:
+良い表紙は、以下のガイドラインを尊重する必要があります。
 
-* Size of 1800x2360 pixels for `cover.jpg`, 200x262 for `cover_small.jpg`
-* No border
-* Clearly visible book title
-* Any important text should be visible in the small version
+* サイズは `cover.jpg` が1800x2360ピクセル、 `cover_small.jpg` が200x262ピクセルです。
+* ボーダーなし
+* 書籍のタイトルがはっきりと見える
+* 重要なテキストは小さなバージョンで表示されるようにします。

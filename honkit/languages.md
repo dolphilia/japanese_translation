@@ -1,17 +1,17 @@
-# Multi-Languages
+# 多言語
 
-HonKit supports building books written in multiple languages. Each language should be a sub-directory following the normal HonKit format, and a file named `LANGS.md` should be present at the root of the repository with the following format:
+HonKitは複数の言語で書かれた本の構築をサポートしています。各言語は通常のHonKitのフォーマットに従ったサブディレクトリとし、リポジトリのルートに `LANGS.md` という名前のファイルを以下のフォーマットで存在させる必要があります。
 
 ```markdown
-# Languages
+# 言語
 
 * [English](en/)
 * [French](fr/)
 * [Español](es/)
 ```
 
-### Configuration for each language
+### 各言語の設定
 
-When a language book (ex: `en`) has a `book.json`, its configuration will extend the main configuration.
+言語ブック（例：`en`）が `book.json` を持つ場合、その設定はメインの設定を拡張することになります。
 
-The only exception is plugins, plugins are specified globally, and language specific plugins cannot be specified.
+唯一の例外はプラグインで、プラグインはグローバルに指定され、言語固有のプラグインを指定することはできません。

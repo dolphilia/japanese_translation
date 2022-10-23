@@ -1,50 +1,50 @@
 # Summary
 
-### Getting Started
+### はじめに
 
-* [About this documentation](README.md)
-* [Installation and Setup](setup.md)
+* [このドキュメントについて](README.md)
+* [インストールとセットアップ](setup.md)
 
-### Your Content
+### あなたのコンテンツ
 
-* [Directory structure](structure.md)
-* [Pages and Summary](pages.md)
-* [Configuration](config.md)
-* [Glossary](lexicon.md)
-* [Multi-Lingual](languages.md)
-* [Markdown](syntax/markdown.md)
-    * [Headings](syntax/markdown.md#headings)
-    * [Paragraphs](syntax/markdown.md#paragraphs)
-    * [Lists](syntax/markdown.md#lists)
-    * [Links](syntax/markdown.md#links)
-    * [Images](syntax/markdown.md#images)
-    * [Blockquotes](syntax/markdown.md#blockquotes)
-    * [Tables](syntax/markdown.md#tables)
-    * [Code](syntax/markdown.md#code)
+* [ディレクトリ構造](structure.md)
+* [ページと概要](pages.md)
+* [コンフィギュレーション](config.md)
+* [用語集](lexicon.md)
+* [マルチリンガル](languages.md)
+* [マークダウン](syntax/markdown.md)
+    * [見出し](syntax/markdown.md#headings)
+    * [段落](syntax/markdown.md#paragraphs)
+    * [リスト](syntax/markdown.md#lists)
+    * [リンク](syntax/markdown.md#links)
+    * [画像](syntax/markdown.md#images)
+    * [ブロッククォート](syntax/markdown.md#blockquotes)
+    * [テーブル](syntax/markdown.md#tables)
+    * [コード](syntax/markdown.md#code)
     * [HTML](syntax/markdown.md#html)
-    * [Footnotes](syntax/markdown.md#footnotes)
+    * [脚注](syntax/markdown.md#footnotes)
 * [AsciiDoc](syntax/asciidoc.md)
-* [eBook and PDF](ebook.md)
+* [eBookとPDF](ebook.md)
 
-### Customization
+### カスタマイズ
 
-* [Templating](templating/README.md)
-    * [Content References](templating/conrefs.md)
-    * [Variables](templating/variables.md)
-    * [Builtin](templating/builtin.md)
-* [Plugins](plugins/README.md)
-    * [Create a plugin](plugins/create.md)
-    * [Hooks](plugins/hooks.md)
-    * [Blocks](plugins/blocks.md)
-    * [Filters](plugins/filters.md)
-    * [API & Context](plugins/api.md)
-    * [Test your plugin](plugins/testing.md)
-* [Theming](themes/README.md)
+* [テンプレート化](templating/README.md)
+    * [コンテンツの参照先](templating/conrefs.md)
+    * [変数](templating/variables.md)
+    * [ビルトイン](templating/builtin.md)
+* [プラグイン](plugins/README.md)
+    * [プラグインの作成](plugins/create.md)
+    * [フック](plugins/hooks.md)
+    * [ブロック](plugins/blocks.md)
+    * [フィルター](plugins/filters.md)
+    * [APIとコンテキスト](plugins/api.md)
+    * [プラグインのテスト](plugins/testing.md)
+* [テーマ](themes/README.md)
 
 --
 
-* [FAQ](faq.md)
-* [Examples](examples.md)
-* [Release notes](https://github.com/honkit/honkit/blob/master/CHANGELOG.md)
+* [よくある質問](faq.md)
+* [例](examples.md)
+* [リリースノート](https://github.com/honkit/honkit/blob/master/CHANGELOG.md)
 
 

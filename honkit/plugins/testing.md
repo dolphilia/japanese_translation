@@ -1,23 +1,23 @@
-# Testing your plugin
+# プラグインのテスト
 
-### Testing your plugin locally
+### プラグインをローカルでテストする
 
-Testing your plugin on your book before publishing it is possible using [npm link](https://docs.npmjs.com/cli/link).
+プラグインを公開する前に本でテストすることは、[npm link](https://docs.npmjs.com/cli/link)を使うことで可能になります。
 
-In the plugin's folder, run:
+プラグインのフォルダで実行します。
 
 ```
 $ npm link
 ```
 
-Then in your book's folder:
+そしてブックのフォルダーに。
 
 ```
 $ npm link honkit-plugin-<plugin's name>
 ```
 
-### Unit testing on Travis
+### Travisでのユニットテスト
 
-[gitbook-tester](https://github.com/todvora/gitbook-tester) makes it easy to write **Node.js/Mocha** unit tests for your plugins. Using [Travis.org](https://travis.org), tests can be run on each commits/tags.
+[gitbook-tester](https://github.com/todvora/gitbook-tester) を使うと、プラグイン用の **Node.js/Mocha** ユニットテストが簡単に書けます。[Travis.org](https://travis.org) を使うと、コミットやタグごとにテストを実行することができます。
 
-[honkit-tester](https://github.com/vowstar/honkit-tester) over time, in some cases gitbook-tester no longer works properly on the latest version of nodejs. This is a port of gitbook-tester, which could works on LTS version of nodejs v10 v12 v14, and using the honkit engine instead of gitbook to run test.
+[honkit-tester](https://github.com/vowstar/honkit-tester) 時とともに、gitbook-tester が最新版の nodejs で正しく動作しなくなる場合があります。これは gitbook-tester の移植版で、LTS 版の nodejs v10 v12 v14 で動作し、gitbook の代わりに honkit エンジンを使ってテストを実行することができるようになりました。

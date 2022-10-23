@@ -1,56 +1,56 @@
-# Setup and Installation of HonKit
+# HonKitのセットアップとインストール
 
-Getting HonKit installed and ready-to-go should only take a few minutes.
+HonKitをインストールしてすぐに使えるようにするためには数分しかかかりません。
 
-### Local Installation
+### ローカルインストール
 
-##### Requirements
+##### 必要条件
 
-Installing HonKit is easy and straightforward. Your system just needs to meet these two requirements:
+HonKitのインストールは簡単でわかりやすいものです。システム要件は以下の2つの満たすだけです。
 
-* NodeJS (v10.0.0 and above is recommended)
-* Windows, Linux, Unix, or Mac OS X
+* NodeJS (v10.0.0以上を推奨)
+* Windows・Linux・Unix・Mac OS X
 
-##### Install with NPM
+##### NPMでインストールする
 
-The best way to install HonKit is via **NPM** or **Yarn** At the terminal prompt, simply run the following command to install HonKit:
+HonKitをインストールする最良の方法は**NPM**または**Yarn**経由で行うことです。 ターミナルプロンプトで次のコマンドを実行するだけでHonKitがインストールされます。
 
 ```
 $ npm install honkit --save-dev
-# or
+# または
 $ yarn add honkit --dev
 ```
 
-⚠️ Warning:
+⚠️ 警告:
 
-- If you have installed `honkit` globally(`--global`) you must install each plugins rule globally(`--global`) as well
-- If you have installed `honkit` locally you must install each plugins locally as well
+- `honkit` をグローバルに (`--global`) インストールしている場合は、各プラグインのルールもグローバルに (`--global`) インストールする必要があります。
+- ローカルに `honkit` をインストールした場合、各プラグインもローカルにインストールする必要があります。
 
-We recommend installing `honkit` locally.
+ローカルに `honkit` をインストールすることをお勧めします。
 
-##### Create a book
+##### 本を作る
 
-HonKit can setup a boilerplate book:
+HonKitは定型文を設定することができます。
 
 ```
 $ npx honkit init
 ```
 
-If you wish to create the book into a new directory, you can do so by running `honkit init ./directory`
+もし、本を新しいディレクトリに作成したい場合は、`honkit init ./directory` を実行してください。
 
-Preview and serve your book using:
+以下のコマンドで本をプレビューします。
 
 ```
 $ npx honkit serve
 ```
 
-Or build the static website using:
+または、次のコマンドで静的なウェブサイトを構築します。
 
 ```
 $ npx honkit build
 ```
 
-You can also define `build` and `serve` command in `package.json` as [npm-run-scripts](https://docs.npmjs.com/cli/run-script).
+`build` と `serve` コマンドを `package.json` に [npm-run-scripts](https://docs.npmjs.com/cli/run-script) として定義することができます。
 
 ```diff
   "scripts": {
@@ -59,18 +59,18 @@ You can also define `build` and `serve` command in `package.json` as [npm-run-sc
   },
 ```
 
-After this configuration, you can use `npm run` command.
+この設定後、`npm run`コマンドを使用することができます。
 
 ```
-# Build 
+# ビルド
 npm run build
-# Start to server
+# サーバへの接続開始
 npm run serve
 ```
 
-##### Debugging
+##### デバッグ
 
-You can use the options `--log=debug` and `--debug` to get better error messages (with stack trace). For example:
+`--log=debug` と `--debug` オプションを使用すると、より良いエラーメッセージ (スタックトレース付き) を得ることができます。例：
 
 ```
 $ honkit build ./ --log=debug --debug
