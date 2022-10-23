@@ -1,0 +1,825 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>プラグインの作成 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hooks.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    このドキュメントについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../setup.html">
+            
+                <a href="../setup.html">
+            
+                    
+                    インストールとセットアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">あなたのコンテンツ</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../structure.html">
+            
+                <a href="../structure.html">
+            
+                    
+                    ディレクトリ構造
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../pages.html">
+            
+                <a href="../pages.html">
+            
+                    
+                    ページと概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../config.html">
+            
+                <a href="../config.html">
+            
+                    
+                    コンフィギュレーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../lexicon.html">
+            
+                <a href="../lexicon.html">
+            
+                    
+                    用語集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../languages.html">
+            
+                <a href="../languages.html">
+            
+                    
+                    マルチリンガル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html">
+            
+                    
+                    マークダウン
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#headings">
+            
+                    
+                    見出し
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#paragraphs">
+            
+                    
+                    段落
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#lists">
+            
+                    
+                    リスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#links">
+            
+                    
+                    リンク
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#images">
+            
+                    
+                    画像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#blockquotes">
+            
+                    
+                    ブロッククォート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#tables">
+            
+                    
+                    テーブル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#code">
+            
+                    
+                    コード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#html">
+            
+                    
+                    HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../syntax/markdown.html">
+            
+                <a href="../syntax/markdown.html#footnotes">
+            
+                    
+                    脚注
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../syntax/asciidoc.html">
+            
+                <a href="../syntax/asciidoc.html">
+            
+                    
+                    AsciiDoc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../ebook.html">
+            
+                <a href="../ebook.html">
+            
+                    
+                    eBookとPDF
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">カスタマイズ</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../templating/">
+            
+                <a href="../templating/">
+            
+                    
+                    テンプレート化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../templating/conrefs.html">
+            
+                <a href="../templating/conrefs.html">
+            
+                    
+                    コンテンツの参照先
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../templating/variables.html">
+            
+                <a href="../templating/variables.html">
+            
+                    
+                    変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../templating/builtin.html">
+            
+                <a href="../templating/builtin.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    プラグイン
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.2.1" data-path="create.html">
+            
+                <a href="create.html">
+            
+                    
+                    プラグインの作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="hooks.html">
+            
+                <a href="hooks.html">
+            
+                    
+                    フック
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="blocks.html">
+            
+                <a href="blocks.html">
+            
+                    
+                    ブロック
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="filters.html">
+            
+                <a href="filters.html">
+            
+                    
+                    フィルター
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    APIとコンテキスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="testing.html">
+            
+                <a href="testing.html">
+            
+                    
+                    プラグインのテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../themes/">
+            
+                <a href="../themes/">
+            
+                    
+                    テーマ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    よくある質問
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../examples.html">
+            
+                <a href="../examples.html">
+            
+                    
+                    例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <a target="_blank" href="https://github.com/honkit/honkit/blob/master/CHANGELOG.md">
+            
+                    
+                    リリースノート
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >プラグインの作成</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+
+                                <h1 id="プラグインの作成と公開">プラグインの作成と公開</h1>
+<p><a href="../GLOSSARY.html#honkit" class="glossary-term" title="Honkit is a command line tool for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).">HonKit</a>プラグインとは、NPMで公開されている定義された規約に従ったノードパッケージのことです。</p>
+<h2 id="構造">構造</h2>
+<h4 id="packagejson">package.json</h4>
+<p><code>package.json</code> は、<strong>Node.js モジュール</strong> を記述するためのマニフェスト形式です。<a href="../GLOSSARY.html#honkit" class="glossary-term" title="Honkit is a command line tool for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).">HonKit</a>プラグインは、Nodeモジュールの上に構築されます。これは依存関係・バージョン・所有権・<a href="../GLOSSARY.html#honkit" class="glossary-term" title="Honkit is a command line tool for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).">HonKit</a>でプラグインを実行するために必要なその他の情報を宣言します。このドキュメントでは、スキーマの詳細を説明します。</p>
+<p>プラグインマニフェスト <code>package.json</code> には、必要な設定についての詳細を含めることができます。設定スキーマは <code>package.json</code> の <code>honkit</code> フィールドで定義されます（このフィールドは <a href="http://json-schema.org" target="_blank">JSON-Schema</a> ガイドラインに従います）。</p>
+<pre><code class="lang-js">{
+    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;honkit-plugin-mytest&quot;</span>,
+    <span class="hljs-string">&quot;version&quot;</span>: <span class="hljs-string">&quot;0.0.1&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;This is my first HonKit plugin&quot;</span>,
+    <span class="hljs-string">&quot;engines&quot;</span>: {
+        <span class="hljs-string">&quot;honkit&quot;</span>: <span class="hljs-string">&quot;&gt;1.x.x&quot;</span>
+    },
+    <span class="hljs-string">&quot;honkit&quot;</span>: {
+        <span class="hljs-string">&quot;properties&quot;</span>: {
+            <span class="hljs-string">&quot;myConfigKey&quot;</span>: {
+                <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-string">&quot;default&quot;</span>: <span class="hljs-string">&quot;it&apos;s the default value&quot;</span>,
+                <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;It defines my awesome config!&quot;</span>
+            }
+        }
+    }
+}
+</code></pre>
+<p><code>package.json</code>については、<a href="https://docs.npmjs.com/files/package.json" target="_blank">NPMドキュメント</a>で詳しく説明されています。</p>
+<p><strong>パッケージ名</strong>は、以下のパターンで始まる必要があります。</p>
+<ul>
+<li><code>@&lt;scope&gt;/honkit-plugin-</code></li>
+<li><code>honkit-plugin-</code></li>
+<li><code>@&lt;scope&gt;/gitbook-plugin-</code></li>
+<li><code>gitbook-plugin-</code></li>
+</ul>
+<p>また、<strong>パッケージエンジン</strong> には <code>honkit</code> または <code>gitbook</code> が含まれている必要があります。</p>
+<h4 id="indexjs">index.js</h4>
+<p>index.js`はプラグインランタイムの主要なエントリポイントです。</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-comment">// Map of hooks</span>
+    <span class="hljs-attr">hooks</span>: {},
+
+    <span class="hljs-comment">// Map of new blocks</span>
+    <span class="hljs-attr">blocks</span>: {},
+
+    <span class="hljs-comment">// Map of new filters</span>
+    <span class="hljs-attr">filters</span>: {}
+};
+</code></pre>
+<h2 id="プラグインを公開する">プラグインを公開する</h2>
+<p><a href="../GLOSSARY.html#honkit" class="glossary-term" title="Honkit is a command line tool for building beautiful books using GitHub/Git and Markdown (or AsciiDoc).">HonKit</a>プラグインは<a href="https://www.npmjs.com" target="_blank">NPM</a>で公開することができます。</p>
+<p>新しいプラグインを公開するには、<a href="https://www.npmjs.com" target="_blank">npmjs.com</a>にアカウントを作成し、コマンドラインから公開する必要があります。</p>
+<pre><code>$ npm publish
+</code></pre><h2 id="プライベートプラグイン">プライベートプラグイン</h2>
+<p>プライベートプラグインはGitHubでホストされ、<code>git</code> URLを使用してインクルードすることができます。</p>
+<pre><code>{
+    &quot;plugins&quot;: [
+        &quot;myplugin@git+https://github.com/MyCompany/myhonkitplugin.git#1.0.0&quot;
+    ]
+}
+</code></pre>
+                                
+<hr>
+<div class="btn-group btn-group-justified">
+    
+    <a class="btn" href="./"><b>Previous:</b> プラグイン</a>
+    
+    
+    <a class="btn" href="hooks.html"><b>Next:</b> フック</a>
+    
+</div>
+
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: プラグイン">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hooks.html" class="navigation navigation-next " aria-label="Next page: フック">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"プラグインの作成","level":"3.2.1","depth":2,"next":{"title":"フック","level":"3.2.2","depth":2,"path":"plugins/hooks.md","ref":"plugins/hooks.md","articles":[]},"previous":{"title":"プラグイン","level":"3.2","depth":1,"path":"plugins/README.md","ref":"plugins/README.md","articles":[{"title":"プラグインの作成","level":"3.2.1","depth":2,"path":"plugins/create.md","ref":"plugins/create.md","articles":[]},{"title":"フック","level":"3.2.2","depth":2,"path":"plugins/hooks.md","ref":"plugins/hooks.md","articles":[]},{"title":"ブロック","level":"3.2.3","depth":2,"path":"plugins/blocks.md","ref":"plugins/blocks.md","articles":[]},{"title":"フィルター","level":"3.2.4","depth":2,"path":"plugins/filters.md","ref":"plugins/filters.md","articles":[]},{"title":"APIとコンテキスト","level":"3.2.5","depth":2,"path":"plugins/api.md","ref":"plugins/api.md","articles":[]},{"title":"プラグインのテスト","level":"3.2.6","depth":2,"path":"plugins/testing.md","ref":"plugins/testing.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"plugins/create.md","mtime":"2022-10-23T04:42:22.195Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-23T05:10:14.123Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
