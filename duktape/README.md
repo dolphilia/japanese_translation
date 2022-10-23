@@ -1,4 +1,4 @@
-# Duktapeの概要 日本語訳
+# Duktapeの概要 日本語訳 {#top}
 
 [原文](https://duktape.org/index.html)
 
@@ -7,7 +7,7 @@ Duktapeは移植性とコンパクトなフットプリントに重点を置い�
 DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにduktape.c、duktape.h、duk_config.hを追加し、Duktape APIを使ってCコードからECMAScriptの関数を呼び出したり、逆にECMAScriptからCコードに関数を呼び出したりすることができます。
 
 
-## 主な特徴
+## 特徴 {#feature}
 
 - 組み込み可能、ポータブル、コンパクト：160kB フラッシュと 64kB RAM のプラットフォームで実行可能。
 - [ECMAScript E5/E5.1](http://www.ecma-international.org/ecma-262/5.1/)、一部のセマンティクスは ES2015+ から更新されています。
@@ -28,7 +28,7 @@ DuktapeはC/C++プロジェクトに簡単に統合できます。ビルドにdu
 - リベラルライセンス(MIT)
 
 
-## コードとRAMのフットプリント
+## コードとRAMのフットプリント {#footprint}
 
 Hello worldの[例](https://github.com/svaarala/duktape/blob/master/util/index_page_sizes.sh):
 
@@ -44,12 +44,12 @@ Hello worldの[例](https://github.com/svaarala/duktape/blob/master/util/index_p
 コードのフットプリントを最小にするための[GCCオプション](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst#optimizing-code-footprint)を参照してください。完全な[ローメモリ](https://github.com/svaarala/duktape/blob/master/doc/low-memory.rst)では、ポインタ圧縮とROMベースの文字列/オブジェクトを使用します。ROMベースの文字列/オブジェクトは、他のローメモリオプションなしで使うこともできます。
 
 
-## 現在の状況
+## 現在の状況 {#status}
 
 - 安定版
 
 
-## サポート
+## サポート {#support}
 
 - Duktape Wiki: [wiki.duktape.org](http://wiki.duktape.org/)
 - ユーザーコミュニティのQ&A: Stack Overflowの[duktape](http://stackoverflow.com/questions/tagged/duktape)タグ
@@ -57,14 +57,14 @@ Hello worldの[例](https://github.com/svaarala/duktape/blob/master/util/index_p
 - 一般的な議論: IRC #duktape on chat.freenode.net ([webchat](https://webchat.freenode.net/))
 
 
-## Duktapeを使用したいくつかのプロジェクト
+## Duktapeを使用したいくつかのプロジェクト {#example}
 
 [Duktapeを使用しているプロジェクト](http://wiki.duktape.org/ProjectsUsingDuktape.html)を参照してください。
 
 もしあなたのプロジェクトでDuktapeを使っているなら、リストに追加するためにメールを送るか、GitHubのissuesを開いてください。
 
 
-## 類似エンジン
+## 類似エンジン {#similar}
 
 少なくともDuktapeと同様のユースケースをターゲットにしたJavascriptエンジンは複数存在します。
 
@@ -79,7 +79,7 @@ Hello worldの[例](https://github.com/svaarala/duktape/blob/master/util/index_p
 [ECMAScriptエンジンの一覧](https://en.wikipedia.org/wiki/List_of_ECMAScript_engines)も参照してください。
 
 
-## 1. ビルドに追加する
+## 1. ビルドに追加する {#reserve}
 
 (詳しい紹介は[Getting started](https://duktape.org/guide.html#gettingstarted)をご覧ください)
 
@@ -106,7 +106,7 @@ $ ./test
 ```
 
 
-## 2 コンテキストを初期化する
+## 2 コンテキストを初期化する {#initialize}
 
 プログラムのどこかでDuktapeを初期化し、使用する。
 
@@ -125,7 +125,7 @@ int main(int argc, char *argv[]) {
 ```
 
 
-## 3. C関数バインディングの追加
+## 3. C関数バインディングの追加 {#binding}
 
 ECMAScript のコードから C の関数を呼び出すには、まず C の関数を宣言します。
 
