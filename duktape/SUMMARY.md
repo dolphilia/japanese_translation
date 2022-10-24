@@ -54,7 +54,9 @@
 
 ### APIリファレンス
 
-* [APIリファレンス](api.md)
+* [はじめに](api/README.md)
+* [APIリファレンス](api/api.md)
+* [索引](api/toc.md)
 
 ### Wiki
 
