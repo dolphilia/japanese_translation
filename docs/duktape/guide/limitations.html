@@ -1,0 +1,813 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>制限事項 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="comparison_to_lua.html" />
+    
+    
+    <link rel="prev" href="versioning.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">プログライングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    スタートアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="programming_model.html">
+            
+                <a href="programming_model.html">
+            
+                    
+                    プログラミングモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="stack_types.html">
+            
+                <a href="stack_types.html">
+            
+                    
+                    スタックタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    C言語の型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="type_algorithms.html">
+            
+                <a href="type_algorithms.html">
+            
+                    
+                    型のアルゴリズム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="duktape_built_ins.html">
+            
+                <a href="duktape_built_ins.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="post_es5_features.html">
+            
+                <a href="post_es5_features.html">
+            
+                    
+                    ポストES5の特徴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="custom_behavior.html">
+            
+                <a href="custom_behavior.html">
+            
+                    
+                    カスタム動作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="custom_json_formats.html">
+            
+                <a href="custom_json_formats.html">
+            
+                    
+                    カスタムJSONフォーマット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="custom_directives.html">
+            
+                <a href="custom_directives.html">
+            
+                    
+                    カスタムディレクティブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="buffer_objects.html">
+            
+                <a href="buffer_objects.html">
+            
+                    
+                    バッファー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="error_objects.html">
+            
+                <a href="error_objects.html">
+            
+                    
+                    エラー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="function_objects.html">
+            
+                <a href="function_objects.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="date_and_time.html">
+            
+                <a href="date_and_time.html">
+            
+                    
+                    日付と時刻
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="random_numbers.html">
+            
+                <a href="random_numbers.html">
+            
+                    
+                    乱数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="debugger.html">
+            
+                <a href="debugger.html">
+            
+                    
+                    デバッガー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="finalization.html">
+            
+                <a href="finalization.html">
+            
+                    
+                    終了処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="coroutines.html">
+            
+                <a href="coroutines.html">
+            
+                    
+                    コルーチン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="virtual_properties.html">
+            
+                <a href="virtual_properties.html">
+            
+                    
+                    仮想プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="symbols.html">
+            
+                <a href="symbols.html">
+            
+                    
+                    シンボル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="bytecode_dump_load.html">
+            
+                <a href="bytecode_dump_load.html">
+            
+                    
+                    バイトコード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="threading.html">
+            
+                <a href="threading.html">
+            
+                    
+                    スレッディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="sandboxing.html">
+            
+                <a href="sandboxing.html">
+            
+                    
+                    サンドボックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="memory_usage.html">
+            
+                <a href="memory_usage.html">
+            
+                    
+                    メモリ使用量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="compiling.html">
+            
+                <a href="compiling.html">
+            
+                    
+                    コンパイル方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="versioning.html">
+            
+                <a href="versioning.html">
+            
+                    
+                    バージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.34" data-path="limitations.html">
+            
+                <a href="limitations.html">
+            
+                    
+                    制限事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="comparison_to_lua.html">
+            
+                <a href="comparison_to_lua.html">
+            
+                    
+                    Luaとの比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >制限事項</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="limitations">制限事項 </h2>
+<p>以下は、現在の実装における既知の制限事項のリストです。制限には、セマンティクスの観点からの欠点、性能の制限、実装の制限（これは避けられない）などがあります。</p>
+<p>些細なバグは「長期的なバグ」でない限り、リストアップしていません。</p>
+<h3 id="再入可能性なし">再入可能性なし</h3>
+<p>単一のDuktapeヒープ、つまり同じガベージコレクタを共有するコンテキストは、リエントラントではありません。C/C++のスレッドで、特定のDuktapeヒープに対して一度にDuktape APIを呼び出せるのは1つだけです（ただし、呼び出すスレッドは時間の経過とともに変更される可能性があります）。スレッド化」を参照してください。</p>
+<h3 id="文字列とバッファの制限">文字列とバッファの制限</h3>
+<p>内部表現では、文字列の最大長は 2**31-1 (0x7fffffff) バイト（文字ではありません） までです。16ビットのコードポイントは最悪の場合UTF-8の3バイトにエンコードされるため、 動作が保証される最大文字列長は約0.7G文字となります。</p>
+<p>バッファの値も 2**31-1 (0x7fffffff) バイトに制限されます。</p>
+<h3 id="プロパティの制限">プロパティの制限</h3>
+<p>オブジェクトは最大で DUK_HOBJECT_MAX_PROPERTIES (内部定義) を持つことができます。現在のところ、この制限は 0x7ffffff です。</p>
+<h3 id="配列の制限">配列の制限</h3>
+<p>配列のアイテム・インデックスが 2**31-1 の制限 (0x7ffffff) を超えると、Duktape には配列のセマンティクスに関するいくつかの既知のバグが発生します。</p>
+<h3 id="空のマッチを超える正規表現量化子">空のマッチを超える正規表現量化子</h3>
+<p>正規表現エンジンは、空のマッチ上で量化子が使用されたときに行き詰まりますが、最終的には内部再帰（または実行ステップ）制限で救済されます。たとえば、次のコードは &quot;no match&quot; の結果を生成するはずですが、代わりに内部再帰の制限にヒットします。</p>
+<pre><code class="lang-sh">$ duk
+duk&gt; t = /(x*)*/.<span class="hljs-built_in">exec</span>(<span class="hljs-string">&apos;y&apos;</span>);
+RangeError: regexp executor recursion <span class="hljs-built_in">limit</span>
+    at [anon] (duk_regexp_executor.c:145) internal
+    at <span class="hljs-built_in">exec</span> () native strict preventsyield
+    at global (input:1) preventsyield
+</code></pre>
+<h3 id="duktapeはロケールを完全にサポートしていません。">Duktapeはロケールを完全にサポートしていません。</h3>
+<p>Duktape はローカル時刻の概念をサポートしていますが、ロケールに関連する他の機能、例えば、ロケール固有の日付書式、ロケール固有の文字列比較、ロケール/言語固有の Unicode 規則（トルコ語、アゼリ語、リスアニア語のケース変換規則など）はサポートされていません。</p>
+<h3 id="unicodeの大文字・小文字変換は、ロケールや文脈に依存しない。">Unicodeの大文字・小文字変換は、ロケールや文脈に依存しない。</h3>
+<p>E5 15.5.4.16から15.5.4.19項では、Unicode SpecialCasing.txtのコンテキストとロケール処理を要求しています。しかし、Duktapeは現在、&quot;current locale &quot;の概念を持っていない。</p>
+<h3 id="デフォルトでないプロパティ属性を使用した場合の配列のパフォーマンス">デフォルトでないプロパティ属性を使用した場合の配列のパフォーマンス</h3>
+<p>すべての配列要素は、書き込み可能で、列挙可能で、設定可能であることが期待されています（新しいプロパティのデフォルト・プロパティ属性）。この仮定が一時的にでも破られた場合、オブジェクトの「配列部分」全体は永久に放棄され、配列エントリーは「エントリー部分」に移動されます。この場合、使用されているすべての配列インデックスを明示的な文字列キー（&quot;0&quot;、&quot;1 &quot;など）としてインターフェイスすることになります。これはコンプライアンス上の問題ではありませんが、パフォーマンスを低下させます。</p>
+<h3 id="objectdefineproperty-を用いて要素を書き込む際の配列の性能">Object.defineProperty() を用いて要素を書き込む際の配列の性能</h3>
+<p>Object.defineProperty() を使用して数値添字の配列要素を書き込む場合、現在の実装では内部の「配列部分」を放棄しているため、後の配列アクセスが非常に遅くなります。これを避けるには、a[123] = 321 のような直接代入で配列要素を記述してください。</p>
+<h3 id="グローバル評価コードに生成されるバイトコードは、関数コードより遅い。">グローバル/評価コードに生成されるバイトコードは、関数コードより遅い。</h3>
+<p>グローバルコードや評価コード用に生成されたバイトコードは、変数をレジスタに静的に割り当てることができず、明示的な名前ベースの変数読み取り/書き込みアクセスが使用されます。関数コード用に生成されたバイトコードにはこの制限がありません。ほとんどの変数はレジスタに静的に割り当てられ、アクセスには直接レジスタ参照が使用されます。</p>
+<p>これは、トップレベルのグローバル/評価コードを長時間実行するのでなければ、些細な問題です。回避策は簡単で、トップレベルから呼び出す関数の中にコードを入れておくことです。</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+main();
+</code></pre>
+<p>また、この目的のために無名関数を使用するイディオムもよくあります。</p>
+<pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+})();
+</code></pre>
+<h3 id="関数テンポラリは、予想以上に長くガベージコレクションのために生き続けるかもしれません">関数テンポラリは、予想以上に長くガベージコレクションのために生き続けるかもしれません</h3>
+<p>ECMAScript の関数は、固定されたレジスタのセットでバイトコードにコンパイルされます。いくつかのレジスタは引数や変数バインディングのために予約され、他のものはテンポラリとして使用されます。すべてのレジスタはガベージコレクションの観点から生きているとみなされ、関数が実際にはもう参照できない古い値を含む一時的なレジスタであってもです。このような一時的なレジスタは、他の式の評価によって上書きされるか、関数が終了するまで到達可能であると見なされます。関数の終了は、ガベージコレクションを確実にするために、唯一容易に予測できる条件です。</p>
+<p>もし、非常に長い時間実行し続ける関数があるならば、その関数には必要最小限の変数とテンポラリしかないはずです。例えば、次のようなコード構成にすることができます。</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runOnce</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// run one iteration, lots of temporaries</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foreverLoop</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (;;) {
+        runOnce();
+    }
+}
+</code></pre>
+<p>これは通常、長時間稼働する関数がなければ問題にはならない。</p>
+<h3 id="関数インスタンスはマークアンドスイープによってのみガベージコレクションされます">関数インスタンスはマークアンドスイープによってのみガベージコレクションされます</h3>
+<p>ECMAScript のすべての関数インスタンスは、デフォルトでは、関数のために自動的に作成されたプロトタイプオブジェクトとの参照ループ内にあります。関数インスタンスの prototype プロパティは prototype オブジェクトを指し、prototype のコンストラクタのプロパティは関数インスタンスに戻ります。このような参照ループを収集できるのは、今のところマークアンドスイープだけです。参照カウントのみで構築した場合（推奨しません）、関数インスタンスがメモリをリークしているように見えることがあります。メモリは、関連するヒープが破棄されたときに解放されます。</p>
+<p>参照ループを手動で解除することができます (ただし、これは少し面倒です)。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> f = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ };
+<span class="hljs-keyword">var</span> g = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ };
+<span class="hljs-keyword">var</span> h = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ };
+Duktape.fin(f, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ print(<span class="hljs-string">&apos;finalizer for f&apos;</span>); });
+Duktape.fin(g, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ print(<span class="hljs-string">&apos;finalizer for g&apos;</span>); });
+Duktape.fin(h, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ print(<span class="hljs-string">&apos;finalizer for h&apos;</span>); });
+
+<span class="hljs-comment">// not collected until heap destruction in a reference counting only build</span>
+f = <span class="hljs-literal">null</span>;            <span class="hljs-comment">// not collected immediately</span>
+
+<span class="hljs-comment">// break cycle by deleting &apos;prototype&apos; reference (alternative 1)</span>
+g.prototype = <span class="hljs-literal">null</span>;
+g = <span class="hljs-literal">null</span>;            <span class="hljs-comment">// collected immediately, finalizer runs</span>
+
+<span class="hljs-comment">// break cycle by deleting &apos;constructor&apos; reference (alternative 2)</span>
+h.prototype.constructor = <span class="hljs-literal">null</span>;
+h = <span class="hljs-literal">null</span>;            <span class="hljs-comment">// collected immediately, finalizer runs</span>
+
+<span class="hljs-comment">// mark-and-sweep triggers finalizer for &apos;f&apos;</span>
+Duktape.gc();
+</code></pre>
+<p>内部技術的な理由により、名前付き関数式は内部環境レコードオブジェクトとの参照ループの中にもあります。このループはユーザーコードから抜け出すことができず、マークアンドスイープのみがこのような関数を収集することができます。通常の関数宣言や無名関数にはこの制限はありません。例</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> fn = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myfunc</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// myfunc is in reference loop with an internal environment record,</span>
+    <span class="hljs-comment">// and can only be collected with mark-and-sweep.</span>
+}
+</code></pre>
+<p>Duktape 2.x以降、マーク・アンド・スイープは常に有効になっており、参照ループに参加しているオブジェクトは最終的に解放されます。設定オプションにより、定期的な「自発的」（緊急ではない）マーク＆スイープを無効化することで、時間に敏感な環境での収集の一時停止を減らすことができます。</p>
+<h3 id="非標準的な関数の「呼び出し元」プロパティの制限">非標準的な関数の「呼び出し元」プロパティの制限</h3>
+<p>DUK_USE_NONSTD_FUNC_CALLER_PROPERTY が与えられると、 Duktape は、例えば V8 や Spidermonkey と同様に、非標準の関数インスタンスの呼び出し側プロパティを更新します。しかし、いくつかの制限事項があります。</p>
+<ul>
+<li>evalコードから（非厳密な）関数が呼び出された場合、Duktapeはcallerに、evalコードが非厳密であればnull、厳密であればeval（組み込み関数evalの参照）をセットします。これは、例えばV8の動作とは異なっています。</li>
+<li>コルーチンとcallerは相性が悪く、コルーチンのコールスタックが完全に巻き戻された後でもcallerがnullでない状態で残っていることがあります。また、コルーチンがそのコールスタックが巻き戻される前にガベージコレクションされた場合、そのコールスタック内の関数の呼び出し元のプロパティは、今更更新されません。</li>
+</ul>
+<p>詳細については、内部の test-bi-function-nonstd-caller-prop.js テストケースを参照してください。</p>
+<h3 id="デバッガー休止状態でのガベージコレクション">デバッガー休止状態でのガベージコレクション</h3>
+<p>デバッガー・サポートが有効で、デバッガー・セッションがアクティブで、Duktape が一時停止しているとき、現在いくつかの制限があります。</p>
+<p>一時停止中はガベージ・コレクションが無効になるため、Duktape.gc() および duk_gc() への呼び出しは黙って無視されます。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="versioning.html" class="navigation navigation-prev " aria-label="Previous page: バージョン管理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="comparison_to_lua.html" class="navigation navigation-next " aria-label="Next page: Luaとの比較">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"制限事項","level":"1.34","depth":1,"next":{"title":"Luaとの比較","level":"1.35","depth":1,"path":"comparison_to_lua.md","ref":"comparison_to_lua.md","articles":[]},"previous":{"title":"バージョン管理","level":"1.33","depth":1,"path":"versioning.md","ref":"versioning.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"limitations.md","mtime":"2022-10-24T11:32:13.049Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T11:33:54.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

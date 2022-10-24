@@ -1,0 +1,1081 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ビルトイン · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="post_es5_features.html" />
+    
+    
+    <link rel="prev" href="type_algorithms.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">プログライングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    スタートアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="programming_model.html">
+            
+                <a href="programming_model.html">
+            
+                    
+                    プログラミングモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="stack_types.html">
+            
+                <a href="stack_types.html">
+            
+                    
+                    スタックタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    C言語の型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="type_algorithms.html">
+            
+                <a href="type_algorithms.html">
+            
+                    
+                    型のアルゴリズム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="duktape_built_ins.html">
+            
+                <a href="duktape_built_ins.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="post_es5_features.html">
+            
+                <a href="post_es5_features.html">
+            
+                    
+                    ポストES5の特徴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="custom_behavior.html">
+            
+                <a href="custom_behavior.html">
+            
+                    
+                    カスタム動作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="custom_json_formats.html">
+            
+                <a href="custom_json_formats.html">
+            
+                    
+                    カスタムJSONフォーマット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="custom_directives.html">
+            
+                <a href="custom_directives.html">
+            
+                    
+                    カスタムディレクティブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="buffer_objects.html">
+            
+                <a href="buffer_objects.html">
+            
+                    
+                    バッファー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="error_objects.html">
+            
+                <a href="error_objects.html">
+            
+                    
+                    エラー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="function_objects.html">
+            
+                <a href="function_objects.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="date_and_time.html">
+            
+                <a href="date_and_time.html">
+            
+                    
+                    日付と時刻
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="random_numbers.html">
+            
+                <a href="random_numbers.html">
+            
+                    
+                    乱数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="debugger.html">
+            
+                <a href="debugger.html">
+            
+                    
+                    デバッガー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="finalization.html">
+            
+                <a href="finalization.html">
+            
+                    
+                    終了処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="coroutines.html">
+            
+                <a href="coroutines.html">
+            
+                    
+                    コルーチン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="virtual_properties.html">
+            
+                <a href="virtual_properties.html">
+            
+                    
+                    仮想プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="symbols.html">
+            
+                <a href="symbols.html">
+            
+                    
+                    シンボル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="bytecode_dump_load.html">
+            
+                <a href="bytecode_dump_load.html">
+            
+                    
+                    バイトコード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="threading.html">
+            
+                <a href="threading.html">
+            
+                    
+                    スレッディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="sandboxing.html">
+            
+                <a href="sandboxing.html">
+            
+                    
+                    サンドボックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="memory_usage.html">
+            
+                <a href="memory_usage.html">
+            
+                    
+                    メモリ使用量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="compiling.html">
+            
+                <a href="compiling.html">
+            
+                    
+                    コンパイル方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="versioning.html">
+            
+                <a href="versioning.html">
+            
+                    
+                    バージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="limitations.html">
+            
+                <a href="limitations.html">
+            
+                    
+                    制限事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="comparison_to_lua.html">
+            
+                <a href="comparison_to_lua.html">
+            
+                    
+                    Luaとの比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ビルトイン</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="duktape_built_ins">Duktapeのビルトイン </h2>
+<p>このセクションでは、Duktape 固有の、そして ECMAScript 以外の組み込みオブジェクト、メソッド、および値についてまとめます。</p>
+<h3 id="グローバルオブジェクトプロパティの追加">グローバルオブジェクトプロパティの追加</h3>
+<table>
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>globalThis</td>
+<td>グローバル・オブジェクト自体を参照します。proposal-global を参照してください。</td>
+</tr>
+<tr>
+<td>Duktape</td>
+<td>Duktape組み込みオブジェクト。雑多な実装固有のものが含まれています。</td>
+</tr>
+<tr>
+<td>CBOR</td>
+<td>cbor-jsをベースにしたCBOR実験用API。</td>
+</tr>
+<tr>
+<td>TextEncoder</td>
+<td>WHATWG Encoding API の TextEncoder()。UTF-8エンコーディングで文字列をバッファに変換します。</td>
+</tr>
+<tr>
+<td>TextDecoder</td>
+<td>TextDecoder() WHATWG Encoding APIより。UTF-8エンコーディングを使って、バッファを文字列に変換します。</td>
+</tr>
+<tr>
+<td>performance</td>
+<td>High Resolution Time Level 2のperformance.now()。Navigation Timing の performance.timing のようなバインディングはサポートされていません。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="globalthis">globalThis</h3>
+<p>グローバルオブジェクトそのものを参照します（proposal-globalを参照）。(バインディングは当初&apos;global&apos;という名前でしたが、いくつかのWebサイトが壊れたため変更されました。)。</p>
+<h3 id="duktapeオブジェクト">Duktapeオブジェクト</h3>
+<table>
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>Duktapeのバージョン番号：(メジャー <em> 10000) + (マイナー </em> 100) + patch.</td>
+</tr>
+<tr>
+<td>env</td>
+<td>エンディアンとアーキテクチャのような最も重要で効果的なオプションのバージョン依存の要約。</td>
+</tr>
+<tr>
+<td>fin</td>
+<td>オブジェクトのファイナライザーを設定または取得する。</td>
+</tr>
+<tr>
+<td>enc</td>
+<td>値をエンコードする(hex, base-64, JX, JC)。Duktape.enc(&apos;hex&apos;, &apos;foo&apos;)。</td>
+</tr>
+<tr>
+<td>dec</td>
+<td>値（hex、base-64、JX、JC）をデコードする。Duktape.dec(&apos;base64&apos;, &apos;Zm9v&apos;)。</td>
+</tr>
+<tr>
+<td>info</td>
+<td>値の内部情報（ヒープアドレスやアロックサイズなど）をバージョン固有のフォーマットで取得する。C API の同等品は duk_inspect_value() である。</td>
+</tr>
+<tr>
+<td>act</td>
+<td>コールスタックエントリに関する情報を取得する。C APIでは、duk_inspect_callstack_entry()がこれに相当する。</td>
+</tr>
+<tr>
+<td>gc</td>
+<td>マーク・アンド・スイープ・ガベージ・コレクションをトリガする。</td>
+</tr>
+<tr>
+<td>compact</td>
+<td>値（オブジェクト）に割り当てられたメモリをコンパクトにする。</td>
+</tr>
+<tr>
+<td>errCreate</td>
+<td>作成されたエラーを修正/置換するためのコールバック。</td>
+</tr>
+<tr>
+<td>errThrow</td>
+<td>スローされようとしているエラーを修正／置換するためのコールバック。</td>
+</tr>
+<tr>
+<td>Pointer</td>
+<td>ポインタのコンストラクタ(関数)。</td>
+</tr>
+<tr>
+<td>Thread</td>
+<td>スレッド コンストラクタ（関数）。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="version">version</h4>
+<p>versionプロパティは、バージョンに基づく機能の検出と動作を可能にします。バージョン番号は直接比較することができます：論理的に高いバージョンは、数値的にも高くなります。例えば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> Duktape !== <span class="hljs-string">&apos;object&apos;</span>) {
+    print(<span class="hljs-string">&apos;not Duktape&apos;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Duktape.version &gt;= <span class="hljs-number">20403</span>) {
+    print(<span class="hljs-string">&apos;Duktape 2.4.3 or higher&apos;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Duktape.version &gt;= <span class="hljs-number">10500</span>) {
+    print(<span class="hljs-string">&apos;Duktape 1.5.0 or higher (but lower than 2.4.3)&apos;</span>);
+} <span class="hljs-keyword">else</span> {
+    print(<span class="hljs-string">&apos;Duktape lower than 1.5.0&apos;</span>);
+}
+</code></pre>
+<p>プレリリースのバージョンの値は、実際のリリースより1つ少なくなります。例えば、0.12.0プレリリースは1199、1.3.0プレリリースは10299となります。バージョニングを参照してください。</p>
+<p>機能検出を行う際には、Duktapeが存在するかどうかを確認することを忘れないでください。あなたのコードは通常、できるだけ多くのエンジンで動作するはずです。チェックの際に、識別子の直接参照を使うというよくある落とし穴は避けてください。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Bad idea: ReferenceError if missing</span>
+<span class="hljs-keyword">if</span> (!Duktape) {
+    print(<span class="hljs-string">&apos;not Duktape&apos;</span>);
+}
+
+<span class="hljs-comment">// Better: check through &apos;this&apos; (bound to global)</span>
+<span class="hljs-keyword">if</span> (!<span class="hljs-built_in">this</span>.Duktape) {
+    print(<span class="hljs-string">&apos;not Duktape&apos;</span>);
+}
+
+<span class="hljs-comment">// Better: use typeof to check also type explicitly</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> Duktape !== <span class="hljs-string">&apos;object&apos;</span>) {
+    print(<span class="hljs-string">&apos;not Duktape&apos;</span>);
+}
+</code></pre>
+<h4 id="env">env</h4>
+<p>envは、最も重要で効果的なコンパイルオプションを、バージョン固有の、かなり不可解な方法で要約したものです。この形式はバージョンに依存し、プログラム的に解析することは意図されていません。これは主に開発者のために役立ちます（値を設定するコードについては duk_hthread_builtins.c を参照してください）。</p>
+<p>Duktape 1.1.0 の例です。</p>
+<pre><code class="lang-c">ll u n p2 a4 x64 linux gcc     <span class="hljs-comment">// l|b|m integer endianness, l|b|m IEEE double endianness</span>
+                               <span class="hljs-comment">// p|u packed/unpacked tval</span>
+                               <span class="hljs-comment">// n|various, memory optimization options (n = none)</span>
+                               <span class="hljs-comment">// p1|p2|p3 prop memory layout</span>
+                               <span class="hljs-comment">// a1|a4|a8: align target</span>
+                               <span class="hljs-comment">// x64|x86|arm|etc: architecture</span>
+                               <span class="hljs-comment">// linux|windows|etc: operating system</span>
+                               <span class="hljs-comment">// gcc|clang|msvc|etc: compiler</span>
+</code></pre>
+<p>エンディアンは、lがリトルエンディアン、bがビッグエンディアン、mがミックスエンディアン（レガシーARMデバイス、The FPAアーキテクチャなど参照）を表わします。</p>
+<h4 id="fin">fin()</h4>
+<p>単一の引数で呼び出された場合、オブジェクトの現在のファイナライザを取得します。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> currFin = Duktape.fin(o);
+</code></pre>
+<p>2つの引数で呼ばれた場合、オブジェクトのファイナライザを設定する（未定義を返す）。</p>
+<pre><code class="lang-javascript">Duktape.fin(o, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">x</span>) </span>{ print(<span class="hljs-string">&apos;finalizer called&apos;</span>); });
+Duktape.fin(o, <span class="hljs-literal">undefined</span>);  <span class="hljs-comment">// disable</span>
+</code></pre>
+<h4 id="enc">enc</h4>
+<p>enc() は、その引数の値を選択されたフォーマットにエンコードします。最初の引数はフォーマット（現在サポートされているのは &quot;hex&quot;, &quot;base64&quot;, &quot;jx&quot;, &quot;jc&quot;）、2番目の引数はエンコードする値、それ以降の引数はフォーマットに依存するものである。</p>
+<p>hex &quot;と &quot;base64 &quot;の場合、バッファの値はそのままエンコードされ、その他の値は文字列強制された後、内部バイト表現（拡張UTF-8）がエンコードされる。その結果が文字列となる。例えば、ある文字列をbase64にエンコードする場合。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> result = Duktape.enc(<span class="hljs-string">&apos;base64&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>);
+print(result);  <span class="hljs-comment">// prints &apos;Zm9v&apos;</span>
+</code></pre>
+<p>jx&quot;、&quot;jc &quot;の場合、フォーマット名に続く引数リストは、JSON.stringify()と同様、value、replacer（オプション）、スペース（オプション）である。たとえば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> result = Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, { <span class="hljs-attr">foo</span>: <span class="hljs-number">123</span> }, <span class="hljs-literal">null</span>, <span class="hljs-number">4</span>);
+print(result);  <span class="hljs-comment">// prints JX encoded {foo:123} with 4-space indent</span>
+</code></pre>
+<h4 id="dec">dec()</h4>
+<p>dec() は enc() の逆機能を提供します。</p>
+<p>hex&quot; と &quot;base64&quot; については、入力値はまず文字列強制されます (文字列をデコードすることにのみ意味があります)。結果は常にプレーンなバッファとなります。たとえば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> result = Duktape.dec(<span class="hljs-string">&apos;base64&apos;</span>, <span class="hljs-string">&apos;Zm9v&apos;</span>);
+print(<span class="hljs-keyword">typeof</span> result, result);  <span class="hljs-comment">// prints &apos;object foo&apos;</span>
+</code></pre>
+<p>もし、プレーンなバッファよりも完全なUint8Arrayを好むのであれば、以下のように結果を強制することができます。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> result = <span class="hljs-built_in">Object</span>(Duktape.dec(<span class="hljs-string">&apos;base64&apos;</span>, <span class="hljs-string">&apos;Zm9v&apos;</span>));
+print(<span class="hljs-keyword">typeof</span> result, result);  <span class="hljs-comment">// prints &apos;object foo&apos;</span>
+</code></pre>
+<p>文字列の値を取得したい場合は、以下のようにプレーンバッファを文字列に変換することができます。</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 入力をUTF-8としてデコードするTextDecoderを使用します。</span>
+<span class="hljs-comment">// また、Node.jsのBufferバインディングを使用しても同様の結果を得ることができます。</span>
+
+<span class="hljs-keyword">var</span> result = <span class="hljs-keyword">new</span> TextDecoder().decode(Duktape.dec(<span class="hljs-string">&apos;base64&apos;</span>, <span class="hljs-string">&apos;Zm9v&apos;</span>));
+print(<span class="hljs-keyword">typeof</span> result, result);  <span class="hljs-comment">// prints &apos;string foo&apos;</span>
+</code></pre>
+<p>jx&quot;、&quot;jc &quot;の場合、フォーマット名に続く引数リストは、JSON.parse()と同様、text、reviver（オプション）である。例えば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> result = Duktape.dec(<span class="hljs-string">&apos;jx&apos;</span>, <span class="hljs-string">&quot;{foo:123}&quot;</span>);
+print(result.foo);  <span class="hljs-comment">// prints 123</span>
+</code></pre>
+<h4 id="info">info()</h4>
+<p>Duktape.info()は、その引数値に関連する内部情報を公開するオブジェクトを返します。現在のフィールドの説明については、 duk_inspect_value() を参照してください。</p>
+<blockquote>
+<p>結果オブジェクトのプロパティはバージョン保証の対象外であり、マイナーバージョン（パッチバージョンは除く）であっても互換性のない形で変更される可能性があります。</p>
+</blockquote>
+<h4 id="act">act()</h4>
+<p>コールスタックのエントリに関する情報を取得します。1 は最上位 (最内周) のエントリ、-2 はその下のエントリなどです。コールスタックエントリを記述したオブジェクトを返すか、エントリが存在しない場合は未定義を返す。現在のフィールドの説明については、 duk_inspect_callstack_entry() を参照してください。</p>
+<blockquote>
+<p>結果オブジェクトのプロパティはバージョン保証の対象外であり、マイナーバージョンでも互換性のない形で変更される可能性がある（パッチバージョンは不可）。</p>
+</blockquote>
+<p>例:</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">dump</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> i, t;
+    <span class="hljs-keyword">for</span> (i = -<span class="hljs-number">1</span>; ; i--) {
+        t = Duktape.act(i);
+        <span class="hljs-keyword">if</span> (!t) { <span class="hljs-keyword">break</span>; }
+        print(i, t.lineNumber, t.function.name, Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, t));
+    }
+}
+
+dump();
+</code></pre>
+<p>この例をコマンドラインツールで実行すると、現在、次のようなものが表示されます。</p>
+<pre><code class="lang-javascript">-<span class="hljs-number">1</span> <span class="hljs-number">0</span> act {<span class="hljs-attr">lineNumber</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">pc</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">function</span>:{<span class="hljs-attr">_func</span>:<span class="hljs-literal">true</span>}}
+-<span class="hljs-number">2</span> <span class="hljs-number">4</span> dump {<span class="hljs-attr">lineNumber</span>:<span class="hljs-number">4</span>,<span class="hljs-attr">pc</span>:<span class="hljs-number">16</span>,<span class="hljs-attr">function</span>:{<span class="hljs-attr">_func</span>:<span class="hljs-literal">true</span>}}
+-<span class="hljs-number">3</span> <span class="hljs-number">10</span> <span class="hljs-built_in">global</span> {<span class="hljs-attr">lineNumber</span>:<span class="hljs-number">10</span>,<span class="hljs-attr">pc</span>:<span class="hljs-number">5</span>,<span class="hljs-attr">function</span>:{<span class="hljs-attr">_func</span>:<span class="hljs-literal">true</span>}}
+</code></pre>
+<p>興味深い項目は lineNumber と function で、これは例えば関数名などを提供します。</p>
+<p>Duktape.act() を使って、現在の行番号を取得するヘルパーを実装することも可能です。</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCurrentLine</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">&apos;use duk notail&apos;</span>;
+
+    <span class="hljs-comment">// テールコールを防止し、呼び出しの活性化を確保します。</span>
+    <span class="hljs-comment">// Call stack indices: -1 = Duktape.act, -2 = getCurrentLine, -3 = caller</span>
+
+
+    <span class="hljs-keyword">var</span> a = Duktape.act(-<span class="hljs-number">3</span>) || {};
+    <span class="hljs-keyword">return</span> a.lineNumber;
+}
+print(<span class="hljs-string">&apos;running on line:&apos;</span>, getCurrentLine());
+</code></pre>
+<h4 id="gc">gc()</h4>
+<p>強制的なマーク＆スイープ収集のトリガーをかける。この呼び出しは、オプションで整数の flags フィールドを取る。定数については、 duktape.h を参照のこと。</p>
+<h4 id="compact">compact()</h4>
+<p>ターゲットオブジェクトに割り当てられたメモリを最小にする。C API コール duk_compact() と同じですが、ECMAScript コードからアクセス可能です。オブジェクト以外の引数で呼び出された場合、この呼び出しはノー・オペレーションです。引数の値は関数によって返され、これにより、以下のようなコードが可能になります。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = {
+    <span class="hljs-attr">foo</span>: Duktape.compact({ <span class="hljs-attr">bar</span>: <span class="hljs-number">123</span> })
+}
+</code></pre>
+<p>この呼び出しは、オブジェクトが新しいプロパティを獲得する可能性が低いことがわかっているが、万が一獲得した場合にオブジェクトを封印またはフリーズしたくない場合に有用である。</p>
+<h4 id="errcreate-と-errthrow">errCreate() と errThrow()</h4>
+<p>これらは、ユーザーコードによって設定され、エラー作成時（errCreate）またはエラースロー時（errThrow）に処理/置換することができる。どちらの値も初期状態では存在しません。</p>
+<p>詳細はエラーハンドラ(errCreateとerrThrow)を参照してください。</p>
+<h3 id="duktapepointer-コンストラクタ">Duktape.Pointer (コンストラクタ)</h3>
+<table>
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prototype</td>
+<td>Pointer オブジェクトのプロトタイプ</td>
+</tr>
+</tbody>
+</table>
+<p>Pointer コンストラクタは、通常の関数としてもコンストラクタとしても呼び出すことができる関数です。</p>
+<ul>
+<li>関数として呼び出された場合は、カスタムの ToPointer クラスタを使って最初の引数をポインタに変換します。戻り値は普通のポインタです（Pointerオブジェクトではありません）。</li>
+<li>コンストラクタとして呼び出された場合、カスタムのToPointer強制を使って最初の引数をポインタに強制変換します。内部値は、強制終了の結果得られたポインタである Pointer オブジェクトを返す。新しく作成されたPointerの内部プロトタイプはDuktape.Pointer.prototypeオブジェクトになります。</li>
+</ul>
+<h3 id="duktapepointerprototype">Duktape.Pointer.prototype</h3>
+<table>
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toString</td>
+<td>Pointer を印字可能な文字列に変換する</td>
+</tr>
+<tr>
+<td>valueOf</td>
+<td>Pointer が保持するプリミティブポインタの値を返す</td>
+</tr>
+</tbody>
+</table>
+<p>toString() と valueOf は、プレーンなポインタと Pointer オブジェクトの両方をこのバインディングとして受け付けます。これにより、次のようなコードが可能になります。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> plain_ptr = Duktape.Pointer({ <span class="hljs-attr">test</span>: <span class="hljs-string">&apos;object&apos;</span> });
+print(plain_ptr.toString());
+</code></pre>
+<h3 id="duktapethread-コンストラクタ">Duktape.Thread (コンストラクタ)</h3>
+<table>
+<thead>
+<tr>
+<th>プロパティ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>prototype</td>
+<td>Thread オブジェクトのプロトタイプ</td>
+</tr>
+<tr>
+<td>resume</td>
+<td>値またはエラーでターゲットスレッドを再開する。引数： ターゲットスレッド、値、値を投げるかどうかを示すフラグ（オプション、デフォルトfalse）</td>
+</tr>
+<tr>
+<td>yield</td>
+<td>現在のスレッドから値またはエラーを投げる。引数： value、value を投げるかどうかのフラグ（オプション、デフォルトfalse）</td>
+</tr>
+<tr>
+<td>current</td>
+<td>現在実行中のスレッドオブジェクト</td>
+</tr>
+</tbody>
+</table>
+<p>Threadコンストラクタは、通常の関数としてもコンストラクタとしても呼び出すことができる関数です。動作はどちらの場合も同じです。</p>
+<p>最初の引数は関数であるかどうかチェックされます（もしそうでなければ TypeError が投げられます）。この関数は ECMAScript の関数でなければなりません（バインドまたは非バインド）。戻り値は、初期関数が引数関数であると記録された新しいスレッドである（この関数は新しいスレッドが最初に再開されたときに実行を開始する）。新しく作られたスレッドの内部プロトタイプは、Duktape.Thread.prototypeオブジェクトになります。</p>
+<h3 id="duktapethreadprototype">Duktape.Thread.prototype</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No properties at the moment.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cbor">CBOR</h3>
+<p>CBOR (Concise Binary Object Representation) は、任意の構造化された値のためのコンパクトなバイナリ符号化方式です。JSONよりも高速で、一部のECMAScriptの値をより正確に符号化することができる。JSONの代替として、状態のシリアライゼーションやIPCなどに適している。参照。</p>
+<p>CBOR - Concise Binary Object Representation (cbor.io) を参照。
+コンサイスバイナリオブジェクト表現(CBOR) (RFC 7049)
+CBORオブジェクトは、任意のECMAScriptの値をCBORに、またはその逆に変換するエンコード/デコード関数を提供します。公式のCBOR APIはまだないので、今のところAPIはcbor-jsをベースにしています。また、CBORのためのC言語のAPIもあります。</p>
+<blockquote>
+<p>このバインディングは現在実験的なものであり、詳細は時間の経過とともに変更される可能性があります。例えば、ECMAScript の値をより正確にシリアライズするためのカスタム CBOR タグが登録されつつあります。</p>
+</blockquote>
+<p>例:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> enc = CBOR.encode([ <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>, { <span class="hljs-attr">quux</span>: <span class="hljs-literal">true</span> } ]);
+print(Duktape.enc(<span class="hljs-string">&apos;hex&apos;</span>, enc));  <span class="hljs-comment">// = 8363666f6f63626172a16471757578f5</span>
+<span class="hljs-keyword">var</span> dec = CBOR.decode(enc);
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, dec));   <span class="hljs-comment">// = [&quot;foo&quot;,&quot;bar&quot;,{quux:true}]</span>
+</code></pre>
+<h3 id="textencoder">TextEncoder</h3>
+<p>TextEncoder() は WHATWG エンコーディング API の一部で、 文字列を UTF-8 エンコーディングでバッファ (Uint8Array) に格納するためのクリーンな方法を提供します。サロゲートペアは処理中に結合されます。例えば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> str = <span class="hljs-string">&apos;\u{1f4a9}&apos;</span>;                   <span class="hljs-comment">// non-BMP codepoint</span>
+print(str.length);                       <span class="hljs-comment">// length is 2, represented as a surrogate pair</span>
+<span class="hljs-keyword">var</span> u8 = <span class="hljs-keyword">new</span> TextEncoder().encode(str);
+print(u8.length);                        <span class="hljs-comment">// length is 4, a single UTF-8 codepoint</span>
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, u8));            <span class="hljs-comment">// |f09f92a9|, UTF-8 bytes F0 9F 92 A9</span>
+</code></pre>
+<h3 id="textdecoder">TextDecoder</h3>
+<p>TextDecoder() は WHATWG エンコーディング API の一部で、バッファを UTF-8 エンコーディングの文字列にデコードするためのすっきりした方法を提供します。BMP 以外のコードポイントは、結果の文字列の中でサロゲートペアとして表現されます。例えば</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> u8 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>([ <span class="hljs-number">0xf0</span>, <span class="hljs-number">0x9f</span>, <span class="hljs-number">0x92</span>, <span class="hljs-number">0xa9</span> ]);  <span class="hljs-comment">// a single non-BMP codepoint</span>
+<span class="hljs-keyword">var</span> str = <span class="hljs-keyword">new</span> TextDecoder().decode(u8);
+print(str.length);                       <span class="hljs-comment">// length is 2, represented as a surrogate pair</span>
+print(str.charCodeAt(<span class="hljs-number">0</span>));                <span class="hljs-comment">// 55357, high surrogate</span>
+print(str.charCodeAt(<span class="hljs-number">1</span>));                <span class="hljs-comment">// 56489, low surrogate</span>
+</code></pre>
+<h3 id="performance">performance</h3>
+<p>performance.now() は、指定されない原点からのミリ秒単位の単調時間 (利用可能な場合は端数を含む) を提供します。返り値は DUK_USE_GET_MONOTONIC_TIME() のもので、 DUK_USE_DATE_GET_NOW() にフォールバックしています。実際のモノトニック時間プロバイダが利用可能な場合、戻り値は日付/時間の調整による「タイムジャンプ」なしでリアルタイムで進むことが保証されます。これは、パフォーマンス測定、壁時計時間ではなく現在時刻を基準としたイベントのスケジューリング、レート制限などに有用です。例</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testFunction</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1e6</span>; i++) {}
+}
+
+<span class="hljs-keyword">var</span> t1 = performance.now();
+testFunction();
+<span class="hljs-keyword">var</span> t2 = performance.now();
+print(<span class="hljs-string">&apos;test took:&apos;</span>, (t2 - t1), <span class="hljs-string">&apos;milliseconds&apos;</span>);
+</code></pre>
+<p>performance.timeOriginは、現在（Duktape 2.2.0）、Duktapeでのセマンティクスが決定されるまで、意図的に欠落させています。</p>
+<p>performance.timingのようなNavigation Timingバインディングは、現在サポートされていません。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="type_algorithms.html" class="navigation navigation-prev " aria-label="Previous page: 型のアルゴリズム">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="post_es5_features.html" class="navigation navigation-next " aria-label="Next page: ポストES5の特徴">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ビルトイン","level":"1.8","depth":1,"next":{"title":"ポストES5の特徴","level":"1.9","depth":1,"path":"post_es5_features.md","ref":"post_es5_features.md","articles":[]},"previous":{"title":"型のアルゴリズム","level":"1.7","depth":1,"path":"type_algorithms.md","ref":"type_algorithms.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"duktape_built_ins.md","mtime":"2022-10-24T11:21:24.331Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T11:33:54.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

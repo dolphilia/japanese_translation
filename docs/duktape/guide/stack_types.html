@@ -1,0 +1,987 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>スタックタイプ · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="api_c_types.html" />
+    
+    
+    <link rel="prev" href="programming_model.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">プログライングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    スタートアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="programming_model.html">
+            
+                <a href="programming_model.html">
+            
+                    
+                    プログラミングモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="stack_types.html">
+            
+                <a href="stack_types.html">
+            
+                    
+                    スタックタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    C言語の型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="type_algorithms.html">
+            
+                <a href="type_algorithms.html">
+            
+                    
+                    型のアルゴリズム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="duktape_built_ins.html">
+            
+                <a href="duktape_built_ins.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="post_es5_features.html">
+            
+                <a href="post_es5_features.html">
+            
+                    
+                    ポストES5の特徴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="custom_behavior.html">
+            
+                <a href="custom_behavior.html">
+            
+                    
+                    カスタム動作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="custom_json_formats.html">
+            
+                <a href="custom_json_formats.html">
+            
+                    
+                    カスタムJSONフォーマット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="custom_directives.html">
+            
+                <a href="custom_directives.html">
+            
+                    
+                    カスタムディレクティブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="buffer_objects.html">
+            
+                <a href="buffer_objects.html">
+            
+                    
+                    バッファー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="error_objects.html">
+            
+                <a href="error_objects.html">
+            
+                    
+                    エラー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="function_objects.html">
+            
+                <a href="function_objects.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="date_and_time.html">
+            
+                <a href="date_and_time.html">
+            
+                    
+                    日付と時刻
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="random_numbers.html">
+            
+                <a href="random_numbers.html">
+            
+                    
+                    乱数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="debugger.html">
+            
+                <a href="debugger.html">
+            
+                    
+                    デバッガー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="finalization.html">
+            
+                <a href="finalization.html">
+            
+                    
+                    終了処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="coroutines.html">
+            
+                <a href="coroutines.html">
+            
+                    
+                    コルーチン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="virtual_properties.html">
+            
+                <a href="virtual_properties.html">
+            
+                    
+                    仮想プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="symbols.html">
+            
+                <a href="symbols.html">
+            
+                    
+                    シンボル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="bytecode_dump_load.html">
+            
+                <a href="bytecode_dump_load.html">
+            
+                    
+                    バイトコード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="threading.html">
+            
+                <a href="threading.html">
+            
+                    
+                    スレッディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="sandboxing.html">
+            
+                <a href="sandboxing.html">
+            
+                    
+                    サンドボックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="memory_usage.html">
+            
+                <a href="memory_usage.html">
+            
+                    
+                    メモリ使用量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="compiling.html">
+            
+                <a href="compiling.html">
+            
+                    
+                    コンパイル方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="versioning.html">
+            
+                <a href="versioning.html">
+            
+                    
+                    バージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="limitations.html">
+            
+                <a href="limitations.html">
+            
+                    
+                    制限事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="comparison_to_lua.html">
+            
+                <a href="comparison_to_lua.html">
+            
+                    
+                    Luaとの比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >スタックタイプ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="stack_types">スタックタイプ </h2>
+<h3 id="概要">概要</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Type constant</th>
+<th>Type mask constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(none)</td>
+<td>DUK_TYPE_NONE</td>
+<td>DUK_TYPE_MASK_NONE</td>
+<td>no type (missing value, invalid index, etc)</td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>DUK_TYPE_UNDEFINED</td>
+<td>DUK_TYPE_MASK_UNDEFINED</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>null</td>
+<td>DUK_TYPE_NULL</td>
+<td>DUK_TYPE_MASK_NULL</td>
+<td>null</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>DUK_TYPE_BOOLEAN</td>
+<td>DUK_TYPE_MASK_BOOLEAN</td>
+<td>true and false</td>
+</tr>
+<tr>
+<td>number</td>
+<td>DUK_TYPE_NUMBER</td>
+<td>DUK_TYPE_MASK_NUMBER</td>
+<td>IEEE double</td>
+</tr>
+<tr>
+<td>string</td>
+<td>DUK_TYPE_STRING</td>
+<td>DUK_TYPE_MASK_STRING</td>
+<td>immutable (plain) string or (plain) Symbol</td>
+</tr>
+<tr>
+<td>object</td>
+<td>DUK_TYPE_OBJECT</td>
+<td>DUK_TYPE_MASK_OBJECT</td>
+<td>object with properties</td>
+</tr>
+<tr>
+<td>buffer</td>
+<td>DUK_TYPE_BUFFER</td>
+<td>DUK_TYPE_MASK_BUFFER</td>
+<td>mutable (plain) byte buffer, fixed/dynamic/external; mimics an Uint8Array</td>
+</tr>
+<tr>
+<td>pointer</td>
+<td>DUK_TYPE_POINTER</td>
+<td>DUK_TYPE_MASK_POINTER</td>
+<td>opaque pointer (void *)</td>
+</tr>
+<tr>
+<td>lightfunc</td>
+<td>DUK_TYPE_LIGHTFUNC</td>
+<td>DUK_TYPE_MASK_LIGHTFUNC</td>
+<td>plain Duktape/C function pointer (non-object); mimics a Function</td>
+</tr>
+</tbody>
+</table>
+<h3 id="メモリ割り当て">メモリ割り当て</h3>
+<p>以下のスタックタイプは、追加のヒープ割り当てを伴います。</p>
+<ul>
+<li>文字列: 1回の割り当てで、ヒープと文字列ヘッダが結合され、その後に不変の文字列データが続きます。外部文字列が使用される場合（デフォルトでは有効ではありません、一般的に低メモリ環境では）、文字列データは外部である可能性もあります。</li>
+<li>オブジェクト：1つのアロケーションは、ヒープとオブジェクトヘッダを組み合わせたものに使用され、もう1つのアロケーションはオブジェクトプロパティに使用されます。プロパティの割り当てには、配列エントリと通常のプロパティの両方が含まれ、オブジェクトが十分に大きい場合は、検索を高速化するためにハッシュテーブルが含まれます。</li>
+<li>バッファ：固定バッファの場合、単一のアロケーションは、ヒープとバッファヘッダを組み合わせたものを含み、その後に変更可能な固定サイズのバッファが続きます。動的バッファの場合、現在のバッファは別々に割り当てられます。外部バッファの場合、単一のヒープオブジェクトが割り当てられ、ユーザバッファを指します。</li>
+</ul>
+<p>文字列とバッファはプリミティブ (pass-by-value) 型とみなされますが、メモリ割り当ての観点からはヒープで割り当てられる型です。</p>
+<h3 id="ポインタの安定性">ポインタの安定性</h3>
+<p>Duktapeによって割り当てられたヒープ・オブジェクトは、安定したポインターを持ちます：ガベージ・コレクションの観点から到達可能である間は、オブジェクトはメモリー内で再配置されません。これはメイン・ヒープ・オブジェクトの場合ですが、ダイナミック・プロパティ・ テーブルやダイナミック・バッファ・データ領域のような、オブジェクトに関連する追加割 り当てについては、必ずしもそうとは限りません。ヒープオブジェクトは、到達可能なスレッドのバリュースタックに存在するか、グローバルオブジェクトを通じて到達可能である場合などに到達可能です。ヒープオブジェクトが到達不可能になると、そのオブジェクトを参照するユーザCコードによって保持されるポインタは安全でなくなり、もはや再参照されるべきではなくなります。</p>
+<p>実際には、ユーザコードが直接参照するヒープ割り当てデータは、文字列、固定バッファ、ダイナミックバッファだけです。文字列と固定バッファのデータ領域は安定しています。Duktape/C関数が戻った後でも、文字列や固定バッファがガベージコレクションの観点から常に到達可能である限り、そのデータを参照するCポインタを保持することは安全です。ただし、Duktape/Cのバリュースタック引数などについては、特別な取り決めがない限り、この限りではありません。</p>
+<p>ダイナミックバッファのデータ領域は安定したポインタを持ちません。バッファ自体は安定したアドレスを持つヒープヘッダを持っていますが、現在のバッファは別に割り当てられ、バッファのサイズが変更されたときに再配置される可能性があります。Duktape/C関数が戻った後にポインタを保持するのは、おそらく避けた方が良いでしょう（バッファがサイズ変更されていないことを確認する簡単な方法がないため）。</p>
+<p>外部バッファの場合、データ・ポインタの安定性は、ポインタを設定・更新するユーザ・コードに依存します。</p>
+<h3 id="タイプマスク">タイプマスク</h3>
+<p>タイプ・マスクを使用すると、呼び出し側のコードで、ある型が特定の型セットに属しているかどうかを簡単にチェックできます。例えば、あるスタック値が数値、文字列、またはオブジェクトであることをチェックするためです。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_get_type_mask(ctx, <span class="hljs-number">-3</span>) &amp; (DUK_TYPE_MASK_NUMBER |
+                                  DUK_TYPE_MASK_STRING |
+                                  DUK_TYPE_MASK_OBJECT)) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;type is number, string, or object\n&quot;</span>);
+}
+</code></pre>
+<p>さらに便利にタイプのセットをマッチングさせるための特定のAPIコールがあります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_check_type_mask(ctx, <span class="hljs-number">-3</span>, DUK_TYPE_MASK_NUMBER |
+                                 DUK_TYPE_MASK_STRING |
+                                 DUK_TYPE_MASK_OBJECT)) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;type is number, string, or object\n&quot;</span>);
+}
+</code></pre>
+<p>これらは、代替品よりも高速でコンパクトです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// alt 1</span>
+<span class="hljs-keyword">if</span> (duk_is_number(ctx, <span class="hljs-number">-3</span>) || duk_is_string(ctx, <span class="hljs-number">-3</span>) || duk_is_object(ctx, <span class="hljs-number">-3</span>)) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;type is number, string, or object\n&quot;</span>);
+}
+
+<span class="hljs-comment">// alt 2</span>
+<span class="hljs-keyword">int</span> t = duk_get_type(ctx, <span class="hljs-number">-3</span>);
+<span class="hljs-keyword">if</span> (t == DUK_TYPE_NUMBER || t == DUK_TYPE_STRING || t == DUK_TYPE_OBJECT) {
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;type is number, string, or object\n&quot;</span>);
+}
+</code></pre>
+<h3 id="none">None</h3>
+<p>none 型は実際には型ではなく、値が存在しないこと、スタックインデックスが無効であること等を示すために API で使用されます。</p>
+<h3 id="undefined未定義">Undefined(未定義)</h3>
+<p>undefined型は ECMAScript の未定義に対応し、ヌルとは区別されます。</p>
+<p>アクティブなバリュースタックの範囲外から読み込まれた値は、undefinedとして読み返される。</p>
+<h3 id="null">Null</h3>
+<p>Null 型は ECMAScript の null にマップされます。</p>
+<h3 id="boolean">Boolean</h3>
+<p>Boolean型は、C API では整数として表現されます：ゼロは偽、非ゼロは真です。</p>
+<p>API 呼び出しの引数として boolean 値を与える場合、0 以外の値はすべて &quot;true&quot; 値として扱われます。APIコールが真偽値を返す場合、常に値1が &quot;true &quot;の値として使用される。これにより、ある種のC言語のイディオムが使用できるようになる。例えば、以下のように、APIコールの戻り値から直接ビットマスクを構築することができる。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* this works and generates nice code */</span>
+<span class="hljs-keyword">int</span> bitmask = (duk_get_boolean(ctx, <span class="hljs-number">-3</span>) &lt;&lt; <span class="hljs-number">2</span>) |
+              (duk_get_boolean(ctx, <span class="hljs-number">-2</span>) &lt;&lt; <span class="hljs-number">1</span>) |
+              duk_get_boolean(ctx, <span class="hljs-number">-1</span>);
+
+<span class="hljs-comment">/* more verbose variant not relying on &quot;true&quot; being represented by 1 */</span>
+<span class="hljs-keyword">int</span> bitmask = ((duk_get_boolean(ctx, <span class="hljs-number">-3</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>) &lt;&lt; <span class="hljs-number">2</span>) |
+              ((duk_get_boolean(ctx, <span class="hljs-number">-2</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>) &lt;&lt; <span class="hljs-number">1</span>) |
+              (duk_get_boolean(ctx, <span class="hljs-number">-1</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>);
+
+<span class="hljs-comment">/* another verbose variant */</span>
+<span class="hljs-keyword">int</span> bitmask = (duk_get_boolean(ctx, <span class="hljs-number">-3</span>) ? (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">2</span>) : <span class="hljs-number">0</span>) |
+              (duk_get_boolean(ctx, <span class="hljs-number">-2</span>) ? (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">1</span>) : <span class="hljs-number">0</span>) |
+              (duk_get_boolean(ctx, <span class="hljs-number">-1</span>) ? <span class="hljs-number">1</span> : <span class="hljs-number">0</span>);
+</code></pre>
+<h3 id="数値">数値</h3>
+<p>数値型は IEEE の double であり、±無限大と NaN 値を含む。ゼロの符号も保存される。IEEE doubleは、53ビットまでのすべての整数を正確に表現する。</p>
+<p>IEEE doubleは、NaN値に対して追加の信号ビットを持つことができる。これらのビットは、Duktape内部のタグ付き型表現（8バイトのパック値使用時）で使用されるため、Duktape APIにおけるNaN値は正規化されます。具体的には、あるNaN値をバリュースタックにプッシュすると、別の（正規化された）NaN値が出てくることがあります。NaN がそのままの形で保存されることを当てにしないように。</p>
+<h3 id="文字列">文字列</h3>
+<p>文字列スタックタイプは、プレーン文字列とプレーンシンボル（ES2015 で導入）の両方を表現するために使用されます。文字列は、ある長さの任意のバイト列であり、内部に NUL (0x00) 値を含むことができます。文字列は、C言語のコーディングの便宜上、常に自動的にNULで終端されます。NULターミネーターは文字列の長さの一部としてカウントされません。例えば、文字列 &quot;foo&quot; はバイト長 3 で、メモリには { &apos;f&apos;, &apos;o&apos;, &apos;o&apos;, &apos;\0&apos; } という形式で格納されます。NUL終端が保証されているため、アプリケーションで内部NULが問題にならない限り、文字列は常に単純なconst char *を使って指定することができます。呼び出し側のコードは、Duktapeが保持する文字列データを直接参照することができます。このような文字列データ・ポインタは、Duktapeヒープ内で文字列に到達可能である限り有効です（そして安定しています）。</p>
+<p>文字列は効率化のために内部化されており、ある文字列のコピーは一度に1つだけ存在します。文字列は不変であり、Cコードを呼び出しても絶対に変更してはいけません。変更すると、診断が困難な非常に不可思議な問題が発生します。</p>
+<p>ECMAScript の文字列は、U+0000 から U+FFFF までの任意の 16 ビットのコードポイントを含むことができますが、BMP 以外のコードポイントを表現することはできません。これは、ECMAScriptの標準では文字列がこのように定義されているためです。Duktapeでは、ECMAScriptの文字列はCESU-8エンコーディングでエンコードされています。CESU-8は、サロゲートペアの範囲（U+D800からU+DFFF）のコードポイントを直接エンコードすることができる（UTF-8では禁止）ことを除いて、UTF-8と一致しています。CESU-8 は、UTF-8 と同様、すべての 7 ビ ッ ト ASCII キ ャ ラ ク タ を そ の ま ま符号化 し ますので、 C コ ー ド に と っ ては好都合です。例えば</p>
+<ul>
+<li>U+0041 (&quot;A&quot;) は 41 にエンコードされます。</li>
+<li>U+1234 (ETHIOPIC SYLLABLE SEE) は e1 88 b4 にエンコードする。</li>
+<li>U+D812 (高位サロゲート) は ed a0 92 にエンコードされる。これは無効なUTF-8となる。</li>
+</ul>
+<p>また、Duktapeは内部で拡張文字列を使用しています。U+10FFFFまでのコードポイントはUTF-8で表現でき、それ以上のコードポイントは32ビットいっぱいまで拡張UTF-8で表現できます。Duktapeが使用する拡張UTF-8のエンコーディングは、以下の表の通りです。先頭バイトは2進数で示し（データビットを示す &quot;x&quot;）、継続バイトは &quot;C &quot;で示します（ビット列10xxxxxxxを示す）。</p>
+<table>
+<thead>
+<tr>
+<th>Codepoint range</th>
+<th>Bits</th>
+<th>Byte sequence</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U+0000 to U+007F</td>
+<td>7</td>
+<td>0xxxxxxx</td>
+<td></td>
+</tr>
+<tr>
+<td>U+0080 to U+07FF</td>
+<td>11</td>
+<td>110xxxxx C</td>
+<td></td>
+</tr>
+<tr>
+<td>U+0800 to U+FFFF</td>
+<td>16</td>
+<td>1110xxxx C C</td>
+<td>U+D800 to U+DFFF allowed (unlike UTF-8)</td>
+</tr>
+<tr>
+<td>U+1 0000 to U+1F FFFF</td>
+<td>21</td>
+<td>11110xxx C C C</td>
+<td>Above U+10FFFF allowed (unlike UTF-8)</td>
+</tr>
+<tr>
+<td>U+20 0000 to U+3FF FFFF</td>
+<td>26</td>
+<td>111110xx C C C C</td>
+<td></td>
+</tr>
+<tr>
+<td>U+400 0000 to U+7FFF FFFF</td>
+<td>31</td>
+<td>1111110x C C C C C</td>
+<td></td>
+</tr>
+<tr>
+<td>U+8000 0000 to U+F FFFF FFFF</td>
+<td>36</td>
+<td>11111110 C C C C C C</td>
+<td>Only 32 bits used in practice (up to U+FFFF FFFF)</td>
+</tr>
+</tbody>
+</table>
+<p>U+7FFFFFFFF以上のコードポイントに対するエンコーディングの欠点は、先頭バイトが0xFEになることで、ユニコードのバイトオーダーマーカーエンコーディングと矛盾することです。これは、Duktapeの内部使用では実用的な懸念事項ではありません。</p>
+<p>最後に、無効な拡張UTF-8バイト・シーケンスは、Symbol値を表すなどの特別な目的で使用されます。無効な拡張UTF-8/CESU-8バイト・シーケンスは、（CESU-8である）標準のECMAScript文字列と衝突することはなく、オブジェクトのプロパティ・テーブル内できれいに分離されたまま残ります。詳しくは Symbols と symbols.rst を参照してください。</p>
+<p>無効な拡張 UTF-8 シーケンスを持つ文字列は、C コードからバリュースタックにプッシュでき、ECMAScript 関数に渡すこともできますが、2 つの注意点があります。</p>
+<ul>
+<li>無効なバイト列が Symbol を表現するために使用される内部フォーマットに一致する場合、その値は ECMAScript コードに対して文字列ではなく Symbol として表示されます。例えば、typeof val は symbol となる。</li>
+<li>無効なバイト列に対する文字列操作の挙動は十分に定義されておらず、結果は様々で、Duktapeのマイナーバージョンアップでも変更される可能性があります。</li>
+</ul>
+<h3 id="オブジェクト">オブジェクト</h3>
+<p>オブジェクト型には、ECMAScript のオブジェクトや配列、関数、スレッド（コルーチン）、バッファ・オブジェクトが含まれます。言い換えれば、プロパティを持つものはすべてオブジェクトです。プロパティは、文字列のキーと任意の値（未定義を含む）を持つキーと値のペアである。</p>
+<p>オブジェクトはガベージコレクションのファイナライゼーションに参加することができます。</p>
+<h3 id="バッファ">バッファ</h3>
+<p>プレーン バッファ タイプは、ユーザー データ用の生のバッファです。Uint8Array や Node.js Buffer のような標準的なバッファ・オブジェクト・タイプよりもメモリ効率がよいです。プレーンバッファーのサブタイプは3つあります。</p>
+<table>
+<thead>
+<tr>
+<th>Buffer sub-type</th>
+<th>Data pointer</th>
+<th>Resizable</th>
+<th>Memory managed by</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed</td>
+<td>Stable, non-NULL</td>
+<td>No</td>
+<td>Duktape</td>
+<td>バッファのサイズは作成時に固定され、メモリはDuktapeによって自動的に管理されます。固定バッファは、不変の（安定した）非NULLデータポインタを持ちます。</td>
+</tr>
+<tr>
+<td>Dynamic</td>
+<td>Unstable, may be NULL</td>
+<td>Yes</td>
+<td>Duktape</td>
+<td>バッファサイズは作成後に変更可能、メモリはDuktapeが自動管理。サイズ変更を可能にするために、内部で2つのメモリ割り当てが必要。バッファのサイズを変更すると、データ・ポインタが変更される可能性があります。ゼロ・サイズのバッファは、NULLデータ・ポインタを持つ可能性があります。</td>
+</tr>
+<tr>
+<td>External</td>
+<td>Unstable, may be NULL</td>
+<td>Yes</td>
+<td>Duktape and user code</td>
+<td>バッファ・データは外部で確保されます。Duktapeはヒープに割り当てられたバッファ・ヘッダ構造を割り当て、管理し ます。一方、データ領域のポインタと長さはユーザー・コードによって明示的に設定 されます。外部バッファは、バッファが Duktape ヒープ外のデータ構造（例えば、グラフィック・ライブラリによって割り当てられたフレーム・バッファ）を指すようにするのに便利です。ゼロ・サイズのバッファは、NULLデータ・ポインタを持つ可能性があります。</td>
+</tr>
+</tbody>
+</table>
+<p>文字列とは異なり、バッファのデータ領域は自動的にNUL終端とならないため、呼び出し側のコードは現在割り当てられているバッファのサイズを超えるバイトにアクセスしてはいけません。ゼロサイズの動的バッファや外部バッファのデータポインタは NULL である可能性がありますが、固定バッファは常に NULL でないデータポインタを持ちます。</p>
+<p>固定バッファと動的バッファは自動的にガベージコレクションされます。これはまた、Cコードが、バッファがDuktapeから到達可能でない限り、バッファ・データ・ポインタを保持してはならないことを意味します（例えば、アクティブなバリュースタックに存在する場合など）。外部バッファのデータ領域は自動的にガベージ・コレクトされないため、ユーザー・コードにはそのライフ・サイクルを管理する責任があります。また、ユーザー・コードは、外部バッファがもはや有効でない（あるいはまだ有効でない）ときに、外部バッファの値がアクセスされないようにする必要があります。</p>
+<p>プレーンなバッファは Uint8Array オブジェクトを大きく模倣しており、ArrayBuffer や型付き配列などを扱う際の、非標準的でメモリ効率の良い代替手段となっています。標準のバッファオブジェクトはプレーンバッファの上に実装されており、例えば ArrayBuffer はプレーンバッファにバックアップされています。より詳細な説明は Buffer objects を参照してください。</p>
+<p>いくつかの注意点があります。</p>
+<p>バッファのインデックスに書き込まれる値は番号強制なので、一文字の値を代入しても期待通りにはいかないことが多い。例えば、 buf[123] = &apos;x&apos; とすると、 ToNumber(&apos;x&apos;) = 0 としてバッファに 0 が書き込まれる。分かりやすくするために、 buf[123] = 0x78 のような数値のみを代入すると良い。</p>
+<p>例えば、x = buf[123] または buf[123] = x のように、プレーンバッファの値の数値インデックスの読み書きのための高速なパスが存在します。</p>
+<p>バッファの仮想プロパティは現在 defineProperty() に実装されていませんので、 defineProperty() でバッファのインデックスやバッファの長さを書き込むことはできません (書き込もうとすると TypeError が発生します)。</p>
+<h3 id="ポインター">ポインター</h3>
+<p>ポインター型は生の、解釈されないCポインターで、本質的にはvoid *です。ポインターはネイティブ・オブジェクト（メモリ割り当て、ハンドルなど）を指すために使用できますが、Duktapeはその用途を知らないので、自動的にガベージ・コレクトされることはありません。しかし、1つ以上のポインターをオブジェクトの中に入れて、オブジェクト・ファイナライザーを使って、ポインターに関連するネイティブ・リソースを解放することができます。</p>
+<h3 id="lightfunc（軽量関数）">Lightfunc（軽量関数）</h3>
+<p>lightfunc 型は、Duktape/C の関数ポインタと小さな制御フラグのセットを、ヒープを個別に割り当てる必要のない単一のタグ付き値にパックしたものです。制御フラグ(現在16ビット)は、以下のものをコード化します。(1) Duktape/C関数が期待するスタック引数の数（0～14またはvarargs）、 (2) 仮想長プロパティ値（0～15）、および (3) マジック値（-128～127）です。</p>
+<p>Lightfuncsは、Duktape C APIでは別のタグ付きタイプですが、ECMAScriptコードでは、ほとんどFunctionオブジェクトのように振る舞います。通常のFunctionオブジェクトと比較すると、大きな制限があります。</p>
+<ul>
+<li>Lightfuncs は、独自のプロパティを保持することができません。Lightfuncs には、トレースバックに表示される固定の仮想 .name プロパティと、仮想 .length プロパティがあります。その他のプロパティは Function.prototype から継承されます。</li>
+<li>Lightfuncs はコンストラクタ関数として使用できますが、.prototype プロパティを持つことはできません。Object.prototype （デフォルト）を継承しないオブジェクトを構築する必要がある場合は、（a）コンストラクタで明示的にインスタンスを構築して返すか、（b）コンストラクタでデフォルト インスタンスの内部プロトタイプを明示的にオーバーライドする必要があります。</li>
+<li>Lightfunc はアクセサ・プロパティ（ゲッター/セッター）として使用できますが、実際の関数に変換されるため、メモリの利点が失われます。test-dev-lightfunc-accessor.js を参照してください。</li>
+<li>Lightfunc はプリミティブな型なのでファイナライザを持つことができず、参照カウントフィールドを持たず、ガベージコレクションにも参加しません。test-dev-lightfunc-finalizer.js を参照してください。</li>
+</ul>
+<p>Lightfuncs は、通常の Function オブジェクトのメモリへの影響が問題となるような、非常に低メモリの環境で有用です。詳しくは Function objects を見てください。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="programming_model.html" class="navigation navigation-prev " aria-label="Previous page: プログラミングモデル">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="api_c_types.html" class="navigation navigation-next " aria-label="Next page: C言語の型">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"スタックタイプ","level":"1.5","depth":1,"next":{"title":"C言語の型","level":"1.6","depth":1,"path":"api_c_types.md","ref":"api_c_types.md","articles":[]},"previous":{"title":"プログラミングモデル","level":"1.4","depth":1,"path":"programming_model.md","ref":"programming_model.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"stack_types.md","mtime":"2022-10-24T11:19:58.975Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T11:33:54.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

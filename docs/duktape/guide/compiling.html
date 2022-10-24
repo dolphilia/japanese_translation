@@ -1,0 +1,853 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>コンパイル方法 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="portability.html" />
+    
+    
+    <link rel="prev" href="memory_usage.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">プログライングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    スタートアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="programming_model.html">
+            
+                <a href="programming_model.html">
+            
+                    
+                    プログラミングモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="stack_types.html">
+            
+                <a href="stack_types.html">
+            
+                    
+                    スタックタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    C言語の型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="type_algorithms.html">
+            
+                <a href="type_algorithms.html">
+            
+                    
+                    型のアルゴリズム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="duktape_built_ins.html">
+            
+                <a href="duktape_built_ins.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="post_es5_features.html">
+            
+                <a href="post_es5_features.html">
+            
+                    
+                    ポストES5の特徴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="custom_behavior.html">
+            
+                <a href="custom_behavior.html">
+            
+                    
+                    カスタム動作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="custom_json_formats.html">
+            
+                <a href="custom_json_formats.html">
+            
+                    
+                    カスタムJSONフォーマット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="custom_directives.html">
+            
+                <a href="custom_directives.html">
+            
+                    
+                    カスタムディレクティブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="buffer_objects.html">
+            
+                <a href="buffer_objects.html">
+            
+                    
+                    バッファー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="error_objects.html">
+            
+                <a href="error_objects.html">
+            
+                    
+                    エラー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="function_objects.html">
+            
+                <a href="function_objects.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="date_and_time.html">
+            
+                <a href="date_and_time.html">
+            
+                    
+                    日付と時刻
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="random_numbers.html">
+            
+                <a href="random_numbers.html">
+            
+                    
+                    乱数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="debugger.html">
+            
+                <a href="debugger.html">
+            
+                    
+                    デバッガー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="finalization.html">
+            
+                <a href="finalization.html">
+            
+                    
+                    終了処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="coroutines.html">
+            
+                <a href="coroutines.html">
+            
+                    
+                    コルーチン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="virtual_properties.html">
+            
+                <a href="virtual_properties.html">
+            
+                    
+                    仮想プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="symbols.html">
+            
+                <a href="symbols.html">
+            
+                    
+                    シンボル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="bytecode_dump_load.html">
+            
+                <a href="bytecode_dump_load.html">
+            
+                    
+                    バイトコード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="threading.html">
+            
+                <a href="threading.html">
+            
+                    
+                    スレッディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="sandboxing.html">
+            
+                <a href="sandboxing.html">
+            
+                    
+                    サンドボックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="memory_usage.html">
+            
+                <a href="memory_usage.html">
+            
+                    
+                    メモリ使用量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.30" data-path="compiling.html">
+            
+                <a href="compiling.html">
+            
+                    
+                    コンパイル方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="versioning.html">
+            
+                <a href="versioning.html">
+            
+                    
+                    バージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="limitations.html">
+            
+                <a href="limitations.html">
+            
+                    
+                    制限事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="comparison_to_lua.html">
+            
+                <a href="comparison_to_lua.html">
+            
+                    
+                    Luaとの比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >コンパイル方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="compiling">コンパイル方法 </h2>
+<h3 id="概要">概要</h3>
+<p>Duktapeのコンパイルには、2つの基本ステップがあります。</p>
+<ul>
+<li>コンフィギュレーション: tools/configure.py を使って、コンパイルのために Duktape のソース・ファイルやヘッダー・ファイルを準備します。要求される Duktape の設定は、configure.py のコマンドライン・オプションを使って記述します。例えば</li>
+</ul>
+<pre><code class="lang-sh">$ python2 tools/configure.py --output-directory /tmp/output -DDUK_USE_FASTINT -UDUK_USE_ES6_PROXY
+$ ls /tmp/output/
+duk_config.h  duk_source_meta.json  duktape.c  duktape.h
+</code></pre>
+<ul>
+<li>コンパイル: 生成されたヘッダーファイルがコンパイラのインクルード検索パスにあることを確認し、生成されたソースファイル（複数可）をアプリケーションのビルドに含めます；公式のDuktapeビルドスクリプトやMakefileはありません。例えば</li>
+</ul>
+<pre><code class="lang-sh">$ gcc -O2 -Wall -otest -I/tmp/output /tmp/output/duktape.c my_application.c -lm
+</code></pre>
+<p>Duktapeは通常、アプリケーションと一緒にコンパイルされますが、静的ライブラリや共有ライブラリとしてビルドすることも可能です。Duktapeは、システム全体のライブラリとしてインストールすることもできます。system-install.rstを参照してください。</p>
+<blockquote>
+<p>DUK_OPT_xxx 機能オプションは、Duktape 2.x ではサポートされなくなりました。 すべての設定情報は、duk_config.h や自動生成されたソースやヘッダに埋め込まれています。</p>
+</blockquote>
+<h3 id="コンフィギュレーション">コンフィギュレーション</h3>
+<h4 id="事前設定されたソースとデフォルトの構成">事前設定されたソースとデフォルトの構成</h4>
+<p>Duktapeの配布物には、いくつかのバリエーションを持つ事前設定済みのソースとヘッダが含まれています。</p>
+<ul>
+<li>src/: duk_config.h, duktape.h, duktape.c からなる単一のソース・ファイル・バージョンです。</li>
+<li>src-noline/: src/ と同じですが、結合されたソースファイルに #line 命令がありません。これは環境によっては重要です。<a href="https://github.com/svaarala/duktape/pull/363" target="_blank">https://github.com/svaarala/duktape/pull/363</a> を参照してください。</li>
+<li>src-separate/: duk_config.h, duktape.h と別々のソースファイルから構成されるバージョン。単一のソースファイル版が望ましいのですが、ツールチェインによっては別ファイルの方がうまくいく場合もあります。</li>
+</ul>
+<p>これらの設定済みソースは、プラットフォーム、コンパイラ、アーキテクチャの自動検出を行い、Duktapeのデフォルト設定を使用します。</p>
+<ul>
+<li>ECMAScript E5/E5.1完全準拠（オプションのAnnex B機能を含む）、ただし意図的な実世界の互換性逸脱を除く（カスタム動作参照）</li>
+<li>ES2015 型付け配列と Node.js Buffer のサポート</li>
+<li>ECMAScript 2015 (E6) と ECMAScript 2016 (E7) からのいくつかの機能</li>
+<li>利用可能な場合はパックされた値表現（1値あたり8バイト）、利用できない場合はパックされていない値表現（通常1値あたり16バイト）。</li>
+<li>参照カウントとマーク・アンド・スイープ・ガベージコレクション</li>
+<li>完全なエラーメッセージとトレースバック</li>
+<li>デバッグ出力やアサートなどはありません。</li>
+<li>すべてのポータブルな高速パスが有効</li>
+</ul>
+<blockquote>
+<p>事前設定されたソースは、DuktapeをWindowsのDLLにビルドするためには使用できません。そのためには configure.py に --dll オプションを付けて実行してください。</p>
+</blockquote>
+<h4 id="duktapeの設定をカスタマイズするためにconfigurepyを実行する">Duktapeの設定をカスタマイズするためにconfigure.pyを実行する</h4>
+<p>configure.pyユーティリティは、コマンドラインオプションで記述された特定の設定に対応するDuktapeソースとヘッダファイルを準備します。例えば、fastint サポートを有効にし、ECMAScript 6 Proxy オブジェクトのサポートを無効にして、DLL ビルドのための Duktape ソースを準備する場合です。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># Default output format is single source file (--separate-sources for separate</span>
+<span class="hljs-comment"># sources) and no #line directives (--line-directives to enable them).</span>
+
+$ python2 tools/configure.py \
+      --output-directory /tmp/output \
+      --dll \
+      -DDUK_USE_FASTINT \
+      -UDUK_USE_ES6_PROXY
+
+<span class="hljs-comment"># The output directory /tmp/output contains the header and source files to</span>
+<span class="hljs-comment"># be included in your build.</span>
+
+$ ls /tmp/output
+duk_config.h  duk_source_meta.json  duktape.c  duktape.h
+</code></pre>
+<p>configure.py に与えられた設定オプションは、例えば、用意されたヘッダーとソースファイルのいくつかの異なる側面に影響を与えます。</p>
+<ul>
+<li>Duktape ソースコードのオプション機能は、duk_config.h 設定ヘッダによって提供される設定オプション (DUK_USE_xxx) を使って有効/無効化されます。この設定ヘッダは、プラットフォーム、アーキテクチャ、コンパイラの検出や、プラットフォームの移植性に関する他のすべての側面も処理します。</li>
+<li>組み込みオブジェクトと文字列はメタデータファイルから読み込まれ、ビットパックされた組み込み初期化データが生成されます。また、カスタムのメタデータファイルを供給して、カスタムの組み込みバインディングを追加したり、MathやJSONなどの標準組み込みを変更することも可能です。</li>
+<li>ROMビルトイン &quot;を使用する場合、ビルトインオブジェクトと文字列は、RAMフットプリントを減らすために読み取り専用のコードセクションに配置されます。ビルトインオブジェクトや文字列のイニシャライザに必要なソースコードは、configure.pyによって自動生成されます。また、カスタムのビルトインもリードオンリーコードセクションに配置することができます。</li>
+<li>Unicodeデータファイル(UnicodeData.txtとSpecialCasing.txt)は、ビットパックされたランタイムユニコードテーブルに変換されます。Unicodeデータファイルは、例えば、Unicodeテーブルのフットプリントを小さくするためにオーバーライドすることも可能です。</li>
+</ul>
+<p>configure.py ユーティリティは Python 2.x のサポートが必要です。ビルド環境がPython 2.xをサポートしていない場合、別のプラットフォームでconfigure.pyを実行し、ビルド環境で結果のファイルをコンパイルすることができます。</p>
+<p>デフォルトのオプションで問題ない場合でも、事前に設定されたソースを使用する代わりに、ビルドの一部としてconfigure.pyを実行することが推奨されます。カスタムオプションは、例えば低メモリのプラットフォームでは必要かもしれません。より実用的な詳細については、Duktapeのビルドのための設定 を参照してください。</p>
+<h4 id="一般的に必要とされる設定オプション">一般的に必要とされる設定オプション</h4>
+<p>一般的に必要とされる設定オプションをいくつか紹介します。</p>
+<ul>
+<li>DUK_USE_FATAL_HANDLER, 強く推奨。組み込みのデフォルトの致命的なエラーハンドラは、デバッグログメッセージを書き (stdout と stderr には何も書きません)、次に abort() を呼び出します。これが失敗すると、無限ループに入り、致命的なエラーの後に実行が再開されないことを確認します。これは通常、より優れた致命的なエラーの回復メカニズムを持っている可能性のある実運用アプリケーションにとって、最良の動作ではありません。デフォルトの致命的なハンドラを置き換えるには、致命的なエラーを処理する方法を参照してください。</li>
+<li>長い制御転送：setjmp/longjmp と C++ 例外。デフォルトでは、Duktapeは内部の長い制御転送にsetjmp()とlongjmp()（またはその亜種）を使用します。C++コンパイラーでコンパイルする場合は、DUK_USE_CPP_EXCEPTIONSを使用すると、Duktapeが長い制御転送にC++例外を使用し、Duktape/C関数におけるスコープベースのリソース管理（自動デストラクタなど、RAIIと呼ばれることもあります）が期待通りに機能するようになります。MSVCでは、/EHsc例外モデルを避けるように注意してください（代わりに/EHsなどを使用してください）。なぜなら、&quot;c &quot;オプションは、MSVCがextern C関数がC++例外を投げられないと仮定してしまうからです。</li>
+<li>Windows DLL のビルド。Windows DLL ビルドでは、DLL ライブラリーのシンボルに対して declspec() 宣言が必要です。Duktapeのシンボルに対してこれらを有効にするには、configure.pyの実行時に-dllオプションを使用します。</li>
+<li>強制的なバイト順やアライメント。Duktapeの自動機能検出が（まだ）機能していないプラットフォームでDuktapeを使う場合、設定段階で特定のバイト順やアライメントの要件を強制的に指定する必要があるかもしれません。</li>
+<li>エキゾチック・プラットフォームでの日付ビルトイン。新しいプラットフォームやエキゾチックなプラットフォームに移植する場合、Duktapeの組み込み日付サポートが、そのプラットフォームで動作しないことがあります。このような場合、外部の「Dateプロバイダ」を実装することで、Duktapeの変更なしに、必要な日付/時刻プリミティブを提供することができます。datetime.rstを参照してください。</li>
+<li>ネイティブ・スタック・チェック・マクロ。ターゲットが小さなスタックを持っている場合、DUK_USE_NATIVE_STACK_CHECK() マクロを定義すると便利です。これは、スタックフレームのサイズを考慮できないスタック深さの制限よりも、スタック枯渇に対するより良い保護策を提供します。</li>
+</ul>
+<h4 id="メモリ管理方法の選択肢">メモリ管理方法の選択肢</h4>
+<p>メモリ管理の選択肢は2つあります。</p>
+<ul>
+<li>参照カウントとマーク＆スイープ（デフォルト）：ヒープオブジェクトは、到達不可能な参照サイクルに参加しているオブジェクトを除いて、到達不可能になった時点で直ちに解放されます。そのようなオブジェクトは、定期的に自発的に解放され、世界のマークアンドスイープコレクションを停止します。マークアンドスイープは、メモリ割り当てに失敗した場合の緊急ガベージコレクタとしても使用されます。</li>
+<li>マークアンドスイープのみ: コードフットプリントとメモリーフットプリントを減らしますが (ヒープヘッダが参照カウントを保存する必要がありません)、デフォルトの場合よりもメモリー使用量のばらつきがあります。また、自発的な、世界を停止するマークアンドスイープ収集の頻度は、参照カウントがほぼすべてのメモリ管理を処理することが期待されるデフォルトの場合よりも高くなります。自発的な (緊急でない) mark-and-sweep は config オプションで無効にすることができます。</li>
+</ul>
+<p>参照カウントは、参照サイクルを処理するために mark-and-sweep に依存します。例えば、すべての ECMAScript 関数インスタンスは、関数用に作成された自動プロトタイプオブジェクトとの参照ループに入ることが要求されます。必要であれば、このループを手動で解除することができます。内部技術的な理由により、名前付き関数式も参照ループ内にあります。このループはユーザーコードから壊すことができず、mark-and-sweepのみがそのような関数を収集することができます。</p>
+<h3 id="コンパイル方法">コンパイル方法</h3>
+<h4 id="一般的なガイドライン">一般的なガイドライン</h4>
+<p>Duktapeは公式のMakefileやビルドスクリプトを持っていません：異なる移植性のターゲットの数を考えると、公式のビルドスクリプトを維持することは難しいでしょう。その代わり、最も自然な方法で、既存のビルド・プロセスに Duktape を追加する必要があります。</p>
+<p>DuktapeはCまたはC++コンパイラ（C99を推奨）でコンパイルされ、何らかの方法であなたのプログラムにリンクされます。正確な詳細はプラットフォームやツールチェインによって異なります。例えば、以下のようなことが可能です。</p>
+<ul>
+<li>Duktapeをあなたのプログラムと一緒にコンパイルし、明示的にリンクするステップを省く。</li>
+<li>Duktapeを静的ライブラリーとしてコンパイルし、その静的ライブラリーをプログラムにリンクする。</li>
+<li>Duktapeをダイナミック・ライブラリーとしてコンパイルし、ダイナミック・ライブラリーをあなたのプログラムとリンクする。</li>
+<li>Duktapeをダイナミック・ライブラリーとしてコンパイルし、システム全体にインストールし、いくつかのアプリケーションから使用する。</li>
+</ul>
+<p>DuktapeのAPI関数はすべてマクロである可能性があり、あるAPIプリミティブの実装は互換性のあるリリース間でもマクロと実際の関数とで変わる可能性があります。Duktapeの設定オプションの中には、バイナリ互換性に影響を与えるものがあります。バイナリ互換性を確保するために</p>
+<ul>
+<li>アプリケーション・コードにduktape.hをインクルードしてください。これは一般的に良い習慣ですが、このヘッダーがないと、コンパイラーは全てのDuktape API関数が実際の関数であると誤って判断してしまい、リンクに失敗する原因となります。</li>
+<li>Duktapeとアプリケーションをコンパイルする際には、用意した同じDuktapeソースとヘッダを使用してください。これにより、Duktapeとあなたのアプリケーションは、全く同じDuktapeのバージョンとコンフィギュレーションでコンパイルされることを保証します。これは、Duktapeがライブラリとして別のコンパイル・ステップでコンパイルされる場合に特に重要です。</li>
+<li>Duktapeとアプリケーションをコンパイルする際には、同じコンパイラーを使用してください。異なるコンパイラーを使うと、例えばDuktapeのduk_config.hヘッダーの型検出や、関数の呼び出し規則などに影響を与え、バイナリ互換性が損なわれる可能性があります。実際には、コンパイラはある程度混在させることができます。たとえば、GCCとClangは一般に互換性があります。</li>
+</ul>
+<h4 id="推奨されるコンパイラのオプション">推奨されるコンパイラのオプション</h4>
+<p>GCC/clang のための推奨コンパイラー・オプションです。</p>
+<ul>
+<li>-std=c99: C99のセマンティクスを確保することを推奨。C型の検出を改善し、Duktapeが可変長マクロを使えるようにします。</li>
+<li>-Wall：潜在的な問題を早期に発見するために推奨します。</li>
+<li>-Os: Duktapeをエンベッディングする際に必要な、最小のフットプリントを実現するために最適化されます。-O2 は、パフォーマンスを最適化したビルドのための良い妥協点です。</li>
+<li>-fomit-frame-pointer: フレーム・ポインターを省略します。フットプリントはさらに小さくなりますが、デバッグの妨げになる可能性があります（デバッグ・ビルドからは除外してください）。</li>
+<li>-fstrict-aliasing: 厳密なエイリアシングルールを使用します。Duktapeはこれらのルールと互換性があり、結果のCコードを改善します。</li>
+<li>Configure.py の --dll は、Duktape が DLL としてビルドされる場合、少なくとも Windows 用にコンパイルする場合は必要です。</li>
+</ul>
+<h4 id="コンパイル時の警告について">コンパイル時の警告について</h4>
+<p>Duktapeは、主流のコンパイラー（GCC、Clang、MSVC、MinGWなど）をC99モードで使用し、警告を有効にし（例：gcc/clangの-Wall）、デフォルトのDuktape設定オプションを使用すると、通常警告なしにコンパイルされます。非主流コンパイラー、非常に厳しい警告レベル（gcc/clangの-WextraやMSVCの/W4など）、デフォルトでないDuktape設定オプションを使用した場合、いくつかの警告が発生する可能性があります。すべてのコンパイラとすべての設定オプションの組み合わせについて、コンパイル時の警告をなくすことは非常に困難であり、プロジェクトの目標には明示的になっていません。警告を報告して、可能な限り修正することが推奨されます。</p>
+<h4 id="cコンパイラを使う場合">C++コンパイラを使う場合</h4>
+<p>Duktapeは、CとC++の両方のコンパイラーとアプリケーションで動作します。Duktapeとアプリケーションは、CコンパイラーとC++コンパイラーを自由に組み合わせてコンパイルすることができます。ただし、Duktapeとアプリケーションは、同じコンパイラ（CコンパイラまたはC++コンパイラ）で、同じコンパイラ・オプションでコンパイルすることが推奨されます。</p>
+<p>duktape.hヘッダは、これらの組み合わせのすべてを動作させるために必要なグルー（接着剤）を含んでいます。具体的には、DuktapeのパブリックAPIが必要とする全てのシンボルは、extern &quot;C&quot; { ...}の中に入っています。C++コンパイラーでコンパイルする場合は、extern &quot;C&quot; { ...} ラッパーの中に入っています。これにより、そのようなシンボルはC++の名前を混乱させることなく定義され、使用されることが保証されます。具体的には</p>
+<ul>
+<li>Duktape自身をC++コンパイラーでコンパイルする場合、DuktapeのパブリックAPIが必要とするシンボルはマングルされません。その他のDuktape内部のシンボルはマングルされますが、外部からは見えないので、Cコンパイラーでコンパイルしても問題はありません。</li>
+<li>C++コンパイラーでアプリケーションをコンパイルする場合、ラッパーは、アプリケーションが使用するDuktapeパブリックAPIシンボルがマングルされずにルックアップされることを保証します。</li>
+</ul>
+<p>CとC++のコンパイルが混在している場合、最終的なリンクはC++ツールチェーンで行う必要があります。少なくともgcc/g++を混在させた場合、以下のようなことに遭遇するかもしれません。</p>
+<pre><code class="lang-sh">$ g++ -c -o duktape.o -Isrc/ src/duktape.c
+$ gcc -c -o duk_cmdline.o -Isrc/ examples/cmdline/duk_cmdline.c
+$ gcc -o duk duktape.o duk_cmdline.o -lm
+duktape.o:(.eh_frame+0x1ab): undefined reference to \`__gxx_personality_v0\<span class="hljs-string">&apos;
+collect2: error: ld returned 1 exit status
+</span></code></pre>
+<p>修正方法としては、リンクにg++を使用することです。</p>
+<pre><code class="lang-sh">$ g++ -c -o duktape.o -Isrc/ src/duktape.c
+$ gcc -c -o duk_cmdline.o -Isrc/ examples/cmdline/duk_cmdline.c
+$ g++ -o duk duktape.o duk_cmdline.o -lm
+</code></pre>
+<p>duk_config.hはDuktapeが必要とするC/C++データ型を選択し、その他の機能検出も行うため、CとC++コンパイラーを混在させると、理論的にはCとC++コンパイラーが異なる有効な機能やデータ型になってしまう可能性があります。もしそのようなことが起これば、Duktapeとアプリケーションのバイナリに互換性がなくなり、問題を診断するのが非常に困難になります。これは通常、問題にはなりませんが、この可能性を避けるために、Duktapeとアプリケーションを同じコンパイラーでコンパイルしてください。</p>
+<p>デフォルトでは、スコープ・ベースのリソース管理（RAIIと呼ばれることもあります）はDuktape/C関数では動作しません。これは、Duktapeが内部の長い制御転送にlongjmp（）を使用し、C++スタック巻き戻しメカニズムを回避しているためです。DUK_USE_CPP_EXCEPTIONSを使用すると、Duktapeは内部での長い制御転送にC++の例外を使用するようになり、Duktape/C関数でスコープ・ベースのリソース管理を動作させることができるようになります。MSVCでは、/EHsc例外モデルを避けるように注意してください（代わりに/EHsなどを使用してください）。なぜなら、&quot;c &quot;オプションは、MSVCがextern C関数がC++例外を投げることができないと仮定するからです。MSVCとCMakeを使用する場合、例えば以下のように使用できます。</p>
+<pre><code class="lang-sh"><span class="hljs-keyword">if</span> (MSVC)
+    string( REPLACE <span class="hljs-string">&quot;/EHsc&quot;</span> <span class="hljs-string">&quot;/EHs&quot;</span> CMAKE_CXX_FLAGS <span class="hljs-string">&quot;<span class="hljs-variable">${CMAKE_CXX_FLAGS}</span>&quot;</span> )
+endif()
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="memory_usage.html" class="navigation navigation-prev " aria-label="Previous page: メモリ使用量">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="portability.html" class="navigation navigation-next " aria-label="Next page: 移植性">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"コンパイル方法","level":"1.30","depth":1,"next":{"title":"移植性","level":"1.31","depth":1,"path":"portability.md","ref":"portability.md","articles":[]},"previous":{"title":"メモリ使用量","level":"1.29","depth":1,"path":"memory_usage.md","ref":"memory_usage.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"compiling.md","mtime":"2022-10-24T11:31:23.415Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T11:33:54.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

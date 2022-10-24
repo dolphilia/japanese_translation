@@ -1,0 +1,933 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>カスタムJSONフォーマット · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom_directives.html" />
+    
+    
+    <link rel="prev" href="custom_behavior.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">プログライングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    表紙
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting_started.html">
+            
+                <a href="getting_started.html">
+            
+                    
+                    スタートアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="programming_model.html">
+            
+                <a href="programming_model.html">
+            
+                    
+                    プログラミングモデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="stack_types.html">
+            
+                <a href="stack_types.html">
+            
+                    
+                    スタックタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    C言語の型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="type_algorithms.html">
+            
+                <a href="type_algorithms.html">
+            
+                    
+                    型のアルゴリズム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="duktape_built_ins.html">
+            
+                <a href="duktape_built_ins.html">
+            
+                    
+                    ビルトイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="post_es5_features.html">
+            
+                <a href="post_es5_features.html">
+            
+                    
+                    ポストES5の特徴
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="custom_behavior.html">
+            
+                <a href="custom_behavior.html">
+            
+                    
+                    カスタム動作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="custom_json_formats.html">
+            
+                <a href="custom_json_formats.html">
+            
+                    
+                    カスタムJSONフォーマット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="custom_directives.html">
+            
+                <a href="custom_directives.html">
+            
+                    
+                    カスタムディレクティブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="buffer_objects.html">
+            
+                <a href="buffer_objects.html">
+            
+                    
+                    バッファー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="error_objects.html">
+            
+                <a href="error_objects.html">
+            
+                    
+                    エラー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="function_objects.html">
+            
+                <a href="function_objects.html">
+            
+                    
+                    関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="date_and_time.html">
+            
+                <a href="date_and_time.html">
+            
+                    
+                    日付と時刻
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="random_numbers.html">
+            
+                <a href="random_numbers.html">
+            
+                    
+                    乱数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="debugger.html">
+            
+                <a href="debugger.html">
+            
+                    
+                    デバッガー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="modules.html">
+            
+                <a href="modules.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="logging.html">
+            
+                <a href="logging.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="finalization.html">
+            
+                <a href="finalization.html">
+            
+                    
+                    終了処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="coroutines.html">
+            
+                <a href="coroutines.html">
+            
+                    
+                    コルーチン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="virtual_properties.html">
+            
+                <a href="virtual_properties.html">
+            
+                    
+                    仮想プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="symbols.html">
+            
+                <a href="symbols.html">
+            
+                    
+                    シンボル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="bytecode_dump_load.html">
+            
+                <a href="bytecode_dump_load.html">
+            
+                    
+                    バイトコード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="threading.html">
+            
+                <a href="threading.html">
+            
+                    
+                    スレッディング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="sandboxing.html">
+            
+                <a href="sandboxing.html">
+            
+                    
+                    サンドボックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="performance.html">
+            
+                <a href="performance.html">
+            
+                    
+                    パフォーマンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="memory_usage.html">
+            
+                <a href="memory_usage.html">
+            
+                    
+                    メモリ使用量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="compiling.html">
+            
+                <a href="compiling.html">
+            
+                    
+                    コンパイル方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="compatibility.html">
+            
+                <a href="compatibility.html">
+            
+                    
+                    互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="versioning.html">
+            
+                <a href="versioning.html">
+            
+                    
+                    バージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="limitations.html">
+            
+                <a href="limitations.html">
+            
+                    
+                    制限事項
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="comparison_to_lua.html">
+            
+                <a href="comparison_to_lua.html">
+            
+                    
+                    Luaとの比較
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >カスタムJSONフォーマット</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="custom_json_formats">カスタムJSONフォーマット </h2>
+<h3 id="ecmascript-の-json-の欠点">ECMAScript の JSON の欠点</h3>
+<p>標準の JSON フォーマットは、ECMAScript で使用する場合、いくつかの欠点があります。</p>
+<p>-未定義値や関数値はサポートされていません。
+-NaN と無限大の値はサポートされていません。
+-Duktapeのカスタム・タイプは、もちろんサポートされていません。
+-BMP以上のコードポイントは、サロゲート・ペアとしてしか表現できない
+-U+10FFFF以上のコードポイントは、サロゲート・ペアとしても表現できません。
+-出力が印刷可能なASCIIでないため、不便なことが多い</p>
+<p>これらの制限は、ECMAScript仕様の一部であり、より甘い動作を明示的に禁止しています。Duktapeは、よりプログラマフレンドリーな2種類のカスタムJSONフォーマットを提供しています。JXとJCで、以下に説明します。</p>
+<h3 id="カスタムjxフォーマット">カスタムJXフォーマット</h3>
+<p>JXは、すべての値を非常に読みやすい方法でエンコードし、ほとんどすべての値を忠実にパースして返します（関数値は最も重要な例外です）。出力は純粋に印刷可能なASCIIで、U+FFFF以上のコードポイントはカスタムエスケープ形式でエンコードされ、オブジェクトキーの周りの引用符はほとんどの場合省略されます。JXはJSON互換ではありませんが、非常に読みやすいフォーマットで、デバッグやロギングなどに最も適しています。</p>
+<p>JXは以下のように使用します。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = { <span class="hljs-attr">foo</span>: <span class="hljs-number">0</span>/<span class="hljs-number">0</span>, <span class="hljs-attr">bar</span>: [ <span class="hljs-number">1</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">3</span> ] };
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, obj));
+<span class="hljs-comment">// prints out: {foo:NaN,bar:[1,undefined,3]}</span>
+
+<span class="hljs-keyword">var</span> dec = Duktape.dec(<span class="hljs-string">&apos;jx&apos;</span>, <span class="hljs-string">&apos;{ foo: 123, bar: undefined, quux: NaN }&apos;</span>);
+print(dec.foo, dec.bar, dec.quux);
+<span class="hljs-comment">// prints out: 123 undefined NaN</span>
+</code></pre>
+<h3 id="カスタム-jc-フォーマット§。">カスタム JC フォーマット§。</h3>
+<p>JCは、すべての値を標準的なJSONにエンコードします。標準的なJSONでサポートされていない値は、アンダースコアで始まるマーカーキーを持つオブジェクトとしてエンコードされます（例： {&quot;_ptr&quot;: &quot;0xdeadbeef&quot;}）。このような値は、通常のオブジェクトとしてパースバックされます。しかし、多かれ少なかれ、手動でそれらを復活させることができます。U+FFFF以上のコードポイントは、&quot;U+nnnnn &quot;のフォーマットでプレーンな文字列データとしてエンコードされます(例: U+0010fedc)。</p>
+<p>JCは以下のように使用します。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> obj = { <span class="hljs-attr">foo</span>: <span class="hljs-number">0</span>/<span class="hljs-number">0</span>, <span class="hljs-attr">bar</span>: [ <span class="hljs-number">1</span>, <span class="hljs-literal">undefined</span>, <span class="hljs-number">3</span> ] };
+print(Duktape.enc(<span class="hljs-string">&apos;jc&apos;</span>, obj));
+<span class="hljs-comment">// prints out: {&quot;foo&quot;:{&quot;_nan&quot;:true},&quot;bar&quot;:[1,{&quot;_undef&quot;:true},3]}</span>
+
+<span class="hljs-keyword">var</span> dec = Duktape.dec(<span class="hljs-string">&apos;jc&apos;</span>, <span class="hljs-string">&apos;{ &quot;foo&quot;: 123, &quot;bar&quot;: {&quot;_undef&quot;:true}, &quot;quux&quot;: {&quot;_nan&quot;:true} }&apos;</span>);
+print(dec.foo, dec.bar, dec.quux);
+<span class="hljs-comment">// prints out: 123 [object Object] [object Object]</span>
+</code></pre>
+<p>JCデコーダは、現時点では、基本的に標準のJSONデコーダと同じです。すべてのJC出力は有効なJSONであり、カスタム構文は必要ありません。例で示したように、カスタム値（{&quot;_undef&quot;:true}など）は自動的には復活しません。それらは、代わりに普通のオブジェクトとしてパースバックされます。</p>
+<h3 id="uffff以上のコードポイントと無効なutf-8データについて">U+FFFF以上のコードポイントと無効なUTF-8データについて</h3>
+<p>すべての標準ECMAScript文字列は、内部的には有効なCESU-8データなので、U+FFFF以上のコードポイントに対する動作は、コンプライアンス上の問題を引き起こすことはありません。しかし、Duktapeの文字列は、拡張UTF-8コードポイントを含み、さらに無効なUTF-8データを含む可能性があります。</p>
+<p>標準のECMAScript JSON APIを含むDuktape JSON実装は、無効なUTF-8データを処理するために置換文字を使用します。結果として得られる文字列は少し奇妙に見えるかもしれませんが、この動作はエラーを投げるよりも望ましいものです。</p>
+<h3 id="jsonフォーマット例">JSONフォーマット例</h3>
+<p>以下の表は、各エンコーディングで異なる値がどのようにエンコードされるかをまとめたものです。</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Standard JSON</th>
+<th>JX</th>
+<th>JC</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>n/a</td>
+<td>undefined</td>
+<td>{&quot;_undef&quot;:true}</td>
+<td>Standard JSON: encoded as null inside arrays, otherwise omitted</td>
+</tr>
+<tr>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>null</td>
+<td>standard JSON</td>
+</tr>
+<tr>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>true</td>
+<td>standard JSON</td>
+</tr>
+<tr>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>standard JSON</td>
+</tr>
+<tr>
+<td>123.4</td>
+<td>123.4</td>
+<td>123.4</td>
+<td>123.4</td>
+<td>standard JSON</td>
+</tr>
+<tr>
+<td>+0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>standard JSON</td>
+</tr>
+<tr>
+<td>-0</td>
+<td>0</td>
+<td>-0</td>
+<td>-0</td>
+<td>Standard JSON allows -0 but serializes negative zero as 0 (losing the sign unnecessarily)</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>null</td>
+<td>NaN</td>
+<td>{&quot;_nan&quot;:true}</td>
+<td>Standard JSON: always encoded as null</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>null</td>
+<td>Infinity</td>
+<td>{&quot;_inf&quot;:true}</td>
+<td>Standard JSON: always encoded as null</td>
+</tr>
+<tr>
+<td>-Infinity</td>
+<td>null</td>
+<td>-Infinity</td>
+<td>{&quot;_ninf&quot;:true}</td>
+<td>Standard JSON: always encoded as null</td>
+</tr>
+<tr>
+<td>&quot;köhä&quot;</td>
+<td>&quot;köhä&quot;</td>
+<td>&quot;k\xf6h\xe4&quot;</td>
+<td>&quot;k\u00f6h\u00e4&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>U+00FC</td>
+<td>&quot;\u00fc&quot;</td>
+<td>&quot;\xfc&quot;</td>
+<td>&quot;\u00fc&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>U+ABCD</td>
+<td>&quot;\uabcd&quot;</td>
+<td>&quot;\uabcd&quot;</td>
+<td>&quot;\uabcd&quot;</td>
+<td></td>
+</tr>
+<tr>
+<td>U+1234ABCD</td>
+<td>&quot;U+1234abcd&quot;</td>
+<td>&quot;\U1234abcd&quot;</td>
+<td>&quot;U+1234abcd&quot;</td>
+<td>Non-BMP characters are not standard ECMAScript, JX format borrowed from Python</td>
+</tr>
+<tr>
+<td>object</td>
+<td>{&quot;my_key&quot;:123}</td>
+<td>{my_key:123}</td>
+<td>{&quot;my_key&quot;:123}</td>
+<td>ASCII keys matching identifer requirements encoded without quotes in JX</td>
+</tr>
+<tr>
+<td>array</td>
+<td>[&quot;foo&quot;,&quot;bar&quot;]</td>
+<td>[&quot;foo&quot;,&quot;bar&quot;]</td>
+<td>[&quot;foo&quot;,&quot;bar&quot;]</td>
+<td></td>
+</tr>
+<tr>
+<td>buffer</td>
+<td>n/a</td>
+<td>\</td>
+<td>deadbeef\</td>
+<td></td>
+<td>{&quot;_buf&quot;:&quot;deadbeef&quot;}</td>
+<td></td>
+</tr>
+<tr>
+<td>pointer</td>
+<td>n/a</td>
+<td>(0xdeadbeef)</td>
+<td>{&quot;_ptr&quot;:&quot;0xdeadbeef&quot;}</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>(DEADBEEF)</td>
+<td>{&quot;_ptr&quot;:&quot;DEADBEEF&quot;}</td>
+<td>Representation inside parentheses or quotes is platform specific</td>
+</tr>
+<tr>
+<td>NULL pointer</td>
+<td>n/a</td>
+<td>(null)</td>
+<td>{&quot;_ptr&quot;:&quot;null&quot;}</td>
+<td></td>
+</tr>
+<tr>
+<td>function</td>
+<td>n/a</td>
+<td>{_func:true}</td>
+<td>{&quot;_func&quot;:true}</td>
+<td>Standard JSON: encoded as null inside arrays, otherwise omitted</td>
+</tr>
+<tr>
+<td>lightfunc</td>
+<td>n/a</td>
+<td>{_func:true}</td>
+<td>{&quot;_func&quot;:true}</td>
+<td>Formats like ordinary functions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="制限事項">制限事項</h3>
+<p>いくつかの制限事項があります。</p>
+<ul>
+<li>列挙可能な自身のプロパティのみが、どのフォーマットでもシリアライズされます。</li>
+<li>配列のプロパティ（エントリ以外）はシリアライズされません。これは、例えばロギングなどで [1,2,3, &quot;type&quot;: &quot;point&quot;] のように有用でしょう。</li>
+<li>配列のギャップは保存されず、未定義としてパースバックされます。</li>
+<li>JCデータの解析時に、特殊な値を自動的に復活させることはありません。</li>
+<li>正規のエンコーディングがない。これは、エンコード時にオブジェクトのキーをソートする簡単なオプションで簡単にアレンジできるだろう。</li>
+</ul>
+<p>(今後の課題については、内部ドキュメントを参照してください)。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="custom_behavior.html" class="navigation navigation-prev " aria-label="Previous page: カスタム動作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom_directives.html" class="navigation navigation-next " aria-label="Next page: カスタムディレクティブ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"カスタムJSONフォーマット","level":"1.11","depth":1,"next":{"title":"カスタムディレクティブ","level":"1.12","depth":1,"path":"custom_directives.md","ref":"custom_directives.md","articles":[]},"previous":{"title":"カスタム動作","level":"1.10","depth":1,"path":"custom_behavior.md","ref":"custom_behavior.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"custom_json_formats.md","mtime":"2022-10-24T11:22:26.456Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T11:33:54.579Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
