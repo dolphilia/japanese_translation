@@ -11,5 +11,6 @@
 
 ## GitHub Pages
 
+- [Duktapeプログラミングガイド](https://dolphilia.github.io/Japanese-translation/duktape/guide/)
 - [HonKit](https://dolphilia.github.io/honkit_docs/)
 - [Natural Docs](https://dolphilia.github.io/natural_docs/)
