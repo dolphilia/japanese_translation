@@ -1,0 +1,845 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>コードの文書化 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="building_the_documentation.html" />
+    
+    
+    <link rel="prev" href="getting_set_up.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Natural Docsガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="getting_set_up.html">
+            
+                <a href="getting_set_up.html">
+            
+                    
+                    セットアップ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="getting_set_up.html">
+            
+                <a href="getting_set_up.html#download_and_install">
+            
+                    
+                    ダウンロードとインストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="getting_set_up.html">
+            
+                <a href="getting_set_up.html#starting_a_new_project">
+            
+                    
+                    新規プロジェクトの開始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="getting_set_up.html">
+            
+                <a href="getting_set_up.html#upgrading_a_x_project">
+            
+                    
+                    1.xプロジェクトのアップグレード
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html">
+            
+                    
+                    コードの文書化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#the_basics">
+            
+                    
+                    基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#classes_and_scope">
+            
+                    
+                    クラスとスコープ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#more_formatting">
+            
+                    
+                    その他の書式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#more_on_linking">
+            
+                    
+                    リンクの詳細
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#extra_documentation">
+            
+                    
+                    追加ドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="documenting_you_code.html">
+            
+                <a href="documenting_you_code.html#documenting_lists">
+            
+                    
+                    リストの文書化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="building_the_documentation.html">
+            
+                <a href="building_the_documentation.html">
+            
+                    
+                    ドキュメントの作成
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="building_the_documentation.html">
+            
+                <a href="building_the_documentation.html#keeping_it_updated">
+            
+                    
+                    更新を続ける
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="further_customization.html">
+            
+                <a href="further_customization.html">
+            
+                    
+                    カスタマイズ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://www.naturaldocs.org/getting_started/">
+            
+                    
+                    原文
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >コードの文書化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="natural-docsによるコードの文書化（日本語訳）">Natural Docsによるコードの文書化（日本語訳）</h1>
+<p><a href="https://www.naturaldocs.org/getting_started/documenting_your_code/" target="_blank">原文</a></p>
+<h2 id="the_basics">基本 </h2>
+<p>いよいよコードの文書化を開始するときが来ました。文書化を非常に簡単かつ苦痛にならないようにするため、すぐに飛び込んでみましょう。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Function: Multiply</span>
+<span class="hljs-comment">// Multiplies two integers and returns the result.</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Multiply</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span>
+    </span>{  <span class="hljs-keyword">return</span> x * y;  }
+</code></pre>
+<p>必要なのはこれだけです。Natural Docsを実行するとこのような出力が表示されます。</p>
+<pre><code>Multiply
+
+int Multiply (    
+int     x,
+int     y
+)
+
+Multiplies two integers and returns the result.
+</code></pre><p>各コメントは簡単なものから詳細なものまで自由に作ることができます。以下は、より凝ったものです。明らかにやりすぎですが、あくまでデモンストレーションです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* Function: Multiply
+
+   Multiplies two integers.
+
+   Parameters:
+
+      x - The first integer.
+      y - The second integer.
+
+   Returns:
+
+      The two integers multiplied together.
+
+   See Also:
+
+      &lt;Divide&gt;
+*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">Multiply</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span>
+   </span>{  <span class="hljs-keyword">return</span> x * y;  }
+</code></pre>
+<pre><code>Multiply
+
+int Multiply (    
+int     x,
+int     y
+)
+
+Multiplies two integers.
+
+Parameters
+x
+int
+The first integer.
+y
+int
+The second integer.
+
+Returns
+The two integers multiplied together.
+
+See Also
+Divide
+</code></pre><p>それでもあまり怖くはないでしょう？ コメントも出力と同じように読みやすいものです。タグが散乱しているわけでもなく、構造も非常に自然です。見ただけでわかると思いますが、とりあえず1つずつ見ていきましょう。</p>
+<pre><code class="lang-c">Function: Multiply
+</code></pre>
+<p>コメントはどれも「キーワード: タイトル」という形式の行から始まることになります。キーワードはたくさんありますが、それらはあなたが期待する通りのものです。関数、クラス、変数など。また同義語や略語も多く、Functionの代わりにFunc・Procedure・Methodなどを使うこともできます。このように何も覚えなくても記述しているものをそのまま使えるように設計されています。キーワードリストに目を通すことができますが、あまり頻繁に参照する必要はないでしょう。</p>
+<p>この行のもう一つの部分はタイトルです。これはあなたが文書化しているもの、この場合は関数名Multiplyと一致させる必要があります。Natural Docsはプログラミング言語の大文字と小文字を区別しないので、正確に一致させないと出力にプロトタイプ（関数宣言を示す小さな灰色のボックス）が表示されない可能性があることに注意してください。タイトルにパラメータを含める必要はありません。  むしろ、そうしないほうがよいでしょう。</p>
+<p>コメント記号は /** などの特別なものを使う必要はありません。重要なのは「キーワード: タイトル」の行で始まることだけです。</p>
+<pre><code>Parameters:
+
+Returns:
+
+See Also:
+</code></pre><p>また、行を飛ばしてコロンでテキストを終了させることによっても見出しを定義することができます。他のドキュメントシステムに慣れていると選べる見出しはほんの一握りだと思うかもしれませんが、この方法でフォーマットされたテキストはすべて見出しになります。もし、Dependenciesという見出しを付けたいのであれば、そのまま追加してください。ただタイトルケース（本のタイトルのようにほとんどの単語を大文字にすること）を使用する必要があることに注意してください。</p>
+<pre><code>x - The first integer.
+y - The second integer.
+</code></pre><p>これはいわゆる定義リストと呼ばれるものです。行を飛ばすまで止まらないので複数の行を使って定義を終わらせることができます。</p>
+<pre><code>x - The first integer.
+y - The second integer with a long description.
+    This is still part of the description.
+
+This is a new paragraph because we skipped a line
+and didn&apos;t indent.
+</code></pre><p>2行目は1行目と同じようにずっとインデントする必要はありませんが、少なくともスペース2つ分インデントする必要があります。</p>
+<pre><code>&lt;Divide&gt;
+</code></pre><p>これがNatural Docsでのリンクの仕方で角括弧を使います。これについては後で詳しく説明しますが、今はクールなものをお見せします。下の出力でマウスをその上に持っていってください。</p>
+<pre><code>Divide
+</code></pre><p>生成されたドキュメントのいたるところでこのようなことが書かれていますね。</p>
+<h2 id="classes_and_scope">クラスとスコープ </h2>
+<p>しかし、有用性に疑問のあるクラス全体がある場合はどうでしょうか。各要素のすぐ上にNatural Docsのコメントを付けて個々の関数をドキュメント化したのと同じように、クラスとそのメンバーをドキュメント化することができます。この例では管理しやすいように短い説明文に戻します。</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// Class: Counter</span>
+<span class="hljs-comment">// A class that manages an incrementing counter.</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span>
+   {</span>
+   <span class="hljs-comment">// Constructor: Counter</span>
+   <span class="hljs-comment">// Initializes the object.</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Counter</span> <span class="hljs-params">()</span>
+      </span>{  value = <span class="hljs-number">0</span>;  }
+
+   <span class="hljs-comment">// Function: Increment</span>
+   <span class="hljs-comment">// Adds one to the counter.</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Increment</span> <span class="hljs-params">()</span>
+      </span>{  value++;  }
+
+   <span class="hljs-comment">// Property: Value</span>
+   <span class="hljs-comment">// Returns the value of the counter.</span>
+   <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Value
+      {
+      get
+         {  <span class="hljs-keyword">return</span> value;  }
+      }
+
+   <span class="hljs-comment">// Variable: value</span>
+   <span class="hljs-comment">// The value of the counter.</span>
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> value;
+   }
+</code></pre>
+<p>すべて同じでClass、Property、VariableをFunctionキーワードに置き換えただけです。Constructorも使いましたが、これもFunctionと同じように簡単に使うことができます。どちらも同じものを表すキーワードなので問題ありません。</p>
+<h3 id="対象範囲">対象範囲</h3>
+<p>ソースコード自体と同様にNatural Docsのコメントにはスコープがあります。ValueとIncrementはコードにあるようにクラスCounterの一部と見なされます。なぜこれが重要なのでしょうか。リンクです。あるコメントから別のコメントへのリンクは、ある関数が別の関数を呼び出す方法と同様の規則があります。ValueはIncrementと同じクラスなので、そのコメントは単に<increment>でリンクすることができます。しかし、別のクラスからIncrementにリンクする場合は、代わりに<counter.increment>が必要です。実際には、3つの最も一般的なクラス/メンバの記法を使用できます。<counter.increment>、<counter::increment>、そして<counter->Increment&gt;です。</counter-></counter::increment></counter.increment></counter.increment></increment></p>
+<p>プログラミング言語が完全な言語サポートを持っている場合、スコープはコードによって決定され、自動的に適用されます。しかし、基本的な言語サポートしかない場合は、以下のルールに従います。</p>
+<ul>
+<li>Class のコメント（または Starts Scope と書かれたもの）の後に表示されるコメントは、そのクラスの一部となります。</li>
+<li>Section コメント（または Ends Scope と書かれたもの）の後に表示されるコメントはすべて、再びグローバルになります。</li>
+<li>Fileコメント（またはAlways Globalと書かれたもの）は、何があってもグローバルであり、他のコメントには影響しません。</li>
+</ul>
+<p>これを知らなくても同じことを書いていて、そのまま通用した可能性があります。通常は全く考える必要はないでしょう。しかし、何かがあなたの期待通りに動作しない場合に備えて、これらのルールを意識しておくのは良いことです。<a href="https://www.naturaldocs.org/reference/scope" target="_blank">リファレンスの全文</a>はもっと詳しく書かれています。</p>
+<p>あなたは今、ドキュメントを書き始めるのに十分な知識を持っています。もっと学べることはありますが、それらは付加的なものです。</p>
+<h2 id="more_formatting">その他の書式 </h2>
+<h3 id="段落、太字、下線">段落、太字、下線</h3>
+<p>これらの構文は非常に簡単です。</p>
+<pre><code>*Bold text*
+
+_Underlined text_
+
+Paragraphs are broken by skipping lines.  So the two
+lines above each have their own paragraph, but these
+three lines are all part of the same one.
+</code></pre><pre><code>Bold text
+Underlined text
+Paragraphs are broken by skipping lines.  So the two lines above each have their own paragraph, but these three lines are all part of the same one.
+</code></pre><p>複数の単語に下線を引く場合、それぞれのスペースにアンダースコアを使うこともできますし、上記のように端につけることもできます。どちらの方法も有効です。</p>
+<h3 id="箇条書きリスト">箇条書きリスト</h3>
+<p>行頭にダッシュやアスタリスクを付けると、箇条書きにすることができます。内容は複数行にまたがることがあるので、終わらせるには1行飛ばす必要があります。</p>
+<pre><code>- Bullet one.
+- Bullet two.
+  Bullet two continued.
+- Bullet three.
+
+Some text after the bullet list.
+</code></pre><pre><code>Bullet one.
+Bullet two.  Bullet two continued.
+Bullet three.
+Some text after the bullet list.
+</code></pre><p>各レベルが前のレベルより少なくとも2スペース以上インデントされていれば、複数のレベルを持つことができます。また、1つの箇条書きの中に複数の段落があっても、そこから少なくとも2つのスペースでインデントされていれば問題ありません。</p>
+<pre><code>* Level one.
+
+  * Level two, first paragraph.
+    Level two, first paragraph continued.
+
+    Level two, second paragraph.
+
+      * Level three.
+</code></pre><pre><code>Level one.
+Level two, first paragraph.  Level two, first paragraph continued.
+Level two, second paragraph.
+Level three.
+</code></pre><h3 id="定義リスト">定義リスト</h3>
+<p>定義リストは「項目 - 定義」という形式の行です。箇条書きのリストと同様、行を飛ばすまで続き、インデントされていれば定義の中に複数の段落を持つことができます。</p>
+<pre><code>Item 1 - The first paragraph.
+         The first paragraph continued.
+
+         The second paragraph
+
+Item 2 - The first paragraph.
+  The first paragraph continued.
+
+  The second paragraph.
+
+Some text after the definition list.
+</code></pre><pre><code>Item 1    
+The first paragraph.  The first paragraph continued.
+The second paragraph
+Item 2    
+The first paragraph.  The first paragraph continued.
+The second paragraph.
+Some text after the definition list.
+</code></pre><p>関数を文書化し、パラメータ（またはパラメータ、引数など）という見出しの下に定義リストを置くとNatural Docsは自動的にプロトタイプでそれぞれを検索し、リストにそのタイプを含めます。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* Function: MyFunction
+ *
+ * Parameters:
+ *
+ *    x - Description of x.
+ *    y - Description of y.
+ *    z - Description of z.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MyFunction</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-built_in">string</span> y, Counter z)</span>
+   </span>{ ... }
+</code></pre>
+<pre><code>Parameters
+x
+int
+Description of x.
+y
+string
+Description of y.
+z
+Counter
+Description of z.
+</code></pre><p>Counterのような文書化されたタイプの場合、その定義へのリンクとなり、マウスを乗せると概要がポップアップ表示されます。</p>
+<h3 id="コードとテキスト図">コードとテキスト図</h3>
+<p>コードのセクションを追加するには、少なくとも3つのダッシュ・等号・またはアンダースコアで行を開始し、「Code」を続けてください。同じ記号が3つ以上並ぶ別の行が現れるまで続けられます。</p>
+<pre><code>This is a normal paragraph.
+
+--- Code
+int x = 12;
+int y = 0;
+---
+
+This is a normal paragraph.
+</code></pre><pre><code>This is a normal paragraph.
+
+int x = 12;
+int y = 0;
+
+This is a normal paragraph.
+</code></pre><p>必要なら3文字以上使ってもよいですし、また、その方が視覚的にはっきりするのであれば、キーワードの後にもっと続けても構いません。</p>
+<p>また、Codeの代わりに言語名を指定すると、正しいシンタックスハイライトが使用されます。また、Textを使用するとハイライトを全く使用せず、各ブロックを個別に閉じることなく、あるモードから別のモードへ切り替えることができます。</p>
+<pre><code>This is a normal paragraph.
+
+======= C# =======
+int x = 12;
+int y = 0;
+====== Perl ======
+my $x = 12;
+my $y = 0;
+====== Text ======
+This is plain text
+==================
+
+This is a normal paragraph.
+</code></pre><pre><code>This is a normal paragraph.
+
+int x = 12;
+int y = 0;
+
+my $x = 12;
+my $y = 0;
+
+This is plain text
+
+This is a normal paragraph.
+</code></pre><p>もし、ここやあそこに簡単な行を入れたいだけなら、それぞれの行を「&gt;」「|」または「:」で始めることができます。ただし、ハイライトはされません。</p>
+<pre><code>This is a normal paragraph.
+
+&gt; int x = 12;
+&gt; int y = 0;
+
+This is a normal paragraph.
+</code></pre><pre><code>This is a normal paragraph.
+
+int x = 12;
+int y = 0;
+
+This is a normal paragraph.
+</code></pre><h2 id="more_on_linking">リンクの詳細 </h2>
+<p>リンクにはまだ続きがあります。URLやメールアドレスにリンクすることができますが、この場合、角括弧は任意です。</p>
+<pre><code>Visit &lt;http://www.website.com&gt; or send messages to email@address.com.
+</code></pre><pre><code>Visit http://​www​.website​.com or send messages to email@address.com.
+</code></pre><p>テキスト、「at」、そしてアドレスを角括弧に入れることで、名前付きリンクを作成することができます。この形式だと、文章の中で自然に読むことができます。また、「at」の代わりにコロンを使用することもできます。</p>
+<pre><code>Visit &lt;the website: http://www.website.com&gt; or &lt;e-mail me at email@address.com&gt;.
+</code></pre><pre><code>Visit the website or e-mail me.
+</code></pre><p>電子メールアドレスは、見た目は通常のリンクと同じですが、HTMLが難読化されており、スパム・クローラーから保護することができます。</p>
+<h3 id="複数形と所有格">複数形と所有格</h3>
+<p>通常のリンクについては、文章になじみやすいように、角括弧の中に複数形や所有格を入れることができます。言い換えれば、<object>sのような使いにくい構文を使用する必要はありません（それもサポートされています）。単純に<objects>と書けば、シンボルObjectにうまくリンクしてくれます。複数形や所有格など、どのような形でも扱うことができます。冗談ではありません。Foxes, Fox&apos;s, Foxes&apos;, Children, Mice, Alumni, Indices, Amoebae, Teeth, などなど、とにかく試してみてください。</objects></object></p>
+<h2 id="extra_documentation">追加ドキュメント </h2>
+<p>時にはコード要素に直接対応しないドキュメントを含めたいことがあります。例えば、ライセンス情報やアーキテクチャの注記を含めたい場合です。これには2つの方法があります。</p>
+<h3 id="単体でのコメント">単体でのコメント</h3>
+<p>あなたが書くコメントのほとんどは、ソースコードの要素に直接対応するものですが、そうでなければならないというわけではありません。利用可能なキーワードのいずれかを選び、そのキーワードで独立したコメントを作成することができます。例えば:</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">/* Class: Counter
+ * A class that manages an incrementing counter.
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Counter</span>
+   {</span>
+   <span class="hljs-comment">/* About: Thread Safety
+    * This class is not designed to be thread safe.
+    */</span>
+
+   <span class="hljs-comment">/* Constructor: Counter
+    * Initializes the object.
+    */</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Counter</span> <span class="hljs-params">()</span>
+      </span>{  value = <span class="hljs-number">0</span>;  }
+
+   ...
+</code></pre>
+<p>余分なコメントは関数と同じように出力に追加されます。</p>
+<pre><code>Thread Safety
+This class is not designed to be thread safe.
+</code></pre><p>スコープのため、コメントは実際には上記のようにCounterの一部とみなされることを忘れないでください。あなたは、<counter.thread safety>で、Counter の外側からそれにリンクすることになります。この考えには慣れが必要かもしれませんが、もし余分なコメントが1つのクラスだけに適用されるなら、それは実際にそれを行う最も適切な方法です。プロジェクト全体に適用されるライセンスのようなものであれば、関数をそこに移動するのと同じように、それをグローバルにするためにクラスの上に置くことになります。</counter.thread></p>
+<h3 id="テキストファイル">テキストファイル</h3>
+<p>また、テキストファイルを使用して追加のドキュメントを追加することもできます。拡張子が.txtのファイルをソースフォルダに置き、「キーワード: タイトル」行で始めると、その内容はソースコード内のコメントと同じように扱われるようになります。つまり、複数の「keyword: title」行を使用して複数の内容を定義したり、ソースコード内のコメントとリンクしたり、利用可能なすべての書式オプションを使用することができるのです。</p>
+<pre><code>Title: License
+
+   This file is licensed under the GPL.
+
+   I can link to &lt;Counter&gt; and &lt;Counter.Increment&gt;, and the
+   documentation in that class can even link back with &lt;License&gt;.
+
+
+About: Second Topic
+
+   I can create a *second* topic in here too, complete with
+   formatting.
+</code></pre><p>「タイトル」のように「キーワード: タイトル」の行で始めることを忘れてはいけません。上記の「License」のように「keyword: title」行で始めることを忘れてはなりません。これはNatural Docsが通常のテキストファイルと区別する方法です。</p>
+<h2 id="documenting_lists">リストの文書化 </h2>
+<p>もう一つ知っておくと便利なことがあります。例えば、定数のような小さなドキュメントをたくさん持っているとします。それぞれに個別のコメントを書くのは、いくら圧縮しても非常に面倒です。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Constant: COUNTER_NORMAL</span>
+<span class="hljs-comment">// Causes the counter to increment normally.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_NORMAL = <span class="hljs-number">0</span>;
+
+<span class="hljs-comment">// Constant: COUNTER_ODD</span>
+<span class="hljs-comment">// Causes the counter to only increment in odd numbers.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_ODD = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">// Constant: COUNTER_EVEN</span>
+<span class="hljs-comment">// Causes the counter to only increment in even numbers.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_EVEN = <span class="hljs-number">2</span>;
+</code></pre>
+<p>キーワードリストを見て、ほとんどすべてのキーワードが複数形であることにお気づきでしょうか。これは、リストコメントと呼ばれるものを作成するために使用されます。複数形のキーワードを使ってコメントを定義すると、その中の定義リストに表示されるものは、あたかもそれぞれがコメントを持っているかのようにリンク可能になります。例えば:</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* Constants: Counter Modes
+
+   COUNTER_NORMAL - Causes the counter to increment normally.
+   COUNTER_ODD    - Causes the counter to only increment in odd numbers.
+   COUNTER_EVEN   - Causes the counter to only increment in even numbers.
+*/</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_NORMAL = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_ODD = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> COUNTER_EVEN = <span class="hljs-number">2</span>;
+</code></pre>
+<p>これで<counter_odd>と書けば、最初の例と同じように動作するようになります。</counter_odd></p>
+<p>enumキーワードを使用すると、自動的に同様の動作をするため、特別です。これによりenumとその値の両方が同じ場所で文書化されます。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* Enum: CounterMode
+
+   Normal - Causes the counter to increment normally.
+   Odd    - Causes the counter to only increment in odd numbers.
+   Even   - Causes the counter to only increment in even numbers.
+*/</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">CounterMode</span> {</span> Normal, Odd, Even };
+</code></pre>
+<p>CounterModeだけでなく、CounterMode.Oddへのリンクも可能になりました。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="getting_set_up.html" class="navigation navigation-prev " aria-label="Previous page: セットアップ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="building_the_documentation.html" class="navigation navigation-next " aria-label="Next page: ドキュメントの作成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"コードの文書化","level":"1.3","depth":1,"next":{"title":"ドキュメントの作成","level":"1.4","depth":1,"path":"gettingstarted/building_the_documentation.md","ref":"gettingstarted/building_the_documentation.md","articles":[{"title":"更新を続ける","level":"1.4.1","depth":2,"anchor":"#keeping_it_updated","path":"gettingstarted/building_the_documentation.md","ref":"gettingstarted/building_the_documentation.md#keeping_it_updated","articles":[]}]},"previous":{"title":"セットアップ","level":"1.2","depth":1,"path":"gettingstarted/getting_set_up.md","ref":"gettingstarted/getting_set_up.md","articles":[{"title":"ダウンロードとインストール","level":"1.2.1","depth":2,"anchor":"#download_and_install","path":"gettingstarted/getting_set_up.md","ref":"gettingstarted/getting_set_up.md#download_and_install","articles":[]},{"title":"新規プロジェクトの開始","level":"1.2.2","depth":2,"anchor":"#starting_a_new_project","path":"gettingstarted/getting_set_up.md","ref":"gettingstarted/getting_set_up.md#starting_a_new_project","articles":[]},{"title":"1.xプロジェクトのアップグレード","level":"1.2.3","depth":2,"anchor":"#upgrading_a_x_project","path":"gettingstarted/getting_set_up.md","ref":"gettingstarted/getting_set_up.md#upgrading_a_x_project","articles":[]}]},"articles":[{"title":"基本","level":"1.3.1","depth":2,"anchor":"#the_basics","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#the_basics","articles":[]},{"title":"クラスとスコープ","level":"1.3.2","depth":2,"anchor":"#classes_and_scope","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#classes_and_scope","articles":[]},{"title":"その他の書式","level":"1.3.3","depth":2,"anchor":"#more_formatting","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#more_formatting","articles":[]},{"title":"リンクの詳細","level":"1.3.4","depth":2,"anchor":"#more_on_linking","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#more_on_linking","articles":[]},{"title":"追加ドキュメント","level":"1.3.5","depth":2,"anchor":"#extra_documentation","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#extra_documentation","articles":[]},{"title":"リストの文書化","level":"1.3.6","depth":2,"anchor":"#documenting_lists","path":"gettingstarted/documenting_you_code.md","ref":"gettingstarted/documenting_you_code.md#documenting_lists","articles":[]}],"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"gettingstarted/documenting_you_code.md","mtime":"2022-10-24T07:45:21.005Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-24T08:25:55.144Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
