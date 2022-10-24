@@ -4,13 +4,13 @@
 
 ## 目録
 
-- [Duktape](https://github.com/dolphilia/Japanese-translation/tree/main/duktape)
-- [Mermaid](https://github.com/dolphilia/Japanese-translation/tree/main/mermaid)
-- [Angle](https://github.com/dolphilia/Japanese-translation/tree/main/angle)
-- [WG14-C](https://github.com/dolphilia/Japanese-translation/tree/main/WG14-C)
+- [Duktape](https://github.com/dolphilia/japanese_translation/tree/main/duktape)
+- [Mermaid](https://github.com/dolphilia/japanese_translation/tree/main/mermaid)
+- [Angle](https://github.com/dolphilia/japanese_translation/tree/main/angle)
+- [WG14-C](https://github.com/dolphilia/japanese_translation/tree/main/WG14-C)
 
 ## GitHub Pages
 
-- [Duktapeプログラミングガイド](https://dolphilia.github.io/Japanese-translation/duktape/guide/)
-- [HonKit](https://dolphilia.github.io/Japanese-translation/honkit/)
-- [Natural Docs](https://dolphilia.github.io/Japanese-translation/natural_docs/)
+- [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/)
+- [HonKit](https://dolphilia.github.io/japanese_translation/honkit/)
+- [Natural Docs](https://dolphilia.github.io/japanese_translation/natural_docs/)
