@@ -9,6 +9,7 @@
 - [Angle](https://github.com/dolphilia/Japanese-translation/tree/main/angle)
 - [WG14-C](https://github.com/dolphilia/Japanese-translation/tree/main/WG14-C)
 
-## GitBook
+## GitHub Pages
 
-- [HonKit](https://raia.gitbook.io/honkit_docs/)
+- [HonKit](https://dolphilia.github.io/honkit_docs/)
+- [Natural Docs](https://dolphilia.github.io/natural_docs/)
