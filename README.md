@@ -14,3 +14,4 @@
 - [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/)
 - [HonKit](https://dolphilia.github.io/japanese_translation/honkit/)
 - [Natural Docs](https://dolphilia.github.io/japanese_translation/natural_docs/)
+- [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)
