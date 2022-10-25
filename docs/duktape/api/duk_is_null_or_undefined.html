@@ -1,0 +1,4651 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>duk_is_null_or_undefined · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="duk_is_number.html" />
+    
+    
+    <link rel="prev" href="duk_is_null.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">APIガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="toc.html">
+            
+                <a href="toc.html">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">API一覧</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="duk_alloc.html">
+            
+                <a href="duk_alloc.html">
+            
+                    
+                    duk_alloc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="duk_alloc_raw.html">
+            
+                <a href="duk_alloc_raw.html">
+            
+                    
+                    duk_alloc_raw
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="duk_base64_decode.html">
+            
+                <a href="duk_base64_decode.html">
+            
+                    
+                    duk_base64_decode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="duk_base64_encode.html">
+            
+                <a href="duk_base64_encode.html">
+            
+                    
+                    duk_base64_encode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="duk_call.html">
+            
+                <a href="duk_call.html">
+            
+                    
+                    duk_call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="duk_call_method.html">
+            
+                <a href="duk_call_method.html">
+            
+                    
+                    duk_call_method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="duk_call_prop.html">
+            
+                <a href="duk_call_prop.html">
+            
+                    
+                    duk_call_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="duk_char_code_at.html">
+            
+                <a href="duk_char_code_at.html">
+            
+                    
+                    duk_char_code_at
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="duk_check_stack.html">
+            
+                <a href="duk_check_stack.html">
+            
+                    
+                    duk_check_stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="duk_check_stack_top.html">
+            
+                <a href="duk_check_stack_top.html">
+            
+                    
+                    duk_check_stack_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="duk_check_type.html">
+            
+                <a href="duk_check_type.html">
+            
+                    
+                    duk_check_type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="duk_check_type_mask.html">
+            
+                <a href="duk_check_type_mask.html">
+            
+                    
+                    duk_check_type_mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="duk_compact.html">
+            
+                <a href="duk_compact.html">
+            
+                    
+                    duk_compact
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="duk_compile.html">
+            
+                <a href="duk_compile.html">
+            
+                    
+                    duk_compile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="duk_compile_lstring.html">
+            
+                <a href="duk_compile_lstring.html">
+            
+                    
+                    duk_compile_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="duk_compile_lstring_filename.html">
+            
+                <a href="duk_compile_lstring_filename.html">
+            
+                    
+                    duk_compile_lstring_filename
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="duk_compile_string.html">
+            
+                <a href="duk_compile_string.html">
+            
+                    
+                    duk_compile_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="duk_compile_string_filename.html">
+            
+                <a href="duk_compile_string_filename.html">
+            
+                    
+                    duk_compile_string_filename
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="duk_concat.html">
+            
+                <a href="duk_concat.html">
+            
+                    
+                    duk_concat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="duk_copy.html">
+            
+                <a href="duk_copy.html">
+            
+                    
+                    duk_copy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="duk_create_heap.html">
+            
+                <a href="duk_create_heap.html">
+            
+                    
+                    duk_create_heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="duk_create_heap_default.html">
+            
+                <a href="duk_create_heap_default.html">
+            
+                    
+                    duk_create_heap_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="duk_decode_string.html">
+            
+                <a href="duk_decode_string.html">
+            
+                    
+                    duk_decode_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="duk_del_prop.html">
+            
+                <a href="duk_del_prop.html">
+            
+                    
+                    duk_del_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="duk_del_prop_index.html">
+            
+                <a href="duk_del_prop_index.html">
+            
+                    
+                    duk_del_prop_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="duk_del_prop_string.html">
+            
+                <a href="duk_del_prop_string.html">
+            
+                    
+                    duk_del_prop_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="duk_destroy_heap.html">
+            
+                <a href="duk_destroy_heap.html">
+            
+                    
+                    duk_destroy_heap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="duk_dup.html">
+            
+                <a href="duk_dup.html">
+            
+                    
+                    duk_dup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="duk_dup_top.html">
+            
+                <a href="duk_dup_top.html">
+            
+                    
+                    duk_dup_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="duk_enum.html">
+            
+                <a href="duk_enum.html">
+            
+                    
+                    duk_enum
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="duk_equals.html">
+            
+                <a href="duk_equals.html">
+            
+                    
+                    duk_equals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="duk_error.html">
+            
+                <a href="duk_error.html">
+            
+                    
+                    duk_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="duk_eval.html">
+            
+                <a href="duk_eval.html">
+            
+                    
+                    duk_eval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="duk_eval_lstring.html">
+            
+                <a href="duk_eval_lstring.html">
+            
+                    
+                    duk_eval_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="duk_eval_lstring_noresult.html">
+            
+                <a href="duk_eval_lstring_noresult.html">
+            
+                    
+                    duk_eval_lstring_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.36" data-path="duk_eval_noresult.html">
+            
+                <a href="duk_eval_noresult.html">
+            
+                    
+                    duk_eval_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.37" data-path="duk_eval_string.html">
+            
+                <a href="duk_eval_string.html">
+            
+                    
+                    duk_eval_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.38" data-path="duk_eval_string_noresult.html">
+            
+                <a href="duk_eval_string_noresult.html">
+            
+                    
+                    duk_eval_string_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.39" data-path="duk_fatal.html">
+            
+                <a href="duk_fatal.html">
+            
+                    
+                    duk_fatal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.40" data-path="duk_free.html">
+            
+                <a href="duk_free.html">
+            
+                    
+                    duk_free
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.41" data-path="duk_free_raw.html">
+            
+                <a href="duk_free_raw.html">
+            
+                    
+                    duk_free_raw
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.42" data-path="duk_gc.html">
+            
+                <a href="duk_gc.html">
+            
+                    
+                    duk_gc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.43" data-path="duk_get_boolean.html">
+            
+                <a href="duk_get_boolean.html">
+            
+                    
+                    duk_get_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.44" data-path="duk_get_buffer.html">
+            
+                <a href="duk_get_buffer.html">
+            
+                    
+                    duk_get_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.45" data-path="duk_get_c_function.html">
+            
+                <a href="duk_get_c_function.html">
+            
+                    
+                    duk_get_c_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.46" data-path="duk_get_context.html">
+            
+                <a href="duk_get_context.html">
+            
+                    
+                    duk_get_context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.47" data-path="duk_get_current_magic.html">
+            
+                <a href="duk_get_current_magic.html">
+            
+                    
+                    duk_get_current_magic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.48" data-path="duk_get_finalizer.html">
+            
+                <a href="duk_get_finalizer.html">
+            
+                    
+                    duk_get_finalizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.49" data-path="duk_get_global_string.html">
+            
+                <a href="duk_get_global_string.html">
+            
+                    
+                    duk_get_global_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.50" data-path="duk_get_int.html">
+            
+                <a href="duk_get_int.html">
+            
+                    
+                    duk_get_int
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.51" data-path="duk_get_length.html">
+            
+                <a href="duk_get_length.html">
+            
+                    
+                    duk_get_length
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.52" data-path="duk_get_lstring.html">
+            
+                <a href="duk_get_lstring.html">
+            
+                    
+                    duk_get_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.53" data-path="duk_get_magic.html">
+            
+                <a href="duk_get_magic.html">
+            
+                    
+                    duk_get_magic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.54" data-path="duk_get_memory_functions.html">
+            
+                <a href="duk_get_memory_functions.html">
+            
+                    
+                    duk_get_memory_functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.55" data-path="duk_get_number.html">
+            
+                <a href="duk_get_number.html">
+            
+                    
+                    duk_get_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.56" data-path="duk_get_pointer.html">
+            
+                <a href="duk_get_pointer.html">
+            
+                    
+                    duk_get_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.57" data-path="duk_get_prop.html">
+            
+                <a href="duk_get_prop.html">
+            
+                    
+                    duk_get_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.58" data-path="duk_get_prop_index.html">
+            
+                <a href="duk_get_prop_index.html">
+            
+                    
+                    duk_get_prop_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.59" data-path="duk_get_prop_string.html">
+            
+                <a href="duk_get_prop_string.html">
+            
+                    
+                    duk_get_prop_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.60" data-path="duk_get_prototype.html">
+            
+                <a href="duk_get_prototype.html">
+            
+                    
+                    duk_get_prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.61" data-path="duk_get_string.html">
+            
+                <a href="duk_get_string.html">
+            
+                    
+                    duk_get_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.62" data-path="duk_get_top.html">
+            
+                <a href="duk_get_top.html">
+            
+                    
+                    duk_get_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.63" data-path="duk_get_top_index.html">
+            
+                <a href="duk_get_top_index.html">
+            
+                    
+                    duk_get_top_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.64" data-path="duk_get_type.html">
+            
+                <a href="duk_get_type.html">
+            
+                    
+                    duk_get_type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.65" data-path="duk_get_type_mask.html">
+            
+                <a href="duk_get_type_mask.html">
+            
+                    
+                    duk_get_type_mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.66" data-path="duk_get_uint.html">
+            
+                <a href="duk_get_uint.html">
+            
+                    
+                    duk_get_uint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.67" data-path="duk_has_prop.html">
+            
+                <a href="duk_has_prop.html">
+            
+                    
+                    duk_has_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.68" data-path="duk_has_prop_index.html">
+            
+                <a href="duk_has_prop_index.html">
+            
+                    
+                    duk_has_prop_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.69" data-path="duk_has_prop_string.html">
+            
+                <a href="duk_has_prop_string.html">
+            
+                    
+                    duk_has_prop_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.70" data-path="duk_hex_decode.html">
+            
+                <a href="duk_hex_decode.html">
+            
+                    
+                    duk_hex_decode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.71" data-path="duk_hex_encode.html">
+            
+                <a href="duk_hex_encode.html">
+            
+                    
+                    duk_hex_encode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.72" data-path="duk_insert.html">
+            
+                <a href="duk_insert.html">
+            
+                    
+                    duk_insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.73" data-path="duk_is_array.html">
+            
+                <a href="duk_is_array.html">
+            
+                    
+                    duk_is_array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.74" data-path="duk_is_boolean.html">
+            
+                <a href="duk_is_boolean.html">
+            
+                    
+                    duk_is_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.75" data-path="duk_is_bound_function.html">
+            
+                <a href="duk_is_bound_function.html">
+            
+                    
+                    duk_is_bound_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.76" data-path="duk_is_buffer.html">
+            
+                <a href="duk_is_buffer.html">
+            
+                    
+                    duk_is_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.77" data-path="duk_is_c_function.html">
+            
+                <a href="duk_is_c_function.html">
+            
+                    
+                    duk_is_c_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.78" data-path="duk_is_callable.html">
+            
+                <a href="duk_is_callable.html">
+            
+                    
+                    duk_is_callable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.79" data-path="duk_is_constructor_call.html">
+            
+                <a href="duk_is_constructor_call.html">
+            
+                    
+                    duk_is_constructor_call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.80" data-path="duk_is_dynamic_buffer.html">
+            
+                <a href="duk_is_dynamic_buffer.html">
+            
+                    
+                    duk_is_dynamic_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.81" data-path="duk_is_ecmascript_function.html">
+            
+                <a href="duk_is_ecmascript_function.html">
+            
+                    
+                    duk_is_ecmascript_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.82" data-path="duk_is_fixed_buffer.html">
+            
+                <a href="duk_is_fixed_buffer.html">
+            
+                    
+                    duk_is_fixed_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.83" data-path="duk_is_function.html">
+            
+                <a href="duk_is_function.html">
+            
+                    
+                    duk_is_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.84" data-path="duk_is_lightfunc.html">
+            
+                <a href="duk_is_lightfunc.html">
+            
+                    
+                    duk_is_lightfunc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.85" data-path="duk_is_nan.html">
+            
+                <a href="duk_is_nan.html">
+            
+                    
+                    duk_is_nan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.86" data-path="duk_is_null.html">
+            
+                <a href="duk_is_null.html">
+            
+                    
+                    duk_is_null
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.87" data-path="duk_is_null_or_undefined.html">
+            
+                <a href="duk_is_null_or_undefined.html">
+            
+                    
+                    duk_is_null_or_undefined
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.88" data-path="duk_is_number.html">
+            
+                <a href="duk_is_number.html">
+            
+                    
+                    duk_is_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.89" data-path="duk_is_object.html">
+            
+                <a href="duk_is_object.html">
+            
+                    
+                    duk_is_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.90" data-path="duk_is_object_coercible.html">
+            
+                <a href="duk_is_object_coercible.html">
+            
+                    
+                    duk_is_object_coercible
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.91" data-path="duk_is_pointer.html">
+            
+                <a href="duk_is_pointer.html">
+            
+                    
+                    duk_is_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.92" data-path="duk_is_primitive.html">
+            
+                <a href="duk_is_primitive.html">
+            
+                    
+                    duk_is_primitive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.93" data-path="duk_is_strict_call.html">
+            
+                <a href="duk_is_strict_call.html">
+            
+                    
+                    duk_is_strict_call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.94" data-path="duk_is_string.html">
+            
+                <a href="duk_is_string.html">
+            
+                    
+                    duk_is_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.95" data-path="duk_is_thread.html">
+            
+                <a href="duk_is_thread.html">
+            
+                    
+                    duk_is_thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.96" data-path="duk_is_undefined.html">
+            
+                <a href="duk_is_undefined.html">
+            
+                    
+                    duk_is_undefined
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.97" data-path="duk_is_valid_index.html">
+            
+                <a href="duk_is_valid_index.html">
+            
+                    
+                    duk_is_valid_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.98" data-path="duk_join.html">
+            
+                <a href="duk_join.html">
+            
+                    
+                    duk_join
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.99" data-path="duk_json_decode.html">
+            
+                <a href="duk_json_decode.html">
+            
+                    
+                    duk_json_decode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.100" data-path="duk_json_encode.html">
+            
+                <a href="duk_json_encode.html">
+            
+                    
+                    duk_json_encode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.101" data-path="duk_map_string.html">
+            
+                <a href="duk_map_string.html">
+            
+                    
+                    duk_map_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.102" data-path="duk_new.html">
+            
+                <a href="duk_new.html">
+            
+                    
+                    duk_new
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.103" data-path="duk_next.html">
+            
+                <a href="duk_next.html">
+            
+                    
+                    duk_next
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.104" data-path="duk_normalize_index.html">
+            
+                <a href="duk_normalize_index.html">
+            
+                    
+                    duk_normalize_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.105" data-path="duk_pcall.html">
+            
+                <a href="duk_pcall.html">
+            
+                    
+                    duk_pcall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.106" data-path="duk_pcall_method.html">
+            
+                <a href="duk_pcall_method.html">
+            
+                    
+                    duk_pcall_method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.107" data-path="duk_pcall_prop.html">
+            
+                <a href="duk_pcall_prop.html">
+            
+                    
+                    duk_pcall_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.108" data-path="duk_pcompile.html">
+            
+                <a href="duk_pcompile.html">
+            
+                    
+                    duk_pcompile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.109" data-path="duk_pcompile_lstring.html">
+            
+                <a href="duk_pcompile_lstring.html">
+            
+                    
+                    duk_pcompile_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.110" data-path="duk_pcompile_lstring_filename.html">
+            
+                <a href="duk_pcompile_lstring_filename.html">
+            
+                    
+                    duk_pcompile_lstring_filename
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.111" data-path="duk_pcompile_string.html">
+            
+                <a href="duk_pcompile_string.html">
+            
+                    
+                    duk_pcompile_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.112" data-path="duk_pcompile_string_filename.html">
+            
+                <a href="duk_pcompile_string_filename.html">
+            
+                    
+                    duk_pcompile_string_filename
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.113" data-path="duk_peval.html">
+            
+                <a href="duk_peval.html">
+            
+                    
+                    duk_peval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.114" data-path="duk_peval_lstring.html">
+            
+                <a href="duk_peval_lstring.html">
+            
+                    
+                    duk_peval_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.115" data-path="duk_peval_lstring_noresult.html">
+            
+                <a href="duk_peval_lstring_noresult.html">
+            
+                    
+                    duk_peval_lstring_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.116" data-path="duk_peval_noresult.html">
+            
+                <a href="duk_peval_noresult.html">
+            
+                    
+                    duk_peval_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.117" data-path="duk_peval_string.html">
+            
+                <a href="duk_peval_string.html">
+            
+                    
+                    duk_peval_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.118" data-path="duk_peval_string_noresult.html">
+            
+                <a href="duk_peval_string_noresult.html">
+            
+                    
+                    duk_peval_string_noresult
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.119" data-path="duk_pop.html">
+            
+                <a href="duk_pop.html">
+            
+                    
+                    duk_pop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.120" data-path="duk_pop_2.html">
+            
+                <a href="duk_pop_2.html">
+            
+                    
+                    duk_pop_2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.121" data-path="duk_pop_3.html">
+            
+                <a href="duk_pop_3.html">
+            
+                    
+                    duk_pop_3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.122" data-path="duk_pop_n.html">
+            
+                <a href="duk_pop_n.html">
+            
+                    
+                    duk_pop_n
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.123" data-path="duk_push_array.html">
+            
+                <a href="duk_push_array.html">
+            
+                    
+                    duk_push_array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.124" data-path="duk_push_boolean.html">
+            
+                <a href="duk_push_boolean.html">
+            
+                    
+                    duk_push_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.125" data-path="duk_push_buffer.html">
+            
+                <a href="duk_push_buffer.html">
+            
+                    
+                    duk_push_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.126" data-path="duk_push_c_function.html">
+            
+                <a href="duk_push_c_function.html">
+            
+                    
+                    duk_push_c_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.127" data-path="duk_push_c_lightfunc.html">
+            
+                <a href="duk_push_c_lightfunc.html">
+            
+                    
+                    duk_push_c_lightfunc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.128" data-path="duk_push_context_dump.html">
+            
+                <a href="duk_push_context_dump.html">
+            
+                    
+                    duk_push_context_dump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.129" data-path="duk_push_current_function.html">
+            
+                <a href="duk_push_current_function.html">
+            
+                    
+                    duk_push_current_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.130" data-path="duk_push_current_thread.html">
+            
+                <a href="duk_push_current_thread.html">
+            
+                    
+                    duk_push_current_thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.131" data-path="duk_push_dynamic_buffer.html">
+            
+                <a href="duk_push_dynamic_buffer.html">
+            
+                    
+                    duk_push_dynamic_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.132" data-path="duk_push_error_object.html">
+            
+                <a href="duk_push_error_object.html">
+            
+                    
+                    duk_push_error_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.133" data-path="duk_push_false.html">
+            
+                <a href="duk_push_false.html">
+            
+                    
+                    duk_push_false
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.134" data-path="duk_push_fixed_buffer.html">
+            
+                <a href="duk_push_fixed_buffer.html">
+            
+                    
+                    duk_push_fixed_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.135" data-path="duk_push_global_object.html">
+            
+                <a href="duk_push_global_object.html">
+            
+                    
+                    duk_push_global_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.136" data-path="duk_push_global_stash.html">
+            
+                <a href="duk_push_global_stash.html">
+            
+                    
+                    duk_push_global_stash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.137" data-path="duk_push_heap_stash.html">
+            
+                <a href="duk_push_heap_stash.html">
+            
+                    
+                    duk_push_heap_stash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.138" data-path="duk_push_int.html">
+            
+                <a href="duk_push_int.html">
+            
+                    
+                    duk_push_int
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.139" data-path="duk_push_lstring.html">
+            
+                <a href="duk_push_lstring.html">
+            
+                    
+                    duk_push_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.140" data-path="duk_push_nan.html">
+            
+                <a href="duk_push_nan.html">
+            
+                    
+                    duk_push_nan
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.141" data-path="duk_push_null.html">
+            
+                <a href="duk_push_null.html">
+            
+                    
+                    duk_push_null
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.142" data-path="duk_push_number.html">
+            
+                <a href="duk_push_number.html">
+            
+                    
+                    duk_push_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.143" data-path="duk_push_object.html">
+            
+                <a href="duk_push_object.html">
+            
+                    
+                    duk_push_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.144" data-path="duk_push_pointer.html">
+            
+                <a href="duk_push_pointer.html">
+            
+                    
+                    duk_push_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.145" data-path="duk_push_sprintf.html">
+            
+                <a href="duk_push_sprintf.html">
+            
+                    
+                    duk_push_sprintf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.146" data-path="duk_push_string.html">
+            
+                <a href="duk_push_string.html">
+            
+                    
+                    duk_push_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.147" data-path="duk_push_this.html">
+            
+                <a href="duk_push_this.html">
+            
+                    
+                    duk_push_this
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.148" data-path="duk_push_thread.html">
+            
+                <a href="duk_push_thread.html">
+            
+                    
+                    duk_push_thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.149" data-path="duk_push_thread_new_globalenv.html">
+            
+                <a href="duk_push_thread_new_globalenv.html">
+            
+                    
+                    duk_push_thread_new_globalenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.150" data-path="duk_push_thread_stash.html">
+            
+                <a href="duk_push_thread_stash.html">
+            
+                    
+                    duk_push_thread_stash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.151" data-path="duk_push_true.html">
+            
+                <a href="duk_push_true.html">
+            
+                    
+                    duk_push_true
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.152" data-path="duk_push_uint.html">
+            
+                <a href="duk_push_uint.html">
+            
+                    
+                    duk_push_uint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.153" data-path="duk_push_undefined.html">
+            
+                <a href="duk_push_undefined.html">
+            
+                    
+                    duk_push_undefined
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.154" data-path="duk_push_vsprintf.html">
+            
+                <a href="duk_push_vsprintf.html">
+            
+                    
+                    duk_push_vsprintf
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.155" data-path="duk_put_function_list.html">
+            
+                <a href="duk_put_function_list.html">
+            
+                    
+                    duk_put_function_list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.156" data-path="duk_put_global_string.html">
+            
+                <a href="duk_put_global_string.html">
+            
+                    
+                    duk_put_global_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.157" data-path="duk_put_number_list.html">
+            
+                <a href="duk_put_number_list.html">
+            
+                    
+                    duk_put_number_list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.158" data-path="duk_put_prop.html">
+            
+                <a href="duk_put_prop.html">
+            
+                    
+                    duk_put_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.159" data-path="duk_put_prop_index.html">
+            
+                <a href="duk_put_prop_index.html">
+            
+                    
+                    duk_put_prop_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.160" data-path="duk_put_prop_string.html">
+            
+                <a href="duk_put_prop_string.html">
+            
+                    
+                    duk_put_prop_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.161" data-path="duk_realloc.html">
+            
+                <a href="duk_realloc.html">
+            
+                    
+                    duk_realloc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.162" data-path="duk_realloc_raw.html">
+            
+                <a href="duk_realloc_raw.html">
+            
+                    
+                    duk_realloc_raw
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.163" data-path="duk_remove.html">
+            
+                <a href="duk_remove.html">
+            
+                    
+                    duk_remove
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.164" data-path="duk_replace.html">
+            
+                <a href="duk_replace.html">
+            
+                    
+                    duk_replace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.165" data-path="duk_require_boolean.html">
+            
+                <a href="duk_require_boolean.html">
+            
+                    
+                    duk_require_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.166" data-path="duk_require_buffer.html">
+            
+                <a href="duk_require_buffer.html">
+            
+                    
+                    duk_require_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.167" data-path="duk_require_c_function.html">
+            
+                <a href="duk_require_c_function.html">
+            
+                    
+                    duk_require_c_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.168" data-path="duk_require_context.html">
+            
+                <a href="duk_require_context.html">
+            
+                    
+                    duk_require_context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.169" data-path="duk_require_int.html">
+            
+                <a href="duk_require_int.html">
+            
+                    
+                    duk_require_int
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.170" data-path="duk_require_lstring.html">
+            
+                <a href="duk_require_lstring.html">
+            
+                    
+                    duk_require_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.171" data-path="duk_require_normalize_index.html">
+            
+                <a href="duk_require_normalize_index.html">
+            
+                    
+                    duk_require_normalize_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.172" data-path="duk_require_null.html">
+            
+                <a href="duk_require_null.html">
+            
+                    
+                    duk_require_null
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.173" data-path="duk_require_number.html">
+            
+                <a href="duk_require_number.html">
+            
+                    
+                    duk_require_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.174" data-path="duk_require_object_coercible.html">
+            
+                <a href="duk_require_object_coercible.html">
+            
+                    
+                    duk_require_object_coercible
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.175" data-path="duk_require_pointer.html">
+            
+                <a href="duk_require_pointer.html">
+            
+                    
+                    duk_require_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.176" data-path="duk_require_stack.html">
+            
+                <a href="duk_require_stack.html">
+            
+                    
+                    duk_require_stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.177" data-path="duk_require_stack_top.html">
+            
+                <a href="duk_require_stack_top.html">
+            
+                    
+                    duk_require_stack_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.178" data-path="duk_require_string.html">
+            
+                <a href="duk_require_string.html">
+            
+                    
+                    duk_require_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.179" data-path="duk_require_top_index.html">
+            
+                <a href="duk_require_top_index.html">
+            
+                    
+                    duk_require_top_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.180" data-path="duk_require_type_mask.html">
+            
+                <a href="duk_require_type_mask.html">
+            
+                    
+                    duk_require_type_mask
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.181" data-path="duk_require_uint.html">
+            
+                <a href="duk_require_uint.html">
+            
+                    
+                    duk_require_uint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.182" data-path="duk_require_undefined.html">
+            
+                <a href="duk_require_undefined.html">
+            
+                    
+                    duk_require_undefined
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.183" data-path="duk_require_valid_index.html">
+            
+                <a href="duk_require_valid_index.html">
+            
+                    
+                    duk_require_valid_index
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.184" data-path="duk_resize_buffer.html">
+            
+                <a href="duk_resize_buffer.html">
+            
+                    
+                    duk_resize_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.185" data-path="duk_safe_call.html">
+            
+                <a href="duk_safe_call.html">
+            
+                    
+                    duk_safe_call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.186" data-path="duk_safe_to_lstring.html">
+            
+                <a href="duk_safe_to_lstring.html">
+            
+                    
+                    duk_safe_to_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.187" data-path="duk_safe_to_string.html">
+            
+                <a href="duk_safe_to_string.html">
+            
+                    
+                    duk_safe_to_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.188" data-path="duk_set_finalizer.html">
+            
+                <a href="duk_set_finalizer.html">
+            
+                    
+                    duk_set_finalizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.189" data-path="duk_set_global_object.html">
+            
+                <a href="duk_set_global_object.html">
+            
+                    
+                    duk_set_global_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.190" data-path="duk_set_magic.html">
+            
+                <a href="duk_set_magic.html">
+            
+                    
+                    duk_set_magic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.191" data-path="duk_set_prototype.html">
+            
+                <a href="duk_set_prototype.html">
+            
+                    
+                    duk_set_prototype
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.192" data-path="duk_set_top.html">
+            
+                <a href="duk_set_top.html">
+            
+                    
+                    duk_set_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.193" data-path="duk_strict_equals.html">
+            
+                <a href="duk_strict_equals.html">
+            
+                    
+                    duk_strict_equals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.194" data-path="duk_substring.html">
+            
+                <a href="duk_substring.html">
+            
+                    
+                    duk_substring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.195" data-path="duk_swap.html">
+            
+                <a href="duk_swap.html">
+            
+                    
+                    duk_swap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.196" data-path="duk_swap_top.html">
+            
+                <a href="duk_swap_top.html">
+            
+                    
+                    duk_swap_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.197" data-path="duk_throw.html">
+            
+                <a href="duk_throw.html">
+            
+                    
+                    duk_throw
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.198" data-path="duk_to_boolean.html">
+            
+                <a href="duk_to_boolean.html">
+            
+                    
+                    duk_to_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.199" data-path="duk_to_buffer.html">
+            
+                <a href="duk_to_buffer.html">
+            
+                    
+                    duk_to_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.200" data-path="duk_to_dynamic_buffer.html">
+            
+                <a href="duk_to_dynamic_buffer.html">
+            
+                    
+                    duk_to_dynamic_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.201" data-path="duk_to_fixed_buffer.html">
+            
+                <a href="duk_to_fixed_buffer.html">
+            
+                    
+                    duk_to_fixed_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.202" data-path="duk_to_int.html">
+            
+                <a href="duk_to_int.html">
+            
+                    
+                    duk_to_int
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.203" data-path="duk_to_int32.html">
+            
+                <a href="duk_to_int32.html">
+            
+                    
+                    duk_to_int32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.204" data-path="duk_to_lstring.html">
+            
+                <a href="duk_to_lstring.html">
+            
+                    
+                    duk_to_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.205" data-path="duk_to_null.html">
+            
+                <a href="duk_to_null.html">
+            
+                    
+                    duk_to_null
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.206" data-path="duk_to_number.html">
+            
+                <a href="duk_to_number.html">
+            
+                    
+                    duk_to_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.207" data-path="duk_to_object.html">
+            
+                <a href="duk_to_object.html">
+            
+                    
+                    duk_to_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.208" data-path="duk_to_pointer.html">
+            
+                <a href="duk_to_pointer.html">
+            
+                    
+                    duk_to_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.209" data-path="duk_to_primitive.html">
+            
+                <a href="duk_to_primitive.html">
+            
+                    
+                    duk_to_primitive
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.210" data-path="duk_to_string.html">
+            
+                <a href="duk_to_string.html">
+            
+                    
+                    duk_to_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.211" data-path="duk_to_uint.html">
+            
+                <a href="duk_to_uint.html">
+            
+                    
+                    duk_to_uint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.212" data-path="duk_to_uint16.html">
+            
+                <a href="duk_to_uint16.html">
+            
+                    
+                    duk_to_uint16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.213" data-path="duk_to_uint32.html">
+            
+                <a href="duk_to_uint32.html">
+            
+                    
+                    duk_to_uint32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.214" data-path="duk_to_undefined.html">
+            
+                <a href="duk_to_undefined.html">
+            
+                    
+                    duk_to_undefined
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.215" data-path="duk_trim.html">
+            
+                <a href="duk_trim.html">
+            
+                    
+                    duk_trim
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.216" data-path="duk_xcopy_top.html">
+            
+                <a href="duk_xcopy_top.html">
+            
+                    
+                    duk_xcopy_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.217" data-path="duk_xmove_top.html">
+            
+                <a href="duk_xmove_top.html">
+            
+                    
+                    duk_xmove_top
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.218" data-path="duk_def_prop.html">
+            
+                <a href="duk_def_prop.html">
+            
+                    
+                    duk_def_prop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.219" data-path="duk_error_va.html">
+            
+                <a href="duk_error_va.html">
+            
+                    
+                    duk_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.220" data-path="duk_get_error_code.html">
+            
+                <a href="duk_get_error_code.html">
+            
+                    
+                    duk_get_error_code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.221" data-path="duk_get_heapptr.html">
+            
+                <a href="duk_get_heapptr.html">
+            
+                    
+                    duk_get_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.222" data-path="duk_is_error.html">
+            
+                <a href="duk_is_error.html">
+            
+                    
+                    duk_is_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.223" data-path="duk_push_error_object_va.html">
+            
+                <a href="duk_push_error_object_va.html">
+            
+                    
+                    duk_push_error_object_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.224" data-path="duk_push_heapptr.html">
+            
+                <a href="duk_push_heapptr.html">
+            
+                    
+                    duk_push_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.225" data-path="duk_require_heapptr.html">
+            
+                <a href="duk_require_heapptr.html">
+            
+                    
+                    duk_require_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.226" data-path="duk_debugger_attach.html">
+            
+                <a href="duk_debugger_attach.html">
+            
+                    
+                    duk_debugger_attach
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.227" data-path="duk_debugger_cooperate.html">
+            
+                <a href="duk_debugger_cooperate.html">
+            
+                    
+                    duk_debugger_cooperate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.228" data-path="duk_debugger_detach.html">
+            
+                <a href="duk_debugger_detach.html">
+            
+                    
+                    duk_debugger_detach
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.229" data-path="duk_config_buffer.html">
+            
+                <a href="duk_config_buffer.html">
+            
+                    
+                    duk_config_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.230" data-path="duk_dump_function.html">
+            
+                <a href="duk_dump_function.html">
+            
+                    
+                    duk_dump_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.231" data-path="duk_get_buffer_data.html">
+            
+                <a href="duk_get_buffer_data.html">
+            
+                    
+                    duk_get_buffer_data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.232" data-path="duk_instanceof.html">
+            
+                <a href="duk_instanceof.html">
+            
+                    
+                    duk_instanceof
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.233" data-path="duk_load_function.html">
+            
+                <a href="duk_load_function.html">
+            
+                    
+                    duk_load_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.234" data-path="duk_pnew.html">
+            
+                <a href="duk_pnew.html">
+            
+                    
+                    duk_pnew
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.235" data-path="duk_push_buffer_object.html">
+            
+                <a href="duk_push_buffer_object.html">
+            
+                    
+                    duk_push_buffer_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.236" data-path="duk_push_external_buffer.html">
+            
+                <a href="duk_push_external_buffer.html">
+            
+                    
+                    duk_push_external_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.237" data-path="duk_require_buffer_data.html">
+            
+                <a href="duk_require_buffer_data.html">
+            
+                    
+                    duk_require_buffer_data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.238" data-path="duk_steal_buffer.html">
+            
+                <a href="duk_steal_buffer.html">
+            
+                    
+                    duk_steal_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.239" data-path="duk_is_eval_error.html">
+            
+                <a href="duk_is_eval_error.html">
+            
+                    
+                    duk_is_eval_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.240" data-path="duk_is_range_error.html">
+            
+                <a href="duk_is_range_error.html">
+            
+                    
+                    duk_is_range_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.241" data-path="duk_is_reference_error.html">
+            
+                <a href="duk_is_reference_error.html">
+            
+                    
+                    duk_is_reference_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.242" data-path="duk_is_syntax_error.html">
+            
+                <a href="duk_is_syntax_error.html">
+            
+                    
+                    duk_is_syntax_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.243" data-path="duk_is_type_error.html">
+            
+                <a href="duk_is_type_error.html">
+            
+                    
+                    duk_is_type_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.244" data-path="duk_is_uri_error.html">
+            
+                <a href="duk_is_uri_error.html">
+            
+                    
+                    duk_is_uri_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.245" data-path="duk_require_callable.html">
+            
+                <a href="duk_require_callable.html">
+            
+                    
+                    duk_require_callable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.246" data-path="duk_require_function.html">
+            
+                <a href="duk_require_function.html">
+            
+                    
+                    duk_require_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.247" data-path="duk_debugger_notify.html">
+            
+                <a href="duk_debugger_notify.html">
+            
+                    
+                    duk_debugger_notify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.248" data-path="duk_debugger_pause.html">
+            
+                <a href="duk_debugger_pause.html">
+            
+                    
+                    duk_debugger_pause
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.249" data-path="duk_resume.html">
+            
+                <a href="duk_resume.html">
+            
+                    
+                    duk_resume
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.250" data-path="duk_suspend.html">
+            
+                <a href="duk_suspend.html">
+            
+                    
+                    duk_suspend
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.251" data-path="duk_buffer_to_string.html">
+            
+                <a href="duk_buffer_to_string.html">
+            
+                    
+                    duk_buffer_to_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.252" data-path="duk_components_to_time.html">
+            
+                <a href="duk_components_to_time.html">
+            
+                    
+                    duk_components_to_time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.253" data-path="duk_del_prop_lstring.html">
+            
+                <a href="duk_del_prop_lstring.html">
+            
+                    
+                    duk_del_prop_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.254" data-path="duk_eval_error.html">
+            
+                <a href="duk_eval_error.html">
+            
+                    
+                    duk_eval_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.255" data-path="duk_eval_error_va.html">
+            
+                <a href="duk_eval_error_va.html">
+            
+                    
+                    duk_eval_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.256" data-path="duk_generic_error.html">
+            
+                <a href="duk_generic_error.html">
+            
+                    
+                    duk_generic_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.257" data-path="duk_generic_error_va.html">
+            
+                <a href="duk_generic_error_va.html">
+            
+                    
+                    duk_generic_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.258" data-path="duk_get_global_lstring.html">
+            
+                <a href="duk_get_global_lstring.html">
+            
+                    
+                    duk_get_global_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.259" data-path="duk_get_now.html">
+            
+                <a href="duk_get_now.html">
+            
+                    
+                    duk_get_now
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.260" data-path="duk_get_prop_desc.html">
+            
+                <a href="duk_get_prop_desc.html">
+            
+                    
+                    duk_get_prop_desc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.261" data-path="duk_get_prop_lstring.html">
+            
+                <a href="duk_get_prop_lstring.html">
+            
+                    
+                    duk_get_prop_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.262" data-path="duk_has_prop_lstring.html">
+            
+                <a href="duk_has_prop_lstring.html">
+            
+                    
+                    duk_has_prop_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.263" data-path="duk_inspect_callstack_entry.html">
+            
+                <a href="duk_inspect_callstack_entry.html">
+            
+                    
+                    duk_inspect_callstack_entry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.264" data-path="duk_inspect_value.html">
+            
+                <a href="duk_inspect_value.html">
+            
+                    
+                    duk_inspect_value
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.265" data-path="duk_is_buffer_data.html">
+            
+                <a href="duk_is_buffer_data.html">
+            
+                    
+                    duk_is_buffer_data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.266" data-path="duk_is_symbol.html">
+            
+                <a href="duk_is_symbol.html">
+            
+                    
+                    duk_is_symbol
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.267" data-path="duk_push_bare_object.html">
+            
+                <a href="duk_push_bare_object.html">
+            
+                    
+                    duk_push_bare_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.268" data-path="duk_put_global_lstring.html">
+            
+                <a href="duk_put_global_lstring.html">
+            
+                    
+                    duk_put_global_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.269" data-path="duk_put_prop_lstring.html">
+            
+                <a href="duk_put_prop_lstring.html">
+            
+                    
+                    duk_put_prop_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.270" data-path="duk_range_error.html">
+            
+                <a href="duk_range_error.html">
+            
+                    
+                    duk_range_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.271" data-path="duk_range_error_va.html">
+            
+                <a href="duk_range_error_va.html">
+            
+                    
+                    duk_range_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.272" data-path="duk_reference_error.html">
+            
+                <a href="duk_reference_error.html">
+            
+                    
+                    duk_reference_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.273" data-path="duk_reference_error_va.html">
+            
+                <a href="duk_reference_error_va.html">
+            
+                    
+                    duk_reference_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.274" data-path="duk_samevalue.html">
+            
+                <a href="duk_samevalue.html">
+            
+                    
+                    duk_samevalue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.275" data-path="duk_set_length.html">
+            
+                <a href="duk_set_length.html">
+            
+                    
+                    duk_set_length
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.276" data-path="duk_syntax_error.html">
+            
+                <a href="duk_syntax_error.html">
+            
+                    
+                    duk_syntax_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.277" data-path="duk_syntax_error_va.html">
+            
+                <a href="duk_syntax_error_va.html">
+            
+                    
+                    duk_syntax_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.278" data-path="duk_time_to_components.html">
+            
+                <a href="duk_time_to_components.html">
+            
+                    
+                    duk_time_to_components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.279" data-path="duk_type_error.html">
+            
+                <a href="duk_type_error.html">
+            
+                    
+                    duk_type_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.280" data-path="duk_type_error_va.html">
+            
+                <a href="duk_type_error_va.html">
+            
+                    
+                    duk_type_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.281" data-path="duk_uri_error.html">
+            
+                <a href="duk_uri_error.html">
+            
+                    
+                    duk_uri_error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.282" data-path="duk_uri_error_va.html">
+            
+                <a href="duk_uri_error_va.html">
+            
+                    
+                    duk_uri_error_va
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.283" data-path="duk_get_boolean_default.html">
+            
+                <a href="duk_get_boolean_default.html">
+            
+                    
+                    duk_get_boolean_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.284" data-path="duk_get_buffer_data_default.html">
+            
+                <a href="duk_get_buffer_data_default.html">
+            
+                    
+                    duk_get_buffer_data_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.285" data-path="duk_get_buffer_default.html">
+            
+                <a href="duk_get_buffer_default.html">
+            
+                    
+                    duk_get_buffer_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.286" data-path="duk_get_c_function_default.html">
+            
+                <a href="duk_get_c_function_default.html">
+            
+                    
+                    duk_get_c_function_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.287" data-path="duk_get_context_default.html">
+            
+                <a href="duk_get_context_default.html">
+            
+                    
+                    duk_get_context_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.288" data-path="duk_get_heapptr_default.html">
+            
+                <a href="duk_get_heapptr_default.html">
+            
+                    
+                    duk_get_heapptr_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.289" data-path="duk_get_int_default.html">
+            
+                <a href="duk_get_int_default.html">
+            
+                    
+                    duk_get_int_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.290" data-path="duk_get_lstring_default.html">
+            
+                <a href="duk_get_lstring_default.html">
+            
+                    
+                    duk_get_lstring_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.291" data-path="duk_get_number_default.html">
+            
+                <a href="duk_get_number_default.html">
+            
+                    
+                    duk_get_number_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.292" data-path="duk_get_pointer_default.html">
+            
+                <a href="duk_get_pointer_default.html">
+            
+                    
+                    duk_get_pointer_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.293" data-path="duk_get_string_default.html">
+            
+                <a href="duk_get_string_default.html">
+            
+                    
+                    duk_get_string_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.294" data-path="duk_get_uint_default.html">
+            
+                <a href="duk_get_uint_default.html">
+            
+                    
+                    duk_get_uint_default
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.295" data-path="duk_opt_boolean.html">
+            
+                <a href="duk_opt_boolean.html">
+            
+                    
+                    duk_opt_boolean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.296" data-path="duk_opt_buffer.html">
+            
+                <a href="duk_opt_buffer.html">
+            
+                    
+                    duk_opt_buffer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.297" data-path="duk_opt_buffer_data.html">
+            
+                <a href="duk_opt_buffer_data.html">
+            
+                    
+                    duk_opt_buffer_data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.298" data-path="duk_opt_c_function.html">
+            
+                <a href="duk_opt_c_function.html">
+            
+                    
+                    duk_opt_c_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.299" data-path="duk_opt_context.html">
+            
+                <a href="duk_opt_context.html">
+            
+                    
+                    duk_opt_context
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.300" data-path="duk_opt_heapptr.html">
+            
+                <a href="duk_opt_heapptr.html">
+            
+                    
+                    duk_opt_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.301" data-path="duk_opt_int.html">
+            
+                <a href="duk_opt_int.html">
+            
+                    
+                    duk_opt_int
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.302" data-path="duk_opt_lstring.html">
+            
+                <a href="duk_opt_lstring.html">
+            
+                    
+                    duk_opt_lstring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.303" data-path="duk_opt_number.html">
+            
+                <a href="duk_opt_number.html">
+            
+                    
+                    duk_opt_number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.304" data-path="duk_opt_pointer.html">
+            
+                <a href="duk_opt_pointer.html">
+            
+                    
+                    duk_opt_pointer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.305" data-path="duk_opt_string.html">
+            
+                <a href="duk_opt_string.html">
+            
+                    
+                    duk_opt_string
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.306" data-path="duk_opt_uint.html">
+            
+                <a href="duk_opt_uint.html">
+            
+                    
+                    duk_opt_uint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.307" data-path="duk_del_prop_heapptr.html">
+            
+                <a href="duk_del_prop_heapptr.html">
+            
+                    
+                    duk_del_prop_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.308" data-path="duk_freeze.html">
+            
+                <a href="duk_freeze.html">
+            
+                    
+                    duk_freeze
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.309" data-path="duk_get_prop_heapptr.html">
+            
+                <a href="duk_get_prop_heapptr.html">
+            
+                    
+                    duk_get_prop_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.310" data-path="duk_has_prop_heapptr.html">
+            
+                <a href="duk_has_prop_heapptr.html">
+            
+                    
+                    duk_has_prop_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.311" data-path="duk_is_constructable.html">
+            
+                <a href="duk_is_constructable.html">
+            
+                    
+                    duk_is_constructable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.312" data-path="duk_push_proxy.html">
+            
+                <a href="duk_push_proxy.html">
+            
+                    
+                    duk_push_proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.313" data-path="duk_put_prop_heapptr.html">
+            
+                <a href="duk_put_prop_heapptr.html">
+            
+                    
+                    duk_put_prop_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.314" data-path="duk_require_object.html">
+            
+                <a href="duk_require_object.html">
+            
+                    
+                    duk_require_object
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.315" data-path="duk_seal.html">
+            
+                <a href="duk_seal.html">
+            
+                    
+                    duk_seal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.316" data-path="duk_del_prop_literal.html">
+            
+                <a href="duk_del_prop_literal.html">
+            
+                    
+                    duk_del_prop_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.317" data-path="duk_get_global_heapptr.html">
+            
+                <a href="duk_get_global_heapptr.html">
+            
+                    
+                    duk_get_global_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.318" data-path="duk_get_global_literal.html">
+            
+                <a href="duk_get_global_literal.html">
+            
+                    
+                    duk_get_global_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.319" data-path="duk_get_prop_literal.html">
+            
+                <a href="duk_get_prop_literal.html">
+            
+                    
+                    duk_get_prop_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.320" data-path="duk_has_prop_literal.html">
+            
+                <a href="duk_has_prop_literal.html">
+            
+                    
+                    duk_has_prop_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.321" data-path="duk_push_literal.html">
+            
+                <a href="duk_push_literal.html">
+            
+                    
+                    duk_push_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.322" data-path="duk_push_new_target.html">
+            
+                <a href="duk_push_new_target.html">
+            
+                    
+                    duk_push_new_target
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.323" data-path="duk_put_global_heapptr.html">
+            
+                <a href="duk_put_global_heapptr.html">
+            
+                    
+                    duk_put_global_heapptr
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.324" data-path="duk_put_global_literal.html">
+            
+                <a href="duk_put_global_literal.html">
+            
+                    
+                    duk_put_global_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.325" data-path="duk_put_prop_literal.html">
+            
+                <a href="duk_put_prop_literal.html">
+            
+                    
+                    duk_put_prop_literal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.326" data-path="duk_random.html">
+            
+                <a href="duk_random.html">
+            
+                    
+                    duk_random
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.327" data-path="duk_push_bare_array.html">
+            
+                <a href="duk_push_bare_array.html">
+            
+                    
+                    duk_push_bare_array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.328" data-path="duk_require_constructable.html">
+            
+                <a href="duk_require_constructable.html">
+            
+                    
+                    duk_require_constructable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.329" data-path="duk_require_constructor_call.html">
+            
+                <a href="duk_require_constructor_call.html">
+            
+                    
+                    duk_require_constructor_call
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.330" data-path="duk_safe_to_stacktrace.html">
+            
+                <a href="duk_safe_to_stacktrace.html">
+            
+                    
+                    duk_safe_to_stacktrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.331" data-path="duk_to_stacktrace.html">
+            
+                <a href="duk_to_stacktrace.html">
+            
+                    
+                    duk_to_stacktrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.332" data-path="duk_cbor_decode.html">
+            
+                <a href="duk_cbor_decode.html">
+            
+                    
+                    duk_cbor_decode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.333" data-path="duk_cbor_encode.html">
+            
+                <a href="duk_cbor_encode.html">
+            
+                    
+                    duk_cbor_encode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.334" data-path="duk_pull.html">
+            
+                <a href="duk_pull.html">
+            
+                    
+                    duk_pull
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >duk_is_null_or_undefined</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="dukisnullorundefined">duk_is_null_or_undefined()</h2>
+<p>1.0.0 stack</p>
+<h3 id="プロトタイプ">プロトタイプ</h3>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">duk_bool_t</span> <span class="hljs-title">duk_is_null_or_undefined</span><span class="hljs-params">(duk_context *ctx, <span class="hljs-keyword">duk_idx_t</span> idx)</span></span>;
+</code></pre>
+<h3 id="スタック">スタック</h3>
+<p>| ... | val | ... |</p>
+<h3 id="要約">要約</h3>
+<p>idxの値がNULLまたは未定義の場合は1を、それ以外の場合は0を返す。. idx が無効な場合も 0 を返す。</p>
+<p>このAPIコールはECMAScriptの(x == null)比較と似ており、nullとundefinedの両方に対して真です。</p>
+<h3 id="例">例</h3>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_is_null_or_undefined(ctx, <span class="hljs-number">-3</span>)) {
+    <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="duk_is_null.html" class="navigation navigation-prev " aria-label="Previous page: duk_is_null">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="duk_is_number.html" class="navigation navigation-next " aria-label="Next page: duk_is_number">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"duk_is_null_or_undefined","level":"2.87","depth":1,"next":{"title":"duk_is_number","level":"2.88","depth":1,"path":"duk_is_number.md","ref":"duk_is_number.md","articles":[]},"previous":{"title":"duk_is_null","level":"2.86","depth":1,"path":"duk_is_null.md","ref":"duk_is_null.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"duk_is_null_or_undefined.md","mtime":"2022-10-25T10:24:36.158Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-25T12:35:52.651Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,4 +1,4 @@
-# Duktape API 日本語訳
+# Duktape APIリファレンス（日本語訳）
 
 [原文](https://duktape.org/api.html)
 

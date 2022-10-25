@@ -1,6 +1,6 @@
 # Summary
 
-### プログライングガイド
+### プログラミングガイド
 
 * [表紙](README.md)
 * [イントロダクション](introduction.md)
