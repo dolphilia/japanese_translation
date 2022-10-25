@@ -4,6 +4,12 @@
 
 ## 目録
 
+- [JavaScript ベストプラクティス](https://github.com/dolphilia/japanese_translation/tree/main/JavaScript)
+- [C言語 ベストプラクティス](https://github.com/dolphilia/japanese_translation/tree/main/C-Language)
+- [GLFW](https://github.com/dolphilia/japanese_translation/tree/main/GLFW)
+- [stb](https://github.com/dolphilia/japanese_translation/tree/main/stb)
+- [Ninja](https://github.com/dolphilia/japanese_translation/tree/main/ninja)
+- [Meson](https://github.com/dolphilia/japanese_translation/tree/main/meson)
 - [Duktape](https://github.com/dolphilia/japanese_translation/tree/main/duktape)
 - [Mermaid](https://github.com/dolphilia/japanese_translation/tree/main/mermaid)
 - [Angle](https://github.com/dolphilia/japanese_translation/tree/main/angle)
