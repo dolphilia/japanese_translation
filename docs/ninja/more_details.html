@@ -1,0 +1,445 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>詳細 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ninja_file_reference.html" />
+    
+    
+    <link rel="prev" href="writing_your_own_ninja_files.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">マニュアル</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="using_ninja_for_your_project.html">
+            
+                <a href="using_ninja_for_your_project.html">
+            
+                    
+                    Ninjaを使用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="writing_your_own_ninja_files.html">
+            
+                <a href="writing_your_own_ninja_files.html">
+            
+                    
+                    Ninjaファイルを作成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="more_details.html">
+            
+                <a href="more_details.html">
+            
+                    
+                    詳細
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ninja_file_reference.html">
+            
+                <a href="ninja_file_reference.html">
+            
+                    
+                    リファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="dynamic_dependencies.html">
+            
+                <a href="dynamic_dependencies.html">
+            
+                    
+                    動的従属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >詳細</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="詳細">詳細</h1>
+<h2 id="phonyルール">phonyルール</h2>
+<p>特別なルール名phonyは、他のターゲットのエイリアスを作成するために使用することができます。例えば</p>
+<pre><code>build foo: phony some/file/in/a/faraway/subdir/foo
+</code></pre><p>これにより、ninja foo はより長いパスを構築するようになります。意味的には、phonyのルールはコマンドが何もしないプレーンなルールと同等ですが、phonyのルールは、実行時に表示されない、ログに記録されない (下記参照)、ビルド処理の一部として表示されるコマンド数に貢献しない、という点で特別に扱われます。</p>
+<p>phonyのターゲットが他のビルドルールの入力として使われる場合、他のビルドルールは意味的に、phonyのルールの入力を自分のものとして考えることになる。したがって、phonyのルールは、ヘッダーファイルなどの入力をグループ化するために使用することができます。</p>
+<p>phonyは、ビルド時に存在しない可能性のあるファイルに対してダミーターゲットを作成するためにも使用することができます。phony build文が依存関係なしに書かれている場合、ターゲットが存在しなければ、古いものとみなされます。phonyのビルド文がない場合、Ninjaはビルドに必要なファイルが存在しないとエラーを報告します。</p>
+<p>決して再構築しないルールを作成するには、何も入力しないビルドルールを使用します。</p>
+<pre><code>rule touch
+  command = touch $out
+build file_that_always_exists.dummy: touch
+build dummy_target_to_follow_a_pattern: phony file_that_always_exists.dummy
+</code></pre><h2 id="デフォルトのターゲットステートメント">デフォルトのターゲットステートメント</h2>
+<p>デフォルトでは、コマンドラインでターゲットが指定されていない場合、Ninjaは他の場所で入力として指定されていないすべての出力をビルドします。この動作を上書きするには、default target文を使用します。デフォルトのターゲット文は、コマンドラインで何も指定されなかった場合に、指定された出力ファイルのサブセットのみをビルドするようにします。</p>
+<p>デフォルトターゲット文は、default キーワードで始まり、default targets という形式を持ちます。デフォルト ターゲット ステートメントは、ターゲットを出力ファイルとして宣言する build ステートメントの後に記述する必要があります。この文は累積的であるため、複数の文を使用してデフォルト ターゲットのリストを拡張することができます。たとえば、次のようになります。</p>
+<pre><code>default foo bar
+default baz
+</code></pre><p>これにより、Ninjaはデフォルトでfoo, bar, bazターゲットをビルドするようになります。</p>
+<h2 id="ninjaログ">Ninjaログ</h2>
+<p>Ninjaは、ビルドされた各ファイルに対して、ビルドに使用されたコマンドのログを記録しています。このログを利用することで、Ninjaは既存の出力がビルドファイルの指定と異なるコマンドラインでビルドされた（コマンドラインが変更された）ことを知り、そのファイルをリビルドすることを知ることができる。</p>
+<p>ログファイルはビルドルートにある.ninja_logというファイルに保存されます。最外部のスコープでbuilddirという変数を指定すると、.ninja_logはそのディレクトリに代わりに保存される。</p>
+<h2 id="バージョン互換性">バージョン互換性</h2>
+<p>Available since Ninja 1.2.</p>
+<p>Ninja のバージョンラベルは標準の major.minor.patch 形式で、後方互換性のない構文や動作の変更にはメジャーバージョンが、新しい動作にはマイナーバージョンが増加します。build.ninjaではninja_required_versionという変数を宣言し、生成されたファイルを使用するために必要な最小限のNinjaのバージョンを表明することができます。例えば</p>
+<pre><code>ninja_required_version = 1.1
+</code></pre><p>ビルドファイルがNinja 1.1で導入された機能（おそらくプールシンタックス）に依存しており、ビルドにはNinja 1.1以上を使用しなければならないことを宣言しています。他のNinja変数と異なり、このバージョン要件はパース時に即座にチェックされるため、ビルドファイルの先頭に記述することが望ましい。</p>
+<p>Ninjaのメジャーバージョンとninja_required_versionが一致しない場合は必ず警告を出す。メジャーバージョン変更はまだ出ていないので、どのような動作が要求されるかは予測しにくい。</p>
+<h2 id="ccのヘッダー依存性">C/C++のヘッダー依存性</h2>
+<p>C/C++のヘッダ依存関係（あるいは同様の動作をする他のビルド依存関係）を正しく取得するために、Ninjaはいくつかの特別な機能を備えています。</p>
+<p>ヘッダの問題は、あるソースファイルが依存するファイルの完全なリストが、コンパイラによってのみ発見されることです。プリプロセッサの定義やインクルードパスが異なると、異なるファイルが使用されます。コンパイラの中には、ビルド中にこの情報を出すものがあり、Ninjaはそれを使って依存関係を完璧にすることができる。</p>
+<p>考えてみてください。ファイルが一度もコンパイルされていない場合、とにかくビルドする必要があり、副次的にヘッダーの依存関係を生成します。もしファイルが後で変更された場合（どのヘッダに依存するかを変更するような場合でも）、その変更によって再構築が行われ、依存関係が最新に保たれます。</p>
+<p>これらの特別な依存関係をロードする際、Ninjaはリストされた依存関係が欠落していてもエラーにならないように、暗黙のうちにビルドエッジを追加しています。これにより、ヘッダファイルを削除して再構築しても、入力の欠落でビルドが中断されることはない。</p>
+<h3 id="depファイル">depファイル</h3>
+<p>gcc (および clang などの他のコンパイラ) は、Makefile の構文で依存性情報を出力することをサポートしています。(gccに限らず、この形式で依存関係を書けるコマンドなら何でも使えます)。</p>
+<p>この情報をNinjaに取り込むには、協力が必要である。Ninja側では、ビルドのdepfile属性に、このデータが書き込まれるパスを指定する必要があります。(Ninjaは、コンパイラが出力するMakefile構文の限られたサブセットのみをサポートしています)。そして、コマンドは依存関係をdepfileのパスに書き込むことを知っていなければなりません。次の例のように使う。</p>
+<pre><code>rule cc
+  depfile = $out.d
+  command = gcc -MD -MF $out.d [other gcc flags here]
+</code></pre><p>gccの-MDフラグはヘッダの依存性を出力するように指示し、-MFフラグはそれをどこに書くかを指示します。</p>
+<h3 id="deps">deps</h3>
+<p>(Available since Ninja 1.3.)</p>
+<p>大規模なプロジェクトでは（特にファイルシステムの遅いWindowsでは）、起動時にこれらの依存ファイルを読み込むと時間がかかることが判明しました。</p>
+<p>Ninja 1.3では、依存関係を生成直後に処理し、同じ情報をコンパクトにしたものをNinja内部のデータベースに保存することができる。</p>
+<p>Ninjaはこの処理を2つの形でサポートしています。</p>
+<ol>
+<li>deps = gcc は、gcc形式の依存関係をMakefileの形で出力することを指定します。上記の例にこれを追加すると、Ninjaはコンパイル終了後直ちにdepfileを処理し、.dファイル（これは一時的なものとしてしか使われない）を削除するようになります。</li>
+<li>deps = msvc は、Visual Studioのコンパイラの/showIncludesフラグによって生成される形式で、ツールがヘッダの依存性を出力することを指定します。簡単に言うと、このツールは特別にフォーマットされた行を標準出力に出力することを意味する。そして、Ninjaは表示された出力からこれらの行をフィルタリングします。depfile属性は必要ありませんが、ヘッダーファイルのパスの前にローカライズされた文字列を指定します。例えば msvc_deps_prefix = Note: including file: は英語のVisual Studioの場合です(デフォルト)。グローバルに定義する必要があります。</li>
+</ol>
+<pre><code>msvc_deps_prefix = Note: including file:
+rule cc
+  deps = msvc
+  command = cl /showIncludes -c $in /Fo$out
+</code></pre><p>include ディレクトリディレクティブが絶対パスを使用している場合、あなたの depfile は相対パスと絶対パスが混在した結果になることがあります。他のビルドルールによって使用されるパスは、正確に一致する必要があります。したがって、このような場合は相対パスを使用することが推奨されます。</p>
+<h2 id="プール">プール</h2>
+<p>Available since Ninja 1.1.</p>
+<p>プールでは、1つまたは複数のルールまたはエッジを割り当て、デフォルトの並列処理よりも厳しく制限された有限数の同時実行ジョブを実現できます。</p>
+<p>これは、例えば、特定の高価なルール（巨大な実行ファイルのリンクステップなど）を制限したり、同時に実行するとパフォーマンスが低下することがわかっている特定のビルドステートメントを制限したりするのに便利です。</p>
+<p>各プールは、ビルドファイルで指定される深さ変数を持っています。プールは、ルールまたはビルド文のいずれかでプール変数を使用して参照されます。</p>
+<p>どのようなプールを指定しても、ninja はデフォルトの並列度やコマンドライン (-j) で指定されたジョブ数以上の同時ジョブを実行することはありません。</p>
+<pre><code># No more than 4 links at a time.
+pool link_pool
+  depth = 4
+
+# No more than 1 heavy object at a time.
+pool heavy_object_pool
+  depth = 1
+
+rule link
+  ...
+  pool = link_pool
+
+rule cc
+  ...
+
+# The link_pool is used here. Only 4 links will run concurrently.
+build foo.exe: link input.obj
+
+# A build statement can be exempted from its rule&apos;s pool by setting an
+# empty pool. This effectively puts the build statement back into the default
+# pool, which has infinite depth.
+build other.exe: link input.obj
+  pool =
+
+# A build statement can specify a pool directly.
+# Only one of these builds will run at a time.
+build heavy_object1.obj: cc heavy_obj1.cc
+  pool = heavy_object_pool
+build heavy_object2.obj: cc heavy_obj2.cc
+  pool = heavy_object_pool
+</code></pre><h2 id="コンソールプール">コンソールプール</h2>
+<p>Available since Ninja 1.5.</p>
+<p>このプールは、Ninjaに提供された標準入力、出力、エラーストリームに直接アクセスできるという特殊な性質を持っています。これは対話的なタスクや、テスト・スイートなどのコンソール上でステータスを更新するような長時間実行のタスクに有効であろう。</p>
+<p>コンソールプール内のタスクが実行されている間、Ninjaの通常の出力（進捗状況や同時実行タスクからの出力など）は、そのタスクが完了するまでバッファリングされる。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="writing_your_own_ninja_files.html" class="navigation navigation-prev " aria-label="Previous page: Ninjaファイルを作成する">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ninja_file_reference.html" class="navigation navigation-next " aria-label="Next page: リファレンス">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"詳細","level":"1.5","depth":1,"next":{"title":"リファレンス","level":"1.6","depth":1,"path":"ninja_file_reference.md","ref":"ninja_file_reference.md","articles":[]},"previous":{"title":"Ninjaファイルを作成する","level":"1.4","depth":1,"path":"writing_your_own_ninja_files.md","ref":"writing_your_own_ninja_files.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"more_details.md","mtime":"2022-10-25T05:41:34.700Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-25T06:03:38.695Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

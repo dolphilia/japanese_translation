@@ -1,0 +1,401 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Ninjaファイルを作成する · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="more_details.html" />
+    
+    
+    <link rel="prev" href="using_ninja_for_your_project.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">マニュアル</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="using_ninja_for_your_project.html">
+            
+                <a href="using_ninja_for_your_project.html">
+            
+                    
+                    Ninjaを使用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="writing_your_own_ninja_files.html">
+            
+                <a href="writing_your_own_ninja_files.html">
+            
+                    
+                    Ninjaファイルを作成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="more_details.html">
+            
+                <a href="more_details.html">
+            
+                    
+                    詳細
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ninja_file_reference.html">
+            
+                <a href="ninja_file_reference.html">
+            
+                    
+                    リファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="dynamic_dependencies.html">
+            
+                <a href="dynamic_dependencies.html">
+            
+                    
+                    動的従属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Ninjaファイルを作成する</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="独自のninjaファイルを書き込む">独自のNinjaファイルを書き込む</h1>
+<p>このマニュアルの残りの部分は、Ninjaファイルを自分で構築する場合にのみ有用です。例えば、メタビルドシステムを書いたり、新しい言語をサポートする場合などです。</p>
+<h2 id="コンセプトの概要">コンセプトの概要</h2>
+<p>Ninjaはファイル間の依存関係のグラフを評価し、ファイルの変更時間から判断して、ビルド対象を最新の状態にするのに必要なコマンドを実行します。Makeに慣れている人なら、Ninjaは非常によく似ている。</p>
+<p>ビルドファイル（デフォルト名：build.ninja）は、ルール（コンパイラの実行方法などの長いコマンドの短い名前）のリストと、そのルールを使ってどのようにファイルを構築するか（どのルールをどの入力に適用してどの出力を生成するか）を示すビルド文のリストを提供するものです。</p>
+<p>概念的には、ビルドステートメントはプロジェクトの依存関係グラフを記述し、ルールステートメントはグラフの与えられたエッジに沿ってファイルを生成する方法を記述します。</p>
+<h2 id="構文例">構文例</h2>
+<p>ここに、ほとんどの構文を示す基本的な .ninja ファイルがあります。これは以下のセクションの例として使用されます。</p>
+<pre><code>cflags = -Wall
+
+rule cc
+  command = gcc $cflags -c $in -o $out
+
+build foo.o: cc foo.c
+</code></pre><h2 id="変数">変数</h2>
+<p>手書きで書くのが便利という非目的はあるものの、ビルドファイルの可読性（デバッグ性）を保つために、Ninjaは文字列の短い再利用可能な名前の宣言をサポートしています。以下のような宣言である。</p>
+<pre><code>cflags = -g
+</code></pre><p>等号の右側で使用でき、次のようにドル記号で再参照します。</p>
+<pre><code>rule cc
+  command = gcc $cflags -c $in -o $out
+</code></pre><p>また、変数は、${in}のように中括弧を使って参照することもできます。</p>
+<p>変数は、与えられた変数を変更することはできず、シャドウイングされるだけであるという点で、「バインディング」と呼ぶ方がよいかもしれません。シャドウイングがどのように機能するかについては、このドキュメントの後のほうで詳しく説明します。</p>
+<h2 id="ルール">ルール</h2>
+<p>ルールは、コマンドラインの短い名前を宣言するものです。ルールは、ルールのキーワードとルールの名前で構成される行から始まります。その後、インデントされた変数=値の行が続きます。</p>
+<p>上記の基本的な例では、ccという名前の新しいルールと、実行するコマンドを宣言しています。ルールのコンテキストでは、command変数が実行するコマンドを定義し、$inが入力ファイルのリスト(foo.c)に展開し、$outがそのコマンドの出力ファイル(foo.o)に展開します。特殊変数の完全なリストは、リファレンスに記載されています。</p>
+<h2 id="ビルドステートメント">ビルドステートメント</h2>
+<p>Build文は、入力ファイルと出力ファイルの関係を宣言します。build キーワードで始まり、build outputs: rulename inputs のような形式をとります。この宣言は、すべての出力ファイルが入力ファイルから派生していることを意味する。出力ファイルが存在しない場合や入力が変更された場合、Ninjaは出力を再生成するためにルールを実行する。</p>
+<p>上記の基本的な例では、ccルールを使ってfoo.oをビルドする方法を説明しています。</p>
+<p>ビルドブロックのスコープ（関連するルールの評価も含む）において、変数$inは入力のリスト、変数$outは出力のリストである。</p>
+<p>build文の後には、ルールのようにキーと値のペアをインデントで記述することができます。これらの変数は、コマンドの変数を評価するときに、すべての変数をシャドウします。たとえば、以下のようになります。</p>
+<pre><code>cflags = -Wall -Werror
+rule cc
+  command = gcc $cflags -c $in -o $out
+
+# If left unspecified, builds get the outer $cflags.
+build foo.o: cc foo.c
+
+# But you can shadow variables like cflags for a particular build.
+build special.o: cc special.c
+  cflags = -Wall
+
+# The variable was only shadowed for the scope of special.o;
+# Subsequent build lines get the outer (original) cflags.
+build bar.o: cc bar.c
+</code></pre><p>スコープがどのように機能するかについては、<a href="https://ninja-build.org/manual.html#ref_scope" target="_blank">参考文献</a>を参照してください。</p>
+<p>もし、build文からルールへより複雑な情報を渡す必要がある場合（例えば、ルールが「最初の入力のファイル拡張子」を必要とする場合）、上記のcflagsが渡される方法のように、追加の変数としてその情報を渡します。</p>
+<p>トップレベルのNinjaファイルがbuild文の出力として指定され、それが古い場合、Ninjaはユーザが要求したターゲットを構築する前に、ファイルを再構築して再読み込みする。</p>
+<h2 id="コードからninjaファイルを生成する">コードからNinjaファイルを生成する</h2>
+<p>Ninjaの配布物に含まれる misc/ninja_syntax.py は、Ninjaファイルの生成を容易にするための小さなPythonモジュールです。ninja.rule(name=&apos;foo&apos;, command=&apos;bar&apos;, depfile=&apos;$out.d&apos;) のようなPythonの呼び出しを行うと、適切な構文を生成してくれます。もし有用であれば、あなたのプロジェクトのビルドシステムにインライン化するのも自由です。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="using_ninja_for_your_project.html" class="navigation navigation-prev " aria-label="Previous page: Ninjaを使用する">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="more_details.html" class="navigation navigation-next " aria-label="Next page: 詳細">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Ninjaファイルを作成する","level":"1.4","depth":1,"next":{"title":"詳細","level":"1.5","depth":1,"path":"more_details.md","ref":"more_details.md","articles":[]},"previous":{"title":"Ninjaを使用する","level":"1.3","depth":1,"path":"using_ninja_for_your_project.md","ref":"using_ninja_for_your_project.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"writing_your_own_ninja_files.md","mtime":"2022-10-25T05:34:32.644Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-25T06:03:38.695Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

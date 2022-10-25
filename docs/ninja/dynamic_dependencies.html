@@ -1,0 +1,400 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>動的従属性 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="ninja_file_reference.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">マニュアル</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="introduction.html">
+            
+                <a href="introduction.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="using_ninja_for_your_project.html">
+            
+                <a href="using_ninja_for_your_project.html">
+            
+                    
+                    Ninjaを使用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="writing_your_own_ninja_files.html">
+            
+                <a href="writing_your_own_ninja_files.html">
+            
+                    
+                    Ninjaファイルを作成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="more_details.html">
+            
+                <a href="more_details.html">
+            
+                    
+                    詳細
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="ninja_file_reference.html">
+            
+                <a href="ninja_file_reference.html">
+            
+                    
+                    リファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="dynamic_dependencies.html">
+            
+                <a href="dynamic_dependencies.html">
+            
+                    
+                    動的従属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >動的従属性</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="動的従属性">動的従属性</h1>
+<p>Available since Ninja 1.10.</p>
+<p>一部のユースケースでは、最初の実行時に正しくビルドするために、ビルド中にソースファイルのコンテンツから暗黙の依存情報を動的に検出する必要があります（例：Fortranモジュールの依存性）。これは、2回目以降の実行時にのみ正しく再構築するために必要とされるヘッダ依存性とは異なります。build文は、動的依存性情報をファイルから読み込む必要があることを指定するために、その入力の1つを指定するdyndepバインディングを持つことができます。たとえば、次のようになります。</p>
+<pre><code>build out: ... || foo
+  dyndep = foo
+build foo: ...
+</code></pre><p>これは、ファイルfooがdyndepファイルであることを指定するものである。これは入力であるため、fooがビルドされる前にoutのビルド文が実行されることはない。foo が終了するとすぐに Ninja はそれを読み込んで、動的に発見された out の依存情報をロードします。このとき、暗黙の入力や出力が追加されることがある。Ninjaはそれに応じてビルドグラフを更新し、あたかもその情報が元々あったかのようにビルドを進める。</p>
+<h2 id="dyndepファイルリファレンス">Dyndepファイルリファレンス</h2>
+<p>dyndepバインディングで指定されたファイルは、忍者ビルドファイルと同じ字句の構文を使用し、以下のようなレイアウトになります。</p>
+<p>1:</p>
+<p><code>&lt;major&gt;[.&lt;minor&gt;][&lt;suffix&gt;]</code> という形式のバージョン番号。 </p>
+<pre><code>ninja_dyndep_version = 1
+</code></pre><p>現在、バージョン番号は常に1または1.0でなければならないが、任意の接尾辞を付けることができる。</p>
+<p>2:</p>
+<p>形式の1つまたは複数のビルドステートメント。</p>
+<pre><code>build out | imp-outs... : dyndep | imp-ins...
+</code></pre><p>すべてのステートメントは、正確に1つの明示的な出力を指定し、ルール名dyndepを使用しなければなりません。 imp-outs...と｜imp-ins...の部分は任意です。</p>
+<p>3:
+各ビルドステートメントにオプションのrestat変数バインディングを設定します。</p>
+<p>dyndepファイルのbuild文は、dyndepバインディングでdyndepファイルを名付けるninja buildファイルのbuild文と一対一の対応を持っていなければならない。dyndepのビルド文を省略したり、追加のビルド文を指定することはできない。</p>
+<h2 id="dyndep-例">Dyndep 例</h2>
+<h3 id="fortranモジュール">Fortranモジュール</h3>
+<p>モジュール foo.mod を提供する Fortran ソースファイル foo.f90 (コンパイルの暗黙の出力) と、そのモジュールを使用する別のソースファイル bar.f90 (コンパイルの暗黙の入力) があるとします。この暗黙の依存関係は、foo.f90より先にbar.f90がコンパイルされることがなく、foo.modが変更されるとbar.f90が再コンパイルされるように、どちらのソースもコンパイル前に発見されなければなりません。これを実現するには、次のようにします。</p>
+<pre><code>rule f95
+  command = f95 -o $out -c $in
+rule fscan
+  command = fscan -o $out $in
+
+build foobar.dd: fscan foo.f90 bar.f90
+
+build foo.o: f95 foo.f90 || foobar.dd
+  dyndep = foobar.dd
+build bar.o: f95 bar.f90 || foobar.dd
+  dyndep = foobar.dd
+</code></pre><p>この例では、順序のみの依存関係により、foobar.ddはどちらのソースもコンパイルされる前に生成されます。仮想的なfscanツールはソースファイルをスキャンし、それぞれが同じ名前の.oにコンパイルされると仮定し、次のような内容のfoobar.ddを書き込みます。</p>
+<pre><code>ninja_dyndep_version = 1
+build foo.o | foo.mod: dyndep
+build bar.o: dyndep |  foo.mod
+</code></pre><p>Ninjaはこのファイルをロードして、foo.oの暗黙の出力とbar.oの暗黙の入力としてfoo.modを追加する。これにより、Fortranソースが常に正しい順序でコンパイルされ、必要時にリコンパイルされる。</p>
+<h3 id="ターボール抽出">ターボール抽出</h3>
+<p>抽出したいtarball foo.tarがあるとする。抽出時間はfoo.tar.stampファイルで記録しておけば、tarballが変更されても抽出が繰り返されますが、出力のいずれかが欠落している場合は再抽出したいとも思います。しかし、出力のリストはtarballの内容に依存し、ninjaのビルドファイルで明示的に記述することはできません。次のようにすれば実現できます。</p>
+<pre><code>rule untar
+  command = tar xf $in &amp;&amp; touch $out
+rule scantar
+  command = scantar --stamp=$stamp --dd=$out $in
+build foo.tar.dd: scantar foo.tar
+  stamp = foo.tar.stamp
+build foo.tar.stamp: untar foo.tar || foo.tar.dd
+  dyndep = foo.tar.dd
+</code></pre><p>この例では、順序のみの依存関係は、tarball が展開される前に foo.tar.dd がビルドされることを保証します。仮想的な scantar ツールは、(例えば tar tf を使って) tarball を読み、次のような内容を持つ foo.tar.dd を書き出します。</p>
+<pre><code>ninja_dyndep_version = 1
+build foo.tar.stamp | file1.txt file2.txt : dyndep
+  restat = 1
+</code></pre><p>Ninjaはこのファイルを読み込んで、foo.tar.stampの暗黙の出力としてfile1.txtとfile2.txtを追加し、再フォーマットのためにビルド文をマークします。今後のビルドでは、暗黙の出力が欠落した場合、tarballは再び展開される。restatバインディングは、暗黙の出力がtarball自身よりも新しい修正時刻を持っていないことを許容するようにNinjaに指示する（ビルド毎に再解凍するのを避ける）。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ninja_file_reference.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: リファレンス">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"動的従属性","level":"1.7","depth":1,"previous":{"title":"リファレンス","level":"1.6","depth":1,"path":"ninja_file_reference.md","ref":"ninja_file_reference.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"dynamic_dependencies.md","mtime":"2022-10-25T05:59:29.011Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-25T06:03:38.695Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
