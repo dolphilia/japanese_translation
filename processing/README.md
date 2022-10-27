@@ -2,670 +2,670 @@
 
 ショートカット:
 
-- [Data](README.md#Data)
-- [Input](README.md#Input)
-- [Constants](README.md#Constants)
-- [Typography](README.md#Typography)
-- [Rendering](README.md#Rendering)
-- [Image](README.md#Image)
-- [Shape](README.md#Shape)
-- [Math](README.md#Math)
-- [Output](README.md#Output)
-- [Color](README.md#Color)
-- [Lights Camera](README.md#Lights_Camera)
-- [Transform](README.md#Transform)
-- [Structure](README.md#Structure)
-- [Control](README.md#Control)
-- [Environment](README.md#Environment)
+- [データ](README.md#Data)
+- [入力](README.md#Input)
+- [定数](README.md#Constants)
+- [タイポグラフィ](README.md#Typography)
+- [レンダリング](README.md#Rendering)
+- [画像](README.md#Image)
+- [シェイプ](README.md#Shape)
+- [数学](README.md#Math)
+- [出力](README.md#Output)
+- [カラー](README.md#Color)
+- [ライト・カメラ](README.md#Lights_Camera)
+- [トランスフォーム](README.md#Transform)
+- [構造](README.md#Structure)
+- [制御](README.md#Control)
+- [環境](README.md#Environment)
 
-## Data {#Data}
+## データ {#Data}
 
 ### コンポジット
 
-| 名前 | 説明 |
-| --- | --- |
-| Array | Arrayはデータのリストです |
-| ArrayList | ArrayListは可変数のオブジェクトを格納します。 |
-| FloatDict | Stringをfloat値のルックアップとして使用するシンプルなテーブルクラス |
-| FloatList | 浮動小数点数のリストのヘルパークラス |
-| HashMap | HashMapはオブジェクトのコレクションを保存し、それぞれがキーで参照されます。 |
-| IntDict | Stringをint値のルックアップとして使用するシンプルなクラスです。 |
-| IntList | int型のリストのヘルパークラスです。 |
-| JSONArray | JSONArrayは順序付けられた一連の値です。 |
-| JSONObject | JSONObjectは名前と値のペアの順序不同のコレクションです。 |
-| Object | Objectはクラスのインスタンス |
-| String | Stringとは文字の並びのことです |
-| StringDict | String値のルックアップとしてStringを使用するシンプルなクラスです。 |
-| StringList | 文字列のリストのヘルパークラスです。 |
-| Table | 表形式のデータを扱うための汎用クラスです。 |
-| TableRow | テーブルからカラムに格納されたデータ値の1行を表現する |
-| XML | Processing XMLライブラリの基本クラスで、XMLツリーの1つのノードを表す |
+|    名前    |                                    説明                                     |
+| ---------- | --------------------------------------------------------------------------- |
+| Array      | Arrayはデータのリストです                                                   |
+| ArrayList  | ArrayListは可変数のオブジェクトを格納します。                               |
+| FloatDict  | Stringをfloat値のルックアップとして使用するシンプルなテーブルクラス         |
+| FloatList  | 浮動小数点数のリストのヘルパークラス                                        |
+| HashMap    | HashMapはオブジェクトのコレクションを保存し、それぞれがキーで参照されます。 |
+| IntDict    | Stringをint値のルックアップとして使用するシンプルなクラスです。             |
+| IntList    | int型のリストのヘルパークラスです。                                         |
+| JSONArray  | JSONArrayは順序付けられた一連の値です。                                     |
+| JSONObject | JSONObjectは名前と値のペアの順序不同のコレクションです。                    |
+| Object     | Objectはクラスのインスタンス                                                |
+| String     | Stringとは文字の並びのことです                                              |
+| StringDict | String値のルックアップとしてStringを使用するシンプルなクラスです。          |
+| StringList | 文字列のリストのヘルパークラスです。                                        |
+| Table      | 表形式のデータを扱うための汎用クラスです。                                  |
+| TableRow   | テーブルからカラムに格納されたデータ値の1行を表現する                       |
+| XML        | Processing XMLライブラリの基本クラスで、XMLツリーの1つのノードを表す        |
 
 ### 配列関数
 
-| 名前 | 説明 |
-| --- | --- |
-| append() | 配列を1要素ずつ拡張し、新しい位置にデータを追加する。 |
-| arrayCopy() | 配列（または配列の一部）を別の配列にコピーします． |
-| concat() | 2つの配列を連結する |
-| expand() | 配列のサイズを増加させる |
-| reverse() | 配列の順序を逆順にする |
-| shorten() | 配列の要素を 1 つ減らし、短縮された配列を返します。 |
-| sort() | 数字の配列を小さいものから大きいものへ並べ替えたり、単語の配列をアルファベット順に並べたりします。 |
-| splice() | 既存の配列に値または値の配列を挿入します。 |
-| subset() | 既存の配列から要素を抽出します。 |
+|    名前     |                                                説明                                                |
+| ----------- | -------------------------------------------------------------------------------------------------- |
+| append()    | 配列を1要素ずつ拡張し、新しい位置にデータを追加する。                                              |
+| arrayCopy() | 配列（または配列の一部）を別の配列にコピーします．                                                 |
+| concat()    | 2つの配列を連結する                                                                                |
+| expand()    | 配列のサイズを増加させる                                                                           |
+| reverse()   | 配列の順序を逆順にする                                                                             |
+| shorten()   | 配列の要素を 1 つ減らし、短縮された配列を返します。                                                |
+| sort()      | 数字の配列を小さいものから大きいものへ並べ替えたり、単語の配列をアルファベット順に並べたりします。 |
+| splice()    | 既存の配列に値または値の配列を挿入します。                                                         |
+| subset()    | 既存の配列から要素を抽出します。                                                                   |
 
 ### 変換
 
-| 名前 | 説明 |
-| --- | --- |
-| binary() | int, byte, char, colorを等価な2進数表記を含むStringに変換する。 |
-| boolean() | int または String を boolean 表現に変換します。 |
-| byte() | プリミティブデータ型（boolean, byte, char, color, double, float, int, long）の任意の値をバイト表現に変換する。 |
-| char() | Converts any value of a primitive data type (boolean, byte, char, color, double, float, int, or long) to its numeric character representation |
-| float() | Converts an int or String to its floating point representation |
-| hex() | Converts a byte, char, int, or color to a String containing the equivalent hexadecimal notation |
-| int() | Converts any value of a primitive data type (boolean, byte, char, color, float, int, or long) or String to its integer representation |
-| str() | Converts a value of a primitive data type (boolean, byte, char, int, or float) to its String representation |
-| unbinary() | Converts a String representation of a binary number to its equivalent integer value |
-| unhex() | Converts a String representation of a hexadecimal number to its equivalent integer value |
+|    名前    |                                                          説明                                                          |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| binary()   | int, byte, char, colorを等価な2進数表記を含むStringに変換する。                                                        |
+| boolean()  | int または String を boolean 表現に変換します。                                                                        |
+| byte()     | プリミティブデータ型（boolean, byte, char, color, double, float, int, long）の任意の値をバイト表現に変換する。         |
+| char()     | プリミティブデータ型（boolean, byte, char, color, double, float, int, long）の任意の値を、その数値文字表現に変換する。 |
+| float()    | int または String を浮動小数点表現に変換します。                                                                       |
+| hex()      | byte, char, int, color を，同等の16進数表記を含む String に変換する。                                                  |
+| int()      | プリミティブデータ型（boolean, byte, char, color, float, int, long）またはStringの値を、整数表現に変換します。         |
+| str()      | プリミティブデータ型（boolean, byte, char, int, float）の値をString表現に変換する。                                    |
+| unbinary() | 2進数の文字列表現を同等の整数値に変換する                                                                              |
+| unhex()    | 16進数の文字列表現を，同等の整数値に変換する。                                                                         |
 
 ### プリミティブ
 
-| 名前 | 説明 |
-| --- | --- |
-| boolean | Datatype for the Boolean values true and false |
-| byte | Datatype for bytes, 8 bits of information storing numerical values from 127 to -128 |
-| char | Datatype for characters, typographic symbols such as A, d, and $ |
-| color | Datatype for storing color values |
-| double | Datatype for floating-point numbers larger than those that can be stored in a float |
-| float | Data type for floating-point numbers, e |
-| int | Datatype for integers, numbers without a decimal point |
-| long | Datatype for large integers |
+|  名前   |                               説明                               |
+| ------- | ---------------------------------------------------------------- |
+| boolean | ブール値 true および false に対応するデータ型                    |
+| byte    | バイトのデータ型。127から-128までの数値を格納する8ビットの情報。 |
+| char    | 文字，A,d,$などのタイポグラフィシンボルのデータ型                |
+| color   | 色値を格納するためのデータ型                                     |
+| double  | float に格納できる数よりも大きな浮動小数点数用のデータ型         |
+| float   | 浮動小数点数のデータ型, e                                        |
+| int     | 整数（小数点以下の数値）用のデータ型                             |
+| long    | 大きな整数を扱うデータ型                                         |
 
 ### 文字列関数
 
-| 名前 | 説明 |
-| --- | --- |
-| join() | Combines an array of Strings into one String, each separated by the character(s) used for the separator parameter |
-| matchAll() | This function is used to apply a regular expression to a piece of text |
-| match() | The function is used to apply a regular expression to a piece of text, and return matching groups (elements found inside parentheses) as a String array |
-| nf() | Utility function for formatting numbers into strings |
-| nfc() | Utility function for formatting numbers into strings and placing appropriate commas to mark units of 1000 |
-| nfp() | Utility function for formatting numbers into strings |
-| nfs() | Utility function for formatting numbers into strings |
-| splitTokens() | The splitTokens() function splits a String at one or many character "tokens" |
-| split() | The split() function breaks a string into pieces using a character or string as the divider |
-| trim() | Removes whitespace characters from the beginning and end of a String |
-
-
-## Input {#Input}
-
-### Files
-
-| 名前 | 説明 |
-| --- | --- |
-| BufferedReader | A BufferedReader object is used to read files line-by-line as individual String objects |
-| createInput() | This is a function for advanced programmers to open a Java InputStream |
-| createReader() | Creates a BufferedReader object that can be used to read files line-by-line as individual String objects |
-| launch() | Attempts to open an application or file using your platform's launcher |
-| loadBytes() | Reads the contents of a file or url and places it in a byte array |
-| loadJSONArray() | Takes a String, parses its contents, and returns a JSONArray |
-| loadJSONObject() | Loads a JSON from the data folder or a URL, and returns a JSONObject |
-| loadStrings() | Reads the contents of a file or url and creates a String array of its individual lines |
-| loadTable() | Reads the contents of a file or URL and creates a Table object with its values |
-| loadXML() | Reads the contents of a file or URL and creates an XML object with its values |
-| parseJSONArray() | Takes a String, parses its contents, and returns a JSONArray |
-| parseJSONObject() | Takes a String, parses its contents, and returns a JSONObject |
-| parseXML() | Converts String content to an XML object |
-| selectFolder() | Opens a platform-specific file chooser dialog to select a folder |
-| selectInput() | Open a platform-specific file chooser dialog to select a file for input |
-
-### Time & Date
-
-| 名前 | 説明 |
-| --- | --- |
-| day() | Returns the current day as a value from 1 - 31 |
-| hour() | Returns the current hour as a value from 0 - 23 |
-| millis() | Returns the number of milliseconds (thousandths of a second) since starting an applet |
-| minute() | Returns the current minute as a value from 0 - 59 |
-| month() | Returns the current month as a value from 1 - 12 |
-| second() | Returns the current second as a value from 0 - 59 |
-| year() | Returns the current year as an integer (2003, 2004, 2005, etc) |
-
-### Keyboard
-
-| 名前 | 説明 |
-| --- | --- |
-| key | The system variable that always contains the value of the most recent key on the keyboard that was used (either pressed or released) |
-| keyCode | Used to detect special keys such as the UP, DOWN, LEFT, RIGHT arrow keys and ALT, CONTROL, SHIFT |
-| keyPressed | The boolean system variable that is true if any key is pressed and false if no keys are pressed |
-| keyPressed() | Called once every time a key is pressed |
-| keyReleased() | Called once every time a key is released |
-| keyTyped() | Called once every time a key is pressed, but action keys such as Ctrl, Shift, and Alt are ignored |
-
-### Mouse
-
-| 名前 | 説明 |
-| --- | --- |
-| mouseButton | Shows which mouse button is pressed |
-| mouseClicked() | Called once after a mouse button has been pressed and then released |
-| mouseDragged() | Called once every time the mouse moves and a mouse button is pressed |
-| mouseMoved() | Called every time the mouse moves and a mouse button is not pressed |
-| mousePressed | Variable storing if a mouse button is pressed |
-| mousePressed() | Called once after every time a mouse button is pressed |
-| mouseReleased() | Called every time a mouse button is released |
-| mouseWheel() | The code within the mouseWheel() event function is run when the mouse wheel is moved |
-| mouseX | The system variable that always contains the current horizontal coordinate of the mouse |
-| mouseY | The system variable that always contains the current vertical coordinate of the mouse |
-| pmouseX | The system variable that always contains the horizontal position of the mouse in the frame previous to the current frame |
-| pmouseY | The system variable that always contains the vertical position of the mouse in the frame previous to the current frame |
-
-
-## Constants {#Constants}
-
-| 名前 | 説明 |
-| --- | --- |
-| HALF_PI | HALF_PI is a mathematical constant with the value 1.57079632679489661923 |
-| PI | PI is a mathematical constant with the value 3.14159265358979323846 |
-| QUARTER_PI | QUARTER_PI is a mathematical constant with the value 0.7853982 |
-| TAU | An alias for TWO_PI |
-| TWO_PI | TWO_PI is a mathematical constant with the value 6.28318530717958647693 |
-
-
-## Typography {#Typography}
-
-| 名前 | 説明 |
-| --- | --- |
-| PFont | Grayscale bitmap font class used by Processing |
-
-### Loading & Displaying
-
-| 名前 | 説明 |
-| --- | --- |
-| createFont() | Dynamically converts a font to the format used by Processing |
-| loadFont() | Loads a font into a variable of type PFont |
-| textFont() | Sets the current font that will be drawn with the text() function |
-| text() | Draws text to the screen |
-
-### Attributes
-
-| 名前 | 説明 |
-| --- | --- |
-| textAlign() | Sets the current alignment for drawing text |
-| textLeading() | Sets the spacing between lines of text in units of pixels |
-| textMode() | Sets the way text draws to the screen |
-| textSize() | Sets the current font size |
-| textWidth() | Calculates and returns the width of any character or text string |
-
-### Metrics
-
-| 名前 | 説明 |
-| --- | --- |
-| textAscent() | Returns ascent of the current font at its current size |
-| textDescent() | Returns descent of the current font at its current size |
-
-
-## Rendering {#Rendering}
-
-| 名前 | 説明 |
-| --- | --- |
-| PGraphics | Main graphics and rendering context, as well as the base API implementation for processing "core" |
-| blendMode() | Blends the pixels in the display window according to a defined mode |
-| clip() | Limits the rendering to the boundaries of a rectangle defined by the parameters |
-| createGraphics() | Creates and returns a new PGraphics object of the types P2D or P3D |
-| hint() | This function is used to enable or disable special features that control how graphics are drawn |
-| noClip() | Disables the clipping previously started by the clip() function |
-
-### Shaders
-
-| 名前 | 説明 |
-| --- | --- |
-| PShader | This class encapsulates a GLSL shader program, including a vertex and a fragment shader |
-| loadShader() | Loads a shader into the PShader object |
-| resetShader() | Restores the default shaders |
-| shader() | Applies the shader specified by the parameters |
-
-
-## Image {#Image}
-
-| 名前 | 説明 |
-| --- | --- |
-| PImage | Datatype for storing images |
-| createImage() | Creates a new PImage (the datatype for storing images) |
-
-### Pixels
-
-| 名前 | 説明 |
-| --- | --- |
-| blend() | Copies a pixel or rectangle of pixels using different blending modes |
-| copy() | Copies the entire image |
-| filter() | Converts the image to grayscale or black and white |
-| get() | Reads the color of any pixel or grabs a rectangle of pixels |
-| loadPixels() | Loads the pixel data for the display window into the pixels[] array |
-| mask() | Masks part of an image with another image as an alpha channel |
-| pixels[] | Array containing the values for all the pixels in the display window |
-| set() | Writes a color to any pixel or writes an image into another |
-| updatePixels() | Updates the display window with the data in the pixels[] array |
-
-### Loading & Displaying
-
-| 名前 | 説明 |
-| --- | --- |
-| imageMode() | Modifies the location from which images draw |
-| image() | Displays images to the screen |
-| loadImage() | Loads an image into a variable of type PImage |
-| noTint() | Removes the current fill value for displaying images and reverts to displaying images with their original hues |
-| requestImage() | Loads images on a separate thread so that your sketch does not freeze while images load during setup() |
-| tint() | Sets the fill value for displaying images |
-
-### Textures
-
-| 名前 | 説明 |
-| --- | --- |
-| textureMode() | Sets the coordinate space for texture mapping |
-| textureWrap() | Defines if textures repeat or draw once within a texture map |
-| texture() | Sets a texture to be applied to vertex points |
-
-## Shape {#Shape}
-
-| 名前 | 説明 |
-| --- | --- |
-| PShape | Datatype for storing shapes |
-| createShape() | The createShape() function is used to define a new shape |
-| loadShape() | Loads geometry into a variable of type PShape |
-
-### 2d Primitives
-
-| 名前 | 説明 |
-| --- | --- |
-| arc() | Draws an arc in the display window |
-| circle() | Draws a circle to the screen |
-| ellipse() | Draws an ellipse (oval) in the display window |
-| line() | Draws a line (a direct path between two points) to the screen |
-| point() | Draws a point, a coordinate in space at the dimension of one pixel |
-| quad() | A quad is a quadrilateral, a four sided polygon |
-| rect() | Draws a rectangle to the screen |
-| square() | Draws a square to the screen |
-| triangle() | A triangle is a plane created by connecting three points |
-
-### Vertex
-
-| 名前 | 説明 |
-| --- | --- |
-| beginContour() | Begins recording vertices for the shape |
-| beginShape() | Using the beginShape() and endShape() functions allow creating more complex forms |
-| bezierVertex() | Specifies vertex coordinates for Bezier curves |
-| curveVertex() | Specifies vertex coordinates for curves |
-| endContour() | Stops recording vertices for the shape |
-| endShape() | the companion to beginShape() and may only be called after beginShape() |
-| quadraticVertex() | Specifies vertex coordinates for quadratic Bezier curves |
-| vertex() | All shapes are constructed by connecting a series of vertices |
-
-### Curves
-
-| 名前 | 説明 |
-| --- | --- |
-| bezierDetail() | Sets the resolution at which Beziers display |
-| bezierPoint() | Evaluates the Bezier at point t for points a, b, c, d |
-| bezierTangent() | Calculates the tangent of a point on a Bezier curve |
-| bezier() | Draws a Bezier curve on the screen |
-| curveDetail() | Sets the resolution at which curves display |
-| curvePoint() | Evaluates the curve at point t for points a, b, c, d |
-| curveTangent() | Calculates the tangent of a point on a curve |
-| curveTightness() | Modifies the quality of forms created with curve() and curveVertex() |
-| curve() | Draws a curved line on the screen |
-
-### 3D Primitives
-
-| 名前 | 説明 |
-| --- | --- |
-| box() | A box is an extruded rectangle |
-| sphereDetail() | Controls the detail used to render a sphere by adjusting the number of vertices of the sphere mesh |
-| sphere() | A sphere is a hollow ball made from tessellated triangles |
-
-### Attributes
-
-| 名前 | 説明 |
-| --- | --- |
-| ellipseMode() | The origin of the ellipse is modified by the ellipseMode() function |
-| rectMode() | Modifies the location from which rectangles draw |
-| strokeCap() | Sets the style for rendering line endings |
-| strokeJoin() | Sets the style of the joints which connect line segments |
-| strokeWeight() | Sets the width of the stroke used for lines, points, and the border around shapes |
-
-### Loading & Displaying
-
-| 名前 | 説明 |
-| --- | --- |
-| shapeMode() | Modifies the location from which shapes draw |
-| shape() | Displays shapes to the screen |
-
-
-## Math {#Math}
-
-| 名前 | 説明 |
-| --- | --- |
-| PVector | A class to describe a two or three dimensional vector |
-
-### Calculation
-
-| 名前 | 説明 |
-| --- | --- |
-| abs() | Calculates the absolute value (magnitude) of a number |
-| ceil() | Calculates the closest int value that is greater than or equal to the value of the parameter |
-| constrain() | Constrains a value to not exceed a maximum and minimum value |
-| dist() | Calculates the distance between two points |
-| exp() | Returns Euler's number e (2.71828...) raised to the power of the value parameter |
-| floor() | Calculates the closest int value that is less than or equal to the value of the parameter |
-| lerp() | Calculates a number between two numbers at a specific increment |
-| log() | Calculates the natural logarithm (the base-e logarithm) of a number |
-| mag() | Calculates the magnitude (or length) of a vector |
-| map() | Re-maps a number from one range to another |
-| max() | Determines the largest value in a sequence of numbers |
-| min() | Determines the smallest value in a sequence of numbers |
-| norm() | Normalizes a number from another range into a value between 0 and 1 |
-| pow() | Facilitates exponential expressions |
-| round() | Calculates the integer closest to the value parameter |
-| sq() | Squares a number (multiplies a number by itself) |
-| sqrt() | Calculates the square root of a number |
-
-### Trigonometry
-
-| 名前 | 説明 |
-| --- | --- |
-| acos() | The inverse of cos(), returns the arc cosine of a value |
-| asin() | The inverse of sin(), returns the arc sine of a value |
-| atan2() | Calculates the angle (in radians) from a specified point to the coordinate origin as measured from the positive x-axis |
-| atan() | The inverse of tan(), returns the arc tangent of a value |
-| cos() | Calculates the cosine of an angle |
-| degrees() | Converts a radian measurement to its corresponding value in degrees |
-| radians() | Converts a degree measurement to its corresponding value in radians |
-| sin() | Calculates the sine of an angle |
-| tan() | Calculates the ratio of the sine and cosine of an angle |
-
-### Operators
-
-| 名前 | 説明 |
-| --- | --- |
-| \+= (add assign) | Combines addition with assignment |
-| \+ (addition) | Adds two values or concatenates string values |
-| \-\- (decrement) | Substracts the value of an integer variable by 1 |
-| / (divide) | Divides the value of the first parameter by the value of the second parameter |
-| /= (divide assign) | Combines division with assignment |
-| \+\+ (increment) | Increases the value of an integer variable by 1 |
-| \- (minus) | Subtracts one value from another and may also be used to negate a value |
-| % (modulo) | Calculates the remainder when one number is divided by another |
-| \* (multiply) | Multiplies the values of the two parameters |
-| \*= (multiply assign) | Combines multiplication with assignment |
-| \-= (subtract assign) | Combines subtraction with assignment |
-
-### Bitwise Operators
-
-| 名前 | 説明 |
-| --- | --- |
-| & (bitwise AND) | Compares each corresponding bit in the binary representation of the values |
-| | (bitwise OR) | Compares each corresponding bit in the binary representation of the values |
-| << (left shift) | Shifts bits to the left |
-| \>\> (right shift) | Shifts bits to the right |
-
-### Random
-
-| 名前 | 説明 |
-| --- | --- |
-| noiseDetail() | Adjusts the character and level of detail produced by the Perlin noise function |
-| noiseSeed() | Sets the seed value for noise() |
-| noise() | Returns the Perlin noise value at specified coordinates |
-| randomGaussian() | Returns a float from a random series of numbers having a mean of 0 and standard deviation of 1 |
-| randomSeed() | Sets the seed value for random() |
-| random() | Generates random numbers |
-
-## Output {#Output}
-
-### Files
-
-| 名前 | 説明 |
-| --- | --- |
-| PrintWriter | Allows characters to print to a text-output stream |
-| beginRaw() | To create vectors from 3D data, use the beginRaw() and endRaw() commands |
-| beginRecord() | Opens a new file and all subsequent drawing functions are echoed to this file as well as the display window |
-| createOutput() | Similar to createInput(), this creates a Java OutputStream for a given filename or path |
-| createWriter() | Creates a new file in the sketch folder, and a PrintWriter object to write to it |
-| endRaw() | Complement to beginRaw(); they must always be used together |
-| endRecord() | Stops the recording process started by beginRecord() and closes the file |
-| saveBytes() | Opposite of loadBytes(), will write an entire array of bytes to a file |
-| saveJSONArray() | Writes the contents of a JSONArray object to a file |
-| saveJSONObject() | Writes the contents of a JSONObject object to a file |
-| saveStream() | Save the contents of a stream to a file in the sketch folder |
-| saveStrings() | Writes an array of strings to a file, one line per string |
-| saveTable() | Writes the contents of a Table object to a file |
-| saveXML() | Writes the contents of an XML object to a file |
-| selectOutput() | Opens a platform-specific file chooser dialog to select a file for output |
-
-### Text Area
-
-| 名前 | 説明 |
-| --- | --- |
-| printArray() | Writes array data to the text area of the Processing environment's console. |
-| print() | Writes to the console area of the Processing environment |
-| println() | Writes to the text area of the Processing environment's console |
-
-### Image
-
-| 名前 | 説明 |
-| --- | --- |
-| saveFrame() | Saves a numbered sequence of images, one image each time the function is run |
-| save() | Saves an image from the display window |
-
-
-## Color {#Color}
-
-### Creating & Reading
-
-| 名前 | 説明 |
-| --- | --- |
-| alpha() | Extracts the alpha value from a color |
-| blue() | Extracts the blue value from a color, scaled to match current colorMode() |
-| brightness() | Extracts the brightness value from a color |
-| color() | Creates colors for storing in variables of the color datatype |
-| green() | Extracts the green value from a color, scaled to match current colorMode() |
-| hue() | Extracts the hue value from a color |
-| lerpColor() | Calculates a color or colors between two colors at a specific increment |
-| red() | Extracts the red value from a color, scaled to match current colorMode() |
-| saturation() | Extracts the saturation value from a color |
-
-### Setting
-
-| 名前 | 説明 |
-| --- | --- |
-| background() | Sets the color used for the background of the Processing window |
-| clear() | Clears the pixels within a buffer |
-| colorMode() | Changes the way Processing interprets color data |
-| fill() | Sets the color used to fill shapes |
-| noFill() | Disables filling geometry |
-| noStroke() | Disables drawing the stroke (outline) |
-| stroke() | Sets the color used to draw lines and borders around shapes |
-
-
-## Lights Camera {#Lights_Camera}
-
-### Lights
-
-| 名前 | 説明 |
-| --- | --- |
-| ambientLight() | Adds an ambient light |
-| directionalLight() | Adds a directional light |
-| lightFalloff() | Sets the falloff rates for point lights, spot lights, and ambient lights |
-| lightSpecular() | Sets the specular color for lights |
-| lights() | Sets the default ambient light, directional light, falloff, and specular values |
-| noLights() | Disable all lighting |
-| normal() | Sets the current normal vector |
-| pointLight() | Adds a point light |
-| spotLight() | Adds a spot light |
-
-### Material Properties
-
-| 名前 | 説明 |
-| --- | --- |
-| ambient() | Sets the ambient reflectance for shapes drawn to the screen |
-| emissive() | Sets the emissive color of the material used for drawing shapes drawn to the screen |
-| shininess() | Sets the amount of gloss in the surface of shapes |
-| specular() | Sets the specular color of the materials used for shapes drawn to the screen, which sets the color of highlights |
-
-### Camera
-
-| 名前 | 説明 |
-| --- | --- |
-| beginCamera() | The beginCamera() and endCamera() functions enable advanced customization of the camera space |
-| camera() | Sets the position of the camera |
-| endCamera() | The beginCamera() and endCamera() functions enable advanced customization of the camera space |
-| ortho() | Sets an orthographic projection and defines a parallel clipping volume |
-| perspective() | Sets a perspective projection applying foreshortening, making distant objects appear smaller than closer ones |
-| frustum() | Sets a perspective matrix defined through the parameters |
-| printCamera() | Prints the current camera matrix to the Console (the text window at the bottom of Processing) |
-| printProjection() | Prints the current projection matrix to the Console |
-
-### Coordinates
-
-| 名前 | 説明 |
-| --- | --- |
-| modelX() | Returns the three-dimensional X, Y, Z position in model space |
-| modelY() | Returns the three-dimensional X, Y, Z position in model space |
-| modelZ() | Returns the three-dimensional X, Y, Z position in model space |
-| screenX() | Takes a three-dimensional X, Y, Z position and returns the X value for where it will appear on a (two-dimensional) screen |
-| screenY() | Takes a three-dimensional X, Y, Z position and returns the Y value for where it will appear on a (two-dimensional) screen |
-| screenZ() | Takes a three-dimensional X, Y, Z position and returns the Z value for where it will appear on a (two-dimensional) screen |
-
-
-## Transform {#Transform}
-
-| 名前 | 説明 |
-| --- | --- |
-| applyMatrix() | Multiplies the current matrix by the one specified through the parameters |
-| popMatrix() | Pops the current transformation matrix off the matrix stack |
-| printMatrix() | Prints the current matrix to the Console (the text window at the bottom of Processing) |
-| pushMatrix() | Pushes the current transformation matrix onto the matrix stack |
-| resetMatrix() | Replaces the current matrix with the identity matrix |
-| rotateX() | Rotates a shape around the x-axis the amount specified by the angle parameter |
-| rotateY() | Rotates a shape around the y-axis the amount specified by the angle parameter |
-| rotateZ() | Rotates a shape around the z-axis the amount specified by the angle parameter |
-| rotate() | Rotates a shape the amount specified by the angle parameter |
-| scale() | Increases or decreases the size of a shape by expanding and contracting vertices |
-| shearX() | Shears a shape around the x-axis the amount specified by the angle parameter |
-| shearY() | Shears a shape around the y-axis the amount specified by the angle parameter |
-| translate() | Specifies an amount to displace objects within the display window |
-
-
-## Structure {#Structure}
-
-| 名前 | 説明 |
-| --- | --- |
-| \[\] (array access) | The array access operator is used to specify a location within an array |
-| = (assign) | Assigns a value to a variable |
-| catch | The catch keyword is used with try to handle exceptions |
-| class | Keyword used to indicate the declaration of a class |
-| , (comma) | Separates parameters in function calls and elements during assignment |
-| // (comment) | Explanatory notes embedded within the code |
-| \{\} (curly braces) | Define the beginning and end of functions blocks and statement blocks such as the for and if structures |
-| /\*\* \*/ (doc comment) | Explanatory notes embedded within the code |
-| \. (dot) | Provides access to an object's methods and data |
-| draw() | Called directly after setup() and continuously executes the lines of code contained inside its block until the program is stopped or noLoop() is called |
-| exit() | Quits/stops/exits the program |
-| extends | Allows a new class to inherit the methods and data fields (variables and constants) from an existing class |
-| false | Reserved word representing the logical value "false" |
-| final | Keyword used to state that a value, class, or method can't be changed |
-| implements | Implements an interface or group of interfaces |
-| import | The keyword import is used to load a library into a Processing sketch |
-| loop() | Causes Processing to continuously execute the code within draw() |
-| /\* \*/ (multiline comment) | Explanatory notes embedded within the code |
-| new | Creates a "new" object |
-| noLoop() | Stops Processing from continuously executing the code within draw() |
-| null | Special value used to signify the target is not a valid data element |
-| () (parentheses) | Grouping and containing expressions and parameters |
-| popStyle() | Saves the current style settings and popStyle() restores the prior settings |
-| pop() | The pop() function restores the previous drawing style settings and transformations after push() has changed them |
-| private | This keyword is used to disallow other classes access to the fields and methods within a class |
-| public | Keyword used to provide other classes access the fields and methods within a class |
-| pushStyle() | Saves the current style settings and popStyle() restores the prior settings |
-| push() | The push() function saves the current drawing style settings and transformations, while pop() restores these settings |
-| redraw() | Executes the code within draw() one time |
-| return | Keyword used to indicate the value to return from a function |
-| ; (semicolon) | A statement terminator which separates elements of the program |
-| setLocation() | The setLocation() function defines the position of the Processing sketch in relation to the upper-left corner of the computer screen |
-| setResizable() | By default, Processing sketches can't be resized |
-| setTitle() | The setTitle() function defines the title to appear at the top of the sketch window |
-| setup() | The setup() function is called once when the program starts |
-| static | Keyword used to define a variable as a "class variable" and a method as a "class method |
-| super | Keyword used to reference the superclass of a subclass |
-| this | Refers to the current object (i |
-| thread() | Launch a new thread and call the specified function from that new thread |
-| true | Reserved word representing the logical value "true" |
-| try | The try keyword is used with catch to handle exceptions |
-| void | Keyword used to indicate that a function returns no value |
-
-
-## Control {#Control}
-
-### Conditionals
-
-| 名前 | 説明 |
-| --- | --- |
-| break | Ends the execution of a structure such as switch, for, or while and jumps to the next statement after |
-| case | Denotes the different names to be evaluated with the parameter in the switch structure |
-| ?: (conditional) | A shortcut for writing an if and else structure |
-| continue | When run inside of a for or while, it skips the remainder of the block and starts the next iteration |
-| default | Keyword for defining the default condition of a switch |
-| else | Extends the if structure allowing the program to choose between two or more blocks of code |
-| if | Allows the program to make a decision about which code to execute |
-| switch | Works like an if else structure, but switch is more convenient when you need to select between three or more alternatives |
-
-### Relational Operators
-
-| 名前 | 説明 |
-| --- | --- |
-| == (equality) | Determines if two values are equivalent |
-| \> (greater than) | Tests if the value on the left is larger than the value on the right |
-| \>= (greater than or equal to) | Tests if the value on the left is larger than the value on the right or if the values are equivalent |
-| \!= (inequality) | Determines if one expression is not equivalent to another |
-| < (less than) | Tests if the value on the left is smaller than the value on the right |
-| <= (less than or equal to) | Tests if the value on the left is less than the value on the right or if the values are equivalent |
-
-### Iteration
-
-| 名前 | 説明 |
-| --- | --- |
-| for | Controls a sequence of repetitions |
-| while | Controls a sequence of repetitions |
-
-### Logical Operators
-
-| 名前 | 説明 |
-| --- | --- |
-| && (logical AND) | Compares two expressions and returns true only if both evaluate to true |
-| \! (logical NOT) | Inverts the Boolean value of an expression |
-| ｜｜ (logical OR) | Compares two expressions and returns true if one or both evaluate to true |
-
-## Environment {#Environment}
-
-| 名前 | 説明 |
-| --- | --- |
-| cursor() | Sets the cursor to a predefined symbol, an image, or makes it visible if already hidden |
-| delay() | The delay() function causes the program to halt for a specified time |
-| displayDensity() | Returns "2" if the screen is high-density and "1" if not |
-| displayHeight | Variable that stores the height of the computer screen |
-| displayWidth | Variable that stores the width of the computer screen |
-| focused | Confirms if a Processing program is "focused" |
-| frameCount | The system variable that contains the number of frames displayed since the program started |
-| frameRate | The system variable that contains the approximate frame rate of the software as it executes |
-| height | System variable which stores the height of the display window |
-| noCursor() | Hides the cursor from view |
-| noSmooth() | Draws all geometry and fonts with jagged (aliased) edges and images with hard edges between the pixels when enlarged rather than interpolating pixels |
-| pixelDensity() | It makes it possible for Processing to render using all of the pixels on high resolutions screens |
-| pixelHeight | The actual pixel height when using high resolution display |
-| pixelWidth | The actual pixel width when using high resolution display |
-| fullScreen() | Opens a sketch using the full size of the computer's display |
-| frameRate() | Specifies the number of frames to be displayed every second |
-| settings() | Used when absolutely necessary to define the parameters to size() with a variable |
-| size() | Defines the dimension of the display window in units of pixels |
-| smooth() | Draws all geometry with smooth (anti-aliased) edges |
-| width | System variable which stores the width of the display window |
+|     名前      |                                                            説明                                                            |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| join()        | separator パラメータで指定した文字で区切られた文字列の配列を、1 つの文字列に結合します。                                   |
+| matchAll()    | この関数は、テキストに正規表現を適用するために使用されます。                                                               |
+| match()       | この関数は、テキストに正規表現を適用し、マッチしたグループ（括弧の中にある要素）をString配列として返すために使用されます。 |
+| nf()          | 数値を文字列にフォーマットするユーティリティ関数                                                                           |
+| nfc()         | 数値を文字列にフォーマットし、1000単位を示す適切なカンマを配置するユーティリティ関数                                       |
+| nfp()         | 数値を文字列にフォーマットするユーティリティ関数                                                                           |
+| nfs()         | 数値を文字列にフォーマットするユーティリティ関数                                                                           |
+| splitTokens() | splitTokens() 関数は、1 つまたは複数の文字の "トークン" で文字列を分割します。                                             |
+| split()       | split() 関数は、文字または文字列を区切りとして文字列を分割する関数です。                                                   |
+| trim()        | Stringの先頭と末尾から空白文字を削除します。                                                                               |
+
+
+## 入力 {#Input}
+
+### ファイル
+
+|       名前        |                                                     説明                                                     |
+| ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| BufferedReader    | BufferedReaderオブジェクトは、ファイルを一行ごとに個別のStringオブジェクトとして読み込むために使用されます。 |
+| createInput()     | Java InputStreamをオープンする上級プログラマー向けの機能です。                                               |
+| createReader()    | ファイルを一行ずつ読み込むための BufferedReader オブジェクトを作成する。                                     |
+| launch()          | プラットフォームのランチャーを使用してアプリケーションやファイルを開こうとした場合                           |
+| loadBytes()       | ファイルまたはURLの内容を読み込み、バイト配列に格納する。                                                    |
+| loadJSONArray()   | Stringを受け取り、その内容をパースして、JSONArrayを返す。                                                    |
+| loadJSONObject()  | データフォルダまたはURLからJSONを読み込み、JSONObjectを返す。                                                |
+| loadStrings()     | ファイルあるいは url の内容を読み込み、その個々の行の String 配列を作成します。                              |
+| loadTable()       | ファイルやURLの内容を読み取り、その値でTableオブジェクトを作成する                                           |
+| loadXML()         | ファイルまたはURLの内容を読み取り、その値を持つXMLオブジェクトを作成する                                     |
+| parseJSONArray()  | Stringを受け取り、その内容をパースして、JSONArrayを返す。                                                    |
+| parseJSONObject() | Stringを受け取り、その内容をパースして、JSONObjectを返す。                                                   |
+| parseXML()        | StringコンテンツをXMLオブジェクトに変換する。                                                                |
+| selectFolder()    | プラットフォーム固有のファイル選択ダイアログを開き、フォルダを選択する                                       |
+| selectInput()     | プラットフォーム固有のファイル選択ダイアログを開き、入力用ファイルを選択する                                 |
+
+### 時刻と日付
+
+|   名前   |                               説明                               |
+| -------- | ---------------------------------------------------------------- |
+| day()    | 現在の日を1～31の値で返します。                                  |
+| hour()   | 現在の時刻を0～23の値で返します。                                |
+| millis() | アプレットを起動してからのミリ秒数（1000 分の 1 秒）を返します。 |
+| minute() | 現在の「分」を0～59の値で返します。                              |
+| month()  | 現在の月を1～12までの値で返します。                              |
+| second() | 現在の秒を0～59の値で返します。                                  |
+| year()   | 現在の年を整数で返す（2003, 2004, 2005, etc.）                   |
+
+### キーボード
+
+|     名前      |                                                説明                                                |
+| ------------- | -------------------------------------------------------------------------------------------------- |
+| key           | キーボードで最も最近使われたキー（押されたか離されたかのどちらか）の値を常に含むシステム変数です。 |
+| keyCode       | UP、DOWN、LEFT、RIGHTの矢印キーやALT、CONTROL、SHIFTなどの特殊キーを検出するために使用します。     |
+| keyPressed    | キーが押された場合は真、押されていない場合は偽となるブーリアン変数                                 |
+| keyPressed()  | キーが押されるたびに1回呼び出される                                                                |
+| keyReleased() | キーが離されるたびに1回呼び出される                                                                |
+| keyTyped()    | キーが押されるたびに1回呼び出されるが、Ctrl、Shift、Altのようなアクションキーは無視される          |
+
+### マウス
+
+|      名前       |                                         説明                                         |
+| --------------- | ------------------------------------------------------------------------------------ |
+| mouseButton     | どのマウスボタンが押されたかを表示する                                               |
+| mouseClicked()  | マウスボタンが押された後、離された後に一度だけ呼ばれる                               |
+| mouseDragged()  | マウスが移動し、マウスボタンが押されるたびに1回呼び出される                          |
+| mouseMoved()    | マウスが移動し、マウスボタンが押されていない時に毎回呼び出される                     |
+| mousePressed    | マウスボタンが押された場合に格納される変数                                           |
+| mousePressed()  | マウスボタンが押されるたびに1回呼び出される                                          |
+| mouseReleased() | マウスボタンが離されるたびに呼び出される                                             |
+| mouseWheel()    | mouseWheel()イベント関数内のコードは、マウスホイールが動かされたときに実行されます。 |
+| mouseX          | 常にマウスの現在の水平座標を格納するシステム変数                                     |
+| mouseY          | 常にマウスの現在の垂直座標を格納するシステム変数                                     |
+| pmouseX         | 現在のフレームより前のフレームにおけるマウスの水平位置を常に格納するシステム変数     |
+| pmouseY         | 現在のフレームより前のフレームにおけるマウスの垂直位置を常に格納するシステム変数     |
+
+
+## 定数 {#Constants}
+
+|    名前    |                         説明                          |
+| ---------- | ----------------------------------------------------- |
+| HALF_PI    | HALF_PIは数学定数で、値は1.57079632679489661923です。 |
+| PI         | PIは、値3.14159265358979323846の数学定数です。        |
+| QUARTER_PI | QUARTER_PIは数学定数で、値は0.7853982です。           |
+| TAU        | TWO_PIの別名。                                        |
+| TWO_PI     | TWO_PIは数学定数で、値は6.28318530717958647693です。  |
+
+
+## タイポグラフィ {#Typography}
+
+| 名前  |                              説明                               |
+| ----- | --------------------------------------------------------------- |
+| PFont | Processing で使用されるグレースケールビットマップフォントクラス |
+
+### 読み込みと表示
+
+|     名前     |                         説明                         |
+| ------------ | ---------------------------------------------------- |
+| createFont() | フォントをProcessingで使用される形式に動的に変換する |
+| loadFont()   | PFont 型の変数にフォントをロードします。             |
+| textFont()   | text() 関数で描画される現在のフォントを設定します。  |
+| text()       | 画面にテキストを描画する                             |
+
+### 属性
+
+|     名前      |                          説明                          |
+| ------------- | ------------------------------------------------------ |
+| textAlign()   | テキストを描画する際の現在のアライメントを設定します   |
+| textLeading() | テキストの行間をピクセル単位で設定する                 |
+| textMode()    | テキストの画面への描画方法を設定する                   |
+| textSize()    | 現在のフォントサイズを設定する                         |
+| textWidth()   | 任意の文字またはテキスト文字列の幅を計算し、返します。 |
+
+### マトリクス
+
+|     名前      |                     説明                     |
+| ------------- | -------------------------------------------- |
+| textAscent()  | 現在のフォントの現在のサイズでの上昇値を返す |
+| textDescent() | 現在のフォントの、現在のサイズでの降下を返す |
+
+
+## レンダリング {#Rendering}
+
+|       名前       |                                              説明                                               |
+| ---------------- | ----------------------------------------------------------------------------------------------- |
+| PGraphics        | メイングラフィックスとレンダリングコンテキスト、および "コア" を処理するためのベース API 実装。 |
+| blendMode()      | 定義されたモードに従って、ディスプレイウィンドウのピクセルをブレンドする                        |
+| clip()           | パラメータで定義された矩形の境界線にレンダリングを制限します。                                  |
+| createGraphics() | P2D 型または P3D 型の PGraphics オブジェクトを新規に作成し、返します。                          |
+| hint()           | この機能は、グラフィックの描画方法を制御する特別な機能を有効または無効にするために使用します。  |
+| noClip()         | clip()関数によって開始されたクリッピングを無効にします。                                        |
+
+### シェーダー
+
+|     名前      |                                               説明                                               |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| PShader       | このクラスは、頂点シェーダとフラグメントシェーダを含むGLSLシェーダプログラムをカプセル化します。 |
+| loadShader()  | PShader オブジェクトにシェーダーをロードします。                                                 |
+| resetShader() | デフォルトのシェーダーを復元する                                                                 |
+| shader()      | パラメータで指定されたシェーダーを適用する                                                       |
+
+
+## 画像 {#Image}
+
+|     名前      |                           説明                           |
+| ------------- | -------------------------------------------------------- |
+| PImage        | 画像を格納するためのデータ型                             |
+| createImage() | PImage（画像を格納するためのデータ型）を新規に作成する。 |
+
+### ピクセル
+
+|      名前      |                                       説明                                       |
+| -------------- | -------------------------------------------------------------------------------- |
+| blend()        | さまざまなブレンドモードを使用して、ピクセルまたはピクセルの矩形をコピーします。 |
+| copy()         | 画像全体をコピーする                                                             |
+| filter()       | 画像をグレースケールまたは白黒に変換する                                         |
+| get()          | 任意のピクセルの色を読み取るか、ピクセルの矩形を取得します。                     |
+| loadPixels()   | 表示ウィンドウのピクセルデータをpixels[]配列にロードします。                     |
+| mask()         | 画像の一部をアルファチャンネルとして別の画像でマスクする                         |
+| pixels[]       | 表示ウィンドウ内の全画素の値を含む配列                                           |
+| set()          | 任意の画素に色を書き込んだり、別の画素に画像を書き込んだりします。               |
+| updatePixels() | ピクセル[]配列のデータで表示ウィンドウを更新します。                             |
+
+### 読み込みと表示
+
+|      名前      |                                                     説明                                                      |
+| -------------- | ------------------------------------------------------------------------------------------------------------- |
+| imageMode()    | 画像の描画位置を変更する                                                                                      |
+| image()        | 画像をスクリーンに表示する                                                                                    |
+| loadImage()    | PImage 型の変数に画像を読み込む。                                                                             |
+| noTint()       | 画像を表示する際の現在の塗りつぶし値を削除し、元の色相で画像を表示するように戻す                              |
+| requestImage() | 画像を別スレッドでロードするので、setup()中に画像をロードしている間にスケッチがフリーズすることはありません。 |
+| tint()         | 画像を表示する際の塗りつぶし値を設定する                                                                      |
+
+### テクスチャ
+
+|     名前      |                                     説明                                     |
+| ------------- | ---------------------------------------------------------------------------- |
+| textureMode() | テクスチャマッピングのための座標空間を設定する                               |
+| textureWrap() | テクスチャマップ内でテクスチャを繰り返すか、一度だけ描画するかを定義します。 |
+| texture()     | 頂点に適用するテクスチャを設定します。                                       |
+
+## シェイプ {#Shape}
+
+|     名前      |                             説明                              |
+| ------------- | ------------------------------------------------------------- |
+| PShape        | 形状を格納するためのデータ型                                  |
+| createShape() | createShape()関数は、新しい図形を定義するために使用されます。 |
+| loadShape()   | PShape 型の変数にジオメトリをロードする。                     |
+
+### 2Dプリミティブ
+
+|    名前    |                        説明                         |
+| ---------- | --------------------------------------------------- |
+| arc()      | 表示ウィンドウに円弧を描画する                      |
+| circle()   | 画面に円を描画する                                  |
+| ellipse()  | 表示ウィンドウに楕円（オーバル）を描画する          |
+| line()     | 画面にライン（2点間の直接の経路）を描画します。     |
+| point()    | 1画素の大きさの空間座標である点を描画します。       |
+| quad()     | クワッドとは、四角形のことで、4辺の多角形のことです |
+| rect()     | 画面に矩形を描画する                                |
+| square()   | 画面に正方形を描画する                              |
+| triangle() | 三角形は3つの点を結んでできる平面です               |
+
+### バーテックス
+
+|       名前        |                                          説明                                          |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| beginContour()    | 形状の頂点の記録を開始する。                                                           |
+| beginShape()      | beginShape()、endShape()関数を使用すると、より複雑なフォームを作成することができます。 |
+| bezierVertex()    | ベジェ曲線の頂点座標を指定する。                                                       |
+| curveVertex()     | 曲線の頂点座標を指定する                                                               |
+| endContour()      | シェイプの頂点の記録を停止する                                                         |
+| endShape()        | beginShape() のコンパニオンで、beginShape() の後にのみ呼び出すことができます。         |
+| quadraticVertex() | 二次ベジェ曲線の頂点座標を指定する。                                                   |
+| vertex()          | すべての図形は、一連の頂点を結ぶことで構成される                                       |
+
+### カーブ
+
+|       名前       |                               説明                               |
+| ---------------- | ---------------------------------------------------------------- |
+| bezierDetail()   | ベジェの表示解像度を設定する                                     |
+| bezierPoint()    | 点 a, b, c, d の点 t でのベジェを評価する。                      |
+| bezierTangent()  | ベジェ曲線上の点の正接を計算する                                 |
+| bezier()         | 画面上にベジェ曲線を描画する                                     |
+| curveDetail()    | カーブ表示の解像度を設定する                                     |
+| curvePoint()     | 点a,b,c,dについて、点tでの曲線を評価する。                       |
+| curveTangent()   | 曲線上の点の正接を計算する                                       |
+| curveTightness() | curve()およびcurveVertex()で作成されたフォームの品質を変更する。 |
+| curve()          | 画面上に曲線を描画する                                           |
+
+### 3Dプリミティブ
+
+|      名前      |                                                説明                                                |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| box()          | ボックスは、押し出された長方形です                                                                 |
+| sphereDetail() | 球体メッシュの頂点数を調整することで、球体のレンダリングに使用するディテールをコントロールします。 |
+| sphere()       | 球はテッセレーションされた三角形でできた中空の球です                                               |
+
+### 属性
+
+|      名前      |                              説明                              |
+| -------------- | -------------------------------------------------------------- |
+| ellipseMode()  | 楕円の原点は、ellipseMode()関数で変更されます。                |
+| rectMode()     | 矩形が描画される位置を変更する                                 |
+| strokeCap()    | 行末のレンダリングスタイルを設定する                           |
+| strokeJoin()   | 線分と線分をつなぐジョイントのスタイルを設定します。           |
+| strokeWeight() | 線、点、図形周囲の境界線に使用するストロークの幅を設定します。 |
+
+### 読み込みと表示
+
+|    名前     |             説明             |
+| ----------- | ---------------------------- |
+| shapeMode() | シェイプの描画位置を変更する |
+| shape()     | 図形を画面に表示する         |
+
+
+## 数学 {#Math}
+
+|  名前   |                       説明                       |
+| ------- | ------------------------------------------------ |
+| PVector | 2次元または3次元のベクトルを記述するクラスです． |
+
+### 計算
+
+|    名前     |                                 説明                                 |
+| ----------- | -------------------------------------------------------------------- |
+| abs()       | 数値の絶対値（大きさ）を計算する                                     |
+| ceil()      | パラメータ値以上に最も近いint値を計算する。                          |
+| constrain() | 値が最大値および最小値を超えないように制約する                       |
+| dist()      | 2点間の距離を計算する                                                |
+| exp()       | オイラー数e (2.71828...)を値パラメータのべき乗にしたものを返します。 |
+| floor()     | パラメータ値以下の最も近い int 値を計算します。                      |
+| lerp()      | 2つの数値の間の数値を、特定の増分で計算します。                      |
+| log()       | 数値の自然対数（底e対数）を計算します。                              |
+| mag()       | ベクトルの大きさ（または長さ）を計算します。                         |
+| map()       | ある範囲から別の範囲に数値を再マップする                             |
+| max()       | 数列の中で最大の値を決定します。                                     |
+| min()       | 数列の中で最小の値を決定します。                                     |
+| norm()      | 他の範囲の数値を0から1の間の値に正規化します。                       |
+| pow()       | 指数表現が容易に                                                     |
+| round()     | パラメータ値に最も近い整数を計算する。                               |
+| sq()        | 数値を二乗する（数値とそれとを掛け合わせる）。                       |
+| sqrt()      | 数値の平方根を計算する                                               |
+
+### 三角関数
+
+|   名前    |                                        説明                                         |
+| --------- | ----------------------------------------------------------------------------------- |
+| acos()    | cos()の逆数で、値のアークコサインを返します。                                       |
+| asin()    | sin()の逆数で、値のアークサインを返します。                                         |
+| atan2()   | 指定した点から、正のX軸から測定した座標原点までの角度（ラジアン単位）を計算します。 |
+| atan()    | tan()の逆で、値のアークタンジェントを返します。                                     |
+| cos()     | 角度の余弦を計算する                                                                |
+| degrees() | ラジアン測定値から対応する度数単位の値に変換します。                                |
+| radians() | 度数測定値をラジアン単位で対応する値に変換します。                                  |
+| sin()     | 角度の正弦を計算する                                                                |
+| tan()     | 角度の正弦と余弦の比を計算する                                                      |
+
+### 演算子
+
+|         名前          |                                     説明                                     |
+| --------------------- | ---------------------------------------------------------------------------- |
+| \+= (add assign)      | 加算と代入の組み合わせ                                                       |
+| \+ (addition)         | 2つの値を足したり、文字列の値を連結したりする。                              |
+| \-\- (decrement)      | 整数型変数の値を1だけ抽象化する                                              |
+| / (divide)            | 第一パラメーターの値を第二パラメーターの値で割る                             |
+| /= (divide assign)    | 除算と代入の組み合わせ                                                       |
+| \+\+ (increment)      | 整数型変数の値を1増加させる                                                  |
+| \- (minus)            | ある値から別の値を引きます。また、値を否定するために使用することもできます。 |
+| % (modulo)            | ある数を別の数で割ったときの余りを計算します。                               |
+| \* (multiply)         | 2つのパラメーターの値を掛け合わせる                                          |
+| \*= (multiply assign) | 乗算と代入の組み合わせ                                                       |
+| \-= (subtract assign) | 減算と代入の組み合わせ                                                       |
+
+### ビット演算子
+
+|        名前        |                      説明                       |
+| ------------------ | ----------------------------------------------- |
+| & (bitwise AND)    | 値の2進表現における対応する各ビットを比較する。 |
+| ｜ (bitwise OR)    | 値の2進表現における対応する各ビットを比較する。 |
+| << (left shift)    | ビットを左にシフトする                          |
+| \>\> (right shift) | ビットを右にシフトする                          |
+
+### ランダム
+
+|       名前       |                                 説明                                 |
+| ---------------- | -------------------------------------------------------------------- |
+| noiseDetail()    | パーリンノイズ機能で生成されるディテールの特性やレベルを調整します。 |
+| noiseSeed()      | noise()のシード値を設定する。                                        |
+| noise()          | 指定された座標におけるPerlinノイズの値を返します。                   |
+| randomGaussian() | 平均が 0、標準偏差が 1 の乱数列から float を返します。               |
+| randomSeed()     | random()のシード値を設定します。                                     |
+| random()         | 乱数生成                                                             |
+
+## 出力 {#Output}
+
+### ファイル
+
+|       名前       |                                                説明                                                |
+| ---------------- | -------------------------------------------------------------------------------------------------- |
+| PrintWriter      | テキスト出力ストリームへの文字の印刷を許可する                                                     |
+| beginRaw()       | 3Dデータからベクトルを作成するには、beginRaw()とendRaw()コマンドを使用します                       |
+| beginRecord()    | 新規ファイルを開き、それ以降のすべての描画機能は、表示ウィンドウと同様にこのファイルにエコーされる |
+| createOutput()   | createInput() と同様に、与えられたファイル名またはパスに対して Java OutputStream を作成します。    |
+| createWriter()   | スケッチフォルダに新しいファイルを作成し、そこに書き込むためのPrintWriterオブジェクトを作成する    |
+| endRaw()         | beginRaw() を補完するもので、常に一緒に使用する必要があります。                                    |
+| endRecord()      | beginRecord()で開始した記録処理を停止し、ファイルをクローズする。                                  |
+| saveBytes()      | loadBytes()の反対で、バイトの配列全体をファイルに書き込みます。                                    |
+| saveJSONArray()  | JSONArray オブジェクトの内容をファイルに書き出す。                                                 |
+| saveJSONObject() | JSONObjectオブジェクトの内容をファイルに書き込む                                                   |
+| saveStream()     | ストリームの内容をスケッチフォルダ内のファイルに保存する                                           |
+| saveStrings()    | 文字列の配列を1行ずつファイルに書き出す                                                            |
+| saveTable()      | Table オブジェクトの内容をファイルに書き込む                                                       |
+| saveXML()        | XMLオブジェクトの内容をファイルに書き込む                                                          |
+| selectOutput()   | プラットフォーム固有のファイル選択ダイアログを開き、出力するファイルを選択する                     |
+
+### テキストエリア
+
+|     名前     |                                  説明                                  |
+| ------------ | ---------------------------------------------------------------------- |
+| printArray() | Processing環境のコンソールのテキストエリアに配列データを書き込みます。 |
+| print()      | Processing環境のコンソールエリアに書き込みます。                       |
+| println()    | Processing 環境のコンソールのテキストエリアに書き込みます。            |
+
+### 画像
+
+|    名前     |                            説明                             |
+| ----------- | ----------------------------------------------------------- |
+| saveFrame() | この関数を実行するたびに1枚ずつ、番号順に画像を保存します。 |
+| save()      | ディスプレイウィンドウの画像を保存する                      |
+
+
+## カラー {#Color}
+
+### 生成と読み込み
+
+|     名前     |                                    説明                                     |
+| ------------ | --------------------------------------------------------------------------- |
+| alpha()      | 色からアルファ値を抽出する                                                  |
+| blue()       | 色から青の値を抽出し、現在のcolorMode()と一致するようにスケーリングします。 |
+| brightness() | 色から輝度値を抽出する                                                      |
+| color()      | color データ型の変数に格納するための色を作成する。                          |
+| green()      | 色から緑の値を抽出し、現在のcolorMode()と一致するようにスケーリングします。 |
+| hue()        | 色から色相値を抽出する                                                      |
+| lerpColor()  | 特定の増分で2色間の色または色を計算する                                     |
+| red()        | 色から赤の値を抽出し、現在のcolorMode()と一致するようにスケーリングします。 |
+| saturation() | 色から彩度値を抽出する                                                      |
+
+### 設定
+
+|     名前     |                       説明                       |
+| ------------ | ------------------------------------------------ |
+| background() | 処理ウィンドウの背景に使用する色を設定する       |
+| clear()      | バッファ内の画素をクリアする                     |
+| colorMode()  | プロセッシングによるカラーデータの解釈方法を変更 |
+| fill()       | 図形の塗りつぶしに使用する色を設定します         |
+| noFill()     | 塗りつぶし形状を無効にする                       |
+| noStroke()   | ストローク（輪郭）の描画を無効にする             |
+| stroke()     | 図形の周囲に線や枠を描くときの色を設定します。   |
+
+
+## ライト・カメラ {#Lights_Camera}
+
+### ライト
+
+|        名前        |                                               説明                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------ |
+| ambientLight()     | アンビエントライトを追加                                                                         |
+| directionalLight() | 指向性ライトを追加                                                                               |
+| lightFalloff()     | ポイントライト、スポットライト、アンビエントライトのフォールオフ率を設定します。                 |
+| lightSpecular()    | ライトのスペキュラカラーを設定する                                                               |
+| lights()           | アンビエントライト、ディレクショナルライト、フォールオフ、スペキュラのデフォルト値を設定します。 |
+| noLights()         | すべての照明を無効にする                                                                         |
+| normal()           | 現在の法線ベクトルを設定する                                                                     |
+| pointLight()       | 点光源を追加する                                                                                 |
+| spotLight()        | スポットライトを追加                                                                             |
+
+### マテリアル・プロパティ
+
+|    名前     |                                            説明                                            |
+| ----------- | ------------------------------------------------------------------------------------------ |
+| ambient()   | スクリーンに描画される形状の環境反射率を設定する                                           |
+| emissive()  | 画面に描画される図形に使用される素材の放射色を設定する                                     |
+| shininess() | シェイプの表面の光沢の量を設定する                                                         |
+| specular()  | 画面に描画される図形に使用される素材のスペキュラカラーを設定し、ハイライトの色を設定します |
+
+### カメラ
+
+|       名前        |                                             説明                                             |
+| ----------------- | -------------------------------------------------------------------------------------------- |
+| beginCamera()     | beginCamera()および endCamera()関数により、カメラ空間の高度なカスタマイズが可能です。        |
+| camera()          | カメラの位置を設定する                                                                       |
+| endCamera()       | beginCamera()および endCamera()関数により、カメラ空間の高度なカスタマイズが可能です。        |
+| ortho()           | 正投影を設定し、平行クリッピングボリュームを定義する                                         |
+| perspective()     | 遠くのものを近くのものよりも小さく見せるフォアショートを適用した透視投影を設定します。       |
+| frustum()         | パラメータで定義されたパースペクティブマトリクスを設定します。                               |
+| printCamera()     | 現在のカメラマトリクスをコンソール（Processingの下部にあるテキストウィンドウ）に出力します。 |
+| printProjection() | 現在の投影行列をコンソールに表示します。                                                     |
+
+### コーディネート
+
+|   名前    |                                    説明                                    |
+| --------- | -------------------------------------------------------------------------- |
+| modelX()  | モデル空間における X、Y、Z の 3 次元位置を返します。                       |
+| modelY()  | モデル空間における X、Y、Z の 3 次元位置を返します。                       |
+| modelZ()  | モデル空間における X、Y、Z の 3 次元位置を返します。                       |
+| screenX() | 3次元のX、Y、Zの位置を取り、（2次元の）画面上に表示される位置のX値を返す。 |
+| screenY() | 3次元のX、Y、Zの位置を取り、（2次元の）画面上に表示される位置のY値を返す。 |
+| screenZ() | 3次元のX、Y、Zの位置を取り、（2次元の）画面上に表示される位置のZ値を返す。 |
+
+
+## トランスフォーム {#Transform}
+
+|     名前      |                                       説明                                       |
+| ------------- | -------------------------------------------------------------------------------- |
+| applyMatrix() | 現在の行列とパラメータで指定された行列を掛け合わせます。                         |
+| popMatrix()   | 行列スタックから現在の変換行列をポップアップします．                             |
+| printMatrix() | 現在の行列をコンソール（Processingの下部にあるテキストウィンドウ）に表示します。 |
+| pushMatrix()  | 現在の変換行列を行列スタックにプッシュします．                                   |
+| resetMatrix() | 現在の行列を単位行列で置き換えます。                                             |
+| rotateX()     | x軸を中心に、angleパラメータで指定された量だけ図形を回転させます。               |
+| rotateY()     | Y軸を中心に、angleパラメータで指定された量だけ図形を回転させます。               |
+| rotateZ()     | z 軸を中心に、angle パラメータで指定された量だけ図形を回転させます。             |
+| rotate()      | angleパラメータで指定された量だけ、図形を回転させます。                          |
+| scale()       | 頂点の拡大・縮小により、形状のサイズを拡大・縮小することができる                 |
+| shearX()      | X軸を中心に、angleパラメータで指定された量だけ図形を切り取ります。               |
+| shearY()      | y 軸を中心に、angle パラメータで指定された量だけ図形を切り取ります。             |
+| translate()   | 表示ウィンドウ内のオブジェクトを移動させる量を指定する                           |
+
+
+## 構造 {#Structure}
+
+|            名前             |                                                               説明                                                                |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| \[\] (array access)         | 配列アクセス演算子は、配列内の位置を指定するために使用します。                                                                    |
+| = (assign)                  | 変数に値を代入する                                                                                                                |
+| catch                       | catch キーワードは try と共に使用し、例外を処理します。                                                                           |
+| class                       | クラスの宣言を示すために使用されるキーワード                                                                                      |
+| , (comma)                   | 関数呼び出し時のパラメータと代入時の要素の分離                                                                                    |
+| // (comment)                | コードに埋め込まれた説明文                                                                                                        |
+| \{\} (curly braces)         | 関数ブロックやfor構造、if構造などのステートメントブロックの開始と終了を定義することができる                                       |
+| /\*\* \*/ (doc comment)     | コードに埋め込まれた説明文                                                                                                        |
+| \. (dot)                    | オブジェクトのメソッドやデータへのアクセスを提供します。                                                                          |
+| draw()                      | setup()の直後に呼び出され、プログラムが停止するか、noLoop()が呼び出されるまで、そのブロックに含まれるコード行を連続的に実行する。 |
+| exit()                      | プログラムを終了する／停止する／終了する                                                                                          |
+| extends                     | 新しいクラスが既存のクラスのメソッドやデータフィールド（変数や定数）を継承できるようにします。                                    |
+| false                       | 論理値 "false "を表す予約語                                                                                                       |
+| final                       | 値、クラス、またはメソッドを変更できないことを示すために使用されるキーワード。                                                    |
+| implements                  | インターフェースまたはインターフェースのグループを実装する                                                                        |
+| import                      | キーワード import は、ライブラリを Processing スケッチに読み込むために使用されます。                                              |
+| loop()                      | Processingにdraw()内のコードを連続実行させる。                                                                                    |
+| /\* \*/ (multiline comment) | コードに埋め込まれた説明文                                                                                                        |
+| new                         | 新しい "オブジェクトを作成する                                                                                                    |
+| noLoop()                    | draw()内のコードの連続実行を停止します。                                                                                          |
+| null                        | 対象が有効なデータ要素でないことを示すために使用される特別な値                                                                    |
+| () (parentheses)            | 式やパラメーターのグループ化・内包化                                                                                              |
+| popStyle()                  | 現在のスタイル設定を保存し、popStyle()で以前の設定を復元します。                                                                  |
+| pop()                       | pop()関数は、push()で変更された描画スタイル設定や変形を元に戻す関数である                                                         |
+| private                     | このキーワードは、他のクラスがクラス内のフィールドやメソッドにアクセスできないようにするために使用します。                        |
+| public                      | 他のクラスがクラス内のフィールドやメソッドにアクセスできるようにするためのキーワードです。                                        |
+| pushStyle()                 | 現在のスタイル設定を保存し、popStyle()で以前の設定を復元します。                                                                  |
+| push()                      | push() 関数は現在の描画スタイル設定と変換を保存し、pop() 関数はこれらの設定を復元します。                                         |
+| redraw()                    | draw()内のコードを1回だけ実行します。                                                                                             |
+| return                      | 関数から返す値を示すために使用するキーワード                                                                                      |
+| ; (semicolon)               | プログラムの要素を区切るステートメントターミネータ                                                                                |
+| setLocation()               | setLocation()関数は、コンピュータ画面の左上隅に対するProcessingスケッチの位置を定義します。                                       |
+| setResizable()              | デフォルトでは、Processingスケッチのサイズを変更することはできません。                                                            |
+| setTitle()                  | setTitle()関数は、スケッチウィンドウの上部に表示されるタイトルを定義します。                                                      |
+| setup()                     | setup()関数は、プログラム起動時に一度だけ呼び出されます。                                                                         |
+| static                      | 変数を "クラス変数"、メソッドを "クラスメソッド "として定義するためのキーワード                                                   |
+| super                       | サブクラスのスーパークラスを参照するために使用されるキーワード                                                                    |
+| this                        | 現在のオブジェクトを参照する（i                                                                                                   |
+| thread()                    | 新しいスレッドを起動し、その新しいスレッドから指定された関数を呼び出す                                                            |
+| true                        | 論理値 "true "を表す予約語                                                                                                        |
+| try                         | try キーワードは、catch と共に例外処理に使用します。                                                                              |
+| void                        | 関数が値を返さないことを示すために使用するキーワード                                                                              |
+
+
+## 制御 {#Control}
+
+### 条件付き
+
+|       名前       |                                           説明                                           |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| break            | switch, for, while などの構造体の実行を終了し、次の文にジャンプする。                    |
+| case             | switch 構造体のパラメータで評価される異なる名称を示す。                                  |
+| ?: (conditional) | ifとelseの構造体を書くためのショートカット                                               |
+| continue         | forやwhileの中で実行すると、ブロックの残りをスキップして次の繰り返しを開始します。       |
+| default          | スイッチのデフォルト条件を定義するためのキーワード                                       |
+| else             | if 構造を拡張し、プログラムが 2 つ以上のコードブロックのどちらかを選択できるようにした。 |
+| if               | どのコードを実行するか、プログラムが判断できるようにする                                 |
+| switch           | if else構造のように動作するが、3つ以上の選択肢から選ぶ必要がある場合はswitchの方が便利   |
+
+### 関係演算子
+
+|              名前              |                                説明                                |
+| ------------------------------ | ------------------------------------------------------------------ |
+| == (equality)                  | 2つの値が等価であるかどうかを判定する                              |
+| \> (greater than)              | 左の値が右の値より大きいかどうかをテストする                       |
+| \>= (greater than or equal to) | 左の値が右の値より大きいか、または同等の値であるかをテストします。 |
+| \!= (inequality)               | ある式が別の式と等価でないかを判定する                             |
+| < (less than)                  | 左側の値が右側の値より小さいかどうかをテストする                   |
+| <= (less than or equal to)     | 左の値が右の値より小さいか、または同等の値であるかをテストします。 |
+
+### イテレーション
+
+| 名前  |              説明              |
+| ----- | ------------------------------ |
+| for   | 繰り返しのシーケンスを制御する |
+| while | 繰り返しのシーケンスを制御する |
+
+### 論理演算子
+
+|       名前        |                              説明                               |
+| ----------------- | --------------------------------------------------------------- |
+| && (logical AND)  | 2つの式を比較し、両方がtrueと評価された場合のみtrueを返します。 |
+| \! (logical NOT)  | 式のブール値を反転させる                                        |
+| ｜｜ (logical OR) | 2つの式を比較し、一方または両方が真と評価された場合に真を返す   |
+
+## 環境 {#Environment}
+
+|       名前       |                                                                        説明                                                                        |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| cursor()         | カーソルをあらかじめ定義されたシンボルや画像に設定する、またはすでに非表示になっている場合は表示状態にする                                         |
+| delay()          | delay()関数は、指定された時間だけプログラムを停止させる関数です。                                                                                  |
+| displayDensity() | 画面が高密度であれば "2"、そうでなければ "1 "を返す。                                                                                              |
+| displayHeight    | コンピュータ画面の高さを格納する変数                                                                                                               |
+| displayWidth     | コンピュータ画面の幅を格納する変数                                                                                                                 |
+| focused          | Processingプログラムが "focused" されているかどうかを確認する。                                                                                    |
+| frameCount       | プログラム起動時から表示されたフレーム数を格納するシステム変数                                                                                     |
+| frameRate        | ソフトウェアが実行される際のおおよそのフレームレートを格納するシステム変数                                                                         |
+| height           | 表示ウィンドウの高さを格納するシステム変数                                                                                                         |
+| noCursor()       | カーソルを非表示にする                                                                                                                             |
+| noSmooth()       | すべてのジオメトリとフォントをピクセル補間するのではなく、ギザギザ（エイリアス）のエッジと拡大時のピクセル間のハードエッジを持つ画像を描画します。 |
+| pixelDensity()   | 高解像度のスクリーンで、Processingがすべてのピクセルを使ってレンダリングできるようにします。                                                       |
+| pixelHeight      | 高解像度ディスプレイ使用時の実際の画素の高さです。                                                                                                 |
+| pixelWidth       | 高解像度ディスプレイ使用時の実際の画素幅。                                                                                                         |
+| fullScreen()     | コンピュータのディスプレイのフルサイズを使用してスケッチを開く                                                                                     |
+| frameRate()      | 1秒間に表示するフレーム数を指定します。                                                                                                            |
+| settings()       | size()のパラメータを変数で定義することが絶対に必要な場合に使用します。                                                                             |
+| size()           | 表示ウィンドウの寸法をピクセル単位で定義します。                                                                                                   |
+| smooth()         | すべてのジオメトリを滑らかな（アンチエイリアス）エッジで描画する                                                                                   |
+| width            | 表示ウィンドウの幅を格納するシステム変数                                                                                                           |
