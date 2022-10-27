@@ -1,0 +1,807 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ソケット通信 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sprite.html" />
+    
+    
+    <link rel="prev" href="i_hsp3util.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="i_prep.html">
+            
+                <a href="i_prep.html">
+            
+                    
+                    プリプロセッサ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="sysval.html">
+            
+                <a href="sysval.html">
+            
+                    
+                    システム変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="i_prog.html">
+            
+                <a href="i_prog.html">
+            
+                    
+                    プログラム制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hspdef.html">
+            
+                <a href="hspdef.html">
+            
+                    
+                    標準マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ex_macro.html">
+            
+                <a href="ex_macro.html">
+            
+                    
+                    特殊マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="i_stdfunc.html">
+            
+                <a href="i_stdfunc.html">
+            
+                    
+                    基本関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="i_graph.html">
+            
+                <a href="i_graph.html">
+            
+                    
+                    画面制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="i_object.html">
+            
+                <a href="i_object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="i_string.html">
+            
+                <a href="i_string.html">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="hspmath.html">
+            
+                <a href="hspmath.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="i_stdio.html">
+            
+                <a href="i_stdio.html">
+            
+                    
+                    入出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="i_file.html">
+            
+                <a href="i_file.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="i_mem.html">
+            
+                <a href="i_mem.html">
+            
+                    
+                    メモリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="i_mmedia.html">
+            
+                <a href="i_mmedia.html">
+            
+                    
+                    マルチメディア
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="i_hsp3util.html">
+            
+                <a href="i_hsp3util.html">
+            
+                    
+                    ユーティリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.16" data-path="hspsock.html">
+            
+                <a href="hspsock.html">
+            
+                    
+                    ソケット通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="sprite.html">
+            
+                <a href="sprite.html">
+            
+                    
+                    スプライト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="hsp3dish.html">
+            
+                <a href="hsp3dish.html">
+            
+                    
+                    HSP3Dish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="hgimg_common.html">
+            
+                <a href="hgimg_common.html">
+            
+                    
+                    HGIMG4共通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="hgimg4.html">
+            
+                <a href="hgimg4.html">
+            
+                    
+                    HGIMG4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="obaq.html">
+            
+                <a href="obaq.html">
+            
+                    
+                    OBAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hsp3.tv">
+            
+                <span>
+            
+                    
+                    公式サイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ソケット通信</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ソケット通信">ソケット通信</h1>
+<p><strong>対応</strong>:</p>
+<ul>
+<li>Win</li>
+</ul>
+<h2 id="sockopen">sockopen </h2>
+<p>ソケットを初期化して接続</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,&quot;url&quot;,p2
+p1=0〜31(0) : ソケットID番号
+&quot;url&quot;       : URL指定文字列
+p2=0〜(0)   : ポート番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットを初期化して使用できるようにします。
+TCP/IP通信を行なう際には、必ず最初に初期化して相手のサーバーに接続しなければなりません。</p>
+<p>p1でソケットID番号を指定します。</p>
+<p>&quot;url&quot;で接続先のURLを文字列で指定します。 これは、「www.yahoo.co.jp」のようなドメイン名か、「202.132.50.7」のようなIPアドレスを直接指定したもののどちらでもかまいません。「<a href="http://」や「ftp://」" target="_blank">http://」や「ftp://」</a> のようなスキーム名は入れないでください。</p>
+<p>p2で、接続するポート番号を指定します。これは、どのようなサーバーに接続するかによって違います。オリジナルのポートを作成する場合は、1024以降を使用するようにしてください。</p>
+<p>sockopen命令が実行された結果が、システム変数statに代入されます。
+結果がエラーの場合は、0以外の値になります。 初期化でエラーが起こった場合は、通信を行なうことはできません。</p>
+<p>システム変数statの値の詳細は以下の通りです。</p>
+<pre><code>
+  stat : エラー内容
+ ----------------------------------------------------
+   1   : TCP/IPがWindowsにインストールされていない
+   2   : ソケットの初期化に失敗した
+   3   : URLのサーバー名取得に失敗した
+   4   : サーバーに接続できなかった
+</code></pre><p><strong>参照</strong>:</p>
+<p>sockmake
+sockclose</p>
+<h2 id="sockclose">sockclose </h2>
+<p>ソケットを切断</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1
+p1=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>接続されているソケットを切断します。
+初期化したソケットは必ず sockclose命令で切断するようにしてください。</p>
+<p><strong>参照</strong>:</p>
+<p>sockopen
+sockmake</p>
+<h2 id="sockput">sockput </h2>
+<p>データを送信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>&quot;message&quot;,p1
+&quot;message&quot;   : 送信するメッセージ
+p1=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットにデータを送信します。 &quot;message&quot;で指定した文字列か、または文字列型変数の内容をそのまま送信します。</p>
+<p>送信中にエラーが発生した場合は、システム変数 statに0以外の値が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>sockputc
+sockputb</p>
+<h2 id="sockputc">sockputc </h2>
+<p>データを1byte送信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2
+p1=0〜255(0) : 送信するメッセージ(1byte)
+p2=0〜31(0)  : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットにデータを送信します。p1で指定した数値を1byte送信します。</p>
+<p>送信中にエラーが発生した場合は、システム変数 statに0以外の値が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>sockput
+sockputb</p>
+<h2 id="sockputb">sockputb </h2>
+<p>バッファのデータを送信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2,p3,p4
+p1=変数     : 送信内容が格納されている変数名
+p2=0〜(0)   : バッファオフセット(byte単位)
+p3=0〜(64)  : 送信サイズ(byte単位)
+p4=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>p1で指定した変数バッファの内容をバイナリデータとしてソケットに送信します。
+p1で指定される変数は、文字列型、数値型のどちらでも構いません。変数が確保しているメモリの内容が直接送信されます。</p>
+<p>p2で、変数バッファのオフセットを指定できます。たとえば、p2が100の場合は、先頭から100byte目からの内容を送信することになります。p2が省略された場合は0になります。</p>
+<p>p3で送信サイズを指定します。送信サイズは、変数バッファにあらかじめ確保されているサイズ以内でなければなりません。p3が省略されるか、0の場合は、64(byte)が指定されます。</p>
+<p>sockputb命令の実行後は、システム変数statに実際に送信されたサイズ(byte)が代入されます。システム変数 statの内容が0だった場合は、通信エラー、もしくはタイムアウトでまったく送信されていないことを示しています。
+(変数バッファの内容は、peek命令、poke命令などで操作することが可能です)</p>
+<p><strong>参照</strong>:</p>
+<p>sockput
+sockputc</p>
+<h2 id="sockcheck">sockcheck </h2>
+<p>データの到着を調べる</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1
+p1=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>指定したソケットに sockget系の命令で取得できるデータが到着しているかどうか調べます。
+受信可能なデータがある場合は、システム変数 statに0が代入されます。データが到着していない場合は、システム変数statは1になります。</p>
+<p>通信エラーなどが起こった場合は、システム変数 statは2以上の値になります。エラーが起こった場合は、通信を行なうことはできません。</p>
+<p>システム変数statの値の詳細は以下の通りです。</p>
+<pre><code>
+  stat : 内容
+ ---------------------------------------------------
+   0   : 受信データが到着している
+   1   : 受信データは到着していない(タイムアウト)
+   2   : 通信中にエラーが発生した
+</code></pre><p>sockcheckはデータの到着を調べるだけです。 実際のデータを取得するには、sockget, sockgetc, sockgetbなどの命令で受信する必要があります。</p>
+<p><strong>参照</strong>:</p>
+<p>sockget
+sockgetc
+sockgetb</p>
+<h2 id="sockget">sockget </h2>
+<p>データを受信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2,p3
+p1=変数     : 受信内容が格納される変数名
+p2=0〜(64)  : 受信サイズ(byte単位)
+p3=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットからデータを受信し、p1で指定した文字列型の変数に内容を代入します。p2で最大受信サイズを指定します。</p>
+<p>受信中にエラーが発生した場合は、システム変数 statに0以外の値が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>sockgetc
+sockgetb</p>
+<h2 id="sockgetc">sockgetc </h2>
+<p>データを1byte受信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2
+p1=変数     : 受信内容が格納される変数名
+p2=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットからデータを 1byte受信し、p1で指定した数値型の変数に内容を代入します。</p>
+<p>受信中にエラーが発生した場合は、システム変数 statに0以外の値が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>sockget
+sockgetb</p>
+<h2 id="sockgetb">sockgetb </h2>
+<p>バッファにデータを受信</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2,p3,p4
+p1=変数 : 受信内容が格納される変数名
+p2=0〜(0)   : バッファオフセット (byte単位)
+p3=0〜(64)  : 受信サイズ (byte単位)
+p4=0〜31(0) : ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットからデータを受信し、p1で指定した変数バッファに内容をバイナリデータとして格納します。
+p1で指定される変数は、文字列型、数値型のどちらでも構いません。変数が確保しているメモリに直接受信内容を読み込みます。</p>
+<p>p2で、格納されるバッファのオフセットを指定できます。
+たとえば、p2が100の場合は、先頭から100byte目から受信データを格納することになります。p2が省略された場合は0になります。</p>
+<p>p3で最大受信サイズを指定します。
+受信サイズを指定する場合は、変数バッファに指定したサイズを格納できるだけのメモリが、あらかじめ確保されていなければなりません。
+p3が省略されるか、0の場合は、64(byte)が指定されます。</p>
+<p>sockgetb命令の実行後は、システム変数statに実際に受信されたサイズ(byte)が代入されます。システム変数 statの内容が0だった場合は、通信エラー、もしくはタイムアウトでまったく受信されていないことを示しています。
+(変数バッファの内容は、peek命令、poke命令などで操作することが可能です)</p>
+<p><strong>参照</strong>:</p>
+<p>sockget
+sockgetc</p>
+<h2 id="sockmake">sockmake </h2>
+<p>ソケットをサーバーとして初期化</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2
+p1=0〜31(0) : ソケットID番号
+p2=0〜(0)   : ポート番号</p>
+<p><strong>説明</strong>:</p>
+<p>ソケットを初期化してサーバーとして使用できるようにします。
+p1でソケットID番号を指定します。
+p2で、ポート番号を指定します。既にシステムで予約されているソケット番号は使用できません。独自のプロトコルを定義する場合は、1024以降の番号を使うようにするといいでしょう。</p>
+<p>sockmake命令が実行されると、サーバーとしての準備が整います。
+この後、実際にクライアントと接続するためには、sockwait命令でクライアントの接続が完了するまで待つ必要があります。</p>
+<p>結果がエラーの場合は、 0以外の値になります。初期化でエラーが起こった場合は、通信を行なうことはできません。</p>
+<p>システム変数 statの値の詳細は以下の通りです。</p>
+<pre><code>
+  stat : エラー内容
+ ----------------------------------------------------
+   1   : TCP/IPがWindowsにインストールされていない
+   2   : ソケットの初期化に失敗した
+   3   : Socketのバインドに失敗した
+</code></pre><p><strong>参照</strong>:</p>
+<p>sockwait
+sockopen
+sockclose</p>
+<h2 id="sockwait">sockwait </h2>
+<p>クライアントの着信を待つ</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2
+p1=0〜31(0) : ソケットID番号
+p2=0〜31(0) : 代替ソケットID番号</p>
+<p><strong>説明</strong>:</p>
+<p>sockmake命令でサーバーとして準備されたソケットで、クライアントの着信を待ちます。
+sockwait命令は、必ずsockmake命令が正常に終了した後に実行される必要があります。</p>
+<p>sockwait命令は、クライアントの着信がない場合や、エラーが発生した場合には、システム変数 statに0以外の値を返します。
+システム変数 statに0が代入された場合にはじめてクライアントとの接続に成功し、sockget命令、sockput命令などの通信を行なうことができるようになります。</p>
+<p>サーバーとして着信を待つ場合には、sockmake命令でソケットをサーバーとして初期化した後、sockwait命令でシステム変数 statが0になるまでループして待機して下さい。その際には、必ずループ内に waitやawait命令を入れて間をあける必要があります。
+そうしないと、 Windowsの他のアプリケーションにタスクが回らなくなってしまいます。</p>
+<p>p2が0か省略された場合は、p1で指定されたソケットID番号を通して、クライアントとの通信を行なうことが可能になります。
+p2に0以外の値を指定した場合は、着信したクライアントとの通信をp2で指定した代替ソケットIDを通して行なうことができます。
+この場合、p1で指定したソケットID番号では、引き続きsockmake命令でサーバー動作を行なうことが可能です。同一のポートで、複数のクライアント着信を受け付ける場合は、代替ソケットID番号を使用するようにしてください。</p>
+<p>結果がエラーの場合は、 0以外の値になります。エラーが起こった場合は、通信を行なうことはできません。</p>
+<p>システム変数 statの値の詳細は以下の通りです。</p>
+<pre><code>
+  stat : エラー内容
+ -----------------------------------------------------
+   1   : クライアントから接続要求が来ていない
+   2   : sockmake命令でサーバーの準備ができていない
+   3   : Socketが受信状態になっていない
+   4   : Socketを受信状態にするのに失敗した
+   5   : クライアントとの接続に失敗した
+</code></pre><p><strong>参照</strong>:</p>
+<p>sockmake</p>
+<h2 id="ipget">ipget </h2>
+<p>ホストのIPアドレスを取得</p>
+<p><strong>グループ</strong>:</p>
+<p>通信制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p><strong>説明</strong>:</p>
+<p>ホストのIPアドレスを取得して、システム変数refstrに代入します。</p>
+<p>IPアドレスを取得する際にエラーが発生すると、システム変数 statに1が代入されます。正常にIPアドレスが取得できた場合には、システム変数statの値は0になります。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="i_hsp3util.html" class="navigation navigation-prev " aria-label="Previous page: ユーティリティ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sprite.html" class="navigation navigation-next " aria-label="Next page: スプライト">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ソケット通信","level":"2.16","depth":1,"next":{"title":"スプライト","level":"2.17","depth":1,"path":"sprite.md","ref":"sprite.md","articles":[]},"previous":{"title":"ユーティリティ","level":"2.15","depth":1,"path":"i_hsp3util.md","ref":"i_hsp3util.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hspsock.md","mtime":"2022-10-27T04:50:52.833Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-27T12:02:39.881Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

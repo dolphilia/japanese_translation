@@ -1,0 +1,1597 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>プログラム制御 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="hspdef.html" />
+    
+    
+    <link rel="prev" href="sysval.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="i_prep.html">
+            
+                <a href="i_prep.html">
+            
+                    
+                    プリプロセッサ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="sysval.html">
+            
+                <a href="sysval.html">
+            
+                    
+                    システム変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="i_prog.html">
+            
+                <a href="i_prog.html">
+            
+                    
+                    プログラム制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hspdef.html">
+            
+                <a href="hspdef.html">
+            
+                    
+                    標準マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ex_macro.html">
+            
+                <a href="ex_macro.html">
+            
+                    
+                    特殊マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="i_stdfunc.html">
+            
+                <a href="i_stdfunc.html">
+            
+                    
+                    基本関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="i_graph.html">
+            
+                <a href="i_graph.html">
+            
+                    
+                    画面制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="i_object.html">
+            
+                <a href="i_object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="i_string.html">
+            
+                <a href="i_string.html">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="hspmath.html">
+            
+                <a href="hspmath.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="i_stdio.html">
+            
+                <a href="i_stdio.html">
+            
+                    
+                    入出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="i_file.html">
+            
+                <a href="i_file.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="i_mem.html">
+            
+                <a href="i_mem.html">
+            
+                    
+                    メモリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="i_mmedia.html">
+            
+                <a href="i_mmedia.html">
+            
+                    
+                    マルチメディア
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="i_hsp3util.html">
+            
+                <a href="i_hsp3util.html">
+            
+                    
+                    ユーティリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="hspsock.html">
+            
+                <a href="hspsock.html">
+            
+                    
+                    ソケット通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="sprite.html">
+            
+                <a href="sprite.html">
+            
+                    
+                    スプライト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="hsp3dish.html">
+            
+                <a href="hsp3dish.html">
+            
+                    
+                    HSP3Dish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="hgimg_common.html">
+            
+                <a href="hgimg_common.html">
+            
+                    
+                    HGIMG4共通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="hgimg4.html">
+            
+                <a href="hgimg4.html">
+            
+                    
+                    HGIMG4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="obaq.html">
+            
+                <a href="obaq.html">
+            
+                    
+                    OBAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hsp3.tv">
+            
+                <span>
+            
+                    
+                    公式サイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >プログラム制御</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="プログラム制御">プログラム制御</h1>
+<p><strong>対応</strong>:</p>
+<ul>
+<li>Win</li>
+<li>Cli</li>
+<li>Let</li>
+</ul>
+<h2 id="目次">目次</h2>
+<ul>
+<li><a href="i_prog.html#_break">_break</a></li>
+<li><a href="i_prog.html#_continue">_continue</a></li>
+<li><a href="i_prog.html#await">await</a></li>
+<li><a href="i_prog.html#break">break</a></li>
+<li><a href="i_prog.html#case">case</a></li>
+<li><a href="i_prog.html#continue">continue</a></li>
+<li><a href="i_prog.html#default">default</a></li>
+<li><a href="i_prog.html#do">do</a></li>
+<li><a href="i_prog.html#else">else</a></li>
+<li><a href="i_prog.html#end">end</a></li>
+<li><a href="i_prog.html#exec">exec</a></li>
+<li><a href="i_prog.html#exgoto">exgoto</a></li>
+<li><a href="i_prog.html#for">for</a></li>
+<li><a href="i_prog.html#foreach">foreach</a></li>
+<li><a href="i_prog.html#gosub">gosub</a></li>
+<li><a href="i_prog.html#goto">goto</a></li>
+<li><a href="i_prog.html#if">if</a></li>
+<li><a href="i_prog.html#loop">loop</a></li>
+<li><a href="i_prog.html#next">next</a></li>
+<li><a href="i_prog.html#on">on</a></li>
+<li><a href="i_prog.html#onclick">onclick</a></li>
+<li><a href="i_prog.html#oncmd">oncmd</a></li>
+<li><a href="i_prog.html#onerror">onerror</a></li>
+<li><a href="i_prog.html#onexit">onexit</a></li>
+<li><a href="i_prog.html#onkey">onkey</a></li>
+<li><a href="i_prog.html#repeat">repeat</a></li>
+<li><a href="i_prog.html#return">return</a></li>
+<li><a href="i_prog.html#run">run</a></li>
+<li><a href="i_prog.html#stop">stop</a></li>
+<li><a href="i_prog.html#swbreak">swbreak</a></li>
+<li><a href="i_prog.html#swend">swend</a></li>
+<li><a href="i_prog.html#switch">switch</a></li>
+<li><a href="i_prog.html#until">until</a></li>
+<li><a href="i_prog.html#wait">wait</a></li>
+<li><a href="i_prog.html#wend">wend</a></li>
+<li><a href="i_prog.html#while">while</a></li>
+</ul>
+<h2 id="await">await </h2>
+<p>一定の時間で待つ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>await p1
+</code></pre><ul>
+<li>p1 = 0〜(0) : 待ち時間(1ms単位)</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>プログラムの実行を一定時間だけ中断します。</p>
+<p>wait命令と似ていますが、 await命令は前回waitした時間からの待ち時間を指定します。これにより、描画速度の違いなどから時間が早く過ぎることを防止することができます。リアルタイムで更新される画面などの速度を一定に保つ時に使用します。</p>
+<p>HSPでは、他のWindowsタスクに処理時間を渡すために長い時間ループが起こる可能性がある場所にはwaitかawait命令を入れることを推奨しています。waitや await命令がない命令の中を長い時間ループするようなプログラムを実行すると、ウィンドウをドラッグしにくくなったり、他のタスクに移るのに時間がかかったりします。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>wait</li>
+</ul>
+<h2 id="exec">exec </h2>
+<p>Windowsのファイルを実行する</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>exec &quot;filename&quot;,p1,&quot;command&quot;
+</code></pre><ul>
+<li>&quot;filename&quot; : 対象となるファイル名</li>
+<li>p1=0〜(0)  : ファイル実行モード</li>
+<li>&quot;command&quot;  : コンテキストメニューの操作名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>execは &quot;filename&quot; で指定したファイル名のアプリケーションを実行します。
+拡張子がEXEの場合は、拡張子を省略することができます。
+p1で実行時のモードを選ぶことができます。p1を省略した場合は0になります。</p>
+<ul>
+<li>モード0  : HSPノーマル実行</li>
+<li>モード2  : 最小化モードで実行</li>
+<li>モード16 : 関連付けされたアプリケーションを実行</li>
+<li>モード32 : 指定したファイルを印刷する</li>
+</ul>
+<p>&quot;command&quot;が指定された場合は、 &quot;filename&quot;で指定したファイルまたはフォルダ名に対するコンテキストメニュー操作名となります。
+コンテキストメニュー操作名は、レジストリに登録されているアクションを指定する文字列で、標準で以下のようなものが用意されています。</p>
+<table>
+<thead>
+<tr>
+<th>操作名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edit</td>
+<td>エディタを開いて編集する。</td>
+</tr>
+<tr>
+<td>explore</td>
+<td>フォルダを選択して、エクスプローラを起動します。</td>
+</tr>
+<tr>
+<td>open</td>
+<td>関連付けられたアプリケーションでファイルを開きます。</td>
+</tr>
+<tr>
+<td>print</td>
+<td>関連付けられたアプリケーションでファイルを印刷します。</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>ファイルまたはフォルダのプロパティを表示します。</td>
+</tr>
+</tbody>
+</table>
+<p>&quot;command&quot;が指定された場合は、ファイル実行モードの16、 32は無効になります。また、実行結果を示す値がシステム変数statに返されます。</p>
+<p>ノーマル実行は、新しく起動したアプリケーションのウィンドウがアクティブになり、入力フォーカスも移りますが、マルチタスクで、 HSPは終了せずに実行を続けます。</p>
+<p>例 ：</p>
+<pre><code>exec &quot;calc&quot;  ; Windows電卓を起動
+</code></pre><p>また、ファイル名に続けてパラメータを書くこともできます。</p>
+<p>例 ：</p>
+<pre><code>exec &quot;notepad hsp.txt&quot;  ; ノートパッドでhsp.txtを開く
+</code></pre><p>モード２は指定したアプリケーションを最小化した状態で実行します。
+DOSアプリケーションの実行時にHSPの画面を遮ることなくバックで実行させることができます。</p>
+<p>モード16は、実行ファイルではなく、データファイルを指定してその拡張子に関連付けられたアプリケーションを実行します。</p>
+<p>例 ：</p>
+<pre><code>exec &quot;hsp.txt&quot;,16  ; hsp.txtを関連付けられたアプリケーションで開く
+</code></pre><p>上の例では、「hsp.txt」を関連付けされたアプリケーションで開きます。
+(通常は、notepad.exe) 
+また、 モード16ではインターネットのURLを指定することでインターネットショートカットとしても使用することが可能です。</p>
+<p>例 ：</p>
+<pre><code>; インターネットのページを開く
+exec &quot;http://www.onionsoft.net/hsp/&quot;,16
+</code></pre><p>モード32では、指定したファイルに関連付けされたアプリケーションを経由して、プリンタに印刷をします。
+たとえば、</p>
+<p>例 ：</p>
+<pre><code>exec &quot;hsp.txt&quot;,32  ; hsp.txtをプリンタで印刷
+</code></pre><p>は、「txt」に関連付けされたアプリケーションで「hsp.txt」を自動的に印刷します。印刷のオプションなどはすべて、関連付けされたアプリケーションで指定されたものになります。</p>
+<p>モードは、複数同時に指定することが可能です。
+たとえば、モード2とモード16を同時に指定する場合は、それぞれの値を加算して18になります。この場合は、「最小化モードで関連付けされたアプリケーションを実行」になります。</p>
+<p>※HSP2.61までサポートされていたモード1(タスク実行待ち)は、HSP3ではサポートしていません。起動したプロセスを監視するか、コンソールアプリケーションの場合はpipeexec命令をご使用ください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>pipeexec</li>
+</ul>
+<p><strong>対応の補足</strong>:</p>
+<p>HSPLet時は、HTML ページを表示する目的で使用されます。
+第3引数の意味がオリジナルの HSP とは違うため、この命令を直接使用することはお勧めしません。
+代わりに letutil.hsp 内に定義されている showPage fileName, target 命令を使用することをお勧めします。</p>
+<h2 id="end">end </h2>
+<p>プログラム終了</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>end p1
+</code></pre><ul>
+<li>p1(0) : 終了コード</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>HSPのプログラムを終了します。
+end命令はスクリプトのどこにあってもかまいません。
+end命令が実行されると、そのアプリケーションは終了します。</p>
+<p>アプリケーションの終了コードをパラメーターp1で指定することができます。p1を省略した場合は、0がアプリケーション終了コードとなります。
+アプリケーション終了コードは、他のプロセスやバッチファイルへの通知に使用されます。通常は、省略(0)していて問題ありません。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>stop</li>
+</ul>
+<h2 id="gosub">gosub </h2>
+<p>指定ラベルにサブルーチンジャンプ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>gosub *label
+</code></pre><ul>
+<li>*label : ラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>サブルーチンジャンプをします。
+gosub命令は、*labelで指定した場所にジャンプをします。
+その後、return命令があるとgosub命令の次の行に復帰して実行を続けます。
+gosub〜returnはネスティング(入れ子構造)にすることが可能です。
+(最大ネスティング数はHSPが持つスタックメモリの量により変動します)</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>goto</li>
+<li>return</li>
+</ul>
+<h2 id="goto">goto </h2>
+<p>指定ラベルにジャンプ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p><em>label
+</em>label : ラベル名</p>
+<p><strong>説明</strong>:</p>
+<p>指定したラベルに無条件でジャンプします。
+以降は、ラベル名で指定された場所から実行を続けます。</p>
+<p><strong>参照</strong>:</p>
+<p>gosub</p>
+<h2 id="if">if </h2>
+<p>条件を満たしていればその行の命令を実行</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>if p1
+</code></pre><ul>
+<li>p1 : 条件式</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>p1の条件式が満たされていれば、それ以降の命令を実行する。満たされていない場合は、次の行に移ります。
+BASICと違い、その行の次の命令との間には :(コロン)を入れなければいけないので注意してください。</p>
+<p>例 ：</p>
+<pre><code>a=10
+if a=10 : mes &quot;aは10です。&quot;
+</code></pre><p>上の例では、「a=10」の部分が条件式になります。条件式には主に、</p>
+<ul>
+<li>a=b  : aとbは等しい</li>
+<li>a!b  : aとbは等しくない</li>
+<li>a&lt;b  : aはbよりも小さい</li>
+<li>a&gt;b  : aはbよりも大きい</li>
+<li>a&lt;=b : aはbよりも小さいか等しい</li>
+<li>a&gt;=b : aはbよりも大きいか等しい</li>
+</ul>
+<p>を使います。if＋条件式の後は：(コロン)で区切り、それに続いて条件が満たされた場合に実行される部分を書きます。
+(C言語やJavaと同じように「=」「!」を「==」「!=」のように記述することも可能です) もし、条件によってプログラムの流れを変えたい場合には、</p>
+<p>例 ：</p>
+<pre><code>    a=10
+    if a&gt;10 : goto *over10
+    mes &quot;aは10以下です。&quot;
+    stop
+*over10
+    mes &quot;aは10より大きいです。&quot;
+    stop
+</code></pre><p>上のように、goto命令で別なラベルに飛ばすことも可能です。
+また、else命令を使って条件が満たされなかった場合の処理を同じ行に書くことも可能です。</p>
+<p>例:</p>
+<pre><code>    a=10
+    mes &quot;aは、&quot;
+    if a=10 : mes &quot;10です。&quot; : else : mes &quot;10ではありません。&quot;
+    stop
+</code></pre><p>この場合は、else命令のある部分までは、条件を満たした場合に実行され、else命令以降は、条件を満たされなかった場合に実行されます。
+次の行以降は、条件に関わらず通常通りに実行されます。</p>
+<p>より複雑な条件判断をするために、論理演算式を使うこともできます。</p>
+<ul>
+<li>a&amp;b  : aとbがともに正しい (and)</li>
+<li>a|b  : aとbのどちらかが正しい (or)</li>
+</ul>
+<p>これによって複数の条件を一度に記述することができます。</p>
+<p>例 ：</p>
+<pre><code>    a=10:b=20
+    if (a=10)|(b=10) : mes &quot;aかbのどちらかが10です。&quot;
+</code></pre><p>上の例では、「a=10」と「b=10」 という条件式を|(or)でつないで、どちらかが正しい場合には、正しいという結果が出るようにしています。
+論理演算は、 「|」「&amp;」といった記号の他に「or」「and」という文字列でも記述することができます。</p>
+<pre><code>
+例 ：
+    if (a=10)or(b=10) : mes &quot;aかbのどちらかが10です。&quot;
+</code></pre><p>上のように書いても、結果は同じになります。</p>
+<p>if命令の条件が正しい時に実行されるスクリプトを複数行に渡って記述する場合は、</p>
+<p>例 :</p>
+<pre><code>    a=10
+    if a&gt;5 {
+        mes &quot;TRUE&quot;
+        mes &quot;(MULTILINE IF)&quot;
+    }
+</code></pre><p>のように「{」で始めて「}」で終わる部分までを指定します。
+(上の例では、 見やすくするためにC言語風に行の最初にTABを入れてありますが、特に必要なものではありません。ユーザーの見やすいように記述してください)</p>
+<p>else命令でも複数行の指定ができます。</p>
+<p>例 :</p>
+<pre><code>    a=10
+    if a&gt;5 {
+        mes &quot;TRUE&quot;
+        mes &quot;(MULTILINE IF)&quot;
+    }
+    else {
+        mes &quot; FALSE&quot;
+        mes &quot; (MULTILINE IF)&quot;
+    }
+    return
+</code></pre><p>ただし、else の後に「{」を記述しなければ複数行にはならないので注意してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>else</li>
+</ul>
+<h2 id="loop">loop </h2>
+<p>ループの始まりに戻る</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>説明</strong>:</p>
+<p>repeat/foreach命令で指定したループの終わりを指定します。
+詳しくはrepeat命令の項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>repeat</li>
+<li>foreach</li>
+</ul>
+<h2 id="onexit">onexit </h2>
+<p>終了時にジャンプ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>onexit goto/gosub *label
+</code></pre><ul>
+<li>*label : ラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>クローズボックス(ウィンドウ右上の終了ボタン)を押した時に、自動的にジャンプする場所を指定します。</p>
+<p>onexitの後に続けて、 gotoまたはgosubキーワードを指定してからラベルを記述します。
+gotoの場合には、単純なプログラムジャンプ。 gosubの場合はサブルーチンジャンプを行ないます。
+goto/gosubキーワードを省略した場合には、gotoキーワードと同等の動作になります。</p>
+<p>例 :</p>
+<pre><code>onexit gosub *exit_routine  ; 終了時呼び出し
+</code></pre><p>通常は、クローズボックスを押すとどのような時でも強制終了してしまいますが、この命令が実行された以降は、クローズボックスを押すとonexit命令で指定したラベルにジャンプし、そこから実行を続けるようになります。</p>
+<p>終了時に確認メッセージを表示したい時、終了したらデータを保存するようにしたい時などに使います。</p>
+<p>この命令が実行されると、 end命令以外ではスクリプトの実行が止められなくなるので、十分に注意して使ってください。</p>
+<p>複数のウィンドウを作成した場合は、いずれかのウィンドウにある終了ボタンで割り込みが発生します。この時、システム変数wparamに終了の通知を受けたウィンドウIDが代入されます。</p>
+<p>onexitでジャンプされた直後は、システム変数iparamに終了要因が値として保存されています。
+iparamが0の場合は、ユーザーの意思でプログラムを終了。
+iparamが1の場合は、 Windowsシャットダウン(再起動または電源OFF)による終了です。Windowsシャットダウン時の終了処理には、await、wait、stop命令などでシステムにアイドルタイム(待ち時間)を発生させた場合には、シャットダ
+ウン処理を中止します(シャットダウンされません)。
+await、wait、stop命令を使わずにend命令で終了した場合には、そのままシャットダウン処理が継続されます。</p>
+<p>終了時ジャンプの一時的なON/OFFをすることも可能です。</p>
+<pre><code>onexit 0
+</code></pre><p>で一時的に割り込みを停止します。</p>
+<pre><code>onexit 1
+</code></pre><p>で一時停止した割り込みを再開させることができます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>onkey</li>
+<li>onclick</li>
+<li>onerror</li>
+</ul>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="return">return </h2>
+<p>サブルーチンから復帰</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>return p1
+</code></pre><ul>
+<li>p1 : システム変数代入値</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>gosub命令やユーザー定義命令などで呼び出しされたサブルーチンを終了します。return命令により、スタックを戻し呼び出し元に復帰します。
+p1を指定することにより、サブルーチンから値をシステム変数に反映させることができます。</p>
+<ul>
+<li>p1に数値を指定した場合には、システム変数statに代入されます。</li>
+<li>p1に文字列を指定した場合には、システム変数refstrに代入されます。</li>
+<li>p1に実数値を指定した場合には、システム変数refdvalに代入されます。</li>
+<li>p1の指定を省略した場合には、システム変数の代入は行なわれません。</li>
+</ul>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>gosub</li>
+<li>#deffunc</li>
+<li>#defcfunc</li>
+<li>stat</li>
+<li>refstr</li>
+<li>refdval</li>
+</ul>
+<h2 id="run">run </h2>
+<p>指定したファイルに制御を移す</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>run &quot;filename&quot;,&quot;cmdline&quot;
+</code></pre><ul>
+<li>&quot;filename&quot; : 実行するHSPオブジェクトファイル名</li>
+<li>&quot;cmdline&quot;  : システム変数dir_cmdlineに代入される文字列</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>別のファイルに書かれたHSPのプログラムを実行します。
+指定するファイルはHSPのオブジェクトファイル (拡張子がAX)でなければなりません。
+オブジェクトファイルは、スクリプトエディタの「オブジェクトファイル作成」によって作成することができます。</p>
+<p>例 ：</p>
+<pre><code>run &quot;MENU2.AX&quot;,&quot;-s&quot;
+</code></pre><p>が実行されると、いままでのプログラムはなくなり&quot;MENU2.AX&quot;というファイルのプログラムが最初から実行されます。
+画面の状態は維持されますが、変数、メモリバッファの内容はすべて初期化されます。また、「-s」という文字列がシステム変数 dir_cmdlineに代入された状態で実行が開始されます。</p>
+<p>&quot;cmdline&quot;パラメーターが省略された場合は、システム変数dir_cmdlineの内容は
+空になります。また、システム変数 dir_cmdlineは最大1024文字まで内容が保存されます。</p>
+<h2 id="stop">stop </h2>
+<p>プログラム中断</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>説明</strong>:</p>
+<p>プログラムの実行を一時中断します。
+ボタンがクリックされるまで待つ時などに使用します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>end</li>
+</ul>
+<h2 id="wait">wait </h2>
+<p>実行を一定時間中断する</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>wait p1
+</code></pre><ul>
+<li>p1(100) : 待ち時間(10ms単位)</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>プログラムの実行を一定時間だけ中断します。</p>
+<p>p1に待ち時間の長さを指定します。単位は10ミリ秒になります。(1ミリ秒=1/1000秒)
+CPUの速度に関係なく、どんな機種でも同じ待ち時間になります。
+;p1に0を指定した場合、 または省略をした場合は、前回と同じ時間だけ待ちます。</p>
+<p>await命令を使うとwait命令よりも高精度で細かいウエイトが可能ですが、wait命令よりもCPUのタスクを消費します。
+リアルタイムに画像を書き換えるなどの処理でなければ、 wait命令を使用した方がCPU(Windows)の負担が軽くなります。
+常にデスクトップに配置するようなアクセサリにはwait命令を、ゲームアプリケーションなどにはawait命令を使うといった使い分けをするといいでしょう。</p>
+<p>HSPでは、他のWindowsタスクに処理時間を渡すために長い時間ループが起こる可能性がある場所にはwaitかawait命令を入れることを推奨しています。
+waitや await命令がない命令の中を長い時間ループするようなプログラムを実行すると、ウィンドウをドラッグしにくくなったり、他のタスクに移るのに時間がかかったりします。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>await</li>
+</ul>
+<h2 id="repeat">repeat </h2>
+<p>ループの始まりの場所を示す</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>repeat p1,p2
+</code></pre><ul>
+<li>p1=1〜(-1) : ループ回数</li>
+<li>p2=0〜(0)  : システム変数cntのスタート値</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>repeat〜loopの間をくり返し実行します。
+repeat命令は、くり返しの開始地点を示します。
+loop命令は最後に通過したrepeat命令まで戻ります。つまり、</p>
+<pre><code>repeat 5
+    print &quot;やっほー&quot;
+loop
+</code></pre><p>のようなプログラムは、「やっほー」を5回表示します。
+repeat命令のパラメータ、p1でくり返しの回数を指定することができます。回数の指定を省略、またはマイナス値を指定すると無限ループになります。
+繰り返しの回数が0の場合は、繰り返し部分は実行されず対応する loop命令までジャンプします。</p>
+<p>repeat〜loopを含む部分をさらにループさせるネスト構造も記述することができます。ただし、正常にloop命令を通ってループしないで抜けたりすると、ネスト構造がおかしくなるのでループから強制的に抜けるような構造にはしないようにしてください。</p>
+<p>ループ回数を調べたい時や、カウンターを利用したい時のためにシステム変数cntを参照することができます。cntは通常、0からスタートして、 loop命令でループするたびに1づつ増えていきます。
+ただし、repeat命令のp2でカウンタがスタートする数値を変更することも可能です。たとえば、repeat 3,1 のように指定した場合には、変数cntの値は1,2,3の順で変化します。</p>
+<p>ループの内部で、強制的にループを抜け出す場合には、 break命令を使用してください。また、次のループに移るためのcontinue命令も用意されています。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>loop</li>
+<li>break</li>
+<li>continue</li>
+<li>foreach</li>
+</ul>
+<h2 id="break">break </h2>
+<p>ループから抜ける</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>説明</strong>:</p>
+<p>repeat〜loop間のループから、強制的に抜け出します。</p>
+<pre><code>repeat 5
+    if cnt=2 : break
+    mes &quot;繰り返し[&quot;+cnt+&quot;]&quot;
+loop
+</code></pre><p>上の例では、システム変数が2になった時点、つまり３回目のループになると、if命令の判断によって、break命令が実行されるしくみになっています。
+break命令が実行されると、繰り返しの回数がまだ残っていても、 強制的に繰り返しから抜け出し、loop命令の次にある命令から実行を続けます。
+break命令以降(上の例では、mes命令)は実行されません。
+この命令を使うと、たとえば次のようなスクリプトが作成可能です。</p>
+<pre><code>repeat
+    getkey a,1
+    if a&gt;0 : break
+    await 10
+loop
+</code></pre><p>上のスクリプトでは、マウスの左ボタンを押すまで待つループになります。
+repeat命令の回数指定を省略すると無限ループになるので、それを利用してボタンの状態が 1になるまでは、ずっと同じところを繰り返すようになっています。ボタンが押されると、 break命令が実行され繰り返しから抜け出します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>repeat</li>
+<li>loop</li>
+<li>continue</li>
+<li>foreach</li>
+</ul>
+<h2 id="continue">continue </h2>
+<p>ループをやり直す</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>continue p1
+</code></pre><ul>
+<li>p1 = 0〜 : 繰り返しカウンタ変更値</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>repeat〜loop間のループをやり直します。
+continue命令が実行されると、repeat命令まで戻り次の繰り返しを実行します。</p>
+<pre><code>repeat 5
+    if cnt=2 : continue
+    mes &quot;cnt=&quot;+cnt
+loop
+</code></pre><p>上の例では、システム変数cntが2になった時点で、continue命令が実行されるしくみになっています。
+上のスクリプトが実行されると、</p>
+<pre><code>cnt=0
+cnt=1
+cnt=3
+cnt=4
+</code></pre><p>のような表示になり、システム変数cntが２の時だけmes命令が実行されないのがわかります。
+最初はわかりにくいかもしれませんが、continue命令は、loop命令の場所ではないが、loop命令と同じ働きをするとも言えます。
+繰り返しのカウンタは、continue命令が実行された場合でも、loop命令と同様1つ増加します。
+もし、最後の繰り返しでcontinue命令が実行されると、repeat〜loopが終わった状態、つまりloop命令の次の命令から実行を続けます。</p>
+<p>さらにもう１つ、continue命令にはパラメータを指定する使い方が存在します。
+continueの後に、数値または数値型変数を指定することにより、繰り返しのカウンタを示すシステム変数cntの内容を変更することができます。
+たとえば、「continue 1」と指定した場合は、システム変数cntの内容は1になり、その値のままrepeat命令の次から繰り返しを続けます。
+パラメータを省略して、ただの「continue」だけの場合はloop命令と同様の処理、数値を指定すると、カウンタの値を変更して繰り返しをやり直すことになります。
+ですから、</p>
+<pre><code>repeat 1
+    await 10
+    getkey a,1
+    if a=0 : continue 0
+loop
+</code></pre><p>このようなスクリプトでは、通常1回だけしか実行されないはずの、 repeat〜loopの繰り返しですが、マウスの左ボタンが押されていない場合は、カウンタが0に戻され無限ループの状態になります。 これで、ボタンを押すまで待つという動作になります。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>repeat</li>
+<li>foreach</li>
+<li>loop</li>
+<li>break</li>
+</ul>
+<h2 id="onkey">onkey </h2>
+<p>キー割り込み実行指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>onkey goto/gosub *label
+</code></pre><ul>
+<li>*label : ラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>キーボードを押した時に、自動的にジャンプする場所を指定します。</p>
+<p>onkeyの後に続けて、gotoまたはgosubキーワードを指定してからラベルを記述します。gotoの場合には、単純なプログラムジャンプ。 gosubの場合はサブルーチンジャンプを行ないます。
+goto/gosubキーワードを省略した場合には、gotoキーワードと同等の動作になります。</p>
+<p>onkey命令でラベルを指定すると、それ以降はHSPのウィンドウがアクティブな時にキー入力があるたびに*labelで指定したラベルにジャンプします。</p>
+<p>割り込みジャンプは、stop命令および、wait、 await命令で停止している時に割り込みを受け付けてジャンプを行います。
+また、割り込みによりジャンプを行なった後はシステム変数iparam、wparam、lparamがセットされます。</p>
+<pre><code>   割り込み要因 | iparam     | wparam | lparam
+ ---------------------------------------------------------
+    onkey       | 文字コード | wParam | lParam
+</code></pre><p>システム変数iparamには、割り込み要因ごとのパラメータが代入されます。
+また、wparam,lparamはWindowsメッセージとして渡されたパラメータがそのまま格納されています。
+イベント割り込み実行の一時的なON/OFFをすることも可能です。</p>
+<pre><code>onkey 0
+</code></pre><p>で一時的にキー割り込みを停止します。</p>
+<pre><code>onkey 1
+</code></pre><p>で一時停止したキー割り込みを再開させることができます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>onclick</li>
+<li>onexit</li>
+<li>onerror</li>
+</ul>
+<h2 id="onclick">onclick </h2>
+<p>クリック割り込み実行指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>goto/gosub <em>label
+</em>label : ラベル名</p>
+<p><strong>説明</strong>:</p>
+<p>マウスのボタンを押した時に、自動的にジャンプする場所を指定します。</p>
+<p>onclickの後に続けて、gotoまたはgosubキーワードを指定してからラベルを記述します。gotoの場合には、単純なプログラムジャンプ。 gosubの場合はサブルーチンジャンプを行ないます。
+goto/gosubキーワードを省略した場合には、gotoキーワードと同等の動作になります。</p>
+<p>onclicky命令でラベルを指定すると、 それ以降はHSPのウィンドウ上でマウスクリックがあるたびに*labelで指定したラベルにジャンプします。</p>
+<p>割り込みジャンプは、stop命令および、wait、await命令で停止している時に割り込みを受け付けてジャンプを行います。
+また、割り込みによりジャンプを行なった後はシステム変数iparam、wparam、lparamがセットされます。</p>
+<pre><code>   割り込み要因 | iparam         | wparam | lparam
+ -------------------------------------------------------
+   onclick      | マウスボタンID | wParam | lParam
+</code></pre><p>システム変数iparamには、割り込み要因ごとのパラメータが代入されます。
+また、wparam,lparamはWindowsメッセージとして渡されたパラメータがそのまま格納されています。
+イベント割り込み実行の一時的なON/OFFをすることも可能です。</p>
+<pre><code>onclick 0
+</code></pre><p>で一時的に割り込みを停止します。</p>
+<pre><code>onclick 1
+</code></pre><p>で一時停止した割り込みを再開させることができます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>onkey</li>
+<li>onexit</li>
+<li>onerror</li>
+</ul>
+<h2 id="onerror">onerror </h2>
+<p>エラー発生時にジャンプ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>onerror goto/gosub *label
+</code></pre><ul>
+<li>*label : ラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>スクリプトが原因で HSP内部でエラーが発生した時に、自動的にジャンプする場所を指定します。</p>
+<p>onerrorの後に続けて、gotoまたはgosubキーワードを指定してからラベルを記述します。gotoの場合には、単純なプログラムジャンプ。 gosubの場合はサブルーチンジャンプを行ないます。
+goto/gosubキーワードを省略した場合には、gotoキーワードと同等の動作になります。</p>
+<p>通常は、エラー発生時にシステムのエラーメッセージダイアログが表示されますが、そのかわりに指定したラベルにジャンプするように設定されます。ジャンプ後は、以下のシステム変数に情報が代入されます。</p>
+<ul>
+<li>wparam : エラー番号</li>
+<li>lparam : エラー発生行番号</li>
+<li>iparam : 0(なし)</li>
+</ul>
+<p>onerror命令によりエラー後の処理を指定した場合であっても、 必要な処理が終わったら、そのままアプリケーションの実行は再開せずに、 なるべくend命令で終了させてください。
+onerror命令は、エラーから回復させるものではありません。
+エラー発生の原因によっては、 HSPのシステム自体が不安定になったり障害が発生することも有り得ます。 onerror命令を使う場面としては、実行ファイル作成時にエラーが発生した場合にアプリケーション側で独自のエラー表示を行ないたい場合や、特定のエラーが発生する場合にだけデバッグのための表示を行なうなどが考えられます。</p>
+<p>終了時ジャンプの一時的なON/OFFをすることも可能です。</p>
+<pre><code>onerror 0
+</code></pre><p>で一時的に割り込みを停止します。</p>
+<pre><code>onerror 1
+</code></pre><p>で一時停止した割り込みを再開させることができます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>onkey</li>
+<li>onclick</li>
+<li>onexit</li>
+</ul>
+<h2 id="exgoto">exgoto </h2>
+<p>指定ラベルに条件ジャンプ</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>exgoto var,p1,p2,*label
+</code></pre><ul>
+<li>var    : 比較に使用される変数</li>
+<li>p1     : 比較フラグ</li>
+<li>p2     : 比較値</li>
+<li>*label : ラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>varで指定された変数に代入されている値と、 p2の比較値により指定したラベルに条件でジャンプします。
+比較方法は、p1の比較フラグが0以上(正値)の場合は(varの値&gt;=p2)が成立した時にジャンプ、p1が-1以下(負値)の場合は (varの値&lt;=p2)が成立した時にジャンプを行ないます。
+varで指定された変数は、整数型である必要があります。別な型で初期化されている場合は、実行時にエラーとなります。
+この命令は、 forなど一部のマクロ処理を高速化するために用意された命令です。
+exgoto命令を単体で使用することもできますが、スクリプトの視認性からもif命令による通常の条件分岐を行なうことを推奨致します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>goto</li>
+<li>if</li>
+</ul>
+<h2 id="on">on </h2>
+<p>数値による分岐</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>on p1 goto/gosub ラベル0,ラベル1…
+</code></pre><ul>
+<li>p1=0〜(0) : 分岐のための値</li>
+<li>ラベル0〜 : 分岐先のラベル名</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>on命令は、p1で指定された値が0,1,2…に応じて分岐先を選択します。
+「on 数値 goto」または、「on 数値 gosub」 のような書式で、続いて分岐する先のラベルを1つ以上「,」で区切って記述することができます。
+指定された数値が0の場合はラベル0が、数値が1の場合はラベル1が分岐の対象になります、 以降2,3,4…と対応したラベルを任意の数だけ記述していくことが可能です。
+「on 数値 goto」の場合は goto命令と同じ単純な分岐、「on 数値 gosub」の場合はgosub命令と同じサブルーチンジャンプを行ないます。
+数値がマイナス値か、対応したラベルが指定されていない場合は分岐は行なわれずに次の行に進みます。
+n88系のBASICと違い最初のラベルが数値0に対応しているのでご注意下さい。(n88系BASICでは数値1が最初のラベルになります)</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>goto</li>
+<li>gosub</li>
+</ul>
+<p><strong>例</strong>:</p>
+<pre><code>    a=1
+    on a goto *a0,*a1,*a2
+    mes &quot;その他&quot;:stop
+*a0
+    mes &quot;A=0&quot;:stop
+*a1
+    mes &quot;A=1&quot;:stop
+*a2
+    mes &quot;A=2&quot;:stop
+</code></pre><h2 id="while">while </h2>
+<p>while繰り返し開始</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>while p1
+</code></pre><ul>
+<li>p1=条件式(1) : 繰り返しを行なう条件</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>whileに続く条件が満たされている間だけ、whileからwendまでを繰り返します。
+条件が満たされていない場合はwhileからwendまでを実行しません。
+whileに続く条件を省略した場合は、無限に繰り返しを行ないます。</p>
+<pre><code>    a=0
+    while a&lt;5
+    a=a+1:mes &quot;A=&quot;+a
+    wend     ; aが5以下の間だけwhile以下を繰り返す
+</code></pre><p>また、_continue、_breakマクロによって再開、脱出が可能です。
+while〜wend制御は、プリプロセッサのマクロ機能を使って実現されています。
+CやJava等に近い記述をしたいような場合にお使い下さい。
+初心者の方には、repeat〜loop命令か、if命令による繰り返し記述を推奨します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>_continue</li>
+<li>_break</li>
+<li>wend</li>
+</ul>
+<h2 id="wend">wend </h2>
+<p>while繰り返し終了</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>whileで指定した繰り返し区間の終わりを指定します。
+詳しくはwhileマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<p>while</p>
+<h2 id="until">until </h2>
+<p>do繰り返し終了</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>until p1
+</code></pre><ul>
+<li>p1=条件式(1) : 繰り返しを行なう条件</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>untilに続く条件が満たされるまで、doからuntilまでの部分を繰り返します。
+条件が満たされている場合でも、最低一回はdo〜until内を実行します。
+untilに続く条件を省略した場合は、繰り返しを行ないません。</p>
+<pre><code>a=0
+do
+a=a+1:mes &quot;A=&quot;+a
+until a&gt;5    ; aが5以上になるまでdo以下を繰り返す
+</code></pre><p>また、_continue、_breakマクロによって再開、脱出が可能です。
+do〜until制御は、プリプロセッサのマクロ機能を使って実現されています。
+CやJava等に近い記述をしたいような場合にお使い下さい。
+初心者の方には、repeat〜loop命令か、goto命令とif命令を組み合わせた繰り返し記述を推奨します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>_continue</li>
+<li>_break</li>
+<li>do</li>
+</ul>
+<h2 id="do">do </h2>
+<p>do繰り返し開始</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>untilまでの繰り返し区間の始まりを指定します。
+繰り返し条件は、untilマクロによって記述されます。
+詳しくはuntilマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>until</li>
+</ul>
+<h2 id="for">for </h2>
+<p>指定回数繰り返し開始</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>for p1,p2,p3,p4
+</code></pre><ul>
+<li>p1    : 変数名</li>
+<li>p2(0) : 初期値</li>
+<li>p3(0) : 終値</li>
+<li>p4(1) : 増分</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>パラメーターとして変数名、初期値、終値、増分などを指定すると、for〜nextの間を指定回数繰り返します。
+カッコ内は省略した場合の値です。変数名は省略できません。
+指定された変数をカウンターとして使用し、初期値から始まって、１回繰り返すごとに増分を足していきます。終値に達した時点で、繰り返しから抜けます(終値はループに含みません)。
+最初から終値の条件が満たされている場合は、繰り返しを実行しません。
+また、_continue、_breakマクロによって再開、脱出が可能です。</p>
+<pre><code>for a,0,5,1
+mes &quot;A=&quot;+a
+next    ; aが0から4の間(５回)繰り返す
+</code></pre><p>この例では、変数aは0,1,2,3,4と５回繰り返してループを終わります。
+増分にマイナス値を指定することも可能です。</p>
+<pre><code>for a,5,0,-1
+mes &quot;A=&quot;+a
+next    ; aが5から1の間(５回)繰り返す
+</code></pre><p>この場合、変数aは5,4,3,2,1と５回繰り返してループを終わります。</p>
+<p>forマクロで指定され初期値及び、終値は必ず整数を指定する必要があります。
+他の型を指定した場合は、エラーとなります。
+また、増分や終値の指定によっては無限ループになる可能性がありますので注意してください。</p>
+<p>for〜next制御は、プリプロセッサのマクロ機能を使って実現されています。
+CやJava等に近い記述をしたいような場合にお使い下さい。
+初心者の方には、repeat〜loop命令か、if命令による繰り返し記述を推奨します。forマクロは、 内部でマクロ展開後に特殊なプログラム制御命令exgotoを生成します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>_continue</li>
+<li>_break</li>
+<li>next</li>
+<li>exgoto</li>
+</ul>
+<h2 id="next">next </h2>
+<p>指定回数繰り返し終了</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>forで指定した繰り返し区間の終わりを指定します。
+詳しくはforマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>for</li>
+</ul>
+<h2 id="switch">switch </h2>
+<p>比較ブロック開始</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>switch p1
+</code></pre><ul>
+<li>p1 : 比較元</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>switch〜case〜swend は、ブロック内に複数の条件判断と処理をまとめて書くことができる構文です。
+p1で指定する比較元のパラメーターは、変数または式を指定することができます。switch以降は、</p>
+<pre><code>case 比較値
+</code></pre><p>を置くことで、これ以降に「比較元」が「比較値」と同じだった場合に処理する内容を記述することができます。
+caseは、ブロック内に複数記述することができ、それぞれの比較値ごとの処理を指定できます。caseの比較が正しい場合は、 swbreakが存在するまで以降の命令を実行します。また、caseの替わりに</p>
+<pre><code>default
+</code></pre><p>を置くと、caseで指定したどの比較値にもあてはまらない条件の場合に以降が実行されます。</p>
+<p>switchブロックが終了した場合は、</p>
+<pre><code>swend
+</code></pre><p>を必ず最後に書いておく必要があります。
+以下は、switchマクロを使用したスクリプトの例です。</p>
+<pre><code>a=0
+switch a               ; aを比較対象とする
+case 0                 ; aが0だった場合
+    mes &quot;A=0&quot;
+    swbreak            ; case0の条件実行終了
+case 1                 ; aが1だった場合
+    mes &quot;A=1&quot;
+default                ; aが0以外だった場合
+    mes &quot;A!=0&quot;
+    swbreak
+swend
+</code></pre><p>この例では、変数aの内容が0か1かそれ以外かで条件分岐を行なっています。
+「case 0」以降は、「swbreak」までが実行されますが、「case 1」の場合は、「swbreak」が存在しないため、「default」以降に実行される「mes &quot;A!=0&quot;」も含めて実行されるので注意してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>case</li>
+<li>default</li>
+<li>swbreak</li>
+<li>swend</li>
+</ul>
+<h2 id="swend">swend </h2>
+<p>比較ブロック終了</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>switchで指定した比較ブロックの終わりを指定します。
+詳しくはswitchマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>switch</li>
+<li>case</li>
+<li>default</li>
+<li>swbreak</li>
+</ul>
+<h2 id="default">default </h2>
+<p>デフォルト比較指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>switch〜swendの比較ブロック内で、 それまでのcaseにあてはまらない条件の時に実行される処理を指定します。
+詳しくはswitchマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>switch</li>
+<li>case</li>
+<li>swbreak</li>
+<li>swend</li>
+</ul>
+<h2 id="case">case </h2>
+<p>比較値指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>case p1
+</code></pre><ul>
+<li>p1 : 比較値</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>switch〜swendの比較ブロック内で、比較元との条件を指定して正しい場合に実行される処理を指定します。
+詳しくはswitchマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>switch</li>
+<li>default</li>
+<li>swbreak</li>
+<li>swend</li>
+</ul>
+<h2 id="swbreak">swbreak </h2>
+<p>比較実行脱出指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>switch〜swendの比較ブロック内から脱出します。
+詳しくはswitchマクロの項を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>switch</li>
+<li>default</li>
+<li>case</li>
+<li>swend</li>
+</ul>
+<h2 id="_continue">_continue </h2>
+<p>マクロループをやり直す</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>標準マクロによって定義されている繰り返しマクロ、
+while〜wend、do〜until、for〜next間のループをやり直します。
+現在以降の繰り返しブロック内は実行せずに、次の繰り返しから再開されます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>_break</li>
+<li>while</li>
+<li>wend</li>
+<li>do</li>
+<li>until</li>
+<li>for</li>
+<li>next</li>
+</ul>
+<h2 id="_break">_break </h2>
+<p>マクロループを脱出する</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>標準マクロによって定義されている繰り返しマクロ、
+while〜wend、do〜until、for〜next間のループから抜け出します。
+現在以降の繰り返しブロック内は実行せずに、ループの次にある命令から再開されます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>_continue</li>
+<li>while</li>
+<li>wend</li>
+<li>do</li>
+<li>until</li>
+<li>for</li>
+<li>next</li>
+</ul>
+<h2 id="foreach">foreach </h2>
+<p>変数の要素数だけ繰り返す</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>foreach p1
+</code></pre><ul>
+<li>p1=変数名 : ループの対象となる変数</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>配列変数に格納されている要素の数だけ繰り返しを行ないます。
+foreachは、repeat命令と同様にループ開始場所に記述し、 ループの終了場所にloop命令を記述します。
+repeat命令との違いは、指定された配列変数の要素数が繰り返し回数になる点と、モジュール型変数の場合には、delmod命令で削除された要素はループ内容を実行しないという点です。</p>
+<p>例 :</p>
+<pre><code>dim a,10
+foreach a
+mes &quot;#&quot;+cnt+&quot;:&quot;+a.cnt
+loop
+</code></pre><p>ループの中で、システム変数cntを配列要素として指定することで、 すべての要素を繰り返し実行させるような処理を簡潔に書くことができます。
+また、break、continue命令もrepeat命令使用時と同じように機能します。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>repeat</li>
+<li>loop</li>
+<li>break</li>
+<li>continue</li>
+</ul>
+<h2 id="oncmd">oncmd </h2>
+<p>Windowsメッセージ割り込み実行指定</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>oncmd goto/gosub *label,p1
+</code></pre><ul>
+<li>*label : ラベル名</li>
+<li>p1     : メッセージID</li>
+</ul>
+<p><strong>説明</strong>:</p>
+<p>指定されたウィンドウメッセージが送られた時に、自動的にジャンプする場所を指定します。</p>
+<p>oncmdの後に続けて、gotoまたはgosubキーワードを指定してからラベルを記述します。
+gotoの場合には、単純なプログラムジャンプ。 gosubの場合はサブルーチンジャンプを行ないます。
+goto/gosubキーワードを省略した場合には、gotoキーワードと同等の動作になります。</p>
+<p>oncmd命令でラベルを指定すると、それ以降はHSPのウィンドウに対してp1のメッセージが送られた時に*labelで指定したラベルにジャンプします。
+oncmd命令は、現在の操作先ウィンドウのみが対象になります。
+複数のウィンドウを作成している場合は、 ウィンドウごとにoncmd命令による登録が可能です。</p>
+<p>既に登録されているウィンドウメッセージが指定された場合は、以前の登録が無効になります。
+また、割り込みの登録は、ウィンドウの初期化とは同期していません。
+一度登録された割り込みは、アプリケーションが終了するまで有効になります。</p>
+<p>割り込みジャンプは、stop命令および、wait、 await命令で停止している時に割り込みを受け付けてジャンプを行います。
+また、割り込みによりジャンプを行なった後はシステム変数iparam、wparam、lparamがセットされます。
+割り込みが発生したウィンドウIDは、 ginfo関数により取得することができます。</p>
+<pre><code>   割り込み要因 | iparam       | wparam | lparam
+ ---------------------------------------------------------------------
+   oncmd        | メッセージID | wParam | lParam
+</code></pre><p>システム変数iparamには、送信されたメッセージIDが代入されます。
+また、wparam,lparamはWindowsメッセージとして渡されたパラメータがそのまま格納されています。
+割り込みの設定で、 gosubキーワードによるサブルーチンジャンプが発生した場合は、return命令により戻り値を設定することが可能です。
+「return 数値」で、ウィンドウプロシージャーが返す値を指定します。
+return命令にパラメーターを指定しなかった場合には、デフォルトのウインドゥプロシージャーに処理が渡されます。</p>
+<p>イベント割り込み実行の一時的なON/OFFをすることも可能です。</p>
+<pre><code>oncmd 0
+</code></pre><p>で一時的に割り込みを停止します。</p>
+<pre><code>oncmd 1
+</code></pre><p>で一時停止した割り込みを再開させることができます。</p>
+<p><strong>参照</strong>:</p>
+<ul>
+<li>onkey</li>
+<li>onclick</li>
+<li>onexit</li>
+<li>onerror</li>
+</ul>
+<h2 id="else">else </h2>
+<p>条件を満たしていなければその行の命令を実行</p>
+<p><strong>グループ</strong>:</p>
+<p>プログラム制御命令</p>
+<p><strong>説明</strong>:</p>
+<p>if命令と組み合わせて使用します。
+詳しくはif命令の解説を参照してください。</p>
+<p><strong>例</strong>:</p>
+<pre><code>if a == 0 {
+    mes &quot;aは0です。&quot;
+} else {
+    mes &quot;aは0ではありません。&quot;
+}
+</code></pre><p><strong>参照</strong>:</p>
+<ul>
+<li>if</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sysval.html" class="navigation navigation-prev " aria-label="Previous page: システム変数">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="hspdef.html" class="navigation navigation-next " aria-label="Next page: 標準マクロ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"プログラム制御","level":"2.3","depth":1,"next":{"title":"標準マクロ","level":"2.4","depth":1,"path":"hspdef.md","ref":"hspdef.md","articles":[]},"previous":{"title":"システム変数","level":"2.2","depth":1,"path":"sysval.md","ref":"sysval.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"i_prog.md","mtime":"2022-10-27T05:26:27.041Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-27T12:02:39.881Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

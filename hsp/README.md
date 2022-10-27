@@ -1,4 +1,31 @@
-## プリプロセッサ
+# HSPリファレンス
+
+## ショートカット
+
+- [プリプロセッサ](#i_prep)
+- [システム変数](#sysval)
+- [プログラム制御](#i_prog)
+- [標準マクロ](#hspdef)
+- [特殊マクロ](#ex_macro)
+- [基本関数](#i_stdfunc)
+- [画面制御](#i_graph)
+- [オブジェクト](#i_object)
+- [文字列](#i_string)
+- [数学](#hspmath)
+- [入出力](#i_stdio)
+- [ファイル](#i_file)
+- [メモリ](#i_mem)
+- [マルチメディア](#i_mmedia)
+- [ユーティリティ](#i_hsp3util)
+- [ソケット通信](#hspsock)
+- [スプライト](#sprite)
+- [HSP3Dish](#hsp3dish)
+- [HGIMG4共通](#hgimg_common)
+- [HGIMG4](#hgimg4)
+- [OBAQ](#obaq)
+
+
+## プリプロセッサ {#i_prep}
 
 - [#addition](i_prep.md#addition)
 - [#aht](i_prep.md#aht)
@@ -36,7 +63,7 @@
 - [#uselib](i_prep.md#uselib)
 
 
-## システム変数
+## システム変数 {#sysval}
 
 - [cnt](sysval.md#cnt)
 - [dir_cmdline](sysval.md#dir_cmdline)
@@ -101,7 +128,7 @@
 - [wparam](sysval.md#wparam)
 
 
-## プログラム制御
+## プログラム制御 {#i_prog}
 
 - [_break](i_prog.md#_break)
 - [_continue](i_prog.md#_continue)
@@ -141,7 +168,7 @@
 - [while](i_prog.md#while)
 
 
-## 標準マクロ
+## 標準マクロ {#hspdef}
 
 - [M_PI](hspdef.md#M_PI)
 - [and](hspdef.md#and)
@@ -181,7 +208,7 @@
 - [xor](hspdef.md#xor)
 
 
-## 特殊マクロ
+## 特殊マクロ {#ex_macro}
 
 - [\_\_date\_\_](ex_macro.md#__date__)
 - [\_\_file\_\_](ex_macro.md#__file__)
@@ -192,7 +219,7 @@
 - [_debug](ex_macro.md#_debug)
 
 
-## 基本関数
+## 基本関数 {#i_stdfunc}
 
 - [abs](i_stdfunc.md#abs)
 - [absf](i_stdfunc.md#absf)
@@ -231,7 +258,7 @@
 - [varuse](i_stdfunc.md#varuse)
 - [wpeek](i_stdfunc.md#wpeek)
 
-## 画面制御
+## 画面制御 {#i_graph}
 
 - [axobj](i_graph.md#axobj)
 - [bgscr](i_graph.md#bgscr)
@@ -278,7 +305,7 @@
 - [width](i_graph.md#width)
 - [winobj](i_graph.md#winobj)
 
-## オブジェクト
+## オブジェクト {#i_object}
 
 - [button](i_object.md#button)
 - [chkbox](i_object.md#chkbox)
@@ -298,7 +325,7 @@
 - [objskip](i_object.md#objskip)
 
 
-## 文字列
+## 文字列 {#i_string}
 
 - [cnvatos](i_string.md#cnvatos)
 - [cnvstoa](i_string.md#cnvstoa)
@@ -324,7 +351,7 @@
 - [strtrim](i_string.md#strtrim)
 
 
-## 数学
+## 数学 {#hspmath}
 
 - [DBL_DIG](hspmath.md#DBL_DIG)
 - [DBL_EPSILON](hspmath.md#DBL_EPSILON)
@@ -369,7 +396,7 @@
 - [tanh](hspmath.md#tanh)
 
 
-## 入出力
+## 入出力 {#i_stdio}
 
 - [assert](i_stdio.md#assert)
 - [getkey](i_stdio.md#getkey)
@@ -385,7 +412,7 @@
 - [stick](i_stdio.md#stick)
 
 
-## ファイル
+## ファイル {#i_file}
 
 - [bcopy](i_file.md#bcopy)
 - [bload](i_file.md#bload)
@@ -399,7 +426,7 @@
 - [mkdir](i_file.md#mkdir)
 
 
-## メモリ
+## メモリ {#i_mem}
 
 - [alloc](i_mem.md#alloc)
 - [ddim](i_mem.md#ddim)
@@ -421,7 +448,7 @@
 - [wpoke](i_mem.md#wpoke)
 
 
-## マルチメディア
+## マルチメディア {#i_mmedia}
 
 - [mci](i_mmedia.md#mci)
 - [mmload](i_mmedia.md#mmload)
@@ -432,7 +459,7 @@
 - [mmvol](i_mmedia.md#mmvol)
 
 
-## ユーティリティ
+## ユーティリティ {#i_hsp3util}
 
 - [array2note](i_hsp3util.md#array2note)
 - [arrayload](i_hsp3util.md#arrayload)
@@ -453,7 +480,7 @@
 - [textmode](i_hsp3util.md#textmode)
 
 
-## ソケット通信
+## ソケット通信 {#hspsock}
 
 - [ipget](hspsock.md#ipget)
 - [sockcheck](hspsock.md#sockcheck)
@@ -469,7 +496,7 @@
 - [sockwait](hspsock.md#sockwait)
 
 
-## スプライト
+## スプライト {#sprite}
 
 - [es_adir](sprite.md#es_adir)
 - [es_aim](sprite.md#es_aim)
@@ -519,7 +546,7 @@
 - [es_type](sprite.md#es_type)
 
 
-## HSP3Dish
+## HSP3Dish {#hsp3dish}
 
 - [celbitmap](hsp3dish.md#celbitmap)
 - [celputm](hsp3dish.md#celputm)
@@ -539,7 +566,7 @@
 - [viewcalc](hsp3dish.md#viewcalc)
 
 
-## HGIMG4共通
+## HGIMG4共通 {#hgimg_common}
 
 - [addang](hgimg_common.md#addang)
 - [addangr](hgimg_common.md#addangr)
@@ -637,7 +664,7 @@
 - [str2fv](hgimg_common.md#str2fv)
 
 
-## HGIMG4
+## HGIMG4 {#hgimg4}
 
 - [addwork2](hgimg4.md#addwork2)
 - [event_angy](hgimg4.md#event_angy)
@@ -713,7 +740,7 @@
 - [setwork2](hgimg4.md#setwork2)
 
 
-## OBAQ
+## OBAQ {#obaq}
 
 - [qaddmodel](obaq.md#qaddmodel)
 - [qaddpoly](obaq.md#qaddpoly)

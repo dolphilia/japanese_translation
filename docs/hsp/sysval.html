@@ -1,0 +1,1300 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>システム変数 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="i_prog.html" />
+    
+    
+    <link rel="prev" href="i_prep.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="i_prep.html">
+            
+                <a href="i_prep.html">
+            
+                    
+                    プリプロセッサ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="sysval.html">
+            
+                <a href="sysval.html">
+            
+                    
+                    システム変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="i_prog.html">
+            
+                <a href="i_prog.html">
+            
+                    
+                    プログラム制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hspdef.html">
+            
+                <a href="hspdef.html">
+            
+                    
+                    標準マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ex_macro.html">
+            
+                <a href="ex_macro.html">
+            
+                    
+                    特殊マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="i_stdfunc.html">
+            
+                <a href="i_stdfunc.html">
+            
+                    
+                    基本関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="i_graph.html">
+            
+                <a href="i_graph.html">
+            
+                    
+                    画面制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="i_object.html">
+            
+                <a href="i_object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="i_string.html">
+            
+                <a href="i_string.html">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="hspmath.html">
+            
+                <a href="hspmath.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="i_stdio.html">
+            
+                <a href="i_stdio.html">
+            
+                    
+                    入出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="i_file.html">
+            
+                <a href="i_file.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="i_mem.html">
+            
+                <a href="i_mem.html">
+            
+                    
+                    メモリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="i_mmedia.html">
+            
+                <a href="i_mmedia.html">
+            
+                    
+                    マルチメディア
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="i_hsp3util.html">
+            
+                <a href="i_hsp3util.html">
+            
+                    
+                    ユーティリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="hspsock.html">
+            
+                <a href="hspsock.html">
+            
+                    
+                    ソケット通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="sprite.html">
+            
+                <a href="sprite.html">
+            
+                    
+                    スプライト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="hsp3dish.html">
+            
+                <a href="hsp3dish.html">
+            
+                    
+                    HSP3Dish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="hgimg_common.html">
+            
+                <a href="hgimg_common.html">
+            
+                    
+                    HGIMG4共通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="hgimg4.html">
+            
+                <a href="hgimg4.html">
+            
+                    
+                    HGIMG4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="obaq.html">
+            
+                <a href="obaq.html">
+            
+                    
+                    OBAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hsp3.tv">
+            
+                <span>
+            
+                    
+                    公式サイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >システム変数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="システム変数">システム変数</h1>
+<p><strong>対応</strong>:</p>
+<ul>
+<li>Win</li>
+<li>Cli</li>
+<li>Let</li>
+</ul>
+<h2 id="hspstat">hspstat </h2>
+<p>HSPランタイムの情報</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>HSPランタイムの情報が整数値で代入されます。以下の情報がすべて合計された値になります。</p>
+<ul>
+<li>デバッグモード = 1</li>
+<li>スクリーンセーバー起動時 = 2</li>
+<li>コンソールモード = 16</li>
+<li>Macintosh版HSP = $80</li>
+<li>HSP3Dish = $100</li>
+<li>Linux版HSP = $1000</li>
+<li>UTF8文字列ランタイム = $20000</li>
+<li>64ビットランタイム = $40000</li>
+</ul>
+<p><strong>参照</strong>:</p>
+<p>_debug</p>
+<h2 id="hspver">hspver </h2>
+<p>HSPのバージョン番号</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>HSP のバージョン番号が整数値で代入されます。バージョンコード +  マイナーバージョンコードの値になります。(3.0 は $3??? になる)</p>
+<p><strong>参照</strong>:</p>
+<p><strong>hspver</strong></p>
+<h2 id="cnt">cnt </h2>
+<p>ループのカウンター</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>repeat〜loopループのカウンターが整数値で代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>repeat
+foreach
+loop</p>
+<h2 id="err">err </h2>
+<p>HSPのエラーコード</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>HSPのエラーコードです。エラーコードとメッセージの対応については、別途マニュアル(error.htm)を参照してください。</p>
+<p><strong>参照</strong>:</p>
+<p>onerror</p>
+<h2 id="stat">stat </h2>
+<p>色々な命令のステータス値</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>色々な命令を実行した結果(ステータス)が整数値で代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>return
+dialog
+mref</p>
+<h2 id="mousex">mousex </h2>
+<p>マウスカーソルのX座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>マウスカーソルのX座標が整数値で代入されます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>; マウスポインタの動きに沿って線を描く
+repeat
+    line mousex, mousey
+    wait 1
+    loop
+</code></pre><p><strong>参照</strong>:</p>
+<p>mouse
+mousey
+mousew
+ginfo_mx</p>
+<h2 id="mousey">mousey </h2>
+<p>マウスカーソルのY座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>マウスカーソルのY座標が整数値で代入されます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>; マウスポインタの動きに沿って線を描く
+repeat
+    line mousex, mousey
+    wait 1
+    loop
+</code></pre><p><strong>参照</strong>:</p>
+<p>mouse
+mousex
+mousew
+ginfo_my</p>
+<h2 id="mousew">mousew </h2>
+<p>マウスカーソルのホイール値</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>ホイール付きマウスの移動量が整数値で代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>mousex
+mousey</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="strsize">strsize </h2>
+<p>読み出しバイト数</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>getstr、exist、bload命令などで読み出したバイト数が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>bload
+exist
+getstr</p>
+<h2 id="refstr">refstr </h2>
+<p>色々な命令のステータス文字列</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>色々な命令を実行した結果の文字列が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>return
+dialog
+mref</p>
+<h2 id="looplev">looplev </h2>
+<p>repeatのネストレベル</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>repeat〜loopのネストレベルが代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>repeat
+foreach
+loop</p>
+<h2 id="sublev">sublev </h2>
+<p>サブルーチンのネストレベル</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>サブルーチン(またはユーザー定義命令、関数) のネストレベルが代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>gosub
+return</p>
+<h2 id="iparam">iparam </h2>
+<p>割り込み要因を示す値</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>割り込み要因を示す値が代入されます。
+oncmd命令による割り込み時は、割り込みメッセージのIDが代入されます。
+onexit命令による終了割り込み時は、通常のウィンドウクローズによる終了であれば0が、シャットダウン等のシステム通知による終了であれば1が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>onkey
+onclick
+onexit
+lparam
+wparam
+onerror
+oncmd</p>
+<p><strong>例</strong>:</p>
+<pre><code>    onkey goto *lab
+    stop
+*lab
+    mes &quot;キーコード : &quot;+wparam+&quot;, 文字コード : &quot;+iparam
+    stop
+</code></pre><p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="wparam">wparam </h2>
+<p>割り込み時のwParam</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>割り込み時に保存される Windows のシステム値 (wParam) が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>onkey
+onclick
+onerror
+iparam
+lparam
+onerror
+oncmd</p>
+<p><strong>例</strong>:</p>
+<pre><code>    onkey goto *lab
+    stop
+*lab
+    a = lparam&gt;&gt;24&amp;1
+    mes &quot;キーコード : &quot;+wparam+&quot;, 拡張キーフラグ : &quot;+a
+    stop
+</code></pre><p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="lparam">lparam </h2>
+<p>割り込み時のlParam</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>割り込み時に保存される Windows のシステム値 (lParam) が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>onkey
+onclick
+onerror
+iparam
+wparam
+onerror
+oncmd</p>
+<p><strong>例</strong>:</p>
+<pre><code>    onkey goto *lab
+    stop
+*lab
+    a = lparam&gt;&gt;24&amp;1
+    mes &quot;キーコード : &quot;+wparam+&quot;, 拡張キーフラグ : &quot;+a
+    stop
+</code></pre><p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="hwnd">hwnd </h2>
+<p>現在のウィンドウハンドル</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在選択されているウィンドウのハンドル(ポインタ)が代入されます。
+主にDLL等の外部呼出しで必要な場合に参照されます。</p>
+<p><strong>参照</strong>:</p>
+<p>mref</p>
+<h2 id="hdc">hdc </h2>
+<p>現在のデバイスコンテキスト</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在選択されているウィンドウのデバイスコンテキスト(ポインタ)が代入されます。
+主にDLL等の外部呼出しで必要な場合に参照されます。</p>
+<p><strong>参照</strong>:</p>
+<p>mref</p>
+<h2 id="hinstance">hinstance </h2>
+<p>現在のインスタンスハンドル</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在実行中アプリケーションのインスタンスハンドル(ポインタ)が代入されます。
+主にDLL等の外部呼出しで必要な場合に参照されます。</p>
+<p><strong>参照</strong>:</p>
+<p>mref
+<strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="refdval">refdval </h2>
+<p>色々な命令のステータス実数値</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>色々な命令を実行した結果の実数値が代入されます。</p>
+<p><strong>参照</strong>:</p>
+<p>return</p>
+<h2 id="thismod">thismod </h2>
+<p>現在の有効なモジュール変数</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>モジュール変数処理のためのユーザー定義命令・関数内で、
+渡されたモジュール変数自身を示す名称として使用することができます。
+#modfuncで定義されたルーチンから、別な命令・関数を呼び出す場合に使用することができます。</p>
+<p><strong>参照</strong>:</p>
+<p>newmod
+delmod</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="notemax">notemax </h2>
+<p>メモリノートパッドの行数</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在選択されているメモリノートパッド全体の行数を示すシステム変数として使用することができます。
+noteinfo関数でも同様の情報を取得することが可能です。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>noteinfo</p>
+<h2 id="notesize">notesize </h2>
+<p>メモリノートパッドの文字数</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在選択されているメモリノートパッド全体の文字数(byte数)を示す
+システム変数として使用することができます。
+noteinfo関数でも同様の情報を取得することが可能です。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>noteinfo</p>
+<h2 id="ginfo_mx">ginfo_mx </h2>
+<p>スクリーン上のマウスカーソルX座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン上のマウスカーソルX座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo
+ginfo_my</p>
+<h2 id="ginfo_my">ginfo_my </h2>
+<p>スクリーン上のマウスカーソルY座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン上のマウスカーソルY座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo
+ginfo_mx</p>
+<h2 id="ginfo_act">ginfo_act </h2>
+<p>アクティブなウィンドウID</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在アクティブになっているウィンドウIDが代入されています。
+もし、 アクティブになっているウィンドウがHSP以外の場合は-1になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo</p>
+<h2 id="ginfo_sel">ginfo_sel </h2>
+<p>操作先ウィンドウID</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>gsel命令で指定した画面の操作先ウィンドウIDが代入されています。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>gsel
+ginfo</p>
+<h2 id="ginfo_wx1">ginfo_wx1 </h2>
+<p>ウィンドウの左上X座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン座標系で現在のウィンドウの左上X座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_wy1
+ginfo_wx2
+ginfo_wy2
+ginfo</p>
+<h2 id="ginfo_wy1">ginfo_wy1 </h2>
+<p>ウィンドウの左上Y座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン座標系で現在のウィンドウの左上Y座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_wx1
+ginfo_wx2
+ginfo_wy2
+ginfo</p>
+<h2 id="ginfo_wx2">ginfo_wx2 </h2>
+<p>ウィンドウの右下X座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン座標系で現在のウィンドウの右下X座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_wy2
+ginfo_wx1
+ginfo_wy1
+ginfo</p>
+<h2 id="ginfo_wy2">ginfo_wy2 </h2>
+<p>ウィンドウの右下Y座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>スクリーン座標系で現在のウィンドウの右下Y座標が代入されています。
+スクリーン座標系は、 pos命令などで使用するウィンドウ内の座標ではなく、デスクトップ画面全体から見た座標になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_wx2
+ginfo_wx1
+ginfo_wy1
+ginfo</p>
+<h2 id="ginfo_vx">ginfo_vx </h2>
+<p>ウィンドウのスクロールX座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウのスクロールX座標が代入されています。
+これは、初期化サイズよりもウィンドウサイズが小さくなっている場合に、左上に表示されている座標がどれだけスクロールされているかを示す値です。
+スクロールさせていない通常の状態では、(0,0)になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_vy
+ginfo</p>
+<h2 id="ginfo_vy">ginfo_vy </h2>
+<p>ウィンドウのスクロールY座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウのスクロールY座標が代入されています。
+これは、初期化サイズよりもウィンドウサイズが小さくなっている場合に、左上に表示されている座標がどれだけスクロールされているかを示す値です。
+スクロールさせていない通常の状態では、(0,0)になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_vx
+ginfo</p>
+<h2 id="ginfo_sizex">ginfo_sizex </h2>
+<p>ウィンドウ全体のXサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウの横幅が代入されています。
+これは、ウィンドウの枠やタイトルバーなども含めたサイズになります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_sizey
+ginfo</p>
+<h2 id="ginfo_sizey">ginfo_sizey </h2>
+<p>ウィンドウ全体のYサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウの縦幅が代入されています。
+これは、ウィンドウの枠やタイトルバーなども含めたサイズになります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_sizex
+ginfo</p>
+<h2 id="ginfo_winx">ginfo_winx </h2>
+<p>画面の描画エリアXサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在のウィンドウ描画エリアの横幅サイズが代入されています。
+(buffer命令で作成された画面の場合は、初期化された画面サイズになります。)</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_winy
+ginfo</p>
+<h2 id="ginfo_winy">ginfo_winy </h2>
+<p>画面の描画エリアYサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在のウィンドウ描画エリアの縦幅サイズが代入されています。
+(buffer命令で作成された画面の場合は、初期化された画面サイズになります。)</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_winx
+ginfo</p>
+<h2 id="ginfo_sx">ginfo_sx </h2>
+<p>画面の初期化Xサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウの初期化Xサイズが代入されています。
+(最初にscreen,bgscr,buffer命令で初期化された画面サイズになります。)</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_sy
+ginfo</p>
+<h2 id="ginfo_sy">ginfo_sy </h2>
+<p>画面の初期化Yサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在の操作先ウィンドウの初期化Yサイズが代入されています。
+(最初にscreen,bgscr,buffer命令で初期化された画面サイズになります。)</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_sx
+ginfo</p>
+<h2 id="ginfo_mesx">ginfo_mesx </h2>
+<p>メッセージの出力Xサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>最後にmes, print命令により出力されたメッセージのXサイズが代入されています。
+サイズは、 X座標にどれだけのドット数で描画されたかを示します。
+画面上の絶対座標ではないので注意してください。
+また、複数行ある文字列を出力した場合は、最後の行にあたるサイズが取得されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_mesy
+ginfo</p>
+<h2 id="ginfo_mesy">ginfo_mesy </h2>
+<p>メッセージの出力Yサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>最後にmes, print命令により出力されたメッセージのYサイズが代入されています。
+サイズは、 Y座標にどれだけのドット数で描画されたかを示します。
+画面上の絶対座標ではないので注意してください。
+また、複数行ある文字列を出力した場合は、最後の行にあたるサイズが取得されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_mesx
+ginfo</p>
+<h2 id="ginfo_r">ginfo_r </h2>
+<p>現在設定されているカラーコードR</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>color命令などにより指定された赤の色コード(輝度)が代入されています。
+色コードは、0〜255までの整数値になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_g
+ginfo_b
+ginfo</p>
+<h2 id="ginfo_g">ginfo_g </h2>
+<p>現在設定されているカラーコードG</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>color命令などにより指定された緑の色コード(輝度)が代入されています。
+色コードは、0〜255までの整数値になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_r
+ginfo_b
+ginfo</p>
+<h2 id="ginfo_b">ginfo_b </h2>
+<p>現在設定されているカラーコードB</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>color命令などにより指定された青の色コード(輝度)が代入されています。
+色コードは、0〜255までの整数値になります。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_r
+ginfo_g
+ginfo</p>
+<h2 id="ginfo_paluse">ginfo_paluse </h2>
+<p>デスクトップのカラーモード</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在のデスクトップカラーモード(色モード)が代入されています。
+フルカラーモードの場合は0が、パレットモードの場合は1が返されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo</p>
+<h2 id="ginfo_dispx">ginfo_dispx </h2>
+<p>デスクトップ全体のXサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>デスクトップ全体のサイズ(画面解像度)が代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_dispy
+ginfo</p>
+<h2 id="ginfo_dispy">ginfo_dispy </h2>
+<p>デスクトップ全体のYサイズ</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>デスクトップ全体のサイズ(画面解像度)が代入されています。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_dispx
+ginfo</p>
+<h2 id="ginfo_cx">ginfo_cx </h2>
+<p>カレントポジションのX座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>pos命令により設定されたカレントポジションのX座標が代入されています。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_cy
+ginfo</p>
+<h2 id="ginfo_cy">ginfo_cy </h2>
+<p>カレントポジションのY座標</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>pos命令により設定されたカレントポジションのY座標が代入されています。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo_cx
+ginfo</p>
+<h2 id="ginfo_intid">ginfo_intid </h2>
+<p>メッセージ割り込み時のウィンドウID</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>oncmd命令により設定されたメッセージ割り込み時のウィンドウIDが代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>oncmd
+ginfo</p>
+<h2 id="ginfo_newid">ginfo_newid </h2>
+<p>未使用ウィンドウID</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令やbuffer命令などで初期化されていない未使用のウィンドウIDが返されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo</p>
+<h2 id="ginfo_accx">ginfo_accx </h2>
+<p>加速度センサー値(X)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>加速度センサーが使用可能な環境で、センサーの値を取得します。
+X軸に対する加速度を-1.0〜+1.0の範囲で取得したものになります。
+加速度センサーが使用できない環境では、0.0が取得されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo
+ginfo_accy
+ginfo_accz</p>
+<h2 id="ginfo_accy">ginfo_accy </h2>
+<p>加速度センサー値(Y)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>加速度センサーが使用可能な環境で、センサーの値を取得します。
+Y軸に対する加速度を-1.0〜+1.0の範囲で取得したものになります。
+加速度センサーが使用できない環境では、0.0が取得されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo
+ginfo_accx
+ginfo_accz</p>
+<h2 id="ginfo_accz">ginfo_accz </h2>
+<p>加速度センサー値(Z)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>加速度センサーが使用可能な環境で、センサーの値を取得します。
+Z軸に対する加速度を-1.0〜+1.0の範囲で取得したものになります。
+加速度センサーが使用できない環境では、0.0が取得されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>ginfo
+ginfo_accy
+ginfo_accx</p>
+<h2 id="dir_cur">dir_cur </h2>
+<p>カレントディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>現在のカレントディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_exe">dir_exe </h2>
+<p>実行ファイルがあるディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>ランタイム実行ファイルがあるディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_win">dir_win </h2>
+<p>Windowsディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>Windowsがインストールされているディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_sys">dir_sys </h2>
+<p>Windowsシステムディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>Windowsのシステムディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_cmdline">dir_cmdline </h2>
+<p>コマンドライン文字列</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>実行時に渡されたコマンドライン文字列が代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_desktop">dir_desktop </h2>
+<p>デスクトップディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>デスクトップディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_mydoc">dir_mydoc </h2>
+<p>マイドキュメントディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>マイドキュメントディレクトリ(フォルダ)のパスが文字列で代入されます。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+<h2 id="dir_tv">dir_tv </h2>
+<p>HSPTVディレクトリ(フォルダ)</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>HSPTVディレクトリ(フォルダ)のパスが文字列で代入されます。
+HSPTVディレクトリに標準で用意されたリソースを参照する場合に使用することができます。
+dir_tvは、デバッグ実行時にのみ取得され、実行(.exe)ファイルとして動作している場合は、空の文字列(&quot;&quot;)を返します。HSPTVディレクトリ内のファイルを使用するソフトの実行ファイル作成時は、#pack命令により必要なファイルを指定する必要があるので注意してください。</p>
+<p>※このシステム変数は、マクロとしてhspdef.as内で定義されています。</p>
+<p><strong>参照</strong>:</p>
+<p>dirinfo</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="i_prep.html" class="navigation navigation-prev " aria-label="Previous page: プリプロセッサ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="i_prog.html" class="navigation navigation-next " aria-label="Next page: プログラム制御">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"システム変数","level":"2.2","depth":1,"next":{"title":"プログラム制御","level":"2.3","depth":1,"path":"i_prog.md","ref":"i_prog.md","articles":[]},"previous":{"title":"プリプロセッサ","level":"2.1","depth":1,"path":"i_prep.md","ref":"i_prep.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sysval.md","mtime":"2022-10-27T04:46:19.543Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-27T12:02:39.881Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

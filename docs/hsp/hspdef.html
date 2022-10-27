@@ -1,0 +1,1204 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>標準マクロ · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="ex_macro.html" />
+    
+    
+    <link rel="prev" href="i_prog.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="i_prep.html">
+            
+                <a href="i_prep.html">
+            
+                    
+                    プリプロセッサ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="sysval.html">
+            
+                <a href="sysval.html">
+            
+                    
+                    システム変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="i_prog.html">
+            
+                <a href="i_prog.html">
+            
+                    
+                    プログラム制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="hspdef.html">
+            
+                <a href="hspdef.html">
+            
+                    
+                    標準マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ex_macro.html">
+            
+                <a href="ex_macro.html">
+            
+                    
+                    特殊マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="i_stdfunc.html">
+            
+                <a href="i_stdfunc.html">
+            
+                    
+                    基本関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="i_graph.html">
+            
+                <a href="i_graph.html">
+            
+                    
+                    画面制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="i_object.html">
+            
+                <a href="i_object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="i_string.html">
+            
+                <a href="i_string.html">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="hspmath.html">
+            
+                <a href="hspmath.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="i_stdio.html">
+            
+                <a href="i_stdio.html">
+            
+                    
+                    入出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="i_file.html">
+            
+                <a href="i_file.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="i_mem.html">
+            
+                <a href="i_mem.html">
+            
+                    
+                    メモリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="i_mmedia.html">
+            
+                <a href="i_mmedia.html">
+            
+                    
+                    マルチメディア
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="i_hsp3util.html">
+            
+                <a href="i_hsp3util.html">
+            
+                    
+                    ユーティリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="hspsock.html">
+            
+                <a href="hspsock.html">
+            
+                    
+                    ソケット通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="sprite.html">
+            
+                <a href="sprite.html">
+            
+                    
+                    スプライト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="hsp3dish.html">
+            
+                <a href="hsp3dish.html">
+            
+                    
+                    HSP3Dish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="hgimg_common.html">
+            
+                <a href="hgimg_common.html">
+            
+                    
+                    HGIMG4共通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="hgimg4.html">
+            
+                <a href="hgimg4.html">
+            
+                    
+                    HGIMG4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="obaq.html">
+            
+                <a href="obaq.html">
+            
+                    
+                    OBAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hsp3.tv">
+            
+                <span>
+            
+                    
+                    公式サイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >標準マクロ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="標準マクロ">標準マクロ</h1>
+<p><strong>対応</strong>:</p>
+<ul>
+<li>Win</li>
+<li>Mac</li>
+<li>Cli</li>
+</ul>
+<h2 id="gmode_sub">gmode_sub </h2>
+<p>色減算合成コピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを色減算合成コピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+color       : boxf img_width / 5, 0, img_width  * 2 / 5, ginfo_winy
+color 255   : boxf img_width * 2 / 5, 0, img_width * 3 / 5, ginfo_winy
+color ,255  : boxf img_width * 3 / 5, 0, img_width * 4 / 5, ginfo_winy
+color ,,255 : boxf img_width * 4 / 5, 0, img_width, ginfo_winy
+gmode gmode_sub, img_width, img_height, 256
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_alpha
+gmode_add
+gmode_gdi
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_add">gmode_add </h2>
+<p>色加算合成コピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを色加算合成コピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+color       : boxf img_width / 5, 0, img_width  * 2 / 5, ginfo_winy
+color 255   : boxf img_width * 2 / 5, 0, img_width * 3 / 5, ginfo_winy
+color ,255  : boxf img_width * 3 / 5, 0, img_width * 4 / 5, ginfo_winy
+color ,,255 : boxf img_width * 4 / 5, 0, img_width, ginfo_winy
+gmode gmode_add, img_width, img_height, 256
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_alpha
+gmode_sub
+gmode_gdi
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_gdi">gmode_gdi </h2>
+<p>通常のコピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを通常のコピーモードに設定できます。
+省略しても同じ結果が得られますので、省略しても構いません。</p>
+<p><strong>例</strong>:</p>
+<pre><code>buffer 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+gmode gmode_gdi
+gcopy 1, 0, 0, img_width, img_height
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_alpha
+gmode_add
+gmode_sub
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_rgb0">gmode_rgb0 </h2>
+<p>透明色付きコピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを透明色付きコピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+gmode gmode_rgb0, img_width, img_height
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_sub
+gmode_mem
+gmode_alpha
+gmode_add
+gmode_gdi
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_mem">gmode_mem </h2>
+<p>メモリ間コピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードをメモリ間コピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+gmode gmode_mem, img_width, img_height
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_sub
+gmode_alpha
+gmode_add
+gmode_gdi
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_alpha">gmode_alpha </h2>
+<p>半透明合成コピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを半透明合成コピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+color       : boxf img_width / 5, 0, img_width  * 2 / 5, ginfo_winy
+color 255   : boxf img_width * 2 / 5, 0, img_width * 3 / 5, ginfo_winy
+color ,255  : boxf img_width * 3 / 5, 0, img_width * 4 / 5, ginfo_winy
+color ,,255 : boxf img_width * 4 / 5, 0, img_width, ginfo_winy
+gmode gmode_alpha, img_width, img_height, 128
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_sub
+gmode_add
+gmode_gdi
+gmode_rgb0alpha
+gmode_pixela</p>
+<h2 id="gmode_rgb0alpha">gmode_rgb0alpha </h2>
+<p>透明色付き半透明合成コピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードを透明色付き半透明合成コピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+gsel 0
+color   0,   0,   0 : boxf img_width / 5, 0, img_width  * 2 / 5, ginfo_winy
+color 255,   0,   0 : boxf img_width * 2 / 5, 0, img_width * 3 / 5, ginfo_winy
+color   0, 255,   0 : boxf img_width * 3 / 5, 0, img_width * 4 / 5, ginfo_winy
+color   0,   0, 255 : boxf img_width * 4 / 5, 0, img_width, ginfo_winy
+gmode gmode_rgb0alpha, img_width, img_height, 128
+color 0, 0, 0
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_alpha
+gmode_add
+gmode_gdi
+gmode_sub
+gmode_pixela</p>
+<h2 id="gmode_pixela">gmode_pixela </h2>
+<p>ピクセルアルファブレンドコピーモード</p>
+<p><strong>説明</strong>:</p>
+<p>gmodeの第1引数に指定することで、画面コピーモードをピクセルアルファブレンドコピーモードに設定できます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>screen 1 : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;
+img_width = ginfo_winx
+img_height = ginfo_winy
+screen 1, img_width * 2, img_height : picload dir_exe + &quot;/sample/demo/logop.bmp&quot;, 1
+repeat img_width
+    hsvcolor cnt * 192 / ( img_width  ), 255, 255
+    line img_width + cnt, img_height, img_width + cnt, 0
+loop
+gsel 0
+gmode gmode_pixela, img_width, img_height, 128
+gcopy 1, 0, 0
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>gmode
+gmode_rgb0
+gmode_mem
+gmode_alpha
+gmode_add
+gmode_gdi
+gmode_rgb0alpha
+gmode_sub</p>
+<h2 id="objinfo_mode">objinfo_mode </h2>
+<p>モードおよびオプションデータを取得</p>
+<p><strong>パラメーター</strong>:</p>
+<p>(p1)
+p1=0〜 : ウィンドウオブジェクトID</p>
+<p><strong>説明</strong>:</p>
+<p>指定したウィンドウオブジェクトのモードおよびオプションデータを返します。</p>
+<p><strong>例</strong>:</p>
+<pre><code>button goto &quot;sample&quot;, *dummy
+info = objinfo_mode( stat )
+mes &quot;mode : &quot; + ( info &amp; 0xffff )
+mes &quot;option : &quot; + ( info &gt;&gt; 16 &amp; 0xffff )
+</code></pre><p>*dummy
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>objinfo
+objinfo_hwnd
+objinfo_bmscr</p>
+<h2 id="objinfo_bmscr">objinfo_bmscr </h2>
+<p>オブジェクトが配置されているBMSCR構造体のポインタを取得</p>
+<p><strong>パラメーター</strong>:</p>
+<p>(p1)
+p1=0〜 : ウィンドウオブジェクトID</p>
+<p><strong>説明</strong>:</p>
+<p>指定したウィンドウオブジェクトが配置されているBMSCR構造体のポインタを返します。</p>
+<p><strong>例</strong>:</p>
+<pre><code>button goto &quot;sample&quot;, *dummy
+p_bmscr = objinfo_bmscr( stat )
+mes &quot;objectが配置されているBMSCR構造体のポインタ : &quot; + p_bmscr
+mref bmscr, 67
+mes &quot;mrefで得られる値（&quot; + varptr( bmscr ) + &quot;）と同等&quot;
+</code></pre><p>*dummy
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>objinfo
+objinfo_mode
+objinfo_hwnd</p>
+<h2 id="objinfo_hwnd">objinfo_hwnd </h2>
+<p>ウィンドウオブジェクトのハンドルを取得</p>
+<p><strong>パラメーター</strong>:</p>
+<p>(p1)
+p1=0〜 : ウィンドウオブジェクトID</p>
+<p><strong>説明</strong>:</p>
+<p>指定したウィンドウオブジェクトのハンドルを返します。</p>
+<p><strong>例</strong>:</p>
+<pre><code>button goto &quot;sample&quot;, *dummy
+obj_hwnd = objinfo_hwnd( stat )
+mes &quot;ウィンドウオブジェクトのハンドル : &quot; + obj_hwnd
+</code></pre><p>*dummy
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>objinfo
+objinfo_mode
+objinfo_bmscr</p>
+<h2 id="screen_normal">screen_normal </h2>
+<p>通常のウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、通常のウィンドウを作成できます。
+省略しても同じ結果が得られますので、省略しても構いません。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウID0の通常のウィンドウを作成
+    screen 0, 640, 480, screen_normal</p>
+<p>// 省略しても同じ結果が得られる
+    screen 1, 320, 240
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_palette
+screen_hide
+screen_fixedsize
+screen_tool
+screen_frame</p>
+<h2 id="screen_palette">screen_palette </h2>
+<p>パレットモードのウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、パレットモードのウィンドウを作成できます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウID0のウィンドウをパレットモードで作成
+    screen 0, 640, 480, screen_palette
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_normal
+screen_hide
+screen_fixedsize
+screen_tool
+screen_frame</p>
+<h2 id="screen_hide">screen_hide </h2>
+<p>非表示のウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、非表示のウィンドウを作成できます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウID0のウィンドウを非表示で作成
+    screen 0, 640, 480, screen_hide
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_normal
+screen_palette
+screen_fixedsize
+screen_tool
+screen_frame</p>
+<h2 id="screen_fixedsize">screen_fixedsize </h2>
+<p>サイズ固定ウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、サイズ固定のウィンドウを作成できます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウID0のウィンドウをサイズ固定で作成
+    screen 0, 640, 480, screen_fixedsize
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_normal
+screen_palette
+screen_hide
+screen_tool
+screen_frame</p>
+<h2 id="screen_tool">screen_tool </h2>
+<p>ツールウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、ツールウィンドウを作成できます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウID0のツールウィンドウを作成
+    screen 0, 640, 480, screen_tool
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_normal
+screen_palette
+screen_hide
+screen_fixedsize
+screen_frame</p>
+<h2 id="screen_frame">screen_frame </h2>
+<p>深い縁のあるウィンドウを作成</p>
+<p><strong>説明</strong>:</p>
+<p>screen命令の第4引数に指定することで、深い縁のあるウィンドウを作成できます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// ウィンドウIDの深い縁のあるウィンドウを作成
+    screen 0, 640, 480, screen_frame
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>screen
+screen_normal
+screen_palette
+screen_hide
+screen_fixedsize
+screen_tool</p>
+<h2 id="font_normal">font_normal </h2>
+<p>通常のスタイルでフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、通常のスタイルでフォントを設定することができます。
+省略しても同じ結果が得られますので、省略しても構いません。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ12のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// 省略しても同じ結果が得られる
+    font msgothic, 24
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_bold
+font_italic
+font_underline
+font_strikeout
+font_antialias</p>
+<h2 id="font_bold">font_bold </h2>
+<p>太文字でフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、太文字のフォントを設定することができます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ24のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// サイズ24で太文字のMSゴシックを設定
+    font msgothic, 24, font_bold
+    mes &quot;サイズ24のMSゴシック（太文字）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_normal
+font_italic
+font_underline
+font_strikeout
+font_antialias</p>
+<h2 id="font_italic">font_italic </h2>
+<p>イタリック体でフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、イタリック体のフォントを設定することができます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ24のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// サイズ24でイタリック体MSmsゴシックを設定
+    font msgothic, 24, font_italic
+    mes &quot;サイズ24のMSゴシック（イタリック体）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_normal
+font_bold
+font_underline
+font_strikeout
+font_antialias</p>
+<h2 id="font_underline">font_underline </h2>
+<p>下線付きでフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、下線付きのフォントを設定することができます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ24のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// サイズ24で下線付きのMSゴシックを設定
+    font msgothic, 24, font_underline
+    mes &quot;サイズ24のMSゴシック（下線付き）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_normal
+font_bold
+font_italic
+font_strikeout
+font_antialias</p>
+<h2 id="font_strikeout">font_strikeout </h2>
+<p>打ち消し線付きでフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、打ち消し線付きのフォントを設定することができます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ24のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// サイズ24で打ち消し線付きのMSゴシックを設定
+    font msgothic, 24, font_strikeout
+    mes &quot;サイズ24のMSゴシック（打ち消し線付き）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_normal
+font_bold
+font_italic
+font_underline
+font_antialias</p>
+<h2 id="font_antialias">font_antialias </h2>
+<p>アンチエイリアスでフォント設定</p>
+<p><strong>説明</strong>:</p>
+<p>font命令の第3引数に指定することで、アンチエイリアスのフォントを設定することができます。
+他のマクロと組み合わせて指定する場合は、その和または論理和を指定してください。</p>
+<p><strong>例</strong>:</p>
+<p>// サイズ24のMSゴシックを設定
+    font msgothic, 24, font_normal
+    mes &quot;サイズ24のMSゴシック（通常のスタイル）&quot;</p>
+<p>// サイズ24でアンチエイリアスのMSゴシックを設定
+    font msgothic, 24, font_antialias
+    mes &quot;サイズ24のMSゴシック（アンチエイリアス）&quot;
+    stop</p>
+<p><strong>参照</strong>:</p>
+<p>font
+font_normal
+font_bold
+font_italic
+font_underline
+font_strikeout</p>
+<h2 id="objmode_normal">objmode_normal </h2>
+<p>HSP標準フォントを設定</p>
+<p><strong>説明</strong>:</p>
+<p>objmode命令の第1引数に指定することで、オブジェクト制御命令で使用されるフォントをHSP標準フォントに設定することができます。
+省略しても同じ結果が得られますので、省略しても構いません。</p>
+<p><strong>例</strong>:</p>
+<pre><code>s = &quot;オブジェクト制御命令で使用されるフォントのサンプル&quot;
+</code></pre><p>// オブジェクト制御命令で使用されるフォントをHSP標準フォントに設定
+    objmode objmode_normal
+    mesbox s, ginfo_winx, ginfo_winy / 2</p>
+<p>// 省略しても同じ結果が得られる
+    objmode objmode_normal
+    mesbox s, ginfo_winx, ginfo_winy / 2</p>
+<pre><code>stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>objmode
+objmode_guifont
+objmode_usefont
+objmode_usecolor</p>
+<h2 id="objmode_guifont">objmode_guifont </h2>
+<p>デフォルトGUIフォントを設定</p>
+<p><strong>説明</strong>:</p>
+<p>objmode命令の第1引数に指定することで、オブジェクト制御命令で使用されるフォントをデフォルトGUIフォントに設定することができます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>s = &quot;オブジェクト制御命令で使用されるフォントのサンプル&quot;
+</code></pre><p>// オブジェクト制御命令で使用されるフォントをデフォルトGUIフォントに設定
+    objmode objmode_guifont
+    mesbox s, ginfo_winx, ginfo_winy</p>
+<pre><code>stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>objmode
+objmode_normal
+objmode_usefont
+objmode_usecolor</p>
+<h2 id="objmode_usefont">objmode_usefont </h2>
+<p>font命令で選択されているフォントを設定</p>
+<p><strong>説明</strong>:</p>
+<p>objmode命令の第1引数に指定することで、オブジェクト制御命令で使用されるフォントをfont命令で選択されているフォントに設定することができます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>s = &quot;オブジェクト制御命令で使用されるフォントのサンプル&quot;
+</code></pre><p>// オブジェクト制御命令で使用されるフォントをfont命令で選択されているフォントに設定
+    objmode objmode_usefont</p>
+<pre><code>font msmincho, 24
+mesbox s, ginfo_winx, ginfo_winy / 2
+
+font msgothic, 18, font_italic
+mesbox s, ginfo_winx, ginfo_winy / 2
+
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>objmode
+objmode_normal
+objmode_guifont
+objmode_usecolor</p>
+<h2 id="objmode_usecolor">objmode_usecolor </h2>
+<p>objcolor命令で選択されている色を設定</p>
+<p><strong>説明</strong>:</p>
+<p>objmode命令の第1引数に指定することで、オブジェクト制御命令で使用される色をcolor命令、objcolor命令で指定されている色に設定することができます。</p>
+<p><strong>参照</strong>:</p>
+<p>objmode
+objmode_normal
+objmode_guifont
+objmode_usefont</p>
+<h2 id="msgothic">msgothic </h2>
+<p>MSゴシックフォント</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>MSゴシックを示すフォントを示すキーワードです。
+font命令で指定するフォント名として使用することができます。</p>
+<p><strong>参照</strong>:</p>
+<p>msmincho</p>
+<h2 id="msmincho">msmincho </h2>
+<p>MS明朝フォント</p>
+<p><strong>グループ</strong>:</p>
+<p>システム変数</p>
+<p><strong>説明</strong>:</p>
+<p>MS明朝を示すフォントを示すキーワードです。
+font命令で指定するフォント名として使用することができます。</p>
+<p><strong>参照</strong>:</p>
+<p>msgothic</p>
+<h2 id="and">and </h2>
+<p>論理積(演算子)</p>
+<p><strong>グループ</strong>:</p>
+<p>標準定義マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>論理積を示す演算子「&amp;」と同様に使用することができるマクロです。</p>
+<p><strong>参照</strong>:</p>
+<p>or
+xor
+not</p>
+<h2 id="or">or </h2>
+<p>論理和(演算子)</p>
+<p><strong>グループ</strong>:</p>
+<p>標準定義マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>論理和を示す演算子「|」と同様に使用することができるマクロです。</p>
+<p><strong>参照</strong>:</p>
+<p>and
+xor
+not</p>
+<h2 id="xor">xor </h2>
+<p>排他的論理和(演算子)</p>
+<p><strong>グループ</strong>:</p>
+<p>標準定義マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>排他的論理和を示す演算子「^」と同様に使用することができるマクロです。</p>
+<p><strong>参照</strong>:</p>
+<p>and
+or
+not</p>
+<h2 id="not">not </h2>
+<p>否定(演算子)</p>
+<p><strong>グループ</strong>:</p>
+<p>標準定義マクロ</p>
+<p><strong>説明</strong>:</p>
+<p>否定を示す演算子「!」と同様に使用することができるマクロです。</p>
+<p><strong>参照</strong>:</p>
+<p>and
+or
+xor</p>
+<h2 id="M_PI">M_PI </h2>
+<p>円周率</p>
+<p><strong>説明</strong>:</p>
+<p>円周率を表す定数です。3.14159265358979323846が定義されています。</p>
+<p><strong>グループ</strong>:</p>
+<p>数学定数</p>
+<p><strong>参照</strong>:</p>
+<p>rad2deg
+deg2rad</p>
+<h2 id="rad2deg">rad2deg </h2>
+<p>ラジアンを度に変換</p>
+<p><strong>パラメーター</strong>:</p>
+<p>(p1)
+p1 : 度に変換する角度（ラジアン）</p>
+<p><strong>説明</strong>:</p>
+<p>角度の単位をラジアンから度へ変換します。
+弧度法で表された角度を度数法での角度に変換するとも言えます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>tmp = M_PI
+mes str(tmp) + &quot;ラジアンは&quot; + rad2deg(tmp) + &quot;°です。&quot;
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>M_PI
+deg2rad</p>
+<h2 id="deg2rad">deg2rad </h2>
+<p>度をラジアンに変換</p>
+<p><strong>パラメーター</strong>:</p>
+<p>(p1)
+p1 : ラジアンに変換する角度（度）</p>
+<p><strong>説明</strong>:</p>
+<p>角度の単位を度からラジアンへ変換します。
+度数法で表された角度を弧度法での角度に変換するとも言えます。</p>
+<p><strong>例</strong>:</p>
+<pre><code>tmp = 90
+mes str(tmp) + &quot;°は&quot; + deg2rad(tmp) + &quot;ラジアンです。&quot;
+stop
+</code></pre><p><strong>参照</strong>:</p>
+<p>M_PI
+rad2deg</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="i_prog.html" class="navigation navigation-prev " aria-label="Previous page: プログラム制御">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="ex_macro.html" class="navigation navigation-next " aria-label="Next page: 特殊マクロ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"標準マクロ","level":"2.4","depth":1,"next":{"title":"特殊マクロ","level":"2.5","depth":1,"path":"ex_macro.md","ref":"ex_macro.md","articles":[]},"previous":{"title":"プログラム制御","level":"2.3","depth":1,"path":"i_prog.md","ref":"i_prog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hspdef.md","mtime":"2022-10-27T04:50:34.768Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-27T12:02:39.881Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

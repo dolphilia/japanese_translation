@@ -1,0 +1,950 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>入出力 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="i_file.html" />
+    
+    
+    <link rel="prev" href="hspmath.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="i_prep.html">
+            
+                <a href="i_prep.html">
+            
+                    
+                    プリプロセッサ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="sysval.html">
+            
+                <a href="sysval.html">
+            
+                    
+                    システム変数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="i_prog.html">
+            
+                <a href="i_prog.html">
+            
+                    
+                    プログラム制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="hspdef.html">
+            
+                <a href="hspdef.html">
+            
+                    
+                    標準マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="ex_macro.html">
+            
+                <a href="ex_macro.html">
+            
+                    
+                    特殊マクロ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="i_stdfunc.html">
+            
+                <a href="i_stdfunc.html">
+            
+                    
+                    基本関数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="i_graph.html">
+            
+                <a href="i_graph.html">
+            
+                    
+                    画面制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="i_object.html">
+            
+                <a href="i_object.html">
+            
+                    
+                    オブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="i_string.html">
+            
+                <a href="i_string.html">
+            
+                    
+                    文字列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="hspmath.html">
+            
+                <a href="hspmath.html">
+            
+                    
+                    数学
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.11" data-path="i_stdio.html">
+            
+                <a href="i_stdio.html">
+            
+                    
+                    入出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="i_file.html">
+            
+                <a href="i_file.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="i_mem.html">
+            
+                <a href="i_mem.html">
+            
+                    
+                    メモリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="i_mmedia.html">
+            
+                <a href="i_mmedia.html">
+            
+                    
+                    マルチメディア
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="i_hsp3util.html">
+            
+                <a href="i_hsp3util.html">
+            
+                    
+                    ユーティリティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="hspsock.html">
+            
+                <a href="hspsock.html">
+            
+                    
+                    ソケット通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="sprite.html">
+            
+                <a href="sprite.html">
+            
+                    
+                    スプライト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="hsp3dish.html">
+            
+                <a href="hsp3dish.html">
+            
+                    
+                    HSP3Dish
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="hgimg_common.html">
+            
+                <a href="hgimg_common.html">
+            
+                    
+                    HGIMG4共通
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="hgimg4.html">
+            
+                <a href="hgimg4.html">
+            
+                    
+                    HGIMG4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="obaq.html">
+            
+                <a href="obaq.html">
+            
+                    
+                    OBAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hsp3.tv">
+            
+                <span>
+            
+                    
+                    公式サイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >入出力</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="入出力">入出力</h1>
+<p><strong>対応</strong>:</p>
+<ul>
+<li>Win</li>
+<li>Cli</li>
+<li>Let</li>
+</ul>
+<h2 id="getkey">getkey </h2>
+<p>キー入力チェック</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2
+p1=変数   : 読み込むための変数
+p2=1〜(1) : キーコード
+</code></pre><p><strong>説明</strong>:</p>
+<p>キーボード及びマウスボタンの状態をチェックして変数に代入します。指定したボタンが押されていれば、1を代入し、押されていなければ0が代入されます。
+キーコードで指定する値の詳細は、以下の通りです。</p>
+<pre><code>
+  キーコード : 実際のキー
+ ------------------------------------------
+        1    : マウスの左ボタン
+        2    : マウスの右ボタン
+        3    : キャンセル（[CTRL]+[BREAK]）
+        4    : ３ボタンマウスのまん中のボタン
+        8    : [BACKSPACE]（PC98の[BS]）
+        9    : [TAB]
+       13    : [ENTER]
+       16    : [SHIFT]
+       17    : [CTRL]
+       18    : [ALT]（PC98の[GRPH]）
+       20    : [CAPSLOCK]
+       27    : [ESC]
+       32    : スペースキー
+       33    : [PAGEUP]（PC98の[ROLLDOWN]）
+       34    : [PAGEDOWN]（PC98の[ROLLUP]）
+       35    : [END]（PC98の[HELP]）
+       36    : [HOME]（PC98の[HOMECLR]）
+       37    : カーソルキー[←]
+       38    : カーソルキー[↑]
+       39    : カーソルキー[→]
+       40    : カーソルキー[↓]
+   48〜57    : [0]〜[9]（メインキーボード）
+   65〜90    : [A]〜[Z]
+  96〜105    : [0]〜[9]（テンキー）
+ 112〜121    : ファンクションキー [F1]〜[F10]
+</code></pre><p>この表に載っているキー以外でも、取得できる場合があります。(サンプルを実行するとキーコードを調べることができます。)</p>
+<p><strong>例</strong>:</p>
+<p>title &quot;キー入力してください(^^)v&quot;
+onkey <em>inkey
+onclick </em>inkey
+stop
+*inkey
+if lparam&gt;&gt;30:stop
+mes iparam
+stop</p>
+<p><strong>参照</strong>:</p>
+<p>stick</p>
+<h2 id="mouse">mouse </h2>
+<p>マウスカーソル座標設定</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2,p3
+p1,p2 : 設定するX,Y座標
+p3(0) : 設定モード値
+</code></pre><p><strong>説明</strong>:</p>
+<p>マウスカーソルをp1,p2で指定した座標に変更します。
+指定する座標は、  ウィンドウ内の座標ではなくディスプレイでの座標(通常は、X=0〜ginfo_dispx/Y=0〜ginfo_dispy)を指定します。
+p1とp2の指定を省略した場合は、現在の座標がそのまま適用されます。
+p3の値で、マウスカーソルの表示・非表示に関する設定モードを決めます。p3の値は、以下のように動作します。</p>
+<pre><code>
+モード値  内容
+-------------------------------------------------------------------------
+    0     p1またはp2の値がマイナスの時にマウスカーソルを非表示に設定する
+          それ以外の時は、(p1,p2)の座標にマウスカーソルを移動して表示する
+   -1     (p1,p2)の座標にマウスカーソルを移動して非表示に設定する
+    1     (p1,p2)の座標にマウスカーソルを移動し、表示・非表示の設定は維持する
+</code></pre><p>p3の値が0(デフォルト値)の場合は、p1または、p2がマイナス値の場合に、HSPウィンドウ上でマウスカーソル表示をOFF(非表示)に設定します。
+マウスカーソルの表示をOFFにした後は、有効な座標を設定することで再び表示されるようになります。
+p3の値が0以外の場合は、(p1,p2)の値とマウスカーソルのON/OFFに関係なく座標を指定することができます。これは、マルチモニタ環境などでマイナス値の座標を扱う必要がある場合などに使用します。</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="randomize">randomize </h2>
+<p>乱数発生の初期化</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1
+p1=0〜(不定) : 乱数の初期化パラメーター
+</code></pre><p><strong>説明</strong>:</p>
+<p>rnd関数で発生させる乱数のパターンを初期化します。</p>
+<p>p1に同じ値を指定して初期化された乱数は、常に同じパターンで乱数を発生させられます。
+p1を省略した場合は、 Windowsのタイマから得られた不定な値を使って初期化します。これによって、毎回まったく違う乱数を発生させることができます。</p>
+<p><strong>参照</strong>:</p>
+<p>rnd</p>
+<h2 id="stick">stick </h2>
+<p>キー入力情報取得</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2,p3
+p1=変数    : 読み込むための変数
+p2=0〜(0)  : 非トリガータイプキー指定
+p3=0〜1(1) : ウィンドウアクティブチェックON/OFF
+</code></pre><p><strong>説明</strong>:</p>
+<p>よく使われるキーボード及びマウスボタンの状態をまとめてチェックして変数に代入します。</p>
+<p>stick命令が実行されると以下のような複数のボタン情報が１つの数値として、p1で指定した変数に代入されます。</p>
+<pre><code>
+値(10進)  値(16進) キー
+-------------------------------------
+     1  : $00001 : カーソルキー左(←)
+     2  : $00002 : カーソルキー上(↑)
+     4  : $00004 : カーソルキー右(→)
+     8  : $00008 : カーソルキー下(↓)
+    16  : $00010 : スペースキー
+    32  : $00020 : Enterキー
+    64  : $00040 : Ctrlキー
+   128  : $00080 : ESCキー
+   256  : $00100 : マウスの左ボタン
+   512  : $00200 : マウスの右ボタン
+  1024  : $00400 : TABキー
+  2048  : $00800 : [Z]キー
+  4096  : $01000 : [X]キー
+  8192  : $02000 : [C]キー
+ 16384  : $04000 : [A]キー
+ 32768  : $08000 : [W]キー
+ 65536  : $10000 : [D]キー
+131072  : $20000 : [S]キー
+</code></pre><p>何もボタンが押されていない場合には0が代入されます。</p>
+<p>もし複数のボタンが同時に押されていた場合には、それらの数値がすべて加算されます。
+たとえば、カーソルキーの右とスペースキーが同時に押されている場合には、4+16の20が変数に読み込まれます。
+この数値をif命令などでチェックする場合には、演算子「&amp;」が役に立ちます。</p>
+<pre><code>
+例 :
+    stick a,0            ; 変数aにキー状態を読み出し
+    if a&amp;16 : goto *spc  ; スペースが押されたか?
+    if a&amp;32 : goto *ent  ; Enterが押されたか?
+</code></pre><p>このように「変数&amp;キー情報」で複数のボタン情報が入った数値から、 １つだけのキー情報を取り出すことができます。</p>
+<p>stick命令は、 getkey命令によく似ていますが、最大の違いはボタンが押された瞬間だけを検出する点です。つまり、ボタンが押された時に１度だけ押されている情報を返し、あとは押されているボタンをはなすまでは、押されていることになりません。</p>
+<p>ただし、p2の非トリガータイプキー指定により、押しっぱなしであっても情報を検出することができるようになります。</p>
+<p>p2に押しっぱなしでも検出されるキーのコード(上の表にあるコードです。 複数の場合はそれぞれの数値を加えます)を指定すると、 そのキーだけはボタンが押されている間ずっと検出されるようになります。</p>
+<p>この命令は、非常に複雑に見えますがキーを使ったスクリプトを作る際にとても便利な機能となるでしょう。
+たとえば、シューティングゲームを思い浮かべてみてください。自分の機体は上下左右の方向にボタンが押されている間ずっと移動しなければなりません。しかし、ミサイルを発射するボタンは１回押してはなすまでは次の弾は発射されません。
+このような場合には、上下左右のキーだけは非トリガータイプのキーに指定して、それ以外は１度だけ押された情報を返すようにすればいいわけです。</p>
+<p>また、p3でウィンドウがアクティブでない場合は入力を無効にする機能をON/OFFすることができます。
+p3が1か省略された場合は、HSPウィンドウがアクティブでない場合にはキー入力が無効になります。
+p3が0の場合は、すべての状況下でキー入力を行ないます。</p>
+<p><strong>参照</strong>:</p>
+<p>getkey
+jstick</p>
+<h2 id="logmes">logmes </h2>
+<p>デバッグメッセージ送信</p>
+<p><strong>グループ</strong>:</p>
+<p>HSPシステム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>&quot;message&quot;
+&quot;message&quot; : ログに記録するメッセージ
+</code></pre><p><strong>説明</strong>:</p>
+<p>デバッグウィンドウ表示時に、&quot;message&quot;の内容をデバッグログに記録します。
+ある時点での変数の内容や、通過チェックなどに利用できます。
+スクリプトエディタからデバッグウィンドウの表示モードを設定するか、assert命令によってデバッグウィンドウを表示させておく必要があります。
+実行ファイル作成時は、この命令は無効になります。</p>
+<p><strong>参照</strong>:</p>
+<p>assert</p>
+<h2 id="assert">assert </h2>
+<p>デバッグウィンドウ表示</p>
+<p><strong>グループ</strong>:</p>
+<p>HSPシステム制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1
+p1(0) : デバッグ時の条件式
+</code></pre><p><strong>説明</strong>:</p>
+<p>プログラムを一時的に中断してデバッグウィンドウを表示します。
+p1に条件式が指定された場合には、p1の条件が正しくない場合にのみデバッグウィンドウを表示します。
+(p1には、通過する時の条件式を書くことになるので注意してください。)</p>
+<pre><code>
+    assert a&gt;5  ; aが5以下の時にデバッグする
+</code></pre><p>実行ファイル作成時は、この命令は無効になります。</p>
+<p><strong>参照</strong>:</p>
+<p>logmes</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="mcall">mcall </h2>
+<p>メソッドの呼び出し</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2,p3…
+p1 : 変数名
+p2 : メソッド名
+p3 : パラメーター
+</code></pre><p><strong>説明</strong>:</p>
+<p>p1で指定された変数の型に応じてメソッドを呼び出します。
+p1の変数にCOMオブジェクト型を指定することで、COMオートメーションのメソッドを呼び出すことが可能です。
+p2でメソッド名(文字列)または、ディスパッチID(DISPID)を指定して、p3以降に引数を指定します。
+p3以降のパラメーター数や、型はそのまま適切に変換されメソッドに渡されます。
+メソッドを実行した結果の返値は、comres命令で設定された変数に代入されます。
+また、メソッド実行が成功した場合にはシステム変数 statは0になり、実行エラーが起こった場合には、 システム変数statに結果コード(HRESULT)が代入されます。</p>
+<p>mcall命令は、拡張された変数の型を用意することで、 新しい機能を提供することが可能です。標準では、COMオブジェクト型のみに対応しています。</p>
+<p><strong>参照</strong>:</p>
+<h1 id="usecom">usecom</h1>
+<p>newcom
+delcom
+querycom
+comres</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="setease">setease </h2>
+<p>イージング関数の計算式を設定</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2,p3
+p1 : 出力される最小値(実数値)
+p2 : 出力される最大値(実数値)
+p3 : 計算式のタイプ値
+</code></pre><p><strong>説明</strong>:</p>
+<p>決められた範囲の数値を任意の計算式で補間するイージング関数の設定を行ないます。
+ここで指定された設定は、イージング関数(getease,geteasef)で値を取得する際に反映されます。
+計算式のタイプ値には、以下を指定することができます。</p>
+<pre><code>
+    マクロ名                補間内容
+    ------------------------------------------------------------
+    ease_linear        リニア(直線補間)
+    ease_quad_in        加速(Quadratic)
+    ease_quad_out        減速(Quadratic)
+    ease_quad_inout        加速→減速(Quadratic)
+    ease_cubic_in        加速(Cubic)
+    ease_cubic_out        減速(Cubic)
+    ease_cubic_inout    加速→減速(Cubic)
+    ease_quartic_in        加速(Quartic)
+    ease_quartic_out    減速(Quartic)
+    ease_quartic_inout    加速→減速(Quartic)
+    ease_bounce_in        バウンス効果(入)
+    ease_bounce_out        バウンス効果(出)
+    ease_bounce_inout    バウンス効果(入出)
+    ease_shake_in        シェイク効果(入)
+    ease_shake_out        シェイク効果(出)
+    ease_shake_inout    シェイク効果(入出)
+    ease_loop        補間のループ(*)
+
+(*)で示されたタイプは、他のタイプに付加することができます。
+</code></pre><p>計算式のタイプ値が省略された場合は、以前に設定された値がそのまま使用されます。</p>
+<p>イージング関数は、自然な動きのアニメーションを得るための基本的な計算をサポートします。
+たとえば、X座標が100だった物体を、X座標200まで50フレームのアニメーションで移動させるとします。
+通常であれば、1フレームごとにX座標を100,102,104,106…というように2ずつ加算して新しい座標を得ることでアニメーションとなります。
+しかし、これは直線的な動きにしかなりません。イージング関数は、フレームごとの座標を特定の計算式から取得することができます。
+計算式の設定によって、ゆっくり移動を開始して、加速しながら移動、目標の前でまた減速するといった有機的なアニメーションを実現できるほか、放物線を描いてバウンドするような動き、振り回す(シェイクする)ような動きなど様々な用途に使用することができます。
+イージング関数を使用するには、まずsetease命令で値が変化する範囲と、計算式を指定します。</p>
+<pre><code>
+    ;    イージング関数の設定
+    setease 100,200,ease_cubic_inout
+</code></pre><p>上の例では、100から200までの値を得るためのイージング関数をease_cubic_inoutの計算式で設定します。
+次に、getease または geteasef関数により実際の値を取得します。
+geteaseと、geteasefは基本的に同じもので、取得される値が整数値か、実数値かが異なります。
+通常の座標を扱う場合は、整数値として取得しても問題ありません。(イージング関数の内部ではどちらも、実数による計算が行なわれています)</p>
+<pre><code>
+    ;    イージング関数の設定
+    setease 100,200,ease_cubic_inout
+    i=0
+    repeat
+        redraw 0
+        color 0,0,0:boxf    ; 画面をクリア
+        x = getease(i,50)    ; イージング値の取得(整数)
+        color 255,255,255
+        pos x,100 : mes &quot;●&quot;
+        redraw 1
+        await 30
+        i=i+1
+    loop
+</code></pre><p>getease関数の引数は、getease(時間経過値,最大値)となります。
+時間経過値は、0から始まる整数値で、最大値で指定された値までを指定します。
+つまり上の例で言えば、getease(0,50)は、setease命令で設定した100から200までの範囲でのスタート値、つまり100が返されます。
+時間経過値が増えるごとに、100から200に向けて返される値も増加していきます。そして、getease(50,50)になった時に200が返るような計算式になっています。</p>
+<pre><code>
+    時間経過値が0の時 = setease命令で指定した出力最小値が返される
+    時間経過値が最大値の時 = setease命令で指定した出力最大値が返される
+</code></pre><p>最大値のパラメーターを省略した場合は、4096が使用されます。
+geteasef関数の場合も、引数はgeteasef(時間経過値,最大値)と変わりません。
+ただし、時間経過値、最大値ともに実数を使用することができ、より細かい精度でイージング関数を利用できます。また、geteasef関数で最大値のパラメーターを省略した場合は、1.0が使用されます。</p>
+<p>通常は、時間経過値がマイナスの値だった場合は、0とみなされます。また、時間経過値が最大値を超えた場合も、最大値として扱われます。
+ただし、setease命令による計算式のタイプ設定で、ease_loop(補間のループ)を加算した場合は、範囲外の値も含めて補間のループ(繰り返し)を行ないます。補間のループでは、時間経過値にしたがって出力最小値、出力最大値を往復するような動きになります。</p>
+<p>イージング関数は、馴れないうちは結果が想像しにくいところがありますが、使いこなすことで高度なアニメーションを手軽に利用することができる便利な機能です。
+また標準で内蔵されている命令のため、HSP3DishやHGIMG4などあらゆるランタイムでも同様に呼び出すことができます。</p>
+<p><strong>参照</strong>:</p>
+<p>getease
+geteasef</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="sortval">sortval </h2>
+<p>配列変数を数値でソート</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<p>p1,p2
+p1 : 数値型の配列変数名
+p2 : 並び順 (0=小さい順/1=大きい順)</p>
+<p><strong>説明</strong>:</p>
+<p>数値が格納された配列変数を指定された並び順でソート(並び替え)します。
+p1で指定された配列変数を直接並べ替えます。</p>
+<p>並び替えに関する情報は、sortget命令で得ることができます。</p>
+<p><strong>参照</strong>:</p>
+<p>sortget</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="sortstr">sortstr </h2>
+<p>配列変数を文字列でソート</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2
+p1 : 文字列型の配列変数名
+p2 : 並び順 (0=小さい順/1=大きい順)
+</code></pre><p><strong>説明</strong>:</p>
+<p>文字列が格納された配列変数を指定された並び順でソート(並び替え)します。
+p1で指定された配列変数を直接並べ替えます。
+ソートの並び順は、 ASCIIコードの大きい小さいで比較されるので、 ABC順、あいうえお順に並べ替えられます。</p>
+<p>並び替えに関する情報は、sortget命令で得ることができます。</p>
+<p><strong>参照</strong>:</p>
+<p>sortget</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="sortnote">sortnote </h2>
+<p>メモリノート文字列をソート</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2
+p1 : メモリノート形式の文字列型の変数名
+p2 : 並び順 (0=小さい順/1=大きい順)
+</code></pre><p><strong>説明</strong>:</p>
+<p>メモリノートパッド形式の 文字列が格納された変数を、 指定された並び順でソート(並び替え)します。
+p1で指定された変数を直接並べ替えます。
+ソートの並び順は、 ASCIIコードの大きい小さいで比較されるので、 ABC順、あいうえお順に並べ替えられます。</p>
+<p>並び替えに関する情報は、sortget命令で得ることができます。
+メモリノートパッド形式は、 notesel,  noteget命令などで使用することのできる「\n」(改行コード)で区切られたデータ列のことです。</p>
+<p><strong>参照</strong>:</p>
+<p>notesel
+sortget</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+<h2 id="sortget">sortget </h2>
+<p>ソート元のインデックスを取得</p>
+<p><strong>グループ</strong>:</p>
+<p>基本入出力制御命令</p>
+<p><strong>パラメーター</strong>:</p>
+<pre><code>p1,p2
+p1 : 結果が代入される変数名
+p2 : インデックスNo.
+</code></pre><p><strong>説明</strong>:</p>
+<p>sortstr, sortval, sortnote命令を実行後の配列において、格納されているデータは、ソートする前はどのインデックスに置かれていたものかを調べて結果を返します。 
+たとえば、配列変数aをソートした後、 sortget n,4という命令で、1という値が返ってきたとすると、a(4)という配列変数に現在入っている値は、ソートする前には、a(1)に入っていたことを示します。
+この命令は、データの一部だけをソートして、その情報をもとにほかのデータの並び替えも行なうような時に有効です。</p>
+<p><strong>参照</strong>:</p>
+<p>sortstr
+sortval
+sortnote</p>
+<p><strong>非対応</strong>:</p>
+<ul>
+<li>Let</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="hspmath.html" class="navigation navigation-prev " aria-label="Previous page: 数学">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="i_file.html" class="navigation navigation-next " aria-label="Next page: ファイル">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"入出力","level":"2.11","depth":1,"next":{"title":"ファイル","level":"2.12","depth":1,"path":"i_file.md","ref":"i_file.md","articles":[]},"previous":{"title":"数学","level":"2.10","depth":1,"path":"hspmath.md","ref":"hspmath.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"i_stdio.md","mtime":"2022-10-27T04:58:37.908Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-27T12:02:39.881Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
