@@ -24,44 +24,44 @@
 
 | 名前 | 説明 |
 | --- | --- |
-| Array | An array is a list of data |
-| ArrayList | An ArrayList stores a variable number of objects |
-| FloatDict | A simple table class to use a String as a lookup for a float value |
-| FloatList | Helper class for a list of floats |
-| HashMap | A HashMap stores a collection of objects, each referenced by a key |
-| IntDict | A simple class to use a String as a lookup for an int value |
-| IntList | Helper class for a list of ints |
-| JSONArray | A JSONArray is an ordered sequence of values |
-| JSONObject | A JSONObject is an unordered collection of name/value pairs |
-| Object | Objects are instances of classes |
-| String | A string is a sequence of characters |
-| StringDict | A simple class to use a String as a lookup for an String value |
-| StringList | Helper class for a list of Strings |
-| Table | Generic class for handling tabular data, typically from a CSV, TSV, or other sort of spreadsheet file |
-| TableRow | Represents a single row of data values, stored in columns, from a Table |
-| XML | This is the base class used for the Processing XML library, representing a single node of an XML tree |
+| Array | Arrayはデータのリストです |
+| ArrayList | ArrayListは可変数のオブジェクトを格納します。 |
+| FloatDict | Stringをfloat値のルックアップとして使用するシンプルなテーブルクラス |
+| FloatList | 浮動小数点数のリストのヘルパークラス |
+| HashMap | HashMapはオブジェクトのコレクションを保存し、それぞれがキーで参照されます。 |
+| IntDict | Stringをint値のルックアップとして使用するシンプルなクラスです。 |
+| IntList | int型のリストのヘルパークラスです。 |
+| JSONArray | JSONArrayは順序付けられた一連の値です。 |
+| JSONObject | JSONObjectは名前と値のペアの順序不同のコレクションです。 |
+| Object | Objectはクラスのインスタンス |
+| String | Stringとは文字の並びのことです |
+| StringDict | String値のルックアップとしてStringを使用するシンプルなクラスです。 |
+| StringList | 文字列のリストのヘルパークラスです。 |
+| Table | 表形式のデータを扱うための汎用クラスです。 |
+| TableRow | テーブルからカラムに格納されたデータ値の1行を表現する |
+| XML | Processing XMLライブラリの基本クラスで、XMLツリーの1つのノードを表す |
 
 ### 配列関数
 
 | 名前 | 説明 |
 | --- | --- |
-| append() | Expands an array by one element and adds data to the new position |
-| arrayCopy() | Copies an array (or part of an array) to another array |
-| concat() | Concatenates two arrays |
-| expand() | Increases the size of an array |
-| reverse() | Reverses the order of an array |
-| shorten() | Decreases an array by one element and returns the shortened array |
-| sort() | Sorts an array of numbers from smallest to largest and puts an array of words in alphabetical order |
-| splice() | Inserts a value or array of values into an existing array |
-| subset() | Extracts an array of elements from an existing array |
+| append() | 配列を1要素ずつ拡張し、新しい位置にデータを追加する。 |
+| arrayCopy() | 配列（または配列の一部）を別の配列にコピーします． |
+| concat() | 2つの配列を連結する |
+| expand() | 配列のサイズを増加させる |
+| reverse() | 配列の順序を逆順にする |
+| shorten() | 配列の要素を 1 つ減らし、短縮された配列を返します。 |
+| sort() | 数字の配列を小さいものから大きいものへ並べ替えたり、単語の配列をアルファベット順に並べたりします。 |
+| splice() | 既存の配列に値または値の配列を挿入します。 |
+| subset() | 既存の配列から要素を抽出します。 |
 
 ### 変換
 
 | 名前 | 説明 |
 | --- | --- |
-| binary() | Converts an int, byte, char, or color to a String containing the equivalent binary notation |
-| boolean() | Converts an int or String to its boolean representation |
-| byte() | Converts any value of a primitive data type (boolean, byte, char, color, double, float, int, or long) to its byte representation |
+| binary() | int, byte, char, colorを等価な2進数表記を含むStringに変換する。 |
+| boolean() | int または String を boolean 表現に変換します。 |
+| byte() | プリミティブデータ型（boolean, byte, char, color, double, float, int, long）の任意の値をバイト表現に変換する。 |
 | char() | Converts any value of a primitive data type (boolean, byte, char, color, double, float, int, or long) to its numeric character representation |
 | float() | Converts an int or String to its floating point representation |
 | hex() | Converts a byte, char, int, or color to a String containing the equivalent hexadecimal notation |
