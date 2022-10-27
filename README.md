@@ -22,3 +22,5 @@
 - [HonKit](https://dolphilia.github.io/japanese_translation/honkit/)
 - [Natural Docs](https://dolphilia.github.io/japanese_translation/natural_docs/)
 - [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)
+- [HSPリファレンス](https://dolphilia.github.io/japanese_translation/hsp/)
+- [Processing](https://dolphilia.github.io/japanese_translation/processing/)
