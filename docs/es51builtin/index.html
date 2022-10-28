@@ -1,0 +1,1091 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduction · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ecmascript-es51-組み込みオブジェクト対応表">ECMAScript ES5.1 組み込みオブジェクト対応表</h1>
+<ul>
+<li><a href="https://262.ecma-international.org/5.1/" target="_blank">参考</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">MDN</a></li>
+</ul>
+<p><strong>記号</strong>:</p>
+<ul>
+<li>❌ ES5.1では非対応</li>
+<li>⚠️ 非推奨</li>
+</ul>
+<h2 id="目次">目次</h2>
+<p><strong>グローバル</strong>:</p>
+<ul>
+<li>値プロパティ<ul>
+<li>NaN</li>
+<li>Infinity</li>
+<li>undefined</li>
+<li>❌ 非対応<ul>
+<li>globalThis</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>関数プロパティ<ul>
+<li>eval (x)</li>
+<li>parseInt (string , radix)</li>
+<li>parseFloat (string)</li>
+<li>isNaN (number)</li>
+<li>isFinite (number)</li>
+<li>decodeURI (encodedURI)</li>
+<li>decodeURIComponent (encodedURIComponent)</li>
+<li>encodeURI (uri)</li>
+<li>encodeURIComponent (uriComponent)</li>
+<li>❌ 非対応<ul>
+<li>⚠️ uneval()</li>
+<li>⚠️ escape()</li>
+<li>⚠️ unescape()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基本オブジェクト<ul>
+<li>Object</li>
+<li>Function</li>
+<li>Boolean</li>
+<li>❌ 非対応<ul>
+<li>Symbol</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>エラーオブジェクト<ul>
+<li>Error</li>
+<li>EvalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+<li>❌ 非対応<ul>
+<li>AggregateError</li>
+<li>InternalError</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数値と日付<ul>
+<li>Number</li>
+<li>Math</li>
+<li>Date</li>
+<li>❌ 非対応<ul>
+<li>BigInt</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>テキスト処理<ul>
+<li>String</li>
+<li>RegExp</li>
+</ul>
+</li>
+<li>索引付きコレクション<ul>
+<li>Array</li>
+<li>❌ 非対応<ul>
+<li>Int8Array</li>
+<li>Uint8Array</li>
+<li>Uint8ClampedArray</li>
+<li>Int16Array</li>
+<li>Uint16Array</li>
+<li>Int32Array</li>
+<li>Uint32Array</li>
+<li>Float32Array</li>
+<li>Float64Array</li>
+<li>BigInt64Array</li>
+<li>BigUint64Array</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>キー付きコレクション<ul>
+<li>❌ 非対応<ul>
+<li>Map</li>
+<li>Set</li>
+<li>WeakMap</li>
+<li>WeakSet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>構造化データ<ul>
+<li>JSON</li>
+<li>❌ 非対応<ul>
+<li>ArrayBuffer</li>
+<li>SharedArrayBuffer</li>
+<li>Atomics</li>
+<li>DataView</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>制御抽象化オブジェクト<ul>
+<li>❌ 非対応<ul>
+<li>Promise</li>
+<li>Generator</li>
+<li>GeneratorFunction</li>
+<li>AsyncFunction</li>
+<li>AsyncGenerator (en-US)</li>
+<li>AsyncGeneratorFunction (en-US)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>リフレクション<ul>
+<li>❌ 非対応<ul>
+<li>Reflect</li>
+<li>Proxy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>国際化<ul>
+<li>❌ 非対応<ul>
+<li>Intl</li>
+<li>Intl.Collator</li>
+<li>Intl.DateTimeFormat</li>
+<li>Intl.ListFormat</li>
+<li>Intl.NumberFormat</li>
+<li>Intl.PluralRules</li>
+<li>Intl.RelativeTimeFormat</li>
+<li>Intl.Locale</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WebAssembly<ul>
+<li>❌ 非対応<ul>
+<li>WebAssembly</li>
+<li>WebAssembly.Module</li>
+<li>WebAssembly.Instance</li>
+<li>WebAssembly.Memory</li>
+<li>WebAssembly.Table</li>
+<li>WebAssembly.CompileError</li>
+<li>WebAssembly.LinkError</li>
+<li>WebAssembly.RuntimeError</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>その他<ul>
+<li>arguments</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本オブジェクト">基本オブジェクト</h2>
+<p><strong>Object</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Object ( [ value ] )</li>
+<li>new Object ( [ value ] )</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Object.prototype</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>Object.create ( O [, Properties] )</li>
+<li>Object.defineProperty ( O, P, Attributes )</li>
+<li>Object.defineProperties ( O, Properties )</li>
+<li>Object.freeze ( O )</li>
+<li>Object.getOwnPropertyDescriptor ( O, P )</li>
+<li>Object.getOwnPropertyNames ( O )</li>
+<li>Object.getPrototypeOf ( O )</li>
+<li>Object.isExtensible ( O )</li>
+<li>Object.isFrozen ( O )</li>
+<li>Object.isSealed ( O )</li>
+<li>Object.keys ( O )</li>
+<li>Object.preventExtensions ( O )</li>
+<li>Object.seal ( O )</li>
+<li>❌ 非対応<ul>
+<li>Object.assign()</li>
+<li>Object.entries()</li>
+<li>Object.fromEntries()</li>
+<li>Object.getOwnPropertyDescriptors()</li>
+<li>Object.getOwnPropertySymbols()</li>
+<li>Object.is()</li>
+<li>Object.setPrototypeOf()</li>
+<li>Object.values()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Object.prototype.constructor</li>
+<li>❌ 非対応<ul>
+<li>⚠️ Object.prototype.__proto__</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Object.prototype.hasOwnProperty (V)</li>
+<li>Object.prototype.isPrototypeOf (V)</li>
+<li>Object.prototype.toLocaleString ( )</li>
+<li>Object.prototype.toString ( )</li>
+<li>Object.prototype.valueOf ( )</li>
+<li>❌ 非対応<ul>
+<li>Object.prototype.propertyIsEnumerable()</li>
+<li>⚠️ Object.prototype.__defineGetter__()</li>
+<li>⚠️ Object.prototype.__defineSetter__()</li>
+<li>⚠️ Object.prototype.__lookupGetter__()</li>
+<li>⚠️ Object.prototype.__lookupSetter__()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Function</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Function (p1, p2, … , pn, body)</li>
+<li>new Function (p1, p2, … , pn, body)</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Function.prototype</li>
+<li>Function.length</li>
+<li>❌ 非対応<ul>
+<li>Function.name</li>
+<li>⚠️ Function.arguments</li>
+<li>⚠️ Function.caller</li>
+<li>⚠️ Function.displayName</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Function.prototype.constructor</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Function.prototype.apply (thisArg, argArray)</li>
+<li>Function.prototype.bind (thisArg [, arg1 [, arg2, …]])</li>
+<li>Function.prototype.call (thisArg [ , arg1 [ , arg2, … ] ] )</li>
+<li>Function.prototype.toString ( )</li>
+</ul>
+</li>
+</ul>
+<p><strong>Boolean</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Boolean (value)</li>
+<li>new Boolean (value)</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Boolean.prototype</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Boolean.prototype.constructor</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Boolean.prototype.toString ( )</li>
+<li>Boolean.prototype.valueOf ( )</li>
+</ul>
+</li>
+</ul>
+<p><strong>基本オブジェクト</strong>:</p>
+<ul>
+<li>❌ 非対応<ul>
+<li>Symbol</li>
+</ul>
+</li>
+</ul>
+<h2 id="エラーオブジェクト">エラーオブジェクト</h2>
+<p><strong>Error</strong>:</p>
+<ul>
+<li>エラーの型<ul>
+<li>EvalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+<li>❌ 非対応<ul>
+<li>InternalError</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>コンストラクター<ul>
+<li>Error (message)</li>
+<li>new Error (message)</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Error.prototype</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>❌ 非対応<ul>
+<li>(標準外のV8の関数) Error.captureStackTrace()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Error.prototype.constructor</li>
+<li>Error.prototype.name</li>
+<li>Error.prototype.message</li>
+<li>❌ 非対応<ul>
+<li>(標準外の Microsoft のプロパティ) Error.prototype.description</li>
+<li>(標準外の Microsoft のプロパティ) Error.prototype.number</li>
+<li>(標準外の Mozilla のプロパティ) Error.prototype.fileName</li>
+<li>(標準外の Mozilla のプロパティ) Error.prototype.lineNumber</li>
+<li>(標準外の Mozilla のプロパティ) Error.prototype.columnNumber</li>
+<li>(標準外の Mozilla のプロパティ) Error.prototype.stack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Error.prototype.toString ( )</li>
+</ul>
+</li>
+</ul>
+<p><strong>その他のエラーオブジェクト</strong>:</p>
+<ul>
+<li>Error</li>
+<li>EvalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+<li>❌ 非対応<ul>
+<li>AggregateError</li>
+<li>InternalError</li>
+</ul>
+</li>
+</ul>
+<h2 id="数値と日付">数値と日付</h2>
+<p><strong>Number</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Number ( [ value ] )</li>
+<li>new Number ( [ value ] )</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Number.prototype</li>
+<li>Number.MAX_VALUE</li>
+<li>Number.MIN_VALUE</li>
+<li>Number.NaN</li>
+<li>Number.NEGATIVE_INFINITY</li>
+<li>Number.POSITIVE_INFINITY</li>
+<li>❌ 非対応<ul>
+<li>Number.EPSILON</li>
+<li>Number.MIN_SAFE_INTEGER</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>❌ 非対応<ul>
+<li>Number.isNaN()</li>
+<li>Number.isFinite()</li>
+<li>Number.isInteger()</li>
+<li>Number.isSafeInteger()</li>
+<li>Number.parseFloat(string)</li>
+<li>Number.parseInt(string, [radix])</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Number.prototype.constructor</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Number.prototype.toString ( [ radix ] )</li>
+<li>Number.prototype.toLocaleString()</li>
+<li>Number.prototype.valueOf ( )</li>
+<li>Number.prototype.toFixed (fractionDigits)</li>
+<li>Number.prototype.toExponential (fractionDigits)</li>
+<li>Number.prototype.toPrecision (precision)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Math</strong>:</p>
+<ul>
+<li>静的プロパティ<ul>
+<li>E</li>
+<li>LN10</li>
+<li>LN2</li>
+<li>LOG2E</li>
+<li>LOG10E</li>
+<li>PI</li>
+<li>SQRT1_2</li>
+<li>SQRT2</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>abs (x)</li>
+<li>acos (x)</li>
+<li>asin (x)</li>
+<li>atan (x)</li>
+<li>atan2 (y, x)</li>
+<li>ceil (x)</li>
+<li>cos (x)</li>
+<li>exp (x)</li>
+<li>floor (x)</li>
+<li>log (x)</li>
+<li>max ( [ value1 [ , value2 [ , … ] ] ] )</li>
+<li>min ( [ value1 [ , value2 [ , … ] ] ] )</li>
+<li>pow (x, y)</li>
+<li>random ( )</li>
+<li>round (x)</li>
+<li>sin (x)</li>
+<li>sqrt (x)</li>
+<li>tan (x)</li>
+<li>❌ 非対応<ul>
+<li>Math.acosh(x)</li>
+<li>Math.asinh(x)</li>
+<li>Math.atanh(x)</li>
+<li>Math.cbrt(x)</li>
+<li>Math.clz32(x)</li>
+<li>Math.cosh(x)</li>
+<li>Math.expm1(x)</li>
+<li>Math.fround(x)</li>
+<li>Math.hypot([x[, y[, …]]])</li>
+<li>Math.imul(x, y)</li>
+<li>Math.log1p(x)</li>
+<li>Math.log10(x)</li>
+<li>Math.log2(x)</li>
+<li>Math.sign(x)</li>
+<li>Math.sinh(x)</li>
+<li>Math.tanh(x)</li>
+<li>Math.trunc(x)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Date</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Date ( [ year [, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] ] ] )</li>
+<li>new Date (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] )</li>
+<li>new Date (value)</li>
+<li>new Date ( )</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Date.prototype</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>Date.parse (string)</li>
+<li>Date.UTC (year, month [, date [, hours [, minutes [, seconds [, ms ] ] ] ] ] )</li>
+<li>Date.now ( )</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Date.prototype.constructor</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Date.prototype.getDate ( )</li>
+<li>Date.prototype.getDay ( )</li>
+<li>Date.prototype.getFullYear ( )</li>
+<li>Date.prototype.getHours ( )</li>
+<li>Date.prototype.getMilliseconds ( )</li>
+<li>Date.prototype.getMinutes ( )</li>
+<li>Date.prototype.getMonth ( )</li>
+<li>Date.prototype.getSeconds ( )</li>
+<li>Date.prototype.getTime ( )</li>
+<li>Date.prototype.getTimezoneOffset ( )</li>
+<li>Date.prototype.getUTCDate ( )</li>
+<li>Date.prototype.getUTCDay ( )</li>
+<li>Date.prototype.getUTCFullYear ( )</li>
+<li>Date.prototype.getUTCHours ( )</li>
+<li>Date.prototype.getUTCMilliseconds ( )</li>
+<li>Date.prototype.getUTCMinutes ( )</li>
+<li>Date.prototype.getUTCMonth ( )</li>
+<li>Date.prototype.getUTCSeconds ( )</li>
+<li>Date.prototype.setDate (date)</li>
+<li>Date.prototype.setFullYear (year [, month [, date ] ] )</li>
+<li>Date.prototype.setHours (hour [, min [, sec [, ms ] ] ] )</li>
+<li>Date.prototype.setMilliseconds (ms)</li>
+<li>Date.prototype.setMinutes (min [, sec [, ms ] ] )</li>
+<li>Date.prototype.setMonth (month [, date ] )</li>
+<li>Date.prototype.setSeconds (sec [, ms ] )</li>
+<li>Date.prototype.setTime (time)</li>
+<li>Date.prototype.setUTCDate (date)</li>
+<li>Date.prototype.setUTCFullYear (year [, month [, date ] ] )</li>
+<li>Date.prototype.setUTCHours (hour [, min [, sec [, ms ] ] ] )</li>
+<li>Date.prototype.setUTCMilliseconds (ms)</li>
+<li>Date.prototype.setUTCMinutes (min [, sec [, ms ] ] )</li>
+<li>Date.prototype.setUTCMonth (month [, date ] )</li>
+<li>Date.prototype.setUTCSeconds (sec [, ms ] )</li>
+<li>Date.prototype.toDateString ( )</li>
+<li>Date.prototype.toISOString ( )</li>
+<li>Date.prototype.toJSON ( key )</li>
+<li>Date.prototype.toLocaleDateString ( )</li>
+<li>Date.prototype.toLocaleString ( )</li>
+<li>Date.prototype.toLocaleTimeString ( )</li>
+<li>Date.prototype.toString ( )</li>
+<li>Date.prototype.toTimeString ( )</li>
+<li>Date.prototype.toUTCString ( )</li>
+<li>Date.prototype.valueOf ( )</li>
+<li>❌ 非対応<ul>
+<li>⚠️ Date.prototype.getYear()</li>
+<li>⚠️ Date.prototype.setYear()</li>
+<li>⚠️ Date.prototype.toJSON ( key )</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>その他の数値と日付</strong>:</p>
+<ul>
+<li>❌ 非対応<ul>
+<li>BigInt</li>
+</ul>
+</li>
+</ul>
+<h2 id="テキスト処理">テキスト処理</h2>
+<p><strong>String</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>String ( [ value ] )</li>
+<li>new String ( [ value ] )</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>String.prototype</li>
+</ul>
+</li>
+<li>静的メソッド<ul>
+<li>String.fromCharCode ( [ char0 [ , char1 [ , … ] ] ] )</li>
+<li>❌ 非対応<ul>
+<li>String.fromCodePoint(num1 [, ...[, numN)</li>
+<li>String.raw()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>String.prototype.constructor</li>
+<li>String.prototype.length</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>String.prototype.charAt (pos)</li>
+<li>String.prototype.charCodeAt (pos)</li>
+<li>String.prototype.concat ( [ string1 [ , string2 [ , … ] ] ] )</li>
+<li>String.prototype.indexOf (searchString, position)</li>
+<li>String.prototype.lastIndexOf (searchString, position)</li>
+<li>String.prototype.localeCompare (that)</li>
+<li>String.prototype.match (regexp)</li>
+<li>String.prototype.replace (searchValue, replaceValue)</li>
+<li>String.prototype.search (regexp)</li>
+<li>String.prototype.split (separator, limit)</li>
+<li>⚠️ String.prototype.substr()</li>
+<li>String.prototype.substring (start, end)</li>
+<li>String.prototype.toLocaleLowerCase ( )</li>
+<li>String.prototype.toLocaleUpperCase ( )</li>
+<li>String.prototype.toLowerCase ( )</li>
+<li>String.prototype.toString ( )</li>
+<li>String.prototype.toUpperCase ( )</li>
+<li>String.prototype.trim ( )</li>
+<li>String.prototype.valueOf ( )</li>
+<li>String.prototype.@@iterator()</li>
+<li>❌ 非対応<ul>
+<li>String.prototype.codePointAt(pos)</li>
+<li>String.prototype.includes(searchString [, position])</li>
+<li>String.prototype.endsWith(searchString [, length])</li>
+<li>String.prototype.matchAll(regexp)</li>
+<li>String.prototype.normalize([form])</li>
+<li>String.prototype.padEnd(targetLength [, padString])</li>
+<li>String.prototype.padStart(targetLength [, padString])</li>
+<li>String.prototype.repeat(count)</li>
+<li>String.prototype.replaceAll(searchFor, replaceWith)</li>
+<li>String.prototype.slice(beginIndex[, endIndex])</li>
+<li>String.prototype.startsWith(searchString [, length])</li>
+<li>String.prototype.trimStart()</li>
+<li>String.prototype.trimEnd()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>RegExp(正規表現)</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>RegExp(pattern, flags)</li>
+<li>new RegExp(pattern, flags)</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>RegExp.prototype</li>
+<li>❌ 非対応<ul>
+<li>get RegExp[@@species]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>RegExp.prototype.constructor</li>
+<li>RegExp.prototype.global</li>
+<li>RegExp.prototype.ignoreCase</li>
+<li>RegExp.prototype.multiline</li>
+<li>RegExp.prototype.source</li>
+<li>RegExp.prototype.lastIndex</li>
+<li>❌ 非対応<ul>
+<li>RegExp.prototype.flags</li>
+<li>RegExp.prototype.dotAll</li>
+<li>RegExp.prototype.hasIndices</li>
+<li>RegExp.prototype.sticky</li>
+<li>RegExp.prototype.unicode</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>RegExp.prototype.exec(string)</li>
+<li>RegExp.prototype.test(string)</li>
+<li>RegExp.prototype.toString()</li>
+<li>❌ 非対応<ul>
+<li>RegExp.prototype<a href>@@match</a></li>
+<li>RegExp.prototype<a href>@@matchAll</a></li>
+<li>RegExp.prototype<a href>@@replace</a></li>
+<li>RegExp.prototype<a href>@@search</a></li>
+<li>RegExp.prototype<a href>@@split</a></li>
+<li>⚠️ RegExp.prototype.compile()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="索引付きコレクション">索引付きコレクション</h2>
+<p><strong>Array</strong>:</p>
+<ul>
+<li>コンストラクター<ul>
+<li>Array ( [ item1 [ , item2 [ , … ] ] ] )</li>
+<li>new Array ( [ item0 [ , item1 [ , … ] ] ] )</li>
+<li>new Array (len)</li>
+</ul>
+</li>
+<li>静的プロパティ<ul>
+<li>Array.prototype</li>
+<li>Array.isArray ( arg )</li>
+<li>❌ 非対応<ul>
+<li>Array.from()</li>
+<li>Array.of()</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスプロパティ<ul>
+<li>Array.prototype.constructor</li>
+<li>Array.prototype.length</li>
+<li>❌ 非対応<ul>
+<li>Array.prototype[@@unscopables]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>インスタンスメソッド<ul>
+<li>Array.prototype.concat ( [ item1 [ , item2 [ , … ] ] ] )</li>
+<li>Array.prototype.every ( callbackfn [ , thisArg ] )</li>
+<li>Array.prototype.filter ( callbackfn [ , thisArg ] )</li>
+<li>Array.prototype.forEach ( callbackfn [ , thisArg ] )</li>
+<li>Array.prototype.indexOf ( searchElement [ , fromIndex ] )</li>
+<li>Array.prototype.join (separator)</li>
+<li>Array.prototype.lastIndexOf ( searchElement [ , fromIndex ] )</li>
+<li>Array.prototype.map ( callbackfn [ , thisArg ] )</li>
+<li>Array.prototype.pop ( )</li>
+<li>Array.prototype.push ( [ item1 [ , item2 [ , … ] ] ] )</li>
+<li>Array.prototype.reduce ( callbackfn [ , initialValue ] )</li>
+<li>Array.prototype.reduceRight ( callbackfn [ , initialValue ] )</li>
+<li>Array.prototype.reverse ( )</li>
+<li>Array.prototype.shift ( )</li>
+<li>Array.prototype.slice (start, end)</li>
+<li>Array.prototype.some ( callbackfn [ , thisArg ] )</li>
+<li>Array.prototype.sort (comparefn)</li>
+<li>Array.prototype.splice (start, deleteCount [ , item1 [ , item2 [ , … ] ] ] )</li>
+<li>Array.prototype.toLocaleString ( )</li>
+<li>Array.prototype.toString ( )</li>
+<li>Array.prototype.unshift ( [ item1 [ , item2 [ , … ] ] ] )</li>
+<li>❌ 非対応<ul>
+<li>Array.prototype.at()</li>
+<li>Array.prototype.copyWithin()</li>
+<li>Array.prototype.entries()</li>
+<li>Array.prototype.fill()</li>
+<li>Array.prototype.find()</li>
+<li>Array.prototype.findIndex()</li>
+<li>Array.prototype.findLast()</li>
+<li>Array.prototype.findLastIndex()</li>
+<li>Array.prototype.flat()</li>
+<li>Array.prototype.flatMap()</li>
+<li>(試験的)Array.prototype.group() </li>
+<li>(試験的)Array.prototype.groupToMap() </li>
+<li>Array.prototype.includes()</li>
+<li>Array.prototype.keys()</li>
+<li>Array.prototype.values()</li>
+<li>Array.prototype<a href>@@iterator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>その他の索引付きコレクション</strong>:</p>
+<ul>
+<li>❌ 非対応<ul>
+<li>Int8Array</li>
+<li>Uint8Array</li>
+<li>Uint8ClampedArray</li>
+<li>Int16Array</li>
+<li>Uint16Array</li>
+<li>Int32Array</li>
+<li>Uint32Array</li>
+<li>Float32Array</li>
+<li>Float64Array</li>
+<li>BigInt64Array</li>
+<li>BigUint64Array</li>
+</ul>
+</li>
+</ul>
+<h2 id="キー付きコレクション">キー付きコレクション</h2>
+<ul>
+<li>❌ 非対応<ul>
+<li>Map</li>
+<li>Set</li>
+<li>WeakMap</li>
+<li>WeakSet</li>
+</ul>
+</li>
+</ul>
+<h2 id="構造化データ">構造化データ</h2>
+<p><strong>JSON</strong>:</p>
+<ul>
+<li>静的メソッド<ul>
+<li>JSON.parse ( text [ , reviver ] )</li>
+<li>JSON.stringify ( value [ , replacer [ , space ] ] )</li>
+</ul>
+</li>
+</ul>
+<p><strong>その他の構造化データ</strong>:</p>
+<ul>
+<li>❌ 非対応<ul>
+<li>ArrayBuffer</li>
+<li>SharedArrayBuffer</li>
+<li>Atomics</li>
+<li>DataView</li>
+</ul>
+</li>
+</ul>
+<h2 id="制御抽象化オブジェクト">制御抽象化オブジェクト</h2>
+<ul>
+<li>❌ 非対応<ul>
+<li>Promise</li>
+<li>Generator</li>
+<li>GeneratorFunction</li>
+<li>AsyncFunction</li>
+<li>AsyncGenerator (en-US)</li>
+<li>AsyncGeneratorFunction (en-US)</li>
+</ul>
+</li>
+</ul>
+<h2 id="リフレクション">リフレクション</h2>
+<ul>
+<li>❌ 非対応<ul>
+<li>Reflect</li>
+<li>Proxy</li>
+</ul>
+</li>
+</ul>
+<h2 id="国際化">国際化</h2>
+<ul>
+<li>❌ 非対応<ul>
+<li>Intl</li>
+<li>Intl.Collator</li>
+<li>Intl.DateTimeFormat</li>
+<li>Intl.ListFormat</li>
+<li>Intl.NumberFormat</li>
+<li>Intl.PluralRules</li>
+<li>Intl.RelativeTimeFormat</li>
+<li>Intl.Locale</li>
+</ul>
+</li>
+</ul>
+<h2 id="webassembly">WebAssembly</h2>
+<ul>
+<li>❌ 非対応<ul>
+<li>WebAssembly</li>
+<li>WebAssembly.Module</li>
+<li>WebAssembly.Instance</li>
+<li>WebAssembly.Memory</li>
+<li>WebAssembly.Table</li>
+<li>WebAssembly.CompileError</li>
+<li>WebAssembly.LinkError</li>
+<li>WebAssembly.RuntimeError</li>
+</ul>
+</li>
+</ul>
+<h2 id="その他">その他</h2>
+<p><strong>arguments</strong>:</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-10-28T05:52:27.553Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-10-28T05:52:46.615Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
