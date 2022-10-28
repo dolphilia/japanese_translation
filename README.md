@@ -24,3 +24,4 @@
 - [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)
 - [HSPリファレンス](https://dolphilia.github.io/japanese_translation/hsp/)
 - [Processing](https://dolphilia.github.io/japanese_translation/processing/)
+- [ECMAScript ES5.1 組み込みオブジェクト対応表](https://dolphilia.github.io/japanese_translation/es51builtin/)
