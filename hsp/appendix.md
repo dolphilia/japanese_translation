@@ -759,56 +759,56 @@
 
 ## OBAQ
 
-|            API             |                説明                |
-| -------------------------- | ---------------------------------- |
-| qreset {#qreset}           | OBAQ初期化                         |
-| qterm {#qterm}             | OBAQ終了処理                       |
-| qexec {#qexec}             | OBAQフレーム処理                   |
-| qdraw {#qdraw}             | OBAQ描画処理                       |
-| qview {#qview}             | ビュー設定                         |
-| qsetreq {#qsetreq}         | システムリクエスト設定             |
-| qgetreq {#qgetreq}         | システムリクエスト取得             |
-| qborder {#qborder}         | 外壁を設定                         |
-| qgravity {#qgravity}       | 重力を設定                         |
-| qcnvaxis {#qcnvaxis}       | X,Y座標値を変換                    |
-| qgetaxis {#qgetaxis}       | 内部座標を取得                     |
-| qdel {#qdel}               | オブジェクト削除                   |
-| qaddpoly {#qaddpoly}       | 多角形オブジェクト追加             |
-| qaddmodel {#qaddmodel}     | 自由設定オブジェクト追加           |
-| qtype {#qtype}             | typeパラメーターを設定             |
-| qstat {#qstat}             | statパラメーターを設定             |
-| qpos {#qpos}               | 位置、角度パラメーターを設定       |
-| qspeed {#qspeed}           | 速度パラメーターを設定             |
-| qweight {#qweight}         | 重さなどのパラメーターを設定       |
-| qdamper {#qdamper}         | 吸振などのパラメーターを設定       |
-| qinertia {#qinertia}       | 惰性などのパラメーターを設定       |
-| qgroup {#qgroup}           | グループパラメーターを設定         |
-| qmat {#qmat}               | マテリアルパラメーターを設定       |
-| qmat2 {#qmat2}             | マテリアル詳細パラメーターを設定   |
-| qmat3 {#qmat3}             | マテリアル表示パラメーターを設定   |
-| quser {#quser}             | ユーザー定義データを設定           |
-| quser2 {#quser2}           | ユーザー定義データを設定2          |
-| qfind {#qfind}             | オブジェクト検索                   |
-| qnext {#qnext}             | オブジェクト検索結果取得           |
-| qcollision {#qcollision}   | コリジョン取得開始                 |
-| qgetcol {#qgetcol}         | コリジョン取得                     |
-| qgetcol2 {#qgetcol2}       | コリジョン詳細情報取得             |
-| qgetcol3 {#qgetcol3}       | コリジョン詳細情報取得2            |
-| qgettype {#qgettype}       | typeパラメーターを取得             |
-| qgetstat {#qgetstat}       | statパラメーターを取得             |
-| qgetpos {#qgetpos}         | 位置、角度パラメーターを取得       |
-| qgetspeed {#qgetspeed}     | 速度パラメーターを取得             |
-| qgetweight {#qgetweight}   | 重さなどのパラメーターを取得       |
-| qgetdamper {#qgetdamper}   | 吸振などのパラメーターを取得       |
-| qgetinertia {#qgetinertia} | 惰性などのパラメーターを取得       |
-| qgetgroup {#qgetgroup}     | グループパラメーターを取得         |
-| qgetmat {#qgetmat}         | マテリアルパラメーターを取得       |
-| qgetmat2 {#qgetmat2}       | マテリアル詳細パラメーターを取得   |
-| qgetmat3 {#qgetmat3}       | マテリアル表示パラメーターを取得   |
-| qgetuser {#qgetuser}       | ユーザー定義データを取得           |
-| qgetuser2 {#qgetuser2}     | ユーザー定義データを取得2          |
-| qpush {#qpush}             | 任意の場所に力を与える             |
-| qblast {#qblast}           | 任意の場所から放射状に力を与える   |
-| qgetversion {#qgetversion} | バージョン情報を取得               |
-| qinner {#qinner}           | 座標がオブジェクト内にあるかを取得 |
-| qgetptr {#qgetptr}         | システムポインタ値取得             |
+|     API     |                説明                |
+| ----------- | ---------------------------------- |
+| qreset      | OBAQ初期化                         |
+| qterm       | OBAQ終了処理                       |
+| qexec       | OBAQフレーム処理                   |
+| qdraw       | OBAQ描画処理                       |
+| qview       | ビュー設定                         |
+| qsetreq     | システムリクエスト設定             |
+| qgetreq     | システムリクエスト取得             |
+| qborder     | 外壁を設定                         |
+| qgravity    | 重力を設定                         |
+| qcnvaxis    | X,Y座標値を変換                    |
+| qgetaxis    | 内部座標を取得                     |
+| qdel        | オブジェクト削除                   |
+| qaddpoly    | 多角形オブジェクト追加             |
+| qaddmodel   | 自由設定オブジェクト追加           |
+| qtype       | typeパラメーターを設定             |
+| qstat       | statパラメーターを設定             |
+| qpos        | 位置、角度パラメーターを設定       |
+| qspeed      | 速度パラメーターを設定             |
+| qweight     | 重さなどのパラメーターを設定       |
+| qdamper     | 吸振などのパラメーターを設定       |
+| qinertia    | 惰性などのパラメーターを設定       |
+| qgroup      | グループパラメーターを設定         |
+| qmat        | マテリアルパラメーターを設定       |
+| qmat2       | マテリアル詳細パラメーターを設定   |
+| qmat3       | マテリアル表示パラメーターを設定   |
+| quser       | ユーザー定義データを設定           |
+| quser2      | ユーザー定義データを設定2          |
+| qfind       | オブジェクト検索                   |
+| qnext       | オブジェクト検索結果取得           |
+| qcollision  | コリジョン取得開始                 |
+| qgetcol     | コリジョン取得                     |
+| qgetcol2    | コリジョン詳細情報取得             |
+| qgetcol3    | コリジョン詳細情報取得2            |
+| qgettype    | typeパラメーターを取得             |
+| qgetstat    | statパラメーターを取得             |
+| qgetpos     | 位置、角度パラメーターを取得       |
+| qgetspeed   | 速度パラメーターを取得             |
+| qgetweight  | 重さなどのパラメーターを取得       |
+| qgetdamper  | 吸振などのパラメーターを取得       |
+| qgetinertia | 惰性などのパラメーターを取得       |
+| qgetgroup   | グループパラメーターを取得         |
+| qgetmat     | マテリアルパラメーターを取得       |
+| qgetmat2    | マテリアル詳細パラメーターを取得   |
+| qgetmat3    | マテリアル表示パラメーターを取得   |
+| qgetuser    | ユーザー定義データを取得           |
+| qgetuser2   | ユーザー定義データを取得2          |
+| qpush       | 任意の場所に力を与える             |
+| qblast      | 任意の場所から放射状に力を与える   |
+| qgetversion | バージョン情報を取得               |
+| qinner      | 座標がオブジェクト内にあるかを取得 |
+| qgetptr     | システムポインタ値取得             |
