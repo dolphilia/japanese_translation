@@ -1,0 +1,573 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>MetalANGLEの概要 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="metal_andle_development.html" />
+    
+    
+    <link rel="prev" href="angle_development.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="angle_development.html">
+            
+                <a href="angle_development.html">
+            
+                    
+                    ANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="metal_angle.html">
+            
+                <a href="metal_angle.html">
+            
+                    
+                    MetalANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="metal_andle_development.html">
+            
+                <a href="metal_andle_development.html">
+            
+                    
+                    MetalANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >MetalANGLEの概要</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="metalangle---opengl-esからapple-metal-apiへの変換レイヤー">MetalANGLE - OpenGL ESからApple Metal APIへの変換レイヤー</h1>
+<p><a href="https://github.com/kakashidinho/metalangle/blob/master/README.md" target="_blank">原文</a></p>
+<p><a href="https://ci.appveyor.com/project/kakashidinho/metalangle" target="_blank"><img src="https://ci.appveyor.com/api/projects/status/github/kakashidinho/metalangle?svg=true&amp;branch=master" alt="ビルド状況"></a>
+<a href="https://github.com/kakashidinho/metalangle/actions?query=branch%3Amaster" target="_blank"><img src="https://github.com/kakashidinho/metalangle/actions/workflows/build.yml/badge.svg?branch=master" alt="ビルド状況"></a></p>
+<p>Googleの<a href="https://chromium.googlesource.com/angle/angle" target="_blank">ANGLEプロジェクト</a>をフォークしたものです。Metal APIのバックエンドサポートを追加しています。Appleは2018年にOpenGL(ES)の非推奨を発表しました。そこで、MetalANGLEの目的は、OpenGL ESの描画コールをMetalの描画コールにフード内で変換することにより、OpenGL ESアプリケーションがAppleプラットフォーム上で引き続き動作するようにすることです。また、OpenGL ES &amp; Metalの相互運用もサポートします。</p>
+<p><strong>2021年6月30日更新:</strong> このレポのOpenGL ES 3.0をMetalで実装するコードのほとんどは、公式の <code>ANGLE</code> レポにマージされています。当初、Metalのバックエンドの開発はここだけで行われていました。アップル社も修正を行っており、その変更を公式の <code>ANGLE</code> にマージしている最中なので、現在はそうではありません。現在の [MetalANGLEと公式ANGLEの違い] (#differences-between-metalangle-and-googles-angle) を参照してください。</p>
+<p>MetalベースのWebGLベンチマーク（<a href="https://github.com/kakashidinho/metalangle/tree/gles3-dev" target="_blank">gles3-dev branch</a>のコードをベースにした予備的なものです。）</p>
+<ul>
+<li>Metal（54fps）対ネイティブOpenGL（46fps）で20k匹の魚を描画。:
+<img src="src/libANGLE/renderer/metal/metal_vs_gl_aquarium_webgl.jpg" alt></li>
+<li>このベンチマークは、AMD Radeon Pro 560 GPUを使用したChromiumブラウザ上で<a href="https://webglsamples.org/aquarium/aquarium.html" target="_blank">https://webglsamples.org/aquarium/aquarium.html</a>を実行します。.</li>
+</ul>
+<h3 id="現在のmetalバックエンドの実装状況">現在のMetalバックエンドの実装状況</h3>
+<ul>
+<li>MetalANGLEはANGLEの公式レポに移行されました。現在の<a href="#differences-between-metalangle-and-googles-angle">MetalANGLEと公式ANGLEの違い</a>をご覧ください。</li>
+<li><strong>OpenGL ES 2.0</strong> の機能は100％完成しています。</li>
+<li><strong>OpenGL ES 3.0</strong> の状態になります。<ul>
+<li>[x] オクルージョンのクエリ。</li>
+<li>[x] MSAA.</li>
+<li>[x] 複数のレンダーターゲット (<strong>古い iOS GPU では、<a href="https://developer.apple.com/documentation/metal/texturesunderstanding_color-renderable_pixel_format_sizes?language=objc" target="_blank">ピクセルストレージの制限</a> のため、すべての GL フォーマットがサポートされているわけではありません</strong>。問題64](<a href="https://github.com/kakashidinho/metalangle/issues/64)を参照してください)。" target="_blank">https://github.com/kakashidinho/metalangle/issues/64)を参照してください)。</a></li>
+<li>[x] 3D、アレイ、シャドウテクスチャ。</li>
+<li>[x] テクスチャースウィズル (<strong>supported on iOS 13.0+, macOS 10.15+ only</strong>).</li>
+<li>[x] ユニフォームバッファー。</li>
+<li>[x] フェンスシンク (<strong>supported on iOS 12.0+, macOS 10.14+ only</strong>).</li>
+<li>[x] ピクセルバッファオブジェクト。</li>
+<li>[ ] プリミティブなリスタートMetalのプリミティブリスタートは確実に動作しません。</li>
+<li>[ ] 最後に生成された頂点でフラットシェーディングを行う。Metalのデフォルトは最初の頂点です。</li>
+<li>[x] フィードバックを変換する。</li>
+</ul>
+</li>
+<li><strong>OpenGL ES 1.0</strong> は使用することをお勧めしません。この実装はオリジナルの <code>ANGLE</code> プロジェクトによって積極的にメンテナンスされておらず、現在バグだらけで完全には準拠していない。</li>
+<li>基本的なサンプルはすべて動作しています。</li>
+<li><strong>ANGLEのエンドツーエンドテストは、ほぼ全て合格しています</strong>. <a href="src/libANGLE/renderer/metal/README.md#Failed-ANGLE-end2-tests">失敗したテストの一覧</a>を参照してください。</li>
+<li><strong>OpenGL ES 2.0コンフォーマンステストの98%に合格</strong>. <strong>90%以上のOpenGL ES 3.0コンフォーマンステストに合格</strong>. <a href="https://github.com/KhronosGroup/VK-GL-CTS" target="_blank">Khronos VK-GL-CTS</a>をご参照ください。</li>
+<li>これらの拡張機能は実装されています。<ul>
+<li>[x] <a href="https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_instanced_arrays.txt" target="_blank">EXT_instanced_arrays</a>/<a href="https://www.khronos.org/registry/OpenGL/extensions/ANGLE/ANGLE_instanced_arrays.txt" target="_blank">ANGLE_instanced_arrays</a>: GLES 2.0用のインスタンスドローコール。</li>
+<li>[x] <a href="https://www.khronos.org/registry/OpenGL/extensions/OES/OES_depth_texture.txt" target="_blank">OES_depth_texture</a>.</li>
+<li>[x] <a href="https://www.khronos.org/registry/OpenGL/extensions/EXT/EXT_draw_buffers.txt" target="_blank">EXT_draw_buffers</a>: GLES 2.0に対応した複数のレンダーターゲット。</li>
+<li>[x] <a href="https://www.khronos.org/registry/OpenGL/extensions/ANGLE/ANGLE_framebuffer_blit.txt" target="_blank">ANGLE_framebuffer_blit</a>.</li>
+<li>[x] <a href="https://www.khronos.org/registry/OpenGL/extensions/APPLE/APPLE_clip_distance.txt" target="_blank">APPLE_clip_distance</a>: カスタムクリッププレーン</li>
+</ul>
+</li>
+<li><a href="src/libANGLE/renderer/metal/DevSetup.md#MGLKit">MGLKit</a> ユーティリティクラスが追加されました。AppleのGLKitと似たような機能を提供します。</li>
+<li>Urho3Dエンジンのデモは、MetalANGLEを使用して問題なくテストされています。<a href="https://github.com/kakashidinho/Urho3D/tree/angle-metal-backend" target="_blank">Urho3D&apos;s MetalANGLE integration testing branch</a>を参照してください。</li>
+<li>Irrlicht EngineのMetalANGLEサンプルとの連携。 <a href="https://github.com/kakashidinho/irrlicht" target="_blank">https://github.com/kakashidinho/irrlicht</a>.</li>
+<li>Metalとの相互運用がサポートされています。Qtの例: <a href="https://github.com/kakashidinho/qml-metalangle" target="_blank">https://github.com/kakashidinho/qml-metalangle</a> を参照してください。</li>
+<li><del>No <code>GL_TRIANGLE_FAN</code> &amp; <code>GL_LINE_LOOP</code> support in draw calls yet.</del></li>
+<li>Metalはバッファオフセットが4バイトの倍数でないことや、アトリビュートサイズの倍数でないことを許しません。したがって、サポートされていないオフセット、ストライド、および頂点フォーマットを使用する描画コールは、MetalANGLEがオンザフライで変換を行うことを余儀なくされます。</li>
+<li><del>MSAA is not supported yet.</del></li>
+<li>古いOpenGL ES 2.0のみの実装は、<a href="https://github.com/kakashidinho/metalangle/tree/gles2" target="_blank">gles2 branch</a>で見ることができます。</li>
+<li><strong>対応プラットフォーム</strong>:<ul>
+<li>MetalANGLEは、Macの <strong>MacOS 10.13+</strong> のみ対応しています。.</li>
+<li>iOSの場合、最小サポートバージョンは <strong>iOS 9.0</strong> です。それ以前のバージョンでは、Metalの代わりにApple OpenGL ESのネイティブ実装を使用するようになります。さらに、ほとんどのサンプルアプリは <strong>iOS11.0+</strong> 用にコンパイルされています。そのため、10.0以下のデバイスでサンプルアプリをテストしたい場合、一部のもの（例：MGLKitSampleApp_ios9.0）を除き、実行することはできません。</li>
+<li>iPhone 5以下はサポート対象外です。</li>
+<li><strong>MacCatalyst 13.0+</strong> に対応しています。</li>
+</ul>
+</li>
+</ul>
+<h4 id="todo-lists">TODO lists</h4>
+<ul>
+<li>[ ] ANGLEのすべてのテストに合格していることを確認。</li>
+<li>[x] <del>Support <code>GL_TRIANGLE_FAN</code> &amp; <code>GL_LINE_LOOP</code> by generating index buffer on the fly using Metal compute shader.</del></li>
+<li>[x] <del>Use compute shader to convert unsupported offsets, strides &amp; vertex formats.</del></li>
+<li>[x] <del>Support MSAA.</del></li>
+<li>[ ] OpenGL ES 3.0に完全対応。</li>
+</ul>
+<h2 id="macos--ios用metal-angleのビルド方法">MacOS &amp; iOS用Metal ANGLEのビルド方法</h2>
+<p><a href="src/libANGLE/renderer/metal/DevSetup.md">MetalバックエンドのDevセットアップ手順</a>をご覧ください。</p>
+<p>現在、便宜上、MetalANGLEは <code>ios/xcode</code> と <code>mac/xcode</code> フォルダにあるXcodeプロジェクトを使ってビルドすることもできます。このXcodeプロジェクトでは、アップルが提供するGLKitのクラスである <code>CAEAGLContext</code>, <code>MGLLayer</code>, <code>MGLKView</code>, <code>GLKViewController</code> と同様のユーティリティラッパーである <a href="src/libANGLE/renderer/metal/DevSetup.md#MGLKit">MGLKit</a> も構築されています。このライブラリを使ったiOSアプリのサンプルは <code>MGLKitSamples.xcodeproj</code> を開いてください。この [documents] (src/libANGLE/renderer/metal/DevSetup.md#MGLKit) には <code>GLKit</code> アプリを <code>MGLKit</code> に移植するためのいくつかのガイドが含まれています。</p>
+<p>それでも、[MetalバックエンドのDevセットアップ手順] (src/libANGLE/renderer/metal/DevSetup.md) にあるように、必要な環境と依存関係を適切に設定することが先決です。</p>
+<h2 id="metalangleとgoogleのangleの相違点">MetalANGLEとGoogleのANGLEの相違点</h2>
+<ul>
+<li>2021年6月以前は、Metalのバックエンドのコードの大半は <code>MetalANGLE</code> と <code>ANGLE</code> で共有されています。</li>
+<li>2021年8月～9月以降、アップルから直接 <code>ANGLE</code> リポジトリにいくつかの変更が加えられる予定です。これらの変更は、開発上のコンフリクトのため <code>MetalANGLE</code> に含まれないかもしれません。Appleの変更のほとんどは、WebkitのWebGLの標準に役立つもので、通常の使用では最適なパフォーマンスが得られないかもしれません。Apple からの変更点は以下の通りです。<ul>
+<li>フラットシェーディングの最後の挑発頂点をサポートするために、 インデックスバッファをオンザフライで書き直しました。これは、OpenGL ES のフラットシェーディングの仕様に準拠 するのに役立ちますが、フラットシェーディングを使用する描画コールが 遅くなります。多くの使用例では、フラットシェーディングが最後の頂点と最初の頂点 のどちらを使用するかは、ユーザは気にしないでしょう。</li>
+</ul>
+</li>
+<li><code>MetalANGLE</code> は iOS をサポートし、Apple の非推奨 API である <code>EAGL</code> &amp; <code>GLKit</code> を模倣した <a href="src/libANGLE/renderer/metal/DevSetup.md#MGLKit">MGLKit</a> などの高レベル API を含んでいます。これらの機能は <code>ANGLE</code> にマージされることはないでしょう。なぜなら <code>ANGLE</code> プロジェクトは近い将来 iOS をサポートする予定がないからです。</li>
+</ul>
+<hr>
+<h1 id="googleのangle---ほぼネイティブなグラフィックスレイヤーエンジン">GoogleのANGLE - ほぼネイティブなグラフィックスレイヤーエンジン</h1>
+<p>The goal of ANGLE is to allow users of multiple operating systems to seamlessly run WebGL and other
+OpenGL ES content by translating OpenGL ES API calls to one of the hardware-supported APIs available
+for that platform. ANGLE currently provides translation from OpenGL ES 2.0 and 3.0 to desktop
+OpenGL, OpenGL ES, Direct3D 9, and Direct3D 11. Support for translation from OpenGL ES to Vulkan is
+underway, and future plans include compute shader support (ES 3.1) and MacOS support.</p>
+<h3 id="level-of-opengl-es-support-via-backing-renderers">Level of OpenGL ES support via backing renderers</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Direct3D 9</th>
+<th style="text-align:center">Direct3D 11</th>
+<th style="text-align:center">Desktop GL</th>
+<th style="text-align:center">GL ES</th>
+<th style="text-align:center">Vulkan</th>
+<th style="text-align:center">Metal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenGL ES 2.0</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+</tr>
+<tr>
+<td>OpenGL ES 3.0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">in progress</td>
+<td style="text-align:center">90% complete</td>
+</tr>
+<tr>
+<td>OpenGL ES 3.1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">in progress</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">in progress</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>OpenGL ES 3.2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">planned</td>
+<td style="text-align:center">planned</td>
+<td style="text-align:center">planned</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-support-via-backing-renderers">Platform support via backing renderers</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">Direct3D 9</th>
+<th style="text-align:center">Direct3D 11</th>
+<th style="text-align:center">Desktop GL</th>
+<th style="text-align:center">GL ES</th>
+<th style="text-align:center">Vulkan</th>
+<th style="text-align:center">Metal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Windows</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Linux</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Mac OS X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+</tr>
+<tr>
+<td style="text-align:right">iOS</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+</tr>
+<tr>
+<td style="text-align:right">Chrome OS</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">planned</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Android</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Fuchsia</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">in progress</td>
+</tr>
+</tbody>
+</table>
+<p>ANGLE v1.0.772 was certified compliant by passing the ES 2.0.3 conformance tests in October 2011.
+ANGLE also provides an implementation of the EGL 1.4 specification.</p>
+<p>ANGLE is used as the default WebGL backend for both Google Chrome and Mozilla Firefox on Windows
+platforms. Chrome uses ANGLE for all graphics rendering on Windows, including the accelerated
+Canvas2D implementation and the Native Client sandbox environment.</p>
+<p>Portions of the ANGLE shader compiler are used as a shader validator and translator by WebGL
+implementations across multiple platforms. It is used on Mac OS X, Linux, and in mobile variants of
+the browsers. Having one shader validator helps to ensure that a consistent set of GLSL ES shaders
+are accepted across browsers and platforms. The shader translator can be used to translate shaders
+to other shading languages, and to optionally apply shader modifications to work around bugs or
+quirks in the native graphics drivers. The translator targets Desktop GLSL, Direct3D HLSL, and even
+ESSL for native GLES2 platforms.</p>
+<h2 id="sources">Sources</h2>
+<p>ANGLE repository is hosted by Chromium project and can be
+<a href="https://chromium.googlesource.com/angle/angle" target="_blank">browsed online</a> or cloned with</p>
+<pre><code>git clone https://chromium.googlesource.com/angle/angle
+</code></pre><h2 id="building">Building</h2>
+<p>View the <a href="doc/DevSetup.md">Dev setup instructions</a>.</p>
+<h2 id="contributing">Contributing</h2>
+<ul>
+<li>Join our <a href="https://groups.google.com/group/angleproject" target="_blank">Google group</a> to keep up to date.</li>
+<li>Join us on IRC in the #ANGLEproject channel on FreeNode.</li>
+<li>Join us on <a href="https://chromium.slack.com" target="_blank">Slack</a> in the #angle channel.</li>
+<li><a href="http://anglebug.com/new" target="_blank">File bugs</a> in the <a href="https://bugs.chromium.org/p/angleproject/issues/list" target="_blank">issue tracker</a> (preferably with an isolated test-case).</li>
+<li><a href="doc/ChoosingANGLEBranch.md">Choose an ANGLE branch</a> to track in your own project.</li>
+</ul>
+<ul>
+<li>Read ANGLE development <a href="doc">documentation</a>.</li>
+<li>Look at <a href="https://chromium-review.googlesource.com/q/project:angle/angle+status:open" target="_blank">pending</a>
+and <a href="https://chromium-review.googlesource.com/q/project:angle/angle+status:merged" target="_blank">merged</a> changes.</li>
+<li>Become a <a href="doc/ContributingCode.md">code contributor</a>.</li>
+<li>Use ANGLE&apos;s <a href="doc/CodingStandard.md">coding standard</a>.</li>
+<li>Learn how to <a href="doc/BuildingAngleForChromiumDevelopment.md">build ANGLE for Chromium development</a>.</li>
+<li>Get help on <a href="doc/DebuggingTips.md">debugging ANGLE</a>.</li>
+<li>Go through <a href="doc/Orientation.md">ANGLE&apos;s orientation</a> and sift through <a href="doc/Starter-Projects.md">starter projects</a>.</li>
+</ul>
+<ul>
+<li>Read about WebGL on the <a href="http://khronos.org/webgl/wiki/Main_Page" target="_blank">Khronos WebGL Wiki</a>.</li>
+<li>Learn about implementation details in the <a href="http://www.seas.upenn.edu/~pcozzi/OpenGLInsights/OpenGLInsights-ANGLE.pdf" target="_blank">OpenGL Insights chapter on ANGLE</a> and this <a href="https://drive.google.com/file/d/0Bw29oYeC09QbbHoxNE5EUFh0RGs/view?usp=sharing" target="_blank">ANGLE presentation</a>.</li>
+<li>Learn about the past, present, and future of the ANGLE implementation in <a href="https://docs.google.com/presentation/d/1CucIsdGVDmdTWRUbg68IxLE5jXwCb2y1E9YVhQo0thg/pub?start=false&amp;loop=false" target="_blank">this presentation</a>.</li>
+<li>Watch a <a href="https://youtu.be/QrIKdjmpmaA" target="_blank">short presentation</a> on the Vulkan back-end.</li>
+<li>Track the <a href="doc/dEQP-Charts.md">dEQP test conformance</a></li>
+<li>Read design docs on the <a href="src/libANGLE/renderer/vulkan/README.md">Vulkan back-end</a></li>
+<li>If you use ANGLE in your own project, we&apos;d love to hear about it!</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="angle_development.html" class="navigation navigation-prev " aria-label="Previous page: ANGLEの開発">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="metal_andle_development.html" class="navigation navigation-next " aria-label="Next page: MetalANGLEの開発">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MetalANGLEの概要","level":"1.3","depth":1,"next":{"title":"MetalANGLEの開発","level":"1.4","depth":1,"path":"metal_andle_development.md","ref":"metal_andle_development.md","articles":[]},"previous":{"title":"ANGLEの開発","level":"1.2","depth":1,"path":"angle_development.md","ref":"angle_development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"metal_angle.md","mtime":"2022-10-02T23:55:00.704Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:05:57.037Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

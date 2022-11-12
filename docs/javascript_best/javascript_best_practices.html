@@ -1,0 +1,844 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>W3C · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="clean_code_javascript.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="50_javascript_best_practice.html">
+            
+                <a href="50_javascript_best_practice.html">
+            
+                    
+                    50のルール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="clean_code_javascript.html">
+            
+                <a href="clean_code_javascript.html">
+            
+                    
+                    Clean Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="javascript_best_practices.html">
+            
+                <a href="javascript_best_practices.html">
+            
+                    
+                    W3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >W3C</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="（w3c-wiki）javascriptベストプラクティス（日本語訳）">（W3C Wiki）JavaScriptベストプラクティス（日本語訳）</h1>
+<p><a href="https://www.w3.org/wiki/JavaScript_best_practices" target="_blank">原文</a></p>
+<h2 id="はじめに">はじめに</h2>
+<p>ベストプラクティスの記事を書くのは、かなり厄介な仕事です。多くの人にとって、これから読もうとしていることはとても明白で、ただ単に賢明なことであるように見えるでしょう。</p>
+<p>しかし、何年もウェブを見て回り、他の開発者からコードを渡された経験から、ウェブ上の生きたコードでは常識は実際にはかなり稀で、プロジェクトの途中で締め切りが迫ってくると、「常識的で論理的にすべきこと」は優先順位リストのかなり下の方に追いやられてしまうことを知りました。</p>
+<p>そこで私は、この記事を作成することで、それを簡単にすることにしました。これは、私が長年にわたって蓄積してきたベストプラクティスと良いアドバイスをまとめたもので、その多くは苦労して学んだものです（実験とその類）。以下のアドバイスを心に刻み、頭の片隅に置いておくと、何も考えずに適用できるようになります。読んだことに疑問を持ち、より良い解決策を見つけるために努力することは、良いことです。しかし、私はこの原則に従うことで、より効果的な開発者になり、他の開発者が私の仕事をより簡単にベースとすることができるようになったことを実感しています。</p>
+<h2 id="物事を名前で呼ぶ---簡単で短く、読みやすい変数名と関数名">物事を名前で呼ぶ - 簡単で短く、読みやすい変数名と関数名</h2>
+<p>これは当たり前のことですが、JavaScriptではx1、fe2、xbqneといった変数や、逆にincrementorForMainLoopWhichSpansFromTenToTwenty、createNewMemberIfAgeOverTwentyOneAndMoonIsFullといった変数名をよく目にするのは怖いことですね。</p>
+<p>良い変数名や関数名は、理解しやすく、何が起こっているのかを教えてくれるものであるべきで、それ以上でも以下でもありません。良い変数名や関数名は、何が起こっているのかをわかりやすく伝えるものであるべきで、それ以上でも以下でもないのです。isLegalDrinkingAge()という関数は、isOverEighteen()よりも意味があります。なぜなら、飲酒の法定年齢は国によって異なり、年齢によって制限される飲酒以外のことも考慮しなければならないからです。</p>
+<p>ハンガリー記法は、採用するのに適した変数命名法です（他にも検討すべき命名法があります）。その利点は、何かが何であるかだけではなく、何が想定されているかがわかるということです。</p>
+<p>例えば、familyNameという変数があり、それが文字列であると仮定した場合、「ハンガリー語」でsFamilyNameと書きます。memberというオブジェクトはoMemberとなり、isLegalというブール値はbIsLegalとなる。これはある人にとっては非常に有益ですが、他の人にとっては余分なオーバーヘッドに見えるでしょう。</p>
+<p>英語にこだわるのもいい考えです。プログラミング言語は英語で書かれているので、これを論理的なステップとして、残りのコードも英語にしてみてはどうでしょう。韓国語やスロベニア語のコードのデバッグに時間を費やした経験から、非ネイティブスピーカーにとってはあまり楽しいことではないと断言できる。</p>
+<p>あなたのコードを物語として見てください。一行一行読んで、何が起こっているのか理解できれば上出来です。もし、ロジックの流れについて行くのにスケッチブックが必要なら、あなたのコードには少し工夫が必要です。現実世界と比較したければ、Dostojewskiを読んでみてください。14人のロシア人の名前が出てくるページで迷いましたが、そのうちの4人は仮名でした。そのようなコードを書かないでください。</p>
+<h2 id="グローバルを避ける">グローバルを避ける</h2>
+<p>グローバル変数や関数名は、信じられないほど悪い考えです。なぜなら、ページに含まれるすべてのJavaScriptファイルは、同じスコープで実行されるからです。もしあなたのコードにグローバル変数や関数がある場合、同じ変数名や関数名を含むスクリプトがあなたのコードより後に含まれていると、あなたの変数や関数が上書きされてしまうからです。</p>
+<p>グローバルの使用を避けるには、いくつかの回避策があります。例えば、次のような3つの関数と1つの変数があるとします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{...}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params"></span>)</span>{...}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"></span>)</span>{...}
+</code></pre>
+<p>オブジェクトリテラルを使用することで、上書きからそれらを保護することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> myNameSpace = {
+  <span class="hljs-attr">current</span>:<span class="hljs-literal">null</span>,
+  <span class="hljs-attr">init</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{...},
+  <span class="hljs-attr">change</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{...},
+  <span class="hljs-attr">verify</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{...}
+}
+</code></pre>
+<p>init()はmyNameSpace.init()、currentはmyNameSpace.currentといった具合に、メインオブジェクトの名前を経由して関数を呼び出したり変数の値を変更する必要があります。init()はmyNameSpace.init()、currentはmyNameSpace.currentなどです。</p>
+<p>このような場合、全体を無名関数でラップして、スコープを保護する方が簡単です。また、関数名()から関数名:関数()に構文を切り替える必要もなくなります。このトリックは、モジュールパターンと呼ばれています。</p>
+<pre><code class="lang-js">myNameSpace = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"></span>)</span>{...}
+}();
+</code></pre>
+<p>繰り返しになりますが、この方法にも問題がないわけではありません。どれも、もう外部からは全く利用できないのです。もし、公開したいのであれば、公開したいものをreturn文で包む必要がある。</p>
+<pre><code class="lang-js">myNameSpace = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-keyword">return</span>{
+    <span class="hljs-attr">init</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{...}
+    <span class="hljs-attr">change</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{...}
+  }
+}();
+</code></pre>
+<p>これでは、一方から他方へのリンクと構文の変更という点で、かなり振り出しに戻ることになります。そこで、私は次のような方法を好んで使っています（これを「明解なモジュールパターン」と名付けました）。</p>
+<pre><code class="lang-js">myNameSpace = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-keyword">return</span>{
+    <span class="hljs-attr">init</span>:init,
+    <span class="hljs-attr">change</span>:change
+  }
+}();
+</code></pre>
+<p>プロパティやメソッドを返す代わりに、それらへのポインタを返すだけです。これにより、myNameSpaceの名前を介することなく、他の場所から関数を呼び出したり、変数にアクセスしたりすることが容易になります。</p>
+<p>また、内部リンクのために長い、説明的な名前を付けたいが、外部には短い名前を付けたいという場合に、関数のパブリックエイリアスを持つことができるということです。</p>
+<pre><code class="lang-js">myNameSpace = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">change</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">verify</span>(<span class="hljs-params"></span>)</span>{...}
+  <span class="hljs-keyword">return</span>{
+    <span class="hljs-attr">init</span>:init,
+    <span class="hljs-attr">set</span>:change
+  }
+}();
+</code></pre>
+<p>myNameSpace.set()を呼び出すと、change()メソッドが呼び出されるようになりました。</p>
+<p>変数や関数を外部から利用する必要がない場合は、構文全体を別の括弧でくくるだけで、名前を付けずに実行することができます。</p>
+<p>(function(){
+  var current = null;
+  function init(){...}
+  function change(){...}
+  function verify(){...}
+})();</p>
+<p>これにより、外部からはアクセスできないが、内部で変数や関数を共有することは非常に容易な、整然とした小さなパッケージにすべてが収められる。</p>
+<h2 id="厳格なコーディングスタイルにこだわる">厳格なコーディングスタイルにこだわる</h2>
+<p>ブラウザは、JavaScriptの構文に関して非常に寛容です。しかし、このことが、ブラウザに依存したずさんなコードを書く理由になってはいけません。</p>
+<p>あなたのコードの構文の質をチェックする最も簡単な方法は、JSLint を通して実行することです - 構文の警告とその意味について詳細なレポートを提供する JavaScript 検証ツールです。人々は、あなたがコードを保存するときに自動的にlintを行うエディタの拡張機能（例えば、TextMateのJSツール）を書いてきました。</p>
+<p>JSLintは、返す結果について少し神経質で、開発者のDouglas Crockfordが言うように、あなたの感情を傷つけることがあります。しかし、TextMate JSバンドルをインストールし、私のコードをJSLintの精査にかけるようになってから、より良いコードを書くことができるようになりました。</p>
+<p>クリーンで有効なコードは、修正すべき混乱したバグを減らし、他の開発者に引き継ぎやすく、コードのセキュリティも向上させることができます。コードを動作させるためにハックに頼っていると、同じハックを利用したセキュリティエクスプロイトが存在する可能性があります。さらに、ブラウザのハッキングが修正されると、あなたのコードは次のバージョンのブラウザでは動作しなくなります。</p>
+<p>有効なコードとは、スクリプトで他の形式に変換できることも意味します。ハッキングされたコードでは、人間が変換する必要があります。</p>
+<h2 id="必要な分だけコメントし、それ以上にはしない">必要な分だけコメントし、それ以上にはしない</h2>
+<p>コメントは、他の開発者（そして、数ヶ月後に他の作業をした後で自分のコードに戻った場合、自分自身）に対するメッセージです。コメントを使用するかどうかについては、長年にわたって多くの議論が交わされてきました。主な論点は、良いコードは自分自身を説明するべきだというものです。</p>
+<p>私がこの議論の欠点と考えるのは、説明というのは非常に主観的なものであるということです。すべての開発者が、あるコードが何をしているのかを全く同じ説明から理解することは期待できません。</p>
+<p>コメントは、あなたが正しく行えば、誰も傷つけることはありません。この記事の最後のポイントに戻りますが、もしあなたのコメントがエンドユーザーの目に触れるコードになるのであれば、何かがうまくいっていないのだとしましょう。</p>
+<p>繰り返しになりますが、コツは「節度」です。コメントする場合は、/<em> </em>/という記法を使いましょう。一行のコメントで//を使用すると、コメントを削除せずにコードをミニマイズする場合に問題が発生する可能性があり、一般的に汎用性が低くなります。</p>
+<p>もし、コードの一部をコメントアウトして、後で使ったり、デバッグしたりする場合は、とても便利なトリックがあります。</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{
+  };
+<span class="hljs-comment">/*
+  function show(){
+    current = 1;
+  };
+  function hide(){
+    show();
+  };
+*/</span>
+  <span class="hljs-keyword">return</span>{<span class="hljs-attr">init</span>:init,<span class="hljs-attr">show</span>:show,<span class="hljs-attr">current</span>:current}
+}();
+</code></pre>
+<p>閉じた星形のスラッシュの前に2つのスラッシュを付けると、ブロック全体のコメントやアンコメントができるように設定されます。</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span> = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> current = <span class="hljs-literal">null</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>)</span>{
+  };
+<span class="hljs-comment">/*
+  function show(){
+    current = 1;
+  };
+  function hide(){
+    show();
+  };
+// */</span>
+  <span class="hljs-keyword">return</span>{<span class="hljs-attr">init</span>:init,<span class="hljs-attr">show</span>:show,<span class="hljs-attr">current</span>:current}
+}();
+</code></pre>
+<p>上のブロックのようにコードを設定した場合、冒頭のスラッシュスターの前にスラッシュを追加すると、複数行のコメントが2つの1行コメントに変わり、その間のコードが「非表示」になって実行されるようになります。スラッシュを取り除くと、再びコメントアウトされます。</p>
+<p>大規模なアプリケーションでは、JavaDocスタイルのコメント文書は非常に理にかなっています。コードを書くことによって、製品の全体的な文書に種をまいているのです。Yahoo User Interfaceライブラリの成功は、一部これに起因していますし、あなたの製品に同じドキュメントを構築するために使用できるツールもあります。JavaDocについては、念のためここで触れておきます。</p>
+<h2 id="他の技術との混合を避ける">他の技術との混合を避ける</h2>
+<p>JavaScriptとDOMを使えば、ドキュメントに必要なものをすべて作ることは可能ですが、それは必ずしも最も効果的な方法とは言えません。次のコードは、入力フィールドのクラスが「必須」で何も入力されていないとき、すべての入力フィールドを赤枠で囲んでいます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> f = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;mainform&apos;</span>);
+<span class="hljs-keyword">var</span> inputs = f.getElementsByTagName(<span class="hljs-string">&apos;input&apos;</span>);
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>,j=inputs.length;i&lt;j;i++){
+  <span class="hljs-keyword">if</span>(inputs[i].className === <span class="hljs-string">&apos;mandatory&apos;</span> &amp;&amp;
+     inputs[i].value === <span class="hljs-string">&apos;&apos;</span>){
+    inputs[i].style.borderColor = <span class="hljs-string">&apos;#f00&apos;</span>;
+    inputs[i].style.borderStyle = <span class="hljs-string">&apos;solid&apos;</span>;
+    inputs[i].style.borderWidth = <span class="hljs-string">&apos;1px&apos;</span>;
+  }
+}
+</code></pre>
+<p>しかし、この方法では、後でスタイルを変更する必要がある場合、JavaScriptを使用して、その変更を適用する必要があることを意味します。変更が複雑であればあるほど、これを編集するのは難しくなります。さらに、すべてのJavaScript開発者がCSSに精通していたり、興味を持っているわけではないので、結果が出るまで何度も行き来することになる。エラー時に「error」というクラスを要素に追加することで、スタイリング情報をCSSの内部に保持させることができ、より適切な表現が可能になる。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> f = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;mainform&apos;</span>);
+<span class="hljs-keyword">var</span> inputs = f.getElementsByTagName(<span class="hljs-string">&apos;input&apos;</span>);
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>,j=inputs.length;i&lt;j;i++){
+  <span class="hljs-keyword">if</span>(inputs[i].className === <span class="hljs-string">&apos;mandatory&apos;</span> &amp;&amp;
+     inputs[i].value === <span class="hljs-string">&apos;&apos;</span>){
+    inputs[i].className += <span class="hljs-string">&apos; error&apos;</span>;
+  }
+}
+</code></pre>
+<p>これは、CSSがドキュメントを通してカスケードすることを意図しているため、より効率的です。例えば、ある文書で特定のクラスを持つすべての DIV を非表示にしたいとします。すべての DIV をループして、そのクラスをチェックし、スタイルコレクションを変更することができます。新しいブラウザでは、CSSセレクタエンジンを使用して、スタイルコレクションを変更することができます。しかし、最も簡単な方法は、JavaScript を使用して親要素にクラスを設定し、CSS で element.triggerclass div.selectorclass{} のようなシンタックスを使用することです。実際にDIVを隠す作業は、CSSデザイナーに任せてください。</p>
+<h2 id="ショートカット表記は意味がある場合に使用する">ショートカット表記は意味がある場合に使用する</h2>
+<p>ショートカット表記は厄介なテーマです。一方ではコードを小さく保つことができますが、他方ではショートカットに気づかない開発者が出てきて、あなたの後を引き継ぐのが難しくなるかもしれません。ここでは、できること（そしてすべきこと）の小さなリストを紹介します。</p>
+<p>オブジェクトは、おそらくJavaScriptの中で最も汎用性の高いものです。古くからある書き方としては、次のようなものがあります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> cow = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+cow.colour = <span class="hljs-string">&apos;brown&apos;</span>;
+cow.commonQuestion = <span class="hljs-string">&apos;What now?&apos;</span>;
+cow.moo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;moo&apos;</span>);
+}
+cow.feet = <span class="hljs-number">4</span>;
+cow.accordingToLarson = <span class="hljs-string">&apos;will take over the world&apos;</span>;
+</code></pre>
+<p>しかし、これでは、プロパティやメソッドごとにオブジェクト名を繰り返すことになり、煩わしさを感じるかもしれません。その代わりに、以下のような構成にする方がずっと理にかなっています。オブジェクト・リテラルとも呼ばれます。</p>
+<pre><code class="lang-js">var cow = {
+  colour:&apos;brown&apos;,
+  commonQuestion:&apos;What now?&apos;,
+  moo:function(){
+    console.log(&apos;moo);
+  },
+  feet:4,
+  accordingToLarson:&apos;will take over the world&apos;
+};
+</code></pre>
+<p>JavaScriptでは配列が混乱の元となります。多くのスクリプトで、以下のようにArrayを定義しているのを見かけると思います。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> awesomeBands = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>();
+awesomeBands[<span class="hljs-number">0</span>] = <span class="hljs-string">&apos;Bad Religion&apos;</span>;
+awesomeBands[<span class="hljs-number">1</span>] = <span class="hljs-string">&apos;Dropkick Murphys&apos;</span>;
+awesomeBands[<span class="hljs-number">2</span>] = <span class="hljs-string">&apos;Flogging Molly&apos;</span>;
+awesomeBands[<span class="hljs-number">3</span>] = <span class="hljs-string">&apos;Red Hot Chili Peppers&apos;</span>;
+awesomeBands[<span class="hljs-number">4</span>] = <span class="hljs-string">&apos;Pornophonique&apos;</span>;
+</code></pre>
+<p>これは無駄な繰り返しが多いので、[ ]配列のショートカットを使えば、もっと早く書けます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> awesomeBands = [
+  <span class="hljs-string">&apos;Bad Religion&apos;</span>,
+  <span class="hljs-string">&apos;Dropkick Murphys&apos;</span>,
+  <span class="hljs-string">&apos;Flogging Molly&apos;</span>,
+  <span class="hljs-string">&apos;Red Hot Chili Peppers&apos;</span>,
+  <span class="hljs-string">&apos;Pornophonique&apos;</span>
+];
+</code></pre>
+<p>チュートリアルの中で「連想配列」という言葉を目にすることがあると思います。これは誤用で、インデックスではなく名前の付いたプロパティを持つ配列は実際にはオブジェクトであり、そのように定義されるべきものです。</p>
+<p>条件は「三項記法」を使って短縮することができます。例えば、次の構文は、ある変数が他の変数の値によって1または-1となることを定義しています。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> direction;
+<span class="hljs-keyword">if</span>(x &gt; <span class="hljs-number">100</span>){
+  direction = <span class="hljs-number">1</span>;
+} <span class="hljs-keyword">else</span> {
+  direction = -<span class="hljs-number">1</span>;
+}
+</code></pre>
+<p>これを1行に短縮することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> direction = (x &gt; <span class="hljs-number">100</span>) ? <span class="hljs-number">1</span> : -<span class="hljs-number">1</span>;
+</code></pre>
+<p>クエスチョンマークの前が条件、その直後の値が真の場合、コロンの後が偽の場合である。3項表記は入れ子にすることもできるが、可読性を保つためにそれは避けたい。</p>
+<p>もうひとつ、JavaScriptでよくあるのは、変数が定義されていない場合にあらかじめ値を与えておくことで、次のような使い方がある。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span>(v){
+  <span class="hljs-keyword">var</span> x = v;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">var</span> x = <span class="hljs-number">10</span>;
+}
+</code></pre>
+<p>そのショートカット表記がダブルパイプキャラクターです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> x = v || <span class="hljs-number">10</span>;
+</code></pre>
+<p>これは、vが定義されていない場合、xに自動的に10という値を与えるもので、とても簡単です。</p>
+<h2 id="モジュール化---1つのタスクに1つの機能">モジュール化 - 1つのタスクに1つの機能</h2>
+<p>これは一般的なプログラミングのベストプラクティスです。一度に一つの仕事をこなす関数を作ることで、他の開発者がデバッグやコードの変更をしやすくなり、どのコードブロックがどの関数を実行しているかを調べる必要がなくなります。</p>
+<p>これは、一般的なタスクのためのヘルパー関数を作成する場合にも当てはまります。同じことを複数の関数で行う場合は、汎用的なヘルパー関数を作成し、その機能を必要な場所で再利用するのがよいでしょう。</p>
+<p>また、関数の中でコードを分岐させるよりも、一方から入って一方から出るほうが理にかなっています。例えば、新しいリンクを作成するためのヘルパー関数を書きたいとします。このようにすることができます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLink</span>(<span class="hljs-params">text,url,parentElement</span>)</span>{
+  <span class="hljs-keyword">var</span> newLink = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;a&apos;</span>);
+  newLink.setAttribute(<span class="hljs-string">&apos;href&apos;</span>,url);
+  newLink.appendChild(<span class="hljs-built_in">document</span>.createTextNode(text));
+  parentElement.appendChild(newLink);
+}
+</code></pre>
+<p>これは問題なく動作しますが、リンクを適用する要素によって異なる属性を追加する必要があることに気づくかもしれません。例えば</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addLink</span>(<span class="hljs-params">text,url,parentElement</span>)</span>{
+  <span class="hljs-keyword">var</span> newLink = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;a&apos;</span>);
+  newLink.setAttribute(<span class="hljs-string">&apos;href&apos;</span>,url);
+  newLink.appendChild(<span class="hljs-built_in">document</span>.createTextNode(text));
+  <span class="hljs-keyword">if</span>(parentElement.id === <span class="hljs-string">&apos;menu&apos;</span>){
+    newLink.className = <span class="hljs-string">&apos;menu-item&apos;</span>;
+  }
+  <span class="hljs-keyword">if</span>(url.indexOf(<span class="hljs-string">&apos;mailto:&apos;</span>)!==-<span class="hljs-number">1</span>){
+    newLink.className = <span class="hljs-string">&apos;mail&apos;</span>;
+  }
+  parentElement.appendChild(newLink);
+}
+</code></pre>
+<p>これでは、関数がより特殊になり、さまざまな状況に適用することが難しくなります。よりすっきりした方法は、リンクを返し、余分なケースはそれを必要とするメイン関数でカバーすることです。これにより、addLink() はより一般的な createLink() となります。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createLink</span>(<span class="hljs-params">text,url</span>)</span>{
+  <span class="hljs-keyword">var</span> newLink = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;a&apos;</span>);
+  newLink.setAttribute(<span class="hljs-string">&apos;href&apos;</span>,url);
+  newLink.appendChild(<span class="hljs-built_in">document</span>.createTextNode(text));
+  <span class="hljs-keyword">return</span> newLink;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMenu</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> menu = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;menu&apos;</span>);
+  <span class="hljs-keyword">var</span> items = [
+    {<span class="hljs-attr">t</span>:<span class="hljs-string">&apos;Home&apos;</span>,<span class="hljs-attr">u</span>:<span class="hljs-string">&apos;index.html&apos;</span>},
+    {<span class="hljs-attr">t</span>:<span class="hljs-string">&apos;Sales&apos;</span>,<span class="hljs-attr">u</span>:<span class="hljs-string">&apos;sales.html&apos;</span>},
+    {<span class="hljs-attr">t</span>:<span class="hljs-string">&apos;Contact&apos;</span>,<span class="hljs-attr">u</span>:<span class="hljs-string">&apos;contact.html&apos;</span>}
+  ];
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;items.length;i++){
+    <span class="hljs-keyword">var</span> item = createLink(items.t,items.u);
+    item.className = <span class="hljs-string">&apos;menu-item&apos;</span>;
+    menu.appendChild(item);
+  }
+}
+</code></pre>
+<p>すべての関数がひとつのタスクだけを実行するようにすれば、 アプリケーションの構造をすべて含むメインの init() 関数を作成することができます。そうすれば、ドキュメントの残りの部分をスキャンして依存関係を調べることなく、簡単にアプリケーションを変更したり機能を削除したりすることができます。</p>
+<h2 id="段階的に強化する">段階的に強化する</h2>
+<p>開発手法としてのプログレッシブエンハンスメントについては、Graceful Degradation vs. Progressive Enhancementで詳しく解説しています。要するに、利用可能な技術に関係なく動作するコードを書くということです。JavaScriptの場合、スクリプトが使えないときでも（たとえばBlackBerryの場合、あるいは過剰なセキュリティポリシーのため）、Web製品はユーザーがあるゴールに到達できるようにすべきであり、ユーザーがオンにできない、あるいはしたくないJavaScriptがないことを理由にブロックしてはいけない、ということを意味します。</p>
+<p>JavaScriptを使わなくても簡単に解決できる問題に対して、膨大に複雑なJavaScriptのソリューションを構築してしまうことは、驚くほど多いのです。私が遭遇した一例は、ウェブ、画像、ニュースなど、さまざまなデータを検索できるページ上の検索ボックスでした。</p>
+<p>オリジナルのバージョンでは、異なるデータのオプションは、検索を実行するバックエンドの異なるスクリプトを指すように、フォームのアクション属性を書き換えるリンクになっていました。</p>
+<p>問題は、JavaScriptをオフにした場合、リンクは表示されますが、フォームのアクションが変更されないため、すべての検索が標準的なウェブ結果を返すということでした。解決策はとてもシンプルで、リンクの代わりにラジオボタンのグループとして選択肢を用意し、バックエンドのスクリプトを使って異なる専門的な検索スクリプトにフォーカスを当てました。</p>
+<p>これにより、検索が正しく行われるようになっただけでなく、何人のユーザーがどのオプションを選択したかを簡単に追跡できるようになりました。正しいHTML構造を用いることで、フォームアクションを切り替えるためのJavaScriptとクリックトラッキングのスクリプトの両方を取り除くことができ、環境に関係なく、すべてのユーザーが使えるようになりました。</p>
+<p>コンフィギュレーションと翻訳を可能にする</p>
+<p>コードの保守性とクリーンさを維持するための最も成功したヒントの1つは、時間の経過とともに変更される可能性があるすべてのものを含む設定オブジェクトを作成することです。このオブジェクトには、作成した要素で使用するテキスト（ボタンの値や画像の代替テキストなど）、CSSのクラス名とID、作成したインターフェースの一般的なパラメータが含まれます。</p>
+<p>例えば、簡単な YouTube プレイヤーは以下のような設定オブジェクトを持っています。</p>
+<pre><code class="lang-js"><span class="hljs-comment">/*
+  This is the configuration of the player. Most likely you will
+  never have to change anything here, but it is good to be able 
+  to, isn&apos;t it? 
+*/</span>
+config = {
+  <span class="hljs-attr">CSS</span>:{
+    <span class="hljs-comment">/* 
+      IDs used in the document. The script will get access to 
+      the different elements of the player with these IDs, so 
+      if you change them in the HTML below, make sure to also 
+      change the name here!
+    */</span>
+    <span class="hljs-attr">IDs</span>:{
+      <span class="hljs-attr">container</span>:<span class="hljs-string">&apos;eytp-maincontainer&apos;</span>,
+      <span class="hljs-attr">canvas</span>:<span class="hljs-string">&apos;eytp-playercanvas&apos;</span>,
+      <span class="hljs-attr">player</span>:<span class="hljs-string">&apos;eytp-player&apos;</span>,
+      <span class="hljs-attr">controls</span>:<span class="hljs-string">&apos;eytp-controls&apos;</span>,
+
+      <span class="hljs-attr">volumeField</span>:<span class="hljs-string">&apos;eytp-volume&apos;</span>,
+      <span class="hljs-attr">volumeBar</span>:<span class="hljs-string">&apos;eytp-volumebar&apos;</span>,
+
+      <span class="hljs-attr">playerForm</span>:<span class="hljs-string">&apos;eytp-playerform&apos;</span>,
+      <span class="hljs-attr">urlField</span>:<span class="hljs-string">&apos;eytp-url&apos;</span>,
+
+      <span class="hljs-attr">sizeControl</span>:<span class="hljs-string">&apos;eytp-sizecontrol&apos;</span>,
+
+      <span class="hljs-attr">searchField</span>:<span class="hljs-string">&apos;eytp-searchfield&apos;</span>,
+      <span class="hljs-attr">searchForm</span>:<span class="hljs-string">&apos;eytp-search&apos;</span>,
+      <span class="hljs-attr">searchOutput</span>:<span class="hljs-string">&apos;eytp-searchoutput&apos;</span>
+      <span class="hljs-comment">/* 
+        Notice there should never be a comma after the last 
+        entry in the list as otherwise MSIE will throw  a fit!
+      */</span>
+    },
+    <span class="hljs-comment">/*
+      These are the names of the CSS classes, the player adds
+      dynamically to the volume bar in certain 
+      situations.
+    */</span>
+    <span class="hljs-attr">classes</span>:{
+      <span class="hljs-attr">maxvolume</span>:<span class="hljs-string">&apos;maxed&apos;</span>,
+      <span class="hljs-attr">disabled</span>:<span class="hljs-string">&apos;disabled&apos;</span>
+      <span class="hljs-comment">/* 
+        Notice there should never be a comma after the last 
+        entry in the list as otherwise MSIE will throw  a fit!
+      */</span>
+    }
+  },
+  <span class="hljs-comment">/* 
+    That is the end of the CSS definitions, from here on 
+    you can change settings of the player itself. 
+  */</span>
+  <span class="hljs-attr">application</span>:{
+    <span class="hljs-comment">/*
+      The YouTube API base URL. This changed during development of this,
+      so I thought it useful to make it a parameter.
+    */</span>
+    <span class="hljs-attr">youtubeAPI</span>:<span class="hljs-string">&apos;http://gdata.youtube.com/apiplayer/cl.swf&apos;</span>,
+    <span class="hljs-comment">/* 
+      The YouTube Developer key,
+      please replace this with your own when you host the player!!!!!
+    */</span>
+    <span class="hljs-attr">devkey</span>:<span class="hljs-string">&apos;AI39si7d...Y9fu_cQ&apos;</span>,
+    <span class="hljs-comment">/*
+      The volume increase/decrease in percent and the volume message 
+      shown in a hidden form field (for screen readers). The $x in the 
+      message will be replaced with the real value.
+    */</span>
+    <span class="hljs-attr">volumeChange</span>:<span class="hljs-number">10</span>,
+    <span class="hljs-attr">volumeMessage</span>:<span class="hljs-string">&apos;volume $x percent&apos;</span>,
+    <span class="hljs-comment">/*
+      Amount of search results and the error message should there 
+      be no results.
+    */</span>
+    <span class="hljs-attr">searchResults</span>:<span class="hljs-number">6</span>,
+    <span class="hljs-attr">loadingMessage</span>:<span class="hljs-string">&apos;Searching, please wait&apos;</span>,
+    <span class="hljs-attr">noVideosFoundMessage</span>:<span class="hljs-string">&apos;No videos found : (&apos;</span>,
+    <span class="hljs-comment">/*
+      Amount of seconds to repeat when the user hits the rewind 
+      button.
+    */</span>
+    <span class="hljs-attr">secondsToRepeat</span>:<span class="hljs-number">10</span>,
+    <span class="hljs-comment">/*
+      Movie dimensions.
+    */</span>
+    <span class="hljs-attr">movieWidth</span>:<span class="hljs-number">400</span>,
+    <span class="hljs-attr">movieHeight</span>:<span class="hljs-number">300</span>
+    <span class="hljs-comment">/* 
+      Notice there should never be a comma after the last 
+      entry in the list as otherwise MSIE will throw  a fit!
+    */</span>
+  }  
+}
+</code></pre>
+<p>これをモジュールパターンの一部として公開すれば、実装者がモジュールを初期化する前に必要なものだけをオーバーライドすることも可能になります。</p>
+<p>コードのメンテナンスをシンプルに保つことが最も重要で、将来のメンテナンス担当者があなたのコードをすべて読み、どこを変更する必要があるかを探す必要をなくします。もしそれが明白でなければ、あなたのソリューションは完全に捨て去られるか、ハッキングされるかのどちらかでしょう。ハックされたソリューションは、アップグレードが必要になったときにパッチを当てることができず、コードの再利用ができなくなります。</p>
+<h2 id="重いネストを避ける">重いネストを避ける</h2>
+<p>コードを入れ子にすることで、そのロジックが説明され、読みやすくなります。しかし、入れ子にしすぎると、何をしようとしているのかが分からなくなることもあります。コードの読者が水平方向にスクロールする必要はありませんし、コードエディターが長い行を折り返したときに混乱することもありません（この場合、せっかくのインデントが無意味になります）。</p>
+<p>ネストのもう一つの問題は、変数名とループである。通常、最初のループはiをイテレータ変数として開始するので、j,k,lと続けていくことになります。これでは、すぐに面倒なことになってしまいます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderProfiles</span>(<span class="hljs-params">o</span>)</span>{
+  <span class="hljs-keyword">var</span> out = <span class="hljs-built_in">document</span>.getElementById(‘profiles’);
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;o.members.length;i++){
+    <span class="hljs-keyword">var</span> ul = <span class="hljs-built_in">document</span>.createElement(‘ul’);
+    <span class="hljs-keyword">var</span> li = <span class="hljs-built_in">document</span>.createElement(‘li’);
+    li.appendChild(<span class="hljs-built_in">document</span>.createTextNode(o.members[i].name));
+    <span class="hljs-keyword">var</span> nestedul = <span class="hljs-built_in">document</span>.createElement(‘ul’);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j=<span class="hljs-number">0</span>;j&lt;o.members[i].data.length;j++){
+      <span class="hljs-keyword">var</span> datali = <span class="hljs-built_in">document</span>.createElement(‘li’);
+      datali.appendChild(
+        <span class="hljs-built_in">document</span>.createTextNode(
+          o.members[i].data[j].label + ‘ ‘ +
+          o.members[i].data[j].value
+        )
+      );
+      nestedul.appendChild(datali);
+    }
+    li.appendChild(nestedul);
+  } 
+  out.appendChild(ul);
+}
+</code></pre>
+<p>ここでは、一般的な（本当に使い捨ての）変数名ulとliを使っているので、ネストされたリスト項目にはnestedulとdataliが必要です。リストのネストがさらに深くなれば、さらに多くの変数名が必要になり、その繰り返しとなります。各メンバーのネストされたリストを作成する作業を独自の関数に置き、これを適切なデータで呼び出す方がより理にかなっています。これによって、ループの中にループができるのを防ぐこともできます。addMemberData()関数はかなり汎用的で、別の機会に便利になる可能性が非常に高いです。これらの考えを踏まえて、私なら以下のようにコードを書き換えます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderProfiles</span>(<span class="hljs-params">o</span>)</span>{
+  <span class="hljs-keyword">var</span> out = <span class="hljs-built_in">document</span>.getElementById(‘profiles’);
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;o.members.length;i++){
+    <span class="hljs-keyword">var</span> ul = <span class="hljs-built_in">document</span>.createElement(‘ul’);
+    <span class="hljs-keyword">var</span> li = <span class="hljs-built_in">document</span>.createElement(‘li’);
+    li.appendChild(<span class="hljs-built_in">document</span>.createTextNode(data.members[i].name));
+    li.appendChild(addMemberData(o.members[i]));
+  } 
+  out.appendChild(ul);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addMemberData</span>(<span class="hljs-params">member</span>)</span>{
+  <span class="hljs-keyword">var</span> ul = <span class="hljs-built_in">document</span>.createElement(‘ul’);
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;member.data.length;i++){
+    <span class="hljs-keyword">var</span> li = <span class="hljs-built_in">document</span>.createElement(‘li’);
+    li.appendChild(
+      <span class="hljs-built_in">document</span>.createTextNode(
+        member.data[i].label + ‘ ‘ +
+        member.data[i].value
+      )
+    );
+  }
+  ul.appendChild(li);
+  <span class="hljs-keyword">return</span> ul;
+}
+</code></pre>
+<h2 id="ループの最適化">ループの最適化</h2>
+<p>ループは正しくやらないと非常に遅くなることがあります。よくある間違いは、反復のたびに配列の長さ属性を読み込むことです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&apos;George&apos;</span>,<span class="hljs-string">&apos;Ringo&apos;</span>,<span class="hljs-string">&apos;Paul&apos;</span>,<span class="hljs-string">&apos;John&apos;</span>];
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;names.length;i++){
+  doSomeThingWith(names[i]);
+}
+</code></pre>
+<p>つまり、ループが実行されるたびに、JavaScriptは配列の長さを読み取る必要があるのです。長さの値を別の変数に格納することで、それを回避することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&apos;George&apos;</span>,<span class="hljs-string">&apos;Ringo&apos;</span>,<span class="hljs-string">&apos;Paul&apos;</span>,<span class="hljs-string">&apos;John&apos;</span>];
+<span class="hljs-keyword">var</span> all = names.length;
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;all;i++){
+  doSomeThingWith(names[i]);
+}
+</code></pre>
+<p>これを実現するさらに短い方法は、ループ前のステートメントで2つ目の変数を作成することです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> names = [<span class="hljs-string">&apos;George&apos;</span>,<span class="hljs-string">&apos;Ringo&apos;</span>,<span class="hljs-string">&apos;Paul&apos;</span>,<span class="hljs-string">&apos;John&apos;</span>];
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>,j=names.length;i&lt;j;i++){
+  doSomeThingWith(names[i]);
+}
+</code></pre>
+<p>もうひとつ、計算の多いコードはループの外に置くようにしましょう。これには正規表現や、さらに重要なこととして DOM 操作が含まれます。ループの中でDOMノードを作成することはできますが、ドキュメントに挿入することは避けてください。DOMのベストプラクティスについては、次のセクションで詳しく説明します。</p>
+<h2 id="domアクセスは最小限にとどめる">DOMアクセスは最小限にとどめる</h2>
+<p>ブラウザで DOM にアクセスすることは、コストがかかることです。DOM は非常に複雑な API であり、ブラウザでのレンダリングに多くの時間を取られることがあります。これは、複雑なウェブアプリケーションを実行するときに、コンピュータがすでに他の作業で最大限の負荷がかかっているときに見られます。変更に時間がかかったり、途中で表示されたり、といった具合にです。</p>
+<p>コードを高速化し、ブラウザの速度を低下させないようにするには、DOMへのアクセスを最小限に抑えるようにします。常に要素を作成して適用するのではなく、文字列をDOM要素に変換するツール関数を用意し、生成処理の最後にこの関数を呼び出すことで、ブラウザのレンダリングを継続的にではなく、一度に妨害することができます。</p>
+<h2 id="ブラウザの気まぐれに屈しない">ブラウザの気まぐれに屈しない</h2>
+<p>特定のブラウザに特化したコードを書くと、コードのメンテナンスが難しくなり、すぐに古くなってしまいます。ウェブを見ていると、特定のブラウザを前提としたスクリプトがたくさんあり、新しいバージョンや別のブラウザが登場するとすぐに動作しなくなります。</p>
+<p>これは時間と労力の無駄です。私たちは、1つのブラウザのためではなく、この記事のコースで説明したように、合意された標準に基づいてコードを構築すべきなのです。ウェブはすべての人のためにあるのであって、最先端の設定を持つエリート集団のユーザーのためのものではありません。ブラウザ市場の動きが速くなると、あなたは自分のコードに戻り、それを修正し続けなければならなくなります。これでは、効果も楽しみもありません。</p>
+<p>もし、あるブラウザでしか動作しない素晴らしいコードをどうしても使いたいなら、そのコードを独自のスクリプト文書に入れ、ブラウザとバージョンで名前を付けましょう。そうすれば、このブラウザが古くなったときに、この機能を簡単に見つけて削除することができます。</p>
+<h2 id="どんなデータも信用しない">どんなデータも信用しない</h2>
+<p>コードとデータのセキュリティについて話すとき、心に留めておくべき主要なポイントの1つは、どんなデータも信用しないことです。これは、システムをハッキングしようとする悪人についてだけでなく、単純な使い勝手から始まるものです。ユーザーは常に不正なデータを入力します。それは、ユーザーが愚かだからではなく、忙しかったり、注意散漫だったり、指示された文言に惑わされたりしているからです。例えば、私はホテルの部屋を6日間ではなく、1ヶ月間予約しました。</p>
+<p>要するに、システムに入るすべてのデータがきれいで、必要なものであることを確認することです。これは、URLから取得したパラメータを書き出すバックエンドで最も重要なことである。JavaScriptでは、関数に送られるパラメータの種類をテストすることが非常に重要です（typeofキーワードを使用します）。以下の例は、membersがArrayでない場合、エラーになります（例えば、文字列の場合、文字列の各文字に対応するリスト項目を作成することになります）。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildMemberList</span>(<span class="hljs-params">members</span>)</span>{
+  <span class="hljs-keyword">var</span> all = members.length;
+  <span class="hljs-keyword">var</span> ul = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;ul&apos;</span>);
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;all;i++){
+    <span class="hljs-keyword">var</span> li = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;li&apos;</span>);
+    li.appendChild(<span class="hljs-built_in">document</span>.createTextNode(members[i].name));
+    ul.appendChild(li);
+  }
+  <span class="hljs-keyword">return</span> ul;
+}
+</code></pre>
+<p>これを動作させるためには、membersの型を確認し、配列であることを確認する必要があります。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">buildMemberList</span>(<span class="hljs-params">members</span>)</span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> members === <span class="hljs-string">&apos;object&apos;</span> &amp;&amp; 
+     <span class="hljs-keyword">typeof</span> members.slice === <span class="hljs-string">&apos;function&apos;</span>){
+    <span class="hljs-keyword">var</span> all = members.length;
+    <span class="hljs-keyword">var</span> ul = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;ul&apos;</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;all;i++){
+      <span class="hljs-keyword">var</span> li = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;li&apos;</span>);
+      li.appendChild(<span class="hljs-built_in">document</span>.createTextNode(members[i].name));
+      ul.appendChild(li);
+    }
+    <span class="hljs-keyword">return</span> ul;
+  }
+}
+</code></pre>
+<p>配列はオブジェクトであることを教えてくれるから厄介だ。配列であることを確認するために、配列だけが持つメソッドの一つを確認します。</p>
+<p>また、DOMから情報を読み取って比較せずに使用することも、非常に安全でない行為です。例えば、私は以前、JavaScriptの機能が壊れる原因となるコードをデバッグしなければならなかったことがあります。そのコードは、なぜか私には理解できないのですが、ページ要素の innerHTML からユーザー名を読み取り、そのデータをパラメータとして関数を呼び出していました。ユーザー名にはUTF-8の任意の文字が使用でき、これには引用符やシングルクォートも含まれます。これらは文字列を終了させるので、残りの部分は誤ったデータになってしまいます。さらに、FirebugやOpera DragonFlyなどのツールを使ってHTMLを変更したユーザーは、ユーザー名を任意のものに変更し、このデータを関数に注入することができます。</p>
+<p>クライアント側だけでバリデーションを行うフォームも同様です。以前、選択項目を書き換えて別の選択肢を用意し、利用できないメールアドレスにサインアップしたことがあります。バックエンドでフォームがチェックされなかったので、処理は滞りなく行われました。</p>
+<p>DOMアクセスについては、到達して変更しようとする要素が本当に利用可能か、期待するものであるかを確認してください。そうでなければ、コードが失敗したり、奇妙なレンダリングバグを引き起こす可能性があります。</p>
+<h2 id="javascriptで機能を追加し、コンテンツを作り過ぎないようにする">JavaScriptで機能を追加し、コンテンツを作り過ぎないようにする</h2>
+<p>ここでの他の例でもわかるように、JavaScriptで多くのHTMLを構築することは、かなり大変で薄っぺらなものになります。特に Internet Explorer では、読み込み中のドキュメントを変更したり、innerHTML でコンテンツを操作したりすると、あらゆる種類のトラブルに巻き込まれる可能性があります (不幸と悲惨の物語については、Google で &quot;operation aborted error&quot; を検索してください)。</p>
+<p>ページのメンテナンスという点では、HTMLで多くのマークアップを作成することは非常に悪い考えです。なぜなら、すべてのメンテナンス担当者があなたと同じレベルのスキルを持っているとは限らず、あなたのコードを本当に台無しにしてしまう可能性があるからです。</p>
+<p>私は、JavaScriptに大きく依存するアプリケーションを構築しなければならないとき、HTMLテンプレートを使用し、このテンプレートをAjaxで読み込む方がはるかに理にかなっていることに気づきました。そうすれば、メンテナンス担当者は、JavaScriptのコードに干渉することなく、HTMLの構造や最も重要なテキストを変更することができます。唯一の難点は、どのIDが必要なのか、また、特定のHTML構成が定義した順序である必要があるのかどうかを伝えることです。インラインのHTMLコメントでそれを行うことができます（そして、テンプレートを読み込むときにコメントを取り除くことができます。例として、Easy YouTube テンプレートのソースを確認してください。</p>
+<p>スクリプトでは、正しいHTMLコンテナが利用可能になった時点でテンプレートをロードし、その後setupPlayer()メソッド内のイベントハンドラを適用しています。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> playercontainer = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;easyyoutubeplayer&apos;</span>);
+<span class="hljs-keyword">if</span>(playercontainer){
+  ajax(<span class="hljs-string">&apos;template.html&apos;</span>);
+}; 
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax</span>(<span class="hljs-params">url</span>)</span>{
+  <span class="hljs-keyword">var</span> request;
+  <span class="hljs-keyword">try</span>{
+    request = <span class="hljs-keyword">new</span> XMLHttpRequest();
+  }<span class="hljs-keyword">catch</span>(error){
+    <span class="hljs-keyword">try</span>{
+      request = <span class="hljs-keyword">new</span> ActiveXObject(<span class="hljs-string">&quot;Microsoft.XMLHTTP&quot;</span>);
+    }<span class="hljs-keyword">catch</span>(error){
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+  }
+  request.open(<span class="hljs-string">&apos;get&apos;</span>,url,<span class="hljs-literal">true</span>);
+  request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">if</span>(request.readyState == <span class="hljs-number">4</span>){
+      <span class="hljs-keyword">if</span>(request.status){ 
+        <span class="hljs-keyword">if</span>(request.status === <span class="hljs-number">200</span> || request.status === <span class="hljs-number">304</span>){
+          <span class="hljs-keyword">if</span>(url === <span class="hljs-string">&apos;template.html&apos;</span>){
+            setupPlayer(request.responseText);
+          }
+        }
+      }<span class="hljs-keyword">else</span>{
+        alert(<span class="hljs-string">&apos;Error: Could not find template...&apos;</span>);
+      }
+    }
+  };
+  request.setRequestHeader(<span class="hljs-string">&apos;If-Modified-Since&apos;</span>,<span class="hljs-string">&apos;Wed, 05 Apr 2006 00:00:00  GMT&apos;</span>);
+  request.send(<span class="hljs-literal">null</span>);
+};
+</code></pre>
+<p>こうすることで、JavaScriptのコードを変更することなく、好きなようにプレーヤーを翻訳し、変更することができるようになるのです。</p>
+<h2 id="巨人の肩の上に立つ">巨人の肩の上に立つ</h2>
+<p>ここ数年、JavaScriptのライブラリやフレームワークがWeb開発市場を席巻していることは否定できません。そして、それは決して悪いことではありません - 正しく使用されるならば。優れたJavaScriptライブラリの目的はただ一つ、クロスブラウザの不整合に対処し、ブラウザサポートの穴を埋めることで、開発者としてのあなたの生活を楽にすることです。JavaScript ライブラリは、予測可能で機能するベースラインを提供します。</p>
+<p>まずはライブラリなしでJavaScriptを学び、何が起こっているのかを本当に理解するのがよいでしょう。ブラウザの問題ではなく、再現可能なバグを利用することで、問題を少なくすることができます。</p>
+<p>私の個人的なお気に入りはYahoo User Interface library（YUI）、次いでjQuery、Dojo、Prototypeだが、他にも良いライブラリがたくさんあるので、自分と自分の製品に最も適したものを見つけると良いだろう。</p>
+<p>どのライブラリも相性が良いのですが、同じプロジェクトで複数のライブラリを使用するのは良いアイデアではありません。これは、余計な複雑さとメンテナンスのレベルを増やすことになります。</p>
+<h2 id="開発コードはライブコードではない">開発コードはライブコードではない</h2>
+<p>最後に、JavaScriptそのものについてではなく、開発戦略の残りの部分にどのように組み込んでいくかという点について述べたいと思います。JavaScriptの変更はWebアプリケーションのパフォーマンスと機能に即座に影響を与えるため、メンテナンスへの影響にかかわらず、コードを可能な限り最適化したくなるものです。</p>
+<p>JavaScriptのパフォーマンスを向上させるために適用できる巧妙なトリックはたくさんあります。しかしそのほとんどは、コードの理解や保守を困難にするという欠点があります。</p>
+<p>安全で動作するJavaScriptを書くためには、このサイクルを断ち切り、他の開発者ではなくマシンのためにコードを最適化することをやめる必要があります。ほとんどの場合 - 他の言語では非常に一般的なことですが、JavaScript ユーザーの間ではあまり知られていないことです。ビルドスクリプトは、空白やコメントを削除したり、文字列をArrayルックアップに置き換えたり（MSIEが文字列のインスタンスごとに文字列オブジェクトを作成するのを避けるため - 条件付きでも）、JavaScriptをブラウザで動かすために必要な他のすべての小さな微調整を行うことができます。</p>
+<p>最初のコードを、他の開発者が理解しやすく、拡張しやすくすることにもっと集中すれば、完璧なビルドスクリプトを作ることができます。早急に最適化し続ければ、そこに到達することはできません。自分自身やブラウザのためにビルドするのではなく、あなたの後を継ぐ次の開発者のためにビルドしましょう。</p>
+<h2 id="概要">概要</h2>
+<p>JavaScript の主なトリックは、安易な道を選ばないことです。JavaScript は素晴らしく多機能な言語であり、その実行環境は非常に寛容であるため、一見うまくいっているように見えるずさんなコードを書くのは簡単なことです。しかし、この同じコードが数ヶ月後にあなたを苦しめることになるでしょう。</p>
+<p>JavaScriptの開発は、ウェブデベロッパーとして仕事をしたいのであれば、端的な知識エリアから絶対必要なものへと変化しています。もしあなたが今すぐ始めようとしているなら、ラッキーです。私や他の多くの人がすでにほとんどの間違いを犯し、すべての試行錯誤を独学で行っているので、今その知識を伝えることができるのです。</p>
+<blockquote>
+<p>この資料は以前、Opera Web Standards Curriculumの一部として公開されたもので、42: JavaScript best practicesとして、Christian Heilmannによって書かれたものがあります。オリジナルと同様、Creative Commons Attribution, Non Commercial - Share Alike 2.5 licenseの下で公開されています。</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="clean_code_javascript.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Clean Code">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"W3C","level":"1.4","depth":1,"previous":{"title":"Clean Code","level":"1.3","depth":1,"path":"clean_code_javascript.md","ref":"clean_code_javascript.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"javascript_best_practices.md","mtime":"2022-10-14T22:11:32.031Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:14:41.976Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

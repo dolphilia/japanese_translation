@@ -1,0 +1,1075 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Cスタイル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="c_style.html">
+            
+                <a href="c_style.html">
+            
+                    
+                    Cスタイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Cスタイル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="cスタイル">Cスタイル</h1>
+<p><a href="https://github.com/mcinglis/c-style" target="_blank">原文</a></p>
+<p>これらは私が好きなC言語プログラミングの実践方法です。スタイルと同じくらい些細なルールもあれば、もっと入り組んだルールもあります。私はいくつかのルールには忠実に従いますが、他のルールはガイドラインとして使っています。私は、スピードよりも、正しさ、読みやすさ、シンプルさ、保守性を優先しています。なぜなら、「早まった最適化は諸悪の根源」(<a href="http://c2.com/cgi/wiki?PrematureOptimization)だからです。" target="_blank">http://c2.com/cgi/wiki?PrematureOptimization)だからです。</a></p>
+<p><strong>正しく、読みやすく、シンプルでメンテナンス可能なソフトウェアを書き、完成したらチューニングする</strong>、ベンチマークでチョークポイントを特定する。また、最新のコンパイラは、計算の複雑さを変えることができます。配列が成長するよりもリンクリストを書く方が簡単ですが、配列のインデックスを作るよりもリストのインデックスを作る方が難しいのです。</p>
+<p>後方互換性（例：ANSI C）は、私にとってほとんど重要ではありません。私の考えでは、後方互換性は皆の足を引っ張ります。できることなら新しい技術や新しい手法を使って、みんなを少しでも前に進ませるべきだと思うのです。</p>
+<p>もし、ここに書かれていることに同意できなくても、それはまったく問題ありません。自分の好きなもの、自分の状況に合ったものを選んでください。これらのルールは、品質に関する普遍的な勧告を意図したものではありません。これは私の好みに過ぎず、私が行うこと、そして私が気にかけることに対してうまく機能しています。</p>
+<p>このガイドを書くことで、私はC言語のベストプラクティスについて深く考え、再考することになりました。この文書に書かれている多くの規則について、私は何度も意見を変えました。</p>
+<p>だから、さらに多くの点で間違っていることは間違いない。これは常に進行中の作業です。問題やプルリクエストは非常に歓迎されます。このガイドは <a href="license.md">Creative Commons Attribution-ShareAlike</a> の下でライセンスされていますので、あなたがこれを使って何をしようとも、私は責任を負いません。</p>
+<hr>
+<h4 id="常にすべての警告を表示した状態で開発・コンパイルする。">常にすべての警告を表示した状態で開発・コンパイルする。</h4>
+<p>ここでは言い訳はしません。常に警告をオンにして開発・コンパイルしてください。しかし、<code>-Wall</code> と <code>-Wextra</code> は実際には「すべての」警告を有効にしないことがわかりました。他にも本当に役に立つものがいくつかあります。</p>
+<pre><code class="lang-make">CFLAGS += -Wall -Wextra -Wpedantic \
+          -Wformat=2 -Wno-unused-parameter -Wshadow \
+          -Wwrite-strings -Wstrict-prototypes -Wold-style-definition \
+          -Wredundant-decls -Wnested-externs -Wmissing-include-dirs
+
+<span class="hljs-comment"># GCC warnings that Clang doesn&apos;t provide:</span>
+<span class="hljs-keyword">ifeq</span> (<span class="hljs-variable">$(CC)</span>,gcc)
+    CFLAGS += -Wjump-misses-init -Wlogical-op
+<span class="hljs-keyword">endif</span>
+</code></pre>
+<p>また、最適化をオンにしてコンパイルすることで、エラーを検出することもできます。</p>
+<pre><code class="lang-make">CFLAGS += -O2
+</code></pre>
+<h4 id="gcc-と-clang-の--m-を使って、オブジェクトファイルの依存関係を自動生成する。">GCC と Clang の <code>-M</code> を使って、オブジェクトファイルの依存関係を自動生成する。</h4>
+<p>GNU Make マニュアル <a href="https://www.gnu.org/software/make/manual/make.html#Automatic-Prerequisites" target="_blank">touches</a> に、ソースファイルの <code>#include</code>s からオブジェクトファイルの依存関係を自動生成する方法について書かれています。このマニュアルに示されているルールの例は少し複雑です。以下は私が使っているルールです。</p>
+<pre><code class="lang-make">depfiles = $(objects:.o=.d)
+
+<span class="hljs-comment"># Have the compiler output dependency files with make targets for each</span>
+<span class="hljs-comment"># of the object files. The `MT` option specifies the dependency file</span>
+<span class="hljs-comment"># itself as a target, so that it&apos;s regenerated when it should be.</span>
+<span class="hljs-section">%.dep.mk: %.c</span>
+    <span class="hljs-variable">$(CC)</span> -M -MP -MT &apos;$(&lt;:.c=.o) <span class="hljs-variable">$@</span>&apos; <span class="hljs-variable">$(CPPFLAGS)</span> <span class="hljs-variable">$&lt;</span> &gt; <span class="hljs-variable">$@</span>
+
+<span class="hljs-comment"># Include each of those dependency files; Make will run the rule above</span>
+<span class="hljs-comment"># to generate each dependency file (if it needs to).</span>
+<span class="hljs-keyword">-include</span> <span class="hljs-variable">$(depfiles)</span>
+</code></pre>
+<h4 id="できるだけ最新の規格で書きましょう">できるだけ最新の規格で書きましょう</h4>
+<p>C11 は C99 よりも優れており、C89 よりも (はるかに) 優れています。C11のサポートはGCCとClangではまだこれからですが、多くの機能があります。もし、中期的に他のコンパイラをサポートする必要があるならば、C99に書きましょう。</p>
+<p>常に <code>-std=c11</code> のように <em>標準</em> で書いてください。<code>gnu11</code> のような方言で書いてはいけない。非標準の言語拡張はなるべく使わないようにしましょう。</p>
+<h4 id="タブがうまく使えないので、スペースを多用する。">タブがうまく使えないので、スペースを多用する。</h4>
+<p>タブのアイデアは、インデントレベルにタブを使い、アライメントにスペースを使うというものでした。これにより、列の整列を崩すことなく、自分の好きなインデント幅を選択することができます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">( <span class="hljs-keyword">void</span> )</span> </span>{
+|tab   |<span class="hljs-keyword">if</span> ( pigs_can_fly() == <span class="hljs-literal">true</span> ) {
+|tab   ||tab   |developers_can_use_tabs( <span class="hljs-string">&quot;and align columns &quot;</span>
+|tab   ||tab   |                         <span class="hljs-string">&quot;with spaces!&quot;</span> );
+|tab   |}
+}
+</code></pre>
+<p>しかし、残念なことに、私たち（そして編集者）は、それが正しく行われることはほとんどありません。タブとスペースの使い分けがもたらす問題は、主に4つあります。</p>
+<ul>
+<li>インデント用のタブは、行の長さに関する意見に矛盾を生じさせます。タブ幅8を使う人は、タブ幅2を使う人よりずっと早く80文字に達してしまいます。これを避ける唯一の方法は、タブ幅を要求することですが、これではタブの利点がなくなってしまいます。</li>
+<li>プロジェクトごとにタブとスペースを正しく処理するようにエディタを設定するのは、スペースだけを処理するよりもはるかに困難です。こちらもご覧ください。<a href="http://www.jwz.org/doc/tabs-vs-spaces.html" target="_blank">タブ vs スペース: 永遠の聖戦</a></li>
+<li>スペースバーだけで整列するのは難しいです。スペースバーを8文字分押し続けるより、タブを2回押す方がずっと簡単です。あなたのプロジェクトの開発者は、いずれこの間違いを犯すでしょう。インデントと位置合わせにスペースを使えば、どちらの状況でもタブキーを押すことができ、素早く、簡単に、ミスが起こりにくくなります。</li>
+<li>スペースだけを使うプロジェクトでは、タブ/スペースのエラーを防ぐのは簡単です。なぜなら、必要なのは、タブがまったくないかどうかを検出するだけだからです。タブを使うプロジェクトで、整列のために使われるタブに対して防止するには、正規表現を考える必要があります。</li>
+</ul>
+<p>複雑なものはカットし、随所にスペースを使用する。時々、他の人のインデント幅に合わせなければならないかもしれません。大変ですね。</p>
+<h4 id="1行の文字数が79文字を超えてはならない">1行の文字数が79文字を超えてはならない</h4>
+<p>79文字以上の行は絶対に書かないでください。</p>
+<p>80文字/行は、コードを見るための事実上の標準です。この標準に依存している読者は、ターミナルやエディタを80文字幅に設定していますが、ウィンドウを横に並べれば、より多くの文字を画面に収められます。</p>
+<p>最後の列に常にスペースがあるように、最大79文字にこだわる必要があります。こうすることで、行が次の行に続かないことがより明確になります。また、右側の余白も確保します。</p>
+<p>80文字を超えると、80カラムの標準に依存しようとする人々にとって、あなたのコードが著しく読みにくくなります。行が折り返して読みにくくなるか、読者が最後の数文字を取得するためにウィンドウを右にスクロールしなければならなくなります。いずれにしても、自分で改行した場合よりも読みにくいコードになってしまいます。</p>
+<p>長い行を読むと、次の行の先頭に到達するまでに目が遠くなり、さらに目が遠くなればなるほど、視覚的に再調整しなければならない可能性が高くなるからです。100字幅や120字幅は、書くのは簡単ですが、読むのは大変です。</p>
+<p>79字を超える行があると、読者はその代償を払うことになります。79文字というのはハードリミットのようなもので、「もしも」や「でも」は許されません。長い行をどのように区切るのがベストなのか、読者はあなたに感謝することでしょう。</p>
+<p>他の人たちがやっているように、80カラムの表示を前提に書けば、私たちはより良くなるはずです。</p>
+<ul>
+<li><a href="http://www.emacswiki.org/emacs/EightyColumnRule" target="_blank">Emacs Wiki: Eighty Column Rule</a></li>
+<li><a href="http://programmers.stackexchange.com/questions/604/is-the-80-character-limit-still-relevant-in-times-of-widescreen-monitors" target="_blank">Programmers&apos; Stack Exchange: Is the 80 character limit still relevant?</a></li>
+</ul>
+<h4 id="どこでも--コメントを使用し、決して---を使用しないでください。">どこでも <code>//</code> コメントを使用し、決して <code>/* ... を使用しないでください。*/</code></h4>
+<p>単一行コメントにこだわり、複雑さを軽減する。単一行コメントと比較して、複数行コメント。</p>
+<ul>
+<li>空白のマージンと共に使用されることはほとんどないため、文字数が多くなってしまいます。</li>
+<li>スタイルを指定し、それに従わなければならない。</li>
+<li>しばしば <code>*/</code> が一行で表示されるため、行数が多くなります。</li>
+<li>埋め込み <code>/*</code> や <code>*/</code> に関する奇妙なルールがある</li>
+<li>ブロック編集や拡張が難しい/できない</li>
+<li>は <code>//</code> よりも視覚的に邪魔になります。</li>
+</ul>
+<p>インラインコメントには <code>/*</code> ... を使用しなければならないしかし、複数行の <code>#define</code> のインラインコメントには <code>/* ...................*/</code> を使わなければなりません。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAGIC( x ) \
+    <span class="hljs-comment">/* Voodoo magic happens here. */</span> \
+    ...</span>
+</code></pre>
+<p>しかし、私はしばしば <code>//</code> コメントをマクロ本体の後に追加して、トリッキーな部分を説明することを好みます。これにより、マクロ本体が読みやすくなり、かつ（必要な）ドキュメントを提供することができると思います。</p>
+<h4 id="アメリカ英語プログラム">アメリカ英語プログラム</h4>
+<p>同じ言語、同じスペル、同じ語彙で開発することは重要です。これは、世界中の協力者がいるフリーソフトのプロジェクトでは特にそうです。あなたのプロジェクトでは、コード、コメント、文書において、一貫して同じ言語を使うべきです。</p>
+<p>ですから、アメリカ英語では <code>color</code>, <code>flavor</code>, <code>center</code>, <code>meter</code>, <code>neighbor</code>, <code>defense</code>, <code>routing</code>, <code>sizable</code>, <code>burned</code>, などと書きます (<a href="https://en.wikipedia.org/wiki/American_and_British_English_spelling_differences" target="_blank">see more</a>)．私はオーストラリア人ですが、ほとんどのプログラマがアメリカ英語を学び、使っていることを理解しています。また、アメリカ英語のスペリングはイギリス英語よりも一貫して音声的で一貫性があります。このような理由から、イギリス英語はアメリカ英語に向かって進化する傾向があるのだと思います。</p>
+<h4 id="非標準ライブラリの-include-をコメントし、そこからどのシンボルを使用するかを示す">非標準ライブラリの <code>#include</code> をコメントし、そこからどのシンボルを使用するかを示す</h4>
+<p>名前空間は、ソフトウェア開発の大きな進歩の一つです。残念ながら、C言語はこれに乗り遅れました（スコープは名前空間ではありません）。しかし、名前空間はとても素晴らしいものなので、コメントでそれをシミュレートしてみるべきでしょう。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;test.c/test.h&gt;</span> <span class="hljs-comment">// Test, tests_run</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;trie.h&quot;</span> <span class="hljs-comment">// Trie, Trie_*</span></span>
+</code></pre>
+<p>これにはいくつかのメリットがあります。</p>
+<ul>
+<li>読者は、シンボルがどこで定義されているか（あるいは、以下のルールに従わない場合、シンボルがどこから来たのか）を知るために、ドキュメントを参照したり、<code>grep</code>を使うことを強制されません：あなたのコードはそれを教えてくれるだけです。</li>
+<li>開発者は、どの <code>#include</code> が削除できて、どの <code>#include</code> が削除できないかを判断できるようになります。</li>
+<li>開発者は名前空間の汚染を考慮することを余儀なくされ、(ほとんどの C コードでは無視される) 小さな、よく定義されたヘッダのみを提供するよう奨励される</li>
+</ul>
+<p>欠点は <code>#include</code> コメントがチェックされない、または強制されないことです。私は長い間、このためのチェッカーを書くつもりでいましたが、今のところ、コメントが間違ってしまうのを止めるものはありません - もう使われていないシンボルに言及したり、使われているシンボルに言及しなかったりします。プロジェクトでは、このような問題の芽を摘み、蔓延を食い止めるようにしましょう。自分のコードを常に信頼できるようにすることです。  このメンテナンスは確かに煩わしいですが、<code>#include</code>コメントは全体で見ればそれだけの価値があると思います。</p>
+<p>コードベースを学習する際に、物事がどこから来たのかを見つけることは、いつも私の大きな課題の一つです。これをもっと簡単にすることができます。このように <code>#include</code> コメントを書いているプロジェクトは見たことがありませんが、ぜひそうなってほしいものです。</p>
+<h4 id="使用するすべてのものの定義を-include-します。">使用するすべてのものの定義を <code>#include</code> します。</h4>
+<p>ヘッダがインクルードしているものに依存しないようにしましょう。もしあなたのコードがシンボルを使うなら、そのシンボルが定義されているヘッダファイルをインクルードしてください。そうすれば、ヘッダがインクルードするものを変えても、あなたのコードは壊れません。</p>
+<p>また、上記の <code>#include</code> のコメントルールと組み合わせることで、読者や他の開発者が、あなたが使用しているシンボルの定義を見つけるために、インクルードのトレイルをたどる必要がなくなります。あなたのコードは、それがどこから来たのかを伝えるだけで良いのです。</p>
+<h4 id="ヘッダーの統一を避ける">ヘッダーの統一を避ける</h4>
+<p>なぜなら、ヘッダを統一することで、疎結合のモジュールを目的や抽象度によって明確に分離して提供する責任を、ライブラリ開発者から解放してしまうからです。たとえ開発者（のつもり）でも、統一ヘッダはコンパイル時間を増加させ、ユーザーのプログラムが必要かどうかにかかわらず、ライブラリ全体を結合してしまいます。その他にも、上記の点で触れたように、多くのデメリットがあります。</p>
+<p>Programmers&apos; Stack Exchange](<a href="http://programmers.stackexchange.com/questions/185773/library-design-provide-a-common-header-file-or-multiple-headers)で、統一ヘッダに関する良い解説がありました。ある回答は、GTK+のようなものが単一のヘッダーファイルしか提供しないのは合理的であると述べています。私は同意しますが、それはGTK+の設計が悪いからであり、グラフィカルツールキットに内在するものではありません。" target="_blank">http://programmers.stackexchange.com/questions/185773/library-design-provide-a-common-header-file-or-multiple-headers)で、統一ヘッダに関する良い解説がありました。ある回答は、GTK+のようなものが単一のヘッダーファイルしか提供しないのは合理的であると述べています。私は同意しますが、それはGTK+の設計が悪いからであり、グラフィカルツールキットに内在するものではありません。</a></p>
+<p>ユーザーが型を書くのが難しいのと同じように、ユーザーが複数の <code>#include</code> を書くのは難しいのです。そこに難しさを持ち込むことは、木を見て森を見ずです。</p>
+<h4 id="すべてのヘッダーにインクルードガードを設け、二重インクルードを防止する。">すべてのヘッダーにインクルードガードを設け、二重インクルードを防止する。</h4>
+<p><a href="https://en.wikipedia.org/wiki/Include_guard" target="_blank">インクルードガード</a> は、コンパイルを中断することなく、ヘッダーファイルを「2回」インクルードできるようにします。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Good</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifndef</span> INCLUDED_ALPHABET_H</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INCLUDED_ALPHABET_H</span>
+
+...
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ifndef INCLUDED_ALPHABET_H</span></span>
+</code></pre>
+<p><a href="http://www.lysator.liu.se/c/pikestyle.html" target="_blank">Rob Pikeはインクルードガードに反対しています</a>。インクルードファイルの中に決してファイルを含めないようにすればいいと言っています。彼は、インクルードガードは依然として「字句解析器を通過する何千行もの不要なコードをもたらす」と述べています。</p>
+<p>実際、<a href="http://gcc.gnu.org/onlinedocs/cppinternals/Guard-Macros.html" target="_blank">GCCはインクルードガードを検出します</a>。そして、そのようなファイルを二度読みすることはありません。ほかのコンパイラがこの最適化を行うかどうか、わたしは知りません。</p>
+<p>わたしは、ユーザがあなたのヘッダファイルの依存関係をインクルードすることを要求するのは良い考えだとは思いません。あなたのヘッダーファイルの依存関係は、本当は「公開」とみなされるべきではないのです。ヘッダファイルがインクルードしているものには依存しない」というルールを強制することになりますが、ヘッダファイルが <code>FILE</code> や <code>bool</code> のような必要ないものを使っているとすぐに崩れてしまいます。ユーザは、自分が必要としないのであれば、そんなことを気にする必要はないはずです。</p>
+<p>ですから、常にインクルードガードを書き、ユーザを楽にしてあげましょう。</p>
+<h4 id="大きな条件部分は必ず-endif-をコメントする。">大きな条件部分は必ず <code>#endif</code> をコメントする。</h4>
+<h4 id="グローバル変数やスタティック変数の使用は避けてください。">グローバル変数やスタティック変数の使用は避けてください。</h4>
+<p>グローバル変数は、それを使用するすべての関数の隠れた引数に過ぎません。そのため、関数が何をしているのか、どのように制御されているのかを理解するのがとても難しくなっています。</p>
+<p>Mutable なグローバル変数は特に悪であり、何としてでも避けるべきものです。概念的には、グローバル変数の代入は、隠された静的な変数を設定するための <code>longjmp</code> の束なのです。うっそー。</p>
+<p>関数は常に引数で完全に制御できるように設計することを心がけなければなりません。たとえ多くの関数に渡さなければならない変数があったとしても、それが関数の計算に影響を与えるのであれば、それは引数か引数のメンバであるべきです。これは、常に、より良いコードとより良い設計につながります。</p>
+<p>例えば、私の <a href="https://github.com/mcinglis/trie.c" target="_blank">Trie.c</a> プロジェクトからグローバル変数と定数を削除した結果、<code>Alphabet</code> 構造体が生まれました。また、同じTrieに対してアルファベットを瞬時に交換するような、とてもクールな動的能力も生まれました。</p>
+<p>関数内の静的変数は、その関数にスコープされたグローバル変数に過ぎず、上記の引数はそれらにも等しく適用されます。グローバル変数と同様に、静的変数もモジュール化された純粋な関数を提供することから逃れるための簡単な方法としてよく使われます。静的変数は、パフォーマンスという名目で擁護されることがよくあります (ベンチマークが先です!)。グローバル変数が不要なのと同じように、スタティック変数も不要です。永続的な状態が必要なら、関数にその状態を引数として受け取らせればいい。永続的なものを返す必要があるなら、そのためのメモリを確保する。</p>
+<h4 id="公開するものを最小限にし、トップレベルの名前を-static-と宣言して、それが可能な場所に置く。">公開するものを最小限にし、トップレベルの名前を <code>static</code> と宣言して、それが可能な場所に置く。</h4>
+<p>ヘッダーファイルは、ユーザがライブラリを使用するために必要なものだけを含めるようにします。内部関数や構造体、マクロはここで提供するべきではありません。複数のソースファイルの間で必要な場合は、内部ヘッダーファイルを用意します。</p>
+<p>関数やグローバル変数がヘッダでエクスポートされない場合、ソースファイル内で <code>static</code> と宣言し、内部リンクを与える。これにより、オブジェクトファイル間の名前の衝突がなくなり、いくつかの最適化が可能になり、リンク速度が向上します。</p>
+<h4 id="不変性が命を救う-できる限り-const-を使おう">不変性が命を救う: できる限り <code>const</code> を使おう</h4>
+<p>const` はコンパイル時の正しさを向上させます。これは、読み取り専用のポインタを文書化するためだけではありません。すべての読み取り専用変数とポインタのために使用されるべきです。</p>
+<p><code>const</code> は、読者が機能の一部を理解する上で、 <em>非常に</em> 役立ちます。初期化を見て、その値がスコープ全体で変化しないことを確認できれば、スコープの残りの部分についてより簡単に推論することができます。何が変更され、何が変更されないかを理解するために、読者はスコープ全体を理解することを余儀なくされます。もしあなたが一貫して <code>const</code> を使っていれば、読者はあなたを信頼し始め、 <code>const</code> で修飾されていない変数は、スコープのどこかの時点で変更されるシグナルであると仮定できるようになります。</p>
+<p>あらゆるところで <code>const</code> を使用することは、開発者として、プログラムの制御フローで何が起こっているのか、どこで変異が広がっているのかを推論するのにも役立ちます。特にポインターやポインティーに関しては、<code>const</code>を使うと、コンパイラーがどれだけ助けてくれるかは驚くべきことです。コンパイラは常にあなたの味方でありたいものです。</p>
+<p>コンパイラは関数呼び出しの際にポインティが <code>const</code>ness を失うと警告を出しますが、ポインティが <code>const</code>ness を得ても文句は言いません。したがって、ポインタの引数が読み取り専用である場合に <code>const</code> として指定しなければ、ユーザが自分のコードで <code>const</code> を使用するのを阻止することになります。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い点：sumはその配列をconstとして定義する必要がある。</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">sum</span><span class="hljs-params">( <span class="hljs-keyword">int</span> * xs, <span class="hljs-keyword">int</span> n )</span></span>;
+
+<span class="hljs-comment">// なぜなら、そうしないとコンパイル時の警告になるからです。</span>
+<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> xs[] = { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span> };
+<span class="hljs-keyword">return</span> sum( xs, <span class="hljs-keyword">sizeof</span> xs );
+<span class="hljs-comment">// =&gt; 警告: 引数 2 の &apos;sum&apos; を渡すと、ポインタのターゲット型から &apos;const&apos; 修飾子が削除されます。</span>
+</code></pre>
+<p>したがって、少なくとも関数のシグネチャについては、 <code>const</code> を使うことはあまり選択肢ではありません。多くの人が <code>const</code> を使うことは有益だと考えているので、好むと好まざるとにかかわらず、誰もが <code>const</code> を使うことを必須と考えるはずです。もし <code>const</code> を使わないのであれば、ユーザは関数へのすべての呼び出しをキャストするか (ヤバイ)、 <code>const</code> の警告を無視するか (面倒くさい)、 <code>const</code> 修飾子を取り除くか (コンパイル時の正しさを失う) のいずれかを迫られることになるのです。</p>
+<p>もし、 <code>const</code> を無視するようなライブラリを使わざるを得ない場合は、代わりにキャストしてくれるマクロを書けばいいのです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// `sum` は指定された配列を変更しない。 `const` ポインタに対してはキャストする。</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> sum( xs, n ) sum( ( int * ) xs, n )</span>
+</code></pre>
+<p>関数プロトタイプのポインティには <code>const</code> 修飾子のみを与える - 引数名自体への <code>const</code> は単なる実装の詳細でしかない。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Unnecessary</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Trie_has</span><span class="hljs-params">( Trie <span class="hljs-keyword">const</span>, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> )</span></span>;
+<span class="hljs-comment">// Good</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">Trie_has</span><span class="hljs-params">( Trie, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * )</span></span>;
+</code></pre>
+<p>残念ながら、C 言語は const でない Pointee-pointees から const の Pointee-pointees への変換を扱うことができません。したがって、点状体を <code>const</code> にしないことをお勧めします。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">char</span> ** <span class="hljs-keyword">const</span> xss = <span class="hljs-built_in">malloc</span>( <span class="hljs-number">3</span> * ( <span class="hljs-keyword">sizeof</span> <span class="hljs-keyword">char</span> * ) );
+<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> yss = xss;
+<span class="hljs-comment">// 警告: 互換性のないポインタ型からの初期化</span>
+
+<span class="hljs-keyword">char</span> * <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> zss = xss;
+<span class="hljs-comment">// &lt;no warning&gt;</span>
+</code></pre>
+<p>もし、内部構造体のポインティーを<code>const</code>にできるのであれば、そうしてください。ポインティが一定でないと、ミュータビリティが不必要に広がってしまい、残りの <code>const</code> 修飾子から情報を得ることが難しくなります。内部構造体を完全に制御することができるので、将来的に <code>const</code> を削除する必要がある場合は、削除することができます。</p>
+<p>通常、外部構造体のポインティは <code>const</code> するべきではありません。パブリックインターフェイスの一部である場合は、柔軟性が重要です。よく考えてみてください。私がよくやる例外は、 <code>error</code> フィールドのような、文字列リテラルに代入するのが最適なフィールドの場合です。この場合、 <code>char const *</code> 型を使用することで、あなたやあなたのユーザーが、セグメンテーションフォールトを引き起こすような文字列リテラルを変更することを防ぐことができます。</p>
+<p>構造体フィールドの <em>pointees</em> を <code>const</code> するのは合理的ですが、構造体フィールドそのものを <code>const</code> するのは決して有益ではありません。例えば、その構造体の値を <code>malloc</code> (<a href="http://stackoverflow.com/questions/9691404/how-to-initialize-const-in-a-struct-in-c-with-malloc" target="_blank">http://stackoverflow.com/questions/9691404/how-to-initialize-const-in-a-struct-in-c-with-malloc</a>) するのが面倒になります。もし、フィールドが元の値以上に変化しないようにすることが本当に意味があるなら、必要な品質を強制する <a href="#document-your-struct-invariants-and-provide-invariant-checkers">invariants</a> を定義すればいいのです。また、構造体の個々の変数を <code>const</code> として定義することで、同じ効果を得ることができます。</p>
+<p>リターン型のポインタを <code>const</code> にするのは、必要な場合だけ、そして慎重に検討した後だけにしてください。コンパイラが戻り値の型に <code>const</code> を追加するようにほのめかしているとき、それは <code>const</code> を追加するのではなく、どこかで <em>remove</em> するべきだという意味であることが多いことに気がつきました。これは柔軟性を損なう可能性があるので、注意が必要です。</p>
+<p>最後に、型キャストやポインタを使用して <code>const</code> 修飾子を回避することは、少なくとも自分がコントロールする場合には、絶対にしないでください。もし変数が定数でないなら、定数にしないでください。</p>
+<h4 id="常に-const-を右に置き、型を右から左に読んでいく">常に <code>const</code> を右に置き、型を右から左に読んでいく</h4>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * word;              <span class="hljs-comment">// 悪い点：コンスト的でないこと</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * <span class="hljs-keyword">const</span> word;        <span class="hljs-comment">// 悪い点：文字が非常に読みづらくなる</span>
+<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span>* <span class="hljs-keyword">const</span> word;         <span class="hljs-comment">// 悪い点：配置が変</span>
+
+<span class="hljs-comment">// 良好：右から左へ、ワードは定数charへの定数ポインタ</span>
+<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> word;
+</code></pre>
+<p>このルールのため、<code>*</code>型修飾子は常に空白で埋める必要があります。</p>
+<h4 id="関数のプロトタイプに引数名を書かない（型を繰り返すだけ）。">関数のプロトタイプに引数名を書かない（型を繰り返すだけ）。</h4>
+<p>しかし、ポインタの引数が配列へのポインタ（複数形）か値へのポインタ（単数形）かを伝えるために、常にその名前を宣言してください。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">trie_eq</span><span class="hljs-params">( Trie trie1, Trie trie2 )</span></span>;         <span class="hljs-comment">// 悪い</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">trie_eq</span><span class="hljs-params">( Trie, Trie )</span></span>;                     <span class="hljs-comment">// 良い</span>
+
+<span class="hljs-comment">// 悪い点 - これらは修正用のポインタなのか、ヌルなのか、それともアレイなのか？</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">trie_add</span><span class="hljs-params">( Trie <span class="hljs-keyword">const</span> *, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * )</span></span>;
+
+<span class="hljs-comment">// 良い</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">trie_add</span><span class="hljs-params">( Trie <span class="hljs-keyword">const</span> * trie, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-built_in">string</span> )</span></span>;
+</code></pre>
+<h4 id="特別な理由がない限り、-float-ではなく-double-を使用する。">特別な理由がない限り、 <code>float</code> ではなく <code>double</code> を使用する。</h4>
+<p>Ben Klemens著「<em>21st Century C</em>」より。</p>
+<pre><code class="lang-c"><span class="hljs-built_in">printf</span>( <span class="hljs-string">&quot;%f\n&quot;</span>, ( <span class="hljs-keyword">float</span> )<span class="hljs-number">333334126.98</span> );    <span class="hljs-comment">// 333334112.000000</span>
+<span class="hljs-built_in">printf</span>( <span class="hljs-string">&quot;%f\n&quot;</span>, ( <span class="hljs-keyword">float</span> )<span class="hljs-number">333334125.31</span> );    <span class="hljs-comment">// 333334112.000000</span>
+</code></pre>
+<p>最近のアプリケーションの大部分では、スペースは問題になりませんが、浮動小数点数のエラーは依然として脅威となります。フロートよりもダブルの方が、数値のドリフトが問題になりにくいのです。よほど特殊な理由がない限り、 <code>float</code>s を使用する代わりに <code>double</code>s を使用してください。なぜなら、ベンチマークを行わないと、それが実際に目に見える違いを生むかどうかわからないからです。開発を終えてから、ベンチマークを実施してチョークポイントを特定し、その部分で <code>float</code>s を使って、それが実際に役に立つかどうかを見てください。その前に、パフォーマンスの向上よりも他のことを優先してください。早まって最適化しないこと。</p>
+<h4 id="変数の宣言はできるだけ遅くする">変数の宣言はできるだけ遅くする</h4>
+<p>変数を使用する場所で宣言することで、読者は自分が扱っている型について思い出すことができます。また、変数のスコープを最小にするために、関数を抽出する場所を示唆します。さらに、それぞれの変数がどこに関係しているのかを読者に知らせることができます。必要なときに変数を宣言すると、ほとんどの場合、単なる宣言(<code>int x;</code>)ではなく初期化(<code>int x = 1;</code>)を行うことになります。変数を初期化するということは、たいていの場合、その変数を <code>const</code> することもできるということです。</p>
+<p>私にとって、すべての宣言（＝非初期化）はシビれるものです。</p>
+<h4 id="変数の定義は1行にまとめる。">変数の定義は1行にまとめる。</h4>
+<p>これは、アトム行の編集が容易なため、将来的にタイプを変更することが容易になります。もし、すべての型を一緒に変更する必要がある場合は、エディタのブロック編集モードを使用する必要があります。</p>
+<p>構造体の定義は、アクティブなコードよりも理解しやすいので、意味的につながりのある構造体メンバを束ねるのはいいと思いますけど。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// ファイン</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Color</span> {</span>
+    <span class="hljs-keyword">char</span> r, g, b;
+} Color;
+</code></pre>
+<h4 id="短い変数名を恐れない">短い変数名を恐れない</h4>
+<p>もしスコープが画面に収まり、その変数が多くの場所で使われていて、それを表すのに明らかな文字が1つか2つあれば、それを試してみて、可読性を高めることができるかどうか見てみてください。きっと読みやすくなりますよ</p>
+<h4 id="関数間で変数名を統一する">関数間で変数名を統一する</h4>
+<p>一貫性を持たせることで、読者は何が起こっているのか理解しやすくなります。関数内で同じ値に対して異なる名前を使うのは怪しく、読者に重要でないことを推論させることになります。</p>
+<h4 id="ブール値を使用する場合は、stdboolh-の-bool-を使用します。">ブール値を使用する場合は、<code>stdbool.h</code> の <code>bool</code> を使用します。</h4>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> print_steps = <span class="hljs-number">0</span>;             <span class="hljs-comment">// 悪いこと - これは歩数を数えているのでしょうか？</span>
+<span class="hljs-keyword">bool</span> print_steps = <span class="hljs-literal">false</span>;        <span class="hljs-comment">// 良い - 意図が明確である</span>
+</code></pre>
+<h4 id="真偽に頼らず、明示的に価値を比較する。">真偽に頼らず、明示的に価値を比較する。</h4>
+<p>明示的な比較は、C言語では必ずしも明らかでないため、読者に何を扱っているのかを教えてくれます。それはC言語では必ずしも明らかではないからです。C言語で真偽を問われる変数を見たとき、私が最初にすることは、その型を見つけるために宣言を探し出すことです。プログラマーが比較で教えてくれればよかったのにと本当に思います。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い点 - これらの表現は実際に何をテストしているのか（もしそうなら）？</span>
+<span class="hljs-keyword">if</span> ( on_fire );
+<span class="hljs-keyword">return</span> !character;
+something( first( xs ) );
+<span class="hljs-keyword">while</span> ( !at_work );
+
+<span class="hljs-comment">// 良い - 情報を提供し、曖昧さをなくす。</span>
+<span class="hljs-keyword">if</span> ( on_fire &gt; <span class="hljs-number">0</span> );
+<span class="hljs-keyword">return</span> character == <span class="hljs-literal">NULL</span>;
+something( first( xs ) != <span class="hljs-string">&apos;\0&apos;</span> );
+<span class="hljs-keyword">while</span> ( at_work == <span class="hljs-literal">false</span> );
+</code></pre>
+<p>私は、 <code>is_edible</code> や <code>has_client</code> のような述語として名付けられたブーリアン関数については、このルールをスキップすることがよくあります。しかし、私は通常、このような状況では <code>== true</code> や <code>== false</code> のような視覚的な混乱は、読者の助けになるというよりも、むしろ面倒なものだと考えています。あなたの判断でどうぞ。</p>
+<h4 id="式の中で状態を変化させない（例：代入やなど）">式の中で状態を変化させない（例：代入や<code>++</code>など）</h4>
+<p>読みやすい（命令形）プログラムは、右から左ではなく、上から下へ流れます。残念ながら、C言語プログラミングでは、このようなことが多すぎるのです。この習慣と慣習は<em>The C Programming Language</em>によって始められ、それ以来、多くの文化に根付いているのだと思います。これは本当に悪い習慣で、プログラムが何をしているのかを追うのがとても難しくなります。式の中で状態を変更してはいけません。</p>
+<pre><code class="lang-c">trie_add( *child, ++word );     <span class="hljs-comment">// 悪い</span>
+trie_add( *child, word + <span class="hljs-number">1</span> );   <span class="hljs-comment">// 良い</span>
+
+<span class="hljs-comment">// よかった、もし `word` を修正する必要があるのなら</span>
+word += <span class="hljs-number">1</span>;
+trie_add( *child, word );
+
+<span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">if</span> ( ( x = calc() ) == <span class="hljs-number">0</span> );
+<span class="hljs-comment">// 良い</span>
+x = calc();
+<span class="hljs-keyword">if</span> ( x == <span class="hljs-number">0</span> );
+
+<span class="hljs-comment">// 技術的には式中の代入</span>
+a = b = c;
+
+<span class="hljs-keyword">while</span> ( --atoms &gt; <span class="hljs-number">0</span> );          <span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">while</span> ( atoms -= <span class="hljs-number">1</span>,             <span class="hljs-comment">// 良い</span>
+        atoms &gt; <span class="hljs-number">0</span> );
+
+<span class="hljs-comment">// いいんです、これ以上の方法はない、繰り返さないで</span>
+<span class="hljs-keyword">int</span> w;
+<span class="hljs-keyword">while</span> ( w = calc_width( shape ),
+        !valid_width( w ) ) {
+    shape = reshape( shape, w );
+}
+</code></pre>
+<p>変数の値が意味的にリンクしていない限り、多重代入は使わないでください。もし、偶然にも同じ値を持つ2つの変数が近くにあったとしても、行を節約するためだけにそれらを多重代入に放り込まないようにしましょう。</p>
+<p>カンマ演算子は、上記のように慎重に使用してください。できれば、カンマは使わないでください。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, limit = get_limit( m ); i &lt; limit; i += <span class="hljs-number">1</span> ) {
+    ...
+}
+
+<span class="hljs-comment">// より良い</span>
+<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> limit = get_limit( x );
+<span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; limit; i += <span class="hljs-number">1</span> ) {
+    ...
+}
+</code></pre>
+<h4 id="式中の純粋でない関数呼び出しや自明でない関数の呼び出しを避ける">式中の純粋でない関数呼び出しや自明でない関数の呼び出しを避ける</h4>
+<p>たとえ変数が <code>int result</code> のような単純なものであっても、関数呼び出しを変数に割り当てて、それが何であるかを記述します。こうすることで、条件文の中に隠された純粋でない関数による状態の変化で読者を驚かせることを避けることができます。私にとっては、<code>if ( ... )</code> の中の式が外界の状況を変化させると考えるのは実に不自然なことなのです。その状態変化の結果を変数に代入して、その値をチェックする方がよっぽどわかりやすい。</p>
+<p>たとえそれが当たり前のことで、行数を減らすことができると思っていても、失敗する可能性があることには価値がありません。このルールを守って、何も考えないでください。</p>
+<p>関数名が <code>is_adult</code> や <code>in_tree</code> のような述語で、条件文脈で自然に読めるのであれば、結果の代入を省略してもいいと思うんだ。必要であれば、このような関数をブール式で結合することもできますが、ご自分の判断でお願いします。複雑なブーリアン式は、関数に抽出することが多いはずです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">int</span> r = listen( fd, backlog );
+<span class="hljs-keyword">if</span> ( r == <span class="hljs-number">-1</span> ) {
+    perror( <span class="hljs-string">&quot;listen&quot;</span> );
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+
+<span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">if</span> ( is_tasty( banana ) ) {
+    eat( banana );
+}
+</code></pre>
+<h4 id="単一ステートメントブロックであっても、必ず括弧を使用します。">単一ステートメントブロックであっても、必ず括弧を使用します。</h4>
+<p>安全で、変更しやすく、一貫性があるので読みやすいという理由から、常に括弧を使用します。同じ理由で、一行文を条件と同じ行に書かないようにしましょう。</p>
+<p>以下は、<em>The C Programming Language</em>の実際のコードです。こんなことはしないでください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">while</span> (--argc &gt; <span class="hljs-number">0</span> &amp;&amp; (*++argv)[<span class="hljs-number">0</span>] == <span class="hljs-string">&apos;-&apos;</span>)
+    <span class="hljs-keyword">while</span> (c = *++argv[<span class="hljs-number">0</span>])
+        <span class="hljs-keyword">switch</span> (c) {
+            ...
+        }
+<span class="hljs-keyword">if</span> (argc != <span class="hljs-number">1</span>)
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Usage: find -x -n pattern\n&quot;</span>);
+<span class="hljs-keyword">else</span>
+    <span class="hljs-keyword">while</span> (getline(line, MAXLINE) &gt; <span class="hljs-number">0</span>) {
+        ...
+    }
+</code></pre>
+<h4 id="整数の変換規則が複雑なため，符号なし型を避ける">整数の変換規則が複雑なため，符号なし型を避ける</h4>
+<p><a href="https://www.securecoding.cert.org/confluence/display/seccode/INT02-C.+Understand+integer+conversion+rules" target="_blank">CERTは整数変換規則を説明しようとする</a>と述べている。</p>
+<blockquote>
+<p>整数変換規則を誤解していると、エラーが発生し、それが脆弱性の悪用につながる可能性があります。深刻度：中、可能性：あり。</p>
+</blockquote>
+<p>ANSI標準を探求する素晴らしい本である<em>Expert C Programming</em>も、その最初の章でこのことを説明しています。ここから得られるのは、「負の値であってはならないからと言って、 <code>unsigned</code> 変数を宣言してはいけない」ということです。もし、より大きな最大値が欲しいなら、 <code>long</code> か <code>long long</code> (次のサイズ) を使ってください。</p>
+<p>もし関数が負の数で失敗するなら、それはおそらく大きな数でも失敗するでしょう。もし関数が負の数で失敗するなら、正の数であると断言すればよいのです。多くの動的言語では、どちらの符号にも対応できる単一の整数型が使用されていることを思い出してください。</p>
+<p>符号なし値は型安全性を提供しません。<code>-Wall</code> と <code>-Wextra</code> を使っても、GCC は <code>unsigned int x = -1;</code> に目をつぶってくれません。</p>
+<p>また、<em>Expert C Programming</em> では、符号なし値に評価されるすべてのマクロをキャストする理由についての例を示しています。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NELEM( xs ) ( ( sizeof xs ) / ( sizeof xs[0] ) )</span>
+<span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> xs[] = { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span> };
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">( <span class="hljs-keyword">void</span> )</span>
+</span>{
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> d = <span class="hljs-number">-1</span>;
+    <span class="hljs-keyword">if</span> ( d &lt; NELEM( xs ) - <span class="hljs-number">1</span> ) {
+        <span class="hljs-keyword">return</span> xs[ d + <span class="hljs-number">1</span> ];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p><code>NELEM</code> は (<code>sizeof</code> によって) <code>unsigned int</code> と評価されるため、<code>if</code> ブランチは実行されません。そのため、<code>d</code> は <code>unsigned int</code> に昇格します。2 の補数](<a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">https://en.wikipedia.org/wiki/Two%27s_complement</a>) の <code>-1</code> は可能な限り大きな符号なし値 (ビット単位) を表すので、この式は false となり、プログラムは <code>0</code> を返します。この場合の解決策は、 <code>NELEM</code> の結果をキャストすることです。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NELEM( xs ) ( long )( ( sizeof xs ) / ( sizeof xs[ 0 ] ) )</span>
+</code></pre>
+<p><a href="http://stackoverflow.com/questions/4009885/arithmetic-bit-shift-on-a-signed-integer" target="_blank">よく定義されたビット演算</a>とモジュール算術のオーバーフローを提供するために、符号なし値を使用する必要があります。しかし、これらの値を保持し、符号付き値と相互作用させないようにします。</p>
+<h4 id="1-と---1-を--と----よりも使用する。"><code>+= 1</code> と <code>-= 1</code> を <code>++</code> と <code>--</code> よりも使用する。</h4>
+<p>実は、できればどちらの形式も使わないでください。状態を変更することは常に避けるべきです (無理のない範囲で)。しかし、どうしても必要な場合には、 <code>+=</code> と <code>-=</code> は <code>++</code> や <code>--</code> よりも明白でシンプル、かつ暗号化されておらず、他の文脈や他の値でも役に立ちます。また、 <code>+=</code> と <code>-=</code> の評価にはトリックがなく、別の評価を提供するための奇妙な双子の演算子もありません。Pythonには <code>++</code> と <code>--</code> 演算子がありませんし、Douglas CrockfordはそれらをJavaScriptのGood Partsから除外しました。このルールに従うことで、式の中で状態を変化させないようにすることもできます。</p>
+<h4 id="演算子の優先順位が明らかでない式には、括弧を使用する"><a href="https://en.wikipedia.org/wiki/Operators_in_C_and_C%2B%2B#Operator_precedence" target="_blank">演算子の優先順位</a>が明らかでない式には、括弧を使用する</h4>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> x = a * b + c / d;          <span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">int</span> x = ( a * b ) + ( c / d );  <span class="hljs-comment">// 良い</span>
+
+&amp;sockaddr-&gt;sin_addr;            <span class="hljs-comment">// 悪い</span>
+&amp;( sockaddr-&gt;sin_addr );        <span class="hljs-comment">// 良い</span>
+</code></pre>
+<p>よく見かける操作の組み合わせについては、例外を設けることができますし、そうすべきです。例えば、等号演算子とブール演算子を組み合わせる際に演算子を省略することは問題ありません。なぜなら、読者はおそらくそれに慣れていて、その結果に自信を持っているからです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// ファイン</span>
+<span class="hljs-keyword">return</span> hungry == <span class="hljs-literal">true</span>
+    || ( legs != <span class="hljs-literal">NULL</span> &amp;&amp; fridge.empty == <span class="hljs-literal">false</span> );
+</code></pre>
+<h4 id="switch-を使わず、複雑な条件文も避ける。"><code>switch</code> を使わず、複雑な条件文も避ける。</h4>
+<p>スイッチのフォールスルーメカニズムはエラーが起こりやすく、ケースをフォールスルーさせることはほとんどないので、ほとんどのスイッチのコードは <code>if</code> と同等のものより長くなります。さらに悪いことに、<code>break</code>がなくてもコンパイルすることができます。私が <code>switch</code> を使っていたときは、いつもこれでつまづいていました。また、 <code>case</code> の値は積分定数式でなければならないので、他の変数にマッチすることはできません。このため、ロジックを関数に展開することができません。さらに、<code>switch</code> の中のどの文もラベル付けしてジャンプすることができるので、例えば <code>defau1t</code> とタイプミスしたときに非常にわかりにくいバグを助長します。</p>
+<p>もし、異なる定数値を動作に対応させる必要がある場合、次のようになります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">switch</span> ( x ) {
+<span class="hljs-keyword">case</span> A:
+    do_something_for_a( x, y, z );
+    <span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> B:
+    do_something_for_b( x, y, z ):
+    <span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">default</span>:
+    error( x, y, z );
+    <span class="hljs-keyword">break</span>;
+}
+<span class="hljs-comment">// これらの関数は明示的な関数ではないかもしれません（つまり、これらの変数のいくつかを使用する一連のステートメントであるかもしれません）。</span>
+</code></pre>
+<p>より明示的でテスト可能かつ再利用可能なアプローチとしては、3項式を用いて正しい型の関数ポインタを返す関数を定義することです。</p>
+<pre><code class="lang-c"><span class="hljs-function">action_fn <span class="hljs-title">get_x_action</span><span class="hljs-params">( x )</span> </span>{
+    <span class="hljs-keyword">return</span> ( x == A ) ? do_something_for_a
+         : ( x == B ) ? do_something_for_b
+         : error;
+}
+
+action_fn action = get_x_action( x );
+action( x, y, z );
+
+<span class="hljs-comment">// または単に</span>
+get_x_action( x )( x, y, z );
+
+<span class="hljs-comment">// `action` はひどい名前で、例として使われているに過ぎません。もっと情報量の多い名前を考えてみてください。</span>
+</code></pre>
+<p>このように、相関のない定数値の2つのセットの間でマッピングする必要がある場合にも、同様のことをする必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">switch</span> ( x ) {
+    <span class="hljs-keyword">case</span> A: <span class="hljs-keyword">return</span> X;
+    <span class="hljs-keyword">case</span> B: <span class="hljs-keyword">return</span> Y;
+    <span class="hljs-keyword">case</span> C: <span class="hljs-keyword">return</span> Z;
+    <span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> ERR;
+}
+
+<span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">return</span> ( x == A ) ? X
+     : ( x == B ) ? Y
+     : ( x == C ) ? Z
+     : ERR;
+</code></pre>
+<p>ブーリアン式で済むところを <code>switch</code> を使わないでください。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">switch</span> ( x ) {
+    <span class="hljs-keyword">case</span> A: <span class="hljs-keyword">case</span> B: <span class="hljs-keyword">case</span> C:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">return</span> x == A || x == B || x == C;
+
+<span class="hljs-comment">// あるいは、名前が長い場合は、通常、この方が読みやすい。</span>
+<span class="hljs-keyword">return</span> t == JSON_TYPE_null
+    || t == JSON_TYPE_boolean
+    || t == JSON_TYPE_number;
+</code></pre>
+<p>このように、<code>switch</code>のフォールスルー動作が必要な場合。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">switch</span> ( x ) {
+    <span class="hljs-keyword">case</span> A:
+        <span class="hljs-comment">// Aのもの、Bに落ちる</span>
+    <span class="hljs-keyword">case</span> B:
+        <span class="hljs-comment">// B stuff</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-comment">// デフォルトのもの</span>
+}
+</code></pre>
+<p>これと同等の <code>if</code> はもっと読みやすく、何がどうして起こるのかが一目瞭然です。Bに関すること」は実際には <code>x == A</code> の場合にも適用され、これは <code>if</code> を使用する際に明示的に宣言されます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> ( x == A ) {
+    <span class="hljs-comment">// A stuff</span>
+}
+
+<span class="hljs-keyword">if</span> ( x == A || x == B ) {
+    <span class="hljs-comment">// B stuff</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// default stuff</span>
+}
+</code></pre>
+<p><code>switch</code> を使う必要があるのは、パフォーマンスチューニングのときだけです (ベンチマークでホットスポットを特定したらね!)。そうでなければ、より安全で、より短く、よりテストしやすく、再利用可能な代替案が常にあります。</p>
+<h4 id="関数と構造体の定義を2行で区切る">関数と構造体の定義を2行で区切る</h4>
+<p>関数内の空行を最大1行に制限すれば、このルールによってグローバルな要素を視覚的に明確に分離することができます。これは、PythonのPEP8スタイルガイドから学んだ習慣です。</p>
+<h4 id="変数のスコープを最小にする">変数のスコープを最小にする</h4>
+<p>もし、いくつかの変数が連続した行の中でしか使われず、その行の後に一つの値しか使われないのであれば、それらの最初の行は関数に抽出するのに最適な候補となります。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Good: addrはhandle_requestの最初の部分でのみ使用された。</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">accept_request</span><span class="hljs-params">( <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> listenfd )</span>
+</span>{
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sockaddr</span> <span class="hljs-title">addr</span>;</span>
+    <span class="hljs-keyword">return</span> accept( listenfd, &amp;addr, &amp;( <span class="hljs-keyword">socklen_t</span> ){ <span class="hljs-keyword">sizeof</span> addr } );
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">handle_request</span><span class="hljs-params">( <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> listenfd )</span>
+</span>{
+    <span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> reqfd = accept_request( listenfd );
+    <span class="hljs-comment">// ... addrに関係なく、reqfdに関係するもの。</span>
+}
+</code></pre>
+<p>もし <code>accept_request</code> のボディが <code>handle_request</code> に残っていた場合、 <code>addr</code> 変数は <code>reqfd</code> を取得するためだけに使用されるにもかかわらず、 <code>handle_request</code> 関数の残りの部分でスコープ内に存在することになります。このようなことは、関数を理解する上での負担になるので、可能な限り修正されるべきです。</p>
+<p>変数の露出を制限するもう一つの戦術は、複雑な式を次のようにブロックに分割することです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// というより、むしろ</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">trie_has</span><span class="hljs-params">( Trie <span class="hljs-keyword">const</span> trie, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> )</span>
+</span>{
+    Trie <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> child = Trie_child( trie, <span class="hljs-built_in">string</span>[ <span class="hljs-number">0</span> ] );
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">string</span>[ <span class="hljs-number">0</span> ] == <span class="hljs-string">&apos;\0&apos;</span>
+           || ( child != <span class="hljs-literal">NULL</span>
+                &amp;&amp; Trie_has( *child, <span class="hljs-built_in">string</span> + <span class="hljs-number">1</span> ) );
+}
+
+<span class="hljs-comment">// childは条件分岐の後半にしか使われないので、次のように露出を制限することができます。</span>
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">trie_has</span><span class="hljs-params">( Trie <span class="hljs-keyword">const</span> trie, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> )</span>
+</span>{
+    <span class="hljs-keyword">if</span> ( <span class="hljs-built_in">string</span>[ <span class="hljs-number">0</span> ] == <span class="hljs-string">&apos;\0&apos;</span> ) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+        Trie <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> child = Trie_child( trie, <span class="hljs-built_in">string</span>[ <span class="hljs-number">0</span> ] );
+        <span class="hljs-keyword">return</span> child != <span class="hljs-literal">NULL</span>
+            &amp;&amp; Trie_has( *child, <span class="hljs-built_in">string</span> + <span class="hljs-number">1</span> );
+    }
+}
+</code></pre>
+<h4 id="単純な定数式は変数よりも読みやすい場合がある">単純な定数式は変数よりも読みやすい場合がある</h4>
+<p>定数式にしか代入されない変数を、その定数式に置き換えると、コードの可読性が向上することがよくあります。</p>
+<p>上の <code>trie_has</code> の例を考えてみましょう。<code>string[ 0 ]</code> 式が2回繰り返されています。もし、<code>char</code>変数を定義するために余分な行を挿入したら、読むのも追うのも大変になるでしょう。これは、読者が念頭に置かなければならないもう一つのことなのです。他の言語の多くのプログラマーは、配列のアクセスを繰り返すことを考えもしないでしょう。</p>
+<h4 id="余計な変数より複合リテラルを優先する">余計な変数より複合リテラルを優先する</h4>
+<p>これは、変数の範囲を最小化するのと同じ理由で有益です。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪いことに、`sa` が二度と使われないとしたら。</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">sigaction</span> <span class="hljs-title">sa</span> =</span> {
+    .sa_handler = sigchld_handler,
+    .sa_flags = SA_RESTART
+};
+sigaction( SIGCHLD, &amp;sa, <span class="hljs-literal">NULL</span> );
+
+<span class="hljs-comment">// 良い</span>
+sigaction( SIGCHLD, &amp;( struct sigaction ){
+    .sa_handler = sigchld_handler,
+    .sa_flags = SA_RESTART
+}, <span class="hljs-literal">NULL</span> );
+
+<span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">int</span> v = <span class="hljs-number">1</span>;
+setsockopt( fd, SOL_SOCKET, SO_REUSEADDR, &amp;v, <span class="hljs-keyword">sizeof</span> v );
+
+<span class="hljs-comment">// 良い</span>
+setsockopt( fd, SOL_SOCKET, SO_REUSEADDR, &amp;( <span class="hljs-keyword">int</span> ){ <span class="hljs-number">1</span> }, <span class="hljs-keyword">sizeof</span> <span class="hljs-keyword">int</span> );
+</code></pre>
+<h4 id="for-のような制御構造をラップするマクロを使用したり、提供したりしてはいけません。"><code>for</code> のような制御構造をラップするマクロを使用したり、提供したりしてはいけません。</h4>
+<p>データ構造の要素をループするマクロは、余計な構文があり、読者は定義を調べないと制御の流れが分からないので、非常に紛らわしいです。</p>
+<p>プログラムを理解するためには、読者がその制御フローを理解できることが重要です。</p>
+<p>コントロールマクロはオプションとしてでも提供しないでください。それらは普遍的に有害なので、有効にしないでください。ユーザーが本当に望むなら、自分で定義すればいいのです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> TRIE_EACH( TRIE, INDEX ) \
+    for ( int INDEX = 0; INDEX &lt; ( TRIE ).alphabet.size; INDEX += 1 )</span>
+
+<span class="hljs-comment">// ここで実際に何が起こるのか、まったく予想がつきません。</span>
+TRIE_EACH( trie, i ) {
+    Trie * <span class="hljs-keyword">const</span> child = trie.children[ i ];
+    ...
+}
+</code></pre>
+<h4 id="マクロが関数呼び出しと異なる動作をする場合のみ、大文字にします。">マクロが関数呼び出しと異なる動作をする場合のみ、大文字にします。</h4>
+<p>「異なる動作」というのは、ユーザーが予期しないときに物事が壊れるかどうかということです。マクロの見た目が違うだけなら（例：名前付き引数のテクニック）、大文字の名前を正当化する理由にはならないと思います。マクロに大文字の名前を付けるべきは、次のような場合です。</p>
+<ul>
+<li>はその本体で引数を繰り返しますが、これは純粋でない式では壊れてしまうからです。多くのコンパイラはこれを防ぐために<a href="http://stackoverflow.com/questions/6440021/compiler-support-of-gnu-statement-expression" target="_blank">statement expressions</a>を提供していますが、これは非標準的です。ステートメント式を使用する場合、マクロ名を大文字にする必要はありません。</li>
+<li>がブロックや制御構造でラップされている場合、式として使用できないからです。</li>
+<li>は、例えば <code>return</code> や <code>goto</code> などで、周囲のコンテキストを変更します。</li>
+<li>は名前付き引数として配列リテラルを取ります。(<a href="http://stackoverflow.com/questions/5503362/passing-array-literal-as-macro-argument" target="_blank">なぜ</a>)</li>
+</ul>
+<h4 id="マクロが関数に固有のものである場合は、本文中で-define-してください。">マクロが関数に固有のものである場合は、本文中で <code>#define</code> してください。</h4>
+<p>変数のスコープを常に最小にするのと同じ理由で、マクロのスコープを制限することが理にかなっている場合は、そうすべきです。</p>
+<h4 id="文字列を配列として初期化し、バイトサイズに-sizeof-を使用する。">文字列を配列として初期化し、バイトサイズに <code>sizeof</code> を使用する。</h4>
+<p>文字列リテラルは常に配列として初期化することで、<code>sizeof str</code>だけでバイトサイズを取得できるからです。ポインタとして初期化した場合は、<code>strlen( str ) + 1</code> でバイトサイズを取得しなければなりません。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> message[] = <span class="hljs-string">&quot;always use arrays for strings!&quot;</span>;
+write( output, message, <span class="hljs-keyword">sizeof</span> message );
+</code></pre>
+<p>また、ポインタの初期化は配列の初期化よりも安全ではありません。 <em>ただし、文字列リテラルを `char const </em><code>型で初期化するように</code>-Write-strings<code>を指定してコンパイルする場合は例外です。残念ながら、</code>-Wwrite-strings<code>は</code>-Wall<code>や</code>-Wextra<code>に含まれていないため、明示的に有効化する必要があります。  Write-strings</code> がなければ、文字列リテラルを <code>char *</code> に代入することができます。しかし、そのポインタの要素を再割り当てすると、プログラムがセグメンテーションフォールトを起こします。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Write-stringsを指定しない場合、警告を出さずにコンパイルできますが、2行目でsegmentation faultが発生します。</span>
+<span class="hljs-keyword">char</span> * xs = <span class="hljs-string">&quot;hello&quot;</span>;
+xs[ <span class="hljs-number">0</span> ] = <span class="hljs-string">&apos;c&apos;</span>;
+
+<span class="hljs-comment">// このプログラムは、正常にコンパイル・実行されます。</span>
+<span class="hljs-keyword">char</span> xs[] = <span class="hljs-string">&quot;hello&quot;</span>;
+xs[ <span class="hljs-number">0</span> ] = <span class="hljs-string">&apos;c&apos;</span>;
+</code></pre>
+<p>文字列リテラルをポインタとして初期化することの利点は、これらのポインタが読み取り専用のメモリを指すようになるため、いくつかの最適化が可能になる可能性があることです。文字列リテラルを配列として初期化すると、基本的に変更可能な文字列が作成されます。これは、 <code>const</code> による変更に対して「人為的に」保護されているだけですが、これはキャストで破ることができます。</p>
+<p>繰り返しになりますが、早まった最適化をしないことをお勧めします。開発を終えてベンチマークを行うまでは、パフォーマンスを最も優先させるべきです。文字列リテラルの定義に関するテストは見たことがありませんが、文字列リテラルをポインタとして定義することによって、顕著な速度向上が見られるのは非常に驚きです。</p>
+<p>すべてのものを<code>const</code>するルールで述べたように、<code>const</code>を決して捨ててはいけません。代わりに <code>const</code> を削除してください。人工的な」保護については心配しないでください。私は、定数値は、違反するとセグメンテーション違反になるような暗黙のルールよりも、コンパイル時に警告が出るような明示的な構文構造で保護されている方がずっといいと考えています。</p>
+<p>最後に、配列の初期化にこだわることで、ポインタの初期化と配列の初期化を、ミュータビリティが必要かどうかによって切り替えるという概念上のオーバーヘッドを、あなたや読者に節約させることができるのです。</p>
+<p>ただ、文字列リテラルは常に配列として初期化し、シンプルに保つようにします。</p>
+<h4 id="可能であれば、型ではなく-sizeof-を変数に使用します。">可能であれば、型ではなく <code>sizeof</code> を変数に使用します。</h4>
+<p>そうすれば、後で変数の型を変更しても、一度だけ変更すればよいのです。常に正しいサイズを得ることができるのです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Good</span>
+<span class="hljs-keyword">int</span> * a = <span class="hljs-built_in">malloc</span>( n * ( <span class="hljs-keyword">sizeof</span> *a ) );
+</code></pre>
+<p>複合リテラルではできませんが。一度しか使わない変数を削除するのは、トレードオフとして価値があると思います。</p>
+<pre><code class="lang-c">setsockopt( fd, SOL_SOCKET, SO_REUSEADDR, &amp;( <span class="hljs-keyword">int</span> ){ <span class="hljs-number">1</span> }, ( <span class="hljs-keyword">sizeof</span> <span class="hljs-keyword">int</span> ) );
+</code></pre>
+<h4 id="関数の引数定義に配列構文を使用しない">関数の引数定義に配列構文を使用しない</h4>
+<p><a href="http://c-faq.com/aryptr/aryptrequiv.html" target="_blank">配列はほとんどの式でポインタになる</a>し、<a href="http://c-faq.com/aryptr/aryptrparam.html" target="_blank">関数への引数として渡される場合</a>も含まれる。関数は決して配列を引数として受け取ることはできません。<a href="http://c-faq.com/aryptr/aryptr2.html" target="_blank">配列へのポインタのみ</a>です。sizeof` は配列の引数宣言のようには動作しません：ポインタのサイズを返すのであって、指された配列を返すのではありません。</p>
+<p><a href="http://hamberg.no/erlend/posts/2013-02-18-static-array-indices.html" target="_blank">関数の引数で静的配列インデックスを指定するのはいい</a> が、リテラルに <code>NULL</code> が与えられたときのような非常につまらない状況に対してしか保護されないのです。また、GCCはその違反について警告しませんが<a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=50584" target="_blank">まだ</a>、Clangだけは警告します。私は紛らわしいとは思っていません。non-obvious syntax to be worth the small compilation check.</p>
+<p>そう、<code>[]</code>は引数が配列として扱われることを示唆しますが、<code>requests</code>のような複数形の名前も同様なので、その代わりにそうしてください。</p>
+<h4 id="ポインタ演算よりも配列インデックスを常に優先する">ポインタ演算よりも配列インデックスを常に優先する</h4>
+<p>配列を扱う場合は、配列として扱います。ポインタの演算は混乱しやすく、バグも発生しやすいものです。配列のインデックスにこだわることで、重要な変数だけを一定に保ち、インデックス変数だけを非一定にすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">for</span> ( ; *str != <span class="hljs-string">&apos;\0&apos;</span>; str += <span class="hljs-number">1</span> );
+
+<span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; str[ i ] != <span class="hljs-string">&apos;\0&apos;</span>; i += <span class="hljs-number">1</span> );
+</code></pre>
+<h4 id="構造体の不変量を文書化し、不変量チェッカーを提供する。">構造体の不変量を文書化し、不変量チェッカーを提供する。</h4>
+<blockquote>
+<p>不変量**とは、プログラムの実行中に真であることが当てになる条件である。</p>
+</blockquote>
+<p>構造体（または構造体へのポインタ）を受け取る関数では、その構造体のすべての不変量が、関数の実行前と実行後に真になる必要があります。不変量は、呼び出し側には有効なデータを提供する責任があり、関数側には有効なデータを返す責任があることを意味します。不変量によって、これらの関数はこれらの条件のアサーションを繰り返す必要がなくなり、さらに悪いことには、無効なデータをチェックし、処理することさえしなくなります。</p>
+<p>構造体の定義の最後に「invariants」というコメント欄を設け、思いつく限りの不変量を列挙してください。また、ユーザーが自分で作成した構造体の値に対して、これらのアサーションをチェックできるように <code>is_valid</code> と <code>assert_valid</code> 関数を実装してください。これらの関数は、構造体の値に対して不変量が成立していることを信頼できるようにするために重要です。これがなければ、ユーザーはどうやって知ることができるのでしょうか？</p>
+<p>構造体不変量の<a href="https://github.com/mcinglis/trie.c/blob/master/alphabet.h#L10" target="_blank">一例です</a>。</p>
+<p>私の大学の教員は、ソフトウェアの正しさについて<a href="http://www.itee.uq.edu.au/sse/projects" target="_blank">かなり大きな</a>存在です。確かに、その影響は受けています。</p>
+<h4 id="さもなければプログラムが失敗するような場所では、assert-を使用する。">さもなければプログラムが失敗するような場所では、<code>assert</code> を使用する。</h4>
+<p>データを削除したり、セキュリティの脆弱性を防いだり、セグメンテーションフォールトを防いだりと、プログラムが愚かなことをする前に、意味のあるクラッシュをするためにアサーションを書きましょう。良いソフトウェアは速く失敗する。</p>
+<p>もし関数にポインタが与えられたら、それをデリファレンスして、それがヌルでないことを保証します。配列のインデックスが与えられたら、それが範囲内であることを確認します。引数間の整合性が必要な場合は、それを保証すること。</p>
+<p>とはいえ、決してアサーションに頼ってはいけません。アサーションの行を削除しても、プログラムは正しく動作するはずです。</p>
+<p>アサーションをエラー報告だと勘違いしないようにしましょう。そうでなければわざわざチェックしないようなことをアサーションしましょう。もし (コードではなく) ユーザーの入力がアサーションを無効にしてしまったら、 それはバグです。事前にフィルタリングを行い、ユーザーにとって読みやすい形でエラーを報告すべきです。</p>
+<h4 id="assertを繰り返し、一緒にしてはいけない"><code>assert</code>を繰り返し、一緒に<code>&amp;&amp;</code>してはいけない</h4>
+<p><code>assert</code> を繰り返し呼び出すと、アサーションエラーのレポートが改善されます。アサーションを <code>&amp;&amp;</code> で連結すると、どの条件が失敗したのかがわからなくなります。</p>
+<h4 id="可変長配列の使用禁止">可変長配列の使用禁止</h4>
+<p>可変長配列は、動的な長さの配列を自動で保存する方法として C99 で導入されたもので、 <code>malloc</code> は必要ありません。いくつかの理由により、C11 ではオプションとなりました。したがって、C11 で可変長配列を使用したい場合は、いずれにせよ <code>malloc</code> バージョンを書かなければなりません。その代わり、可変長配列を使わないようにすればいいのです。</p>
+<p>C99でも可変長配列を使うのはやめたほうがいいと思います。まず、スタックスマッシュを防ぐために、サイズを制御する<a href="https://www.securecoding.cert.org/confluence/display/seccode/ARR32-C.+Ensure+size+arguments+for+variable+length+arrays+are+in+a+valid+range" target="_blank">値をチェックする必要があります</a>。次に、初期化できないことです。最後に、これらを避けることで、後で新しい標準にアップグレードすることが容易になります。</p>
+<h4 id="型安全性を損なうので-void--を避ける。">型安全性を損なうので <code>void *</code> を避ける。</h4>
+<p><code>void *</code> はポリモーフィズムのために有用ですが、ポリモーフィズムが型安全性と同じくらい重要であることはほとんどありません。ボイドポインタは多くの場面で必要不可欠なものですが、まずは他の安全な代替手段を検討すべきです。</p>
+<h4 id="もし-void--があれば、できるだけ早く型付き変数に代入してください。">もし <code>void *</code> があれば、できるだけ早く型付き変数に代入してください。</h4>
+<p>初期化されていない変数を扱うのが危険なように、void ポインタを扱うのも危険です：コンパイラを味方につけたいところです。ですから、できるだけ早く <code>void *</code> を捨ててください。</p>
+<h4 id="相互排他的なフィールドではなく、c11の匿名構造体とユニオンを使用する">相互排他的なフィールドではなく、C11の匿名構造体とユニオンを使用する</h4>
+<p>あるフィールドが特定の値であるときに、あるフィールドだけを設定したい場合は、C11の匿名構造体やユニオンを使用します。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">AUTOMATON_TYPE</span> {</span>
+    AUTOMATON_TYPE_char,
+    AUTOMATON_TYPE_split,
+    AUTOMATON_TYPE_match
+};
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NUM_AUTOMATON_TYPES ( 3 )</span>
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> {</span>
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">AUTOMATON_TYPE</span> <span class="hljs-title">type</span>;</span>
+    <span class="hljs-class"><span class="hljs-keyword">union</span> {</span>
+        <span class="hljs-class"><span class="hljs-keyword">struct</span> {</span> <span class="hljs-comment">// type = char</span>
+            <span class="hljs-keyword">char</span> c;
+            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> * <span class="hljs-title">next</span>;</span>
+        };
+        <span class="hljs-class"><span class="hljs-keyword">struct</span> {</span> <span class="hljs-comment">// type = split</span>
+            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> * <span class="hljs-title">left</span>;</span>
+            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> * <span class="hljs-title">right</span>;</span>
+        };
+    };
+} Automaton;
+</code></pre>
+<p>というようなものよりも、ずっと明快でわかりやすい。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> {</span>
+    <span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">AUTOMATON_TYPE</span> <span class="hljs-title">type</span>;</span>
+    <span class="hljs-keyword">char</span> c;
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> * <span class="hljs-title">left</span>;</span>
+    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Automaton</span> * <span class="hljs-title">right</span>;</span>
+} Automaton;
+</code></pre>
+<h4 id="必要なとき以外はタイプキャストしない（おそらくしないでしょう）">必要なとき以外はタイプキャストしない（おそらくしないでしょう）</h4>
+<p>ある型の値を別の型の変数に代入することが有効なら、キャストする必要はない。というように、必要なときだけ型キャストを使えばいいのです。</p>
+<ul>
+<li>int` 式の真の除算（整数の除算ではない）の実行</li>
+<li>配列のインデックスを整数にすること。</li>
+<li>構造体や配列に複合リテラルを使用する。</li>
+</ul>
+<pre><code class="lang-c"><span class="hljs-comment">// これで問題なくコンパイルできます。</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Apple</span> * <span class="hljs-title">apples</span> =</span> <span class="hljs-built_in">malloc</span>( <span class="hljs-keyword">sizeof</span> *apples );
+</code></pre>
+<h4 id="構造体に-titlecase-という名前をつけて-typedef-する。">構造体に TitleCase という名前をつけて typedef する。</h4>
+<pre><code class="lang-c"><span class="hljs-comment">// 良い</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Person</span> {</span>
+    <span class="hljs-keyword">char</span> * name;
+    <span class="hljs-keyword">int</span> age;
+} Person;
+</code></pre>
+<p>構造体には大文字と小文字を区別する必要があり、 <code>struct</code> という接頭辞がなくても認識できるようにします。また、構造体の変数に同じ名前を付けても、名前が衝突することがありません (たとえば、 <code>Banana</code> 型の <code>Banana</code> など)。構造体の名前は、後で必要になるかもしれないので、必要ない場合でも常に定義しておくべきです (たとえば、不完全な型として使用する場合など)。また、名前が先頭にあると、コメントが挿入されたときや、構造体の定義が大きくなったときに、読みやすくなります。</p>
+<p>ただし、名前付き引数に使う構造体（後述）は、TitleCase の命名が変になるので、typedef しない。とにかく、名前付き引数にマクロを使うのであれば、typedef は不要で、struct の定義が隠れることになります。</p>
+<p>もし、構造体を型付けすることが嫌いな場合は、代わりに <code>struct</code> ネームスペースを使用することができます（これは公平です。</p>
+<h4 id="typedef構造体のみ。基本型やポインタは不可。">typedef構造体のみ。基本型やポインタは不可。</h4>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">double</span> centermeters;
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">double</span> inches;
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Apple</span> * <span class="hljs-title">Apple</span>;</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">void</span> * gpointer;
+</code></pre>
+<p>この間違いは非常に多くのコードベースが犯しています。これは実際に何が起こっているかを隠してしまい、ドキュメントを読むか、 <code>typedef</code> を見つけて、それをどう扱うかを学ばなければなりません。自分のインターフェイスでは決してこのようなことをせず、他のインターフェイスの型定義は無視するようにしましょう。</p>
+<p>これらの批判は、上でアドバイスしたように、構造体の型付けにも同様に当てはまります。私見では、すべての <code>struct</code> 宣言を削除することで得られる視覚的な明瞭さは、ユーザーにこの規約を認識させる（あるいは実現させる）ことに値すると思います。また、構造体の命名規則が一貫しており、タイトルケースの名前であれば、認識しやすくなります。</p>
+<p>ポインタの型定義は、ユーザが <code>const</code> でポインタを修飾することを排除してしまうので、特に悪質です。これは、他のルールで列挙されている理由から、大きな損失です。</p>
+<p>関数ポインタの型定義は，関数ポインタを返す関数を宣言する必要があるときに 正当化されます．型定義なしの構文は耐え難いものです．また、関数ポインタの型が多くの場所で繰り返される場合（3つ以上、とか）にも typedef をします。すべての関数ポインタを型付けするのが好きな人もいますが、これでは何が起きていて何が期待されているのかがしばしば隠されてしまいます。関数ポインタの typedef が、実際にその型が何を表しているかを理解するのに役立つかどうか、注意深く考えてみてください。</p>
+<h4 id="enum-に-uppercasesnake-という名前をつけ、その値を小文字にする。">enum に <code>UPPERCASE_SNAKE</code> という名前をつけ、その値を小文字にする。</h4>
+<p>enum はほとんど単なる整数定数なので、 <code>#define</code>d 定数と同じような名前を付けるのが自然です。<code>enum</code> 型のプレフィックスは enum の値を期待することを伝え、小文字の値のサフィックスはそれらが単なる整数定数ではないことを伝えることになります。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">JSON_TYPE</span> {</span>
+    JSON_TYPE_null,
+    JSON_TYPE_boolean,
+    JSON_TYPE_number,
+    ...
+};
+</code></pre>
+<h4 id="すべてのenumのサイズに対応する定数を定義する">すべてのenumのサイズに対応する定数を定義する</h4>
+<p>ループ、配列、または <code>enum</code> のビットフィールドを扱うための、汎用的で将来性のある方法は、そうでなければありません。常に列挙のサイズを示す定数を定義して、(あなたやあなたのユーザが) ハードコードされた値を避けるようにします。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">SUIT</span> {</span>
+    SUIT_hearts,
+    SUIT_diamonds,
+    SUIT_clubs,
+    SUIT_spades
+};
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NUM_SUITS 4</span>
+</code></pre>
+<p>私は、サイズを最後の enum 値にするのではなく、明示的に <code>#define</code> するのが好きです。NUM_SUITS<code>は聞いたことのないカードスーツです!また、前の enum 値のいずれかが明示的に設定されている場合 (たとえば</code>SUIT_hearts = 1` など)、最後の enum 値が enum のサイズを表さないことになるので、そのような事態も防ぐことができます。</p>
+<h4 id="名前を--で始めたり、t-で終わらせてはいけない-これらは標準のために予約されている">名前を <code>_</code> で始めたり、<code>_t</code> で終わらせてはいけない: これらは標準のために予約されている</h4>
+<p><a href="https://www.gnu.org/software/libc/manual/html_node/Reserved-Names.html" target="_blank">将来の ISO C 標準によって予約されている名前のリスト</a>です。<code>types_like_this_t</code> と <code>_anything</code> は将来の C 標準によって予約されている識別子であるため、あなた自身の識別子には使わないでください。</p>
+<p>この種の名前は、どの型が言語標準の一部で、どの型がライブラリによって提供されるかを見分ける良い方法を提供することができた*はずです。残念ながら、<a href="https://github.com/facebook/libphenom" target="_blank">it&apos;s</a> <a href="https://github.com/joyent/libuv" target="_blank">not</a> <a href="https://github.com/liuliu/ccv" target="_blank">hard</a> 人気のあるCライブラリやプロジェクトでこのような間違いをするものを見つけることは難しく、このようなルールの有用性は薄れてしまっているのです。</p>
+<p>この間違いはあまりにも頻繁に起こります。あなたの図書館で同じ間違いを犯さないようにしましょう!</p>
+<h4 id="構造体のポインタは、nullity、動的配列、不完全な型にのみ使用します。">構造体のポインタは、nullity、動的配列、不完全な型にのみ使用します。</h4>
+<p>構造体のすべてのポインタは、セグメンテーションフォールトの機会である。</p>
+<p>もし、ポインタがNULLであってはならず、未知のサイズの配列でもなく、構造体自身の型でもない場合は、ポインタにする必要はありません。構造体の中に、その構造体自身の型のメンバを入れればいいのです。構造体のサイズについては、ベンチマークを行うまで気にする必要はありません。</p>
+<h4 id="ポインタの引数は、nullity、配列、修飾の場合のみ使用します。">ポインタの引数は、Nullity、配列、修飾の場合のみ使用します。</h4>
+<p>このルールは、値がどこで変更されたかを読者が推論するのに役立ちます。また、 <code>NULL</code> を受け取るべきでない関数が <code>NULL</code> を受け取れないようにすることで、安全性も向上します。これは、参照渡しのセマンティクス (従って、ほとんどすべての場所で <code>NULL</code> を有効な値として扱うこと) を要求する言語と比較して、大きな利点と言えます。</p>
+<p>このルールに従ったコードベースを読んでいて、関数と型が最大限に分解されている場合、そのプロトタイプを読むだけで、関数が何をするのかがわかることがよくあります。これは、あらゆる場所でポインターを渡すプロジェクトとは対照的で、どこにも確信が持てません。</p>
+<p>C言語では、構造体の値を関数に渡すと、<a href="http://c-faq.com/ptrs/passbyref.html" target="_blank">pass-by-value semantics</a> により、受け取った関数のスタックフレームにコピーされます。元の構造体は、その関数では変更できません(変更内容を返すことはできますが)。const` と同様に、この機能を可能な限り使用することで、読者があなたのプログラムについて推論することが容易になります。</p>
+<p>ポインタメンバを持つ構造体を導入する場合、「修正」の定義が難しくなります。私は、構造体そのものや構造体のポインタに影響を与えるようなものを修正と呼んでいます。</p>
+<p>構造体が関数によって「変更」される場合、その関数が構造体のポインタを受け入れる必要がなくても、受け入れるようにします。これにより、読者は、どの構造体がポインタメンバを持っているかを認識するために、関連する構造体の定義をすべて見つけて記憶する必要がなくなります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> {</span>
+    <span class="hljs-keyword">int</span> population;
+} State;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> {</span>
+    State * states;
+    <span class="hljs-keyword">int</span> num_states;
+} Country;
+
+<span class="hljs-comment">// Good: `states` メンバが指す配列を `Country` 値だけで変更できる ** にもかかわらず、 `Country *` を受け取ります。</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">country_grow</span><span class="hljs-params">( Country <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> country, <span class="hljs-keyword">double</span> <span class="hljs-keyword">const</span> percent )</span> </span>{
+    <span class="hljs-keyword">for</span> ( <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; country-&gt;num_states; i += <span class="hljs-number">1</span> ) {
+        country-&gt;states[ i ].population *= percent;
+    }
+}
+</code></pre>
+<p>上の <code>country</code> 引数が const 型であることに注意してください。これは、国そのものを変更するのではなく、ポインタを変更することを意味しています (ポインタは null を表すともとれますが、関数名からはそうではなさそうです)。また、呼び出し元は <code>Country const</code> へのポインタを渡すことができます。</p>
+<p>ポインタの引数を使用する他の状況は、関数が有効な値として <code>NULL</code> を受け入れる必要がある場合です (つまり、貧乏人の [Maybe] (<a href="http://learnyouahaskell.com/making-our-own-types-and-typeclasses" target="_blank">http://learnyouahaskell.com/making-our-own-types-and-typeclasses</a>)) 。その場合は、 <code>const</code> を使用して、ポインタが変更されないようにシグナルを送り、 <code>const</code> 引数を受け取ることができるようにします。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// Good: `NULL` は空のリストを表し，list は const へのポインタである．</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">list_length</span><span class="hljs-params">( List <span class="hljs-keyword">const</span> * <span class="hljs-built_in">list</span> )</span> </span>{
+    <span class="hljs-keyword">int</span> length = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> ( ; <span class="hljs-built_in">list</span> != <span class="hljs-literal">NULL</span>; <span class="hljs-built_in">list</span> = <span class="hljs-built_in">list</span>-&gt;next ) {
+        length += <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> length;
+}
+</code></pre>
+<p>このルールに従うと、不完全な構造体型を捨てることになりますが、私はとにかく構造体型が好きではありません。(Cは<a href="#c-isnt-object-oriented%20and%20you-shouldnt-pretend-it-is">オブジェクト指向ではない</a>&quot; ルールを参照してください)。</p>
+<h4 id="ポインタを変更するよりも値を返すことを優先する">ポインタを変更するよりも値を返すことを優先する</h4>
+<p>これは不変性を促進し、<a href="https://en.wikipedia.org/wiki/Pure_function" target="_blank">純粋関数</a>を育成し、物事をより単純化し理解しやすくするものです。また、引数が <code>NULL</code> である可能性を排除することで、安全性も向上している。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い点：不要な変異（たぶん）、安全でないこと</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drink_mix</span><span class="hljs-params">( Drink * <span class="hljs-keyword">const</span> drink, Ingredient <span class="hljs-keyword">const</span> ingr )</span> </span>{
+    assert( drink != <span class="hljs-literal">NULL</span> );
+    color_blend( &amp;( drink-&gt;color ), ingr.color );
+    drink-&gt;alcohol += ingr.alcohol;
+}
+
+<span class="hljs-comment">// 良い点：不変性の石、どこでも純粋で安全な関数</span>
+<span class="hljs-function">Drink <span class="hljs-title">drink_mix</span><span class="hljs-params">( Drink <span class="hljs-keyword">const</span> drink, Ingredient <span class="hljs-keyword">const</span> ingr )</span> </span>{
+    <span class="hljs-keyword">return</span> ( Drink ){
+        .color = color_blend( drink.color, ingr.color ),
+        .alcohol = drink.alcohol + ingr.alcohol
+    };
+}
+</code></pre>
+<p>これは必ずしもベストな方法とは言えませんが、常に検討すべきことです。</p>
+<h4 id="関数のオプション引数の名前に構造体を使用する">関数のオプション引数の名前に構造体を使用する</h4>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">run_server_options</span> {</span>
+    <span class="hljs-keyword">char</span> * port;
+    <span class="hljs-keyword">int</span> backlog;
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> run_server( ... ) \
+    run_server_( ( struct run_server_options ){ \
+        <span class="hljs-comment">/* default values */</span> \
+        .port = <span class="hljs-meta-string">&quot;45680&quot;</span>, \
+        .backlog = 5, \
+        __VA_ARGS__ \
+    } )</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">run_server_</span><span class="hljs-params">( struct run_server_options opts )</span>
+</span>{
+    ...
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">( <span class="hljs-keyword">void</span> )</span>
+</span>{
+    <span class="hljs-keyword">return</span> run_server( .port = <span class="hljs-string">&quot;3490&quot;</span>, .backlog = <span class="hljs-number">10</span> );
+}
+</code></pre>
+<p>私はこれを<em>21st Century C</em>で学びました。多くのCのインターフェイスは、このテクニックを利用すれば、非常に改善されるはずです。ソフトウェア開発において、（構文的な）名前付き引数の重要性と価値は、あまりにも見落とされがちです。もし納得がいかないなら、Bret Victor の <a href="http://worrydream.com/LearnableProgramming/" target="_blank">Learnable Programming</a> を読んでみてください。</p>
+<p>名前付き引数をどこでも使ってはいけない。ある関数の唯一の引数がたまたま構造体であったとしても、それが必ずしもその関数の名前付き引数になるとは限りません。経験則から言うと、もしその構造体がその関数の外で使われるなら、上記のようなマクロで隠すべきでないということです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// よかった。ここでのタイプ分けは参考になるし、期待できる。</span>
+book_new( ( Author ){ .name = <span class="hljs-string">&quot;Dennis Ritchie&quot;</span> } );
+</code></pre>
+<h4 id="構造体リテラルでは常に指定イニシャライザーを使用する。">構造体リテラルでは常に指定イニシャライザーを使用する。</h4>
+<pre><code class="lang-c"><span class="hljs-comment">// 悪い点 - 構造体のメンバを並べ替えると壊れるし、値が何を表しているのかが常に明確でない。</span>
+Fruit apple = { <span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;medium&quot;</span> };
+<span class="hljs-comment">// 良い; 将来性、描写力</span>
+Fruit watermelon = { .color = <span class="hljs-string">&quot;green&quot;</span>, .size = <span class="hljs-string">&quot;large&quot;</span> };
+</code></pre>
+<p>名前付き引数の場合、このルールを曲げて、特定のフィールドを構造体の先頭に持ってきて、呼び出し側がその引数に名前を付けずに関数を呼び出せるようにすることがあります。</p>
+<pre><code class="lang-c">run_server( <span class="hljs-string">&quot;3490&quot;</span> );
+run_server( .port = <span class="hljs-string">&quot;3490&quot;</span>, .backlog = <span class="hljs-number">10</span> );
+</code></pre>
+<p>もし、これを許可したいのであれば、明示的に文書化してください。フィールドの順序を変更した場合、ライブラリのバージョンを正しく変更するのはあなたの責任です。</p>
+<h4 id="構造体のメンバに対してのみアロケーションとフリー関数を提供する場合、構造体全体に対してメモリをアロケーションします。">構造体のメンバに対してのみアロケーションとフリー関数を提供する場合、構造体全体に対してメモリをアロケーションします。</h4>
+<p>もし、 <code>foo_alloc</code> と <code>foo_free</code> 関数を提供して、 <code>Foo</code> 構造体のメンバに対してのみメモリを確保するのであれば、自動保存の利点と安全性を失うことになります。foo_alloc<code>と</code>foo_ree<code>の関数は、</code>Foo` 構造体のメンバにメモリを割り当てるためだけに用意されているのであれば、自動保存の利点と安全性を失ってしまいます。</p>
+<h4 id="ゲッターとセッターを避ける">ゲッターとセッターを避ける</h4>
+<p>もし、あなたがC言語でカプセル化を求めているなら、おそらく物事を複雑にしすぎているのでしょう。構造体のメンバに直接アクセスしたり設定したりするようにしましょう。メンバの先頭に <code>_</code> を付けてアクセスレベルを示すようなことはしないでください。構造体の不変量を宣言しておけば、ユーザーが何かを壊してしまうことを心配する必要はありません。</p>
+<p><a href="#always-prefer-to-return-a-value-rather%20than%20modifying-pointers">別のルール</a> でアドバイスしたように、可能な限り変異を避けるようにしましょう。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// というより、むしろ</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">city_set_state</span><span class="hljs-params">( City * <span class="hljs-keyword">const</span> c, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> state )</span>
+</span>{
+    c-&gt;state = state;
+    c-&gt;country = country_of_state( state );
+}
+
+<span class="hljs-comment">// 常に不変と純粋を好む。</span>
+<span class="hljs-function">City <span class="hljs-title">city_with_state</span><span class="hljs-params">( City c, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> * <span class="hljs-keyword">const</span> state )</span>
+</span>{
+    c.state = state;
+    c.country = country_of_state( state );
+    <span class="hljs-keyword">return</span> c;
+}
+
+City c = { .name = <span class="hljs-string">&quot;Vancouver&quot;</span> };
+c = city_with_state( c, <span class="hljs-string">&quot;BC&quot;</span> );
+<span class="hljs-built_in">printf</span>( <span class="hljs-string">&quot;%s is in %s, did you know?\n&quot;</span>, c.name, c.country );
+</code></pre>
+<p>しかし、常に<a href="https://en.wikipedia.org/wiki/Declarative_programming" target="_blank">宣言的プログラミング</a>を可能にするインターフェイスを提供する必要があります。</p>
+<pre><code class="lang-c">City <span class="hljs-keyword">const</span> c = city_new( .name = <span class="hljs-string">&quot;Boston&quot;</span>, .state = <span class="hljs-string">&quot;MA&quot;</span> );
+<span class="hljs-built_in">printf</span>( <span class="hljs-string">&quot;I think I&apos;m going to %s,\n&quot;</span>
+        <span class="hljs-string">&quot;Where no one changes my state\n&quot;</span>, c.name, c.country );
+</code></pre>
+<h4 id="cはオブジェクト指向ではないし、オブジェクト指向のふりをするべきではない">Cはオブジェクト指向ではないし、オブジェクト指向のふりをするべきではない</h4>
+<p>C言語にはクラスもメソッドも継承もオブジェクトのカプセル化も真のポリモーフィズムもないのです。失礼かもしれませんが、でも失礼な言い方ですが、<strong>deal with it</strong> です。C言語では、それらのくだらない、複雑な模倣を実現できるかもしれませんが、その価値はないのです。</p>
+<p>結局のところ、C言語にはすでに完全に対応できる言語モデルがあるのです。C言語では、データ構造を定義し、そのデータ構造を組み合わせて使う機能を定義する。データと機能が複雑な仕掛けで絡み合っていない、これは良いことです。</p>
+<p>言語設計の最先端を行くHaskellも、同じようにデータと機能を切り離す決断をしたのです。Haskellを学ぶことは、プログラマーが自分の技術を向上させるためにできる最善のことのひとつですが、CとHaskellの根本的な共通点から、Cプログラマーには特に有益だと思います。確かにC言語には無名関数がありませんし、C言語ですぐにモナドを書くこともないでしょう。しかし、Haskellを学ぶことで、クラスなし、ミュータビリティなし、モジュール性ありの優れたソフトウェアを書く方法を学ぶことができます。これらの性質は、優れたC言語プログラミングにとって非常に有益なものです。</p>
+<p>他のパラダイムをCに移植しようとするのではなく、Cが提供するものを受け入れ、評価しましょう。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: はじめに">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Cスタイル","level":"1.2","depth":1,"previous":{"title":"はじめに","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"c_style.md","mtime":"2022-10-14T23:51:48.803Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:09:58.085Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

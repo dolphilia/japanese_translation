@@ -1,0 +1,2046 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Clean Code · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="javascript_best_practices.html" />
+    
+    
+    <link rel="prev" href="50_javascript_best_practice.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="50_javascript_best_practice.html">
+            
+                <a href="50_javascript_best_practice.html">
+            
+                    
+                    50のルール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="clean_code_javascript.html">
+            
+                <a href="clean_code_javascript.html">
+            
+                    
+                    Clean Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="javascript_best_practices.html">
+            
+                <a href="javascript_best_practices.html">
+            
+                    
+                    W3C
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Clean Code</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="clean-code-javascript">clean-code-javascript</h1>
+<ul>
+<li><a href="https://github.com/ryanmcdermott/clean-code-javascript" target="_blank">原文</a></li>
+<li><a href="https://github.com/mitsuruog/clean-code-javascript/" target="_blank">日本語訳</a></li>
+</ul>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#objects-and-data-structures">Objects and Data Structures</a></li>
+<li><a href="#classes">Classes</a></li>
+<li><a href="#solid">SOLID</a></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#concurrency">Concurrency</a></li>
+<li><a href="#error-handling">Error Handling</a></li>
+<li><a href="#formatting">Formatting</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#translation">Translation</a></li>
+</ol>
+<h2 id="はじめに">はじめに</h2>
+<p><img src="https://www.osnews.com/images/comics/wtfm.jpg" alt="ソフトウェア品質評価は、コードを読むときにどれだけ多くの罵声を浴びせたかのカウントであるというユーモラスなイメージ。"></p>
+<p>Robert C. Martinの著書<a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank"><em>Clean Code</em></a>にあるソフトウェア工学の原則を、JavaScript用にアレンジしたものです。これはスタイルガイドではありません。JavaScriptで<a href="https://github.com/ryanmcdermott/3rs-of-software-architecture" target="_blank">読みやすく、再利用可能で、リファクタブル</a>なソフトウェアを作るためのガイドです。</p>
+<p>ここに書かれているすべての原則に厳密に従わなければならないわけではありませんし、普遍的に同意されるものはさらに少ないでしょう。これらはガイドラインであり、それ以上のものではありませんが、 <em>Clean Code</em> の著者たちによる長年の経験をもとに体系化されたものです。</p>
+<p>私たちのソフトウェアエンジニアリングの技術は、50年余りの歴史があり、まだ多くのことを学んでいます。ソフトウェアアーキテクチャがアーキテクチャそのものと同じくらい古くなったとき、もしかしたら私たちはより難しいルールに従わなければならないかもしれません。今のところ、これらのガイドラインは、あなたやあなたのチームが作成するJavaScriptコードの品質を評価するための試金石となるようにしましょう。</p>
+<p>もうひとつ、これらを知ったからといって、すぐに優れたソフトウェア開発者になれるわけではありませんし、何年もこれと一緒に仕事をすれば、間違いを犯さなくなるというわけでもありません。すべてのコードは、濡れた粘土が最終的な形になっていくように、最初のドラフトとして始まります。最後に、仲間と一緒にレビューするときに不完全な部分を削り取るのです。初稿に改良が必要だからといって、自分を責めないでください。そのかわり、コードに磨きをかけましょう。</p>
+<h2 id="variables"><strong>Variables</strong></h2>
+<h3 id="意味のある発音しやすい変数名を使用する">意味のある発音しやすい変数名を使用する</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> yyyymmdstr = moment().format(<span class="hljs-string">&quot;YYYY/MM/DD&quot;</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> currentDate = moment().format(<span class="hljs-string">&quot;YYYY/MM/DD&quot;</span>);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="同じ種類の変数には、同じ語彙を使用する">同じ種類の変数には、同じ語彙を使用する</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript">getUserInfo();
+getClientData();
+getCustomerRecord();
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript">getUser();
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="検索可能な名称を使用する">検索可能な名称を使用する</h3>
+<p>私たちは、これから書くコードよりも多くのコードを読むことになるでしょう。私たちが書くコードは、読みやすく、検索しやすいものであることが重要です。プログラムを理解するために重要な変数に名前をつけないことは、読者を傷つけることになります。検索可能な名前にしましょう。<a href="https://github.com/danielstjules/buddy.js" target="_blank">buddy.js</a> や <a href="https://github.com/eslint/eslint/blob/660e0918933e6e7fede26bc675a0763a6b357c94/docs/rules/no-magic-numbers.md" target="_blank">ESLint</a> のようなツールは、名前のない定数を特定するのに役立ちます。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 86400000は一体何のためにあるのでしょうか？</span>
+<span class="hljs-built_in">setTimeout</span>(blastOff, <span class="hljs-number">86400000</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 大文字の名前付き定数として宣言する。</span>
+<span class="hljs-keyword">const</span> MILLISECONDS_PER_DAY = <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span> * <span class="hljs-number">1000</span>; <span class="hljs-comment">//86400000;</span>
+
+<span class="hljs-built_in">setTimeout</span>(blastOff, MILLISECONDS_PER_DAY);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="説明変数を使用する">説明変数を使用する</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> address = <span class="hljs-string">&quot;One Infinite Loop, Cupertino 95014&quot;</span>;
+<span class="hljs-keyword">const</span> cityZipCodeRegex = <span class="hljs-regexp">/^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/</span>;
+saveCityZipCode(
+  address.match(cityZipCodeRegex)[<span class="hljs-number">1</span>],
+  address.match(cityZipCodeRegex)[<span class="hljs-number">2</span>]
+);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> address = <span class="hljs-string">&quot;One Infinite Loop, Cupertino 95014&quot;</span>;
+<span class="hljs-keyword">const</span> cityZipCodeRegex = <span class="hljs-regexp">/^[^,\\]+[,\\\s]+(.+?)\s*(\d{5})?$/</span>;
+<span class="hljs-keyword">const</span> [_, city, zipCode] = address.match(cityZipCodeRegex) || [];
+saveCityZipCode(city, zipCode);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="メンタルマッピングを避ける">メンタルマッピングを避ける</h3>
+<p>暗黙の了解より、明示的な方が良い。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> locations = [<span class="hljs-string">&quot;Austin&quot;</span>, <span class="hljs-string">&quot;New York&quot;</span>, <span class="hljs-string">&quot;San Francisco&quot;</span>];
+locations.forEach(<span class="hljs-function"><span class="hljs-params">l</span> =&gt;</span> {
+  doStuff();
+  doSomeOtherStuff();
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// Wait, what is `l` for again?</span>
+  dispatch(l);
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> locations = [<span class="hljs-string">&quot;Austin&quot;</span>, <span class="hljs-string">&quot;New York&quot;</span>, <span class="hljs-string">&quot;San Francisco&quot;</span>];
+locations.forEach(<span class="hljs-function"><span class="hljs-params">location</span> =&gt;</span> {
+  doStuff();
+  doSomeOtherStuff();
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-comment">// ...</span>
+  dispatch(location);
+});
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="不要なコンテキストを追加しない">不要なコンテキストを追加しない</h3>
+<p>クラス名/オブジェクト名が何かを物語っている場合、それを変数名で繰り返してはいけません。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Car = {
+  <span class="hljs-attr">carMake</span>: <span class="hljs-string">&quot;Honda&quot;</span>,
+  <span class="hljs-attr">carModel</span>: <span class="hljs-string">&quot;Accord&quot;</span>,
+  <span class="hljs-attr">carColor</span>: <span class="hljs-string">&quot;Blue&quot;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">paintCar</span>(<span class="hljs-params">car, color</span>) </span>{
+  car.carColor = color;
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Car = {
+  <span class="hljs-attr">make</span>: <span class="hljs-string">&quot;Honda&quot;</span>,
+  <span class="hljs-attr">model</span>: <span class="hljs-string">&quot;Accord&quot;</span>,
+  <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;Blue&quot;</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">paintCar</span>(<span class="hljs-params">car, color</span>) </span>{
+  car.color = color;
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="ショートサーキットやコンディショナルパラメータの代わりにデフォルトパラメータを使用する">ショートサーキットやコンディショナルパラメータの代わりにデフォルトパラメータを使用する</h3>
+<p>デフォルトのパラメータは、短絡的なものよりもきれいなものであることが多いです。もし、それらを使用した場合、あなたの関数は <code>undefined</code> の引数に対してのみデフォルト値を提供することに注意してください。その他の <code>&apos;&apos;</code>, <code>&quot;&quot;</code>, <code>false</code>, <code>null</code>, <code>0</code>, <code>NaN</code> のような &quot;falsy&quot; 値はデフォルト値で置き換えられることはありません。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMicrobrewery</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">const</span> breweryName = name || <span class="hljs-string">&quot;Hipster Brew Co.&quot;</span>;
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMicrobrewery</span>(<span class="hljs-params">name = <span class="hljs-string">&quot;Hipster Brew Co.&quot;</span></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="functions"><strong>Functions</strong></h2>
+<h3 id="関数の引数（2つ以下が理想）">関数の引数（2つ以下が理想）</h3>
+<p>関数のパラメータを制限することは、関数のテストを容易にするために非常に重要です。なぜなら、関数のテストを簡単に行うことができるからです。3つ以上あると、それぞれの引数でたくさんの異なるケースをテストしなければならなくなり、組み合わせの爆発につながります。</p>
+<p>1つか2つの引数が理想的なケースで、3つは可能な限り避けるべきでしょう。それ以上の場合は、統合する必要があります。通常、2つ以上の引数がある場合、その関数はあまりに多くのことを行おうとしています。そうでない場合は、たいていの場合、より上位のオブジェクトを引数として指定すれば十分でしょう。</p>
+<p>JavaScript では、多くのクラス定型文がなくても、その場でオブジェクトを作ることができるので、多くの引数が必要だと感じたら、オブジェクトを使用することができます。</p>
+<p>関数がどのようなプロパティを期待しているかを明らかにするために、ES2015/ES6 の構造化構文を使用することができます。これには、いくつかの利点があります。</p>
+<ol>
+<li>関数のシグネチャを見れば、どのようなプロパティが使われているのかがすぐにわかる。</li>
+<li>名前付きパラメータをシミュレートするために使用できる。</li>
+<li>再構造化では、関数に渡された引数オブジェクトの指定されたプリミティブ値をクローンすることもできます。これは、副作用を防ぐのに役立ちます。注意：引数オブジェクトから構造化解除されたオブジェクトや配列は、クローン化されませ ん。</li>
+<li>リンターは未使用のプロパティについて警告を出しますが、これはデストラクチャリングなしでは不可能なことです。</li>
+</ol>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMenu</span>(<span class="hljs-params">title, body, buttonText, cancellable</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+createMenu(<span class="hljs-string">&quot;Foo&quot;</span>, <span class="hljs-string">&quot;Bar&quot;</span>, <span class="hljs-string">&quot;Baz&quot;</span>, <span class="hljs-literal">true</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMenu</span>(<span class="hljs-params">{ title, body, buttonText, cancellable }</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+createMenu({
+  <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Foo&quot;</span>,
+  <span class="hljs-attr">body</span>: <span class="hljs-string">&quot;Bar&quot;</span>,
+  <span class="hljs-attr">buttonText</span>: <span class="hljs-string">&quot;Baz&quot;</span>,
+  <span class="hljs-attr">cancellable</span>: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="関数は1つのことを行う必要があります">関数は1つのことを行う必要があります</h3>
+<p>これは、ソフトウェア工学において最も重要な規則です。関数が複数のことを行う場合、その関数を構成し、テストし、推論することは困難です。関数をたった一つの動作に分離することができれば、リファクタリングが容易になり、コードがよりきれいに読めるようになります。もしあなたがこのガイドから他に何も得なければ、多くの開発者より一歩先を行くことになるでしょう。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">emailClients</span>(<span class="hljs-params">clients</span>) </span>{
+  clients.forEach(<span class="hljs-function"><span class="hljs-params">client</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> clientRecord = database.lookup(client);
+    <span class="hljs-keyword">if</span> (clientRecord.isActive()) {
+      email(client);
+    }
+  });
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">emailActiveClients</span>(<span class="hljs-params">clients</span>) </span>{
+  clients.filter(isActiveClient).forEach(email);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isActiveClient</span>(<span class="hljs-params">client</span>) </span>{
+  <span class="hljs-keyword">const</span> clientRecord = database.lookup(client);
+  <span class="hljs-keyword">return</span> clientRecord.isActive();
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="関数名は何をするのかを表すべき">関数名は何をするのかを表すべき</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addToDate</span>(<span class="hljs-params">date, month</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+
+<span class="hljs-comment">// It&apos;s hard to tell from the function name what is added</span>
+addToDate(date, <span class="hljs-number">1</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addMonthToDate</span>(<span class="hljs-params">month, date</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+addMonthToDate(<span class="hljs-number">1</span>, date);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="関数は1レベルの抽象度にとどめるべき">関数は1レベルの抽象度にとどめるべき</h3>
+<p>抽象度が2つ以上ある場合、その関数はたいてい過剰な処理をしています。関数を分割することで、再利用性が高まり、テストが容易になります。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseBetterJSAlternative</span>(<span class="hljs-params">code</span>) </span>{
+  <span class="hljs-keyword">const</span> REGEXES = [
+    <span class="hljs-comment">// ...</span>
+  ];
+
+  <span class="hljs-keyword">const</span> statements = code.split(<span class="hljs-string">&quot; &quot;</span>);
+  <span class="hljs-keyword">const</span> tokens = [];
+  REGEXES.forEach(<span class="hljs-function"><span class="hljs-params">REGEX</span> =&gt;</span> {
+    statements.forEach(<span class="hljs-function"><span class="hljs-params">statement</span> =&gt;</span> {
+      <span class="hljs-comment">// ...</span>
+    });
+  });
+
+  <span class="hljs-keyword">const</span> ast = [];
+  tokens.forEach(<span class="hljs-function"><span class="hljs-params">token</span> =&gt;</span> {
+    <span class="hljs-comment">// lex...</span>
+  });
+
+  ast.forEach(<span class="hljs-function"><span class="hljs-params">node</span> =&gt;</span> {
+    <span class="hljs-comment">// parse...</span>
+  });
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseBetterJSAlternative</span>(<span class="hljs-params">code</span>) </span>{
+  <span class="hljs-keyword">const</span> tokens = tokenize(code);
+  <span class="hljs-keyword">const</span> syntaxTree = parse(tokens);
+  syntaxTree.forEach(<span class="hljs-function"><span class="hljs-params">node</span> =&gt;</span> {
+    <span class="hljs-comment">// parse...</span>
+  });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tokenize</span>(<span class="hljs-params">code</span>) </span>{
+  <span class="hljs-keyword">const</span> REGEXES = [
+    <span class="hljs-comment">// ...</span>
+  ];
+
+  <span class="hljs-keyword">const</span> statements = code.split(<span class="hljs-string">&quot; &quot;</span>);
+  <span class="hljs-keyword">const</span> tokens = [];
+  REGEXES.forEach(<span class="hljs-function"><span class="hljs-params">REGEX</span> =&gt;</span> {
+    statements.forEach(<span class="hljs-function"><span class="hljs-params">statement</span> =&gt;</span> {
+      tokens.push(<span class="hljs-comment">/* ... */</span>);
+    });
+  });
+
+  <span class="hljs-keyword">return</span> tokens;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span>(<span class="hljs-params">tokens</span>) </span>{
+  <span class="hljs-keyword">const</span> syntaxTree = [];
+  tokens.forEach(<span class="hljs-function"><span class="hljs-params">token</span> =&gt;</span> {
+    syntaxTree.push(<span class="hljs-comment">/* ... */</span>);
+  });
+
+  <span class="hljs-keyword">return</span> syntaxTree;
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="重複するコードの削除">重複するコードの削除</h3>
+<p>コードの重複を極力避ける。コードの重複は、ロジックを変更する必要がある場合に、変更する場所が複数になることを意味するからです。</p>
+<p>例えば、レストランを経営していて、トマト、タマネギ、ニンニク、スパイスなどの在庫を管理している場合を想像してみてください。もし、複数のリストがあれば、トマトを使った料理を提供するときに、すべてのリストを更新しなければなりません。リストが1つしかない場合は、更新する場所は1つだけです。</p>
+<p>重複するコードがあるのは、2つ以上の微妙に異なるものがあり、それらは多くの点で共通していますが、その違いから、同じことをするのに2つ以上の別々の関数を持たざるを得ないことがよくあります。重複するコードを取り除くということは、このような異なるものの集合をたった一つの関数／モジュール／クラスで扱えるように抽象化することです。</p>
+<p>抽象化を正しく行うことは非常に重要であり、<em>Class</em>のセクションで説明したSOLIDの原則に従うべきです。間違った抽象化は、重複したコードよりも悪いので、注意が必要です。とはいえ、良い抽象化ができるのであれば、それを実行しましょう。そうしないと、1つのことを変更するたびに複数の場所を更新しなければならないことに気がつきます。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showDeveloperList</span>(<span class="hljs-params">developers</span>) </span>{
+  developers.forEach(<span class="hljs-function"><span class="hljs-params">developer</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> expectedSalary = developer.calculateExpectedSalary();
+    <span class="hljs-keyword">const</span> experience = developer.getExperience();
+    <span class="hljs-keyword">const</span> githubLink = developer.getGithubLink();
+    <span class="hljs-keyword">const</span> data = {
+      expectedSalary,
+      experience,
+      githubLink
+    };
+
+    render(data);
+  });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showManagerList</span>(<span class="hljs-params">managers</span>) </span>{
+  managers.forEach(<span class="hljs-function"><span class="hljs-params">manager</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> expectedSalary = manager.calculateExpectedSalary();
+    <span class="hljs-keyword">const</span> experience = manager.getExperience();
+    <span class="hljs-keyword">const</span> portfolio = manager.getMBAProjects();
+    <span class="hljs-keyword">const</span> data = {
+      expectedSalary,
+      experience,
+      portfolio
+    };
+
+    render(data);
+  });
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showEmployeeList</span>(<span class="hljs-params">employees</span>) </span>{
+  employees.forEach(<span class="hljs-function"><span class="hljs-params">employee</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> expectedSalary = employee.calculateExpectedSalary();
+    <span class="hljs-keyword">const</span> experience = employee.getExperience();
+
+    <span class="hljs-keyword">const</span> data = {
+      expectedSalary,
+      experience
+    };
+
+    <span class="hljs-keyword">switch</span> (employee.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;manager&quot;</span>:
+        data.portfolio = employee.getMBAProjects();
+        <span class="hljs-keyword">break</span>;
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;developer&quot;</span>:
+        data.githubLink = employee.getGithubLink();
+        <span class="hljs-keyword">break</span>;
+    }
+
+    render(data);
+  });
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="objectassignでデフォルトオブジェクトを設定する">Object.assignでデフォルトオブジェクトを設定する</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> menuConfig = {
+  <span class="hljs-attr">title</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">body</span>: <span class="hljs-string">&quot;Bar&quot;</span>,
+  <span class="hljs-attr">buttonText</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">cancellable</span>: <span class="hljs-literal">true</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMenu</span>(<span class="hljs-params">config</span>) </span>{
+  config.title = config.title || <span class="hljs-string">&quot;Foo&quot;</span>;
+  config.body = config.body || <span class="hljs-string">&quot;Bar&quot;</span>;
+  config.buttonText = config.buttonText || <span class="hljs-string">&quot;Baz&quot;</span>;
+  config.cancellable =
+    config.cancellable !== <span class="hljs-literal">undefined</span> ? config.cancellable : <span class="hljs-literal">true</span>;
+}
+
+createMenu(menuConfig);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> menuConfig = {
+  <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Order&quot;</span>,
+  <span class="hljs-comment">// User did not include &apos;body&apos; key</span>
+  <span class="hljs-attr">buttonText</span>: <span class="hljs-string">&quot;Send&quot;</span>,
+  <span class="hljs-attr">cancellable</span>: <span class="hljs-literal">true</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createMenu</span>(<span class="hljs-params">config</span>) </span>{
+  <span class="hljs-keyword">let</span> finalConfig = <span class="hljs-built_in">Object</span>.assign(
+    {
+      <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Foo&quot;</span>,
+      <span class="hljs-attr">body</span>: <span class="hljs-string">&quot;Bar&quot;</span>,
+      <span class="hljs-attr">buttonText</span>: <span class="hljs-string">&quot;Baz&quot;</span>,
+      <span class="hljs-attr">cancellable</span>: <span class="hljs-literal">true</span>
+    },
+    config
+  );
+  <span class="hljs-keyword">return</span> finalConfig
+  <span class="hljs-comment">// config now equals: {title: &quot;Order&quot;, body: &quot;Bar&quot;, buttonText: &quot;Send&quot;, cancellable: true}</span>
+  <span class="hljs-comment">// ...</span>
+}
+
+createMenu(menuConfig);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="関数のパラメータとしてフラグを使用しない">関数のパラメータとしてフラグを使用しない</h3>
+<p>フラグは、この関数が複数のことを行うことをユーザーに知らせます。関数の役割は一つであるべきです。もし関数がブール値に基づいて異なるコード経路をたどる場合は、関数を分割してください。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createFile</span>(<span class="hljs-params">name, temp</span>) </span>{
+  <span class="hljs-keyword">if</span> (temp) {
+    fs.create(<span class="hljs-string">`./temp/<span class="hljs-subst">${name}</span>`</span>);
+  } <span class="hljs-keyword">else</span> {
+    fs.create(name);
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createFile</span>(<span class="hljs-params">name</span>) </span>{
+  fs.create(name);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createTempFile</span>(<span class="hljs-params">name</span>) </span>{
+  createFile(<span class="hljs-string">`./temp/<span class="hljs-subst">${name}</span>`</span>);
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="副作用を避けるために（その1）">副作用を避けるために（その1）</h3>
+<p>関数は、値を受け取って別の値や値を返す以外のことをすると、副作用を発生させます。副作用とは、ファイルに書き込んだり、グローバル変数を変更したり、誤って知らない人に全財産を送金してしまったりすることです。</p>
+<p>さて、プログラムには副作用が必要な場合があります。先ほどの例のように、ファイルに書き込む必要があるかもしれません。このような場合、どこで何をするのかを一元管理する必要があります。特定のファイルに書き込むための関数やクラスがいくつもあってはいけません。それを行うサービスを1つ用意します。1つだけです。</p>
+<p>主なポイントは、構造を持たずにオブジェクト間で状態を共有したり、何にでも書き込めるミュータブルなデータ型を使用したり、副作用が発生する場所を一元化しないといった、よくある落とし穴を避けることです。これができれば、他の大多数のプログラマーよりも幸せになれるはずです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 以下の関数から参照されるグローバル変数。</span>
+<span class="hljs-comment">// もしこの名前を使った別の関数があったら、今度は配列になってしまい、それが壊れる可能性があります。</span>
+<span class="hljs-keyword">let</span> name = <span class="hljs-string">&quot;Ryan McDermott&quot;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">splitIntoFirstAndLastName</span>(<span class="hljs-params"></span>) </span>{
+  name = name.split(<span class="hljs-string">&quot; &quot;</span>);
+}
+
+splitIntoFirstAndLastName();
+
+<span class="hljs-built_in">console</span>.log(name); <span class="hljs-comment">// [&apos;Ryan&apos;, &apos;McDermott&apos;];</span>
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">splitIntoFirstAndLastName</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">return</span> name.split(<span class="hljs-string">&quot; &quot;</span>);
+}
+
+<span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;Ryan McDermott&quot;</span>;
+<span class="hljs-keyword">const</span> newName = splitIntoFirstAndLastName(name);
+
+<span class="hljs-built_in">console</span>.log(name); <span class="hljs-comment">// &apos;Ryan McDermott&apos;;</span>
+<span class="hljs-built_in">console</span>.log(newName); <span class="hljs-comment">// [&apos;Ryan&apos;, &apos;McDermott&apos;];</span>
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="副作用を避けるために（その2）">副作用を避けるために（その2）</h3>
+<p>JavaScriptでは、変更できない値（immutable）と変更可能な値（mutable）があります。オブジェクトと配列は2種類の変更可能な値なので、関数にパラメータとして渡されるときは慎重に扱うことが重要です。JavaScript の関数がオブジェクトのプロパティを変更したり、配列の内容を変更したりすると、他の場所で簡単にバグを引き起こす可能性があります。</p>
+<p>例えば、ショッピングカートを表す配列のパラメータを受け取る関数があるとします。その関数がショッピングカートの配列を変更した場合、例えば購入するアイテムを追加した場合、同じ <code>cart</code> 配列を使用する他の関数はこの追加の影響を受けることになります。それは素晴らしいことかもしれませんが、しかし悪いことでもあります。悪い状況を想像してみましょう。</p>
+<p>ユーザが &quot;Purchase&quot; ボタンをクリックすると、 <code>purchase</code> 関数が呼び出され、ネットワークリクエストを生成して <code>cart</code> 配列をサーバに送信します。ネットワーク接続に問題があるため、 <code>purchase</code> 関数はリクエストを再試行し続けなければなりません。さて、その間にユーザーがネットワークリクエストが始まる前に、実際には欲しくもない商品の &quot;Add to Cart&quot; ボタンを誤ってクリックしてしまったらどうでしょう？もしそうなってネットワークリクエストが始まると、<code>cart</code>配列が変更されたので、その購入関数は誤って追加されたアイテムを送信します。</p>
+<p>素晴らしい解決策は、 <code>addItemToCart</code> 関数が常に <code>cart</code> をクローンして、それを編集し、クローンを返すようにすることでしょう。これによって、まだ古いショッピングカートを使用している関数が変更の影響を受けないことを保証します。</p>
+<p>この方法には、2つの注意点があります。</p>
+<ol>
+<li><p>実際に入力オブジェクトを変更したい場合もあるかもしれませんが、このプログラミング手法を採用すると、そのようなケースは非常に稀であることがわかります。ほとんどのものは、副作用がないようにリファクタリングすることができるのです</p>
+</li>
+<li><p>大きなオブジェクトのクローンを作成することは、パフォーマンスの面で非常に高くつくことがあります。幸いなことに、この種のプログラミングアプローチを高速にし、オブジェクトや配列を手動でクローンするほどメモリを消費しないようにする<a href="https://facebook.github.io/immutable-js/" target="_blank">素晴らしいライブラリ</a>があるので、実際には大きな問題にはなりません。</p>
+</li>
+</ol>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addItemToCart = <span class="hljs-function">(<span class="hljs-params">cart, item</span>) =&gt;</span> {
+  cart.push({ item, <span class="hljs-attr">date</span>: <span class="hljs-built_in">Date</span>.now() });
+};
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> addItemToCart = <span class="hljs-function">(<span class="hljs-params">cart, item</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> [...cart, { item, <span class="hljs-attr">date</span>: <span class="hljs-built_in">Date</span>.now() }];
+};
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="グローバル関数に書き込まない">グローバル関数に書き込まない</h3>
+<p>なぜなら、他のライブラリと衝突する可能性があり、APIのユーザは実運用で例外が発生するまで何も知らないことになるからです。例えば、JavaScript のネイティブの Array メソッドを拡張して、2 つの配列の差を表示する <code>diff</code> メソッドを持ちたいとしたらどうでしょうか。新しい関数を <code>Array.prototype</code> に書くことができますが、同じことをしようとする他のライブラリと衝突する可能性があります。もし、他のライブラリが <code>diff</code> を使って、配列の最初と最後の要素の差を求めるだけだったらどうでしょうか？このような理由から、ES2015/ES6 クラスを使用して、単に <code>Array</code> グローバルを拡張する方がはるかに良いのです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">Array</span>.prototype.diff = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">diff</span>(<span class="hljs-params">comparisonArray</span>) </span>{
+  <span class="hljs-keyword">const</span> hash = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(comparisonArray);
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.filter(<span class="hljs-function"><span class="hljs-params">elem</span> =&gt;</span> !hash.has(elem));
+};
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SuperArray</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Array</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">diff</span>(<span class="hljs-params">comparisonArray</span>)</span> {
+    <span class="hljs-keyword">const</span> hash = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(comparisonArray);
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.filter(<span class="hljs-function"><span class="hljs-params">elem</span> =&gt;</span> !hash.has(elem));
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="命令型プログラミングより関数型プログラミングを優先">命令型プログラミングより関数型プログラミングを優先</h3>
+<p>JavaScriptはHaskellのような関数型言語ではありませんが、関数型的な味わいがあります。関数型言語は、よりクリーンでテストがしやすい言語です。できる限り、このスタイルのプログラミングを好むようにしましょう。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> programmerOutput = [
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Uncle Bobby&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">500</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Suzie Q&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">1500</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Jimmy Gosling&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">150</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Gracie Hopper&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">1000</span>
+  }
+];
+
+<span class="hljs-keyword">let</span> totalOutput = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; programmerOutput.length; i++) {
+  totalOutput += programmerOutput[i].linesOfCode;
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> programmerOutput = [
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Uncle Bobby&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">500</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Suzie Q&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">1500</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Jimmy Gosling&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">150</span>
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Gracie Hopper&quot;</span>,
+    <span class="hljs-attr">linesOfCode</span>: <span class="hljs-number">1000</span>
+  }
+];
+
+<span class="hljs-keyword">const</span> totalOutput = programmerOutput.reduce(
+  <span class="hljs-function">(<span class="hljs-params">totalLines, output</span>) =&gt;</span> totalLines + output.linesOfCode,
+  <span class="hljs-number">0</span>
+);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="条件分岐のカプセル化">条件分岐のカプセル化</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span> (fsm.state === <span class="hljs-string">&quot;fetching&quot;</span> &amp;&amp; isEmpty(listNode)) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">shouldShowSpinner</span>(<span class="hljs-params">fsm, listNode</span>) </span>{
+  <span class="hljs-keyword">return</span> fsm.state === <span class="hljs-string">&quot;fetching&quot;</span> &amp;&amp; isEmpty(listNode);
+}
+
+<span class="hljs-keyword">if</span> (shouldShowSpinner(fsmInstance, listNodeInstance)) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="否定的な条件文は避ける">否定的な条件文は避ける</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isDOMNodeNotPresent</span>(<span class="hljs-params">node</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">if</span> (!isDOMNodeNotPresent(node)) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isDOMNodePresent</span>(<span class="hljs-params">node</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">if</span> (isDOMNodePresent(node)) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="条件文は避ける">条件文は避ける</h3>
+<p>これは不可能なことのように思える。最初にこれを聞いたとき、ほとんどの人は &quot;どうやって <code>if</code> 文なしで何かをすればいいんだ？&quot; と言います。その答えは、多くの場合、ポリモーフィズムを使って同じタスクを達成することができるからです。2つ目の質問は、通常、「それは素晴らしいが、なぜそんなことをしたいのか？その答えは、以前学んだクリーンコードの概念、「関数は1つのことしかしてはいけない」というものです。クラスや関数に <code>if</code> ステートメントがある場合、その関数は複数のことを行うことをユーザーに伝えていることになります。忘れないでください、やることはひとつだけです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Airplane</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-function"><span class="hljs-title">getCruisingAltitude</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">switch</span> (<span class="hljs-built_in">this</span>.type) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;777&quot;</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude() - <span class="hljs-built_in">this</span>.getPassengerCount();
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Air Force One&quot;</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude();
+      <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;Cessna&quot;</span>:
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude() - <span class="hljs-built_in">this</span>.getFuelExpenditure();
+    }
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Airplane</span> </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Boeing777</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Airplane</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-function"><span class="hljs-title">getCruisingAltitude</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude() - <span class="hljs-built_in">this</span>.getPassengerCount();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AirForceOne</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Airplane</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-function"><span class="hljs-title">getCruisingAltitude</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cessna</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Airplane</span> </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-function"><span class="hljs-title">getCruisingAltitude</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.getMaxAltitude() - <span class="hljs-built_in">this</span>.getFuelExpenditure();
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="タイプチェックを避ける（その1）">タイプチェックを避ける（その1）</h3>
+<p>JavaScriptは型付けされていないので、関数はどんな型の引数でも取ることができます。この自由度の高さが災いして、関数内で型チェックをしたくなることがあります。これを回避する方法はたくさんあります。まず最初に考えるべきは、一貫したAPIです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">travelToTexas</span>(<span class="hljs-params">vehicle</span>) </span>{
+  <span class="hljs-keyword">if</span> (vehicle <span class="hljs-keyword">instanceof</span> Bicycle) {
+    vehicle.pedal(<span class="hljs-built_in">this</span>.currentLocation, <span class="hljs-keyword">new</span> Location(<span class="hljs-string">&quot;texas&quot;</span>));
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (vehicle <span class="hljs-keyword">instanceof</span> Car) {
+    vehicle.drive(<span class="hljs-built_in">this</span>.currentLocation, <span class="hljs-keyword">new</span> Location(<span class="hljs-string">&quot;texas&quot;</span>));
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">travelToTexas</span>(<span class="hljs-params">vehicle</span>) </span>{
+  vehicle.move(<span class="hljs-built_in">this</span>.currentLocation, <span class="hljs-keyword">new</span> Location(<span class="hljs-string">&quot;texas&quot;</span>));
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="タイプチェックを避ける（その2）">タイプチェックを避ける（その2）</h3>
+<p>文字列や整数などの基本的なプリミティブ値を扱う場合、ポリモーフィズムは使えないが型チェックの必要性を感じるのであれば、TypeScriptの利用を検討すべきだろう。TypeScriptは標準的なJavaScriptの構文の上に静的な型付けを行うことができるため、通常のJavaScriptの優れた代替品となる。通常のJavaScriptを手作業で型チェックすることの問題点は、それをうまく行うには余分な記述が多くなり、偽の「型安全性」が失われた可読性を補うことができないことである。JavaScriptをきれいに保ち、良いテストを書き、良いコードレビューを行いましょう。そうでなければ、これらすべてをTypeScriptで行いましょう（先ほども言ったように、TypeScriptは素晴らしい代替手段です！）。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">val1, val2</span>) </span>{
+  <span class="hljs-keyword">if</span> (
+    (<span class="hljs-keyword">typeof</span> val1 === <span class="hljs-string">&quot;number&quot;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> val2 === <span class="hljs-string">&quot;number&quot;</span>) ||
+    (<span class="hljs-keyword">typeof</span> val1 === <span class="hljs-string">&quot;string&quot;</span> &amp;&amp; <span class="hljs-keyword">typeof</span> val2 === <span class="hljs-string">&quot;string&quot;</span>)
+  ) {
+    <span class="hljs-keyword">return</span> val1 + val2;
+  }
+
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Must be of type String or Number&quot;</span>);
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">val1, val2</span>) </span>{
+  <span class="hljs-keyword">return</span> val1 + val2;
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="最適化しすぎない">最適化しすぎない</h3>
+<p>モダンブラウザは、実行時に多くの最適化を行います。多くの場合、最適化をしているならば、時間を浪費しているだけです。<a href="https://github.com/petkaantonov/bluebird/wiki/Optimization-killers" target="_blank">最適化が不足している箇所を確認するための良いリソースがあります</a>。可能であれば、修正されるまでの間、それらをターゲットにしてください。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// 古いブラウザでは、キャッシュされていない `list.length` を含む各反復処理は、 `list.length` の再計算のためにコストがかかります。モダンブラウザでは、これは最適化されています。</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>, len = list.length; i &lt; len; i++) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; list.length; i++) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="デッドコードの削除">デッドコードの削除</h3>
+<p>デッドコードは、重複コードと同じくらい悪いものです。コードベースに残しておく理由はありません。呼び出されないのであれば、捨ててしまいましょう。もしまだ必要なら、バージョン履歴の中で安全に保管することができます。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">oldRequestModule</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newRequestModule</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> req = newRequestModule;
+inventoryTracker(<span class="hljs-string">&quot;apples&quot;</span>, req, <span class="hljs-string">&quot;www.inventory-awesome.io&quot;</span>);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">newRequestModule</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">const</span> req = newRequestModule;
+inventoryTracker(<span class="hljs-string">&quot;apples&quot;</span>, req, <span class="hljs-string">&quot;www.inventory-awesome.io&quot;</span>);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="objects-and-data-structures"><strong>Objects and Data Structures</strong></h2>
+<h3 id="ゲッターとセッターを使用する">ゲッターとセッターを使用する</h3>
+<p>オブジェクトのデータにアクセスするためにゲッターとセッターを使用することは、単にオブジェクトのプロパティを探すことよりも良い場合があります。「なぜ？」と思うかもしれません。まあ、ここにその理由の未整理なリストがあります。</p>
+<ul>
+<li>オブジェクトのプロパティを取得する以上のことをしたいとき、コードベース内のすべてのアクセサを調べて変更する必要はありません。</li>
+<li>set` を行う際に、バリデーションを簡単に追加できるようにします。</li>
+<li>内部表現をカプセル化する。</li>
+<li>取得や設定の際に、ロギングやエラー処理を簡単に追加することができる。</li>
+<li>オブジェクトのプロパティを遅延ロードすることができる (例えば、サーバーから取得する場合)。</li>
+</ul>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeBankAccount</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">0</span>
+    <span class="hljs-comment">// ...</span>
+  };
+}
+
+<span class="hljs-keyword">const</span> account = makeBankAccount();
+account.balance = <span class="hljs-number">100</span>;
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeBankAccount</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// this one is private</span>
+  <span class="hljs-keyword">let</span> balance = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// a &quot;getter&quot;, made public via the returned object below</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBalance</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> balance;
+  }
+
+  <span class="hljs-comment">// a &quot;setter&quot;, made public via the returned object below</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setBalance</span>(<span class="hljs-params">amount</span>) </span>{
+    <span class="hljs-comment">// ... validate before updating the balance</span>
+    balance = amount;
+  }
+
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-comment">// ...</span>
+    getBalance,
+    setBalance
+  };
+}
+
+<span class="hljs-keyword">const</span> account = makeBankAccount();
+account.setBalance(<span class="hljs-number">100</span>);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="オブジェクトにプライベートメンバを持たせる">オブジェクトにプライベートメンバを持たせる</h3>
+<p>これはクロージャによって実現できます（ES5以下の場合）。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Employee = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">this</span>.name = name;
+};
+
+Employee.prototype.getName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.name;
+};
+
+<span class="hljs-keyword">const</span> employee = <span class="hljs-keyword">new</span> Employee(<span class="hljs-string">&quot;John Doe&quot;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Employee name: <span class="hljs-subst">${employee.getName()}</span>`</span>); <span class="hljs-comment">// Employee name: John Doe</span>
+<span class="hljs-keyword">delete</span> employee.name;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Employee name: <span class="hljs-subst">${employee.getName()}</span>`</span>); <span class="hljs-comment">// Employee name: undefined</span>
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeEmployee</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-keyword">return</span> {
+    <span class="hljs-function"><span class="hljs-title">getName</span>(<span class="hljs-params"></span>)</span> {
+      <span class="hljs-keyword">return</span> name;
+    }
+  };
+}
+
+<span class="hljs-keyword">const</span> employee = makeEmployee(<span class="hljs-string">&quot;John Doe&quot;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Employee name: <span class="hljs-subst">${employee.getName()}</span>`</span>); <span class="hljs-comment">// Employee name: John Doe</span>
+<span class="hljs-keyword">delete</span> employee.name;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Employee name: <span class="hljs-subst">${employee.getName()}</span>`</span>); <span class="hljs-comment">// Employee name: John Doe</span>
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="classes"><strong>Classes</strong></h2>
+<h3 id="es5のプレーンな関数よりもes2015es6のクラスを優先する。">ES5のプレーンな関数よりもES2015/ES6のクラスを優先する。</h3>
+<p>古典的なES5クラスでは、読みやすいクラスの継承、構築、メソッド定義を得ることは非常に困難です。もし、継承が必要なら（必要ないかもしれませんが）、ES2015/ES6クラスを選択することをお勧めします。しかし、より大きく、より複雑なオブジェクトが必要になるまでは、クラスよりも小さな関数を優先してください。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> Animal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">age</span>) </span>{
+  <span class="hljs-keyword">if</span> (!(<span class="hljs-built_in">this</span> <span class="hljs-keyword">instanceof</span> Animal)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Instantiate Animal with `new`&quot;</span>);
+  }
+
+  <span class="hljs-built_in">this</span>.age = age;
+};
+
+Animal.prototype.move = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">move</span>(<span class="hljs-params"></span>) </span>{};
+
+<span class="hljs-keyword">const</span> Mammal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">age, furColor</span>) </span>{
+  <span class="hljs-keyword">if</span> (!(<span class="hljs-built_in">this</span> <span class="hljs-keyword">instanceof</span> Mammal)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Instantiate Mammal with `new`&quot;</span>);
+  }
+
+  Animal.call(<span class="hljs-built_in">this</span>, age);
+  <span class="hljs-built_in">this</span>.furColor = furColor;
+};
+
+Mammal.prototype = <span class="hljs-built_in">Object</span>.create(Animal.prototype);
+Mammal.prototype.constructor = Mammal;
+Mammal.prototype.liveBirth = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">liveBirth</span>(<span class="hljs-params"></span>) </span>{};
+
+<span class="hljs-keyword">const</span> Human = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">age, furColor, languageSpoken</span>) </span>{
+  <span class="hljs-keyword">if</span> (!(<span class="hljs-built_in">this</span> <span class="hljs-keyword">instanceof</span> Human)) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Instantiate Human with `new`&quot;</span>);
+  }
+
+  Mammal.call(<span class="hljs-built_in">this</span>, age, furColor);
+  <span class="hljs-built_in">this</span>.languageSpoken = languageSpoken;
+};
+
+Human.prototype = <span class="hljs-built_in">Object</span>.create(Mammal.prototype);
+Human.prototype.constructor = Human;
+Human.prototype.speak = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">speak</span>(<span class="hljs-params"></span>) </span>{};
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">age</span>)</span> {
+    <span class="hljs-built_in">this</span>.age = age;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">move</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">/* ... */</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Mammal</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">age, furColor</span>)</span> {
+    <span class="hljs-built_in">super</span>(age);
+    <span class="hljs-built_in">this</span>.furColor = furColor;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">liveBirth</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">/* ... */</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Human</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mammal</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">age, furColor, languageSpoken</span>)</span> {
+    <span class="hljs-built_in">super</span>(age, furColor);
+    <span class="hljs-built_in">this</span>.languageSpoken = languageSpoken;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">speak</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">/* ... */</span>
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="メソッドチェイニングを使用する">メソッドチェイニングを使用する</h3>
+<p>このパターンはJavaScriptで非常に有用であり、jQueryやLodashなど多くのライブラリで見かけることができます。jQueryやLodashなど多くのライブラリで見ることができます。このパターンによって、コードが表現豊かになり、冗長にならずに済みます。そのため、私はメソッドチェイニングを使用して、あなたのコードがどれだけきれいになるかを見てみましょうと言います。クラス関数では、すべての関数の最後で <code>this</code> を返すだけで、その上にさらにクラスメソッドを連鎖させることができます。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">make, model, color</span>)</span> {
+    <span class="hljs-built_in">this</span>.make = make;
+    <span class="hljs-built_in">this</span>.model = model;
+    <span class="hljs-built_in">this</span>.color = color;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setMake</span>(<span class="hljs-params">make</span>)</span> {
+    <span class="hljs-built_in">this</span>.make = make;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setModel</span>(<span class="hljs-params">model</span>)</span> {
+    <span class="hljs-built_in">this</span>.model = model;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setColor</span>(<span class="hljs-params">color</span>)</span> {
+    <span class="hljs-built_in">this</span>.color = color;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">save</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.make, <span class="hljs-built_in">this</span>.model, <span class="hljs-built_in">this</span>.color);
+  }
+}
+
+<span class="hljs-keyword">const</span> car = <span class="hljs-keyword">new</span> Car(<span class="hljs-string">&quot;Ford&quot;</span>, <span class="hljs-string">&quot;F-150&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>);
+car.setColor(<span class="hljs-string">&quot;pink&quot;</span>);
+car.save();
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">make, model, color</span>)</span> {
+    <span class="hljs-built_in">this</span>.make = make;
+    <span class="hljs-built_in">this</span>.model = model;
+    <span class="hljs-built_in">this</span>.color = color;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setMake</span>(<span class="hljs-params">make</span>)</span> {
+    <span class="hljs-built_in">this</span>.make = make;
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Returning this for chaining</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setModel</span>(<span class="hljs-params">model</span>)</span> {
+    <span class="hljs-built_in">this</span>.model = model;
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Returning this for chaining</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setColor</span>(<span class="hljs-params">color</span>)</span> {
+    <span class="hljs-built_in">this</span>.color = color;
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Returning this for chaining</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">save</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">this</span>.make, <span class="hljs-built_in">this</span>.model, <span class="hljs-built_in">this</span>.color);
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Returning this for chaining</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>;
+  }
+}
+
+<span class="hljs-keyword">const</span> car = <span class="hljs-keyword">new</span> Car(<span class="hljs-string">&quot;Ford&quot;</span>, <span class="hljs-string">&quot;F-150&quot;</span>, <span class="hljs-string">&quot;red&quot;</span>).setColor(<span class="hljs-string">&quot;pink&quot;</span>).save();
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="継承よりも合成を優先">継承よりも合成を優先</h3>
+<p>Gang of Fourによる<a href="https://en.wikipedia.org/wiki/Design_Patterns" target="_blank"><em>Design Patterns</em></a>で有名になったように、できる限り継承よりもコンポジションを優先すべきなのです。継承を使うべき理由はたくさんありますし、構成を使うべき理由もたくさんあります。この格言の要点は、もしあなたが本能的に継承を選ぶなら、コンポジションで問題をよりよくモデル化できないか考えてみることです。場合によっては、それが可能なこともあります。</p>
+<p>では、&quot;どんなときに継承を使えばいいのか？&quot;と疑問に思うかもしれません。それはあなたの目の前の問題によりますが、これは、継承が構成よりも意味をなす場合の適切なリストです。</p>
+<ol>
+<li>この継承は「has-a」関係ではなく「is-a」関係を表しています（Human-&gt;Animal vs. User-&gt;UserDetails）。</li>
+<li>ベースクラスからコードを再利用できる（人間は他の動物と同じように動くことができる）。</li>
+<li>ベースクラスを変更することで、派生クラスに対してグローバルな変更を行いたい。(すべての動物の移動時のカロリー消費を変更する)。</li>
+</ol>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">name, email</span>)</span> {
+    <span class="hljs-built_in">this</span>.name = name;
+    <span class="hljs-built_in">this</span>.email = email;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// EmployeeがTaxDataを「持っている」ので悪い。EmployeeTaxDataはEmployeeの型ではありません。</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmployeeTaxData</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">ssn, salary</span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.ssn = ssn;
+    <span class="hljs-built_in">this</span>.salary = salary;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmployeeTaxData</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">ssn, salary</span>)</span> {
+    <span class="hljs-built_in">this</span>.ssn = ssn;
+    <span class="hljs-built_in">this</span>.salary = salary;
+  }
+
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Employee</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">name, email</span>)</span> {
+    <span class="hljs-built_in">this</span>.name = name;
+    <span class="hljs-built_in">this</span>.email = email;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setTaxData</span>(<span class="hljs-params">ssn, salary</span>)</span> {
+    <span class="hljs-built_in">this</span>.taxData = <span class="hljs-keyword">new</span> EmployeeTaxData(ssn, salary);
+  }
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="solid"><strong>SOLID</strong></h2>
+<h3 id="単一責任原則（srp）">単一責任原則（SRP）</h3>
+<p>クリーンコードで述べられているように、「クラスが変更される理由は1つだけであってはならない」のです。飛行機でスーツケースを一つしか持っていけないときのように、クラスに多くの機能を詰め込みたくなるものです。これの問題は、クラスが概念的にまとまらず、変更する理由をたくさん与えてしまうことです。クラスを変更する回数を最小限にすることは重要です。なぜなら、あまりに多くの機能が一つのクラスに入っていて、その一部を変更した場合、それがコードベース内の他の依存モジュールにどのような影響を与えるか理解するのが難しくなるからです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSettings</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">user</span>)</span> {
+    <span class="hljs-built_in">this</span>.user = user;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">changeSettings</span>(<span class="hljs-params">settings</span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.verifyCredentials()) {
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-title">verifyCredentials</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserAuth</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">user</span>)</span> {
+    <span class="hljs-built_in">this</span>.user = user;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">verifyCredentials</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserSettings</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">user</span>)</span> {
+    <span class="hljs-built_in">this</span>.user = user;
+    <span class="hljs-built_in">this</span>.auth = <span class="hljs-keyword">new</span> UserAuth(user);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">changeSettings</span>(<span class="hljs-params">settings</span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.auth.verifyCredentials()) {
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="オープンクローズドプリンシプル（ocp">オープン/クローズドプリンシプル（OCP)</h3>
+<p>Bertrand Meyerが述べたように、&quot;ソフトウェアの実体（クラス、モジュール、関数など）は、拡張に対してはオープンであるが、変更に対してはクローズであるべきだ &quot;とされています。とはいえ、どういうことでしょうか？この原則は、基本的には、既存のコードを変更せずに、ユーザーが新しい機能を追加できるようにすることを述べています。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AjaxAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;ajaxAdapter&quot;</span>;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;nodeAdapter&quot;</span>;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpRequester</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">adapter</span>)</span> {
+    <span class="hljs-built_in">this</span>.adapter = adapter;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">fetch</span>(<span class="hljs-params">url</span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.adapter.name === <span class="hljs-string">&quot;ajaxAdapter&quot;</span>) {
+      <span class="hljs-keyword">return</span> makeAjaxCall(url).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+        <span class="hljs-comment">// transform response and return</span>
+      });
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.adapter.name === <span class="hljs-string">&quot;nodeAdapter&quot;</span>) {
+      <span class="hljs-keyword">return</span> makeHttpCall(url).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+        <span class="hljs-comment">// transform response and return</span>
+      });
+    }
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeAjaxCall</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-comment">// request and return promise</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeHttpCall</span>(<span class="hljs-params">url</span>) </span>{
+  <span class="hljs-comment">// request and return promise</span>
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AjaxAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;ajaxAdapter&quot;</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">request</span>(<span class="hljs-params">url</span>)</span> {
+    <span class="hljs-comment">// request and return promise</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NodeAdapter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Adapter</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.name = <span class="hljs-string">&quot;nodeAdapter&quot;</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">request</span>(<span class="hljs-params">url</span>)</span> {
+    <span class="hljs-comment">// request and return promise</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HttpRequester</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">adapter</span>)</span> {
+    <span class="hljs-built_in">this</span>.adapter = adapter;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">fetch</span>(<span class="hljs-params">url</span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.adapter.request(url).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+      <span class="hljs-comment">// transform response and return</span>
+    });
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="リスコフ置換原理lsp">リスコフ置換原理(LSP)</h3>
+<p>これは、非常に単純な概念に対する怖い言葉である。正式には、&quot;SがTのサブタイプである場合、T型のオブジェクトは、そのプログラムの望ましい特性（正しさ、実行されるタスクなど）を一切変えることなく、S型のオブジェクトで置き換えてもよい（すなわち、S型のオブジェクトがT型のオブジェクトを代替してもよい）&quot;と定義されています。さらに怖い定義ですね。</p>
+<p>これを説明するには、親クラスと子クラスがあれば、間違った結果を得ることなく、親クラスと子クラスが入れ替わって使えるということです。これでもまだ分かりにくいかもしれないので、古典的な四角形と長方形の例を見てみましょう。数学的には正方形は長方形なのですが、継承による「is-a」の関係を使ってモデル化すると、すぐに問題が発生します。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.width = <span class="hljs-number">0</span>;
+    <span class="hljs-built_in">this</span>.height = <span class="hljs-number">0</span>;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setColor</span>(<span class="hljs-params">color</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params">area</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setWidth</span>(<span class="hljs-params">width</span>)</span> {
+    <span class="hljs-built_in">this</span>.width = width;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setHeight</span>(<span class="hljs-params">height</span>)</span> {
+    <span class="hljs-built_in">this</span>.height = height;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getArea</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.width * <span class="hljs-built_in">this</span>.height;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Rectangle</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">setWidth</span>(<span class="hljs-params">width</span>)</span> {
+    <span class="hljs-built_in">this</span>.width = width;
+    <span class="hljs-built_in">this</span>.height = width;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setHeight</span>(<span class="hljs-params">height</span>)</span> {
+    <span class="hljs-built_in">this</span>.width = height;
+    <span class="hljs-built_in">this</span>.height = height;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLargeRectangles</span>(<span class="hljs-params">rectangles</span>) </span>{
+  rectangles.forEach(<span class="hljs-function"><span class="hljs-params">rectangle</span> =&gt;</span> {
+    rectangle.setWidth(<span class="hljs-number">4</span>);
+    rectangle.setHeight(<span class="hljs-number">5</span>);
+    <span class="hljs-keyword">const</span> area = rectangle.getArea(); <span class="hljs-comment">// BAD: Returns 25 for Square. Should be 20.</span>
+    rectangle.render(area);
+  });
+}
+
+<span class="hljs-keyword">const</span> rectangles = [<span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Rectangle(), <span class="hljs-keyword">new</span> Square()];
+renderLargeRectangles(rectangles);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Shape</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">setColor</span>(<span class="hljs-params">color</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">render</span>(<span class="hljs-params">area</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rectangle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Shape</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">width, height</span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.width = width;
+    <span class="hljs-built_in">this</span>.height = height;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getArea</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.width * <span class="hljs-built_in">this</span>.height;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Square</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Shape</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">length</span>)</span> {
+    <span class="hljs-built_in">super</span>();
+    <span class="hljs-built_in">this</span>.length = length;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getArea</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.length * <span class="hljs-built_in">this</span>.length;
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderLargeShapes</span>(<span class="hljs-params">shapes</span>) </span>{
+  shapes.forEach(<span class="hljs-function"><span class="hljs-params">shape</span> =&gt;</span> {
+    <span class="hljs-keyword">const</span> area = shape.getArea();
+    shape.render(area);
+  });
+}
+
+<span class="hljs-keyword">const</span> shapes = [<span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Rectangle(<span class="hljs-number">4</span>, <span class="hljs-number">5</span>), <span class="hljs-keyword">new</span> Square(<span class="hljs-number">5</span>)];
+renderLargeShapes(shapes);
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="インターフェース分離の原則-isp">インターフェース分離の原則 (ISP)</h3>
+<p>JavaScript にはインターフェースがないので、この原則は他の原則ほど厳密には適用されません。しかし、JavaScriptに型システムがないとしても、この原則は重要であり、関連性があります。</p>
+<p>ISP は &quot;クライアントは自分が使わないインターフェースに依存することを強制されるべきではない&quot; と述べています。JavaScriptではダックタイピングのため、インターフェイスは暗黙の契約となります。</p>
+<p>JavaScriptでこの原則を示す良い例として、大きな設定オブジェクトを必要とするクラスを見てみましょう。クライアントに膨大な量のオプションの設定を要求しないことは有益です。なぜなら、ほとんどの場合、クライアントはすべての設定を必要としないからです。また、オプションとして設定することで、「太ったインターフェース」を防ぐことができます。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DOMTraverser</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">settings</span>)</span> {
+    <span class="hljs-built_in">this</span>.settings = settings;
+    <span class="hljs-built_in">this</span>.setup();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setup</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.rootNode = <span class="hljs-built_in">this</span>.settings.rootNode;
+    <span class="hljs-built_in">this</span>.settings.animationModule.setup();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">traverse</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> $ = <span class="hljs-keyword">new</span> DOMTraverser({
+  <span class="hljs-attr">rootNode</span>: <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;body&quot;</span>),
+  <span class="hljs-function"><span class="hljs-title">animationModule</span>(<span class="hljs-params"></span>)</span> {} <span class="hljs-comment">// Most of the time, we won&apos;t need to animate when traversing.</span>
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DOMTraverser</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">settings</span>)</span> {
+    <span class="hljs-built_in">this</span>.settings = settings;
+    <span class="hljs-built_in">this</span>.options = settings.options;
+    <span class="hljs-built_in">this</span>.setup();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setup</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.rootNode = <span class="hljs-built_in">this</span>.settings.rootNode;
+    <span class="hljs-built_in">this</span>.setupOptions();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">setupOptions</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span>.options.animationModule) {
+      <span class="hljs-comment">// ...</span>
+    }
+  }
+
+  <span class="hljs-function"><span class="hljs-title">traverse</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> $ = <span class="hljs-keyword">new</span> DOMTraverser({
+  <span class="hljs-attr">rootNode</span>: <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">&quot;body&quot;</span>),
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-function"><span class="hljs-title">animationModule</span>(<span class="hljs-params"></span>)</span> {}
+  }
+});
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="依存関係逆転原理（dip）">依存関係逆転原理（DIP）</h3>
+<p>この原則は、2つの本質的なことを述べています。</p>
+<ol>
+<li>高水準モジュールは低水準モジュールに依存してはならない。どちらも抽象化されたものに依存すべきです。</li>
+<li>抽象化は詳細に依存すべきではない。詳細は抽象化されたものに依存すべきである。</li>
+</ol>
+<p>これは最初は理解しにくいかもしれませんが、AngularJSを扱ったことがある人なら、この原則の実装をDependency Injection（DI）という形で見たことがあると思います。両者は同一の概念ではありませんが、DIPは高レベルのモジュールがその低レベルのモジュールの詳細を知り、設定しないようにします。それをDIによって実現することができる。これの大きな利点は、モジュール間の結合を減らすことができることです。カップリングはコードのリファクタリングが難しくなるため、非常に悪い開発パターンです。</p>
+<p>前述したように、JavaScriptにはインターフェースがないので、依存する抽象化は暗黙の契約となります。つまり、あるオブジェクト/クラスが別のオブジェクト/クラスに公開するメソッドとプロパティのことです。以下の例では、暗黙の契約は <code>InventoryTracker</code> の Request モジュールは <code>requestItems</code> メソッドを持つということです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InventoryRequester</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.REQ_METHODS = [<span class="hljs-string">&quot;HTTP&quot;</span>];
+  }
+
+  <span class="hljs-function"><span class="hljs-title">requestItem</span>(<span class="hljs-params">item</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InventoryTracker</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">items</span>)</span> {
+    <span class="hljs-built_in">this</span>.items = items;
+
+    <span class="hljs-comment">// BAD: We have created a dependency on a specific request implementation.</span>
+    <span class="hljs-comment">// We should just have requestItems depend on a request method: `request`</span>
+    <span class="hljs-built_in">this</span>.requester = <span class="hljs-keyword">new</span> InventoryRequester();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">requestItems</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.items.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+      <span class="hljs-built_in">this</span>.requester.requestItem(item);
+    });
+  }
+}
+
+<span class="hljs-keyword">const</span> inventoryTracker = <span class="hljs-keyword">new</span> InventoryTracker([<span class="hljs-string">&quot;apples&quot;</span>, <span class="hljs-string">&quot;bananas&quot;</span>]);
+inventoryTracker.requestItems();
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InventoryTracker</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">items, requester</span>)</span> {
+    <span class="hljs-built_in">this</span>.items = items;
+    <span class="hljs-built_in">this</span>.requester = requester;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">requestItems</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.items.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+      <span class="hljs-built_in">this</span>.requester.requestItem(item);
+    });
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InventoryRequesterV1</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.REQ_METHODS = [<span class="hljs-string">&quot;HTTP&quot;</span>];
+  }
+
+  <span class="hljs-function"><span class="hljs-title">requestItem</span>(<span class="hljs-params">item</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InventoryRequesterV2</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.REQ_METHODS = [<span class="hljs-string">&quot;WS&quot;</span>];
+  }
+
+  <span class="hljs-function"><span class="hljs-title">requestItem</span>(<span class="hljs-params">item</span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-comment">// 依存関係を外部で構築し、それらを注入することで、リクエストモジュールを WebSocket を使用する凝った新しいモジュールに簡単に置き換えることができます。</span>
+<span class="hljs-keyword">const</span> inventoryTracker = <span class="hljs-keyword">new</span> InventoryTracker(
+  [<span class="hljs-string">&quot;apples&quot;</span>, <span class="hljs-string">&quot;bananas&quot;</span>],
+  <span class="hljs-keyword">new</span> InventoryRequesterV2()
+);
+inventoryTracker.requestItems();
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="testing"><strong>Testing</strong></h2>
+<p>テストは出荷よりも重要です。もし、テストがなかったり、不十分だったりすると、コードを出荷するたびに、何も壊していないことを確認できなくなります。何をもって十分な量とするかはチーム次第ですが、100%のカバレッジ（すべてのステートメントとブランチ）を持つことは、非常に高い信頼性と開発者の安心感を得るための方法です。つまり、優れたテストフレームワークを持つことに加えて、<a href="https://gotwarlost.github.io/istanbul/" target="_blank">優れたカバレッジツール</a>を使用する必要があるということです。</p>
+<p>テストを書かない言い訳はありません。<a href="https://jstherightway.org/#testing-tools" target="_blank">優れたJSテストフレームワークはたくさんあります</a>ので、あなたのチームが好むものを見つけてください。自分のチームに合ったものを見つけたら、新しい機能やモジュールを導入するたびに、常にテストを書くことを目指しましょう。もしあなたがテスト駆動開発 (TDD) を好むなら、それは素晴らしいことです。しかし、重要なのは、機能を立ち上げたり、既存の機能をリファクタリングする前に、カバレッジの目標に達しているかどうかを確認することです。</p>
+<h3 id="1テストにつき1コンセプト">1テストにつき1コンセプト</h3>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> assert <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;assert&quot;</span>;
+
+describe(<span class="hljs-string">&quot;MomentJS&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  it(<span class="hljs-string">&quot;handles date boundaries&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">let</span> date;
+
+    date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;1/1/2015&quot;</span>);
+    date.addDays(<span class="hljs-number">30</span>);
+    assert.equal(<span class="hljs-string">&quot;1/31/2015&quot;</span>, date);
+
+    date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;2/1/2016&quot;</span>);
+    date.addDays(<span class="hljs-number">28</span>);
+    assert.equal(<span class="hljs-string">&quot;02/29/2016&quot;</span>, date);
+
+    date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;2/1/2015&quot;</span>);
+    date.addDays(<span class="hljs-number">28</span>);
+    assert.equal(<span class="hljs-string">&quot;03/01/2015&quot;</span>, date);
+  });
+});
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> assert <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;assert&quot;</span>;
+
+describe(<span class="hljs-string">&quot;MomentJS&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+  it(<span class="hljs-string">&quot;handles 30-day months&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;1/1/2015&quot;</span>);
+    date.addDays(<span class="hljs-number">30</span>);
+    assert.equal(<span class="hljs-string">&quot;1/31/2015&quot;</span>, date);
+  });
+
+  it(<span class="hljs-string">&quot;handles leap year&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;2/1/2016&quot;</span>);
+    date.addDays(<span class="hljs-number">28</span>);
+    assert.equal(<span class="hljs-string">&quot;02/29/2016&quot;</span>, date);
+  });
+
+  it(<span class="hljs-string">&quot;handles non-leap year&quot;</span>, <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> date = <span class="hljs-keyword">new</span> MomentJS(<span class="hljs-string">&quot;2/1/2015&quot;</span>);
+    date.addDays(<span class="hljs-number">28</span>);
+    assert.equal(<span class="hljs-string">&quot;03/01/2015&quot;</span>, date);
+  });
+});
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="concurrency"><strong>Concurrency</strong></h2>
+<h3 id="コールバックではなく、プロミスを使用する">コールバックではなく、プロミスを使用する</h3>
+<p>コールバックはクリーンではないし、過剰なネストを引き起こす。ES2015/ES6では。
+プロミスは組み込みのグローバル型です。ぜひ使ってみてください。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;request&quot;</span>;
+<span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs&quot;</span>;
+
+get(
+  <span class="hljs-string">&quot;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&quot;</span>,
+  <span class="hljs-function">(<span class="hljs-params">requestErr, response, body</span>) =&gt;</span> {
+    <span class="hljs-keyword">if</span> (requestErr) {
+      <span class="hljs-built_in">console</span>.error(requestErr);
+    } <span class="hljs-keyword">else</span> {
+      writeFile(<span class="hljs-string">&quot;article.html&quot;</span>, body, <span class="hljs-function"><span class="hljs-params">writeErr</span> =&gt;</span> {
+        <span class="hljs-keyword">if</span> (writeErr) {
+          <span class="hljs-built_in">console</span>.error(writeErr);
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;File written&quot;</span>);
+        }
+      });
+    }
+  }
+);
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;request-promise&quot;</span>;
+<span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs-extra&quot;</span>;
+
+get(<span class="hljs-string">&quot;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&quot;</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">body</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> writeFile(<span class="hljs-string">&quot;article.html&quot;</span>, body);
+  })
+  .then(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;File written&quot;</span>);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.error(err);
+  });
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="asyncawait-は-promise-よりもさらにクリーンです。">Async/Await は Promise よりもさらにクリーンです。</h3>
+<p>プロミスはコールバックの非常にクリーンな代替手段ですが、ES2017/ES8 では async と await が登場し、さらにクリーンな解決策を提供します。<code>async</code> キーワードを先頭に持つ関数さえあれば、関数の <code>then</code> チェーンなしで命令的にロジックを記述することができるのです。ES2017/ES8 の機能を今日から活用できる方はぜひ使ってみてください。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;request-promise&quot;</span>;
+<span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs-extra&quot;</span>;
+
+get(<span class="hljs-string">&quot;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&quot;</span>)
+  .then(<span class="hljs-function"><span class="hljs-params">body</span> =&gt;</span> {
+    <span class="hljs-keyword">return</span> writeFile(<span class="hljs-string">&quot;article.html&quot;</span>, body);
+  })
+  .then(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;File written&quot;</span>);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.error(err);
+  });
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { get } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;request-promise&quot;</span>;
+<span class="hljs-keyword">import</span> { writeFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;fs-extra&quot;</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCleanCodeArticle</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">const</span> body = <span class="hljs-keyword">await</span> get(
+      <span class="hljs-string">&quot;https://en.wikipedia.org/wiki/Robert_Cecil_Martin&quot;</span>
+    );
+    <span class="hljs-keyword">await</span> writeFile(<span class="hljs-string">&quot;article.html&quot;</span>, body);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;File written&quot;</span>);
+  } <span class="hljs-keyword">catch</span> (err) {
+    <span class="hljs-built_in">console</span>.error(err);
+  }
+}
+
+getCleanCodeArticle()
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="error-handling"><strong>Error Handling</strong></h2>
+<p>エラーを投げるのは良いことです。ランタイムは、あなたのプログラムの何かがうまくいかなくなったときに、現在のスタックでの関数の実行を停止し、プロセスを（Nodeで）終了させ、スタックトレースでコンソールに通知することで、あなたに知らせてくれるのです。</p>
+<h3 id="キャッチしたエラーを無視しない">キャッチしたエラーを無視しない</h3>
+<p>捕捉されたエラーに対して何もしないのは、そのエラーを修正したり対応したりする能力を与えないことになります。エラーをコンソール (<code>console.log</code>) にログ出力することも、あまり良いことではありません。もしあなたがコードの一部を <code>try/catch</code> でラップしているなら、それはそこでエラーが発生するかもしれないと考えていることを意味します。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">try</span> {
+  functionThatMightThrow();
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-built_in">console</span>.log(error);
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">try</span> {
+  functionThatMightThrow();
+} <span class="hljs-keyword">catch</span> (error) {
+  <span class="hljs-comment">// One option (more noisy than console.log):</span>
+  <span class="hljs-built_in">console</span>.error(error);
+  <span class="hljs-comment">// Another option:</span>
+  notifyUserOfError(error);
+  <span class="hljs-comment">// Another option:</span>
+  reportErrorToService(error);
+  <span class="hljs-comment">// OR do all three!</span>
+}
+</code></pre>
+<h3 id="拒否された約束を無視してはいけない">拒否された約束を無視してはいけない</h3>
+<p>同じ理由で、 <code>try/catch</code> によってキャッチされたエラーも無視してはいけません。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript">getdata()
+  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+    functionThatMightThrow(data);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(error);
+  });
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript">getdata()
+  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+    functionThatMightThrow(data);
+  })
+  .catch(<span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> {
+    <span class="hljs-comment">// One option (more noisy than console.log):</span>
+    <span class="hljs-built_in">console</span>.error(error);
+    <span class="hljs-comment">// Another option:</span>
+    notifyUserOfError(error);
+    <span class="hljs-comment">// Another option:</span>
+    reportErrorToService(error);
+    <span class="hljs-comment">// OR do all three!</span>
+  });
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="formatting"><strong>Formatting</strong></h2>
+<p>フォーマットは主観的なものです。多くの規則がそうであるように、あなたが従わなければならない厳密なルールはありません。重要なのは、フォーマットをめぐって論争をしないことです。これを自動化するための<a href="https://standardjs.com/rules.html" target="_blank">ツールのトン</a>があります。ぜひ使ってみてください。エンジニアがフォーマットについて議論するのは時間とお金の無駄です。</p>
+<p>自動フォーマットには当てはまらないこと(インデント、タブとスペース、二重引用符と単一引用符など)については、こちらを参照してください。</p>
+<h3 id="大文字小文字を統一する">大文字小文字を統一する</h3>
+<p>JavaScript は型付けされていないので、大文字小文字を区別することで、変数や関数などについて多くのことを知ることができます。これらのルールは主観的なものなので、あなたのチームは好きなものを選ぶことができます。重要なのは、何を選んでも、一貫性を保つことです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">const</span> daysInMonth = <span class="hljs-number">30</span>;
+
+<span class="hljs-keyword">const</span> songs = [<span class="hljs-string">&quot;Back In Black&quot;</span>, <span class="hljs-string">&quot;Stairway to Heaven&quot;</span>, <span class="hljs-string">&quot;Hey Jude&quot;</span>];
+<span class="hljs-keyword">const</span> Artists = [<span class="hljs-string">&quot;ACDC&quot;</span>, <span class="hljs-string">&quot;Led Zeppelin&quot;</span>, <span class="hljs-string">&quot;The Beatles&quot;</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eraseDatabase</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">restore_database</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">animal</span> </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Alpaca</span> </span>{}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> DAYS_IN_WEEK = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">const</span> DAYS_IN_MONTH = <span class="hljs-number">30</span>;
+
+<span class="hljs-keyword">const</span> SONGS = [<span class="hljs-string">&quot;Back In Black&quot;</span>, <span class="hljs-string">&quot;Stairway to Heaven&quot;</span>, <span class="hljs-string">&quot;Hey Jude&quot;</span>];
+<span class="hljs-keyword">const</span> ARTISTS = [<span class="hljs-string">&quot;ACDC&quot;</span>, <span class="hljs-string">&quot;Led Zeppelin&quot;</span>, <span class="hljs-string">&quot;The Beatles&quot;</span>];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">eraseDatabase</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">restoreDatabase</span>(<span class="hljs-params"></span>) </span>{}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> </span>{}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Alpaca</span> </span>{}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="function-callers-and-callees-should-be-close">Function callers and callees should be close</h3>
+<p>If a function calls another, keep those functions vertically close in the source
+file. Ideally, keep the caller right above the callee. We tend to read code from
+top-to-bottom, like a newspaper. Because of this, make your code read that way.</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">employee</span>)</span> {
+    <span class="hljs-built_in">this</span>.employee = employee;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">lookupPeers</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&quot;peers&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">lookupManager</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&quot;manager&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getPeerReviews</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> peers = <span class="hljs-built_in">this</span>.lookupPeers();
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">perfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.getPeerReviews();
+    <span class="hljs-built_in">this</span>.getManagerReview();
+    <span class="hljs-built_in">this</span>.getSelfReview();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getManagerReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> manager = <span class="hljs-built_in">this</span>.lookupManager();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getSelfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
+review.perfReview();
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PerformanceReview</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">employee</span>)</span> {
+    <span class="hljs-built_in">this</span>.employee = employee;
+  }
+
+  <span class="hljs-function"><span class="hljs-title">perfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.getPeerReviews();
+    <span class="hljs-built_in">this</span>.getManagerReview();
+    <span class="hljs-built_in">this</span>.getSelfReview();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getPeerReviews</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> peers = <span class="hljs-built_in">this</span>.lookupPeers();
+    <span class="hljs-comment">// ...</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-title">lookupPeers</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&quot;peers&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getManagerReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> manager = <span class="hljs-built_in">this</span>.lookupManager();
+  }
+
+  <span class="hljs-function"><span class="hljs-title">lookupManager</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> db.lookup(<span class="hljs-built_in">this</span>.employee, <span class="hljs-string">&quot;manager&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-title">getSelfReview</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// ...</span>
+  }
+}
+
+<span class="hljs-keyword">const</span> review = <span class="hljs-keyword">new</span> PerformanceReview(employee);
+review.perfReview();
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="comments"><strong>Comments</strong></h2>
+<h3 id="ビジネスロジックが複雑なものだけコメントする。">ビジネスロジックが複雑なものだけコメントする。</h3>
+<p>コメントは謝罪であり、必須ではありません。良いコードは、ほとんど自分自身を文書化します。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hashIt</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-comment">// The hash</span>
+  <span class="hljs-keyword">let</span> hash = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Length of string</span>
+  <span class="hljs-keyword">const</span> length = data.length;
+
+  <span class="hljs-comment">// Loop through every character in data</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    <span class="hljs-comment">// Get character code.</span>
+    <span class="hljs-keyword">const</span> char = data.charCodeAt(i);
+    <span class="hljs-comment">// Make the hash</span>
+    hash = (hash &lt;&lt; <span class="hljs-number">5</span>) - hash + char;
+    <span class="hljs-comment">// Convert to 32-bit integer</span>
+    hash &amp;= hash;
+  }
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hashIt</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-keyword">let</span> hash = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">const</span> length = data.length;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    <span class="hljs-keyword">const</span> char = data.charCodeAt(i);
+    hash = (hash &lt;&lt; <span class="hljs-number">5</span>) - hash + char;
+
+    <span class="hljs-comment">// Convert to 32-bit integer</span>
+    hash &amp;= hash;
+  }
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="コメントアウトされたコードをコードベースに残してはいけない">コメントアウトされたコードをコードベースに残してはいけない</h3>
+<p>バージョン管理は理由があって存在する古いコードは履歴に残す。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript">doStuff();
+<span class="hljs-comment">// doOtherStuff();</span>
+<span class="hljs-comment">// doSomeMoreStuff();</span>
+<span class="hljs-comment">// doSoMuchStuff();</span>
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript">doStuff();
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="ジャーナルコメントはありません">ジャーナルコメントはありません</h3>
+<p>バージョン管理をすることを忘れないでください。デッドコード、コメント付きコード、特にジャーナルコメントは必要ありません。履歴を取得するには <code>git log</code> を使ってください!</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * 2016-12-20: Removed monads, didn&apos;t understand them (RM)
+ * 2016-10-01: Improved using special monads (JP)
+ * 2016-02-03: Removed type-checking (LI)
+ * 2015-03-14: Added combine with type-checking (JR)
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">combine</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h3 id="ポジションマーカーを避ける">ポジションマーカーを避ける</h3>
+<p>通常、ノイズを追加するだけです。関数名や変数名、適切なインデントや書式設定が、あなたのコードに視覚的な構造を与えてくれるのです。</p>
+<p><strong>Bad:</strong></p>
+<pre><code class="lang-javascript"><span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">// Scope Model Instantiation</span>
+<span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+$scope.model = {
+  <span class="hljs-attr">menu</span>: <span class="hljs-string">&quot;foo&quot;</span>,
+  <span class="hljs-attr">nav</span>: <span class="hljs-string">&quot;bar&quot;</span>
+};
+
+<span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-comment">// Action setup</span>
+<span class="hljs-comment">////////////////////////////////////////////////////////////////////////////////</span>
+<span class="hljs-keyword">const</span> actions = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p><strong>Good:</strong></p>
+<pre><code class="lang-javascript">$scope.model = {
+  <span class="hljs-attr">menu</span>: <span class="hljs-string">&quot;foo&quot;</span>,
+  <span class="hljs-attr">nav</span>: <span class="hljs-string">&quot;bar&quot;</span>
+};
+
+<span class="hljs-keyword">const</span> actions = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+<h2 id="翻訳">翻訳</h2>
+<p>他の言語でもご利用いただけます。</p>
+<ul>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Armenia.png" alt="am"> <strong>Armenian</strong>: <a href="https://github.com/hanumanum/clean-code-javascript" target="_blank">hanumanum/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bangladesh.png" alt="bd"> <strong>Bangla(বাংলা)</strong>: <a href="https://github.com/InsomniacSabbir/clean-code-javascript/" target="_blank">InsomniacSabbir/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png" alt="br"> <strong>Brazilian Portuguese</strong>: <a href="https://github.com/fesnt/clean-code-javascript" target="_blank">fesnt/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/China.png" alt="cn"> <strong>Simplified Chinese</strong>:<ul>
+<li><a href="https://github.com/alivebao/clean-code-js" target="_blank">alivebao/clean-code-js</a></li>
+<li><a href="https://github.com/beginor/clean-code-javascript" target="_blank">beginor/clean-code-javascript</a></li>
+</ul>
+</li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Taiwan.png" alt="tw"> <strong>Traditional Chinese</strong>: <a href="https://github.com/AllJointTW/clean-code-javascript" target="_blank">AllJointTW/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png" alt="fr"> <strong>French</strong>: <a href="https://github.com/eugene-augier/clean-code-javascript-fr" target="_blank">eugene-augier/clean-code-javascript-fr</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Germany.png" alt="de"> <strong>German</strong>: <a href="https://github.com/marcbruederlin/clean-code-javascript" target="_blank">marcbruederlin/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Indonesia.png" alt="id"> <strong>Indonesia</strong>: <a href="https://github.com/andirkh/clean-code-javascript/" target="_blank">andirkh/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png" alt="it"> <strong>Italian</strong>: <a href="https://github.com/frappacchio/clean-code-javascript/" target="_blank">frappacchio/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Japan.png" alt="ja"> <strong>Japanese</strong>: <a href="https://github.com/mitsuruog/clean-code-javascript/" target="_blank">mitsuruog/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/South-Korea.png" alt="kr"> <strong>Korean</strong>: <a href="https://github.com/qkraudghgh/clean-code-javascript-ko" target="_blank">qkraudghgh/clean-code-javascript-ko</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Poland.png" alt="pl"> <strong>Polish</strong>: <a href="https://github.com/greg-dev/clean-code-javascript-pl" target="_blank">greg-dev/clean-code-javascript-pl</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Russia.png" alt="ru"> <strong>Russian</strong>:<ul>
+<li><a href="https://github.com/BoryaMogila/clean-code-javascript-ru/" target="_blank">BoryaMogila/clean-code-javascript-ru/</a></li>
+<li><a href="https://github.com/maksugr/clean-code-javascript" target="_blank">maksugr/clean-code-javascript</a></li>
+</ul>
+</li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png" alt="es"> <strong>Spanish</strong>: <a href="https://github.com/tureey/clean-code-javascript" target="_blank">tureey/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Uruguay.png" alt="es"> <strong>Spanish</strong>: <a href="https://github.com/andersontr15/clean-code-javascript-es" target="_blank">andersontr15/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Serbia.png" alt="rs"> <strong>Serbian</strong>: <a href="https://github.com/doskovicmilos/clean-code-javascript" target="_blank">doskovicmilos/clean-code-javascript/</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png" alt="tr"> <strong>Turkish</strong>: <a href="https://github.com/bsonmez/clean-code-javascript/tree/turkish-translation" target="_blank">bsonmez/clean-code-javascript</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Ukraine.png" alt="ua"> <strong>Ukrainian</strong>: <a href="https://github.com/mindfr1k/clean-code-javascript-ua" target="_blank">mindfr1k/clean-code-javascript-ua</a></li>
+<li><img src="https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Vietnam.png" alt="vi"> <strong>Vietnamese</strong>: <a href="https://github.com/hienvd/clean-code-javascript/" target="_blank">hienvd/clean-code-javascript/</a></li>
+</ul>
+<p><strong><a href="#table-of-contents">⬆ back to top</a></strong></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="50_javascript_best_practice.html" class="navigation navigation-prev " aria-label="Previous page: 50のルール">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="javascript_best_practices.html" class="navigation navigation-next " aria-label="Next page: W3C">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Clean Code","level":"1.3","depth":1,"next":{"title":"W3C","level":"1.4","depth":1,"path":"javascript_best_practices.md","ref":"javascript_best_practices.md","articles":[]},"previous":{"title":"50のルール","level":"1.2","depth":1,"path":"50_javascript_best_practice.md","ref":"50_javascript_best_practice.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"clean_code_javascript.md","mtime":"2022-10-15T00:44:28.350Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:14:41.976Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

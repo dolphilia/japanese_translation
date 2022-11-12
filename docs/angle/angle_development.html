@@ -1,0 +1,457 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ANGLEの開発 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="metal_angle.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="angle_development.html">
+            
+                <a href="angle_development.html">
+            
+                    
+                    ANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="metal_angle.html">
+            
+                <a href="metal_angle.html">
+            
+                    
+                    MetalANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="metal_andle_development.html">
+            
+                <a href="metal_andle_development.html">
+            
+                    
+                    MetalANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ANGLEの開発</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="angle開発">ANGLE開発</h1>
+<p><a href="https://chromium.googlesource.com/angle/angle/+/main/doc/DevSetup.md" target="_blank">原文</a></p>
+<p>ANGLEは、OpenGL ES 3.1およびEGL 1.5のライブラリとテストを提供しています。これらを使って、Windows、Linux、Mac、Android上でOpenGL ESアプリケーションを構築し、実行することができます。</p>
+<h2 id="開発セットアップ">開発セットアップ</h2>
+<h3 id="バージョン管理">バージョン管理</h3>
+<p>ANGLEはバージョン管理にgitを使用しています。有用なドキュメントは<a href="http://git-scm.com/documentation" target="_blank">http://git-scm.com/documentation</a>で見ることができます。</p>
+<h3 id="必要な最初のセットアップ（最初にこれを行う）">必要な最初のセットアップ（最初にこれを行う）</h3>
+<p>注意: Chromiumチェックアウトの中でビルドする場合<a href="https://chromium.googlesource.com/angle/angle/+/HEAD/doc/BuildingAngleForChromiumDevelopment.md" target="_blank">代わりにこちらの手順を参照してください</a>.</p>
+<p>すべてのプラットフォームで必要です。</p>
+<ul>
+<li><a href="https://www.python.org/downloads/" target="_blank">Python 3</a> がパスで利用可能である必要があります。</li>
+<li><a href="https://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up" target="_blank">depot_tools</a><ul>
+<li>依存関係のダウンロード（gclient使用）、ビルドファイルの生成（GN使用）、ANGLEのコンパイル（ninja使用）に必要です。</li>
+<li>コンパイルに必要なninjaを提供する <code>depot_tools</code> がパスに入っていることを確認してください。</li>
+</ul>
+</li>
+<li>Googlerの場合は、<code>download_from_google_storage --config</code> を実行して、Google Storageにログインしてからソースを取得するようにしてください。</li>
+</ul>
+<p>Windowsの場合。</p>
+<ul>
+<li><strong><em>重要: Googlerでない場合は、環境設定で <code>DEPOT_TOOLS_WIN_TOOLCHAIN=0</code> を設定してください</em></strong>。</li>
+<li><a href="https://visualstudio.microsoft.com/vs/" target="_blank">Visual Studio Community 2022</a>をインストールします。</li>
+<li><a href="https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/" target="_blank">Windows SDK</a>をインストールします。<ul>
+<li>Visual Studio Installerがあれば、そこからインストールすることができます。最新版を探すには、<code>Individual components</code>タブに切り替える必要があるかもしれません。</li>
+<li>現在サポートされている Windows SDK のバージョンは <a href="https://chromium.googlesource.com/chromium/src/build/+/refs/heads/main/vs_toolchain.py" target="_blank">vs_toolchain.py</a> に記載されています。</li>
+<li>SDKは、GN生成のVisual Studioプロジェクト、D3D Debugランタイム、および最新のHLSL Compilerランタイムに必要です。</li>
+</ul>
+</li>
+<li>(オプション) 詳細は <a href="https://chromium.googlesource.com/chromium/src/+/main/docs/windows_build_instructions.md" target="_blank">Chromium Windows build instructions</a> を参照してください。</li>
+</ul>
+<p>Linuxの場合。</p>
+<ul>
+<li>依存関係は後で処理されます (下記の <code>install-build-deps.sh</code> を参照してください)。</li>
+</ul>
+<p>MacOSの場合。</p>
+<ul>
+<li><a href="https://developer.apple.com/xcode/" target="_blank">XCode</a> Clangと開発用ファイル用です。</li>
+<li>MacOS の Googler の場合、<code>gclient sync</code> を実行する前に、まず Chromium サーバーから macOS SDK をダウンロードするための認証が必要です。cipd auth-login` を使ってこの権限を取得し、指示に従ってください。</li>
+</ul>
+<h3 id="ソースの取得">ソースの取得</h3>
+<pre><code>mkdir angle
+cd angle
+fetch angle
+</code></pre><p>コードを寄稿する場合は、Git の <code>commit-msg</code> フックも設定する必要があります。設定方法は <a href="ContributingCode.md#getting-started-with-gerrit">ContributingCode#getting-started-with-gerrit</a> を参照してください。</p>
+<p>Linuxのみ、このコマンドを実行して先に進む前に、必要なすべての依存関係をインストールする必要があります。</p>
+<pre><code>./build/install-build-deps.sh
+</code></pre><p>これが正常に完了すると、ninjaファイルを生成する準備が整います。</p>
+<pre><code>gn gen out/Debug
+</code></pre><p>もし、コードのチェックアウトに問題があった場合は、エラーメッセージを確認してください。Windows の場合、Googler でないなら <strong>環境で <code>DEPOT_TOOLS_WIN_TOOLCHAIN=0</code> に設定してください</strong>。Googler であれば、<code>download_from_google_storage --config</code> を実行したことを確認してください。</p>
+<p>GN は ninja ファイルを生成します。デフォルトのビルドオプションは、clangと一緒にANGLEをリリースモードでビルドします。多くの場合、デフォルトのオプションは望ましいものですが、 <code>gn args out/Debug</code> を実行することによって変更することができます。開発用によくオーバーライドされるオプションは以下の通りです。</p>
+<pre><code>is_component_build = true/false      (falseは依存関係の静的リンクを強制します)
+target_cpu = &quot;x64&quot;/&quot;x86&quot;             (デフォルトは &quot;x64&quot;です)
+is_debug = true/false                (リリースビルドの場合はfalseを使用します。 is_debug = trueがデフォルトです。)
+angle_assert_always_on = true/false  (リリースアサートとランタイムデバッグレイヤーを有効にします)
+is_clang = false (NOT RECOMMENDED)   (clangの代わりにシステムのデフォルトコンパイラを使用するため)
+</code></pre><p>リリースビルドの場合は、 <code>gn args out/Release</code> を実行し、 <code>is_debug = false</code> を設定します。オプションで、リリーステスト用に <code>angle_assert_always_on = true</code> を設定します。</p>
+<p>Windowsでは、argsに <code>target_os = &quot;winuwp&quot;</code> を設定することで、Universal Windows Platform (UWP) 用にビルドすることができます。libEGL.dll と libGLESv2.dll をアプリケーションのディレクトリに移動し、他の DLL に依存せず自己完結することをサポートするために <code>is_component_build = false</code> の設定を強く推奨します (Direct3D バックエンドのために d3dcompiler_47.dll はまだ必要です)。また、UWPでは <code>is_clang = false</code> を使用することをお勧めします。</p>
+<p>GNに関するより詳しい情報は <code>gn help</code> を実行してください。</p>
+<p>以下のいずれかのコマンドで、すべてのプラットフォームでコンパイルできるように <code>autoninja</code> を使用します。</p>
+<pre><code>autoninja -C out/Debug
+autoninja -C out/Release
+</code></pre><p><code>depot_tools</code> は <code>autoninja</code> を提供しているので、以前のステップからパスで利用できるはずです。Ninjaは設定を変更すると、自動的にGNを呼び出してビルドファイルを再生成します。<code>autoninja</code> は、システム構成に基づいて <code>ninja</code> に自動的にスレッドカウントを指定する。</p>
+<h3 id="gomaで作る（google社員のみ）">Gomaで作る（Google社員のみ）</h3>
+<p>また、Googleの社員には、分散コンパイルシステムであるgomaの使用を強く推奨しています。詳細な情報は内部で入手可能です。Gomaを有効にするには、GN argを設定します。</p>
+<pre><code>use_goma = true
+</code></pre><h3 id="visual-studioによるビルドとデバッグ">Visual Studioによるビルドとデバッグ</h3>
+<p><code>Out/Debug/angle-debug.sln</code>にVisual Studioのソリューションを生成する。</p>
+<pre><code>gn gen out/Debug --sln=angle-debug --ide=vs2022
+</code></pre><p>Visual Studioでは。</p>
+<ol>
+<li>ANGLEソリューションファイル <code>out/Debug/angle-debug.sln</code> を開いてください。</li>
+<li>手動でビルドする場合は、コマンドラインから <code>autoninja</code> を使用することをお勧めします。</li>
+<li>IDEからの &quot;Build Solution&quot; はGNで壊れています。IDEを使用して、1度に1つのターゲットまたは1つのファイルをビルドすることができます。</li>
+</ol>
+<p>ビルドが完了すると、すべてのANGLEライブラリ、テスト、およびサンプルは <code>out/Debug</code> に配置されます。</p>
+<h3 id="angle-for-androidの構築">ANGLE for Androidの構築</h3>
+<p>Android専用の<a href="DevSetupAndroid.md#ANGLE-for-Android">ドキュメント</a>をご覧ください。</p>
+<h2 id="angleによるアプリケーション開発">ANGLEによるアプリケーション開発</h2>
+<p>ここでは、ANGLEを使用してOpenGL ESアプリケーションを構築する方法について説明します。</p>
+<h3 id="choosing-a-backend">Choosing a Backend</h3>
+<p>ANGLEは、プラットフォームに応じて様々なバックレンダラを使用することができます。  Windowsでは、D3D11が利用可能な場合はD3D11が、そうでない場合はD3D9がデフォルトで使用されます。  その他のデスクトッププラットフォームでは、デフォルトでGLが使用されます。  モバイルでは、デフォルトでGLESが使用されます。</p>
+<p>ANGLE は <code>EGL_ANGLE_platform_angle</code> という EGL 拡張を提供しています．この拡張は，EGL の初期化時に eglGetPlatformDisplayEXT を特別な enum と共に呼ぶことで，どのレンダラを使用するかを選択できるようにするものです．この拡張機能の詳細は <code>extensions/EGL_ANGLE_platform_angle.txt</code> と <code>extensions/EGL_ANGLE_platform_angle_*.txt</code> にある仕様書に記載されています。また、その使用例は ANGLE サンプルとテスト、特に <code>util/EGLWindow.cpp</code> で見ることができます。</p>
+<p>デフォルトのD3Dバックエンドを変更する場合。</p>
+<ol>
+<li><code>src/libANGLE/renderer/d3d/DisplayD3D.cpp</code> を開いてください。</li>
+<li>ファイルの先頭付近にある <code>ANGLE_DEFAULT_D3D11</code> の定義を見つけて、好みの設定にします。</li>
+</ol>
+<p>任意のバックエンドを完全に削除すること。</p>
+<ol>
+<li><code>gn args &lt;path/to/build/dir&gt;</code>を実行します</li>
+<li>適切な変数に <code>false</code> を設定します。オプションは<ul>
+<li><code>angle_enable_d3d9</code></li>
+<li><code>angle_enable_d3d11</code></li>
+<li><code>angle_enable_gl</code></li>
+<li><code>angle_enable_metal</code></li>
+<li><code>angle_enable_null</code></li>
+<li><code>angle_enable_vulkan</code></li>
+<li><code>angle_enable_essl</code></li>
+<li><code>angle_enable_glsl</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="アプリケーションでangleを使用するには">アプリケーションでANGLEを使用するには</h3>
+<p>Windowsの場合。</p>
+<ol>
+<li>ビルド環境が <code>include</code> フォルダにアクセスできるように設定し、Khronosの標準的なEGLおよびGLES2ヘッダーファイルへのアクセスを提供します。<ul>
+<li>Visual C++の場合<ul>
+<li><em>ソリューションエクスプローラー</em>でプロジェクトを右クリックし、<em>プロパティ</em>を選択します。</li>
+<li><em>構成のプロパティ</em>の分岐で、「<em>C/C++</em>」をクリックします。</li>
+<li>Khronos EGLおよびGLES2ヘッダーファイルへの相対パスを<em>Additional Include Directories</em>に追加。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ビルド出力ディレクトリにある <code>libEGL.lib</code> と <code>libGLESv2.lib</code> にアクセスできるようにビルド環境を設定する（<a href="#building-with-visual-studio">ANGLEのビルド</a> を参照）。<ul>
+<li>For Visual C++<ul>
+<li><em>ソリューションエクスプローラー</em>でプロジェクトを右クリックし、<em>プロパティ</em>を選択します。</li>
+<li><em>構成のプロパティ</em>の分岐で、<em>Linker</em>の分岐を開き、<em>Input</em>をクリックします。</li>
+<li>追加の依存関係_ に <code>libEGL.lib</code> ファイルと <code>libGLESv2.lib</code> ファイルの両方をセミコロンで区切って相対パスで追加します。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ビルド出力ディレクトリにある <code>libEGL.dll</code> と <code>libGLESv2.dll</code> をアプリケーションフォルダにコピーします（<a href="#building-with-visual-studio">ANGLEのビルド</a> を参照）。</li>
+<li>アプリケーションは、Khronos <a href="http://www.khronos.org/registry/gles/" target="_blank">OpenGL ES 2.0</a> および <a href="http://www.khronos.org/registry/egl/" target="_blank">EGL 1.4</a> のAPIに準拠してコーディングしてください。</li>
+</ol>
+<p>LinuxとMacOSの場合, 各々:</p>
+<ul>
+<li>アプリケーションを <code>libGLESv2</code> と <code>libEGL</code> に対してリンクする。</li>
+<li>OpenGL ESとEGLのエントリーポイントをランタイムにロードするには、<code>dlopen</code>を使用します。</li>
+</ul>
+<h2 id="glsl-es-トランスレータ">GLSL ES トランスレータ</h2>
+<p>OpenGL ESとEGLのライブラリに加え、ANGLEはGLSL ESのトランスレータも提供しています。このトランスレータは、HLSL、デスクトップおよびモバイル用のGLSL、SPIR-VおよびMetal SLなど、さまざまなバックエンドをターゲットにしています。トランスレータをビルドするには、<code>angle_shader_translator</code> ターゲットをビルドします。使用法のメッセージを見るには、引数なしでトランスレータのバイナリを実行してください。</p>
+<h3 id="ソースとビルディング">ソースとビルディング</h3>
+<p>トランスレータのコードは ANGLE に含まれていますが、完全に独立しており、[<code>src/compiler</code>] (../src/compiler) にあります。上記の <a href="#getting-the-source">ANGLE の入手とビルド</a> の手順に従って、好きなプラットフォームでトランスレータをビルドしてください。</p>
+<h3 id="usage">Usage</h3>
+<p>ANGLE <a href="../samples/shader_translator/shader_translator.cpp"><code>shader_translator</code></a> サンプルは、C++ API の基本的な使い方をデモしています。GLSL ES シェーダを変換するには、以下の関数を同じ順序で呼び出します。</p>
+<ul>
+<li><code>sh::Initialize()</code> トランスレータを使用する各プロセスから一度だけ呼び出される必要があります。</li>
+<li><code>sh::ContructCompiler()</code> バーテックスまたはフラグメントシェーダ用のトランスレータオブジェクトを作成します。</li>
+<li><code>sh::Compile()</code> は与えられたシェーダーを変換します。</li>
+<li><code>sh::Destruct()</code> は、指定されたトランスレータを破棄します。</li>
+<li><code>sh::Finalize()</code> トランスレータを使用している各プロセスから一度だけ呼び出す必要があります。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: ANGLEの概要">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="metal_angle.html" class="navigation navigation-next " aria-label="Next page: MetalANGLEの概要">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ANGLEの開発","level":"1.2","depth":1,"next":{"title":"MetalANGLEの概要","level":"1.3","depth":1,"path":"metal_angle.md","ref":"metal_angle.md","articles":[]},"previous":{"title":"ANGLEの概要","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"angle_development.md","mtime":"2022-10-02T23:48:48.198Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:05:57.037Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

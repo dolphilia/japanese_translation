@@ -1,0 +1,490 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ANGLEの概要 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="angle_development.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="angle_development.html">
+            
+                <a href="angle_development.html">
+            
+                    
+                    ANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="metal_angle.html">
+            
+                <a href="metal_angle.html">
+            
+                    
+                    MetalANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="metal_andle_development.html">
+            
+                <a href="metal_andle_development.html">
+            
+                    
+                    MetalANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ANGLEの概要</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="angle---ほぼネイティブなグラフィックレイヤーエンジン">ANGLE - ほぼネイティブなグラフィックレイヤーエンジン</h1>
+<p><a href="https://chromium.googlesource.com/angle/angle/+/main/README.md" target="_blank">原文</a></p>
+<p>ANGLEの目標は、OpenGL ES APIコールをそのプラットフォームで利用可能なハードウェアサポートAPIのいずれかに変換することにより、複数のオペレーティングシステムのユーザーがWebGLおよびその他のOpenGL ESコンテンツをシームレスに実行できるようにすることです。ANGLEは現在、OpenGL ES 2.0、3.0、3.1からVulkan、デスクトップOpenGL、OpenGL ES、Direct3D 9、Direct3D 11への変換を提供しています。将来的には、ES 3.2、MetalとMacOSへの翻訳、Chrome OS、Fuchsiaのサポートが予定されています。</p>
+<h3 id="バックレンダラーによるopengl-esのサポートレベル">バックレンダラーによるOpenGL ESのサポートレベル</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">Direct3D 9</th>
+<th style="text-align:center">Direct3D 11</th>
+<th style="text-align:center">Desktop GL</th>
+<th style="text-align:center">GL ES</th>
+<th style="text-align:center">Vulkan</th>
+<th style="text-align:center">Metal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OpenGL ES 2.0</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+</tr>
+<tr>
+<td>OpenGL ES 3.0</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">in progress</td>
+</tr>
+<tr>
+<td>OpenGL ES 3.1</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><a href="doc/ES31StatusOnD3D11.md">incomplete</a></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td>OpenGL ES 3.2</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">in progress</td>
+<td style="text-align:center">in progress</td>
+<td style="text-align:center">in progress</td>
+</tr>
+</tbody>
+</table>
+<h3 id="バックレンダラーによるプラットフォーム対応">バックレンダラーによるプラットフォーム対応</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:center">Direct3D 9</th>
+<th style="text-align:center">Direct3D 11</th>
+<th style="text-align:center">Desktop GL</th>
+<th style="text-align:center">GL ES</th>
+<th style="text-align:center">Vulkan</th>
+<th style="text-align:center">Metal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">Windows</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Linux</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Mac OS X</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">in progress</td>
+</tr>
+<tr>
+<td style="text-align:right">iOS</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">in progress</td>
+</tr>
+<tr>
+<td style="text-align:right">Chrome OS</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">planned</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Android</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">GGP (Stadia)</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:right">Fuchsia</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">complete</td>
+</tr>
+</tbody>
+</table>
+<p>ANGLE v1.0.772は、2011年10月にOpenGL ES 2.0.3のコンフォーマンステストに合格し、準拠が証明されています。</p>
+<p>ANGLEは、Vulkanバックエンドで以下の認定を受けています。</p>
+<ul>
+<li>OpenGL ES 2.0: ANGLE 2.1.0.d46e2fb1e341 (Nov, 2019)</li>
+<li>OpenGL ES 3.0: ANGLE 2.1.0.f18ff947360d (Feb, 2020)</li>
+<li>OpenGL ES 3.1: ANGLE 2.1.0.f5dace0f1e57 (Jul, 2020)</li>
+</ul>
+<p>また、ANGLEはEGL1.5仕様の実装も提供しています。</p>
+<p>ANGLEは、Windowsプラットフォーム上のGoogle ChromeとMozilla Firefoxの両方で、デフォルトのWebGLバックエンドとして使用されています。Chromeは、高速化されたCanvas2D実装やNative Clientサンドボックス環境など、Windows上のすべてのグラフィックスレンダリングにANGLEを使用しています。</p>
+<p>ANGLE シェーダーコンパイラの一部は、複数のプラットフォームにまたがる WebGL の実装でシェーダー検証およびトランスレータとして使用されています。Mac OS X、Linux、およびブラウザのモバイル版で使用されています。1 つのシェーダバリデータを持つことで、ブラウザやプラットフォーム間で一貫した GLSL ES シェーダのセットを受け入れることができます。シェーダ・トランスレータは、シェーダを他のシェーディング言語に翻訳したり、ネイティブ・グラフィック・ドライバのバグや癖に対処するためにシェーダの修正をオプションで適用したりするために使用できます。トランスレータは、Desktop GLSL、Vulkan GLSL、Direct3D HLSL、およびネイティブGLES2プラットフォーム用のESSLもターゲットにしています。</p>
+<h2 id="情報源">情報源</h2>
+<p>ANGLEリポジトリはChromiumプロジェクトによってホストされており、<a href="https://chromium.googlesource.com/angle/angle" target="_blank">オンラインで閲覧</a>することができます。</p>
+<pre><code>git clone https://chromium.googlesource.com/angle/angle
+</code></pre><h2 id="ビルド">ビルド</h2>
+<p><a href="doc/DevSetup.md">Devセットアップ説明書</a>をご覧ください。</p>
+<h2 id="貢献">貢献</h2>
+<ul>
+<li><a href="https://groups.google.com/group/angleproject" target="_blank">Googleグループ</a>に参加し、最新情報を入手することができます。</li>
+<li><a href="https://chromium.slack.com" target="_blank">Slack</a> の #angle チャンネルに参加してください。Slackチャンネルに参加する手順は<a href="https://www.chromium.org/developers/slack" target="_blank">Chromium開発者ページ</a>の説明に従ってください。Googler の方は、こちらの <a href="https://docs.google.com/document/d/1wWmRm-heDDBIkNJnureDiRO7kqcRouY2lSXlO6N2z6M/edit?usp=sharing" target="_blank">ドキュメント</a> の指示に従って、google または chromium のメールを使用して Slack チャンネルに参加してください。</li>
+<li><a href="https://bugs.chromium.org/p/angleproject/issues/list" target="_blank">問題追跡システム</a> の <a href="http://anglebug.com/new" target="_blank">バグを報告</a> (できれば孤立したテストケース付き)。</li>
+<li><a href="doc/ChoosingANGLEBranch.md">ANGLEブランチの選択</a>を使って、自分のプロジェクトでトラッキングを行うことができます。</li>
+</ul>
+<ul>
+<li>ANGLEの開発 <a href="doc">ドキュメント</a>を読む。</li>
+<li><a href="https://chromium-review.googlesource.com/q/project:angle/angle+status:open" target="_blank">未解決</a> と <a href="https://chromium-review.googlesource.com/q/project:angle/angle+status:merged" target="_blank">マージ</a> の変更を見てください。</li>
+<li><a href="doc/ContributingCode.md">コードの貢献者</a>になる。</li>
+<li>ANGLEの<a href="doc/CodingStandard.md">コーディング規約</a>を使用する。</li>
+<li><a href="doc/BuildingAngleForChromiumDevelopment.md">Chromium開発用ANGLEのビルド方法</a>はこちらです。</li>
+<li><a href="doc/DebuggingTips.md">ANGLEのデバッグ</a>のヘルプを取得する。</li>
+<li><a href="doc/Orientation.md">ANGLEの方向性</a>に目を通し、<a href="https://bugs.chromium.org/p/angleproject/issues/list?q=Hotlist%3DStarterBug" target="_blank">スタータープロジェクト</a>をふるいにかけてみてください。何か作業を引き受けると決めたら、私たちと連絡が取れるようにコメントを書き、さらに重要なことは、あなた自身をそのバグの「所有者」に設定することです。こうすることで、複数の人が誤って同じ問題に取り組むことを避けることができます。</li>
+</ul>
+<ul>
+<li>WebGLについては、<a href="http://khronos.org/webgl/wiki/Main_Page" target="_blank">Khronos WebGL Wiki</a>でお読みください。</li>
+<li>初期のANGLE実装の詳細については、<a href="http://www.seas.upenn.edu/~pcozzi/OpenGLInsights/OpenGLInsights-ANGLE.pdf" target="_blank">OpenGLインサイト ANGLE</a>（これは最新のANGLE実装詳細ではないため、ここでは歴史的参考としてのみ掲載しています）とこの<a href="https://drive.google.com/file/d/0Bw29oYeC09QbbHoxNE5EUFh0RGs/view?usp=sharing&amp;resourcekey=0-CNvGnQGgFSvbXgX--Y_Iyg" target="_blank">ANGLEプレゼンテーション</a>でご確認ください。</li>
+<li>ANGLE実装の過去、現在、未来について、<a href="https://docs.google.com/presentation/d/1CucIsdGVDmdTWRUbg68IxLE5jXwCb2y1E9YVhQo0thg/pub?start=false&amp;loop=false" target="_blank">本プレゼンテーション</a>でご紹介しています。</li>
+<li>Vulkanバックエンドに関する<a href="https://youtu.be/QrIKdjmpmaA" target="_blank">ショートプレゼンテーション</a>をご覧ください。</li>
+<li><a href="doc/dEQP-Charts.md">dEQPテスト適合性</a>を追跡する。</li>
+<li><a href="src/libANGLE/renderer/vulkan/README.md">Vulkanバックエンド</a>のデザインドキュメントを読んでください。</li>
+<li>ANGLEの[テストインフラ]について読む(infra/README.md)</li>
+<li>ANGLEの<a href="doc/ExtensionSupport.md">対応拡張子</a>の情報を見る</li>
+<li>ANGLEをご自身のプロジェクトで使用された場合、ぜひそのお話をお聞かせください。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="angle_development.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ANGLEの開発">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ANGLEの概要","level":"1.1","depth":1,"next":{"title":"ANGLEの開発","level":"1.2","depth":1,"path":"angle_development.md","ref":"angle_development.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-10-02T23:48:25.423Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:05:57.037Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,622 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>MetalANGLEの開発 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="metal_angle.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="angle_development.html">
+            
+                <a href="angle_development.html">
+            
+                    
+                    ANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="metal_angle.html">
+            
+                <a href="metal_angle.html">
+            
+                    
+                    MetalANGLEの概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="metal_andle_development.html">
+            
+                <a href="metal_andle_development.html">
+            
+                    
+                    MetalANGLEの開発
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >MetalANGLEの開発</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="metalangle開発">MetalANGLE開発</h1>
+<p><a href="https://github.com/kakashidinho/metalangle/blob/master/src/libANGLE/renderer/metal/DevSetup.md" target="_blank">原文</a></p>
+<p>MetalANGLEはOpenGL ES 2.0 (ES 3.0の一部をサポート) およびEGL 1.4 ライブラリを提供します。  これらを使って、MacやiOS上でMetal APIを利用したOpenGL ES 2.0アプリケーションを構築し、実行することができます。</p>
+<h2 id="開発体制">開発体制</h2>
+<h3 id="バージョン管理">バージョン管理</h3>
+<p>ANGLEはバージョン管理にgitを使用しています。gitに慣れていない方は、<a href="http://git-scm.com/documentation" target="_blank">http://git-scm.com/documentation</a>に有用なドキュメントがあります。</p>
+<h3 id="xcodeプロジェクトでクイックビルド">Xcodeプロジェクトでクイックビルド</h3>
+<p>ANGLEのテストスイートやOpenGL ESのコンフォーマンステストでMetalANGLEをテストしたくない場合は、<code>mac/xcode</code> と <code>ios/xcode</code> フォルダにあるXcodeプロジェクトを使って、 <code>MetalANGLE.framework</code> といくつかのサンプルアプリを素早くビルドすることができます。</p>
+<p>依存関係を取得する:</p>
+<ul>
+<li>サードパーティの依存関係を取得するために <code>ios/xcode/fetchDepedencies.sh</code> スクリプトを実行します。</li>
+</ul>
+<p>MacOS版:</p>
+<ul>
+<li><code>mac/xcode</code>フォルダにある<code>OpenGLES.xcodeproj</code>を開く。</li>
+<li>ターゲット <code>MetalANGLE_mac</code> は <code>MetalANGLE.framework</code> という名前のOpenGL ESフレームワークをビルドします。</li>
+<li><a href="#MGLKit">MGLKit</a>ライブラリを使ってサンプルアプリをビルドする場合。<code>OpenGLES.xcodeproj</code>ではなく、<code>MGKitSamples.xcodeproj</code>を開いてください（両方を同時に開かないでください）。<code>MGKitSamples.xcodeproj</code>はワークスペース内にある<code>OpenGLES.xcodeproj</code>を開くためです。</li>
+<li>サンプルアプリ <code>MGLKitSampleApp_mac</code> は、<code>MGLKit</code> を使って macOS 上でビューと GL コンテキストを設定する方法を示しています。</li>
+<li><code>EAGL</code>/<code>GLKit</code> から <code>MGLKit</code> へアプリを移植する方法については <a href="#MGLKit">MGLKit</a> の項を参照してください。</li>
+</ul>
+<p>iOS版:</p>
+<ul>
+<li><code>ios/xcode</code> フォルダにある <code>OpenGLES.xcodeproj</code> を開いてください。</li>
+<li>ターゲット <code>MetalANGLE</code> は <code>MetalANGLE.framework</code> という名前のOpenGL ESフレームワークをビルドします。</li>
+<li>tvOS版をビルドする場合は、<code>MetalANGLE_tvos</code>ターゲットを選択します。</li>
+<li><strong>Note</strong>: サンプルアプリを実機でテストするために。XcodeのBundle Identifierを好きなものに変更する必要があります。しかも、これは全世界共通で制限されています。一人が自分のApple開発者プロファイルを使ってサンプルアプリをインストールすると、設定されたIDはその開発者用にのみ登録されます。他の開発者はそのIDを使用して自分のデバイスにインストールすることができなくなります。</li>
+<li><a href="#MGLKit">MGLKit</a>ライブラリを使ってサンプルアプリをビルドする場合。<code>OpenGLES.xcodeproj</code>ではなく、<code>MGKitSamples.xcodeproj</code>を開いてください（両方を同時に開かないでください）。<code>MGKitSamples.xcodeproj</code>はワークスペース内にある<code>OpenGLES.xcodeproj</code>を開くためです。</li>
+<li>iOS Simulatorでの実行とテストには、Xcode 11+とMacOS Catalina (10.15+)が必要です。</li>
+<li>サンプルアプリ <code>MGLKitSampleApp</code> は、iOS 上で <code>MGLKit</code> を使ってビューと GL コンテキストを設定する方法を示している。</li>
+<li>サンプルアプリ <code>MGLKitSampleApp_tvos</code> は、<code>MGLKit</code> を使って tvOS 上でビューと GL ontext を設定する方法を示している。</li>
+<li>サンプルアプリ <code>MGLPaint</code> は Apple の古いサンプルアプリ <code>GLPaint</code> を移植したものです。</li>
+</ul>
+<h3 id="すべてのテストスイートを含む標準的なangleビルド">すべてのテストスイートを含む標準的なANGLEビルド</h3>
+<p>以下はANGLEプロジェクトの標準的なビルドプロセスで、MetalANGLEの実装を検証するための広範なテストターゲットが含まれています。標準的なANGLEのビルドプロセスでは、<code>MetalANGLE.framework</code>の代わりに <code>libEGL.dylib</code>, <code>libGLESv2.dylib</code>, <code>libGLESv1CM.dylib</code> を生成することに注意してください。.dylib`バージョンはフレームワーク版のように<a href="#MGLKit">MGLKit</a>のラッパークラスを含んでいません。現在のところ、MacOS版のビルドのみサポートしています。</p>
+<h5 id="必要なツール">必要なツール</h5>
+<p>すべてのプラットフォームで。</p>
+<ul>
+<li><a href="http://dev.chromium.org/developers/how-tos/install-depot-tools" target="_blank">depot_tools</a><ul>
+<li>プロジェクトを生成し、サードパーティの依存関係を取得するために必要です。</li>
+<li>gclient, GN, ninja ツールを提供する。</li>
+</ul>
+</li>
+<li><a href="https://developer.apple.com/xcode/" target="_blank">Xcode</a> をClangと開発用ファイルとして使用します。</li>
+<li>Bisonとflexは、Windowsでの翻訳文法生成のみをサポートするため、必要ありません。</li>
+</ul>
+<p>MacOSビルドの場合:</p>
+<ul>
+<li>GNはデフォルトのビルドシステムです。  GYPのサポートは削除されました。GNはdepot_toolsのインストールで利用できます。</li>
+<li>Clangはビルドシステムによってセットアップされ、デフォルトで使用されます。</li>
+</ul>
+<h5 id="ソースの取得">ソースの取得</h5>
+<pre><code class="lang-sh">git <span class="hljs-built_in">clone</span> https://github.com/kakashidinho/metalangle
+<span class="hljs-built_in">cd</span> metalangle
+python scripts/bootstrap.py
+gclient sync
+git checkout master
+</code></pre>
+<p><code>gclient sync</code> を実行すると、&quot;gs://chromium-clang-format ...&quot; の取得に失敗したというエラーが報告されることがあります。このような場合は、ルートディレクトリにある <code>DEPS</code> ファイルを開き、以下のコードスニペットを削除してください。</p>
+<pre><code class="lang-json">  {
+    <span class="hljs-string">&apos;name&apos;</span>: <span class="hljs-string">&apos;clang_format_mac&apos;</span>,
+    <span class="hljs-string">&apos;pattern&apos;</span>: <span class="hljs-string">&apos;.&apos;</span>,
+    <span class="hljs-string">&apos;condition&apos;</span>: <span class="hljs-string">&apos;host_os == &quot;mac&quot; and not build_with_chromium&apos;</span>,
+    <span class="hljs-string">&apos;action&apos;</span>: [ <span class="hljs-string">&apos;download_from_google_storage&apos;</span>,
+                <span class="hljs-string">&apos;--no_resume&apos;</span>,
+                <span class="hljs-string">&apos;--platform=darwin&apos;</span>,
+                <span class="hljs-string">&apos;--no_auth&apos;</span>,
+                <span class="hljs-string">&apos;--bucket&apos;</span>, <span class="hljs-string">&apos;chromium-clang-format&apos;</span>,
+                <span class="hljs-string">&apos;-s&apos;</span>, <span class="hljs-string">&apos;{angle_root}/buildtools/mac/clang-format.sha1&apos;</span>,
+    ],
+  },
+</code></pre>
+<h5 id="macos版のビルド">MacOS版のビルド</h5>
+<p>無事にソースを取得したら、ninjaファイルを生成する準備が整いました。</p>
+<pre><code class="lang-sh">gn gen out/Debug --ide=xcode --args=<span class="hljs-string">&apos;mac_deployment_target=&quot;10.13&quot; angle_enable_metal=true&apos;</span>
+</code></pre>
+<p>GN はデフォルトで ninja ファイルを生成します。  デフォルトのビルドオプションを変更するには、 <code>gn args out/Debug</code> を実行します。  よく使われるオプションは以下の通りです。</p>
+<pre><code class="lang-sh">target_cpu = <span class="hljs-string">&quot;x64&quot;</span>  (または <span class="hljs-string">&quot;x86&quot;</span>)
+is_clang = <span class="hljs-literal">false</span>    (clang の代わりにシステムのデフォルトコンパイラを使うようにする)
+is_debug = <span class="hljs-literal">true</span>     (デバッグを有効にする、<span class="hljs-literal">true</span>がデフォルト)
+strip_absolute_paths_from_debug_symbols = <span class="hljs-literal">false</span> (このフラグを無効にすると、xcodeが出力バイナリをデバッグできるようになります。)
+</code></pre>
+<p><code>out/Debug</code>フォルダにGNが生成したXcodeワークスペースを開いてコードをブラウズしたり、テストやサンプルアプリケーションのデバッグを行うことができます。</p>
+<p>リリースビルドの場合は、<code>gn args out/Release</code> を実行し、<code>is_debug = false</code> を設定します。</p>
+<p>GNに関するより詳しい情報は <code>gn help</code> を実行してください。</p>
+<p>Ninjaは、以下のいずれかのコマンドでコンパイルすることができます。</p>
+<pre><code class="lang-sh">ninja -C out/Debug
+ninja -C out/Release
+</code></pre>
+<p>Ninjaは設定を変更すると、自動的にGNを呼び出してビルドファイルを再生成します。depot_tools` は ninja を提供するので、パスに入っていることを確認すること。</p>
+<h2 id="angleによるアプリケーション開発">ANGLEによるアプリケーション開発</h2>
+<p>ここでは、ANGLEを使用してOpenGL ESアプリケーションを構築する方法について説明します。</p>
+<h3 id="バックエンドの選択">バックエンドの選択</h3>
+<p>ANGLEは、プラットフォームに応じて様々なバックレンダラーを使用することができます。  MacOSとiOSでは、デフォルトでMetalが使用されます。</p>
+<p>ANGLEは <code>EGL_ANGLE_platform_angle</code> というEGL拡張を提供しており、特別な列挙型を使用してeglGetPlatformDisplayEXTを呼び出すことにより、EGL初期化時に使用するレンダラーを選択することができるようになっています。この拡張機能の詳細は <code>extensions/ANGLE_platform_angle.txt</code> と <code>extensions/ANGLE_platform_angle_*.txt</code> にある仕様書をご覧ください。また、ANGLE のサンプルやテスト、特に <code>util/EGLWindow.cpp</code> で使用例を見ることができます。現在、iOS版では、デフォルト（Metal）以外のレンダラーを選択することができません。</p>
+<h3 id="アプリケーションでmetalangleを使用するには">アプリケーションでMetalANGLEを使用するには</h3>
+<p>ビルド環境が <code>include</code> フォルダにアクセスできるように設定し、クロノスの標準的なEGLおよびGLES2ヘッダーファイルへのアクセスを提供します。</p>
+<h4 id="macosの場合（標準angleビルドシステムでビルドされたlibglesv2dylibを使用）">MacOSの場合（標準ANGLEビルドシステムでビルドされた<code>libGLESv2.dylib</code>を使用）</h4>
+<ul>
+<li>ビルド出力ディレクトリにある <code>libEGL.dylib</code> と <code>libGLESv2.dylib</code> にアクセスできるようにビルド環境を設定する（<a href="#Building-MacOS-version">ANGLEのビルド</a> を参照）。</li>
+<li>アプリケーションを <code>libGLESv2.dylib</code> と <code>libEGL.dylib</code> に対してリンクします。</li>
+<li>アプリケーションをKhronos <a href="http://www.khronos.org/registry/gles/" target="_blank">OpenGL ES 2.0</a> および <a href="http://www.khronos.org/registry/egl/" target="_blank">EGL 1.4</a> のAPIにコーディングします。</li>
+</ul>
+<h4 id="iosとmacosの場合（付属のxcodeプロジェクトでビルドしたmetalangleframeworkを使用）">iOSとMacOSの場合（付属のXcodeプロジェクトでビルドした<code>MetalANGLE.framework</code>を使用）</h4>
+<ul>
+<li>アプリケーションを <code>MetalANGLE.framework</code> にリンクします。</li>
+</ul>
+<h5 id="mglkit">MGLKit</h5>
+<ul>
+<li>また、<code>MetalANGLE.framework</code>には、<code>MGLContext</code>、<code>MGLLayer</code>、<code>MGLKView</code>、<code>MGLKViewController</code> などのMGLKitユーティリティクラスが含まれており、Appleが提供する <code>CAEAGLContext</code> 、 <code>CAEAGLLayer</code> 、 <code>GLKView</code> 、 <code>GLKViewController</code> などの GLKit クラスと同様のクラスが用意されています。このMGLKitのクラスを利用したサンプルアプリは <code>MGLKitSamples.xcodeproj</code> にありますので、ご覧ください。</li>
+</ul>
+<h5 id="appleのeaglとglkitからmglkitへのポーティング">AppleのEAGLとGLKitからMGLKitへのポーティング</h5>
+<ul>
+<li><p>Appleの <code>EAGL</code> と <code>GLKit</code> クラスはOpenGL ESのコンテキストとビューを管理するためのハイレベルなAPIを提供しています。Metalangleは似たようなクラスを提供していますが、名前が違うので、アプリケーションを<code>EAGL</code>と<code>GLKit</code>から<code>MGLKit</code>に移植するには、少し修正する必要があります。例えば、<code>CAEAGLLayer</code> は <code>[EAGLContext renderbufferStorage: fromDrawable:]</code> というコールによってデフォルトのフレームバッファのストレージを手動で作成する必要があります。一方、<code>MGLLayer</code>は自動的にそれを行うので、デフォルトのフレームバッファを手動で作成する必要はない。</p>
+</li>
+<li><p>相当するクラスです。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Apple</th>
+<th>MetalANGLE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EAGLContext</td>
+<td>MGLContext</td>
+</tr>
+<tr>
+<td>CAEAGLLayer</td>
+<td>MGLLayer</td>
+</tr>
+<tr>
+<td>EAGLRenderingAPI</td>
+<td>MGLRenderingAPI</td>
+</tr>
+<tr>
+<td>GLKView</td>
+<td>MGLKView</td>
+</tr>
+<tr>
+<td>GLKViewDelegate</td>
+<td>MGLKViewDelegate</td>
+</tr>
+<tr>
+<td>GLKViewController</td>
+<td>MGLKViewController</td>
+</tr>
+<tr>
+<td>GLKViewDrawableColorFormat</td>
+<td>MGLDrawableColorFormat</td>
+</tr>
+<tr>
+<td>GLKViewDrawableDepthFormat</td>
+<td>MGLDrawableDepthFormat</td>
+</tr>
+<tr>
+<td>GLKViewDrawableStencilFormat</td>
+<td>MGLDrawableStencilFormat</td>
+</tr>
+<tr>
+<td>GLKViewDrawableMultisample</td>
+<td>MGLDrawableMultisample</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>典型的な古いコードでは、通常 <code>[GLKViewController viewDidLoad]</code> を <code>EAGLContext</code> と <code>GLKView</code> で構成しています。</li>
+</ul>
+<pre><code class="lang-objective-c">- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // OpenGL ES コンテキストを作成し、storyboard から読み込んだビューに割り当てる。
+    GLKView *view = (GLKView *)self.view;
+    view.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    // ビューが作成するレンダーバッファーの設定
+    view.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+    view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    view.drawableStencilFormat = GLKViewDrawableStencilFormat8;
+    // マルチサンプリングの有効化
+    view.drawableMultisample = GLKViewDrawableMultisample4X;
+}
+</code></pre>
+<ul>
+<li>MetalANGLE<code>を移植する場合、上記を以下のように</code>[MGLKViewController viewDidLoad]`に変更する必要があります。</li>
+</ul>
+<pre><code class="lang-objective-c">- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // OpenGL ES コンテキストを作成し、storyboard から読み込んだビューに割り当てる。
+    MGLKView *view = (MGLKView *)self.view;
+    view.context = [[MGLContext alloc] initWithAPI:kMGLRenderingAPIOpenGLES2];
+    // ビューが作成するレンダーバッファーの設定
+    view.drawableColorFormat = MGLDrawableColorFormatRGBA8888;
+    view.drawableDepthFormat = MGLDrawableDepthFormat24;
+    view.drawableStencilFormat = MGLDrawableStencilFormat8;
+    // マルチサンプリングの有効化
+    view.drawableMultisample = MGLDrawableMultisample4X;
+}
+</code></pre>
+<ul>
+<li>あるいは、アプリが <code>CAEAGLLayer</code> をカスタム <code>UIView</code> で直接使用する場合など。</li>
+</ul>
+<pre><code class="lang-objective-c">@interface PaintingView()
+{
+    EAGLContext *context;
+    GLuint viewFramebuffer, viewRenderbuffer;
+}
++ (Class)layerClass
+{
+    return [CAEAGLLayer class];
+}
+- (id)initWithCoder:(NSCoder*)coder
+{
+    if ((self = [super initWithCoder:coder]))
+    {
+        CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
+        eaglLayer.opaque = YES;
+        // このアプリケーションでは、presentRenderbuffer を呼び出した後も drawable の内容を保持したい。
+        eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
+                      [NSNumber numberWithBool:YES], kEAGLDrawablePropertyRetainedBacking,
+                      kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat,
+                      nil];
+        // ビューの拡大率を任意に設定できる
+        self.contentScaleFactor = [[UIScreen mainScreen] scale];
+        // OpenGLコンテキストの初期化
+        context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+        // 現在のコンテキストを設定する
+        if (!context || ![EAGLContext setCurrentContext:context]) {
+            return nil;
+        }
+        // デフォルトのフレームバッファとレンダーバッファを割り当てる。
+        glGenFramebuffers(1, &amp;viewFramebuffer);
+        glGenRenderbuffers(1, &amp;viewRenderbuffer);
+        glBindFramebuffer(GL_FRAMEBUFFER, viewFramebuffer);
+        glBindRenderbuffer(GL_RENDERBUFFER, viewRenderbuffer);
+        [context renderbufferStorage:GL_RENDERBUFFER fromDrawable:eaglLayer];
+        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, viewRenderbuffer);
+        // レンダーバッファーのサイズを取得する
+        GLint backingWidth, backingHeight;
+        glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &amp;backingWidth);
+        glGetRenderbufferParameteriv(GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &amp;backingHeight);
+        if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+        {
+          NSLog(@&quot;Failed to make complete framebuffer objectz %x&quot;,
+                glCheckFramebufferStatus(GL_FRAMEBUFFER));
+          return nil;
+        }
+    }
+    return self;
+}
+- (void) renderFunc
+{
+    [EAGLContext setCurrentContext:context];
+    // バッファをクリアする
+    glBindFramebuffer(GL_FRAMEBUFFER, viewFramebuffer);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    // バッファを表示する
+    glBindRenderbuffer(GL_RENDERBUFFER, viewRenderbuffer);
+    [context presentRenderbuffer:GL_RENDERBUFFER];
+}
+@end
+</code></pre>
+<ul>
+<li>もし、<code>MetalANGLE</code>を使うなら、上記は以下のように変更される（注意：<code>CAEAGLLayer</code>と違って、<code>MGLLayer</code>は自動的にデフォルトのフレームバッファを作成するので、<code>[EAGLContext renderbufferStorage: fromDrawable:]</code> でカスタムレンダバッファを作る必要はない）。</li>
+</ul>
+<pre><code class="lang-objective-c">@interface PaintingView()
+{
+    MGLContext *context;
+}
++ (Class)layerClass
+{
+    return [MGLLayer class];
+}
+- (id)initWithCoder:(NSCoder*)coder
+{
+    if ((self = [super initWithCoder:coder]))
+    {
+        MGLLayer *mglLayer = (MGLLayer *)self.layer;
+        mglLayer.opaque = YES;
+        // 今回のアプリケーションでは、presentを呼び出した後も、EAGLDrawableの内容を保持したい。
+        mglLayer.retainedBacking = YES:
+        mglLayer.drawableColorFormat = MGLDrawableColorFormatRGBA8888;
+        // レイヤーのスケールファクターを任意に設定する
+        mglLayer.contentScale = [[UIScreen mainScreen] scale];
+        // OpenGLコンテキストの初期化
+        context = [[MGLContext alloc] initWithAPI:kMGLRenderingAPIOpenGLES2];
+        // アクティブなレイヤーを使用せずに、現在のコンテキストを設定します。テクスチャやバッファをアクティブなレイヤーなしで作成するのは全く問題ありません。しかし、GL描画コマンドを呼び出す前に、[MGLContext setCurrentContext: forLayer:]を呼び出す必要があります（下記のrenderFuncのコードを参照）。
+        if (!context || ![MGLContext setCurrentContext:context]) {
+            return nil;
+        }
+        // レンダーバッファーのサイズを取得する。
+        // 注意事項  - CAEAGLLayerとは異なり、デフォルトのフレームバッファとレンダーバッファを手動で作成する必要はありません。MGLLayerはすでにそれらを内部で生成しています。  - 例えば、iOSデバイスでユーザーがビューをリサイズしたり、回転させたりすると、サイズはいつでも変更される可能性があります。だから、キャッシュしない方が良い。
+        GLuint backingWidth, backingHeight;
+        backingWidth = mglLayer.drawableSize.width;
+        backingHeight = mglLayer.drawableSize.height;
+    }
+    return self;
+}
+- (void) renderFunc
+{
+    // レイヤーを描画コマンドの送信先として設定する。注：これは重要で、GL描画コマンドを発行する前に呼び出す必要があります。
+    MGLLayer *mglLayer = (MGLLayer *)self.layer;
+    [MGLContext setCurrentContext:context forLayer:mglLayer];
+    // バッファをクリアします。次のglBindFramebuffer()呼び出しはオプションです。デフォルトのフレームバッファとは別にカスタムフレームバッファがある場合のみ必要です。
+    glBindFramebuffer(GL_FRAMEBUFFER, mglLayer.defaultOpenGLFrameBufferID);
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClear(GL_COLOR_BUFFER_BIT);
+    // バッファを表示する
+    [context present:mglLayer];
+}
+@end
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="metal_angle.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: MetalANGLEの概要">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MetalANGLEの開発","level":"1.4","depth":1,"previous":{"title":"MetalANGLEの概要","level":"1.3","depth":1,"path":"metal_angle.md","ref":"metal_angle.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"metal_andle_development.md","mtime":"2022-10-02T23:54:57.285Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:05:57.037Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
