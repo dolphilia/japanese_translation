@@ -1,0 +1,1861 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Duktape 2.x · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="how_to_work_with_lightfuncs.html" />
+    
+    
+    <link rel="prev" href="how_to_use_finalization.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Duktape 2.x</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="duktape-2xでバッファを操作する方法">Duktape 2.xでバッファを操作する方法</h1>
+<p>このページは、Duktape 2.xにのみ適用されます。</p>
+<h2 id="はじめに">はじめに</h2>
+<h3 id="バッファタイプの概要">バッファタイプの概要</h3>
+<table>
+<thead>
+<tr>
+<th>Buffer type</th>
+<th>Standard</th>
+<th>C API type</th>
+<th>ECMAScript type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plain buffer</td>
+<td>No<br>Duktape specific</td>
+<td>DUK_TAG_BUFFER</td>
+<td>[object Uint8Array]</td>
+<td>メモリ効率の良いバッファ値(オブジェクトではない)。ECMAScript のほとんどの動作は Uint8Array を模倣しており、C API では別の型となっています。オブジェクトは実際の Uint8Array のインスタンスに強制されます。仮想インデックスプロパティを持つ。(Duktape2.xで動作が変更されました。)</td>
+</tr>
+<tr>
+<td>ArrayBuffer object</td>
+<td>Yes<br>ES2015</td>
+<td>DUK_TAG_OBJECT</td>
+<td>[object ArrayBuffer]</td>
+<td>バイト配列を表現するための標準的なオブジェクト型。非標準の仮想インデックスプロパティを追加で持つ。</td>
+</tr>
+<tr>
+<td>DataView, typed array objects</td>
+<td>Yes<br>ES2015</td>
+<td>DUK_TAG_OBJECT</td>
+<td>[object Uint8Array], etc</td>
+<td>標準的なビューオブジェクトで、基礎となる ArrayBuffer にアクセスする。</td>
+</tr>
+<tr>
+<td>Node.js Buffer object</td>
+<td>No<br>Node.js-like</td>
+<td>DUK_TAG_OBJECT</td>
+<td>[object Uint8Array]</td>
+<td>Node.jsのBuffer APIを使ったオブジェクトです。現在、Node.jsのバージョンは6.7.0ですが、Duktapeは少し遅れて最新のものをトラッキングしています。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arraybufferおよび型付き配列の推奨値">ArrayBufferおよび型付き配列の推奨値</h3>
+<p>新しいコードでは、特別な理由がない限り、ES2015のArrayBufferと型付き配列（Uint8Arrayなど）を使用することをお勧めします。型付き配列を使い始めるためのチュートリアルはこちらです。</p>
+<ul>
+<li><a href="http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/" target="_blank">http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/</a></li>
+</ul>
+<p>ArrayBufferはバイトバッファをカプセル化します。例えば、Uint32Arrayは32ビットの連続した配列に対応する仮想配列を提供します。型付き配列はホスト固有のエンディアンを持ち、基礎となるバッファに対してアライメントが必要です。DataViewはArrayBufferの中の任意にアラインされた要素（整数や浮動小数点）を読み書きするためのアクセサリ群を提供します。エンディアンは明示的に指定できるので、DataViewは例えばファイルフォーマット操作に便利です。</p>
+<h3 id="低メモリ環境向けのプレーンバッファ">低メモリ環境向けのプレーンバッファ</h3>
+<p>非常に少ないメモリ環境では、通常 Uint8Array が使用される場所でプレーンバッファーを使用することができます。プレーンバッファは ECMAScript コードに対して Uint8Array の動作をかなり忠実に模倣しており、実際の Uint8Array とプレーンバッファの間を移動する際に、しばしば小さな ECMAScript コード変更のみが必要となります。しかし、C のコードでは型付けの違いに注意する必要があります。</p>
+<p>プレーン バッファは、バッファへの uint8 アクセスを提供するだけです。プレーン・バッファには、固定バッファ、動的バッファ（サイズ変更可能）、外部バッファ（Duktapeの制御外のユーザ制御バッファを指す）の3種類があります。プレーン バッファの値オブジェクトは Uint8Array オブジェクトに変換されます。これは、プレーン文字列オブジェクトが String オブジェクトに変換されるのと同様です。</p>
+<p>Duktapeの設定でバッファ・オブジェクトのサポートが無効になっている場合、プレーン・バッファのみが使用可能になります。これらは Uint8Array.prototype を継承し、プレーンバッファーの値 (例: buf.__proto__) から到達可能ですが、グローバルオブジェクトには登録されません。すべての型付き配列メソッドは存在しません。この意図は、Cコードからバッファを操作することにあります。</p>
+<h3 id="nodejs-バッファバインディング">Node.js バッファバインディング</h3>
+<p>Node.jsのBufferバインディングは、Node.js互換のコードを扱うときに便利です。</p>
+<p>Node.jsのBufferは、uint8の仮想配列とDataViewのようなエレメントアクセッサのセットを、すべて1つのオブジェクトで提供します。Node.js は ES2015 のように安定した仕様ではないので、Node.js Buffer は型付き配列よりも動きのあるターゲットです。</p>
+<h3 id="バッファタイプのミキシングをサポートするが、推奨しない">バッファタイプのミキシングをサポートするが、推奨しない</h3>
+<p>すべてのバッファオブジェクトの内部データ型は同じなので、ある程度は混ぜることができます。例えば、Node.js の Buffer.concat() は任意のバッファタイプを連結して使用することができます。しかし、混在の動作は時間の経過とともに変化しやすいので、混在させることに明確な利点がない限り、混在させない方が良いでしょう。</p>
+<h3 id="今後の変更点">今後の変更点</h3>
+<p>今後のリリースの開発の方向性としては、以下のようなものが考えられます。</p>
+<ul>
+<li>バッファのセマンティクスをES2015+に近づける。</li>
+<li>標準的な型は、よりメモリ効率と性能の高いものにする。</li>
+<li>C API のプレーンバッファと型付き配列オブジェクトの区別をなくす。</li>
+</ul>
+<h3 id="参考文献">参考文献</h3>
+<ul>
+<li>buffer&quot; タグのついた API コールで、プレーンなバッファを扱います。</li>
+<li>bufferobject &quot;タグの付いたAPIコールでバッファオブジェクトを扱えます。</li>
+<li>ES2015 型付き配列仕様 (ArrayBufferコンストラクタ、型付き配列コンストラクタ、ArrayBufferオブジェクト、DataViewオブジェクト)</li>
+<li>Node.js バッファAPI</li>
+<li>buffers.rstに内部を記述しています。</li>
+<li>オブジェクトのプロパティや強制の動作など、各オブジェクトタイプのより詳細な表 <a href="https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values" target="_blank">https://github.com/svaarala/duktape/blob/master/doc/buffers.rst#summary-of-buffer-related-values</a></li>
+</ul>
+<h2 id="api概要">API概要</h2>
+<h3 id="バッファの作成">バッファの作成</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>C</th>
+<th>ECMAScript</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plain buffer</td>
+<td>duk_push_buffer()<br>duk_push_fixed_buffer()<br>duk_push_dynamic_buffer()<br>duk_push_external_buffer()</td>
+<td>Uint8Array.allocPlain()<br>Uint8Array.plainOf()</td>
+<td>Uint8Array.plainOf() は、バッファオブジェクトから、コピーを作成せずに、基礎となるプレーンバッファを取得します。スライスのオフセットと長さの情報は失われます。</td>
+</tr>
+<tr>
+<td>ArrayBuffer object</td>
+<td>duk_push_buffer_object()</td>
+<td>new ArrayBuffer()</td>
+<td></td>
+</tr>
+<tr>
+<td>DataView object</td>
+<td>duk_push_buffer_object()</td>
+<td>new DataView()</td>
+<td></td>
+</tr>
+<tr>
+<td>Typed array objects</td>
+<td>duk_push_buffer_object()</td>
+<td>new Uint8Array()<br>new Int32Array()<br>new Float64Array()<br>etc</td>
+<td></td>
+</tr>
+<tr>
+<td>Node.js Buffer object</td>
+<td>duk_push_buffer_object()</td>
+<td>new Buffer()</td>
+</tr>
+</tbody>
+</table>
+<p>型付き配列が作成されると、ArrayBufferオブジェクトも作成され、型付き配列の.bufferプロパティとして利用できるようになります。Duktape 2.0は型付き配列が作成される際にArrayBufferを作成しますが、 Duktape 2.1は.bufferプロパティの最初の読み込み時にArrayBufferを遅延して作成します。</p>
+<h3 id="型チェック用バッファ">型チェック用バッファ</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>C</th>
+<th>ECMAScript</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plain buffer</td>
+<td>duk_is_buffer()<br>duk_is_buffer_data()</td>
+<td>n/a</td>
+<td></td>
+</tr>
+<tr>
+<td>ArrayBuffer object</td>
+<td>duk_is_buffer_data()</td>
+<td>v instanceof ArrayBuffer</td>
+<td></td>
+</tr>
+<tr>
+<td>DataView object</td>
+<td>duk_is_buffer_data()</td>
+<td>v instanceof DataView</td>
+<td></td>
+</tr>
+<tr>
+<td>Typed array objects</td>
+<td>duk_is_buffer_data()</td>
+<td>v instanceof Uint8Array, ...</td>
+<td></td>
+</tr>
+<tr>
+<td>Node.js Buffer object</td>
+<td>duk_is_buffer_data()</td>
+<td>Buffer.isBuffer()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="バッファーデータにアクセスする">バッファーデータにアクセスする</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>C</th>
+<th>ECMAScript</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plain buffer</td>
+<td>duk_get_buffer()<br>duk_require_buffer()</td>
+<td>buf[0], buf[1], ...<br>buf.length<br>buf.byteLength<br>buf.byteOffset<br>buf.BYTES_PER_ELEMENT</td>
+<td>非標準の型です。.bufferプロパティは、オンザフライで生成されたArrayBufferを返します（アクセスのたびに新しいインスタンスが生成されます）。</td>
+</tr>
+<tr>
+<td>ArrayBuffer object</td>
+<td>duk_get_buffer_data()<br>duk_require_buffer_data()</td>
+<td>new Uint8Array(buf)[0], ...<br>buf.byteLength</td>
+<td>バッファに直接アクセスできない。Uint8Arrayのような型付き配列ビューを介してバッファにアクセスします。</td>
+</tr>
+<tr>
+<td>DataView object</td>
+<td>duk_get_buffer_data()<br>duk_require_buffer_data()</td>
+<td>view.getInt16()<br>view.setUint32()<br>...<br>view.byteLength<br>view.byteOffset</td>
+<td>.bufferプロパティは、ビューが操作するArrayBufferを含みます。このプロパティは遅延です; ArrayBufferは最初のアクセスで作成され、その後も同じままです。</td>
+</tr>
+<tr>
+<td>Typed array objects</td>
+<td>duk_get_buffer_data()<br>duk_require_buffer_data()</td>
+<td>view[0], view[1], ...<br>view.length<br>view.byteLength<br>view.byteOffset<br>view.BYTES_PER_ELEMENT</td>
+<td>.bufferプロパティは、ビューが操作するArrayBufferを含みます。このプロパティは遅延です; ArrayBufferは最初のアクセスで作成され、その後も同じままです。</td>
+</tr>
+<tr>
+<td>Node.js Buffer object</td>
+<td>duk_get_buffer_data()<br>duk_require_buffer_data()</td>
+<td>buf[0], buf[1], ...<br>buf.length<br>buf.byteLength<br>buf.byteOffset<br>buf.BYTES_PER_ELEMENT</td>
+<td>Node.js v6.7.0+ では、Buffer は Uint8Array として実装され、カスタムプロトタイプオブジェクトを使用します。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuring-buffers">Configuring buffers</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>C</th>
+<th>ECMAScript</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plain buffer</td>
+<td>duk_config_buffer()<br>duk_resize_buffer()<br>duk_steal_buffer()</td>
+<td>n/a</td>
+<td>固定プレーンバッファーは設定できません。動的プレーンバッファーはサイズを変更することができ、現在の割り当てを「盗む」ことができます。外部プレーンバッファは、異なるメモリ領域にマッピングするように再設定することができます。</td>
+</tr>
+<tr>
+<td>ArrayBuffer object</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>ArrayBufferオブジェクトは作成後、変更することができません。しかし、その下にあるプレーンバッファは（そのタイプに応じて）再構成することができます。</td>
+</tr>
+<tr>
+<td>DataView object</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>作成後、DataViewオブジェクトは変更することができません。しかし、その下にあるプレーンバッファは再構成することができます（そのタイプに依存します）。</td>
+</tr>
+<tr>
+<td>Typed array objects</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>型付き配列オブジェクトは、作成後、変更することができません。しかし、その下にあるプレーンバッファは（その型に依存して）再構成することができます。</td>
+</tr>
+<tr>
+<td>Node.js Buffer object</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>Node.js Buffer オブジェクトは、作成後、変更することはできません。しかし、その基礎となるプレーンなバッファは（そのタイプによって）再構成することができます。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="buffer-to-string-conversion">Buffer-to-string conversion</h3>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duk_buffer_to_string()</td>
+<td>バッファのデータは、内部文字列表現として1対1で使用される。有効なECMAScript文字列を作成したい場合、データはCESU-8エンコーディングであるべきである。シンボル値を作成することは可能です（意図的であれ、偶然であれ）。バッファのデータに対して duk_push_lstring() を使用することは同等です。</td>
+</tr>
+<tr>
+<td>new TextDecoder().decode(buf)</td>
+<td>バッファをUTF-8文字列としてデコードし、ECMAScriptの有効な文字列を出力します。無効なバイト列はU+FFFDに、BMP以外の文字はサロゲートペアに置き換わります。</td>
+</tr>
+<tr>
+<td>duk_to_string()</td>
+<td>あまり有用ではありません。ECMAScript の ToString() を呼び出すと、[object Uint8Array] のような文字列になってしまいます。</td>
+</tr>
+<tr>
+<td>String(buf)</td>
+<td>あまり有用ではない: duk_to_string() と同様に ECMAScript の ToString() の強制を呼び出す。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-to-buffer-conversion">String-to-buffer conversion</h3>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duk_to_buffer()</td>
+<td>文字列の内部表現からのバイトは結果バッファにバイト単位でコピーされる。有効なECMAScript文字列の場合、結果はCESU-8で符号化される。</td>
+</tr>
+<tr>
+<td>new TextEncoder().encode(str)</td>
+<td>文字列の内部表現は、拡張CESU-8/UTF-8としてデコードされ、その後UTF-8にエンコードされる。サロゲートペアは結合され、無効なバイト列はU+FFFDに置き換えられる。</td>
+</tr>
+<tr>
+<td>new Buffer(str)</td>
+<td>文字列はTextEncoderと同じように扱われます。</td>
+</tr>
+<tr>
+<td>Uint8Array.allocPlain(str)</td>
+<td>文字列の内部表現は、duk_to_buffer()と同様に、結果のバッファにバイト単位でコピーされる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stringbuffer-conversion-use-cases">String/buffer conversion use cases</h3>
+<table>
+<thead>
+<tr>
+<th>Conversion</th>
+<th>C</th>
+<th>ECMAScript</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buffer-to-string UTF-8</td>
+<td>n/a</td>
+<td>new TextDecoder().decode(buf)</td>
+<td>バッファはUTF-8として解釈され、無効なUTF-8シーケンスはU+FFFDに置き換えられ、非BMPコードポイントはサロゲートペアに展開されます。</td>
+</tr>
+<tr>
+<td>Buffer-to-string CESU-8</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>バッファはCESU-8として解釈され、現在バインディングはない。</td>
+</tr>
+<tr>
+<td>Buffer-to-string 1:1</td>
+<td>duk_buffer_to_string()</td>
+<td>n/a</td>
+<td>バッファはデコードされずに内部表現（拡張CESU-8/UTF-8）にバイト単位で変換される。この強制はシンボル値になることもある。</td>
+</tr>
+<tr>
+<td>String-to-buffer UTF-8</td>
+<td>n/a</td>
+<td>new TextEncoder().encode(str)</td>
+<td>文字列は、16ビットコードポイントリストからUTF-8に変換される。有効なサロゲートペアは結合され、無効なサロゲートペアと無効なバイト列はU+FFFDに置き換えられる。</td>
+</tr>
+<tr>
+<td>String-to-buffer CESU-8</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>今はこれといった縛りがない。</td>
+</tr>
+<tr>
+<td>String-to-buffer 1:1</td>
+<td>duk_to_buffer()</td>
+<td>n/a</td>
+<td>文字列は内部表現からバイト単位でバッファに変換される。有効なECMAScript文字列の場合、結果は有効なCESU-8であり、内部表現として使用される。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="plain-buffers">Plain buffers</h2>
+<p>プレーンバッファーの値はUint8Arrayのインスタンスを模倣し、仮想的なプロパティを持つ。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 8バイトのプレーンバッファーを作成します。</span>
+<span class="hljs-keyword">var</span> plain = <span class="hljs-built_in">Uint8Array</span>.allocPlain(<span class="hljs-number">8</span>);  <span class="hljs-comment">// Duktapeカスタムコール</span>
+
+<span class="hljs-comment">// インデックスプロパティを使用して記入する。</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; plain.length; i++) {
+    plain[i] = <span class="hljs-number">0x41</span> + i;
+}
+
+<span class="hljs-comment">// その他の仮想プロパティを出力します。</span>
+print(plain.length);             <span class="hljs-comment">// -&gt; 8</span>
+print(plain.byteLength);         <span class="hljs-comment">// -&gt; 8</span>
+print(plain.byteOffset);         <span class="hljs-comment">// -&gt; 0</span>
+print(plain.BYTES_PER_ELEMENT);  <span class="hljs-comment">// -&gt; 1</span>
+
+<span class="hljs-comment">// プレーンバッファは実際のプロパティテーブルを持っていないので、新しいプロパティを追加することはできません（この動作はプレーン文字列に似ています）。</span>
+plain.dummy = <span class="hljs-string">&apos;foo&apos;</span>;
+print(plain.dummy);              <span class="hljs-comment">// -&gt; undefined</span>
+
+<span class="hljs-comment">// Duktape JXフォーマットでダンプ可能</span>
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, plain)); <span class="hljs-comment">// -&gt; |4142434445464748|</span>
+
+<span class="hljs-comment">// プレーンなバッファは、Uint8Arrayの動作を模倣しています。</span>
+print(<span class="hljs-keyword">typeof</span> plain);             <span class="hljs-comment">// -&gt; object, like Uint8Array</span>
+print(<span class="hljs-built_in">String</span>(plain));            <span class="hljs-comment">// -&gt; [object Uint8Array], like Uint8Array</span>
+</code></pre>
+<p>Uint8Array は、プレーンバッファーの「対応するオブジェクト」です。Stringオブジェクトがプレーンな文字列をラップするのと同じように、プレーンバッファーをラップします。Uint8Arrayは同じ仮想プロパティを持ち、実際のプロパティテーブルを持つので、新しいプロパティも普通に追加することができます。</p>
+<p>両者の変換は簡単にできます。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 8バイトのプレーンバッファーを作成します。</span>
+<span class="hljs-keyword">var</span> plain1 = <span class="hljs-built_in">Uint8Array</span>.allocPlain(<span class="hljs-number">8</span>);
+
+<span class="hljs-comment">// プレーンなバッファと完全なUint8Arrayを変換し、両方とも同じ基礎となるバッファを指すようにします。</span>
+<span class="hljs-keyword">var</span> u8 = <span class="hljs-built_in">Object</span>(plain1);
+
+<span class="hljs-comment">// Uint8Arrayにラップされたプレーンバッファーを取得します。</span>
+<span class="hljs-keyword">var</span> plain2 = <span class="hljs-built_in">Uint8Array</span>.plainOf(u8);  <span class="hljs-comment">// Duktapeカスタムコール</span>
+
+<span class="hljs-comment">// この処理では、&apos;plain1&apos;のコピーは作成されない。</span>
+print(plain1 === plain2);  <span class="hljs-comment">// -&gt; true</span>
+</code></pre>
+<p>プレーンバッファには継承された .buffer プロパティ (ゲッター) があり、同じプレーンバッファへの ArrayBuffer のバッキングを返します。プロパティテーブルがないため、.buffer を読み込むたびに新しい ArrayBuffer インスタンスが作成されます。.bufferプロパティは、コピーを作成せずにプレーンバッファーの上に別のビューを作成することを可能にします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> plain = <span class="hljs-built_in">Uint8Array</span>.allocPlain(<span class="hljs-number">8</span>);
+
+<span class="hljs-comment">// 型付き配列コンストラクタは、Uint8Arrayのようなプレーンな配列を解釈し、初期化配列として扱い、コピーを作成する。  ここで、Uint16Arrayを構築する場合、各入力バイトは16ビットに拡張されます。</span>
+<span class="hljs-keyword">var</span> u16 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint16Array</span>(plain);  <span class="hljs-comment">// 共有ストレージなし</span>
+
+<span class="hljs-comment">// .bufferを使用すると、共有ビューを作成することができます。  ここでは、8バイトのプレーンバッファーの上に2要素のUint32Arrayが作成されています。</span>
+<span class="hljs-keyword">var</span> u32 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint32Array</span>(plain.buffer);  <span class="hljs-comment">// 共有ストレージ</span>
+</code></pre>
+<p>要約すると、プレーンバッファとUint8Arrayの主な違いは以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Plain buffer</th>
+<th>Uint8Array</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creation</td>
+<td>Uint8Array.allocPlain(length)<br>Uint8Array.allocPlain(&apos;stringValue&apos;)<br>Uint8Array.allocPlain([ 1, 2, 3, 4 ])</td>
+<td>new Uint8Array(length)<br>new Uint8Array([ 1, 2, 3, 4 ])</td>
+<td>Uint8Array.allocPlain() は引数の種類が多く、文字列は特別に扱われます（文字列の内部表現がバッファに1:1でコピーされます）。もちろん、CのAPIもバッファの作成に使用できます。</td>
+</tr>
+<tr>
+<td>typeof</td>
+<td>object</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>Object.prototype.toString()</td>
+<td>[object Uint8Array]</td>
+<td>[object Uint8Array]</td>
+<td></td>
+</tr>
+<tr>
+<td>instanceof Uint8Array</td>
+<td>true</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>Property table</td>
+<td>No</td>
+<td>Yes</td>
+<td>プレーンバッファーはプロパティテーブルを持たず、Uint8Array.prototypeを継承しています。プロパティの書き込みは通常無視されますが、例えば、継承されたセッターは書き込みを捕捉することができます。</td>
+</tr>
+<tr>
+<td>.buffer property</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>プレーンバッファーは、プレーンバッファーのバックとなるArrayBufferを返す継承された.bufferゲッターを持っています。読み込むたびに新しい ArrayBuffer のインスタンスが作成されます。</td>
+</tr>
+<tr>
+<td>Allow finalizer</td>
+<td>No</td>
+<td>Yes</td>
+<td>プレーンバッファはUint8Array.prototypeを継承していても、ファイナライザはサポートされていません。</td>
+</tr>
+<tr>
+<td>Object.isExtensible()</td>
+<td>false</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>buf.subarray() result</td>
+<td>Uint8Array</td>
+<td>Uint8Array</td>
+<td>プレーンバッファーはスライスオフセットを表現できないため、プレーンバッファーの .subarray() の結果は Uint8Array オブジェクトになります。</td>
+</tr>
+</tbody>
+</table>
+<p>その他の注意事項</p>
+<ul>
+<li>組み込みの型付き配列バインディングの引数として渡された場合、プレーンバッファはUint8Arrayのように振る舞います。多くの場合、内部実装はまずプレーンバッファを (一時的な) Uint8Array オブジェクトに昇格させ、それを操作に使用します。これは、いくつかのECMAScriptバインディングでプレーンバッファーを使用する際のパフォーマンスに影響します。</li>
+<li>Duktape.dec() のような Duktape 組み込み関数は、メモリ空間を節約するためにプレーンバッファを作成します。もし Uint8Array オブジェクトを明示的に処理したい場合は、例えば Object(Duktape.dec(&apos;hex&apos;, &apos;deadbeef&apos;)) を使用できます。</li>
+</ul>
+<h2 id="jsonとjxのシリアライズ">JSONとJXのシリアライズ</h2>
+<p>Node.jsのBuffer型は.toJSON()メソッドを持っているので、標準的なJSON.stringify()でシリアライズされることになります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> buf = <span class="hljs-keyword">new</span> Buffer(<span class="hljs-string">&apos;ABCD&apos;</span>);
+print(<span class="hljs-built_in">JSON</span>.stringify(buf));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// {&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[65,66,67,68]}</span>
+</code></pre>
+<p>ArrayBufferは列挙可能な独自のプロパティを持たず、.toJSON()もないため、空のオブジェクトとしてシリアライズされます（DataViewも同様）。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> buf = Duktape.dec(<span class="hljs-string">&apos;hex&apos;</span>, <span class="hljs-string">&apos;deadbeef&apos;</span>);
+print(<span class="hljs-built_in">JSON</span>.stringify([ <span class="hljs-number">1</span>, buf, <span class="hljs-number">2</span> ]));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// [1,{},2]</span>
+</code></pre>
+<p>プレーンなバッファと型付き配列には列挙可能なインデックスプロパティがありますが、.toJSON()がないため、（配列ではなく）オブジェクトとしてシリアライズされます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> plain = <span class="hljs-built_in">Uint8Array</span>.allocPlain(<span class="hljs-string">&apos;foo&apos;</span>);
+<span class="hljs-keyword">var</span> u16 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint16Array</span>([ <span class="hljs-number">0x1111</span>, <span class="hljs-number">0x2222</span>, <span class="hljs-number">0x3333</span> ]);
+print(<span class="hljs-built_in">JSON</span>.stringify({ <span class="hljs-attr">plain</span>: plain, <span class="hljs-attr">u16</span>: u16 }));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// {&quot;plain&quot;:{&quot;0&quot;:102,&quot;1&quot;:111,&quot;2&quot;:111},&quot;u16&quot;:{&quot;0&quot;:4369,&quot;1&quot;:8738,&quot;2&quot;:13107}}</span>
+You can <span class="hljs-keyword">of</span> course add a .toJSON() yourself:
+
+<span class="hljs-built_in">Uint8Array</span>.prototype.toJSON = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{
+    <span class="hljs-keyword">var</span> res = [];
+    <span class="hljs-keyword">var</span> nybbles = <span class="hljs-string">&apos;0123456789abcdef&apos;</span>;
+    <span class="hljs-keyword">var</span> u8 = <span class="hljs-built_in">this</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; u8.length; i++) {
+        res[i] = nybbles[(u8[i] &gt;&gt; <span class="hljs-number">4</span>) &amp; <span class="hljs-number">0x0f</span>] +
+                 nybbles[u8[i] &amp; <span class="hljs-number">0x0f</span>];
+    }
+    <span class="hljs-keyword">return</span> res.join(<span class="hljs-string">&apos;&apos;</span>);
+};
+<span class="hljs-keyword">var</span> u8 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>([ <span class="hljs-number">0x41</span>, <span class="hljs-number">0x42</span>, <span class="hljs-number">0x43</span>, <span class="hljs-number">0x44</span> ]);
+print(<span class="hljs-built_in">JSON</span>.stringify({ <span class="hljs-attr">myBuffer</span>: u8 }));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// {&quot;myBuffer&quot;:&quot;41424344&quot;}</span>
+</code></pre>
+<p>Duktape JXフォーマットは、すべてのバッファ・オブジェクトを直接サポートし、.toJSON()メソッドが存在しない限り、プレーン・バッファのようにエンコードします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> u8 = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>([ <span class="hljs-number">0x41</span>, <span class="hljs-number">0x42</span>, <span class="hljs-number">0x43</span>, <span class="hljs-number">0x44</span> ]);
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, { <span class="hljs-attr">myBuffer</span>: u8 }));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// {myBuffer:|41424344|}</span>
+</code></pre>
+<p>JXはスライス情報を尊重します。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> u8a = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>([ <span class="hljs-number">0x41</span>, <span class="hljs-number">0x42</span>, <span class="hljs-number">0x43</span>, <span class="hljs-number">0x44</span> ]);
+<span class="hljs-keyword">var</span> u8b = u8a.subarray(<span class="hljs-number">2</span>);
+print(Duktape.enc(<span class="hljs-string">&apos;jx&apos;</span>, { <span class="hljs-attr">myBuffer</span>: u8a, <span class="hljs-attr">mySlice</span>: u8b }));
+
+<span class="hljs-comment">// Output:</span>
+<span class="hljs-comment">// {myBuffer:|41424344|,mySlice:|4344|}</span>
+</code></pre>
+<p>.toJSON()はJXビルトインバッファーのシリアライズよりも優先されるため（少なくともDuktape 2.xでは）、Node.jsバッファーは、.toJSON()を持っていても、JSON.stringify()と同様にシリアライズされるでしょう。</p>
+<h2 id="cコードでのバッファの使用">Cコードでのバッファの使用</h2>
+<h3 id="タイピング">タイピング</h3>
+<p>C API では、プレーン バッファとバッファオブジェクトは少し異なる動作をします。</p>
+<ul>
+<li>バッファのスタックタイプは DUK_TYPE_BUFFER で、これらは duk_is_buffer() と duk_is_buffer_data() の両方に対して真を判定します。</li>
+<li>バッファオブジェクトスタックタイプは DUK_TYPE_OBJECT で、これらは duk_is_buffer() では偽、duk_is_buffer_data() では真と判定されます。</li>
+</ul>
+<p>これは、文字列が現在 API でどのように動作しているかを模倣しています。文字列オブジェクトも DUK_TYPE_OBJECT タイプタグを持ち、 duk_is_string() に対して false をテストします。しかし、これはおそらく後日、プレーンバッファとバッファオブジェクト（およびプレーン文字列とStringオブジェクト）を互換的に使用できるように変更されるでしょう。</p>
+<h3 id="プレーンバッファ">プレーンバッファ</h3>
+<h4 id="固定バッファの操作">固定バッファの操作</h4>
+<p>固定バッファは、作成後にサイズを変更することはできませんが、最もメモリ効率の良いバッファタイプで、安定したデータポインタを持ちます。固定バッファを作成するには</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *ptr;
+
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_push_fixed_buffer(ctx, <span class="hljs-number">256</span> <span class="hljs-comment">/*size*/</span>);
+
+<span class="hljs-comment">/* これで，バッファが回収されるまで ptr[0] ... ptr[255] の間で安全に読み書きができるようになりました． */</span>
+</code></pre>
+<h4 id="プレーンなダイナミックバッファでの作業">プレーンなダイナミックバッファでの作業</h4>
+<p>ダイナミックバッファは作成後にサイズを変更することができますが、サイズ変更を可能にするために2つのヒープ割り当てを必要とします。ダイナミックバッファのデータポインタはサイズ変更の際に変更される可能性があるため、サイズ変更されたバッファからデータポインタを再ルックアップする必要があります。最も安全な方法は、アクセスする直前に再ルックアップすることです。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *ptr;
+<span class="hljs-keyword">duk_size_t</span> len;
+
+<span class="hljs-comment">/* 動的なバッファを作成し、後で duk_resize_buffer() を使用してサイズを変更できます。 */</span>
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_push_dynamic_buffer(ctx, <span class="hljs-number">64</span> <span class="hljs-comment">/*size*/</span>);
+
+<span class="hljs-comment">/* バッファのリサイズ（またはガベージコレクション）が行われるまで，ptr[0] ... ptr[63] の間で安全に読み書きができるようになりました． */</span>
+
+<span class="hljs-comment">/* バッファは後でサイズ変更することができる。  リサイズAPIコールは、便宜上、新しいデータポインタを返す。 */</span>
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_resize_buffer(ctx, <span class="hljs-number">-1</span>, <span class="hljs-number">256</span> <span class="hljs-comment">/*new_size*/</span>);
+
+<span class="hljs-comment">/* バッファのリサイズまで ptr[0] ... ptr[255] の間で安全に読み書きができるようになりました。 */</span>
+
+<span class="hljs-comment">/* また、明示的に現在のポインタと長さを取得することもできます。最も安全なイディオムは、読み書きの直前にこれを行うことである。 */</span>
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer(ctx, <span class="hljs-number">-1</span>, &amp;len);
+
+<span class="hljs-comment">/* [0,len[ の間で安全に読み書きができるようになりました。 */</span>
+</code></pre>
+<h4 id="プレーンな外部バッファでの作業">プレーンな外部バッファでの作業</h4>
+<p>外部バッファは、ユーザー・コードによって管理されるデータ領域を持っています。Duktapeは、現在のポインタと長さを保存し、すべての読み書きの操作を指定されたメモリ範囲に向けます。ユーザー・コードは、このデータ領域が読み書きに有効であることを保証する責任があり、また、この領域が最終的に解放されることを保証しなければなりません。</p>
+<p>外部バッファを作成するには:</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* 想像例：外部バッファはここで確保されたフレームバッファ。 */</span>
+<span class="hljs-keyword">size_t</span> framebuffer_len;
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *framebuffer_ptr = init_my_framebuffer(&amp;framebuffer_len);
+
+<span class="hljs-comment">/* 外部バッファをプッシュする。  初期状態では、データポインタはNULL、長さは0である。 */</span>
+duk_push_external_buffer(ctx);
+
+<span class="hljs-comment">/* duk_config_buffer() を用いて、特定のメモリ領域に対して外部バッファを設定する。  ポインタは、呼び出し元が既に知っているので、返されません。 */</span>
+duk_config_buffer(ctx, <span class="hljs-number">-1</span>, (<span class="hljs-keyword">void</span> *) framebuffer_ptr, (<span class="hljs-keyword">duk_size_t</span>) framebuffer_len);
+
+<span class="hljs-comment">/* 外部バッファは後から何度でも設定し直すことができます。 */</span>
+
+<span class="hljs-comment">/* また、明示的に現在のポインタと長さを取得することもできます。最も安全なイディオムは、読み書きの直前にこれを行うことである。 */</span>
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer(ctx, <span class="hljs-number">-1</span>, &amp;len);
+</code></pre>
+<h4 id="タイプチェック">タイプチェック</h4>
+<p>すべてのプレーンバッファーのバリエーションは、スタックタイプ DUK_TYPE_BUFFER を持ちます:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_is_buffer(ctx, idx_mybuffer)) {
+    <span class="hljs-comment">/* 値はプレーンバッファ（固定、動的、または外部）です。 */</span>
+}
+</code></pre>
+<p>または同等に:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_get_type(ctx, idx_mybuffer) == DUK_TYPE_BUFFER) {
+    <span class="hljs-comment">/* 値はプレーンバッファ（固定、動的、または外部）です。 */</span>
+}
+</code></pre>
+<h3 id="バッファーオブジェクト">バッファーオブジェクト</h3>
+<p>基本的な使い方をしたテストケースを紹介します。</p>
+<ul>
+<li><a href="https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c" target="_blank">https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-example-1.c</a></li>
+</ul>
+<h4 id="バッファオブジェクトの作成">バッファオブジェクトの作成</h4>
+<p>バッファオブジェクトとビューオブジェクトは、全て duk_push_buffer_object() API 呼び出しで作成されます。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* 1000バイトのバッキングバッファを作成します。  以下に作成するビューでは、バッファの一部のみが表示されます。 */</span>
+duk_push_fixed_buffer(ctx, <span class="hljs-number">1000</span>);
+
+<span class="hljs-comment">/* バイトオフセット100から始まり、バイト長50で、インデックス-1のプレーンバッファにバックアップされた25要素のUint16Arrayを作成します。 */</span>
+duk_push_buffer_object(ctx,
+                       <span class="hljs-number">-1</span> <span class="hljs-comment">/*index of plain buffer*/</span>,
+                       <span class="hljs-number">100</span> <span class="hljs-comment">/*byte offset*/</span>,
+                       <span class="hljs-number">50</span> <span class="hljs-comment">/*byte (!) length */</span>,
+                       DUK_BUFOBJ_UINT16ARRAY <span class="hljs-comment">/*flags and type*/</span>);
+</code></pre>
+<p>これは以下と同等です:</p>
+<pre><code class="lang-c"><span class="hljs-comment">// 引数プレーンバッファ</span>
+var plainBuffer = Uint8Array.allocPlain(<span class="hljs-number">1000</span>);
+
+<span class="hljs-comment">// 既存のプレーンバッファーの上にUint16Arrayを作成します。</span>
+var view = <span class="hljs-keyword">new</span> Uint16Array(plainBuffer.buffer,
+                           <span class="hljs-number">100</span> <span class="hljs-comment">/*byte offset*/</span>,
+                           <span class="hljs-number">25</span> <span class="hljs-comment">/*length in elements (!)*/</span>);
+
+<span class="hljs-comment">// Outputs: 25 100 50 2</span>
+print(view.length, view.byteOffset, view.byteLength, view.BYTES_PER_ELEMENT);
+</code></pre>
+<p>C の呼び出しはバイト長の引数 (50) を取り、ECMAScript の同等品は要素長の引数 (25) を取ることに注意してください。C API ではバッファの長さは常にバイトで表現されるため、これは一貫性を保つための意図的なものです。</p>
+<h4 id="バッファオブジェクトデータポインタの取得">バッファオブジェクトデータポインタの取得</h4>
+<p>バッファオブジェクトのデータポインタと長さを取得します(プレーンバッファでも可能)。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *ptr;
+<span class="hljs-keyword">duk_size_t</span> len;
+<span class="hljs-keyword">duk_size_t</span> i;
+
+<span class="hljs-comment">/* バッファオブジェクトのアクティブスライスへのデータポインタを取得します。  プレーン バッファも受け付けます。 */</span>
+ptr = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer_data(ctx, <span class="hljs-number">-3</span> <span class="hljs-comment">/*idx*/</span>, &amp;len);
+
+<span class="hljs-comment">/* You can now safely access indices [0, len[ of &apos;ptr&apos;. */</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    <span class="hljs-comment">/* Uppercase ASCII characters. */</span>
+    <span class="hljs-keyword">if</span> (ptr[i] &gt;= (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>) <span class="hljs-string">&apos;a&apos;</span> &amp;&amp; ptr[i] &lt;= (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>) <span class="hljs-string">&apos;z&apos;</span>) {
+        ptr[i] += (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>) (<span class="hljs-string">&apos;A&apos;</span> - <span class="hljs-string">&apos;a&apos;</span>);
+    }
+}
+</code></pre>
+<h4 id="タイプチェック">タイプチェック</h4>
+<p>現在のところ、値がバッファオブジェクトであるかどうかをチェックしたり、 特定の型をチェックしたりするための明示的な型チェック API コールは存在しません。しかし、duk_is_buffer_data() APIコールは、プレーンバッファとバッファオブジェクトの両方に対して真を返します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (duk_is_buffer_data(ctx, <span class="hljs-number">0</span>)) {
+    <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p>同様に、duk_get_buffer_data() と duk_require_buffer_data() は、プレーン バッファとバッファオブジェクトの両方を受け付け、C コードでバッファデータを扱うのに適した デフォルトのイディオムです。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* 第一引数には、プレーンバッファまたはバッファオブジェクトを指定します。 */</span>
+<span class="hljs-keyword">duk_size_t</span> len;
+<span class="hljs-keyword">char</span> *buf = (<span class="hljs-keyword">char</span> *) duk_require_buffer_data(ctx, <span class="hljs-number">0</span>, &amp;len);
+<span class="hljs-comment">/* ... buf で作業する場合、有効なオフセット範囲は [0,len[. */</span>
+</code></pre>
+<h3 id="ポインターの安定性と有効性">ポインターの安定性と有効性</h3>
+<p>Duktape APIを通じて取得したバッファ・データ・ポインタは、プレーン・バッファやバッファ・オブジェクトがガベージ・コレクトされた時点で無効となります。データ・ポインターを使用している間、Duktapeがそのバッファに到達可能であることを確認する必要があります。</p>
+<p>これに加えて、バッファに関連するデータ・ポインタは時々変更される可能性があります。</p>
+<ul>
+<li>固定バッファの場合、データポインタは (ガベージコレクションが行われるまで) 安定しています。</li>
+<li>動的バッファでは、バッファが duk_buffer_resize() を使ってサイズ変更されると、データポインタが変更されるかもしれません。</li>
+<li>外部バッファの場合、バッファが duk_buffer_config() を使って再構成されると、データポインタが変化する可能性があります。</li>
+<li>バッファオブジェクトのポインタの安定性は、その下にあるプレーンバッファに依存します。</li>
+</ul>
+<p>Duktapeは、古いポインターの使用からユーザー・コードを保護することができないので、Cコードで使用されるデータ・ポインターが有効であることを確認することが重要です。最も安全な方法は、バッファ・データ・ポインタを使用する前に、常に明示的にバッファ・データ・ポインタを取得することです。例えば、デフォルトでは、バッファポインタをグローバルに保存するのではなく、ループの前にバッファポインタを取得する必要があります（ただし、パフォーマンス上の利点があるなどの理由で正当化される場合はこの限りではありません）。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len, i;
+
+buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer(ctx, <span class="hljs-number">-3</span> <span class="hljs-comment">/*idx*/</span>, &amp;len);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    buf[i] ^= <span class="hljs-number">0x80</span>;  <span class="hljs-comment">/* flip highest bit */</span>
+}
+</code></pre>
+<p>duk_get_buffer_data() と duk_require_buffer_data() は、プレーン バッファとバッファオブジェクトの両方に対して動作するので、この方がより一般的です。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len, i;
+
+buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer_data(ctx, <span class="hljs-number">-3</span> <span class="hljs-comment">/*idx*/</span>, &amp;len);
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    buf[i] ^= <span class="hljs-number">0x80</span>;  <span class="hljs-comment">/* flip highest bit */</span>
+}
+</code></pre>
+<h4 id="ゼロ長のバッファとnullと非nullのポインタ">ゼロ長のバッファとNULLと非NULLのポインタ</h4>
+<p>後述の技術的な理由により、長さが 0 のバッファは NULL または非 NULL のデータポインタを持つことができます。バッファ長が 0 の場合、ポインタを介した読み込み/書き込みは許可されないため、ポインタの値は重要ではありません (例えば ptr[0] はバッファの有効範囲外のバイトを参照することになります)。</p>
+<p>しかし、これはコードを構成する上で実際的な影響があります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len;
+
+buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_get_buffer(ctx, <span class="hljs-number">-3</span>, &amp;len);
+<span class="hljs-keyword">if</span> (buf != <span class="hljs-literal">NULL</span>) {
+    <span class="hljs-comment">/* 値は間違いなくバッファであり、バッファの長さはゼロかもしれない。 */</span>
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">/* 値がバッファでない、または長さが0のバッファであり、NULLデータポインタを持っている可能性があります。 */</span>
+}
+</code></pre>
+<p>型付けを気にしないのであれば、ポインタのチェックを無視して len だけに頼ることもできます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len, i;
+
+<span class="hljs-comment">/* value がバッファでない場合、buf == NULL, len == 0 となる。 */</span>
+buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_get_buffer(ctx, <span class="hljs-number">-3</span>, &amp;len);
+
+<span class="hljs-comment">/* &apos;buf&apos; と &apos;len&apos; を直接使用できる。  ただし、len == 0 の場合、&apos;buf&apos; の有効なデリファレンスはないことに注意。  のようなループではOK。 */</span>
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    <span class="hljs-comment">/* Never entered if len == 0. */</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%i: %d\n&quot;</span>, (<span class="hljs-keyword">int</span>) i, (<span class="hljs-keyword">int</span>) buf[i]);
+}
+</code></pre>
+<p>もし、このような曖昧さが嫌なら、バッファの種類を明示的にチェックすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len, i;
+
+<span class="hljs-comment">/* プレーンなバッファに対しては duk_is_buffer() 、プレーンバッファまたはバッファオブジェクトに対しては duk_is_buffer_data() 。 */</span>
+<span class="hljs-keyword">if</span> (duk_is_buffer(ctx, <span class="hljs-number">-3</span>)) {
+    buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_get_buffer(ctx, <span class="hljs-number">-3</span>, &amp;len);
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+        <span class="hljs-comment">/* Never entered if len == 0. */</span>
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%i: %d\n&quot;</span>, (<span class="hljs-keyword">int</span>) i, (<span class="hljs-keyword">int</span>) buf[i]);
+    }
+}
+</code></pre>
+<p>もし、バッファ以外の値に対してエラーを投げることが許容されるなら、これはおそらく最もクリーンなアプローチでしょう。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *buf;
+<span class="hljs-keyword">duk_size_t</span> len, i;
+
+<span class="hljs-comment">/* または duk_require_buffer_data(). */</span>
+buf = (<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *) duk_require_buffer(ctx, <span class="hljs-number">-3</span>, &amp;len);
+
+<span class="hljs-comment">/* buf はまだ NULL であるかもしれないが、len == 0 の場合のみである。 */</span>
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; len; i++) {
+    <span class="hljs-comment">/* len == 0 の場合、入力されません。 */</span>
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%i: %d\n&quot;</span>, (<span class="hljs-keyword">int</span>) i, (<span class="hljs-keyword">int</span>) buf[i]);
+}
+</code></pre>
+<p>この動作の技術的な理由は、プレーンバッファーのバリエーションごとに異なっています。</p>
+<ul>
+<li>固定バッファのデータ領域はバッファのヒープヘッダと一緒に割り当てられます (ヘッダに直接従います) ので、固定バッファのデータポインタは長さがゼロであっても常に非NULLです。データポインタは単純に (void <em>) ((duk_hbuffer </em>) heaphdr + 1) となります。</li>
+<li>ダイナミックバッファのデータ領域は、別の alloc/realloc 呼び出しで割り当てられます。ANSI C では、ゼロサイズの malloc()/realloc() に対して NULL または非 NULL ポインタを返す実装を認めていますが、そのポインタが後の free() 呼び出しで適切に無視される限りにおいてです。この動作はDuktapeの割り当て関数でも許可されています。ダイナミック・バッファのゼロ長ポインタの動作は、使用するアロケータ関数に直接依存します。</li>
+<li>外部バッファのデータ領域は、ユーザー・コードによって制御されます。ユーザー・コードでは、ゼロ長バッファに対してNULLまたは非NULLポインタを使用することができ、Duktapeは使用するポインタ値を変更しません。</li>
+</ul>
+<h2 id="複合的な使用">複合的な使用</h2>
+<p>Duktape 2.0では、プレーンなバッファはUint8Arrayを模倣し、Node.jsバッファの動作は、バッファがカスタムプロトタイプのUint8ArrayインスタンスであるNode.js v6.7.0 と一致しました。</p>
+<p>その結果、Duktape 2.0では、Duktape 1.xのようにバッファ・タイプを混在させることは一般的に不可能（もしくは必要）になっています。例えば、Duktape.Bufferを何らかのカスタム動作で新しいUint16Array（）の入力引数として使用することができます。</p>
+<h2 id="共通の課題とベストプラクティス">共通の課題とベストプラクティス</h2>
+<h3 id="バッファのサイズ変更およびデータの追加">バッファのサイズ変更およびデータの追加</h3>
+<p>標準の ArrayBuffer と Node.js の Buffer タイプのどちらもバッファのリサイズを許さないので、ArrayBuffer や Node.js バッファにデータを効率的に追加する簡単な方法はありません。些細なことですが、非効率的なアプローチは、常に追加されたデータ用に新しいバッファを作成することです。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Node.jsの例</span>
+<span class="hljs-keyword">var</span> data = <span class="hljs-keyword">new</span> Buffer(<span class="hljs-number">0</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">received</span>(<span class="hljs-params">buf</span>) </span>{
+    data = Buffer.concat([ data, buf ]);
+}
+</code></pre>
+<p>より一般的な手法としては、部品を蓄積しておき、入力が終わった時点で連結する方法がある。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Node.jsの例</span>
+<span class="hljs-keyword">var</span> parts = [];
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">received</span>(<span class="hljs-params">buf</span>) </span>{
+    parts.push(buf);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">finalize</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> final = Buffer.concat(parts);
+}
+</code></pre>
+<p>もう一つの効率的な方法は、ある程度の予備を持ち、容量が足りなくなったときにバッファを2倍にするなどして、過剰なコピーを避けることです。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 型付き配列の例</span>
+<span class="hljs-keyword">var</span> data = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(<span class="hljs-number">64</span>);
+<span class="hljs-keyword">var</span> offset = <span class="hljs-number">0</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">received</span>(<span class="hljs-params">buf</span>) </span>{
+    <span class="hljs-comment">// 受信データ(&apos;buf&apos;)はUint8Arrayである。</span>
+
+    <span class="hljs-keyword">while</span> (data.length - offset &lt; buf.byteLength) {
+        <span class="hljs-comment">// スペースが足りないので、リサイズしてスペースを空けてください。</span>
+        <span class="hljs-keyword">var</span> newBuf = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(data.length * <span class="hljs-number">2</span>);
+        newBuf.set(data);  <span class="hljs-comment">// 古いバイトをコピーする</span>
+        data = newBuf;
+    }
+
+    data.set(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Uint8Array</span>(buf), offset);
+    offset += buf.byteLength;
+}
+
+<span class="hljs-comment">// 蓄積を終了すると、以下のように最終データを抽出することができる。</span>
+<span class="hljs-keyword">var</span> finalArrayBuffer = data.buffer.slice(<span class="hljs-number">0</span>, offset);
+</code></pre>
+<p>Duktape固有のソリューションを使用したい場合、動的なプレーンバッファーは最小限のコストでオンザフライにサイズを変更することができます。動的バッファはECMAScriptのコードからはArrayBufferとして見え、その .length と .byteLength はバッファのリサイズを反映して単に変更されるだけです。動的なプレーンバッファーは C コードからしかサイズ変更できません。外部プレーンバッファはオンザフライで再構成することができ、例えばサイズ変更を可能にします。</p>
+<h2 id="duktapeのカスタムビヘイビアを回避する">Duktapeのカスタムビヘイビアを回避する</h2>
+<p>ECMAScriptにおけるバッファの「ベスト・スタンダード」であるため、ES2015の型付き配列から始めるのがベストでしょう。その際、本当に必要でない限り、Duktape特有の動作は避けてください。特に厄介な点については、以下で説明します。</p>
+<h3 id="nodejsバッファのメモリゼロ化に頼らない">Node.jsバッファのメモリゼロ化に頼らない</h3>
+<p>ES2015の仕様では、新しいArrayBufferの値にはゼロが埋められることが要求されています。Duktape 1.4.0から、DUK_USE_ZERO_BUFFER_DATA設定オプションがオフの場合でも、Duktapeはこれに従います。</p>
+<p>Node.jsはデフォルトで、割り当てられたBufferオブジェクトをゼロにしません。Duktapeは、DUK_USE_ZERO_BUFFER_DATAコンフィグオプションがオフになっていない限り、Node.jsのBufferオブジェクトもゼロにします。</p>
+<h2 id="セキュリティへの配慮">セキュリティへの配慮</h2>
+<p>Duktapeは、どのECMAScriptコードも、基礎となるプレーン・バッファに境界外からアクセスできないことを保証します。</p>
+<p>この保証は、動的なプレーン・バッファを使用してバッファ・オブジェクトを初期化し、それがサイズ変更されて、概念的なバッファ・オブジェクトがサイズ変更後のバッファを越えて拡張された場合でも適用されます。このような場合、Duktapeはあまりきれいな動作を提供しませんが（あるオペレーションは0を返し、あるオペレーションはTypeErrorを投げるなど）、その動作はメモリセーフであることが保証されます。この状況は、次のテストケースで説明されています（そしてテストされています）。</p>
+<ul>
+<li><a href="https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c" target="_blank">https://github.com/svaarala/duktape/blob/master/tests/api/test-bufferobject-dynamic-safety.c</a></li>
+</ul>
+<p>プロパティの読み書きを通じてバッファとやりとりするCコードは、メモリセーフであることが保証されています。C のコードでは、バッファへのポインタと長さをフェッチして、それを直接操作することができま すが、その場合のメモリ安全性はユーザコード次第です。</p>
+<p>外部のプレーンバッファを使用する場合、バッファに設定されたポインタと長さが有効であること、すなわちその範囲内のすべてのバイトが読み取りおよび書き込み可能であることを保証するのはユーザコードに任されています。もしそうでない場合、メモリに安全でない動作が発生する可能性があります。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="how_to_use_finalization.html" class="navigation navigation-prev " aria-label="Previous page: ファイナライゼーションの使い方">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="how_to_work_with_lightfuncs.html" class="navigation navigation-next " aria-label="Next page: lightfuncsの使い方">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Duktape 2.x","level":"4.6","depth":1,"next":{"title":"lightfuncsの使い方","level":"4.7","depth":1,"path":"how_to_work_with_lightfuncs.md","ref":"how_to_work_with_lightfuncs.md","articles":[]},"previous":{"title":"ファイナライゼーションの使い方","level":"4.5","depth":1,"path":"how_to_use_finalization.md","ref":"how_to_use_finalization.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how_to_work_with_buffers_in_duktape_2x.md","mtime":"2022-11-11T06:08:56.709Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

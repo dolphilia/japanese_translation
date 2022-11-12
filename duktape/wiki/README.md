@@ -1,12 +1,13 @@
 # ((o)) Duktape Wiki
 
-Duktapeの公式Wikiへようこそ!
+[原文](https://wiki.duktape.org/home)
 
+Duktapeの公式Wikiへようこそ!
 
 ## ドキュメンテーション
 
-- http://duktape.org/guide.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
-- http://duktape.org/api.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
+- [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/): http://duktape.org/guide.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
+- [Duktape APIリファレンス](https://dolphilia.github.io/japanese_translation/duktape/api/): http://duktape.org/api.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
 
 
 ## はじめに
@@ -17,58 +18,58 @@ Duktapeの公式Wikiへようこそ!
 
 ## How-To
 
-- 致命的なエラーの処理方法
-- 値スタック型の扱い方
-- 関数呼び出しの方法
-- 仮想プロパティの使い方
-- ファイナライゼーションの使い方
-- バッファの扱い方 (Duktape 1.x、Duktape 2.x)
-- lightfuncsの使い方
+- [致命的なエラーの処理方法](how_to_handle_fatal_errors.md)
+- [値スタック型の扱い方](how_to_work_with_calue_stack_types.md)
+- [関数呼び出しの方法](how_to_make_function_calls.md)
+- [仮想プロパティの使い方](how_to_use_virtual_properties.md)
+- [ファイナライゼーションの使い方](how_to_use_finalization.md)
+- バッファの扱い方 (Duktape 1.x、[Duktape 2.x](how_to_work_with_buffers_in_duktape_2x.md))
+- [lightfuncsの使い方](how_to_work_with_lightfuncs.md)
 - [モジュールの使い方](how_to_modules.md)
-- コルーチンの使い方
-- ロギングの使い方
-- ネイティブ・コードでオブジェクト参照を持続させる方法
-- ネイティブのコンストラクタ関数の書き方
-- 配列の反復処理
-- エラー・オブジェクトを拡張する
-- Duktapeバイトコードのデコード方法
-- 非BMP文字を扱うには
-- グローバル・オブジェクトへの参照を取得する方法
-- ベアメタルプラットフォームで動作させる方法
-- デバッグ・プリントを有効にする方法
-- Duktape用のエディターを設定する方法
+- [コルーチンの使い方](how_to_coroutines.md)
+- [ロギングの使い方](how_to_use_logging.md)
+- [ネイティブコードでオブジェクト参照を持続させる方法](how_to_persist_object_references_in_native_code.md)
+- [ネイティブのコンストラクタ関数の書き方](how_to_write_a_native_constructor_function.md)
+- [配列の反復処理](how_to_iterate_over_an_array.md)
+- [エラー・オブジェクトを拡張する](how_to_augment_error_objects.md)
+- [Duktapeバイトコードのデコード方法](how_to_decode_duktape_bytecode.md)
+- [非BMP文字を扱うには](how_to_work_with_non-bmp_characters.md)
+- [グローバル・オブジェクトへの参照を取得する方法](how_to_get_a_reference_to_the_global_object.md)
+- [ベアメタルプラットフォームで動作させる方法](how_to_run_on_bare_metal_platforms.md)
+- [デバッグ・プリントを有効にする方法](how_to_enable_debug_prints.md)
+- [Duktape用のエディターを設定する方法](how_to_configure_your_editor_for_duktape.md)
 
 
 ## よくある質問
 
-- Duktapeを開発するための設定
-- トラブルシューティングの基本
-- 内部プロトタイプと外部プロトタイプ
-- API Cタイプ
-- ES5以降の機能
+- [Duktapeを開発するための設定](development_setup_for_developing_duktape.md)
+- [トラブルシューティングの基本](troubleshooting_basics.md)
+- [内部プロトタイプと外部プロトタイプ](internal_and_external_prototype.md)
+- [API Cタイプ](api_c_types.md)
+- [ES5以降の機能](post-es5_features.md)
 
 
 ## コンフィグと機能オプション
 
-- ビルドのためのDuktapeの設定
-- duk_config.h で使用される設定オプション (DUK_USE_xxx)
+- [ビルドのためのDuktapeの設定](congifuring_duktape_for_build.md)
+- duk_config.h で使用される[設定オプション](config_options.md) (DUK_USE_xxx)
 - コンパイラのコマンドラインオプションとして使用される機能オプション (DUK_OPT_XXX) (Duktape 1.3 まで), https://github.com/svaarala/duktape/tree/master/config/feature-options を参照。
 
 
 ## 移植性と互換性
 
-- 様々なコンパイラとターゲットに対する移植性の注意、コンパイルとトラブルシューティングのヒント
+- 様々なコンパイラとターゲットに対する[移植性](portability.md)の注意、コンパイルとトラブルシューティングのヒント
 - プラットフォーム
 - アーキテクチャー
 - コンパイラ
 - 標準ライブラリ: musl, uclibc
-- TypeScriptとの互換性
+- [TypeScriptとの互換性](compatibility_with_typescript.md)
 
 
 ## パフォーマンス
 
 - http://duktape.org/benchmarks.html
-- パフォーマンスを最適化する方法
+- [パフォーマンスを最適化する方法](how_to_optimize_performance.md)
 - Duktape 1.3.0のパフォーマンス測定
 - Duktape 1.4.0のパフォーマンス測定
 - Duktape 1.5.0のパフォーマンス測定
@@ -89,8 +90,8 @@ Duktapeの公式Wikiへようこそ!
 
 ## その他
 
-- Duktapeを使ったプロジェクト
-- デバッグ・クライアント
+- [Duktapeを使ったプロジェクト](projects_using_duktape.md)
+- [デバッグ・クライアント](debug_clients.md)
 
 
 ## 寄稿、著作権、ライセンス

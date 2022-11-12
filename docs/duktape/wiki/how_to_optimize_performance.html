@@ -1,0 +1,1304 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>パフォーマンスを最適化する方法 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >パフォーマンスを最適化する方法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="パフォーマンスを最適化する方法">パフォーマンスを最適化する方法</h1>
+<p>この記事では、Duktape固有のパフォーマンス特性について説明し、Duktape固有のパフォーマンスの落とし穴を回避するためのヒントを提供します。</p>
+<h2 id="コンパイラ・オプション">コンパイラ・オプション</h2>
+<p>一般的なガイドラインとして</p>
+<ul>
+<li>Gcc/clang -O2 はパフォーマンス最適化のための良いデフォルトです。</li>
+<li>パフォーマンスが重要な場合は、Profile Guided Optimization (PGO)を強く推奨します。</li>
+</ul>
+<p>プレーンな-O2とPGOを使った-O2の差は非常に大きく、しばしば20%程度になります!例えば</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># -O2 without PGO.</span>
+$ time ./duk.O2 tests/perf/test-mandel.js
+[...]
+
+real    0m3.061s
+user    0m3.059s
+sys 0m0.000s
+
+<span class="hljs-comment"># -O2 with PGO.</span>
+$ time ./duk-pgo.O2 tests/perf/test-mandel.js
+[...]
+
+real    0m2.488s
+user    0m2.487s
+sys 0m0.000s
+</code></pre>
+<p>この場合、性能はほぼ20％向上しています。</p>
+<p>参照:</p>
+<ul>
+<li><a href="https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst" target="_blank">https://github.com/svaarala/duktape/blob/master/doc/performance-sensitive.rst</a></li>
+</ul>
+<h2 id="duktapeの性能特性">Duktapeの性能特性</h2>
+<h2 id="ストリングスインターニング">ストリングスインターニング</h2>
+<p>文字列はインターンされます。ある文字列のコピーは、ある時点では1つしか存在しません。文字列のインターンでは、文字列をハッシュ化し、グローバル文字列テーブルを検索して、 その文字列がすでに存在しているかどうかを調べます。存在する場合は、既存の文字列へのポインタが返されます。存在しない場合は、文字列が文字列テーブルに挿入され、文字列テーブルのリサイズを伴う可能性があります。文字列に到達できる間は、文字列は一意で安定したポインタを持つので、バイト単位の文字列比較を単純なポインタ比較に変換することができます。また、文字列ハッシュはインターン中に計算されるので、内部ハッシュテーブルでの文字列キーの使用は効率的です。</p>
+<p>一方、多くの欠点もあります。文字列はインプレースで変更することができず、変更するたびにコピーを作成する必要があります。例えば、文字列の連結を繰り返すと、中間文字列ごとに一時的な値が生成されます。これは、結果文字列を1文字ずつ構築する場合には特に悪い点です。Duktapeの内部プリミティブである文字列の大文字小文字変換や配列結合()は、作成される一時的な文字列の数を最小限にすることで、これらのデメリットを回避しようとしています。</p>
+<h3 id="文字列のメモリ表現と文字列キャッシュ">文字列のメモリ表現と文字列キャッシュ</h3>
+<p>文字列の内部メモリ表現は拡張 UTF-8 で、各 ASCII 文字を 1 バイトで表し、非 ASCII 文字を表すには 2 バイト以上使用します。これにより、ほとんどの文字列のメモリ使用量が削減され、Cコードでの文字列の扱いが容易になります。しかし、ASCII以外の文字列では、文字が可変のバイト数で表現されるため、ランダムアクセスが高価になります。ランダムアクセスは、部分文字列の抽出や、特定の文字インデックスにある文字の検索などの操作に必要です。</p>
+<p>Duktapeは、純粋なASCII文字列を自動的に検出し（文字数とバイト長が同じであることに基づいて）、そのような文字列に対する効率的なランダムアクセスを提供します。</p>
+<p>しかし、文字列が非ASCII文字を含む場合、文字インデックスを内部バイトインデックスに解決するために文字列キャッシュが使用されます。Duktapeは、最近アクセスされた文字列の最後のバイト・オフセットと文字オフセットを 記憶するいくつかの文字列キャッシュ・エントリ（内部定義DUK_HEAP_STRCACHE_SIZE、現在4）を維持します。キャッシュされた文字/バイトオフセット付近の文字インデックス検索は、キャッシュされた位置から後方または前方にスキャンすることで効率的に処理できます。文字列へのアクセスがキャッシュを使用して解決できない場合、文字列は先頭または末尾からスキャンされますが、これは明らかに大きな文字列に対して非常に高価です。キャッシュは非常に単純な LRU メカニズムで維持され、ECMAScript と C の両方のコードに対して透過的です。</p>
+<p>文字列キャッシュは、以下のような単純なループを効率的にします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> i;
+<span class="hljs-keyword">var</span> n = inp.length;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    print(inp.charCodeAt(i));
+}
+</code></pre>
+<p>複数の文字列に対してあちこちからランダムアクセスが行われると、少なくとも長い文字列では、非常に簡単にキャッシュから抜け落ち、高価になる可能性がある。</p>
+<p>なお、キャッシュは各文字列に対して1つ以上のエントリを保持することはないので、以下のようにすると非常に非効率になる。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> i;
+<span class="hljs-keyword">var</span> n = inp.length;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    <span class="hljs-comment">// 文字列の先頭と末尾から交互にアクセスすると、大きな文字列では性能に大きな影響を与えます。</span>
+    print(inp.charCodeAt(i));
+    print(inp.charCodeAt(n - <span class="hljs-number">1</span> - i));
+}
+</code></pre>
+<p>上述したように、これらの性能上の問題は、期待通りの動作をするASCII文字列の場合には完全に回避されます。より一般的には、Duktapeは内部アルゴリズムにおいて、ASCII文字と純粋なASCII文字列のための高速なパスを可能な限り提供します。これは、大文字小文字の変換や正規表現マッチングなどのアルゴリズムに適用されます。</p>
+<h3 id="配列とバッファの数値インデックス・アクセス">配列とバッファの数値インデックス・アクセス</h3>
+<p>(密な)配列やプレーンなバッファ値の数値インデックスの読み書きに高速なパスがあります (例: x = buf[123] または buf[123] = x)。</p>
+<p>バッファオブジェクト（Duktape.Buffer、Node.js Buffer、ArrayBuffer、TypedArrayビュー）にも同様の高速パスがありますが、20%ほど遅くなります。</p>
+<h3 id="objectarray-storage">Object/array storage</h3>
+<p>オブジェクトのプロパティは、安定した順序付け (挿入順序) を提供する線形キー/値リストに格納されます。オブジェクトが十分なプロパティを持つ場合 (内部定義 DUK_HOBJECT_E_USE_HASH_LIMIT、現在は 32) 、プロパティ検索を高速化するためにハッシュ検索テーブルも確保されます。この場合でも、ECMAScript の実装で実用的な要件であるキーの順序は保持されます。ハッシュ部分はほとんどのオブジェクトで避けられます。なぜなら、ハッシュ部分はメモリフットプリントを増加させ、非常に小さなオブジェクトのプロパティ検索を著しく高速化することができないからです。</p>
+<p>ほとんどのオブジェクトのプロパティ検索は、オブジェクトのプロパティテーブルとの線形比較になります。プロパティは挿入順にプロパティテーブルに保持されるため、先に追加されたプロパティは後に追加されたプロパティよりも若干高速にアクセスできます。オブジェクトが大きくなり、ハッシュテーブルが必要になると、この効果はなくなります。</p>
+<p>配列の要素は、メモリフットプリントを減らし、アクセスを高速化するために、特別な「配列部分」に格納されます。数値インデックスを持つ配列へのアクセスは、まず公式に数値を文字列に変換し (例えば x[123] から x[&quot;123&quot;] へ) 、それから文字列のキー検索を行います。オブジェクトが配列部分を持つ場合、ほとんどの読み書きの場面で実際には一時文字列は作成されません。</p>
+<p>配列部分は「スパース」、つまりマッピングされていないエントリーを含むことができます。Duktapeは時々配列部分の密度を再チェックし、あまりに疎になった場合は配列部分を放棄します（現在の限界はおおよそ、配列部分の要素の25%未満しかマップされていない場合、その配列部分は放棄されます）。その後、配列のエントリは通常のオブジェクトプロパティに変換され、マッピングされた配列の各インデックスは明示的な文字列キー（&quot;123 &quot;など）に変換されますが、これは比較的高価な処理です。一度放棄された配列部分は、たとえそのオブジェクトが配列部分を必要とするほど高密度であったとしても、再作成されることはありません。</p>
+<p>配列部分の要素は、（アクセッサではなく）プレーンなプロパティであり、デフォルトのプロパティ属性（書き込み可能、列挙可能、設定可能）であることが要求されます。もし、これと異なる要素があれば、配列部分は放棄され、配列要素は通常のプロパティに変換されます。</p>
+<h3 id="識別子へのアクセス">識別子へのアクセス</h3>
+<p>Duktapeには、識別子（関数の引数、ローカル変数、関数宣言）の格納とアクセスに、高速パスと低速パスの2つのモードがあります。高速パスは、識別子を仮想マシン・レジスタ、つまり関数に割り当てられた仮想スタック・フレーム内の固定インデックスにバインドできる場合に使用されます。この場合、識別子へのアクセスは単に配列検索となります。スローパスは、ファーストパスが安全に使用できない場合に使用されます。識別子へのアクセスは、外部または内部オブジェクトの明示的なプロパティ検索に変換され、1桁以上遅くなります。</p>
+<p>識別子へのアクセスを高速な経路で維持するために</p>
+<ul>
+<li>トップレベルの global や eval コードではなく、ECMAScript 関数内で (ほとんどすべての) コードを実行します。global/eval コードでは高速パス識別子アクセスを使用しません (ただし global/eval 内の関数コードでは使用します)。</li>
+<li>頻繁にアクセスされる値は、グローバルオブジェクトや他のオブジェクトから探すのではなく、ローカル変数に格納する。</li>
+</ul>
+<h3 id="列挙">列挙</h3>
+<p>オブジェクトをfor-in文やObject.keys()で列挙する場合、Duktapeはまず対象となるオブジェクトとそのプロトタイプ・チェーンを走査して、すべての列挙キーを文字列として含む内部列挙オブジェクトを形成します。特に、すべての配列インデックス（文字列の場合は文字インデックス）は、列挙の前に文字列値に変換され、列挙が完了するまでインターナルされたままになります。これは、特に大きな配列や文字列を列挙する場合、メモリを大量に消費する可能性があります。</p>
+<p>しかし、文字列や配列をfor-inで反復処理し、配列要素や文字列インデックスが昇順で列挙されることを期待することは、移植性がないことに注意してください。このような動作は、Duktapeを含む多くの実装で保証されていますが、ECMAScript E5.1標準では保証されていません。</p>
+<h3 id="関数の特徴">関数の特徴</h3>
+<p>ECMAScriptには、関数の入力と実行を非常に高価にするいくつかの特徴があります。Duktape ECMAScriptコンパイラの一般的な目標は、ほとんどの関数で厄介な機能を回避し、残りの関数では完全な互換性を提供することです。</p>
+<p>理想的なコンパイル済み関数は、その全ての変数と関数が仮想マシン・レジスタに束縛され、パス識別子への高速アクセスを可能にし、入力時の引数オブジェクトの生成を避け、入力時および実行時の明示的な語彙環境記録の生成を避け、内部識別子-レジスタ結合テーブルなどの語彙環境関連の制御情報を保存しないようにします。</p>
+<p>以下の機能は、実行性能に大きな影響を与えます。</p>
+<ul>
+<li>引数オブジェクトへのアクセス: 引数オブジェクトにアクセスする場合に備えて，関数エントリ時に高価なオブジェクトを生成する必要がある．</li>
+<li>eval()を直接呼び出す場合：引数の初期化が必要で、評価されるコードが必要とする場合に備えて完全な識別子バインディング情報を保持する必要がある。</li>
+<li>一般にグローバルコードと eval コードでは、識別子は仮想マシンのレジスタにバインドされず、明示的なプロパティ検索が使用されます。eval コード内のステートメントも暗黙の値を持つため、評価するためにバイトコード命令が必要になります。</li>
+</ul>
+<p>以下の機能は、より穏やかな影響を与えます。</p>
+<ul>
+<li>try-catch-finallyステートメント： catch変数の動的バインディングが必要であり、現時点では比較的高価である。</li>
+<li>withステートメント：オブジェクトのバインディングが必要であり、現時点では比較的高価である。</li>
+<li>バインドされた関数（Function.prototype.bind()で生成された関数）の使用：追加の関数オブジェクトが生成され，バインドされた関数オブジェクトの処理と引数のシャッフルにより，関数起動が遅くなる．</li>
+<li>約250以上の正式な引数、リテラル、アクティブなテンポラリ：バイトコードがレジスタシャッフリングを使用するようになり、バイトコードのサイズが大きくなって実行速度が遅くなる。</li>
+</ul>
+<p>これらを避けるには、パフォーマンスが重要な部分を別の最小限の関数に分離し、上記の機能を使用しないようにします。</p>
+<h2 id="一時的な文字列の使用を最小限に抑える">一時的な文字列の使用を最小限に抑える</h2>
+<p>一時的な文字列はすべてインターナル化する。特に、ループの中で文字列を蓄積するのは良くない。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> t = <span class="hljs-string">&apos;&apos;</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1024</span>; i++) {
+    t += <span class="hljs-string">&apos;x&apos;</span>;
+}
+</code></pre>
+<p>これは1025個の文字列をインターンすることになる。実行時間は O(n^2) で、n はループの限界です。代わりに一時的な配列を使用するのがよいでしょう。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> t = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1024</span>; i++) {
+    t[i] = <span class="hljs-string">&apos;x&apos;</span>;
+}
+t = t.join(<span class="hljs-string">&apos;&apos;</span>);
+</code></pre>
+<p>ここでは、xは関数定数に一度インターンされ、各配列エントリは単純に同じ文字列を参照し、通常、配列エントリあたり8バイトしかかかりません。最後のArray.prototype.join()は不要なインターンを回避し、一度に最後の文字列を作成します。</p>
+<h2 id="できるだけ大きな非ascii文字列は避けるべき">できるだけ大きな非ASCII文字列は避けるべき</h2>
+<p>1つ以上の非ASCII文字を含む大きな文字列の中のランダムな文字オフセットにアクセスする必要がある操作は避けてください。このようなアクセスは内部の「文字列キャッシュ」を使用する必要があり、最悪の場合、文字オフセットに対応する正しいバイトオフセットを見つけるために文字列を総当たりでスキャンする必要があるかもしれません。</p>
+<p>大文字小文字の変換やその他の Unicode 関連の操作は、ASCII コードポイントに対しては高速なパスがありますが、非 ASCII コードポイントに対しては低速なパスにフォールバックされます。この遅いパスはサイズに最適化されており、速度に最適化されておらず、多くの場合、線形範囲マッチングを伴います。</p>
+<h2 id="bufferオブジェクトではなく、プレーンなバッファの値に対して反復処理を行う。">Bufferオブジェクトではなく、プレーンなバッファの値に対して反復処理を行う。</h2>
+<p>バッファの内容に数値インデックスでアクセスする場合、バッファオブジェクトとプレーンなバッファの値の両方が高速なパスを持ちます。プレーンバッファーの値の高速パスは少し速いので、反復処理の前にプレーンバッファーを取得すれば、コードの実行は速くなります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> b, i, n;
+
+<span class="hljs-comment">// Buffer object, typeof is &apos;object&apos;</span>
+<span class="hljs-keyword">var</span> bufferValue = <span class="hljs-keyword">new</span> Duktape.Buffer(<span class="hljs-string">&apos;foo&apos;</span>);
+print(<span class="hljs-keyword">typeof</span> bufferValue);  <span class="hljs-comment">// &apos;object&apos;</span>
+
+<span class="hljs-comment">// プレーンなバッファを取得する（すでにプレーンであれば問題なし</span>
+b = bufferValue.valueOf();
+print(<span class="hljs-keyword">typeof</span> b);  <span class="hljs-comment">// always &apos;buffer&apos;</span>
+
+n = b.length;
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+    print(i, b[i]);  <span class="hljs-comment">// プレーンバッファアクセスのための高速パス</span>
+}
+</code></pre>
+<p>バッファを作成する場合、new Duktape.Buffer(x) は常に Buffer オブジェクトを作成し、 Duktape.Buffer(x) はプレーン・バッファの値を返すことに注意してください。これはECMAScriptのnew String()とString()がどのように動作するかを真似ています。可能な限り、プレーン・バッファを優先すべきです。</p>
+<h2 id="可能な限り疎な配列は避ける">可能な限り疎な配列は避ける</h2>
+<p>もし配列がある時点であまりに疎になった場合、Duktapeはその配列部分を永久に放棄し、配列のプロパティを明示的に文字列をキーとするプロパティに変換します。これは例えば、配列が降順のインデックスで初期化されている場合などに起こります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> arr = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">1000</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+    <span class="hljs-comment">// 悪い点：最初の書き込みで配列部分を永久に放棄してしまう。</span>
+    arr[i] = i * i;
+}
+</code></pre>
+<p>最初の配列書き込みの直後は，配列部分に1001個のエントリがあり，マッピングされた配列要素は1つだけです．したがって、配列の密度は0.1%未満となります。これは、アレイ部分を放棄するための密度制限をはるかに下回っているため、アレイ部分は直ちに放棄されます。最終的に配列の密度は100%になりますが、復元されることはありません。昇順インデックスを使用すると、この問題は解決されます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> arr = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+    arr[i] = i * i;
+}
+</code></pre>
+<p>配列の length プロパティを手動で設定しても、それ自体で配列部分が放棄されることはありません。少し単純化すると、配列の密度チェックは、最も使用されている要素（実際に割り当てられているサイズ）に対するマッピングされた要素数を比較するものです。lengthプロパティはこのチェックに影響しません。配列の長さをあらかじめ設定することで、効果的に配列を事前割り当てする実装もありますが、少なくとも現時点では、Duktapeではそのような効果はありません。例えば</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> arr = [];
+arr.length = <span class="hljs-number">1001</span>;  <span class="hljs-comment">// 配列部分は捨てないが、Duktapeでは高速化せず</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) {
+    arr[i] = i * i;
+}
+</code></pre>
+<h2 id="for-in-ではなく明示的なインデックスによる配列の反復処理">&quot;for-in &quot;ではなく明示的なインデックスによる配列の反復処理</h2>
+<p>内部の列挙オブジェクトには、文字列値に変換されたすべての（使用された）配列インデックスが含まれているため、少なくとも大きな配列のfor-in列挙は避けてください。具体的な例として、考えてみましょう。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) {
+  a[i] = i;
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> a) {
+  <span class="hljs-comment">// Before this loop is first entered, a million strings (&quot;0&quot;, &quot;1&quot;,</span>
+  <span class="hljs-comment">// ..., &quot;999999&quot;) will be interned.</span>
+  print(i, a[i]);
+}
+<span class="hljs-comment">// The million strings become garbage collectable only here.</span>
+</code></pre>
+<p>この例で作成された内部列挙オブジェクトは、&quot;0&quot;, &quot;1&quot;, ..., &quot;999999 &quot;の100万個の内部文字列キーを含むことになる。これらのキーはすべて、列挙の全期間にわたって到達可能なままである。次のコードは、列挙の順序を仮定していないので、より良いパフォーマンスを発揮する。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = [];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) {
+  a[i] = i;
+}
+<span class="hljs-keyword">var</span> n = a.length;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+  print(i, a[i]);
+}
+</code></pre>
+<h2 id="トップレベルのグローバルエバリュエーションコードの最小化">トップレベルのグローバル/エバリュエーションコードの最小化</h2>
+<p>グローバルコードと評価コードの識別子アクセスは、常にスローパス命令を使用して正しさを保証します。これは、識別子が関数起動のレジスタにマッピングされる高速パスよりも、少なくとも数桁遅いです。</p>
+<p>つまり、これは遅いのです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+    print(i);
+}
+</code></pre>
+<p>iの読み取りと書き込みはそれぞれ、明示的な環境レコードの検索となり、基本的には文字列キーiを持つ内部環境レコードオブジェクトからプロパティを検索することになる。</p>
+<p>ほとんどのコードを関数に入れることで最適化する。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+        print(i);
+    }
+}
+main();
+</code></pre>
+<p>ここでは，iwillは関数レジスタにマップされ，各アクセスは単純なレジスタ参照（基本的にはタグ付き値へのポインタ）となり，スローパスよりはるかに高速になります．</p>
+<p>明示的な関数名をつけたくない場合は、次のようにします。</p>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> i;
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; i++) {
+      print(i);
+    }
+})();
+</code></pre>
+<p>評価コードは暗黙のうちに戻り値を提供しますが、これも性能に影響を及ぼします。例えば、次のようなことを考えてみてください。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> res = <span class="hljs-built_in">eval</span>(<span class="hljs-string">&quot;if (4 &gt;= 3) { &apos;foo&apos;; } else { &apos;bar&apos;; }&quot;</span>);
+print(res);  <span class="hljs-comment">// prints &apos;foo&apos;</span>
+</code></pre>
+<p>このようなコードをサポートするために、コンパイラは、文の暗黙の戻り値を、それが必要とされる場合に備えて一時的なレジスタに格納するバイトコードを発行します。これらの命令は実行速度を低下させ、バイトコードのサイズを不必要に増加させます。</p>
+<h2 id="外部変数よりローカル変数を優先">外部変数よりローカル変数を優先</h2>
+<p>変数が仮想マシンレジスタに束縛されている場合、識別子の検索はグローバルオブジェクトや他のオブジェクトの明示的なプロパティ検索を使用するよりもはるかに高速になります。</p>
+<p>外部の値や関数が複数回必要な場合は、代わりにローカル変数にコピーします。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">slow</span>(<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-keyword">var</span> i;
+
+    <span class="hljs-comment">// &apos;x.length&apos;は明示的なプロパティ検索であり、ループごとに発生する</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; x.length; i++) {
+        <span class="hljs-comment">// &apos;print&apos; は、グローバルオブジェクトのプロパティを検索します。</span>
+        print(x[i]);
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fast</span>(<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-keyword">var</span> i;
+    <span class="hljs-keyword">var</span> n = x.length;
+    <span class="hljs-keyword">var</span> p = print;
+
+    <span class="hljs-comment">// ループ内のすべてのアクセスは、レジスタにバインドされた識別子を介して行われるようになりました。</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+        p(x[i]);
+    }
+}
+</code></pre>
+<p>このような最適化は、コードの可読性を低下させることが多いので、重要な場合にのみ使用してください。</p>
+<h2 id="undefined-の使用">&quot;undefined &quot;の使用</h2>
+<p>ECMAScriptにおいてundefinedの値は、実際にはリテラルではなく、グローバル変数であるため、興味深いものです。そのため、undefinedとして参照すると、Duktapeは現在、遅いパス変数読み取りを使用してそれを読み取ります。例えば</p>
+<pre><code class="lang-js">    print(<span class="hljs-string">&quot;undefined is: &quot;</span> + <span class="hljs-literal">undefined</span>);
+</code></pre>
+<p>次のようなバイトコードを生成します。</p>
+<pre><code>    ; constant 19: &quot;undefined&quot;
+
+    ...
+    GETVAR r123, c19   ; load undefined
+    ...
+</code></pre><p>これは遅く、必要以上に大きなバイトコードを使用します。void null (または同等の void 0 など) を使うと、よりよいバイトコードが生成されます。例えば</p>
+<pre><code class="lang-js">    print(<span class="hljs-string">&quot;undefined is: &quot;</span> + <span class="hljs-keyword">void</span> <span class="hljs-literal">null</span>);
+</code></pre>
+<p>次のようなバイトコードを生成します。</p>
+<pre><code>    ...
+    LDUNDEF r123
+    ...
+</code></pre><p>これは、遅いパスアクセスがないため、より高速です。また、グローバルな未定義バインディングがそのままであることに依存しなくなったので、コードもより良くなっています。</p>
+<h2 id="jsonstringify-高速パス">JSON.stringify() 高速パス</h2>
+<p>JSON.stringify()シリアライズには、replacer引数がない場合に使用されるfast pathが用意されています。Duktape 1.4.0で、インデント引数とJX/JCサポートが高速パスに追加されました。</p>
+<p>高速パスは、シリアライズされる値を変化させるかもしれない副作用のリスクを負わずに引数値をシリアライズできると仮定し、必要に応じてより低速なデフォルト・アルゴリズムにフォールバックすることになります。</p>
+<p>これは少なくとも以下の場合に起こります。</p>
+<ul>
+<li>任意のオブジェクトに toJSON() プロパティがあります。</li>
+<li>任意のオブジェクトのプロパティはゲッターです</li>
+<li>任意のオブジェクトがプロキシ</li>
+</ul>
+<p>現在の制限に関する詳細な注意点は、test-bi-json-enc-fastpath.jsを参照してください。高速パスの前提条件と制限は、Duktapeのリリース間で変更される可能性が非常に高いです。</p>
+<p>高速パスは現在、デフォルトでは有効になっていません。有効にするには、DUK_USE_JSON_STRINGIFY_FASTPATH が duk_config.h で有効になっていることを確認してください。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"パフォーマンスを最適化する方法","level":"8.2","depth":1,"next":{"title":"Duktape 1.3.0のパフォーマンス測定","level":"8.3","depth":1,"ref":"","articles":[]},"previous":{"title":"http://duktape.org/benchmarks.html","level":"8.1","depth":1,"url":"http://duktape.org/benchmarks.html","ref":"http://duktape.org/benchmarks.html","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how_to_optimize_performance.md","mtime":"2022-11-12T05:20:34.261Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

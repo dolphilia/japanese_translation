@@ -19,6 +19,7 @@
 
 - [Duktape APIリファレンス](https://dolphilia.github.io/japanese_translation/duktape/api/)
 - [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/)
+- [Duktape Wiki](https://dolphilia.github.io/japanese_translation/duktape/wiki/)
 - [HonKit](https://dolphilia.github.io/japanese_translation/honkit/)
 - [Natural Docs](https://dolphilia.github.io/japanese_translation/natural_docs/)
 - [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)

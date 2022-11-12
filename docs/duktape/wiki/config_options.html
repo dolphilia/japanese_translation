@@ -1,0 +1,2060 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>設定オプション · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="congifuring_duktape_for_build.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >設定オプション</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="duktapeの設定オプション">Duktapeの設定オプション</h1>
+<h2 id="platform-and-portability-options">Platform and portability options</h2>
+<h3 id="dukuse32bitptrs">DUK_USE_32BIT_PTRS</h3>
+<p>Pointers are 32-bit integer compatible.</p>
+<p>Default: False</p>
+<h3 id="dukuse64bitops">DUK_USE_64BIT_OPS</h3>
+<p>Use 64-bit integer operations. On some platforms 64-bit types may be available but 64-bit operations don&apos;t work correctly e.g. in integer/float casts.</p>
+<p>Default: True</p>
+<h3 id="dukusealign4">DUK_USE_ALIGN_4</h3>
+<p>Use 4-byte alignment for 64-bit integers and IEEE doubles. Replaced by DUK_USE_ALIGN_BY.</p>
+<p>Default: False</p>
+<h3 id="dukusealign8">DUK_USE_ALIGN_8</h3>
+<p>Use 8-byte alignment for 64-bit integers and IEEE doubles. Replaced by DUK_USE_ALIGN_BY.</p>
+<p>Default: False</p>
+<h3 id="dukusealignby">DUK_USE_ALIGN_BY</h3>
+<p>Use N-byte alignment for 64-bit integers and IEEE doubles (supported values are 1, 4, and 8).</p>
+<p>Default: 8</p>
+<h3 id="dukuseallowundefinedbehavior">DUK_USE_ALLOW_UNDEFINED_BEHAVIOR</h3>
+<p>Allow technically undefined behavior such as out-of-range double-to-integer casts, floating point division by zero, etc. which are likely to work on the majority of platforms. Default is to avoid such behaviors, at the cost of some footprint and performance.</p>
+<p>Default: False</p>
+<h3 id="dukusearchstring">DUK_USE_ARCH_STRING</h3>
+<p>Human-readable architecture string used in e.g. Duktape.env and debugger protocol (example: x64).</p>
+<p>Default: {&apos;string&apos;: &apos;unknown&apos;}</p>
+<h3 id="dukuseatan2workarounds">DUK_USE_ATAN2_WORKAROUNDS</h3>
+<p>Enable workarounds to common atan2() semantics issues. At least Cygwin/MinGW has such issues, see test-bug-mingw-math-issues.js.</p>
+<p>Default: False</p>
+<h3 id="dukuseavoidplatformfuncptrs">DUK_USE_AVOID_PLATFORM_FUNCPTRS</h3>
+<p>Don&apos;t assume that platform functions (e.g. math functions) are actual functions. This option is needed if platform functions may be defined as macros. This is certainly the case with some platform &quot;polyfills&quot; which provide missing C99/C++11 functions through macros, and may be the case with VS2013 (see GH-17).</p>
+<p>This is now the default: the cost in footprint is negligible.</p>
+<p>Default: True</p>
+<h3 id="dukusebranchhints">DUK_USE_BRANCH_HINTS</h3>
+<p>Use branch hints if the compiler supports them.</p>
+<p>Default: True</p>
+<h3 id="dukusebyteorder">DUK_USE_BYTEORDER</h3>
+<p>Byte order for platform: 1 = little endian, 2 = mixed (arm hybrid) endian, 3 = big endian.</p>
+<p>ARM mixed endian means integers are little endian but IEEE doubles have mixed endianness: big endian bytes 12345678 are ordered in memory as 43218765. See <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0056d/Bcfhgcgd.html" target="_blank">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0056d/Bcfhgcgd.html</a>.</p>
+<p>(This define should be produced by duk<em>config.h; currently Duktape internals use automatically derived defines DUK_USE{INTEGER,DOUBLE}</em>{LE,BE_ME} instead of using this define directly.)</p>
+<p>Default: 0</p>
+<h3 id="dukusebyteorderforced">DUK_USE_BYTEORDER_FORCED</h3>
+<p>Byte order was forced (instead of being autodetected). This has no functional impact but the forced status shows up in Duktape.env.</p>
+<p>Default: False</p>
+<h3 id="dukuseclangpragmas">DUK_USE_CLANG_PRAGMAS</h3>
+<p>Use Clang-specific pragmas, e.g. &quot;#pragma clang diagnostic&quot; to suppress unnecessary warnings.</p>
+<p>Default: False</p>
+<h3 id="dukusecompilerreclimit">DUK_USE_COMPILER_RECLIMIT</h3>
+<p>ECMAScript compiler native call stack recursion limit.</p>
+<p>Default: 2500</p>
+<h3 id="dukusecompilerstring">DUK_USE_COMPILER_STRING</h3>
+<p>Human-readable compiler string used in e.g. Duktape.env and debugger protocol (example: gcc).</p>
+<p>Default: {&apos;string&apos;: &apos;unknown&apos;}</p>
+<h3 id="dukusecomputedinfinity">DUK_USE_COMPUTED_INFINITY</h3>
+<p>The DUK_DOUBLE_INFINITY is not a constant but refers to a global variable with an IEEE double infinity value computed at run-time. Some compilers don&apos;t provide a constant for infinity, and may incorrectly evaluate (1 / 0) when doing constant folding.</p>
+<p>When enabled, define DUK_DOUBLE_INFINITY as duk_computed_infinity.</p>
+<p>Default: False</p>
+<h3 id="dukusecomputednan">DUK_USE_COMPUTED_NAN</h3>
+<p>The DUK_DOUBLE_NAN is not a constant but refers to a global variable with an IEEE NaN value computed at run-time. Some compilers don&apos;t provide a constant for NaN, and may incorrectly evaluate (0 / 0) when doing constant folding.</p>
+<p>When enabled, define DUK_DOUBLE_NAN as duk_computed_nan.</p>
+<p>Default: False</p>
+<h3 id="dukusecppexceptions">DUK_USE_CPP_EXCEPTIONS</h3>
+<p>Use C++ exceptions instead of setjmp/longjmp for long control transfers. This allows Duktape/C functions written in C++ to use automatic destructors (RAII or scope-based resource management).</p>
+<p>Default: False</p>
+<h3 id="dukusedeepcstack">DUK_USE_DEEP_C_STACK</h3>
+<p>Assume deep C stacks are not an issue on the target platform; on some embedded platforms the native C stack is very limited (e.g. 32-64 kB) and overrunning the stack leads to difficult-to-diagnose problems.</p>
+<p>Removed in Duktape 1.3.0, replaced by explicit recursion limits.</p>
+<p>Default: True</p>
+<h3 id="dukusedoublebe">DUK_USE_DOUBLE_BE</h3>
+<p>IEEE double memory representation is big endian on the target platform.</p>
+<p>Default: False</p>
+<h3 id="dukusedoublele">DUK_USE_DOUBLE_LE</h3>
+<p>IEEE double memory representation is little endian on the target platform.</p>
+<p>Default: True</p>
+<h3 id="dukusedoubleme">DUK_USE_DOUBLE_ME</h3>
+<p>IEEE double memory representation is mixed endian on the target platform. In other words the logical bytes ABCDEFGH are represented in memory as DCBAHGFE. This endianness is used by some ARM platforms.</p>
+<p>Default: False</p>
+<h3 id="dukuseexplicitnullinit">DUK_USE_EXPLICIT_NULL_INIT</h3>
+<p>When zeroing structures, don&apos;t rely on memzero initializing pointers to NULL. Instead, write NULL values explicitly after zeroing. This should only be necessary when a NULL pointer is not represented by zero bytes in memory.</p>
+<h1 id="note-condition-in-duktape-12-seems-wrong-and-is-linked-to-packed-tval">NOTE: Condition in Duktape 1.2 seems wrong, and is linked to packed tval.</h1>
+<p>Default: False</p>
+<h3 id="dukusefatalhandler">DUK_USE_FATAL_HANDLER</h3>
+<p>Provide a custom default fatal error handler to replace the built-in one (which calls abort() without any error message). The default fatal error handler gets called when (1) a fatal error occurs and application code didn&apos;t register a fatal error handler in heap creation or (2) a context-free fatal error happens, concretely e.g. an assertion failure.</p>
+<p>The handler is called like a C function with the prototype &quot;void fatal_handler(void udata, const charmsg)&quot;. The &quot;msg&quot; argument can be NULL. The &quot;udata&quot; argument matches the heap-related userdata but is NULL for fatal errors unrelated to a heap/thread context (this is the case for e.g. assertions).</p>
+<p>A custom default fatal error handler is recommended for any environment where recover from fatal errors is important. A custom handler can take appropriate action to recover, e.g. record the error and reboot the target device.</p>
+<p>Default: False</p>
+<h3 id="dukusefatalmaxlen">DUK_USE_FATAL_MAXLEN</h3>
+<p>Maximum length of fatal error message string when error is thrown by Duktape internals, in particular for uncaught errors.</p>
+<p>Default: 128</p>
+<h3 id="dukuseflexc99">DUK_USE_FLEX_C99</h3>
+<p>Use C99 flexible array member for defining variable size structures.</p>
+<p>Default: True</p>
+<h3 id="dukuseflexonesize">DUK_USE_FLEX_ONESIZE</h3>
+<p>Use a single element array to define variable size structures. This is the most portable alternative: zero-size arrays are not allowed by all compilers and flexible array member (&quot;char arr[]&quot;) is defined in C99.</p>
+<p>Default: False</p>
+<h3 id="dukuseflexzerosize">DUK_USE_FLEX_ZEROSIZE</h3>
+<p>Use a zero element array to define variable size structures. This is not fully portable but works with some compilers and is preferred over using a one element array.</p>
+<p>Default: False</p>
+<h3 id="dukusegccpragmas">DUK_USE_GCC_PRAGMAS</h3>
+<p>Use GCC-specific pragmas, e.g. &quot;#pragma GCC diagnostic&quot; to suppress unnecessary warnings.</p>
+<p>Default: False</p>
+<h3 id="dukusegetmonotonictime">DUK_USE_GET_MONOTONIC_TIME</h3>
+<p>Optional macro for getting monotonic time in milliseconds from an arbitrary starting point (device startup, program startup, script startup, etc). Fractional time values are allowed (and even recommended). The time returned must increase monotonically, and must not jump discontinuously even if system date/time is reset. The semantics are similar to POSIX clock_gettime() CLOCK_MONOTONIC.</p>
+<p>Monotonic time is used by Duktape for its internal needs, such as rate limiting debugger transport peek callbacks. It is also used to provide performance.now(). If this option is not provided, Duktape falls back to using DUK_USE_DATE_GET_NOW() which is usually fine.</p>
+<p>If DUK_USE_DATE_GET_NOW() experiences time jumps or doesn&apos;t run in realtime (which may be useful for some time virtualization cases) it&apos;s recommended to provide this config option so that internals which need a reliable realtime rate have a reliable time basis.</p>
+<p>Default: False</p>
+<h3 id="dukusegetmonotonictimeclockgettime">DUK_USE_GET_MONOTONIC_TIME_CLOCK_GETTIME</h3>
+<p>Use clock_gettime(CLOCK_MONOTONIC, ...) for monotonic time on POSIX platforms.</p>
+<p>Default: False</p>
+<h3 id="dukusegetmonotonictimewindowsqpc">DUK_USE_GET_MONOTONIC_TIME_WINDOWS_QPC</h3>
+<p>Use QueryPerformanceCounter() for monotonic time on Windows.</p>
+<p>Default: False</p>
+<h3 id="dukusegetrandomdouble">DUK_USE_GET_RANDOM_DOUBLE</h3>
+<p>Override the default internal random number generator which is used for Math.random() and some other internal call sites (currently, for example, Array.prototype.sort()). The default random number generator has a very low footprint but is not suitable for serious statistics algorithms or cryptography. Overriding the random number generator may thus be useful in some environments.</p>
+<p>The macro gets a heap userdata argument and must provide an IEEE double in the range [0,1[.</p>
+<p>Default: False</p>
+<h3 id="dukusehashbytesunalignedu32access">DUK_USE_HASHBYTES_UNALIGNED_U32_ACCESS</h3>
+<p>Allow unaligned 32-bit unsigned integer access in hashbytes algorithm.</p>
+<p>Default: False</p>
+<h3 id="dukusehobjectlayout1">DUK_USE_HOBJECT_LAYOUT_1</h3>
+<p>Use layout variant 1 for object properties. Layout 1 can be used when the target has no alignment restrictions. It is preferable to other layouts because it produces smaller code and provides direct access to property keys.</p>
+<p>Default: False</p>
+<h3 id="dukusehobjectlayout2">DUK_USE_HOBJECT_LAYOUT_2</h3>
+<p>Use layout variant 2 for object properties. Layout 2 can be used on any target (including targets with alignment restrictions).</p>
+<p>Default: True</p>
+<h3 id="dukusehobjectlayout3">DUK_USE_HOBJECT_LAYOUT_3</h3>
+<p>Use layout variant 3 for object properties. Layout 3 can be used on any target (including targets with alignment restrictions). It&apos;s a bit more packed than layout variant 2 but has a bit slower lookups.</p>
+<p>Default: False</p>
+<h3 id="dukuseintegerbe">DUK_USE_INTEGER_BE</h3>
+<p>Integer memory representation is big endian on the target platform.</p>
+<p>Default: False</p>
+<h3 id="dukuseintegerle">DUK_USE_INTEGER_LE</h3>
+<p>Integer memory representation is little endian on the target platform.</p>
+<p>Default: True</p>
+<h3 id="dukuseintegerme">DUK_USE_INTEGER_ME</h3>
+<p>Integer memory representation is mixed endian on the target platform.</p>
+<p>This option is unused (and unsupported) because no target platform currently needs this.</p>
+<p>Default: False</p>
+<h3 id="dukusejsondecreclimit">DUK_USE_JSON_DEC_RECLIMIT</h3>
+<p>Maximum native stack recursion for JSON decoding.</p>
+<p>Default: 1000</p>
+<h3 id="dukusejsonencreclimit">DUK_USE_JSON_ENC_RECLIMIT</h3>
+<p>Maximum native stack recursion for JSON encoding.</p>
+<p>Must be higher than the internal DUK_JSON_ENC_LOOPARRAY define when DUK_USE_JSON_STRINGIFY_FASTPATH is enabled.</p>
+<p>Default: 1000</p>
+<h3 id="dukusemarkandsweepreclimit">DUK_USE_MARK_AND_SWEEP_RECLIMIT</h3>
+<p>Mark-and-sweep C recursion depth for marking phase; if reached, mark object as a TEMPROOT and use multi-pass marking (slower but same result).</p>
+<p>Default: 256</p>
+<h3 id="dukusemathfmax">DUK_USE_MATH_FMAX</h3>
+<p>Assume platform function fmax() is available and works correctly. Some platforms don&apos;t have fmax() (it is defined in C99) and on some platforms (e.g. some uclibc environments) it may not be provided even though the compilation environment is nominally C99.</p>
+<p>Removed in Duktape 2.0.0: if the platform doesn&apos;t have fmax(), simply define a replacement for DUK_FMAX().</p>
+<p>Default: True</p>
+<h3 id="dukusemathfmin">DUK_USE_MATH_FMIN</h3>
+<p>Assume platform function fmin() is available and works correctly. Some platforms don&apos;t have fmin() (it is defined in C99) and on some platforms (e.g. some uclibc environments) it may not be provided even though the compilation environment is nominally C99.</p>
+<p>Removed in Duktape 2.0.0: if the platform doesn&apos;t have fmin(), simply define a replacement for DUK_FMIN().</p>
+<p>Default: True</p>
+<h3 id="dukusemathround">DUK_USE_MATH_ROUND</h3>
+<p>Assume platform function round() is available and works correctly. Some platforms don&apos;t have round() (it is defined in C99) and on some platforms (e.g. some uclibc environments) it may not be provided even though the compilation environment is nominally C99.</p>
+<p>Removed in Duktape 2.0.0: if the platform doesn&apos;t have round(), simply define a replacement for DUK_ROUND(). Currently DUK_ROUND() isn&apos;t used at all however.</p>
+<p>Default: True</p>
+<h3 id="dukusenativecallreclimit">DUK_USE_NATIVE_CALL_RECLIMIT</h3>
+<p>Maximum duk_handle_call() / duk_handle_safe_call() C recursion limit. Note that this does not limit bytecode executor internal call depth at all (e.g. for ECMAScript-to-ECMAScript calls, thread yields/resumes, etc). There is a separate callstack depth limit for threads which is independent of this limit.</p>
+<p>Default: 1000</p>
+<h3 id="dukusenativestackcheck">DUK_USE_NATIVE_STACK_CHECK</h3>
+<p>Provide a macro hook to check for available native stack space for the currently executing native thread. The macro must evaluate to zero if there is enough stack space available and non-zero otherwise; a RangeError will then be thrown.</p>
+<p>The definition of &quot;enough space&quot; depends on the target platform and the compiler because the size of native stack frames cannot be easily known in advance. As a relatively safe estimate, one can check for 8kB of available stack.</p>
+<p>Duktape doesn&apos;t call this macro for every internal native call. The macro is called in code paths that are involved in potentially unlimited recursion (such as making Ecmascript/native function calls, invoking getters and Proxy traps, and resolving Proxy chains) and code paths requiring a lot of stack space temporarily.</p>
+<p>Default: False</p>
+<h3 id="dukusenodoublealiasingselftest">DUK_USE_NO_DOUBLE_ALIASING_SELFTEST</h3>
+<p>Disable double aliasing selftest (if self tests enabled).</p>
+<p>Double aliasing testcase fails when Emscripten-generated code is run. This is not fatal because it only affects packed duk_tval which we avoid with Emscripten.</p>
+<p>Default: False</p>
+<h3 id="dukuseosstring">DUK_USE_OS_STRING</h3>
+<p>Human-readable operating system string used in e.g. Duktape.env and debugger protocol (example: linux).</p>
+<p>Default: {&apos;string&apos;: &apos;unknown&apos;}</p>
+<h3 id="dukusepackedtval">DUK_USE_PACKED_TVAL</h3>
+<p>Use a packed 8-byte representation for duk_tval. The packed representation represents non-number values as special IEEE double NaN values, and is only possible for platforms with 32-bit pointers. When the packed representation is not available, Duktape uses a 12-16 byte struct/union which is more portable.</p>
+<p>Default: False</p>
+<h3 id="dukusepackedtvalpossible">DUK_USE_PACKED_TVAL_POSSIBLE</h3>
+<p>Define when packed, 8-byte duk_tval representation is possible.</p>
+<p>Default: False</p>
+<h3 id="dukusepackclangattr">DUK_USE_PACK_CLANG_ATTR</h3>
+<p>Use clang-specific attribute to force struct packing.</p>
+<p>Default: False</p>
+<h3 id="dukusepackdummymember">DUK_USE_PACK_DUMMY_MEMBER</h3>
+<p>Use dummy struct member to force struct packing.</p>
+<p>Default: False</p>
+<h3 id="dukusepackgccattr">DUK_USE_PACK_GCC_ATTR</h3>
+<p>Use gcc-specific attribute to force struct packing.</p>
+<p>Default: False</p>
+<h3 id="dukusepackmsvcpragma">DUK_USE_PACK_MSVC_PRAGMA</h3>
+<p>Use msvc-specific attribute to force struct packing.</p>
+<p>Default: False</p>
+<h3 id="dukusepanicabort">DUK_USE_PANIC_ABORT</h3>
+<p>Call abort() when the default panic handler is invoked.</p>
+<p>Default: True</p>
+<h3 id="dukusepanicexit">DUK_USE_PANIC_EXIT</h3>
+<p>Call exit() when the default panic handler is invoked.</p>
+<p>Default: False</p>
+<h3 id="dukusepanichandler">DUK_USE_PANIC_HANDLER</h3>
+<p>Provide a custom panic handler. A custom panic handler is recommended for any environment where recovery from fatal errors is important. A custom handler can take appropriate action to recover, e.g. record the error and reboot the target device.</p>
+<p>Default: False</p>
+<h3 id="dukusepanicsegfault">DUK_USE_PANIC_SEGFAULT</h3>
+<p>Cause an intentional segfault when the default panic handler is invoked. This is useful when debugging with valgrind because a segfault provides a nice C traceback in valgrind.</p>
+<p>Default: False</p>
+<h3 id="dukuseparanoiddatecomputation">DUK_USE_PARANOID_DATE_COMPUTATION</h3>
+<p>There was a curious bug where test-bi-date-canceling.js would fail e.g. on 64-bit Ubuntu, gcc-4.8.1, -m32, and no -std=c99. Some date computations using doubles would be optimized which then broke some corner case tests. The problem goes away by adding &apos;volatile&apos; to the datetime computations. Not sure what the actual triggering conditions are, but using this on non-C99 systems solves the known issues and has relatively little cost on other platforms.</p>
+<p>Recommended for non-C99 platforms.</p>
+<p>Default: False</p>
+<h3 id="dukuseparanoidmath">DUK_USE_PARANOID_MATH</h3>
+<p>Rely as little as possible on compiler behavior for NaN comparison, signed zero handling, etc. May be needed for (very) broken compilers.</p>
+<p>Default: False</p>
+<h3 id="dukusepownetbsdworkaround">DUK_USE_POW_NETBSD_WORKAROUND</h3>
+<p>NetBSD 6.0 x86 (at least) has a few problems with pow() semantics, see test-bug-netbsd-math-pow.js. Use NetBSD specific workaround.</p>
+<p>(This might be a wider problem; if so, generalize the define name.)</p>
+<p>Default: False</p>
+<h3 id="dukusepowworkarounds">DUK_USE_POW_WORKAROUNDS</h3>
+<p>Enable workarounds to common pow() semantics issues. At least NetBSD 6.0 x86 and Cygwin/MinGW have such issues, see test-bug-netbsd-math-pow.js and test-bug-mingw-math-issues.js.</p>
+<p>Default: False</p>
+<h3 id="dukuseprovidedefaultallocfunctions">DUK_USE_PROVIDE_DEFAULT_ALLOC_FUNCTIONS</h3>
+<p>Provide default allocation functions.</p>
+<p>At the moment this option should be enabled.</p>
+<p>Default: True</p>
+<h3 id="dukuserdtsc">DUK_USE_RDTSC</h3>
+<p>Macro to provide an x86/x64 RDTSC timestamp for debug prints.</p>
+<p>Default: False</p>
+<h3 id="dukuseregexpcompilerreclimit">DUK_USE_REGEXP_COMPILER_RECLIMIT</h3>
+<p>RegExp compiler native call stack recursion limit.</p>
+<p>Default: 10000</p>
+<h3 id="dukuseregexpexecutorreclimit">DUK_USE_REGEXP_EXECUTOR_RECLIMIT</h3>
+<p>RegExp executor native call stack recursion limit.</p>
+<p>Default: 10000</p>
+<h3 id="dukusereplfpclassify">DUK_USE_REPL_FPCLASSIFY</h3>
+<p>Provide a built-in replacement for fpclassify(), duk_repl_fpclassify.</p>
+<p>When enabled, define DUK_FPCLASSIFY as duk_repl_fpclassify.</p>
+<p>Default: False</p>
+<h3 id="dukusereplisfinite">DUK_USE_REPL_ISFINITE</h3>
+<p>Provide a built-in replacement for isfinite(), duk_repl_isfinite.</p>
+<p>When enabled, define DUK_ISFINITE as duk_repl_isfinite.</p>
+<p>Default: False</p>
+<h3 id="dukusereplisinf">DUK_USE_REPL_ISINF</h3>
+<p>Provide a built-in replacement for isinf(), duk_repl_isinf.</p>
+<p>When enabled, define DUK_ISINF as duk_repl_isinf.</p>
+<p>Default: False</p>
+<h3 id="dukusereplisnan">DUK_USE_REPL_ISNAN</h3>
+<p>Provide a built-in replacement for isnan(), duk_repl_isnan.</p>
+<p>When enabled, define DUK_ISNAN as duk_repl_isnan.</p>
+<p>Default: False</p>
+<h3 id="dukusereplsignbit">DUK_USE_REPL_SIGNBIT</h3>
+<p>Provide a built-in replacement for signbit(), duk_repl_signbit.</p>
+<p>When enabled, define DUK_SIGNBIT as duk_repl_signbit.</p>
+<p>Default: False</p>
+<h3 id="dukusesetjmp">DUK_USE_SETJMP</h3>
+<p>Use setjmp/longjmp for long control transfers. This is the most portable option for long control transfers.</p>
+<p>The downside of setjmp/longjmp is that signal mask saving behavior is not specified and varies between platforms. Signal mask saving may have a significant performance impact so you may want to force a specific provider if performance matters for your application. (This is the case for OSX, for instance.)</p>
+<p>Removed in Duktape 1.5.0: edit duk_config.h directly.</p>
+<p>Default: True</p>
+<h3 id="dukusesigsetjmp">DUK_USE_SIGSETJMP</h3>
+<p>Use sigsetjmp/siglongjmp with savesigs == 0 for long control transfers (i.e. signal mask not saved/restored). See comments in DUK_USE_SETJMP.</p>
+<p>Removed in Duktape 1.5.0: edit duk_config.h directly.</p>
+<p>Default: False</p>
+<h3 id="dukuseunalignedaccessespossible">DUK_USE_UNALIGNED_ACCESSES_POSSIBLE</h3>
+<p>Target architecture unaligned memory accesses (e.g. 32-bit integer access from an arbitrary address).</p>
+<p>Default: False</p>
+<h3 id="dukuseunderscoresetjmp">DUK_USE_UNDERSCORE_SETJMP</h3>
+<p>Use _setjmp/_longjmp for long control transfers. This ensures signal mask is not saved which can be a lot faster if setjmp/longjmp saves the signal mask (this varies between platforms). See comments in DUK_USE_SETJMP.</p>
+<p>Removed in Duktape 1.5.0: edit duk_config.h directly.</p>
+<p>Default: False</p>
+<h3 id="dukuseunioninitializers">DUK_USE_UNION_INITIALIZERS</h3>
+<p>Compiler supports C99-style designated union initializers, e.g. { .foo = 123 }.</p>
+<p>When disabled, Duktape sometimes needs to resort to less efficient struct initializers for portability.</p>
+<p>Default: False</p>
+<h3 id="dukuseuserdeclare">DUK_USE_USER_DECLARE</h3>
+<p>Provide declarations or additional preprocessor include directives to be used when compiling Duktape. You may need this if you set DUK_USE_PANIC_HANDLER to call your own panic handler function. You can also use this option to cause additional files to be included when compiling Duktape.</p>
+<p>NOTE: This is only needed if using the default autodetecting duk_config.h header. When providing DUK_USE_xxx flags directly, you should just provide all the necessary declarations in duk_config.h directly.</p>
+<p>Default: {&apos;verbatim&apos;: &apos;#define DUK_USE_USER_DECLARE() /<em> no user declarations </em>/&apos;}</p>
+<h3 id="dukuseuserinitjs">DUK_USE_USER_INITJS</h3>
+<p>Provide a string to evaluate when a thread with new built-ins (a new global environment) is created. This allows you to make minor modifications to the global environment before any code is executed in it. The value must be a string, e.g.:: -DDUK_OPT_USER_INITJS=&apos;&quot;this.foo = 123&quot;&apos;.</p>
+<p>Errors in the initialization code result in a fatal error.</p>
+<p>Default: False</p>
+<h3 id="dukusevariadicmacros">DUK_USE_VARIADIC_MACROS</h3>
+<p>Compiler supports C99-style variadic macros. Highly recommended to enable when possible.</p>
+<p>When disabled, Duktape needs to resort to various hacks to work around missing support for variadic macros.</p>
+<p>Default: True</p>
+<h2 id="memory-management-options">Memory management options</h2>
+<h3 id="dukuseextstrfree">DUK_USE_EXTSTR_FREE</h3>
+<p>Optional counterpart to DUK_USE_EXTSTR_INTERN_CHECK. Invoked when an external string is about to be freed by Duktape.</p>
+<p>The argument &quot;ptr&quot; is a void ptr and points to the external string data. Concretely, it is the (non-NULL) value returned by DUK_USE_EXTSTR_INTERN_CHECK. The &quot;udata&quot; argument is the heap userdata which may be ignored if not needed.</p>
+<p>Also enable DUK_USE_HSTRING_EXTDATA to use this feature.</p>
+<p>NOTE: Right now there is no API to push external strings; external strings come into being as a result of DUK_USE_EXTSTR_INTERN_CHECK() only. If/when this is changed, this hook will get called for every string, even if pushed by the user using an API call; this may need to be rethought at that time.</p>
+<p>Default: False</p>
+<h3 id="dukuseextstrinterncheck">DUK_USE_EXTSTR_INTERN_CHECK</h3>
+<p>Provide a hook for checking if data for a certain string can be used from external memory (outside of Duktape heap, e.g. memory mapped flash). The hook is called during string interning with the following semantics:</p>
+<p>The string data with no NUL termination resides at &quot;ptr&quot; and has &quot;len&quot; bytes. The &quot;udata&quot; argument is the heap userdata which may be ignored if not needed. If the hook returns NULL, Duktape interns the string normally, i.e. string data is allocated from Duktape heap. Otherwise the hook return value must point to a memory area which contains &quot;len&quot; bytes from &quot;ptr&quot; followed by a NUL byte which is NOT PRESENT in the input data. Data behind the returned pointer may not change after the hook returns.</p>
+<p>The hook may be called several times for the same input string. This happens when a string is interned, garbage collected, and then interned again.</p>
+<p>The DUK_USE_EXTSTR_FREE() hook allows application code to detect when an external string is about to be freed.</p>
+<p>In most cases the hook should reject strings whose &quot;len&quot; is less than 4 because there is no RAM advantage in moving so short strings into external memory. The ordinary &quot;duk_hstring&quot; header followed by the data (and a NUL byte) has the same size as &quot;duk_hstring_external&quot; header which hosts a pointer instead of string data.</p>
+<p>Also enable DUK_USE_HSTRING_EXTDATA to use this feature.</p>
+<p>See doc/low-memory.rst for more discussion how to use this feature option in practice.</p>
+<p>Default: False</p>
+<h3 id="dukusehstringextdata">DUK_USE_HSTRING_EXTDATA</h3>
+<p>Enable support for external strings. An external string requires a Duktape heap allocation to store a minimal string header, with the actual string data being held behind a pointer (similarly to how dynamic buffers work).</p>
+<p>This option is needed to use DUK_USE_EXTSTR_INTERN_CHECK and/or DUK_USE_EXTSTR_FREE.</p>
+<p>Default: False</p>
+<h3 id="dukusezerobufferdata">DUK_USE_ZERO_BUFFER_DATA</h3>
+<p>Zero data are of newly allocated buffer values (recommended).</p>
+<p>When disabled, buffers are not zeroed and may contain arbitrary data. Disabling this option only makes sense for performance reasons.</p>
+<p>Default: True</p>
+<h2 id="low-memory-options">Low memory options</h2>
+<h3 id="dukusebuflen16">DUK_USE_BUFLEN16</h3>
+<p>Use a 16-bit buffer length field (for low memory environments).</p>
+<p>Default: False</p>
+<h3 id="dukusedataptr16">DUK_USE_DATAPTR16</h3>
+<p>Enable &quot;compression&quot; of arbitrary data pointers into an unsigned 16-bit value. Use together with DUK_USE_DATAPTR_ENC16 and DUK_USE_DATAPTR_DEC16.</p>
+<p>Pointers compressed are any void pointers in C code, not just the Duktape heap. Also NULL pointer must encode and decode correctly.</p>
+<p>Currently it is required that NULL encodes to integer 0, and integer 0 decodes to NULL. No other pointer can be encoded to 0.</p>
+<p>NOTE: This feature option is currently unimplemented, i.e. Duktape won&apos;t compress any data pointers at the moment.</p>
+<p>Default: False</p>
+<h3 id="dukusedataptrdec16">DUK_USE_DATAPTR_DEC16</h3>
+<p>Use together with DUK_USE_DATAPTR16 for arbitrary data pointer compression. DUK_USE_DATAPTR_DEC16(udata,x) is a macro with a userdata and duk_uint16_t argument, and a void ptr return value. The userdata argument is the heap userdata value given at heap creation.</p>
+<p>Default: False</p>
+<h3 id="dukusedataptrenc16">DUK_USE_DATAPTR_ENC16</h3>
+<p>Use together with DUK_USE_DATAPTR16 for arbitrary data pointer compression. DUK_USE_DATAPTR_ENC16(udata,p) is a macro with a userdata and void ptr argument, and a duk_uint16_t return value. The userdata argument is the heap userdata value given at heap creation. Currently it is required that NULL encodes to integer 0, and integer 0 decodes to NULL. No other pointer can be encoded to 0.</p>
+<p>Default: False</p>
+<h3 id="dukuseexecprefersize">DUK_USE_EXEC_PREFER_SIZE</h3>
+<p>Prefer size over performance in bytecode executor.</p>
+<p>Default: False</p>
+<h3 id="dukusefuncptr16">DUK_USE_FUNCPTR16</h3>
+<p>Enable &quot;compression&quot; of arbitrary data pointers into an unsigned 16-bit value. Use together with DUK_USE_DATAPTR_ENC16 and DUK_USE_DATAPTR_DEC16.</p>
+<p>Pointers compressed are any void pointers in C code, not just the Duktape heap. Also NULL pointer must encode and decode correctly.</p>
+<p>Currently it is required that NULL encodes to integer 0, and integer 0 decodes to NULL. No other pointer can be encoded to 0.</p>
+<p>NOTE: This feature option is currently unimplemented, i.e. Duktape won&apos;t compress any data pointers at the moment.</p>
+<p>Default: False</p>
+<h3 id="dukusefuncptrdec16">DUK_USE_FUNCPTR_DEC16</h3>
+<p>Use together with DUK_USE_FUNCPTR16 for arbitrary data pointer compression. DUK_USE_FUNCPTR_ENC16(udata,p) is a macro with a userdata and void ptr argument, and a duk_uint16_t return value. The userdata argument is the heap userdata value given at heap creation. Currently it is required that NULL encodes to integer 0, and integer 0 decodes to NULL. No other pointer can be encoded to 0.</p>
+<p>Default: False</p>
+<h3 id="dukusefuncptrenc16">DUK_USE_FUNCPTR_ENC16</h3>
+<p>Use together with DUK_USE_FUNCPTR16 for arbitrary data pointer compression. DUK_USE_FUNCPTR_DEC16(udata,x) is a macro with a userdata and duk_uint16_t argument, and a void ptr return value. The userdata argument is the heap userdata value given at heap creation.</p>
+<p>Default: False</p>
+<h3 id="dukuseheapptr16">DUK_USE_HEAPPTR16</h3>
+<p>Enable &quot;compression&quot; of Duktape heap pointers into an unsigned 16-bit value. Use together with DUK_USE_HEAPPTR_ENC16 and DUK_USE_HEAPPTR_DEC16.</p>
+<p>Pointers compressed are those allocated from Duktape heap, using the user provided allocation functions. Also NULL pointer must encode and decode correctly.</p>
+<p>Currently it is required that NULL encodes to integer 0, and integer 0 decodes to NULL. No other pointer can be encoded to 0.</p>
+<p>This option reduces memory usage by several kilobytes, but has several downsides. It can only be applied when Duktape heap is limited in size, for instance, with 4-byte aligned allocations a 256kB heap (minus one value for NULL) can be supported. Pointer encoding and decoding may be relatively complicated as they need to correctly handle NULL pointers and non-continuous memory maps used by some targets. The macro may need to call out to a helper function in practice, which is much slower than an inline implementation.</p>
+<p>Current limitation: Duktape internal debug code enabled with e.g. DUK_USE_DEBUG and DUK_USE_DEBUG_LEVEL=0 doesn&apos;t have enough plumbing to be able to decode pointers. Debug printing cannot currently be enabled when pointer compression is active.</p>
+<p>Default: False</p>
+<h3 id="dukuseheapptrdec16">DUK_USE_HEAPPTR_DEC16</h3>
+<p>Use together with DUK_USE_HEAPPTR16 for heap pointer compression. DUK_USE_HEAPPTR_DEC16(udata,x) is a macro with a userdata and duk_uint16_t argument, and a void ptr return value. The userdata argument is the heap userdata value given at heap creation.</p>
+<p>Default: False</p>
+<h3 id="dukuseheapptrenc16">DUK_USE_HEAPPTR_ENC16</h3>
+<p>Use together with DUK_USE_HEAPPTR16 for heap pointer compression. DUK_USE_HEAPPTR_ENC16(udata,p) is a macro with a userdata and void ptr argument, and a duk_uint16_t return value. The userdata argument is the heap userdata value given at heap creation.</p>
+<p>Default: False</p>
+<h3 id="dukusehobjecthashpart">DUK_USE_HOBJECT_HASH_PART</h3>
+<p>Use a hash table for objects that have enough properties. This should be enabled unless the target is very low on memory.</p>
+<p>If DUK_USE_OBJSIZES16 is defined, this option must not be defined.</p>
+<p>Default: True</p>
+<h3 id="dukusehstringarridx">DUK_USE_HSTRING_ARRIDX</h3>
+<p>When enabled, duk_hstring stores a precomputed array index (or &quot;not an array index&quot;) value related to the string. This reduces code footprint and improves performance a littl ebit.</p>
+<p>When disabled, duk_hstring has a flag indicating whether it is an array index or not, but the actual value is computed on-the-fly.</p>
+<p>Default: True</p>
+<h3 id="dukusehstringclen">DUK_USE_HSTRING_CLEN</h3>
+<p>When DUK_USE_STRLEN16 enabled, indicates whether the character length (clen16) field should be actually present (default) or computed on-the-fly.</p>
+<p>When clen is computed on-the-fly the duk_hstring structure will be 4 bytes smaller (from 10 bytes + 2 bytes padding to 8 bytes) which may be useful for very low memory targets.</p>
+<p>Default: True</p>
+<h3 id="dukuselexerslidingwindow">DUK_USE_LEXER_SLIDING_WINDOW</h3>
+<p>Use a sliding window approach for managing the lexer codepoint lookup window (recommended). If disabled, the lexer uses a slower algorithm which has a slightly smaller code and RAM footprint.</p>
+<p>Default: True</p>
+<h3 id="dukuselightfuncbuiltins">DUK_USE_LIGHTFUNC_BUILTINS</h3>
+<p>Force built-in functions to be lightweight functions. This reduces memory footprint by around 14 kB at the cost of some non-compliant behavior.</p>
+<p>Default: False</p>
+<h3 id="dukuseobjsizes16">DUK_USE_OBJSIZES16</h3>
+<p>Use a 16-bit object entry and array part sizes (for low memory environments). Also automatically drops support for an object hash part to further reduce memory usage; there are rarely large objects in low memory environments simply because there&apos;s no memory to store a lot of properties.</p>
+<p>Default: False</p>
+<h3 id="dukuseprefersize">DUK_USE_PREFER_SIZE</h3>
+<p>Catch-all flag which can be used to choose between variant algorithms where a speed-size tradeoff exists (e.g. lookup tables). When it really matters, specific use flags may be appropriate.</p>
+<p>Default: False</p>
+<h3 id="dukuserefcount16">DUK_USE_REFCOUNT16</h3>
+<p>Use a 16-bit reference count field (for low memory environments).</p>
+<p>Default: False</p>
+<h3 id="dukuseromglobalclone">DUK_USE_ROM_GLOBAL_CLONE</h3>
+<p>When using ROM built-in objects, create a RAM-based global object by copying the properties of the ROM-based global object into a fresh empty object.</p>
+<p>Having a writable global object is usually expected; if the global object is not writable, it&apos;s not possible to e.g. declare functions outside of CommonJS modules.</p>
+<p>Default: False</p>
+<h3 id="dukuseromglobalinherit">DUK_USE_ROM_GLOBAL_INHERIT</h3>
+<p>When using ROM built-in objects, create a RAM-based global object by creating a fresh empty object which inherits from the ROM-based global object. This provides all the standard bindings with a small RAM footprint cost, but still allows the global object to be extended and existing bindings overwritten (but not deleted). The downside of this compared to cloning a global object is that the inheritance is not fully transparent and the result is less compliant.</p>
+<p>Having a writable global object is usually expected; if the global object is not writable, it&apos;s not possible to e.g. declare functions outside of CommonJS modules.</p>
+<p>Default: False</p>
+<h3 id="dukuseromobjects">DUK_USE_ROM_OBJECTS</h3>
+<p>Enable support for built-in objects compiled as constants and placed in a read-only data section. This reduces startup RAM usage considerably at the cost of a larger code footprint and slower performance overall. The built-in objects will be immutable: the objects will be non-extensible.</p>
+<p>ROM objects will always be non-extensible and properties are forced to be non-configurable. Other property attributes will have their usual values; in particular, properties can be &quot;writable&quot; from a property attributes standpoint, but an attempt to actually change the property value will fail with a TypeError. This may seem strange, but is necessary to allow a property value to be overridden in a RAM object inheriting from a ROM object: if the inherited ROM property was not writable, ECMAScript semantics would prevent a new property from being established in the RAM object.</p>
+<p>Default: False</p>
+<h3 id="dukuseromptrcompfirst">DUK_USE_ROM_PTRCOMP_FIRST</h3>
+<p>When using ROM pointer compression ROM pointers are compressed to the integer range [DUK_USE_ROM_PTRCOMP_FIRST,0xffff]. The default value allows for 2048 ROM pointers, which can point to objects and strings.</p>
+<p>You may need to lower this value to support more pointers if there are a lot of custom ROM strings/objects.</p>
+<p>Default: 63488</p>
+<h3 id="dukuseromstrings">DUK_USE_ROM_STRINGS</h3>
+<p>Enable support for built-in (and optional user-supplied strings) which are compiled as constants and placed in a read-only data section. This reduces startup RAM usage considerably at the cost of a larger code footprint and slower string interning.</p>
+<p>Default: False</p>
+<h3 id="dukusestrhash16">DUK_USE_STRHASH16</h3>
+<p>Use a 16-bit string hash field (for low memory environments).</p>
+<p>Default: False</p>
+<h3 id="dukusestrlen16">DUK_USE_STRLEN16</h3>
+<p>Use a 16-bit string length field (for low memory environments).</p>
+<p>Default: False</p>
+<h3 id="dukusestrtabchain">DUK_USE_STRTAB_CHAIN</h3>
+<p>Replace the default (open addressing, probing) string table structure with one based on separate chaining. There is a fixed-size top level hash table (whose size is defined using DUK_USE_STRTAB_CHAIN_SIZE), with each entry in the hash table being: (a) NULL, (b) a duk_hstring pointer, or (c) a pointer to an array of duk_hstring pointers. The pointer arrays are gappy (the gaps are reused on new inserts) and are never shrunk at the moment.</p>
+<p>This option is intended for low memory environments to make Duktape&apos;s memory behavior match a typical pool-based allocator better as follows:</p>
+<p>The top level fixed structure never changes size, so there is no hash table resize, and thus no need for resize temporaries. The default string table algorithm needs resizing from time to time and doesn&apos;t resize in place, so you effectively need twice the string table size temporarily during a resize.</p>
+<p>The pointer arrays vary in size, but their size (typically 8 to 64 bytes, depending on the load factor) matches that of many other allocations which works well with a pooled allocator.</p>
+<p>Default: False</p>
+<h3 id="dukusestrtabchainsize">DUK_USE_STRTAB_CHAIN_SIZE</h3>
+<p>Define stringtable size for DUK_USE_STRTAB_CHAIN.</p>
+<p>Default: False</p>
+<h3 id="dukusestrtabprobe">DUK_USE_STRTAB_PROBE</h3>
+<p>Use the default open addressing (probing) based string table algorithm.</p>
+<p>Default: True</p>
+<h2 id="ecmascript-edition-5-es5-options">ECMAScript Edition 5 (ES5) options</h2>
+<h3 id="dukusearraybuiltin">DUK_USE_ARRAY_BUILTIN</h3>
+<p>Provide an Array built-in.</p>
+<p>Default: True</p>
+<h3 id="dukuseaugmenterrorcreate">DUK_USE_AUGMENT_ERROR_CREATE</h3>
+<p>Augment an ECMAScript error object at creation with tracedata or fileName/lineNumber, or Duktape.errCreate (if enabled).</p>
+<p>Default: True</p>
+<h3 id="dukuseaugmenterrorthrow">DUK_USE_AUGMENT_ERROR_THROW</h3>
+<p>Augment an ECMAScript error object at throw time with Duktape.errThrow (if enabled).</p>
+<p>Default: True</p>
+<h3 id="dukusebooleanbuiltin">DUK_USE_BOOLEAN_BUILTIN</h3>
+<p>Provide a Boolean built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusebrowserlike">DUK_USE_BROWSER_LIKE</h3>
+<p>Provide browser-like bindings: currently print() and alert().</p>
+<p>Default: True</p>
+<h3 id="dukusebuiltininitjs">DUK_USE_BUILTIN_INITJS</h3>
+<p>Use built-in .js init code when creating a new global context. The .js init code (duk_initjs.js) provides some initialization code that&apos;s nicer to implement in ECMAScript, and is also used to provide some backwards compatibility bindings which are easy to remove later.</p>
+<p>Default: True</p>
+<h3 id="dukusecommonjsmodules">DUK_USE_COMMONJS_MODULES</h3>
+<p>Enable support for CommonJS modules. When enabled, the global require() function provides a simple module loader facility which depends on the user providing low level module searching functionality. When disabled, the global require() function is present but throws an error.</p>
+<p>Default: True</p>
+<h3 id="dukusedatebuiltin">DUK_USE_DATE_BUILTIN</h3>
+<p>Provide a Date built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusedoublelinkedheap">DUK_USE_DOUBLE_LINKED_HEAP</h3>
+<p>Use a double-linked duk_heaphdr structure. Required when reference counting is enabled.</p>
+<p>Default: True</p>
+<h3 id="dukuseerrcreate">DUK_USE_ERRCREATE</h3>
+<p>Call Duktape.errCreate() when augmenting an ECMAScript error object being created.</p>
+<p>Default: True</p>
+<h3 id="dukuseerrthrow">DUK_USE_ERRTHROW</h3>
+<p>Call Duktape.errThrow() when augmenting an ECMAScript error object about to be thrown.</p>
+<p>Default: True</p>
+<h3 id="dukuseesbclimits">DUK_USE_ESBC_LIMITS</h3>
+<p>Impose byte and line number limits for compiled function bytecode.</p>
+<p>Default: True</p>
+<h3 id="dukuseesbcmaxbytes">DUK_USE_ESBC_MAX_BYTES</h3>
+<p>Maximum byte count for compiled function bytecode.</p>
+<p>Default: 2147418112</p>
+<h3 id="dukuseesbcmaxlinenumber">DUK_USE_ESBC_MAX_LINENUMBER</h3>
+<p>Maximum line number for compiled function bytecode.</p>
+<p>Default: 2147418112</p>
+<h3 id="dukusefunctionbuiltin">DUK_USE_FUNCTION_BUILTIN</h3>
+<p>Provide a Function built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusefuncfilenameproperty">DUK_USE_FUNC_FILENAME_PROPERTY</h3>
+<p>Add a non-standard &quot;.fileName&quot; property to function instances. Disabling reduces footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusefuncnameproperty">DUK_USE_FUNC_NAME_PROPERTY</h3>
+<p>Add a &quot;name&quot; property to function instances. This is part of ECMAScript requirements, but low memory devices can sometimes opt to not include the .name to reduce footprint.</p>
+<p>Default: True</p>
+<h3 id="dukuseglobalbinding">DUK_USE_GLOBAL_BINDING</h3>
+<p>Provide a &apos;globalThis&apos; binding (<a href="https://github.com/tc39/proposal-global" target="_blank">https://github.com/tc39/proposal-global</a>).</p>
+<p>Default: True</p>
+<h3 id="dukuseglobalbuiltin">DUK_USE_GLOBAL_BUILTIN</h3>
+<p>Provide miscellaneous global built-ins like encodeURIComponent(), escape(), Infinity, etc. This is a catch-all for globals not covered by other options (like DUK_USE_ARRAY_BUILTIN).</p>
+<p>Default: True</p>
+<h3 id="dukusejc">DUK_USE_JC</h3>
+<p>Enable support for the JC custom JSON format.</p>
+<p>Default: True</p>
+<h3 id="dukusejsonbuiltin">DUK_USE_JSON_BUILTIN</h3>
+<p>Provide a JSON built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusejsonsupport">DUK_USE_JSON_SUPPORT</h3>
+<p>Enable JSON functionality, affects both ECMAScript and C APIs. Note that disabling DUK_USE_JSON_BUILTIN still leaves the C API intact and pulls in the JSON encoding/decoding functionality; disable this option to remove that too.</p>
+<p>Default: True</p>
+<h3 id="dukusejx">DUK_USE_JX</h3>
+<p>Enable support for the JX custom JSON format.</p>
+<p>Default: True</p>
+<h3 id="dukusemathbuiltin">DUK_USE_MATH_BUILTIN</h3>
+<p>Provide a Math built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdarrayconcattrailer">DUK_USE_NONSTD_ARRAY_CONCAT_TRAILER</h3>
+<p>In ES5.1 trailing gaps of an argument array don&apos;t count towards the result length. This is in essence a specification &quot;bug&quot; which was fixed in ES2015. This option was removed in 2.3.0, and the remaining behavior matches ES2015.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdarraymaptrailer">DUK_USE_NONSTD_ARRAY_MAP_TRAILER</h3>
+<p>This option was removed in 2.3.0 as it was unnecessary and in essence fixing a Duktape bug. ES5.0/ES5.1 already behave like ES2015 in that trailing gaps in the input don&apos;t affect the result length. The result array is created with a length based on the input array in Step 6 of ES5.1 Section 15.4.4.19 and subsequent index writes don&apos;t affect the length.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdarraysplicedelcount">DUK_USE_NONSTD_ARRAY_SPLICE_DELCOUNT</h3>
+<p>For better compatibility with existing code, enable non-standard Array.prototype.splice() behavior when the second argument (deleteCount) is not given: the splice operation is extended to the end of the array, see <a href="https://github.com/svaarala/duktape/blob/master/tests/ecmascript/test-bi-array-proto-splice-no-delcount.js" target="_blank">https://github.com/svaarala/duktape/blob/master/tests/ecmascript/test-bi-array-proto-splice-no-delcount.js</a>.</p>
+<p>If this option is disabled, splice() will behave in a strictly conforming fashion, treating a missing deleteCount the same as an undefined (or 0) value.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdfunccallerproperty">DUK_USE_NONSTD_FUNC_CALLER_PROPERTY</h3>
+<p>Add a non-standard &quot;caller&quot; property to non-strict function instances for better compatibility with existing code. The semantics of this property are not standardized and may vary between engines; Duktape tries to behave close to V8 and Spidermonkey. See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller</a> description of the property. This feature disables tail call support.</p>
+<p>This feature conflicts with several other features, so you should use it only if it&apos;s absolutely necessary.</p>
+<p>Default: False</p>
+<h3 id="dukusenonstdfuncsourceproperty">DUK_USE_NONSTD_FUNC_SOURCE_PROPERTY</h3>
+<p>Add a non-standard &quot;source&quot; property to function instances. This allows function toString() to print out the actual function source. The property is disabled by default because it increases memory footprint.</p>
+<p>NOTE: Unimplemented as of Duktape 1.3.0.</p>
+<p>Default: False</p>
+<h3 id="dukusenonstdfuncstmt">DUK_USE_NONSTD_FUNC_STMT</h3>
+<p>Enable support for function declarations outside program or function top level (also known as &quot;function statements&quot;). Such declarations are non-standard and the strictly compliant behavior is to treat them as a SyntaxError. When this option is enabled (recommended), Duktape behavior is to treat them like ordinary function declarations (&quot;hoist&quot; them to function top) with V8-like semantics.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdgetterkeyargument">DUK_USE_NONSTD_GETTER_KEY_ARGUMENT</h3>
+<p>Give getter calls the accessed property name as an additional non-standard argument. This allows a single getter function to be reused for multiple properties more easily. See <a href="http://duktape.org/guide.html#propertyvirtualization" target="_blank">http://duktape.org/guide.html#propertyvirtualization</a>.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdjsonescu2028u2029">DUK_USE_NONSTD_JSON_ESC_U2028_U2029</h3>
+<p>When enabled, Duktape JSON.stringify() will escape U+2028 and U+2029 which is non-compliant behavior. This is recommended to make JSON.stringify() output valid when embedded in a web page or parsed with eval().</p>
+<p>When disabled, Duktape provides the compliant behavior, i.e. no escaping for U+2028 and U+2029.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdregexpdollarescape">DUK_USE_NONSTD_REGEXP_DOLLAR_ESCAPE</h3>
+<p>Replaced by DUK_USE_ES6_REGEXP_SYNTAX.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdsetterkeyargument">DUK_USE_NONSTD_SETTER_KEY_ARGUMENT</h3>
+<p>Give setter calls the accessed property name as an additional non-standard argument. This allows a single setter function to be reused for multiple properties more easily. See <a href="http://duktape.org/guide.html#propertyvirtualization" target="_blank">http://duktape.org/guide.html#propertyvirtualization</a>.</p>
+<p>Default: True</p>
+<h3 id="dukusenonstdstringfromcharcode32bit">DUK_USE_NONSTD_STRING_FROMCHARCODE_32BIT</h3>
+<p>Allow 32-bit codepoints in String.fromCharCode(). This is non-compliant (the E5.1 specification has a ToUint16() coercion for the codepoints) but useful because Duktape supports non-BMP strings.</p>
+<p>When disabled, Duktape provides the compliant behavior.</p>
+<p>Default: True</p>
+<h3 id="dukusenumberbuiltin">DUK_USE_NUMBER_BUILTIN</h3>
+<p>Provide a Number built-in.</p>
+<p>Default: True</p>
+<h3 id="dukuseobjectbuiltin">DUK_USE_OBJECT_BUILTIN</h3>
+<p>Provide an Object built-in.</p>
+<p>Default: True</p>
+<h3 id="dukuseoctalsupport">DUK_USE_OCTAL_SUPPORT</h3>
+<p>Enable optional octal number support (ECMAScript E5/E5.1 Annex B: <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-B" target="_blank">http://www.ecma-international.org/ecma-262/5.1/#sec-B</a>). Recommended because existing code bases use octal numbers.</p>
+<p>Default: True</p>
+<h3 id="dukuseparanoiderrors">DUK_USE_PARANOID_ERRORS</h3>
+<p>When enabled, error messages won&apos;t involve summarization of keys or values. Summaries may be an issue in some security sensitive environments because error messages will include e.g. property keys.</p>
+<p>The default is to summarize offending base value and key for property access errors such as &quot;null.foo = 123;&quot;, invalid calls such as &quot;undefined()&quot;, etc. Base values and keys are summarized using duk_push_string_tval_readable().</p>
+<p>Default: False</p>
+<h3 id="dukusepc2line">DUK_USE_PC2LINE</h3>
+<p>Record a &quot;pc2line&quot; map into function instances which allows bytecode program counter values to be mapped into line numbers e.g. in error tracebacks.</p>
+<p>Without this map, exceptions won&apos;t have meaningful line numbers but function instances will have a smaller footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusepromisebuiltin">DUK_USE_PROMISE_BUILTIN</h3>
+<p>Enable Promise built-in.</p>
+<p>At present entirely non-functional, and disabled by default.</p>
+<p>Default: False</p>
+<h3 id="dukuseregexpsupport">DUK_USE_REGEXP_SUPPORT</h3>
+<p>Enable support for regular expressions (recommended).</p>
+<p>When disabled, regexp literals are treated as a SyntaxError, RegExp constructor and prototype functions throw an error, String.prototype.replace() throws an error if given a regexp search value, String.prototype.split() throws an error if given a regexp separator value, String.prototype.search() and String.prototype.match() throw an error unconditionally.</p>
+<p>Default: True</p>
+<h3 id="dukusesectionb">DUK_USE_SECTION_B</h3>
+<p>Enable optional features in ECMAScript specification Annex B: <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-B" target="_blank">http://www.ecma-international.org/ecma-262/5.1/#sec-B</a>.</p>
+<p>When disabled, escape(), unescape(), and String.prototype.substr() throw an error.</p>
+<p>Default: True</p>
+<h3 id="dukusesourcenonbmp">DUK_USE_SOURCE_NONBMP</h3>
+<p>Enable accurate Unicode support for non-BMP characters in source code.</p>
+<p>When disabled non-BMP characters are always accepted as identifier characters. Disabling this option saves a little bit of code footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusestrictdecl">DUK_USE_STRICT_DECL</h3>
+<p>Enable support for &quot;use strict&quot; declaration (recommended).</p>
+<p>When disabled, ECMAScript code is always executed in non-strict mode. Duktape/C functions remain strict. This option is useful in some legacy environments where &quot;use strict&quot; declarations are used in existing code base but the Javascript engine didn&apos;t actually support strict mode.</p>
+<p>Default: True</p>
+<h3 id="dukusestrictutf8source">DUK_USE_STRICT_UTF8_SOURCE</h3>
+<p>Enable strict UTF-8 parsing of source code.</p>
+<p>When disabled, non-shortest encodings (normally invalid UTF-8) and surrogate pair codepoints are accepted as valid source code characters. Disabling this option breaks compatibility with some test262 tests.</p>
+<p>Default: False</p>
+<h3 id="dukusestringbuiltin">DUK_USE_STRING_BUILTIN</h3>
+<p>Provide a String built-in.</p>
+<p>Default: True</p>
+<h3 id="dukusetailcall">DUK_USE_TAILCALL</h3>
+<p>Enable tail call support (recommended).</p>
+<p>The non-standard function &apos;caller&apos; property feature conflicts with tailcalls quite severely so tailcalls must be disabled if the &apos;caller&apos; property is enabled.</p>
+<p>Default: True</p>
+<h3 id="dukusetracebacks">DUK_USE_TRACEBACKS</h3>
+<p>Record traceback data into ECMAScript error objects.</p>
+<p>When disabled, traceback data is not recorded, but fileName/lineNumber of the error cause are still recorded as explicit properties. Disabling this option reduces footprint and makes error handling a bit faster, at the cost of less informative ECMAScript errors.</p>
+<p>Default: True</p>
+<h3 id="dukusetracebackdepth">DUK_USE_TRACEBACK_DEPTH</h3>
+<p>Define traceback collection depth. A large number causes tracedata to be larger, taking more time to create and consuming more memory. A small number makes tracebacks less useful.</p>
+<p>When tracebacks are disabled this option affects .fileName and .lineNumber blaming. Error augmentation code won&apos;t look deeper than this value to find a function to blame for error .fileName / .lineNumber.</p>
+<p>Default: 10</p>
+<h3 id="dukuseverboseerrors">DUK_USE_VERBOSE_ERRORS</h3>
+<p>Provide error message strings and file/line information for errors generated by Duktape.</p>
+<p>When disabled, reduces footprint at the cost of much less informative ECMAScript errors.</p>
+<p>Default: True</p>
+<h3 id="dukuseverboseexecutorerrors">DUK_USE_VERBOSE_EXECUTOR_ERRORS</h3>
+<p>Use verbose error messages in bytecode executor (recommended).</p>
+<p>When disabled, reduces footprint slightly at the cost of more obscure error messages.</p>
+<p>Default: True</p>
+<h2 id="execution-options">Execution options</h2>
+<h3 id="dukusecoroutinesupport">DUK_USE_COROUTINE_SUPPORT</h3>
+<p>Enable support for Duktape coroutines, i.e. yield/resume.</p>
+<p>Default: True</p>
+<h3 id="dukuseexecindirectboundcheck">DUK_USE_EXEC_INDIRECT_BOUND_CHECK</h3>
+<p>For opcodes with indirect indices, check final index against stack size. Useful for diagnosing problems. Normally this check is not necessary because the compiler is trusted, and we don&apos;t bound check direct indices either.</p>
+<p>Default: False</p>
+<h3 id="dukuseexectimeoutcheck">DUK_USE_EXEC_TIMEOUT_CHECK</h3>
+<p>NOTE: This mechanism is EXPERIMENTAL and the details may change between releases.</p>
+<p>Provide a hook to check for bytecode execution timeout. The macro gets a void ptr userdata argument (the userdata given to duk_heap_create()) and must evaluate to a duk_bool_t. Duktape calls the macro as: &quot;if (DUK_USE_EXEC_TIMEOUT_CHECK(udata)) { ... }&quot;.</p>
+<p>The macro is called occasionally by the Duktape bytecode executor (i.e. when executing ECMAScript code), typically from a few times per second to a hundred times per second, but the interval varies a great deal depending on what kind of code is being executed.</p>
+<p>To indicate an execution timeout, the macro must return a non-zero value. When that happens, Duktape starts to bubble a RangeError outwards until control has been returned to the original protected call made by the application. Until that happens, the exec timeout macro must always return non-zero to indicate an execution timeout is still in progress.</p>
+<p>This mechanism and its limitations is described in more detail in doc/sandboxing.rst.</p>
+<p>Default: False</p>
+<h3 id="dukusefinalizersupport">DUK_USE_FINALIZER_SUPPORT</h3>
+<p>Enable support for object finalizers (Duktape specific).</p>
+<p>Default: True</p>
+<h3 id="dukuseinterruptcounter">DUK_USE_INTERRUPT_COUNTER</h3>
+<p>Enable the internal bytecode executor periodic interrupt counter. The mechanism is used to implement e.g. execution step limit, custom profiling, and debugger interaction. Enabling the interrupt counter has a small impact on execution performance.</p>
+<p>Default: False</p>
+<h2 id="debugger-options">Debugger options</h2>
+<h3 id="dukusedebuggerdumpheap">DUK_USE_DEBUGGER_DUMPHEAP</h3>
+<p>Support the DumpHeap command. This is optional because the command is not always needed. The command also has a relatively large footprint (about 10% of debugger code); in absolute terms it&apos;s about 1kB of code footprint.</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggerfwdlogging">DUK_USE_DEBUGGER_FWD_LOGGING</h3>
+<p>Forward log writes using the built-in logging framework to the debug client. Forwarding happens from the Duktape.Logger.prototype.info() etc calls before the raw() function is called, so that logging is forwarded even if you replace the backend.</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggerfwdprintalert">DUK_USE_DEBUGGER_FWD_PRINTALERT</h3>
+<p>Forward calls to the built-in print() and alert() function to the debug client.</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggerinspect">DUK_USE_DEBUGGER_INSPECT</h3>
+<p>Support debugger heap object inspection commands GetHeapObjInfo, GetObjPropDesc, GetObjPropDescRange. These are optional because the commands have a relatively high code footprint (about 3kB) and are not always needed.</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggerpauseuncaught">DUK_USE_DEBUGGER_PAUSE_UNCAUGHT</h3>
+<p>Pause automatically when an error is about to be thrown and that error is (most likely) not going to be caught. An error is considered uncaught if there is no active catch clause in the current thread or in the current thread&apos;s resumer chain. This is not 100% accurate because there may be a finally clause which neutralizes the throw (e.g. converts it to a &quot;return&quot; or a &quot;continue&quot;).</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggersupport">DUK_USE_DEBUGGER_SUPPORT</h3>
+<p>Enable support for Duktape debug protocol (see doc/debugger.rst) and the debug API calls (duk_debugger_attach(), duk_debugger_detach(), etc). This adds about 10kB of code footprint at the moment.</p>
+<p>This option requires DUK_USE_INTERRUPT_COUNTER.</p>
+<p>Default: False</p>
+<h3 id="dukusedebuggerthrownotify">DUK_USE_DEBUGGER_THROW_NOTIFY</h3>
+<p>Send a Throw notify when an error is about to be thrown. The Throw notify also indicates if an error is fatal (most likely not caught) which is very useful in debugging.</p>
+<p>Default: True</p>
+<h3 id="dukusedebuggertransporttorture">DUK_USE_DEBUGGER_TRANSPORT_TORTURE</h3>
+<p>Development time option: force debugger transport torture. Concretely this now causes Duktape to read/write debug protocol data in 1-byte increments, which stresses message parsing and transport code.</p>
+<p>Default: False</p>
+<h3 id="dukusetargetinfo">DUK_USE_TARGET_INFO</h3>
+<p>Define a freeform human readable string to describe the target device (e.g. &quot;Arduino Yun&quot;). This string will be sent as part of version/target info in the debugger protocol and shows up in the debugger UI.</p>
+<p>Default: {&apos;string&apos;: &apos;unknown&apos;}</p>
+<h2 id="debug-options">Debug options</h2>
+<h3 id="dukusedddprint">DUK_USE_DDDPRINT</h3>
+<p>Enable even more debug printouts. Not recommended unless you have grep handy. Replaced by DUK_USE_DEBUG_LEVEL.</p>
+<p>Default: False</p>
+<h3 id="dukuseddprint">DUK_USE_DDPRINT</h3>
+<p>Enable more debug printouts. Replaced by DUK_USE_DEBUG_LEVEL.</p>
+<p>Default: False</p>
+<h3 id="dukusedebug">DUK_USE_DEBUG</h3>
+<p>Enable debug code in Duktape internals. Without this option other debugging options (such as DUK_USE_DEBUG_LEVEL and DUK_USE_DEBUG_WRITE) have no effect.</p>
+<p>Default: False</p>
+<h3 id="dukusedebugbufsize">DUK_USE_DEBUG_BUFSIZE</h3>
+<p>Debug code uses a static buffer as a formatting temporary to avoid side effects in debug prints. The static buffer is large by default, which may be an issue in constrained environments. You can set the buffer size manually with this option, e.g. set DUK_USE_DEBUG_BUFSIZE to 2048.</p>
+<p>Default: 65536</p>
+<h3 id="dukusedebuglevel">DUK_USE_DEBUG_LEVEL</h3>
+<p>Set debug print level when DUK_USE_DEBUG is enabled. The level can be 0 (minimal), 1 (verbose), 2 (very verbose).</p>
+<p>Default: 0</p>
+<h3 id="dukusedebugwrite">DUK_USE_DEBUG_WRITE</h3>
+<p>Macro used for Duktape debug log writes (when DUK_USE_DEBUG is enabled). There&apos;s no default provider to avoid a dependency on platform I/O calls. The macro is called like a function with the following prototype: &quot;void DUK_USE_DEBUG_WRITE(long level, const char file, long line, const charfunc, const char *msg)&quot;. The &quot;file&quot;, &quot;func&quot;, and &quot;msg&quot; arguments are non-NULL strings, though NULLs should be handled as good practice (it&apos;s ultimately up to duk_config.h whether NULL values are possible).</p>
+<p>See <a href="http://wiki.duktape.org/HowtoDebugPrints.html" target="_blank">http://wiki.duktape.org/HowtoDebugPrints.html</a> for more information and examples.</p>
+<p>Default: False</p>
+<h3 id="dukusedprint">DUK_USE_DPRINT</h3>
+<p>Enable debug printouts. Replaced by DUK_USE_DEBUG_LEVEL.</p>
+<p>Default: False</p>
+<h3 id="dukusedprintcolors">DUK_USE_DPRINT_COLORS</h3>
+<p>Enable coloring of debug prints with ANSI escape codes (<a href="http://en.wikipedia.org/wiki/ANSI_escape_code" target="_blank">http://en.wikipedia.org/wiki/ANSI_escape_code</a>). The behavior is not sensitive to terminal settings.</p>
+<p>Default: False</p>
+<h3 id="dukusedprintrdtsc">DUK_USE_DPRINT_RDTSC</h3>
+<p>Print RDTSC cycle count in debug prints if available.</p>
+<p>Default: False</p>
+<h3 id="dukuseselftests">DUK_USE_SELF_TESTS</h3>
+<p>Perform run-time self tests when a Duktape heap is created. Catches platform/compiler problems which cannot be reliably detected during compile time. Not enabled by default because of the extra footprint.</p>
+<p>Default: False</p>
+<h2 id="developer-only-options">Developer-only options</h2>
+<p>Developer options which are not intended for end users and are not part of semantic versioning guarantees (e.g. torture options).</p>
+<h3 id="dukuseassertions">DUK_USE_ASSERTIONS</h3>
+<p>Enable internal assert checks. These slow down execution considerably so only use when debugging.</p>
+<p>Default: False</p>
+<h3 id="dukuseinjectheapallocerror">DUK_USE_INJECT_HEAP_ALLOC_ERROR</h3>
+<p>Force heap allocation to fail, value indicates the desired error position.</p>
+<p>Default: False</p>
+<h3 id="dukuseinterruptdebugfixup">DUK_USE_INTERRUPT_DEBUG_FIXUP</h3>
+<p>For Duktape development only: enable &quot;interrupt fixup&quot; in call handling so that heap-&gt;inst_count_exec and heap-&gt;inst_count_interrupt can be manually checked to match. Only useful when debugging and/or asserts are enabled.</p>
+<p>Default: False</p>
+<h2 id="api-options">API options</h2>
+<h3 id="dukusebytecodedumpsupport">DUK_USE_BYTECODE_DUMP_SUPPORT</h3>
+<p>Enable support for API calls to dump/load function bytecode.</p>
+<p>Default: True</p>
+<h2 id="codecs">Codecs</h2>
+<h3 id="dukusebase64support">DUK_USE_BASE64_SUPPORT</h3>
+<p>Enable base64 encoding/decoding support.</p>
+<p>Default: True</p>
+<h3 id="dukusecborbuiltin">DUK_USE_CBOR_BUILTIN</h3>
+<p>Provide a CBOR built-in with CBOR.encode() and CBOR.decode() functions.</p>
+<p>Default: True</p>
+<h3 id="dukusecborsupport">DUK_USE_CBOR_SUPPORT</h3>
+<p>Include CBOR support. When disabled, CBOR functions in the C API (and the CBOR built-in, if enabled) will throw an error.</p>
+<p>Default: True</p>
+<h3 id="dukusehexsupport">DUK_USE_HEX_SUPPORT</h3>
+<p>Enable hex encoding/decoding support.</p>
+<p>Default: True</p>
+<h2 id="date-handling-options">Date handling options</h2>
+<h3 id="dukusedatefmtstrftime">DUK_USE_DATE_FMT_STRFTIME</h3>
+<p>Use strftime() to format Date values in native, platform specific format before falling back into ISO 8601. When enabled, appropriate date/time headers must be included.</p>
+<p>Default: False</p>
+<h3 id="dukusedateformatstring">DUK_USE_DATE_FORMAT_STRING</h3>
+<p>Optional macro for formatting a date in a platform dependent manner, see datetime.rst.</p>
+<p>Default: False</p>
+<h3 id="dukusedategetlocaltzoffset">DUK_USE_DATE_GET_LOCAL_TZOFFSET</h3>
+<p>Mandatory macro for getting the local time offset for a given datetime, see datetime.rst.</p>
+<p>Default: False</p>
+<h3 id="dukusedategetnow">DUK_USE_DATE_GET_NOW</h3>
+<p>Mandatory macro for getting the current time, see datetime.rst. The macro is allowed (and recommended) to return millisecond fractions. The fractions are truncated by the Date built-in, but are available via duk_get_now() C API call.</p>
+<p>If the time provided experiences time jumps or doesn&apos;t advance in realtime (which is useful in some time virtualization scenarios), consider defining DUK_USE_GET_MONOTONIC_TIME.</p>
+<p>Default: False</p>
+<h3 id="dukusedatenowgettimeofday">DUK_USE_DATE_NOW_GETTIMEOFDAY</h3>
+<p>Use gettimeofday() to get current datetime. When enabled, appropriate date/time headers must be included.</p>
+<p>Default: False</p>
+<h3 id="dukusedatenowtime">DUK_USE_DATE_NOW_TIME</h3>
+<p>Use time() to get current datetime, with the limitation that datetime is limited to one second resolution. When enabled, appropriate date/time headers must be included.</p>
+<p>Default: False</p>
+<h3 id="dukusedatenowwindows">DUK_USE_DATE_NOW_WINDOWS</h3>
+<p>Use Win32 API calls to get current datetime.</p>
+<p>Default: False</p>
+<h3 id="dukusedatenowwindowssubms">DUK_USE_DATE_NOW_WINDOWS_SUBMS</h3>
+<p>Like DUK_USE_DATE_NOW_WINDOWS but use GetSystemTimePreciseAsFileTime(), available since Windows 8, for sub-millisecond resolution.</p>
+<p>Default: False</p>
+<h3 id="dukusedateparsestring">DUK_USE_DATE_PARSE_STRING</h3>
+<p>Optional macro for parsing a date in a platform dependent manner, see datetime.rst.</p>
+<p>Default: False</p>
+<h3 id="dukusedateprsgetdate">DUK_USE_DATE_PRS_GETDATE</h3>
+<p>Use getdate_r() to parse a platform specific datetime string into ECMAScript time. getdate_r() depends on DATEMSK being set so this is not always very convenient for an embedded interpreter. When enabled, appropriate date/time headers must be included.</p>
+<p>Default: False</p>
+<h3 id="dukusedateprsstrptime">DUK_USE_DATE_PRS_STRPTIME</h3>
+<p>Use strptime() to parse a platform specific datetime string into ECMAScript time.</p>
+<p>Default: False</p>
+<h3 id="dukusedatetzogmtime">DUK_USE_DATE_TZO_GMTIME</h3>
+<p>Use gmtime() to get local time offset at a certain time. When enabled, appropriate date/time headers must be included.</p>
+<p>Since gmtime() is not re-entrant, this is not thread safe.</p>
+<p>Default: False</p>
+<h3 id="dukusedatetzogmtimer">DUK_USE_DATE_TZO_GMTIME_R</h3>
+<p>Use gmtime_r() to get local time offset at a certain time. When enabled, appropriate date/time headers must be included.</p>
+<p>Default: False</p>
+<h3 id="dukusedatetzogmtimes">DUK_USE_DATE_TZO_GMTIME_S</h3>
+<p>Use gmtime_s() to get local time offset at a certain time.</p>
+<p>Default: False</p>
+<h3 id="dukusedatetzowindows">DUK_USE_DATE_TZO_WINDOWS</h3>
+<p>Use Win32 API calls to get local time offset at a certain time.</p>
+<p>Default: False</p>
+<h3 id="dukusedatetzowindowsnodst">DUK_USE_DATE_TZO_WINDOWS_NO_DST</h3>
+<p>Use Win32 API calls to get local time offset at a certain time. Does not take into account daylight savings time.</p>
+<p>Default: False</p>
+<h2 id="duktape-specific-options">Duktape specific options</h2>
+<h3 id="dukuseduktapebuiltin">DUK_USE_DUKTAPE_BUILTIN</h3>
+<p>Provide a Duktape built-in.</p>
+<p>Default: True</p>
+<h2 id="ecmascript-2015-es6-options">ECMAScript 2015 (ES6) options</h2>
+<h3 id="dukusebufferobjectsupport">DUK_USE_BUFFEROBJECT_SUPPORT</h3>
+<p>Enable support for Khronos/ES6 typed arrays and Node.js Buffer objects.</p>
+<p>When disabled, Duktape custom plain buffer type is present and functional in the C API. Plain buffers have virtual properties and you can read/write buffer contents in ECMAScript code. Plain buffers will still inherit from ArrayBuffer.prototype, but none of the ECMAScript buffer related bindings will work. This includes all ArrayBuffer, typed array, and Node.js Buffer methods. Native bindings which produce plain buffer results (like Duktape.dec()) will still work.</p>
+<p>Default: True</p>
+<h3 id="dukusees6">DUK_USE_ES6</h3>
+<p>Enable ES6 functionality not covered by other specific config options.</p>
+<p>Default: True</p>
+<h3 id="dukusees6objectprotoproperty">DUK_USE_ES6_OBJECT_PROTO_PROPERTY</h3>
+<p>Provide the non-standard (ES6) Object.prototype.<strong>proto</strong> property.</p>
+<p>Default: True</p>
+<h3 id="dukusees6objectsetprototypeof">DUK_USE_ES6_OBJECT_SETPROTOTYPEOF</h3>
+<p>Provide the non-standard (ES6) Object.setPrototypeOf method.</p>
+<p>Default: True</p>
+<h3 id="dukusees6proxy">DUK_USE_ES6_PROXY</h3>
+<p>Provide the non-standard (ES6) Proxy object.</p>
+<p>Default: True</p>
+<h3 id="dukusees6regexpbraces">DUK_USE_ES6_REGEXP_BRACES</h3>
+<p>Replaced by DUK_USE_ES6_REGEXP_SYNTAX.</p>
+<p>Default: True</p>
+<h3 id="dukusees6regexpsyntax">DUK_USE_ES6_REGEXP_SYNTAX</h3>
+<p>Enable support for additional RegExp syntax from E6 Section B.1.4, such as: (1) dollar escape, (2) unescaped curly braces (&apos;{&apos; and &apos;}&apos;), and (3) unescaped right bracket (&apos;]&apos;). This option does not enable all of the ES6 syntax because not all of the extra syntax is implemented; rather, the option enables whatever ES6 extra syntax has been implemented so far.</p>
+<p>This option is recommended because a lot of existing code depends on literal regexp braces, and other non-ES5 constructs.</p>
+<p>Default: True</p>
+<h3 id="dukusees6unicodeescape">DUK_USE_ES6_UNICODE_ESCAPE</h3>
+<p>Enable support for ES6 Unicode escape syntax (&quot;u{12345}&quot;) in source code and RegExps.</p>
+<p>Default: True</p>
+<h3 id="dukusehtmlcomments">DUK_USE_HTML_COMMENTS</h3>
+<p>Enable ES2015 Annex B.1.3 HTML comment syntax.</p>
+<p>Default: True</p>
+<h3 id="dukusereflectbuiltin">DUK_USE_REFLECT_BUILTIN</h3>
+<p>Provide a Reflect built-in. The ES6 Reflect object provides a collection of methods for examining and manipulating objects at runtime.</p>
+<p>Default: True</p>
+<h3 id="dukuseshebangcomments">DUK_USE_SHEBANG_COMMENTS</h3>
+<p>Support parsing of a &quot;shebang&quot; comment (&apos;#!...&apos;) on the first line of source text.</p>
+<p>Default: True</p>
+<h3 id="dukusesymbolbuiltin">DUK_USE_SYMBOL_BUILTIN</h3>
+<p>Provide ES6 Symbol built-ins.</p>
+<p>Even with the built-ins disabled, symbols created by C code are still supported.</p>
+<p>Default: True</p>
+<h2 id="ecmascript-2016-es7-options">ECMAScript 2016 (ES7) options</h2>
+<h3 id="dukusees7">DUK_USE_ES7</h3>
+<p>Enable ES7 functionality not covered by other specific config options.</p>
+<p>Default: True</p>
+<h3 id="dukusees7expoperator">DUK_USE_ES7_EXP_OPERATOR</h3>
+<p>Support the ES7 exponentiation operator (<em> and</em>=). This is optional because the operator pulls in pow() which may have a significant footprint impact on bare metal platforms.</p>
+<p>Default: True</p>
+<h2 id="ecmascript-2017-es8-options">ECMAScript 2017 (ES8) options</h2>
+<h3 id="dukusees8">DUK_USE_ES8</h3>
+<p>Enable ES8 functionality not covered by other specific config options.</p>
+<p>Default: True</p>
+<h2 id="ecmascript-2018-es9-options">ECMAScript 2018 (ES9) options</h2>
+<h3 id="dukusees9">DUK_USE_ES9</h3>
+<p>Enable ES9 functionality not covered by other specific config options.</p>
+<p>Default: True</p>
+<h2 id="whatwg-encoding-api">WHATWG Encoding API</h2>
+<h3 id="dukuseencodingbuiltins">DUK_USE_ENCODING_BUILTINS</h3>
+<p>Provide TextEncoder and TextDecoder built-ins (the Encoding API) which allow ECMAScript code to encode and decode text stored in a buffer. Only UTF-8 is currently supported for decoding.</p>
+<h3 id="dukusebufferobjectsupport-is-recommended-but-not-required-if-it-is-disabled-textencoder-will-encode-to-a-plain-buffer-instead-of-a-uint8array-textdecoder-always-accepts-plain-buffers-as-input">DUK_USE_BUFFEROBJECT_SUPPORT is recommended but not required: If it is disabled, TextEncoder will encode to a plain buffer instead of a Uint8Array. TextDecoder always accepts plain buffers as input.</h3>
+<p>Default: True</p>
+<h2 id="garbage-collection-options">Garbage collection options</h2>
+<h3 id="dukusefinalizertorture">DUK_USE_FINALIZER_TORTURE</h3>
+<p>Development time option: simulate a fake finalizer call every time when finalizers might be executed (even if the actual finalize_list is empty).</p>
+<p>Default: False</p>
+<h3 id="dukusegctorture">DUK_USE_GC_TORTURE</h3>
+<p>Development time option: force full mark-and-sweep on every allocation and in other chosen places to stress test memory management.</p>
+<p>Using a low value (e.g. 3) for DUK_USE_MARK_AND_SWEEP_RECLIMIT is also recommended.</p>
+<p>Default: False</p>
+<h3 id="dukusemarkandsweepfinalizertorture">DUK_USE_MARKANDSWEEP_FINALIZER_TORTURE</h3>
+<p>Development time option: simulate a fake finalizer call during every mark-and-sweep round. This is useful to detect bugs caused by finalizer side effects. Most useful when combined with DUK_USE_GC_TORTURE so that potential finalizer side effects are realized on every allocation.</p>
+<p>Default: False</p>
+<h3 id="dukusemarkandsweep">DUK_USE_MARK_AND_SWEEP</h3>
+<p>Enable mark-and-sweep garbage collection (recommended).</p>
+<p>When disabled, only reference counting is used for garbage collection. This reduces code footprint and eliminates garbage collection pauses, but objects participating in unreachable reference cycles won&apos;t be collected until the Duktape heap is destroyed. In particular, function instances won&apos;t be collected because they&apos;re always in a reference cycle with their default prototype object. Unreachable objects are collected if you break reference cycles manually (and are always freed when a heap is destroyed).</p>
+<p>NOTE: Removed in Duktape 2.0.0 because mark-and-sweep is no longer optional.</p>
+<p>Default: True</p>
+<h3 id="dukusemsstringtableresize">DUK_USE_MS_STRINGTABLE_RESIZE</h3>
+<p>Enable forced string intern table resize during mark-and-sweep garbage collection. This is the recommended behavior.</p>
+<p>It may be useful to disable this option when reference counting is disabled, as mark-and-sweep collections will be more frequent and thus more expensive.</p>
+<p>Default: True</p>
+<h3 id="dukuserefcount32">DUK_USE_REFCOUNT32</h3>
+<p>Use a 32-bit reference count field.</p>
+<p>While on some 64-bit systems it&apos;s theoretically possible to wrap a 32-bit counter field, assuming a 16-byte duk_tval the Duktape heap would have to be larger than 64GB for that to happen. Because of this the default is to use a 32-bit refcount field.</p>
+<p>Default: True</p>
+<h3 id="dukusereferencecounting">DUK_USE_REFERENCE_COUNTING</h3>
+<p>Use reference counting for garbage collection.</p>
+<p>Default: True</p>
+<h3 id="dukuserefzerofinalizertorture">DUK_USE_REFZERO_FINALIZER_TORTURE</h3>
+<p>Development time option: simulate a fake finalizer call for every object going through refzero freeing. This is useful to detect bugs caused by finalizer side effects in e.g. call handling.</p>
+<p>Default: False</p>
+<h3 id="dukuseshuffletorture">DUK_USE_SHUFFLE_TORTURE</h3>
+<p>Development time option: force compiler to shuffle every possible opcode to stress shuffle behavior which is otherwise difficult to test for comprehensively.</p>
+<p>Default: False</p>
+<h3 id="dukusevoluntarygc">DUK_USE_VOLUNTARY_GC</h3>
+<p>Enable voluntary periodic mark-and-sweep collection.</p>
+<p>When disabled, a mark-and-sweep collection is still triggered in an out-of-memory condition (known as &quot;emergency GC&quot;. When disabling this option it&apos;s recommended to use reference counting which collects all non-cyclical garbage. Application code should also request an explicit garbage collection from time to time when appropriate. When this option is disabled, Duktape will have no garbage collection pauses in ordinary use, which is useful for timing sensitive applications like games.</p>
+<p>Default: True</p>
+<h2 id="io-options">I/O options</h2>
+<h3 id="dukusefileio">DUK_USE_FILE_IO</h3>
+<p>File I/O support. This is now used in a few API calls to e.g. push a string from file contents or eval a file. For portability it must be possible to disable I/O altogether.</p>
+<p>Default: True</p>
+<h2 id="miscellaneous-options">Miscellaneous options</h2>
+<h3 id="dukusecallstacklimit">DUK_USE_CALLSTACK_LIMIT</h3>
+<p>Maximum call stack size. If call stack would grow beyond this value, reject the call in progress. This mainly protects against runaway recursion. Note in particular that this limit is unrelated to the native C stack size which has a separate limit define.</p>
+<p>Default: 10000</p>
+<h3 id="dukusefulltval">DUK_USE_FULL_TVAL</h3>
+<p>Initialize all bytes of a duk_tval when setting a value into one.</p>
+<p>By default only needed fields are initialized which reduces code size and improves performance slightly. This should cause no functional issues but may cause valgrind issues in rare cases, e.g. when debugger code dumps the constant table of a function (which then reads uninitialized bits).</p>
+<p>Removed in 1.2.0 because the option was never enabled and there was no feature option to cause it to be used.</p>
+<p>Default: False</p>
+<h3 id="dukusevalstacklimit">DUK_USE_VALSTACK_LIMIT</h3>
+<p>Maximum value stack size. If value stack is about to be grown beyond this size (the check includes a possible spare so the check isn&apos;t exact) reject the resize. The limit must be low enough so that when multiplied by sizeof(duk_tval), typically 8 or 16, the multiplication won&apos;t overflow size_t.</p>
+<p>Default: 1000000</p>
+<h2 id="performance-options">Performance options</h2>
+<h3 id="dukusearrayfastpath">DUK_USE_ARRAY_FASTPATH</h3>
+<p>Enable fast path for Array.prototype operations like push(), pop(), etc. The fast path handles dense Array instances which are more common than sparse arrays or non-array objects (which Array.prototype operations must also support). The fast path assumes that Array.prototype doesn&apos;t contain inherited index properties; such properties are very rarely used in practical code. If compliance is critical, disable the fast path.</p>
+<p>Default: True</p>
+<h3 id="dukusearraypropfastpath">DUK_USE_ARRAY_PROP_FASTPATH</h3>
+<p>Enable a shallow fast path check for Array index property reads and writes. The fast path assumes Array.prototype doesn&apos;t have numeric index properties which would be inherited and affect read/write behavior. This behavior is non-compliant (but practical because such inherited properties are very rare). Disable this option to ensure strict compliance.</p>
+<p>Default: True</p>
+<h3 id="dukusebase64fastpath">DUK_USE_BASE64_FASTPATH</h3>
+<p>Enable fast path for base64 encode/decode. The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusecacheactivation">DUK_USE_CACHE_ACTIVATION</h3>
+<p>Cache duk_activation records. When releasing a duk_activation, place it in a free list for later reuse. Mark-and-sweep frees the free list to keep memory usage in check.</p>
+<p>Default: True</p>
+<h3 id="dukusecachecatcher">DUK_USE_CACHE_CATCHER</h3>
+<p>Cache duk_catcher records. When releasing a duk_catcher, place it in a free list for later reuse. Mark-and-sweep frees the free list to keep memory usage in check.</p>
+<p>Default: True</p>
+<h3 id="dukuseexecfunlocal">DUK_USE_EXEC_FUN_LOCAL</h3>
+<p>Use a local variable &quot;fun&quot; pointing to the current function in the bytecode dispatch loop instead of looking up the current function through &quot;thr&quot; every time it is needed. On x64 performance is slightly better without a &quot;fun&quot; local; on x86 performance is slightly better with one.</p>
+<p>You should only tweak this if you&apos;re really interested in performance, and should then do proper testing to see which value works better.</p>
+<p>Default: False</p>
+<h3 id="dukuseexecregconstoptimize">DUK_USE_EXEC_REGCONST_OPTIMIZE</h3>
+<p>Use an internal optimization to access registers and constants in the bytecode executor. The optimization avoids unnecessary shifts when computing addresses but assumes sizeof(duk_tval) is 8 or 16. This is almost always the case, but when it isn&apos;t, disable this option.</p>
+<p>Default: True</p>
+<h3 id="dukusefastint">DUK_USE_FASTINT</h3>
+<p>Enable support for 48-bit signed &quot;fastint&quot; integer values. Fastints are transparent to user code (both C and ECMAScript) but may be faster than IEEE doubles on some platforms, especially those using softints. The downside of fastints is increased code footprint and a small performance penalty for some kinds of code.</p>
+<p>Default: False</p>
+<h3 id="dukusefastrefcountdefault">DUK_USE_FAST_REFCOUNT_DEFAULT</h3>
+<p>When enabled, plain refcount macros (e.g. DUK_TVAL_INCREF) default to fast variants (DUK_TVAL_INCREF_FAST) to improve performance.</p>
+<p>Default: True</p>
+<h3 id="dukusehexfastpath">DUK_USE_HEX_FASTPATH</h3>
+<p>Enable fast path for hex encode/decode. The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusehobjectarrayabandonlimit">DUK_USE_HOBJECT_ARRAY_ABANDON_LIMIT</h3>
+<p>Abandon array part if its density is below L and array is larger than DUK_USE_HOBJECT_ARRAY_ABANDON_MINSIZE. The limit L is expressed as a .3 fixed point point, e.g. 2 means 2/8 = 25%.</p>
+<p>The default limit is quite low: one array entry with packed duk_tval is 8 bytes whereas one normal entry is 4+1+8 = 13 bytes without a hash entry, and 17-21 bytes with a hash entry (load factor 0.5-1.0). So the array part shouldn&apos;t be abandoned very easily from a footprint point of view.</p>
+<p>Default: 2</p>
+<h3 id="dukusehobjectarrayabandonminsize">DUK_USE_HOBJECT_ARRAY_ABANDON_MINSIZE</h3>
+<p>Minimum array size required for array to be abandoned. For example, a value of 257 means arrays up to 256 long are never abandoned. The default value ensures 8-bit lookups are not abandoned even if sparse or initialized in random order.</p>
+<p>Default: 257</p>
+<h3 id="dukusehobjectarrayfastresizelimit">DUK_USE_HOBJECT_ARRAY_FAST_RESIZE_LIMIT</h3>
+<p>Skip abandon check in object array part resize if new_size &lt; L * old_size. The limit L is expressed as a .3 fixed point value, e.g. 9 means 9/8 = 112.5% of current size.</p>
+<p>This is rather technical and you should only change the parameter if you&apos;ve looked at the internals.</p>
+<p>Default: 9</p>
+<h3 id="dukusehobjectarraymingrowadd">DUK_USE_HOBJECT_ARRAY_MINGROW_ADD</h3>
+<p>Technical internal parameter, see sources for details. Only adjust if you&apos;ve looked at the internals.</p>
+<p>Default: 16</p>
+<h3 id="dukusehobjectarraymingrowdivisor">DUK_USE_HOBJECT_ARRAY_MINGROW_DIVISOR</h3>
+<p>Technical internal parameter, see sources for details. Only adjust if you&apos;ve looked at the internals.</p>
+<p>Default: 8</p>
+<h3 id="dukusehobjectentrymingrowadd">DUK_USE_HOBJECT_ENTRY_MINGROW_ADD</h3>
+<p>Technical internal parameter, see sources for details. Only adjust if you&apos;ve looked at the internals.</p>
+<p>Default: 16</p>
+<h3 id="dukusehobjectentrymingrowdivisor">DUK_USE_HOBJECT_ENTRY_MINGROW_DIVISOR</h3>
+<p>Technical internal parameter, see sources for details. Only adjust if you&apos;ve looked at the internals.</p>
+<p>Default: 8</p>
+<h3 id="dukusehobjecthashproplimit">DUK_USE_HOBJECT_HASH_PROP_LIMIT</h3>
+<p>Minimum number of properties needed for a hash part to be included in the object property table. This limit is checked whenever an object is resized.</p>
+<p>A hash part improves property lookup performance even for small objects, starting from roughly 4 properties. However, this ignores the cost of setting up and managing the hash part, which is offset only if property lookups made through the hash part can offset the setup cost. A hash part is worth it for heavily accessed small objects or large objects (even those accessed quite infrequently). The limit doesn&apos;t take into account property access frequency, so it is necessarily a compromise.</p>
+<p>A lower value improves performance (a value as low a 4-8 can be useful) while a higher value conserves memory.</p>
+<p>Default: 8</p>
+<h3 id="dukusehstringlazyclen">DUK_USE_HSTRING_LAZY_CLEN</h3>
+<p>When enabled, duk_hstring charlen is computed only when accessed; because the charlen of most strings is not accessed during their lifetime, this reduces unnecessary charlen calculations. When disabled, charlen is computed during interning which has smaller code footprint at slightly slower charlen handling.</p>
+<p>Default: True</p>
+<h3 id="dukuseidcharfastpath">DUK_USE_IDCHAR_FASTPATH</h3>
+<p>Enable fast path for identifier start/part tables, which affect lexing and JSON performance slightly at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusejsondecnumberfastpath">DUK_USE_JSON_DECNUMBER_FASTPATH</h3>
+<p>Enable fast path for decoding numbers in JSON.parse(). The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusejsondecstringfastpath">DUK_USE_JSON_DECSTRING_FASTPATH</h3>
+<p>Enable fast path for string decoding in JSON.parse(). The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusejsoneatwhitefastpath">DUK_USE_JSON_EATWHITE_FASTPATH</h3>
+<p>Enable fast path for eating whitespace in JSON.parse(). The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusejsonquotestringfastpath">DUK_USE_JSON_QUOTESTRING_FASTPATH</h3>
+<p>Enable fast path for string quoting in JSON.stringify(). The fast path uses a lookup table at a small cost in footprint.</p>
+<p>Default: True</p>
+<h3 id="dukusejsonstringifyfastpath">DUK_USE_JSON_STRINGIFY_FASTPATH</h3>
+<p>Enable fast path for JSON.stringify() serialization. The fast path is used when there is no &quot;replacer&quot; argument. Indent argument and JX/JC format is supported since Duktape 1.4.0. The fast path increases code footprint by roughly 1.5 kB but is up to 4-5x faster than the slow path.</p>
+<p>Current limitation: assumes &quot;long long&quot; type exists (and covers duk_int64_t range) and that sprintf() format string &quot;%lld&quot; works for &quot;long long&quot;.</p>
+<p>Default: False</p>
+<h3 id="dukuselitcachesize">DUK_USE_LITCACHE_SIZE</h3>
+<p>Size of the literal cache, which maps C literal memory addresses into pinned duk_hstring heap object addresses. The cache is used when application code calls one of the duk_xxx_literal() API call variants, such as duk_push_literal() or duk_get_prop_literal(), to speed up the string intern check for the literal. In successful cases this caching makes using duk_xxx_literal() almost as fast as using borrowed heap pointers with duk_xxx_heapptr().</p>
+<p>When this option is defined, duk_hstrings related to literals encountered in duk_xxx_literal() API calls are automatically pinned between mark-and-sweep rounds. This accomplishes two things. First, it avoids the need for cache invalidation for the literal cache in normal operation between mark-and-sweep rounds. Second, it reduces string table traffic (i.e. freeing and reallocating) for literals which are likely to occur again and again. However, the downside is that some strings that may occur only temporarily will remain pinned until the next mark-and-sweep round. If this matter, you can avoid it by simply using e.g. duk_xxx_string() when dealing with such strings.</p>
+<p>The literal cache size must be a power of two (2^N).</p>
+<p>Default: 256</p>
+<h3 id="dukuseregexpcanonbitmap">DUK_USE_REGEXP_CANON_BITMAP</h3>
+<p>Use a small lookup table (footprint impact is ~300-400 bytes) to speed up case insensitive RegExp canonicalization. The result is still much slower than with DUK_USE_REGEXP_CANON_WORKAROUND but ~50x faster than without the lookup.</p>
+<p>Default: True</p>
+<h3 id="dukuseregexpcanonworkaround">DUK_USE_REGEXP_CANON_WORKAROUND</h3>
+<p>Use a 128kB lookup table for RegExp codepoint canonicalization to improve performance of case insensitive RegExp handling.</p>
+<p>This is a temporary workaround until there&apos;s better support for faster Unicode handling.</p>
+<p>Default: False</p>
+<h3 id="dukusestrhashdense">DUK_USE_STRHASH_DENSE</h3>
+<p>Use the slower but more dense string hash algorithm from Duktape 1.3.0 and prior (based on Murmurhash2). This may be useful if you&apos;re experiencing collision issues with the default hash algorithm.</p>
+<p>Default: False</p>
+<h3 id="dukusestrhashskipshift">DUK_USE_STRHASH_SKIP_SHIFT</h3>
+<p>Shift value to use for string hash skip offset when using the default (fast) string hash. The skip offset is calculated as: ((length &gt;&gt; DUK_USE_STRHASH_SKIP_SHIFT) + 1). A higher value will be slower but sample the string more densely.</p>
+<p>You should only change this if you run into issues with the default value.</p>
+<p>Default: 5</p>
+<h3 id="dukusestrtabgrowlimit">DUK_USE_STRTAB_GROW_LIMIT</h3>
+<p>Grow top level strtable allocation when load factor reaches this value. Expressed as a .4 fixed point; the load factor is computed as floor((count / size) * 16.0), e.g. 32 means a load factor of 2.0.</p>
+<p>Default: 17</p>
+<h3 id="dukusestrtabmaxsize">DUK_USE_STRTAB_MAXSIZE</h3>
+<p>Maximum size for Duktape heap string table, must be 2^N, and small enough so that if the value is multiplied by sizeof(duk_hstring *) it won&apos;t overflow duk_size_t.</p>
+<p>To avoid resizing the strtable at all, set DUK_USE_STRTAB_MINSIZE and DUK_USE_STRTAB_MAXSIZE to the same value.</p>
+<p>Default: 268435456</p>
+<h3 id="dukusestrtabminsize">DUK_USE_STRTAB_MINSIZE</h3>
+<p>Minimum size for Duktape heap string table, must be 2^N, and should never be lower than 64.</p>
+<p>Default: 1024</p>
+<h3 id="dukusestrtabptrcomp">DUK_USE_STRTAB_PTRCOMP</h3>
+<p>Pointer compress the top level heap-&gt;strtable[] string table. On 32-bit targets this saves 2 bytes per entry, e.g. for 256 entries 0.5kB. However, the additional pointer compression code increases footprint by 200-300 bytes. The option also reduces performance a little bit, so this should be enabled when RAM is much more constrained than ROM.</p>
+<p>Default: False</p>
+<h3 id="dukusestrtabresizecheckmask">DUK_USE_STRTAB_RESIZE_CHECK_MASK</h3>
+<p>Somewhat technical: bit mask (must be 2^N-1) used against heap-&gt;st_count to determine the interval between string table resize checks. A resize check is made when heap-&gt;st_count &amp; DUK_USE_STRTAB_RESIZE_CHECK_MASK is zero.</p>
+<p>A large value makes string table grow/shrink checks less frequent. Usually this has very little practical impact on memory performance. There are corner cases, such as dereferencing a large number of strings simultaneously, where this parameter affects how many new strings need to be inserted before the string table shrinks to a more appropriate size.</p>
+<p>Default: 255</p>
+<h3 id="dukusestrtabshrinklimit">DUK_USE_STRTAB_SHRINK_LIMIT</h3>
+<p>Shrink top level strtable allocation when load factor reaches this value. Expressed as a .4 fixed point; the load factor is computed as floor((count / size) * 16.0), e.g. 8 means a load factor of 0.5.</p>
+<p>Default: 6</p>
+<h3 id="dukusevalstackgrowshift">DUK_USE_VALSTACK_GROW_SHIFT</h3>
+<p>When growing the value stack, shift minimum size right by this amount to come up with a slack which is allocated on top of the minimum required size. The slack increases memory usage a bit, but reduces value stack reallocations when the minimum size grows. A value of 2 means that a 25% slack is used. Undefine to remove any slack, value stack is then always grown by the minimum amount possible.</p>
+<p>Default: 2</p>
+<h3 id="dukusevalstackshrinkcheckshift">DUK_USE_VALSTACK_SHRINK_CHECK_SHIFT</h3>
+<p>When doing a value stack shrink check, skip shrinking if the difference between the minimum reserve and allocated size is less than (curr_size &gt;&gt; DUK_USE_VALSTACK_SHRINK_CHECK_SHIFT) bytes. A value of 2 means that the difference must be at least 25% for a shrink to happen. If undefined, value stack is always shrunk to the minimum reserved size with no slack.</p>
+<p>Default: 2</p>
+<h3 id="dukusevalstackshrinkslackshift">DUK_USE_VALSTACK_SHRINK_SLACK_SHIFT</h3>
+<p>When shrinking, leave (curr_size &gt;&gt; DUK_USE_VALSTACK_SHRINK_SLACK_SHIFT) bytes as a slack. This shift count must be larger than DUK_USE_VALSTACK_SHRINK_CHECK_SHIFT.</p>
+<p>Default: 4</p>
+<h3 id="dukusevalstackunsafe">DUK_USE_VALSTACK_UNSAFE</h3>
+<p>Don&apos;t check allocated value stack size in operations like value stack pushes. Improves performance of API calls but causes unsafe memory behavior (e.g. a segfault) when user code pushes beyond &quot;checked&quot; value stack size.</p>
+<p>Default: False</p>
+<h2 id="performance-api-high-resolution-time">Performance API (High Resolution Time)</h2>
+<h3 id="dukuseperformancebuiltin">DUK_USE_PERFORMANCE_BUILTIN</h3>
+<p>Provide a &apos;performance&apos; global object based on <a href="https://www.w3.org/TR/hr-time/" target="_blank">https://www.w3.org/TR/hr-time/</a>.</p>
+<p>Default: True</p>
+<p>Development time torture options
+Development time options to stress test corner case handling by e.g. causing a garbage collection on every allocation.</p>
+<h3 id="dukusestrtabtorture">DUK_USE_STRTAB_TORTURE</h3>
+<p>Resize string table (grow, shrink back) for every intern. Ensures string table chaining is correct, and resize side effects are exercised on every resize.</p>
+<p>Default: False</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="congifuring_duktape_for_build.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ビルドのためのDuktapeの設定">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"設定オプション","level":"6.2","depth":1,"next":{"title":"https://github.com/svaarala/duktape/tree/master/config/feature-options","level":"6.3","depth":1,"url":"https://github.com/svaarala/duktape/tree/master/config/feature-options","ref":"https://github.com/svaarala/duktape/tree/master/config/feature-options","articles":[]},"previous":{"title":"ビルドのためのDuktapeの設定","level":"6.1","depth":1,"path":"congifuring_duktape_for_build.md","ref":"congifuring_duktape_for_build.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"config_options.md","mtime":"2022-11-12T05:03:23.567Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

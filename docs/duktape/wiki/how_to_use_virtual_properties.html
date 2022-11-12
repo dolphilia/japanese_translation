@@ -1,0 +1,1415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>仮想プロパティの使い方 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="how_to_use_finalization.html" />
+    
+    
+    <link rel="prev" href="how_to_make_function_calls.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >仮想プロパティの使い方</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="仮想プロパティの活用方法">仮想プロパティの活用方法</h1>
+<p>Duktapeは、プロパティアクセスをプログラムで操作するための2つのメカニズムを提供します。</p>
+<ul>
+<li>アクセサー・プロパティ(ゲッターとセッター)</li>
+<li>プロキシ・オブジェクト</li>
+</ul>
+<h2 id="ecmascript-e5-のアクセサー・プロパティ（ゲッターとセッター）">ECMAScript E5 のアクセサー・プロパティ（ゲッターとセッター）</h2>
+<h3 id="アクセサの概要">アクセサの概要</h3>
+<p>ECMAScript Edition 5 は、プロパティの読み取り/書き込み操作をユーザ関数で捕捉できるようにするアクセサ・プロパティ（&quot;ゲッターとセッター &quot;とも呼ばれる）を提供します。セッター/ゲッター関数は、ECMAScript と Duktape/C の両方の関数にすることができます。</p>
+<p>アクセサは、ECMAScript コードからは Object.defineProperty() または Object.defineProperties() を、C コードからは duk_def_prop() を使ってセットアップされます。</p>
+<h3 id="例">例</h3>
+<p>obj.colorへの書き込みをキャプチャして、色値を検証し、副作用として再描画をトリガすることができるようにします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> obj = {};
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validateColor</span>(<span class="hljs-params">color</span>) </span>{
+    <span class="hljs-comment">// 真または偽を返す</span>
+}
+
+<span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">&apos;color&apos;</span>, {
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">// 現在の色は、ここで生の _color プロパティに格納されます。</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>._color;
+    },
+    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{
+        <span class="hljs-keyword">if</span> (!validateColor(v)) {
+            <span class="hljs-comment">// 有効なカラーフォーマットのみを割り当てる</span>
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;invalid color: &apos;</span> + v);
+        }
+        <span class="hljs-built_in">this</span>._color = v;
+        redraw();
+    }
+});
+
+<span class="hljs-comment">// Change to red and trigger a redraw.</span>
+obj.color = <span class="hljs-string">&apos;#ff0000&apos;</span>;
+</code></pre>
+<h3 id="制限事項">制限事項</h3>
+<p>セッターとゲッターは、E5標準の一部であり、広く実装されているという利点があります。しかし、大きな制約もあります。</p>
+<ul>
+<li><p>プロパティの読み込みと書き込みの操作に限定される。プロパティの削除やオブジェクトの列挙などには対応できない。</p>
+</li>
+<li><p>事前にアクセッサとして設定した個々のプロパティにのみ適用されます。特定のオブジェクトのすべてのプロパティアクセスを捕捉することはできないため、大きなアレイの仮想化など、いくつかのシナリオで有用性が制限されます。</p>
+</li>
+<li><p>標準的なプロパティ・ゲッター／セッター関数は、プロパティ・キーを引数として取得しないため（この動作はECMAScript仕様で定義されています）、複数のプロパティに対するゲッター／セッター関数を共有することができません。しかし、Duktapeは、プロパティ名を追加の非標準引数として持つゲッター/セッター関数を提供します; 以下の議論を参照してください。</p>
+</li>
+</ul>
+<h3 id="非標準のゲッターセッターキー引数">非標準のゲッター/セッターキー引数</h3>
+<p>Duktapeは、プロパティ・アクセスによってゲッター/セッターが引き起こされる場合、非標準的なゲッター/セッター関数の引数としてプロパティ・キーを提供します。例えば、print(foo.bar)を実行すると、&quot;bar &quot;プロパティのゲッターが呼び出され、その関数は非標準的な追加引数として &quot;bar &quot;を取得します。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> obj = {};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myGetter</span>(<span class="hljs-params">key</span>) </span>{
+    <span class="hljs-comment">// &apos;this&apos; バインディングはターゲットオブジェクト、&apos;key&apos; は非標準の引数です</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mySetter</span>(<span class="hljs-params">val, key</span>) </span>{
+    <span class="hljs-comment">// &apos;this&apos; バインディングはターゲットオブジェクト、&apos;key&apos; は非標準の引数です</span>
+}
+<span class="hljs-built_in">Object</span>.defineProperties(obj, {
+    <span class="hljs-comment">// こちらも同じゲッター/セッターを使用することができます。</span>
+    <span class="hljs-attr">key1</span>: { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: myGetter, <span class="hljs-attr">set</span>: mySetter },
+    <span class="hljs-attr">key2</span>: { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: myGetter, <span class="hljs-attr">set</span>: mySetter },
+    <span class="hljs-attr">key3</span>: { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: myGetter, <span class="hljs-attr">set</span>: mySetter }
+    <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<p>しかし、ゲッターやセッターは、プロパティアクセスを行わずに呼び出すこともできます。このような場合は、もちろん引数がなくなります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> desc = <span class="hljs-built_in">Object</span>.getOwnPropertyDescriptor(obj, <span class="hljs-string">&apos;key1&apos;</span>);
+<span class="hljs-keyword">var</span> getter = desc.get;
+print(getter());  <span class="hljs-comment">// ゲッターを直接呼び出すと、キー名は &apos;undefined&apos; になります。</span>
+</code></pre>
+<p>この手法では，ゲッター/セッター関数を共有することができますが，それでも各アクセサープロパティをあらかじめ定義しておく必要があります．特に、配列要素の仮想化は、非常に小さい固定サイズの配列を除いて、合理的な方法で行うことができません。</p>
+<p>test-dev-nonstd-setget-key-argument.js も参照してください。</p>
+<h3 id="duktapecのゲッターセッターを、非標準のキー引数なしで共有する。">Duktape/Cのゲッター/セッターを、非標準のキー引数なしで共有する。</h3>
+<p>非標準のゲッター/セッター・キー引数を使いたくない場合は、以下のようにDuktape/C関数を1組共有して、複数のプロパティ・キーを仮想化することもできます。</p>
+<p>まず、各ゲッター/セッターに対して別々のECMAScript関数が作成され、そのような関数はそれぞれ同じ基礎となるDuktape/C関数を使用します。次に、Duktape/C関数は、それが呼び出されたECMAScript関数インスタンス「経由」に格納されたプロパティを使用して、その動作を特殊化します。以下では、ECMAScript関数インスタンスに格納されているキーのプロパティを紹介します。</p>
+<p>各プロパティに対して、以下のようにゲッター/セッター関数を作成することになる。</p>
+<pre><code class="lang-c"><span class="hljs-comment">/* key1&apos; ゲッター/セッター用のECMAScript関数オブジェクトを作成する。 */</span>
+duk_push_c_function(my_setter, <span class="hljs-number">1</span> <span class="hljs-comment">/*nargs*/</span>);
+duk_push_string(ctx, <span class="hljs-string">&quot;key1&quot;</span>);
+duk_put_prop_string(ctx, <span class="hljs-number">-2</span>, <span class="hljs-string">&quot;key&quot;</span>);
+duk_push_c_function(my_getter, <span class="hljs-number">0</span> <span class="hljs-comment">/*nargs*/</span>);
+duk_push_string(ctx, <span class="hljs-string">&quot;key1&quot;</span>);
+duk_put_prop_string(ctx, <span class="hljs-number">-2</span>, <span class="hljs-string">&quot;key&quot;</span>);
+<span class="hljs-comment">/* ... ターゲットオブジェクトにアクセッサプロパティを追加する */</span>
+
+<span class="hljs-comment">/* 同様に&apos;key2&apos;のゲッター/セッターのためのECMAScript関数オブジェクトを作成し、残りのプロパティについても同様に作成する。 */</span>
+</code></pre>
+<p>Duktape/Cのゲッター関数は、次のようになります（セッターも同様）。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">duk_ret_t</span> <span class="hljs-title">my_getter</span><span class="hljs-params">(duk_context *ctx)</span> </span>{
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *key;
+
+    <span class="hljs-comment">/* ゲッターの位置引数はありません。 */</span>
+
+    <span class="hljs-comment">/* &apos;this&apos; バインディングからターゲットオブジェクトを取得する（例えば &quot;foo.bar&quot; にアクセスした場合は &quot;foo&quot; を取得する）。 */</span>
+    duk_push_this(ctx);
+
+    <span class="hljs-comment">/* my_getter ネイティブ関数を「ラップ」した ECMAScript 関数からアクセスされている「キー」を取得します。 */</span>
+    duk_push_current_function(ctx);
+    duk_get_prop_string(ctx, <span class="hljs-number">-1</span>, <span class="hljs-string">&quot;key&quot;</span>);
+    key = duk_require_string(ctx, <span class="hljs-number">-1</span>);
+
+    <span class="hljs-comment">/* -&gt; [ この関数のキー ] */</span>
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(key, <span class="hljs-string">&quot;key1&quot;</span>) == <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">/* key1&apos;に対する動作 */</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strcmp</span>(key, <span class="hljs-string">&quot;key2&quot;</span>) == <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">/* key2&apos;に対する動作 */</span>
+    }
+    <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p>仮想化された各プロパティに対して、個別のECMAScript関数オブジェクトとターゲットオブジェクト上の事前定義されたアクセッサプロパティが依然として必要である。</p>
+<h2 id="ecmascript-e6-プロキシサブセット">ECMAScript E6 プロキシサブセット</h2>
+<h3 id="プロキシの概要">プロキシの概要</h3>
+<p>Duktapeは、アクセッサに加えて、ECMAScript E6のProxy概念のサブセット実装を提供します（参照）。</p>
+<ul>
+<li>Proxyオブジェクト（サブセット）：DuktapeのProxy実装における現在の制限事項。</li>
+<li>プロキシ・オブジェクト（E6）。ES2015 の Proxy オブジェクトの仕様です。</li>
+<li>Proxy (Mozilla):MozillaによるFirefoxに実装されたProxyの説明で、多くの例を含んでいます。</li>
+</ul>
+<p>Proxy オブジェクトはゲッター/セッターよりもはるかに強力ですが、ECMAScript エンジンでまだ広く使われている機能ではありません。</p>
+<h3 id="has、get、set、deleteproperty-トラップの例。">has、get、set、deleteProperty トラップの例。</h3>
+<p>任意のプロパティにアクセスするたびに一行表示する。</p>
+<pre><code class="lang-js"><span class="hljs-comment">// 下地となるプレーンなオブジェクト。</span>
+<span class="hljs-keyword">var</span> target = { <span class="hljs-attr">foo</span>: <span class="hljs-string">&apos;bar&apos;</span> };
+
+<span class="hljs-comment">// ハンドラテーブル、インタラクションのためのトラップを提供する（オンザフライで変更可能）。</span>
+<span class="hljs-keyword">var</span> handler = {
+    <span class="hljs-attr">has</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key</span>) </span>{
+        print(<span class="hljs-string">&apos;has called for key=&apos;</span> + key);
+        <span class="hljs-keyword">return</span> key <span class="hljs-keyword">in</span> targ;  <span class="hljs-comment">// 存在状態をそのまま返す</span>
+    },
+
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key, recv</span>) </span>{
+        print(<span class="hljs-string">&apos;get called for key=&apos;</span> + key);
+        <span class="hljs-keyword">return</span> targ[key];  <span class="hljs-comment">// 修正されていない値を返す</span>
+    },
+
+    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key, val, recv</span>) </span>{
+        print(<span class="hljs-string">&apos;set called for key=&apos;</span> + key + <span class="hljs-string">&apos;, val=&apos;</span> + val);
+        targ[key] = val;  <span class="hljs-comment">// &apos;set&apos; が定義されている場合、ターゲットへの書き込みを手動で行う必要があります。</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;      <span class="hljs-comment">// true: プロパティ書き込みが許可されたことを示す</span>
+    },
+
+    <span class="hljs-attr">deleteProperty</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key</span>) </span>{
+        print(<span class="hljs-string">&apos;deleteProperty called for key=&apos;</span> + key);
+        <span class="hljs-keyword">delete</span> targ[key];  <span class="hljs-comment">// &apos;deleteProperty&apos;が定義されている場合は、手動で削除する必要があります。</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;       <span class="hljs-comment">// true: プロパティの削除が許可されたことを示す</span>
+    }
+};
+
+<span class="hljs-comment">// プロキシオブジェクトを作成する。</span>
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, handler);
+
+<span class="hljs-comment">// その後、プロキシオブジェクトは正常にアクセスされる。</span>
+print(<span class="hljs-string">&apos;foo&apos;</span> <span class="hljs-keyword">in</span> proxy);
+proxy.foo = <span class="hljs-number">321</span>;
+print(proxy.foo);
+<span class="hljs-keyword">delete</span> proxy.foo;
+</code></pre>
+<p>Proxyオブジェクトは、基礎となるオブジェクトの読み取り専用バージョンを作成するために使用することもできます（そうしないと、かなり面倒なことになります）。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, {
+    <span class="hljs-comment">// hasとgetは省略：存在チェックと読み出しは自動的にターゲットオブジェクトに通じる</span>
+
+    <span class="hljs-comment">// setがfalseを返す：書き込みを拒否する</span>
+    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; },
+
+    <span class="hljs-comment">// deleteProperty が false を返す場合：削除を拒否する。</span>
+    <span class="hljs-attr">deleteProperty</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>; }
+});
+</code></pre>
+<p>また、オブジェクトの書き込み専用バージョンを作成することもできます（他の方法では不可能です）。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, {
+    <span class="hljs-attr">has</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;has not allowed&apos;</span>); },
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;get not allowed&apos;</span>); }
+
+    <span class="hljs-comment">// set, deleteProperty を省略した場合： set/delete 操作は許可され、自動的にターゲットにスルーされます。</span>
+});
+</code></pre>
+<p>以下は、やや人為的な動作を複数組み合わせた、より複雑な例である。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> target = { <span class="hljs-attr">foo</span>: <span class="hljs-string">&apos;bar&apos;</span> };
+
+<span class="hljs-comment">/*
+ *  - &apos;color&apos; はゲッター/セッターの例と同じように動作し、削除できない (削除しようとすると TypeError が発生する)。
+ *
+ *  - 文字列の値はすべて大文字で読み込まれます。
+ *
+ *  - アンダースコアで始まるプロパティ名は、いくつかの異なる方法で読み取り/書き込み/削除が保護され、その存在は否定されます。
+ */</span>
+
+<span class="hljs-keyword">var</span> handler = {
+    <span class="hljs-attr">has</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key</span>) </span>{
+        <span class="hljs-comment">// このバインディング：ハンドラテーブル</span>
+        <span class="hljs-comment">// targ: underlying plain object (= target, above)</span>
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> key === <span class="hljs-string">&apos;string&apos;</span> &amp;&amp; key[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;_&apos;</span>) {
+            <span class="hljs-comment">// pretend that property doesn&apos;t exist</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+
+        <span class="hljs-keyword">return</span> key <span class="hljs-keyword">in</span> targ;
+    },
+
+    <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key, recv</span>) </span>{
+        <span class="hljs-comment">// このバインディング：ハンドラテーブル</span>
+        <span class="hljs-comment">// targ: underlying plain object (= target, above)</span>
+        <span class="hljs-comment">// key: key (can be any value, not just a string)</span>
+        <span class="hljs-comment">// recv: object being read from (= the proxy object)</span>
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> key === <span class="hljs-string">&apos;string&apos;</span> &amp;&amp; key[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;_&apos;</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;attempt to access a read-protected property&apos;</span>);
+        }
+
+        <span class="hljs-comment">// 戻り値：プロパティ検索結果として提供される値。</span>
+        <span class="hljs-keyword">var</span> val = targ[key];
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">typeof</span> val === <span class="hljs-string">&apos;string&apos;</span> ? val.toUpperCase() : val);
+    },
+
+    <span class="hljs-attr">set</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key, val, recv</span>) </span>{
+        <span class="hljs-comment">// this binding: ハンドラテーブル</span>
+        <span class="hljs-comment">// targ: underlying plain object (= target, above)</span>
+        <span class="hljs-comment">// key: key (can be any value, not just a string)</span>
+        <span class="hljs-comment">// val: value</span>
+        <span class="hljs-comment">// recv: object being read from (= the proxy object)</span>
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> key === <span class="hljs-string">&apos;string&apos;</span>) {
+            <span class="hljs-keyword">if</span> (key === <span class="hljs-string">&apos;color&apos;</span>) {
+                <span class="hljs-keyword">if</span> (!validateColor(val)) {
+                    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;invalid color: &apos;</span> + val);
+                }
+                targ.color = val;
+                redraw();
+
+                <span class="hljs-comment">// True: プロパティの書き込みが許可されていることを呼び出し元に示す。</span>
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;_&apos;</span>) {
+                <span class="hljs-comment">// False: は、プロパティの書き込みが拒否されたことを呼び出し元へ通知する。非厳密モードでは黙って無視されるが、厳密モードではTypeErrorが投げられる。</span>
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+
+        <span class="hljs-comment">// ターゲットに書き込む。  また、ターゲットに書き込まずにtrueを返すことで、ターゲットを変更せずに書き込みに成功したことをシミュレートすることもできます。</span>
+        targ[key] = val;
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    },
+
+    <span class="hljs-attr">deleteProperty</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ, key</span>) </span>{
+        <span class="hljs-comment">// this binding: handler table</span>
+        <span class="hljs-comment">// targ: underlying plain object (= target, above)</span>
+        <span class="hljs-comment">// key: key (can be any value, not just a string)</span>
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> key === <span class="hljs-string">&apos;string&apos;</span>) {
+            <span class="hljs-keyword">if</span> (key === <span class="hljs-string">&apos;color&apos;</span>) {
+                <span class="hljs-comment">// For &apos;color&apos; a delete attempt causes an explicit error.</span>
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span class="hljs-string">&apos;attempt to delete the color property&apos;</span>);
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (key[<span class="hljs-number">0</span>] === <span class="hljs-string">&apos;_&apos;</span>) {
+                <span class="hljs-comment">// False: は、プロパティの削除が拒否されたことを呼び出し元へ通知する。非厳密モードでは黙って無視されるが、厳密モードではTypeErrorが投げられる。</span>
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+            }
+        }
+
+        <span class="hljs-comment">// ターゲットから削除する。また、ターゲットから削除せずに true を返すことで、ターゲットを変更せずに削除が成功したことをシミュレートすることもできます。</span>
+        <span class="hljs-keyword">delete</span> targ[key];
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+};
+</code></pre>
+<p>ES2015のセマンティクスは、トラップが許可する場合でも、いくつかのプロパティアクセスを拒否する。これは、プロキシのターゲットオブジェクトが設定不可能な競合するプロパティを持つ場合に発生します; 詳細はE6セクション9.5.7, 9.5.8, 9.5.9, 9.5.10 を参照してください。ターゲットオブジェクトを空にし、必要なら関係のないプレーンオブジェクトに仮想プロパティをバックアップすることで、このような動作を簡単に回避することができます。</p>
+<h3 id="enumerate-および-ownkeys-トラップの例">enumerate および ownKeys トラップの例</h3>
+<p>これらのトラップは以下のように呼び出されます。</p>
+<table>
+<thead>
+<tr>
+<th>Call site</th>
+<th>Trap</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object.keys()</td>
+<td>ownKeys</td>
+<td></td>
+</tr>
+<tr>
+<td>Object.getOwnPropertyNames()</td>
+<td>ownKeys</td>
+<td></td>
+</tr>
+<tr>
+<td>for-in enumeration</td>
+<td>ownKeys</td>
+<td>In Duktape 2.x, matching ES2016 semantics.</td>
+</tr>
+<tr>
+<td>for-in enumeration</td>
+<td>enumerate</td>
+<td>In Duktape 1.x, matching ES2015 semantics.(*1)</td>
+</tr>
+</tbody>
+</table>
+<p>(*1) ただし、配列または「配列のような」トラップ結果のみがサポートされています（ES2015初期のドラフト動作）。標準のES2015 &quot;enumerate&quot; トラップはイテレータを返さなければなりませんが、Duktape 1.xではイテレータはサポートされていません。ES2016のセマンティクスに合わせて &quot;enumerate&quot; トラップを削除し、Duktape 2.x では決して呼び出されません。</p>
+<p>以下の例は、Duktape 1.x用です。</p>
+<p>アンダースコアで始まるプロパティ名を列挙とObject.keys()およびObject.getOwnPropertyNames()から非表示にする。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> target = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">bar</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">_quux</span>: <span class="hljs-number">3</span>,
+    <span class="hljs-attr">_baz</span>: <span class="hljs-number">4</span>
+};
+
+<span class="hljs-keyword">var</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(target, {
+    <span class="hljs-attr">enumerate</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ</span>) </span>{
+        <span class="hljs-comment">// this binding: handler table</span>
+        <span class="hljs-comment">// targ: underlying plain object (= target, above)</span>
+
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.getOwnPropertyNames(targ)
+                     .filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> v[<span class="hljs-number">0</span>] !== <span class="hljs-string">&apos;_&apos;</span>; });
+    },
+
+    <span class="hljs-attr">ownKeys</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">targ</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.getOwnPropertyNames(targ)
+                     .filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{ <span class="hljs-keyword">return</span> v[<span class="hljs-number">0</span>] !== <span class="hljs-string">&apos;_&apos;</span>; });
+    }
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">test</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k <span class="hljs-keyword">in</span> proxy) {
+        print(k);  <span class="hljs-comment">// prints &apos;foo&apos; and &apos;bar&apos;</span>
+    }
+}
+test();
+
+print(<span class="hljs-built_in">Object</span>.keys(proxy));                 <span class="hljs-comment">// prints &apos;foo,bar&apos;</span>
+print(<span class="hljs-built_in">Object</span>.getOwnPropertyNames(proxy));  <span class="hljs-comment">// prints &apos;foo,bar&apos;</span>
+</code></pre>
+<h3 id="コンストラクタ関数でproxyを使用する">コンストラクタ関数でProxyを使用する</h3>
+<p>コンストラクタがオブジェクト値を返す場合、その値は、このバインディング E5.1 セクション 13.2.2 としてコンストラクタで利用できる自動的に作成されたデフォルトのインスタンスを置き換えます。これにより、コンストラクタ呼び出しの結果としてコンストラクタからProxyオブジェクトが返されるようになります。</p>
+<p>また、thisオブジェクトを普通に初期化して、それをProxyでラップすることもできます（test-bi-proxy-in-constructor.jsを参照）。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyConstructor</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// 普通に&apos;this&apos;を初期化する</span>
+    <span class="hljs-built_in">this</span>.foo = <span class="hljs-string">&apos;bar&apos;</span>;
+
+    <span class="hljs-comment">// プロキシで囲む</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Proxy</span>(<span class="hljs-built_in">this</span>, {
+        <span class="hljs-comment">// プロキシトラップ</span>
+    });
+}
+
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> MyConstructor();
+</code></pre>
+<h2 id="duktapeが対応していないメカニズム">Duktapeが対応していないメカニズム</h2>
+<p>プロパティの仮想化には、さまざまな非標準のメカニズムがあります。これらはDuktapeではサポートされていません。</p>
+<ul>
+<li>Object.prototype.watch()</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="how_to_make_function_calls.html" class="navigation navigation-prev " aria-label="Previous page: 関数呼び出しの方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="how_to_use_finalization.html" class="navigation navigation-next " aria-label="Next page: ファイナライゼーションの使い方">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"仮想プロパティの使い方","level":"4.4","depth":1,"next":{"title":"ファイナライゼーションの使い方","level":"4.5","depth":1,"path":"how_to_use_finalization.md","ref":"how_to_use_finalization.md","articles":[]},"previous":{"title":"関数呼び出しの方法","level":"4.3","depth":1,"path":"how_to_make_function_calls.md","ref":"how_to_make_function_calls.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how_to_use_virtual_properties.md","mtime":"2022-11-11T05:14:47.410Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

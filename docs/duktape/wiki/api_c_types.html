@@ -1,0 +1,1293 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>API Cタイプ · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="post-es5_features.html" />
+    
+    
+    <link rel="prev" href="internal_and_external_prototype.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >API Cタイプ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="api-cタイプ">API Cタイプ</h1>
+<h2 id="概要">概要</h2>
+<p>Duktape APIは、エキゾチックなプラットフォームへの移植性を確保するために、duk_int_tのようなtypedefでラップされたCの型をほぼ独占的に使用しています。この記事では、いくつかの背景を説明し、型を要約し、呼び出し側のコードが移植性を最大化するためにどのように型を使用すべきかを説明します。</p>
+<h2 id="duktape-apiを使用するコードのためのガイドライン">Duktape APIを使用するコードのためのガイドライン</h2>
+<p>移植性を最大化するために、変数を宣言する際にはduk_idx_tやduk_ret_t（後述）のようなDuktape型を使ってください。あるいは、（intやlongのような）普通の型を使うこともできますが、コードの移植性は低くなり、警告を避けるためにキャストを使用する必要があるかもしれません。long は、プラットフォームによっては 16 ビット幅しかない int よりも優れたデフォルトの整数型であることに注意してください。</p>
+<p>printf()フォーマットでは、Duktape型をワイドな整数型にキャストし、標準的なフォーマット指定子を使用して、型と指定子が常に一致するようにします。整数の場合、longとunsigned longは、C99/C++11を必要とせず、通常Duktapeの型指定で使用される全ての整数値を保持できるため、通常良い選択となります。例えば</p>
+<pre><code class="lang-c"><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Result: %ld\n&quot;</span>, (<span class="hljs-keyword">long</span>) duk_get_int(ctx, <span class="hljs-number">-3</span>));
+</code></pre>
+<p>ANSI Cフォーマット文字列をサポートするDuktape APIコールは、プラットフォーム のvsnprintf()関数にフォーマット文字列とコール引数を渡すだけです。移植性を最大化するために、書式指定子は慎重に選択し、型が一致するように引数をキャストしてください。例えば</p>
+<pre><code class="lang-c"><span class="hljs-keyword">duk_int_t</span> val = <span class="hljs-number">123</span>;
+duk_push_sprintf(ctx, <span class="hljs-string">&quot;My integer: %ld&quot;</span>, (<span class="hljs-keyword">long</span>) val);
+</code></pre>
+<p>いくつかの標準的な書式指定子。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Specifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>long</td>
+<td>%ld</td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>%lu</td>
+</tr>
+<tr>
+<td>double</td>
+<td>%f or %lf for printf(), %lf for scanf()</td>
+</tr>
+<tr>
+<td>size_t</td>
+<td>%zu in C99, C99以前のコンパイラには、様々なカスタム指定子があります。</td>
+</tr>
+<tr>
+<td>intmax_t</td>
+<td>%jd in C99</td>
+</tr>
+<tr>
+<td>uintmax_t</td>
+<td>%ju in C99</td>
+</tr>
+</tbody>
+</table>
+<p>printf()とscanf()で使用されるフォーマット指定子は異なる場合がありま す。scanf()では、標準の型と標準のフォーマット・コードを使用し、必要に応じて Duktapeの型にキャストしてください。この場合も、longとunsigned longはデフォルトの良い選択です。例えば</p>
+<pre><code class="lang-c"><span class="hljs-keyword">long</span> val;
+<span class="hljs-built_in">sscanf</span>(my_str, <span class="hljs-string">&quot;%ld&quot;</span>, &amp;val);
+duk_push_int(ctx, (<span class="hljs-keyword">duk_int_t</span>) val);
+</code></pre>
+<p>16ビットより大きな定数にはL（またはUL）サフィックスをつけると移植性が高くなります。int型と同様、サフィックスをつけない整数型定数は16ビット幅しか保証されません。Lサフィックスをつけると、最低でも32ビット幅の定数が保証されます。例</p>
+<pre><code class="lang-c">duk_push_int(ctx, <span class="hljs-number">1234567L</span>);
+</code></pre>
+<p>Duktape 1.xのAPIコールでファイルシステムのパスを引数に取る場合、単にそのパスをfopen()に渡します（Duktape 2.xではファイル入出力APIコールを一切提供していません）。エンコーディングを指定したり、広い文字セットをサポートする方法はありません。これを行うには、プラットフォーム固有のヘルパーを自分で実装する必要があります。</p>
+<h2 id="duktape-apiで使用されているラップ型">Duktape APIで使用されているラップ型</h2>
+<p>ほとんどの場合、これらの型ラッパーについて心配する必要はありません。これは、型のビット数などに関する一般的な仮定が成り立たないエキゾチックな環境を想定しています。</p>
+<p>APIドキュメントでは、Duktapeでラップされたtypedef名（duk_idx_tなど）が使用されています。コンパイラが使用する具象型は、プラットフォームとコンパイラに依存します。APIドキュメントでプロトタイプにカーソルを合わせると、C99/C++11の型が利用可能で、プラットフォームのintが少なくとも32ビット幅（最近ではほとんどそうなっています）の場合に、どの具象型が使われるかがツール・チップに表示されます。</p>
+<p>次の表は、いくつかの中心的な型定義と、様々な環境（例）で選択される具象型とをまとめたものである。また、この表は、移植性のあるフォーマット/スキャンのために printf() と scanf() のキャストに使用すべきプレーンタイプを示唆しています。</p>
+<table>
+<thead>
+<tr>
+<th>Duktape type</th>
+<th>C99/C++11 32-bit int</th>
+<th>Legacy 32-bit int</th>
+<th>Legacy 16-bit int</th>
+<th>printf</th>
+<th>scanf</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>duk_int_t</td>
+<td>int</td>
+<td>int</td>
+<td>long</td>
+<td>%ld<br>long</td>
+<td>%ld<br>long</td>
+<td>オールラウンドな整数型、範囲は [DUK_INT_MIN, DUK_INT_MAX] です。</td>
+</tr>
+<tr>
+<td>duk_uint_t</td>
+<td>unsigned int</td>
+<td>unsigned int</td>
+<td>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>オールラウンドな符号なし整数型、範囲は [0, DUK_UINT_MAX] です。</td>
+</tr>
+<tr>
+<td>duk_int32_t</td>
+<td>int32_t</td>
+<td>int</td>
+<td>long</td>
+<td>%ld<br>long</td>
+<td>%ld<br>long</td>
+<td>ToInt32() の強制適用のための正確な型</td>
+</tr>
+<tr>
+<td>duk_uint32_t</td>
+<td>uint32_t</td>
+<td>unsigned int</td>
+<td>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>ToUint32()強制のための正確な型</td>
+</tr>
+<tr>
+<td>duk_uint16_t</td>
+<td>uint16_t</td>
+<td>unsigned short</td>
+<td>unsigned short</td>
+<td>%u<br>unsigned int</td>
+<td>%u<br>unsigned int</td>
+<td>ToUint16()強制のための正確な型</td>
+</tr>
+<tr>
+<td>duk_idx_t</td>
+<td>int</td>
+<td>int</td>
+<td>long</td>
+<td>%ld<br>long</td>
+<td>%ld<br>long</td>
+<td>値スタックインデックス</td>
+</tr>
+<tr>
+<td>duk_uarridx_t</td>
+<td>unsigned int</td>
+<td>unsigned int</td>
+<td>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>ECMAScriptの配列インデックス</td>
+</tr>
+<tr>
+<td>duk_codepoint_t</td>
+<td>int</td>
+<td>int</td>
+<td>long</td>
+<td>%ld<br>long</td>
+<td>%ld<br>long</td>
+<td>ユニコードコードポイント</td>
+</tr>
+<tr>
+<td>duk_errcode_t</td>
+<td>int</td>
+<td>int</td>
+<td>long</td>
+<td>%ld<br>long</td>
+<td>%ld<br>long</td>
+<td>Duktape APIで使用される整数エラーコード（ユーザーコードの範囲は[1,16777215]）。</td>
+</tr>
+<tr>
+<td>duk_bool_t</td>
+<td>int</td>
+<td>int</td>
+<td>int</td>
+<td>%d<br>int</td>
+<td>%d<br>int</td>
+<td>ブール値の返り値</td>
+</tr>
+<tr>
+<td>duk_ret_t</td>
+<td>int</td>
+<td>int</td>
+<td>int</td>
+<td>%d<br>int</td>
+<td>%d<br>int</td>
+<td>Duktape/C関数の戻り値</td>
+</tr>
+<tr>
+<td>duk_size_t</td>
+<td>size_t</td>
+<td>size_t</td>
+<td>size_t</td>
+<td>%lu<br>unsigned long</td>
+<td>%lu<br>unsigned long</td>
+<td>現在1:1マッピング、将来の使用のためにラップされる。範囲は [0, DUK_SIZE_MAX] です。C99 フォーマット指定子は %zu です。</td>
+</tr>
+<tr>
+<td>duk_double_t</td>
+<td>double</td>
+<td>double</td>
+<td>double</td>
+<td>%f or %lf<br>double</td>
+<td>%lf<br>double</td>
+<td>現在は1:1マッピング、将来はカスタムソフトウェア浮動小数点ライブラリなどのためにラップされます。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ccの型付け問題の背景">C/C++の型付け問題の背景</h2>
+<p>このセクションでは、C言語の型付けに関する背景と根拠を説明します。</p>
+<p>ポータブルな C/C++ のタイピングは、以下のような複雑な問題を含んでいます。</p>
+<ul>
+<li>C99、C++11、および古い環境に対するポータブルな型検出。</li>
+<li>利用可能な型のビットサイズと範囲、最適な型の選択（例えば、最小または正確なビットサイズが保証された最も高速または最小の型）。</li>
+<li>INT_MINのような型範囲用の定数。</li>
+<li>printf()やscanf()のフォーマット文字列で型が使用される場合のフォーマット指定子。</li>
+</ul>
+<p>(Duktapeは、2の補数演算が可能なプラットフォームでのみ動作します)。</p>
+<h3 id="ビットサイズが標準ではない（高速な32ビット型が保証されていない）">ビットサイズが標準ではない（高速な32ビット型が保証されていない）</h3>
+<p>intのような一般的な型のビットサイズは、実装によって異なる。C99/C++11では、int32_t（正確な符号付き32ビット型）やint_fast32_t（少なくとも符号付き32ビット範囲を持つ高速整数型）といった標準的な整数の型定義が提供されています。これらの型定義は古いコンパイラでは利用できないので，プラットフォームに依存した型検出が必要です．</p>
+<p>Duktapeは、アーキテクチャにとって便利で、なおかつ32ビット幅が保証された 整数型を必要としています。このような型は、配列のインデックスやUnicodeポイントなどを表現するのに必要です。しかし、そのような標準的な型はなく、少なくとも以下のようなバリエーションが見受けられます。</p>
+<ul>
+<li>16 ビット int と 32 ビット long</li>
+<li>32ビットintと32ビットlong</li>
+<li>32ビットintと64ビットlong（64ビットlongはプロセッサにとって非効率的です</li>
+<li>64ビットintとlong</li>
+</ul>
+<p>見ての通り、全てのケースにおいてCの組み込み型は適切ではないので、型検出が必要です。Duktapeはこれらの目的のためにduk<em>int_t型（CPUに都合の良い、少なくとも32ビット幅）を検出し、定義しています。通常、Duktapeがint型が32ビット幅以上であることを確実に検出できる場合、それはint型にマッピングされます。そうでない場合、C99型が利用可能であればint_fast32_tが使われます。C99型が利用できない場合、Duktapeはプラットフォーム特有の検出を行い、適切な型を決定します。duk_uint_t は同じですが、符号なしです。API の他のほとんどの型（duk_idx_t など）は duk</em>(u)int_t にマップされていますが、これは将来必要に応じて変更される可能性があります。</p>
+<p>他の特殊な型も必要です。例えば、N ビット幅の整数も、いくつかのケースで適切なオーバーフロー動作を保証するために必要です。</p>
+<h3 id="format-specifiers">Format specifiers</h3>
+<p>C/C++の型はprintf()やscanf()でよく使われ、それぞれの型は書式指定子を持つ。書式指定子のセットは部分的にしか標準化されていませんが(例えば、ビットサイズに関係なく、intには%dが使われます)、カスタムコードが使われることもあります。</p>
+<p>型ラッパーを使用する場合、正しいフォーマットコードは型検知に依存する。例えば、duk_int_t は少なくとも 32 ビット幅を持つ便利な整数型にマップされます。あるプラットフォームでは、基礎となる型はint（書式指定子 %d）かもしれませんし、別のプラットフォームではlong（書式指定子 %ld）かもしれません。呼び出し側のコードは、プリプロセッサの定義から適切な書式を取得するか、固定書式指定子を使用して引数をキャストしない限り、このような値を文字列書式で安全に使用することができません。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">duk_int_t</span> val = <span class="hljs-comment">/* ... */</span>;
+
+<span class="hljs-comment">/* 型と形式が一致するように値をキャストします。  適切なキャスト先を選択することは問題であり、呼び出し側は「安全策」をとらなければならない。  C99の型に頼らずとも、符号付き整数の場合は通常 &quot;long &quot;がよいでしょう。
+ */</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;value is: %ld\n&quot;</span>, (<span class="hljs-keyword">long</span>) val);
+
+<span class="hljs-comment">/* C99 型を想定した場合（移植性が制限される）、maxint_t はすべての符号付き整数を表すことが保証されており、標準的な書式指定子 &quot;%jd&quot; を持つ。  符号なし値に対しては、umaxint_t と &quot;%ju&quot; である。
+ */</span>
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;value is: %jd\n&quot;</span>, (<span class="hljs-keyword">maxint_t</span>) val);
+</code></pre>
+<p>C99では、inttypes.hにC99型のプリプロセッサ定義があります。例えば、int_fast32_tのprintf()10進フォーマット指定子は、PRIdFAST32です。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int_fast32_t</span> val = <span class="hljs-comment">/* ... */</span>;
+
+<span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;value is: &quot;</span> PRIdFAST32 <span class="hljs-string">&quot;\n&quot;</span>, val);
+</code></pre>
+<p>Duktapeは現在、フォーマット指定子定義のためのラッパーを提供していません。</p>
+<p>printf()とscanf()の書式指定子は異なるかもしれません。その理由の1つは、printf()ではfloat引数が自動的にdoubleに昇格されますが、 scanf()では別個の型として扱われるからです。<a href="http://stackoverflow.com/questions/210590/why-does-scanf-need-lf-for-doubles-when-printf-is-okay-with-just-f" target="_blank">http://stackoverflow.com/questions/210590/why-does-scanf-need-lf-for-doubles-when-printf-is-okay-with-just-f</a> を参照してください。</p>
+<p>printf()におけるdoubleのための正しい書式指定子は%fです(float値は自動的にdoubleに昇格します)が、%lfも受け入れられます。Duktapeの例では、わかりやすくするために後者が使われています。<a href="http://stackoverflow.com/questions/4264127/correct-format-specifier-for-double-in-printf" target="_blank">http://stackoverflow.com/questions/4264127/correct-format-specifier-for-double-in-printf</a> を参照してください。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="internal_and_external_prototype.html" class="navigation navigation-prev " aria-label="Previous page: 内部プロトタイプと外部プロトタイプ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="post-es5_features.html" class="navigation navigation-next " aria-label="Next page: ES5以降の機能">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API Cタイプ","level":"5.4","depth":1,"next":{"title":"ES5以降の機能","level":"5.5","depth":1,"path":"post-es5_features.md","ref":"post-es5_features.md","articles":[]},"previous":{"title":"内部プロトタイプと外部プロトタイプ","level":"5.3","depth":1,"path":"internal_and_external_prototype.md","ref":"internal_and_external_prototype.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api_c_types.md","mtime":"2022-11-12T04:50:43.735Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

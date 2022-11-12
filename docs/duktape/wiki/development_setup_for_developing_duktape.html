@@ -1,0 +1,1161 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Duktapeを開発するための設定 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="troubleshooting_basics.html" />
+    
+    
+    <link rel="prev" href="how_to_configure_your_editor_for_duktape.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Duktapeを開発するための設定</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="開発セットアップ">開発セットアップ</h1>
+<h2 id="概要">概要</h2>
+<p>ほとんどのアプリケーション・コードは、Duktapeのソースとヘッダーをアプリケーションのビルドに含める以外に特別な開発設定をすることなく、直接使用できるビルド済みdistパッケージを使用する必要があります。以下のようなビルド済み dist パッケージがあります。</p>
+<ul>
+<li>公式リリース: <a href="http://duktape.org/download.html" target="_blank">http://duktape.org/download.html</a></li>
+<li>マスターからのスナップショット: <a href="http://duktape.org/snapshots/" target="_blank">http://duktape.org/snapshots/</a></li>
+</ul>
+<p>Duktapeの内部を変更する必要がある場合があります。例えば、Duktapeのプライベートフォークを特定のターゲットに使用することがあります。その場合、アプリケーションのビルドに &quot;make dist&quot; のステップを含める必要があるかもしれません。あるいは、ただ単に内部を少しハックして何が起こるか見てみたいだけかもしれません。</p>
+<p>この文書では、distパッケージ（Linux、Windows、OS X）を作成し、DuktapeのトップレベルのMakefile（Linuxのみ）を使用するための要件を説明しています。</p>
+<h2 id="dist-パッケージを作成するための最小限のセットアップ">dist パッケージを作成するための最小限のセットアップ</h2>
+<p>dist パッケージを作成するために最低限必要なものは以下の通りです。</p>
+<ul>
+<li><a href="https://github.com/svaarala/duktape" target="_blank">https://github.com/svaarala/duktape</a> またはフォークをチェックアウトしている。</li>
+<li>Python 2 と PyYAML、dist ツールに必要です。</li>
+</ul>
+<p>以下はオプションですが、便利です。</p>
+<ul>
+<li>&quot;git describe&quot; や他のバージョンのメタデータを取得するために使用する Git コマンドラインツール。</li>
+<li>Duktape 1.x: ビルドに埋め込まれたいくつかのECMAScriptコード用のminifier（ClosureまたはUglifyJS2）。この依存関係は、Duktape 2.xで取り除かれました。</li>
+</ul>
+<p>Duktapeのソースやメタデータなどに変更を加えた後。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># Use --help for option help.</span>
+$ python util/make_dist.py
+</code></pre>
+<p>これは、duktape-1.4.0.tar.xz のようなビルド済みの dist パッケージと同じ内容の dist ディレクトリを作成します。いくつか注意点があります。</p>
+<ul>
+<li>依存関係を最小にするために、dist tar パッケージ自体は自動的には作成されません。</li>
+<li>Git がインストールされていない場合は、コマンドラインオプションでバージョン関連の情報を与えることができますので、参照してください。$ python util/make_dist.py --help.</li>
+<li>git cloneの代わりに、コマンドラインオプションにgitのバージョンメタデータを指定すれば、バージョン管理されていないスナップショットディレクトリを使用することもできます。</li>
+<li>オプションのminifierは、Duktape 1.xでは、Duktapeビルドに埋め込まれる非常に小さなECMAScript初期化スクリプト（src/duk_initjs.js）に使用されます。もし、-minifyでminifierを提供しない場合、スクリプトはminifyされません。フットプリントへの影響は非常に小さく、約500バイトです。Duktape 2.xでは、この初期化スクリプトを埋め込まないため、minifierは必要ありません。</li>
+</ul>
+<p>distパッケージの作成は、プライベートフォークを効率的に扱うために必要な最小限のステップです。そのため、distプロセスは非常に移植性が高く、少なくともLinux、Windows（Cygwinあり/なし）、OS Xで動作するはずで、Python 2とPyYAML以上の必須の依存関係はほとんどありません。トップレベルの Makefile は dist パッケージの作成には使われないし、必要とされないので、&quot;make&quot; があることは必須ではないことに注意してください。</p>
+<h2 id="手動でdistパッケージを作成する場合">手動でdistパッケージを作成する場合</h2>
+<p>dist パッケージを作りたいとき。</p>
+<ul>
+<li>Duktapeのソースコードを修正したり、プライベートフォークから作業する。</li>
+<li>作業中のブランチから dist パッケージを作成する。</li>
+<li>デフォルトの dist パッケージでは有効になっていない ROM ビルトインサポートのような、よりエキゾチックなオプションを有効にする。</li>
+</ul>
+<h2 id="その他の開発ステップ（linuxのみ）">その他の開発ステップ（Linuxのみ）</h2>
+<p>ウェブサイトの構築やテストケースの実行など、その他の開発に関することは、Linuxのみを対象としたMakefileがベースになっています。Makefileを使用する基本的な手順は以下の通りです。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># 必要なパッケージのインストール (正確なパッケージはディストリビューションに依存します)</span>
+$ sudo apt-get install nodejs nodejs-legacy npm perl ant openjdk-7-jdk \
+      libreadline6-dev libncurses-dev python-rdflib python-bs4 python-yaml \
+      clang llvm bc
+
+<span class="hljs-comment"># コマンドラインツール(&apos;duk&apos;)のコンパイル</span>
+$ git <span class="hljs-built_in">clone</span> https://github.com/svaarala/duktape.git
+$ <span class="hljs-built_in">cd</span> duktape
+$ make
+
+<span class="hljs-comment"># dukweb.jsのビルドやEmscriptenターゲットの実行には、Emscripten fastcompを手動で設定する必要があります。ステップバイステップの手順は、doc/emscripten-status.rstを参照してください。</span>
+
+<span class="hljs-comment"># ECMAScript と API のテストケース、およびその他のテストの実行</span>
+$ make ecmatest
+$ make apitest
+$ make regfuzztest
+$ make underscoretest    <span class="hljs-comment"># see doc/underscore-status.rst</span>
+$ make test262test       <span class="hljs-comment"># see doc/test262-status.rst</span>
+$ make emscriptentest    <span class="hljs-comment"># see doc/emscripten-status.rst</span>
+$ make emscriptenmandelbrottest  <span class="hljs-comment"># run Emscripten-compiled mandelbrot.c with Duktape</span>
+$ make emscripteninceptiontest   <span class="hljs-comment"># run Emscripten-compiled Duktape with Duktape</span>
+$ make jsinterpretertest
+$ make luajstest
+$ make dukwebtest        <span class="hljs-comment"># then browse to file:///tmp/dukweb-test/dukweb.html</span>
+$ make xmldoctest
+$ make bluebirdtest
+<span class="hljs-comment"># etc</span>
+</code></pre>
+<p>OSX や Windows (Cygwin を使用) でも Makefile を動作させることは可能ですが、現時点ではサポートされていません。Makefile のターゲットには (いくつかの API テストケースなど) Linux 固有の仮定があります (例: /tmp/ が存在すること)。</p>
+<h2 id="platform-notes">Platform notes</h2>
+<h3 id="ubuntu-debian-etc">Ubuntu, Debian, etc</h3>
+<p>make_dist.pyに対応するため。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># Linuxでは、多くの場合、パッケージからインストールするか、&apos;pip&apos;を使用してインストールすることができます。</span>
+$ sudo apt-get install python python-yaml
+$ python util/make_dist.py
+</code></pre>
+<p>テストケースの実行などは、上記の「その他の開発手順（Linuxのみ）」をご覧ください。</p>
+<h3 id="archlinux">ArchLinux</h3>
+<p>必要なPythonのパッケージをインストールします。</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># python2-beautifulsoup4 と python2-rdflib は plain dist では必要ありません。</span>
+$ sudo pacman -S --needed python2 python2-beautifulsoup4 python2-rdflib python2-yaml
+</code></pre>
+<p>テストケースなどを実行する場合は、Node.jsのフィックスアップが必要になる場合があります。</p>
+<pre><code class="lang-sh">$ sudo ln -s /usr/bin/node /usr/bin/nodejs
+</code></pre>
+<p>その他の開発基礎は、distパッケージのビルドには必要ないはずです。</p>
+<pre><code class="lang-sh">$ sudo pacman -S --needed base-devel clang llvm git bc
+</code></pre>
+<p>Based on:</p>
+<ul>
+<li><a href="https://github.com/svaarala/duktape/issues/466" target="_blank">https://github.com/svaarala/duktape/issues/466</a></li>
+</ul>
+<h3 id="windows">Windows</h3>
+<pre><code>; Install Python 2.7.x from python.org, and add it to PATH
+&gt; pip install PyYAML
+&gt; python util\make_dist.py
+</code></pre><p>OS X</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># Install Python 2.7.x</span>
+$ pip install PyYAML
+$ python util/make_dist.py
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="how_to_configure_your_editor_for_duktape.html" class="navigation navigation-prev " aria-label="Previous page: Duktape用のエディターを設定する方法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="troubleshooting_basics.html" class="navigation navigation-next " aria-label="Next page: トラブルシューティングの基本">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Duktapeを開発するための設定","level":"5.1","depth":1,"next":{"title":"トラブルシューティングの基本","level":"5.2","depth":1,"path":"troubleshooting_basics.md","ref":"troubleshooting_basics.md","articles":[]},"previous":{"title":"Duktape用のエディターを設定する方法","level":"4.20","depth":1,"path":"how_to_configure_your_editor_for_duktape.md","ref":"how_to_configure_your_editor_for_duktape.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"development_setup_for_developing_duktape.md","mtime":"2022-11-12T04:35:10.977Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

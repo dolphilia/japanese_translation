@@ -1,0 +1,1333 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>モジュールの使い方 · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="how_to_coroutines.html" />
+    
+    
+    <link rel="prev" href="how_to_work_with_lightfuncs.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Duktape Wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ドキュメンテーション</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/guide/">
+            
+                    
+                    Duktapeプログラミングガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <a target="_blank" href="https://dolphilia.github.io/japanese_translation/duktape/api/">
+            
+                    
+                    Duktape APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="process_lines.html">
+            
+                <a href="process_lines.html">
+            
+                    
+                    ライン処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="prime_test.html">
+            
+                <a href="prime_test.html">
+            
+                    
+                    プライマリーテスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How-To</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="how_to_handle_fatal_errors.html">
+            
+                <a href="how_to_handle_fatal_errors.html">
+            
+                    
+                    致命的なエラーの処理方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="how_to_work_with_calue_stack_types.html">
+            
+                <a href="how_to_work_with_calue_stack_types.html">
+            
+                    
+                    値スタック型の扱い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="how_to_make_function_calls.html">
+            
+                <a href="how_to_make_function_calls.html">
+            
+                    
+                    関数呼び出しの方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="how_to_use_virtual_properties.html">
+            
+                <a href="how_to_use_virtual_properties.html">
+            
+                    
+                    仮想プロパティの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="how_to_use_finalization.html">
+            
+                <a href="how_to_use_finalization.html">
+            
+                    
+                    ファイナライゼーションの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                <a href="how_to_work_with_buffers_in_duktape_2x.html">
+            
+                    
+                    Duktape 2.x
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="how_to_work_with_lightfuncs.html">
+            
+                <a href="how_to_work_with_lightfuncs.html">
+            
+                    
+                    lightfuncsの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.8" data-path="how_to_modules.html">
+            
+                <a href="how_to_modules.html">
+            
+                    
+                    モジュールの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="how_to_coroutines.html">
+            
+                <a href="how_to_coroutines.html">
+            
+                    
+                    コルーチンの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.10" data-path="how_to_use_logging.html">
+            
+                <a href="how_to_use_logging.html">
+            
+                    
+                    ロギングの使い方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.11" data-path="how_to_persist_object_references_in_native_code.html">
+            
+                <a href="how_to_persist_object_references_in_native_code.html">
+            
+                    
+                    ネイティブコードでオブジェクト参照を持続させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.12" data-path="how_to_write_a_native_constructor_function.html">
+            
+                <a href="how_to_write_a_native_constructor_function.html">
+            
+                    
+                    ネイティブのコンストラクタ関数の書き方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.13" data-path="how_to_iterate_over_an_array.html">
+            
+                <a href="how_to_iterate_over_an_array.html">
+            
+                    
+                    配列の反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.14" data-path="how_to_augment_error_objects.html">
+            
+                <a href="how_to_augment_error_objects.html">
+            
+                    
+                    エラー・オブジェクトを拡張する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.15" data-path="how_to_decode_duktape_bytecode.html">
+            
+                <a href="how_to_decode_duktape_bytecode.html">
+            
+                    
+                    Duktapeバイトコードのデコード方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.16" data-path="how_to_work_with_non-bmp_characters.html">
+            
+                <a href="how_to_work_with_non-bmp_characters.html">
+            
+                    
+                    非BMP文字を扱うには
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.17" data-path="how_to_get_a_reference_to_the_global_object.html">
+            
+                <a href="how_to_get_a_reference_to_the_global_object.html">
+            
+                    
+                    グローバル・オブジェクトへの参照を取得する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.18" data-path="how_to_run_on_bare_metal_platforms.html">
+            
+                <a href="how_to_run_on_bare_metal_platforms.html">
+            
+                    
+                    ベアメタルプラットフォームで動作させる方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.19" data-path="how_to_enable_debug_prints.html">
+            
+                <a href="how_to_enable_debug_prints.html">
+            
+                    
+                    デバッグ・プリントを有効にする方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.20" data-path="how_to_configure_your_editor_for_duktape.html">
+            
+                <a href="how_to_configure_your_editor_for_duktape.html">
+            
+                    
+                    Duktape用のエディターを設定する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">よくある質問</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="development_setup_for_developing_duktape.html">
+            
+                <a href="development_setup_for_developing_duktape.html">
+            
+                    
+                    Duktapeを開発するための設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="troubleshooting_basics.html">
+            
+                <a href="troubleshooting_basics.html">
+            
+                    
+                    トラブルシューティングの基本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="internal_and_external_prototype.html">
+            
+                <a href="internal_and_external_prototype.html">
+            
+                    
+                    内部プロトタイプと外部プロトタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api_c_types.html">
+            
+                <a href="api_c_types.html">
+            
+                    
+                    API Cタイプ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="post-es5_features.html">
+            
+                <a href="post-es5_features.html">
+            
+                    
+                    ES5以降の機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コンフィグと機能オプション</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="congifuring_duktape_for_build.html">
+            
+                <a href="congifuring_duktape_for_build.html">
+            
+                    
+                    ビルドのためのDuktapeの設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="config_options.html">
+            
+                <a href="config_options.html">
+            
+                    
+                    設定オプション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape/tree/master/config/feature-options">
+            
+                    
+                    https://github.com/svaarala/duktape/tree/master/config/feature-options
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移植性と互換性</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="portability.html">
+            
+                <a href="portability.html">
+            
+                    
+                    移植性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" >
+            
+                <span>
+            
+                    
+                    プラットフォーム
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" >
+            
+                <span>
+            
+                    
+                    アーキテクチャー
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" >
+            
+                <span>
+            
+                    
+                    コンパイラ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" >
+            
+                <span>
+            
+                    
+                    標準ライブラリ: musl, uclibc
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="compatibility_with_typescript.html">
+            
+                <a href="compatibility_with_typescript.html">
+            
+                    
+                    TypeScriptとの互換性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">パフォーマンス</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <a target="_blank" href="http://duktape.org/benchmarks.html">
+            
+                    
+                    http://duktape.org/benchmarks.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="how_to_optimize_performance.html">
+            
+                <a href="how_to_optimize_performance.html">
+            
+                    
+                    パフォーマンスを最適化する方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" >
+            
+                <span>
+            
+                    
+                    Duktape 1.3.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" >
+            
+                <span>
+            
+                    
+                    Duktape 1.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" >
+            
+                <span>
+            
+                    
+                    Duktape 1.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" >
+            
+                <span>
+            
+                    
+                    Duktape 2.0.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" >
+            
+                <span>
+            
+                    
+                    Duktape 2.1.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" >
+            
+                <span>
+            
+                    
+                    Duktape 2.2.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" >
+            
+                <span>
+            
+                    
+                    Duktape 2.3.0の性能測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" >
+            
+                <span>
+            
+                    
+                    Duktape 2.4.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.11" >
+            
+                <span>
+            
+                    
+                    Duktape 2.5.0のパフォーマンス測定
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ロー・メモリの最適化</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    ロー・メモリー環境: low-memory.rst
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    ローメモリ設定オプションの提案: low-memory.yaml
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" >
+            
+                <span>
+            
+                    
+                    ハイブリッドプールアロケータの例: alloc-hybrid
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">その他</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="projects_using_duktape.html">
+            
+                <a href="projects_using_duktape.html">
+            
+                    
+                    Duktapeを使ったプロジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="debug_clients.html">
+            
+                <a href="debug_clients.html">
+            
+                    
+                    デバッグ・クライアント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">寄稿、著作権、ライセンス</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" >
+            
+                <a target="_blank" href="https://github.com/svaarala/duktape-wiki">
+            
+                    
+                    https://github.com/svaarala/duktape-wiki
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >モジュールの使い方</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="duktapeでモジュールを使用する方法（日本語訳）">Duktapeでモジュールを使用する方法（日本語訳）</h1>
+<p><a href="https://wiki.duktape.org/howtomodules" target="_blank">原文</a></p>
+<h2 id="はじめに">はじめに</h2>
+<p>Duktape 1.xにはモジュール・ローディングのフレームワークが組み込まれていますが、Duktape 2.xではオプションとして追加されました。このドキュメントでは、Duktape 1.xモジュール・ローディングのフレームワークの使用方法とその例について説明します。Duktape 2.xの配布物には、他のモジュール・ローダーの選択肢もあります（Node.jsのセマンティクスを持つローダーなど、Duktape 1.xでも動きます）。また、ゼロからカスタムモジュールローダーを実装することも可能です。</p>
+<p>Duktape 2.xの場合、モジュール・ロードを使用する前にmodule-duktape extraを初期化することを忘れないでください。<a href="https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst" target="_blank">https://github.com/svaarala/duktape/tree/master/extras/module-duktape/README.rst</a> を参照してください。</p>
+<p>ECMAScriptのコードからモジュールを読み込むには、グローバルなrequire()関数を使用します。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> mod = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;foo/bar&apos;</span>);
+mod.hello();
+</code></pre>
+<p>モジュールは、CommonJSのモジュール仕様で定義された特別な環境で実行されます。この環境の中では、変数や関数の宣言はモジュールに局所的であり、グローバルオブジェクトには影響を与えません。モジュールのシンボルをエクスポートするexports、モジュールのメタデータ（特にmodule.id）を提供するmodule、現在のモジュールのコンテキストで解決された相対モジュール識別子でさらにモジュールをロードするrequire()の3つの特別なシンボルも提供する環境です。例</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// foo/bar.js</span>
+<span class="hljs-keyword">var</span> text = <span class="hljs-string">&apos;Hello world!&apos;</span>;     <span class="hljs-comment">// モジュール外では見えない</span>
+<span class="hljs-keyword">var</span> quux = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;./quux&apos;</span>);  <span class="hljs-comment">// loads foo/quux</span>
+<span class="hljs-built_in">exports</span>.hello = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    print(text);
+};
+</code></pre>
+<p>などのラッパー関数を用いて、モジュール環境を内部に実装しています。</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>{
+    <span class="hljs-comment">// モジュールソースはこちら</span>
+}
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">// foo/bar.js</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">adder</span>(<span class="hljs-params">x, y</span>) </span>{ <span class="hljs-keyword">return</span> x + y; };
+
+<span class="hljs-comment">// main.js</span>
+<span class="hljs-keyword">var</span> adder = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;foo/bar&apos;</span>);
+print(<span class="hljs-string">&apos;2 + 3 = &apos;</span> + adder(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>));
+</code></pre>
+<p>Duktapeは組み込み可能で、様々な環境に移植できるため、モジュールを検索するための標準的な方法はありません。モジュールのロードが機能するためには、ユーザーコードはDuktape.modSearchでモジュール検索関数を提供する必要があります。モジュール検索関数は、基本的にモジュールの識別子とモジュールのソースコードを対応付けます（詳しくは以下を参照）。例</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// モジュール検索機能の詳細は下記をご覧ください。</span>
+Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+    print(<span class="hljs-string">&apos;loading module:&apos;</span>, id);
+    <span class="hljs-comment">// モジュールのソースコードを返すか、エラーを投げる。</span>
+};
+</code></pre>
+<h2 id="プロパティ">プロパティ</h2>
+<ul>
+<li>require: モジュールをロードするためのグローバル関数で、すでにロードされている場合はキャッシュされた値を返します。モジュールは、相対的な識別子が正しく解決されるように、現在のモジュール ID を認識するローカルの require() 関数を見ます。</li>
+<li>Duktape.modSearch: modSearch() は、モジュールのロードをサポートするためにユーザコードが提供しなければならないモジュール検索関数である。</li>
+<li>Duktape.modLoaded: modLoaded は Duktape が維持する内部モジュールロード追跡テーブルで、 完全にロードされているか現在ロード中のモジュールについて、解決された絶対モジュール 識別子をモジュールのモジュールオブジェクトにマップします (module.exports は require() が返すエクスポートされた値です)。</li>
+</ul>
+<h2 id="モジュール検索機能概要">モジュール検索機能概要</h2>
+<p>モジュール検索機能は、モジュール検索パスやファイルシステムアクセスなど、特定の識別子に一致するモジュールを見つけるためのプラットフォーム特有の懸念事項をすべてカプセル化します。</p>
+<pre><code class="lang-javascript">Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, <span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<p>モジュール検索機能の引数は以下の通りです。</p>
+<ul>
+<li>完全に解決されたモジュールID。相対IDは絶対IDに変換され、未解決の.IDや.IDの項は存在しない。</li>
+<li>さらなるモジュールをロードするための require() 関数です。相対モジュール ID は、現在のモジュールからの相対パスで解決されます。例えば、foo/bar がロードされている場合、モジュール検索関数に与えられた require() 関数は ./quux を foo/quux に解決することになります。</li>
+<li>モジュール検索時にシンボルをエクスポートするための exports オブジェクトです。モジュール検索機能で export を書き込むのは、通常、ネイティブ (Duktape/C) モジュールをロードするときだけです。</li>
+<li>ロードされるモジュールに関する追加情報を提供するモジュールオブジェクトです。</li>
+</ul>
+<p>モジュール検索機能は、通常、引数のidに基づいて、モジュールを検索することが期待される、と。</p>
+<ul>
+<li>モジュールが見つからない場合、エラーをスローします。このエラーは、もともと require() をコールしたコードに伝搬されるので、 モジュールの識別子を含む有用なエラーメッセージを持たなければなりません。エラーをスローする前に exports に加えられたすべての変更は破棄されます。</li>
+<li>もしモジュールが見つかり、それがECMAScriptソースコード（おそらくネイティブバインディングに加えて）を持っていれば、モジュールECMAScriptソースコードを含む文字列を返します。Duktapeは、モジュール・コードのコンパイルと実行を行い、モジュール・シンボルがmodule.exportsオブジェクトに登録されるようにします。</li>
+<li>モジュールは見つかったが、ECMAScript のソースコードがないことを示すために undefined を返します。これは、modSearch() によって直接扱われるネイティブモジュールに便利です。</li>
+</ul>
+<p>文字列や未定義を返すことに加え、modSearch() 関数は直接 export にシンボルを追加したり、module.exports を新しい値、例えば、ネイティブ関数/コンストラクタに置き換えたりすることができます。これにより、ネイティブモジュールやネイティブと ECMAScript のハイブリッドモジュールをロードすることができます。ネイティブモジュールは、静的にリンクされたネイティブコードから、またはプラットフォーム固有の DLL ロードによって初期化することができます。</p>
+<p>モジュール検索機能は、ECMAScript関数、Duktape/C関数のいずれでも可能です。</p>
+<p>こちらもご覧ください。</p>
+<ul>
+<li>C言語モジュールの記述に推奨される（ただし必須ではない）規約：c-module-convention.rst。</li>
+</ul>
+<h2 id="duktapeのモジュール・オブジェクト">Duktapeのモジュール・オブジェクト</h2>
+<p>modSearch()とロード中の ECMAScript モジュールの双方に与えられる module 引数は、以下の特性を持つ。</p>
+<ul>
+<li>プロパティ: 説明</li>
+<li>.id: 絶対モジュールIDを解決しました。例えば、foo/quux/./../barはfoo/barに解決します。</li>
+<li>.exports: 現在の輸出表で、最初は exports と同じです。modSearch() や ECMAScript モジュールによって上書きされることがあります。module.exports を上書きすると、Cモジュールやネイティブ関数/コンストラクタが require() から直接返されるようになります。Duktape 1.3 で追加されました。</li>
+<li>.filename: モジュールに関連付けられたファイル名で、モジュールのロード中に一時的なモジュールラッパー関数の .fileName プロパティとして使用され、トレースバックなどに影響します。デフォルトでは未設定で、完全に解決されたモジュール ID (例: foo/bar) がモジュール関数 .fileName プロパティに使用されます。大文字（module.fileNameの代わりにmodule.filename）は、Node.jsのmodule.filenameと一致します。Duktape 1.5で追加されたDuktape固有の機能です。</li>
+<li>.name: モジュールに関連付けられた関数名で、モジュールのロード中に一時的なモジュールラッパー関数の .name プロパティとして使用され、トレースバックなどに影響します。modSearch() で設定できます。デフォルトでは未設定で、完全に解決されたモジュール ID の最後のコンポーネント (例: bar) がモジュール関数 .name プロパティに使用されることになります。Duktape 1.5で追加されたDuktape固有の機能です。</li>
+</ul>
+<h2 id="モジュール検索機能の実装">モジュール検索機能の実装</h2>
+<p>ここでは、2つのモジュールを提供するシンプルなモジュール検索スタブを紹介します。</p>
+<pre><code class="lang-javascript">Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+    <span class="hljs-keyword">if</span> (id === <span class="hljs-string">&apos;foo&apos;</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;exports.hello = function() { print(&quot;Hello from foo!&quot;); };&apos;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (id === <span class="hljs-string">&apos;bar&apos;</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;exports.hello = function() { print(&quot;Hello from bar!&quot;); };&apos;</span>;
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;module not found: &apos;</span> + id);
+};
+</code></pre>
+<p>モジュールはディスクから読み込むことがほとんどなので、より実用的なモジュー ル検索機能はほとんどプラットフォームに依存します。通常、ファイルシステムにアクセスするためには、Duktape/C のバインディングが必要です。以下の例では、仮想的な readFile() 関数を使ってモジュールをロードしています。</p>
+<pre><code class="lang-javascript">Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+    <span class="hljs-comment">// readFile() は、ディスクからファイルを読み込み、文字列または未定義を返します。id&apos; は解決済みの正規形であるため、項とスラッシュのみを含み、 &apos;.&apos; や &apos;...&apos; は含まれない。</span>
+    <span class="hljs-keyword">var</span> res;
+
+    print(<span class="hljs-string">&apos;loading module:&apos;</span>, id);
+
+    res = readFile(<span class="hljs-string">&apos;/modules/&apos;</span> + id + <span class="hljs-string">&apos;.js&apos;</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> res === <span class="hljs-string">&apos;string&apos;</span>) {
+        <span class="hljs-keyword">return</span> res;
+    }
+
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;module not found: &apos;</span> + id);
+}
+</code></pre>
+<p>以下のモジュール検索機能は、純粋なC、純粋なECMAScript、および混合モジュールをサポートしています。Cモジュールは、DLLをロードする仮想のloadAndInitDll()関数でロード・初期化されます。</p>
+<pre><code class="lang-javascript">Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, <span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>{
+    <span class="hljs-comment">// readFile()：上記と同様。</span>
+    <span class="hljs-comment">// loadAndInitDll()：DLLをロードし、そのinit関数を呼び出し、モジュールのinit関数の戻り値（通常はモジュールの関数/定数バインディングを含むオブジェクト）を返します。  DLLが見つからない場合は未定義を返す。</span>
+    <span class="hljs-keyword">var</span> name;
+    <span class="hljs-keyword">var</span> src;
+    <span class="hljs-keyword">var</span> found = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> mod;
+
+    print(<span class="hljs-string">&apos;loading module:&apos;</span>, id);
+
+    <span class="hljs-comment">// DLLをチェックします。  DLL init関数はプラットフォーム依存です。</span>
+    <span class="hljs-comment">// DLLローダーはさらにモジュールをロードするために例えば&apos;require&apos;を必要とすることもありますが、一般的にネイティブモジュールはサブモジュールをロードする必要はありません。</span>
+    name = <span class="hljs-string">&apos;/modules/&apos;</span> + id + <span class="hljs-string">&apos;.so&apos;</span>;
+    mod = loadAndInitDll(name);
+    <span class="hljs-keyword">if</span> (mod) {
+        print(<span class="hljs-string">&apos;loaded DLL:&apos;</span>, name);
+        <span class="hljs-built_in">module</span>.exports = mod;  <span class="hljs-comment">// exports テーブルをモジュールの export に置き換える。</span>
+        found = <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-comment">// ECMAScriptのチェック。</span>
+    name = <span class="hljs-string">&apos;/modules/&apos;</span> + id + <span class="hljs-string">&apos;.js&apos;</span>;
+    src = readFile(name);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> src === <span class="hljs-string">&apos;string&apos;</span>) {
+        print(<span class="hljs-string">&apos;loaded ECMAScript:&apos;</span>, name);
+        found = <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-comment">// DLLまたはECMAScriptファイルのどちらか（または両方）を見つける必要があります */</span>
+    <span class="hljs-keyword">if</span> (!found) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;module not found: &apos;</span> + id);
+    }
+
+    <span class="hljs-comment">// 純粋なC言語モジュールの場合、&apos;src&apos;は未定義でもかまいません。</span>
+    <span class="hljs-keyword">return</span> src;
+}
+</code></pre>
+<p>モジュール検索機能は、圧縮されたインメモリストアからモジュールをロードしたり、ネットワーク経由でモジュールをロードしたりすることも可能です。しかし、モジュール検索関数はコルーチン降伏ができないため、ネットワークアクセスはアプリケーションをブロックしてしまう。</p>
+<h2 id="ネイティブなmodsearch関数の実装">ネイティブなmodSearch()関数の実装</h2>
+<p>modSearch()関数は、例えば、ネイティブ関数として実装することも可能です。</p>
+<pre><code class="lang-javascript">duk_ret_t <span class="hljs-function"><span class="hljs-title">my_mod_search</span>(<span class="hljs-params">duk_context *ctx</span>)</span> {
+    <span class="hljs-comment">// Nargsは4と与えられ、次のようなスタック引数が得られました。</span>
+    <span class="hljs-comment">//   index 0: id</span>
+    <span class="hljs-comment">//   index 1: require</span>
+    <span class="hljs-comment">//   index 2: exports</span>
+    <span class="hljs-comment">//   index 3: module</span>
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>CコードからネイティブのmodSearch()関数を登録するには、以下のようにします。</p>
+<pre><code class="lang-javascript">duk_get_global_string(ctx, <span class="hljs-string">&quot;Duktape&quot;</span>);
+duk_push_c_function(ctx, my_mod_search, <span class="hljs-number">4</span> <span class="hljs-comment">/*nargs*/</span>);
+duk_put_prop_string(ctx, -<span class="hljs-number">2</span>, <span class="hljs-string">&quot;modSearch&quot;</span>);
+duk_pop(ctx);
+</code></pre>
+<h2 id="modsearch-からネイティブ関数コンストラクタを返します。">modSearch() からネイティブ関数/コンストラクタを返します。</h2>
+<p>modSearch() 関数は module.exports を上書きして、require() から返される関数/コンストラクタを制御することができます。</p>
+<pre><code class="lang-javascript">Duktape.modSearch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id, <span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>{
+    <span class="hljs-comment">// この例では&apos;id&apos;は無視する。</span>
+    <span class="hljs-comment">// modSearch() の中で module.exports を上書きすることで、最終的に `require()` から返される値を置き換えることができます（引数 &apos;exports&apos; も無視します）。  ここでは、コンストラクタを直接返します。</span>
+
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyConstructor</span>(<span class="hljs-params">name</span>) </span>{
+        <span class="hljs-built_in">this</span>.name = name;
+    };
+
+    <span class="hljs-keyword">return</span>; <span class="hljs-comment">// ノーローディング</span>
+};
+
+<span class="hljs-keyword">var</span> MyFunc = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;dummy&apos;</span>);  <span class="hljs-comment">// MyConstructor を返す</span>
+print(<span class="hljs-keyword">typeof</span> MyFunc);  <span class="hljs-comment">// prints &quot;function&quot;</span>
+
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> MyFunc(<span class="hljs-string">&apos;myname&apos;</span>);
+print(obj.name);  <span class="hljs-comment">// prints &quot;myname&quot;</span>
+</code></pre>
+<p>modSearch()がDuktape/C関数として実装されている場合でも、modSearch()からネイティブ関数/コンストラクタを返すために同じ方法が有効です。</p>
+<pre><code class="lang-javascript">duk_ret_t <span class="hljs-function"><span class="hljs-title">my_mod_search</span>(<span class="hljs-params">duk_context *ctx</span>)</span> {
+    <span class="hljs-comment">// Nargsは4と与えられ、次のようなスタック引数が得られました。</span>
+    <span class="hljs-comment">//   index 0: id</span>
+    <span class="hljs-comment">//   index 1: require</span>
+    <span class="hljs-comment">//   index 2: exports</span>
+    <span class="hljs-comment">//   index 3: module</span>
+
+    <span class="hljs-comment">// 通常は&apos;id&apos;を見てどのモジュールをロードするかを決めますが、この例では無視します。</span>
+
+    <span class="hljs-comment">// ネイティブのコンストラクタをプッシュします（ここでは省略）。 */</span>
+    duk_push_c_function(ctx, my_native_constructor, <span class="hljs-number">1</span> <span class="hljs-comment">/*nargs*/</span>);
+
+    <span class="hljs-comment">// module.exportsを上書きする。</span>
+    duk_put_prop_string(ctx, <span class="hljs-number">3</span> <span class="hljs-comment">/*idx of &apos;module&apos;*/</span>, <span class="hljs-string">&quot;exports&quot;</span>);
+
+    <span class="hljs-comment">// ソースコードがない場合は&apos;undefined&apos;を返す。</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="c言語によるモジュールの作成">C言語によるモジュールの作成</h2>
+<p>Cモジュールの書き方には、推奨される（必須ではない）規約があります。c-module-convention.rstを参照してください。</p>
+<p>ほとんどのCモジュールは、以下の部分を必要とします。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// モジュールの識別</span>
+
+<span class="hljs-comment">// duktape.h と必要なプラットフォームヘッダをインクルードしてください。</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;duktape.h&quot;</span></span>
+
+<span class="hljs-comment">// モジュール機能を提供するDuktape/C機能。</span>
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">duk_ret_t</span> <span class="hljs-title">my_func_1</span><span class="hljs-params">(duk_context *ctx)</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">duk_ret_t</span> <span class="hljs-title">my_func_2</span><span class="hljs-params">(duk_context *ctx)</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-comment">// モジュール初期化</span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> duk_function_list_entry my_module_funcs[] = {
+    { <span class="hljs-string">&quot;func1&quot;</span>, my_func_1, <span class="hljs-number">3</span> <span class="hljs-comment">/*nargs*/</span> },
+    { <span class="hljs-string">&quot;func2&quot;</span>, my_func_2, DUK_VARARGS <span class="hljs-comment">/*nargs*/</span> },
+    { <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-number">0</span> }
+};
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> duk_number_list_entry my_module_consts[] = {
+    { <span class="hljs-string">&quot;FLAG_FOO&quot;</span>, (<span class="hljs-keyword">double</span>) (<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-number">0</span>) },
+    { <span class="hljs-literal">NULL</span>, <span class="hljs-number">0.0</span> }
+};
+
+<span class="hljs-comment">// 初期化関数名は dukopen_&lt;modname&gt; です。</span>
+<span class="hljs-function"><span class="hljs-keyword">duk_ret_t</span> <span class="hljs-title">dukopen_my_module</span><span class="hljs-params">(duk_context *ctx)</span> </span>{
+    duk_push_object(ctx);
+    duk_put_function_list(ctx, <span class="hljs-number">-1</span>, my_module_funcs);
+    duk_put_number_list(ctx, <span class="hljs-number">-1</span>, my_module_consts);
+
+    <span class="hljs-comment">// 戻り値はモジュールオブジェクトです。  この値をどのように使うか、例えばグローバルオブジェクトに書き込むかは呼び出し側次第です。  また、オブジェクトの代わりに関数やコンストラクタにすることもできます。</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p>このように書かれたモジュールは、CommonJSのモジュール読み込みフレームワークの外から、単に次のように使うことができます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span> </span>{
+    duk_context *ctx;
+
+    ctx = duk_create_heap_default();
+    <span class="hljs-keyword">if</span> (!ctx) {
+        <span class="hljs-comment">/* ... */</span>
+    }
+
+    <span class="hljs-comment">// モジュールのロードは、Duktape/Cコールラッパーで行われます。</span>
+    duk_push_c_function(ctx, dukopen_my_module, <span class="hljs-number">0</span> <span class="hljs-comment">/*nargs*/</span>);
+    duk_call(ctx, <span class="hljs-number">0</span>);
+    duk_put_global_string(ctx, <span class="hljs-string">&quot;my_module&quot;</span>);
+
+    <span class="hljs-comment">// my_module がグローバルオブジェクトに登録されました。</span>
+    duk_eval_string_noresult(ctx, <span class="hljs-string">&quot;my_module.func2()&quot;</span>);
+
+    <span class="hljs-comment">// ...</span>
+
+    duk_destroy_heap(ctx);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>また、Duktape CommonJS module loaderを使用してモジュールをロードすることもできます。</p>
+<ul>
+<li>modSearch()は、例えばDLLから配置されたinit関数dukopen_my_module()を呼び出すでしょう。</li>
+<li>modSearch() は init 関数から返されたモジュール・オブジェクトを (Duktape の値スタックの一番上にある) module.exports に割り当て、モジュールに関連する ECMAScript ソースコードがないことを示すために undefined を返します。</li>
+<li>dukopen_my_module() から返されたモジュールオブジェクトは、そのまま require(&apos;my_module&apos;) の返り値として表示されます。</li>
+</ul>
+<h2 id="制限事項">制限事項</h2>
+<ul>
+<li>モジュール検索機能でネイティブ・モジュールを実装する場合、モジュール検索機能が終了する前に、モジュールのexportsテーブルがDuktapeに「ロード中のモジュール」として登録されないため、循環的なモジュール参照はサポートされません。循環モジュール参照は純粋なECMAScriptモジュールではサポートされています。</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="how_to_work_with_lightfuncs.html" class="navigation navigation-prev " aria-label="Previous page: lightfuncsの使い方">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="how_to_coroutines.html" class="navigation navigation-next " aria-label="Next page: コルーチンの使い方">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"モジュールの使い方","level":"4.8","depth":1,"next":{"title":"コルーチンの使い方","level":"4.9","depth":1,"path":"how_to_coroutines.md","ref":"how_to_coroutines.md","articles":[]},"previous":{"title":"lightfuncsの使い方","level":"4.7","depth":1,"path":"how_to_work_with_lightfuncs.md","ref":"how_to_work_with_lightfuncs.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"how_to_modules.md","mtime":"2022-10-22T08:17:31.442Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T05:21:55.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
