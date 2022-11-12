@@ -1,0 +1,818 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>入力ガイド · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Reference/" />
+    
+    
+    <link rel="prev" href="monitor_guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    GLFWドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Tutorial/">
+            
+                <a href="../Tutorial/">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">プログラミングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="introduction_to_the_api.html">
+            
+                <a href="introduction_to_the_api.html">
+            
+                    
+                    API入門
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="window_guide.html">
+            
+                <a href="window_guide.html">
+            
+                    
+                    ウィンドウガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="context_guide.html">
+            
+                <a href="context_guide.html">
+            
+                    
+                    コンテキストガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="monitor_guide.html">
+            
+                <a href="monitor_guide.html">
+            
+                    
+                    モニターガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="input_guide.html">
+            
+                <a href="input_guide.html">
+            
+                    
+                    入力ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Reference/">
+            
+                <a href="../Reference/">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://www.glfw.org/documentation.html">
+            
+                    
+                    本家ウェブサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >入力ガイド</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="glfw入力ガイド（日本語訳）">GLFW入力ガイド（日本語訳）</h1>
+<p><a href="https://www.glfw.org/docs/latest/input_guide.html" target="_blank">原文</a></p>
+<p>このガイドでは、GLFWの入力関連機能を紹介します。このカテゴリの特定の機能の詳細については、入力のリファレンスを参照してください。また、GLFWの他の領域のガイドもあります。</p>
+<ul>
+<li>Introduction to the API</li>
+<li>Window guide</li>
+<li>Context guide</li>
+<li>Vulkan guide</li>
+<li>Monitor guide</li>
+</ul>
+<p>GLFWは多くの種類の入力を提供します。時間のようにポーリングしかできないものや、スクロールのように コールバックでしか受け取れないものもありますが、多くはコールバックとポー リングの両方を提供します。コールバックはポーリングより使うのに手間がかかりますが、CPUへの負荷が少なく、状態の変化を見逃さないことが保証されます。</p>
+<p>すべての入力コールバックはウィンドウ ハンドルを受け取ります。ウィンドウ ユーザー ポインタを使用すると、コールバックから非グローバル構造体やオブジェクトにアクセスできます。</p>
+<p>様々なイベントコールバックがどのように動作するかをより良く感じるには、イベント テストプログラムを実行してください。これはGLFWがサポートするすべてのコールバックを登録し、すべてのイベントに提供されたすべての引数を、時間とシーケンス情報とともにプリントアウトします。</p>
+<h2 id="イベント処理">イベント処理</h2>
+<p>GLFWは、アプリケーションに入力を提供し、アプリケーションがロックアップしていないことをウィンドウシステムに証明するために、イベントのためにウィンドウシステムをポーリングする必要があります。イベント処理は、通常、バッファスワップの後、各フレームごとに行われます。ウィンドウがない場合でも、モニタやジョイスティックの接続イベントを受信するために、 イベントポーリングが必要である。</p>
+<p>保留中のイベントを処理する関数として、glfwPollEvents、すでに受信したイベントのみを処理し、すぐにリターンするglfwPollEventの3つがあります。</p>
+<pre><code class="lang-c">glfwPollEvents();
+</code></pre>
+<p>多くのゲームのように連続的にレンダリングする場合に最適な選択です。</p>
+<p>新しい入力を受け取ったときだけウィンドウの内容を更新する必要がある場合は、glfwWaitEventsがより良い選択です。</p>
+<pre><code class="lang-c">glfwWaitEvents();
+</code></pre>
+<p>少なくとも1つのイベントを受信するまでスレッドをスリープさせ、その後、受信したすべてのイベントを処理します。これはCPUサイクルを大幅に節約するもので、例えば編集ツールなどに有効です。</p>
+<p>イベントを待ちたいが、定期的な更新が必要なUI要素や他のタスクがある場合、glfwWaitEventsTimeoutでタイムアウトを指定することができます。</p>
+<pre><code class="lang-c">glfwWaitEventsTimeout(<span class="hljs-number">0.7</span>);
+</code></pre>
+<p>少なくとも1つのイベントを受信するか、指定された秒数が経過するまで、スレッドをスリープさせる。その後、受信したイベントを処理する。</p>
+<p>glfwWaitEventsでメインスレッドがスリープしている場合、glfwPostEmptyEventでイベントキューに空のイベントをポストすることで、他のスレッドからそれを起こすことができます。</p>
+<pre><code class="lang-c">glfwPostEmptyEvent();
+</code></pre>
+<p>コールバックが上記の関数に応答してのみ呼び出されると仮定しないでください。上記の1つ以上の方法でイベントを処理することが必要であるが、 GLFWがそれ自身のコールバックを登録することを必要とするウィンドウシ ステムは、多くのウィンドウシステム関数呼び出しに応答して、GLFWにイベントを 渡すことができる。GLFWは、戻る前にそれらのイベントをアプリケーションコールバックに渡します。</p>
+<p>例えば、Windowsでは、glfwSetWindowSizeが実装されているシステム関数は、すべてのウィンドウが持っているイベントコールバックにウィンドウサイズイベントを直接送り、GLFWがそのウィンドウのために実装します。ウィンドウサイズコールバックを設定した場合、GLFWはglfwSetWindowSizeの呼び出しからすべてが戻る前に、新しいサイズでそれを順番に呼び出します。</p>
+<h2 id="キーボード入力">キーボード入力</h2>
+<p>GLFWでは，キーボード入力をキーイベントと文字イベントの2つに分類しています．キーイベントは実際の物理的なキーボードキーに関連し、文字イベントはそれらのキーのいくつかを押すことによって生成されるUnicodeコードポイントに関連します。</p>
+<p>キーと文字は1対1に対応するわけではありません。一つのキーが押されると複数の文字が生成され、一つの文字が生成されるには複数のキーが必要な場合があります。あなたのマシンではそうではないかもしれませんが、あなたのユーザーは、あなたと同じキーボードレイアウト、入力方法、あるいはオペレーティングシステムを使用しているとは限りません。</p>
+<h3 id="キー入力">キー入力</h3>
+<p>物理キーが押されたり離されたりしたときや、繰り返されたときに通知されたい場合は、キーのコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetKeyCallback(window, key_callback);
+</code></pre>
+<p>コールバック関数は、キーボードキー、プラットフォーム固有のスキャンコード、キーアクション、モディファイアビットを受け取ります。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">key_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> scancode, <span class="hljs-keyword">int</span> action, <span class="hljs-keyword">int</span> mods)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (key == GLFW_KEY_E &amp;&amp; action == GLFW_PRESS)
+        activate_airship();
+}
+</code></pre>
+<p>アクションは GLFW_PRESS, GLFW_REPEAT, GLFW_RELEASE のいずれかである。GLFW_PRESS と GLFW_RELEASE アクションを持つイベントは、キーが押されるたびに発行される。ほとんどのキーは、キーを押している間、GLFW_REPEAT アクションを持つイベントも発行される。</p>
+<p>GLFW_REPEAT アクションを持つキーイベントは、テキスト入力のためのものである。これらは、ユーザーのキーボード設定で設定された速度で放出される。複数のキーが押されている場合でも、繰り返されるキーは1つだけである。GLFW_REPEAT アクションは、どのキーが押されているかを知るためや、アニメーションを駆動するために頼りにしてはならない。代わりに、GLFW_PRESS と GLFW_RELEASE アクションに基づいて関連するキーの状態を保存するか、基本的なキーの状態のキャッシュを提供する glfwGetKey を呼び出す必要があります。</p>
+<p>キーは、既存のキートークンの1つであり、GLFWがそれのためのトークンを欠いている場合、 GLFW_KEY_UNKNOWNです、例えば、電子メールと再生キー。</p>
+<p>スキャンコードは、キートークンの有無にかかわらず、すべてのキーで一意である。スキャンコードはプラットフォーム固有であるが、時間の経過とともに変化するため、キーはプラットフォームによって異なるスキャンコードを持つことになるが、ディスクに保存しても安全である。glfwGetKeyScancodeで、現在のプラットフォーム上の任意の名前のキーのスキャンコードを問い合わせることができる。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> scancode = glfwGetKeyScancode(GLFW_KEY_X);
+set_key_mapping(scancode, swap_weapons);
+</code></pre>
+<p>最後に報告された各名前のキーの状態は、glfwGetKeyでポーリング可能なウィンドウごとの状態配列にも保存されます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> state = glfwGetKey(window, GLFW_KEY_E);
+<span class="hljs-keyword">if</span> (state == GLFW_PRESS)
+{
+    activate_airship();
+}
+</code></pre>
+<p>返される状態は GLFW_PRESS または GLFW_RELEASE のいずれかである。</p>
+<p>この関数は、キャッシュされたキーイベントの状態を返すだけです。キーの現在の物理的な状態について、システムをポーリングすることはありません。</p>
+<p>状態をポーリングするときはいつでも、探している状態の変化を見逃す危険性があります。押されたキーが、その状態をポーリングする前に再び放された場合、キーが押されたことを見逃してしまうことになります。これに対する推奨の解決策は、キーのコールバックを使うことですが、GLFW_STICKY_KEYS入力モードもあります。</p>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_STICKY_KEYS, GLFW_TRUE);
+</code></pre>
+<p>スティッキーキー・モードが有効なとき、ポーリング可能なキーの状態は、そのキーの状態が glfwGetKey でポーリングされるまで GLFW_PRESS のままである。いったんポーリングされると、もしその間にキーの解放イベントが処理されていれば、状態はGLFW_RELEASEにリセットされ、そうでなければGLFW_PRESSのままになります。</p>
+<p>入力イベントが発生したときに Caps Lock と Num Lock キーの状態がどうなっていたかを知りたい場合は、 GLFW_LOCK_KEY_MODS 入力モードを設定する。</p>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_LOCK_KEY_MODS, GLFW_TRUE);
+</code></pre>
+<p>この入力モードが有効な場合、モディファイアビットを受け取るすべてのコールバックは、イベントが発生したときにCaps Lockがオンだった場合はGLFW_MOD_CAPS_LOCKビット、Num Lockがオンだった場合はGLFW_MOD_NUM_LOCKビットが設定されます。</p>
+<p>GLFW_KEY_LAST 定数は、任意の名前のキーの最高値を保持する。</p>
+<h3 id="テキスト入力">テキスト入力</h3>
+<p>GLFWは、オペレーティングシステムのテキスト入力システムが生成する、 Unicodeコードポイントのストリーム形式のテキスト入力をサポートしています。キー入力とは異なり、テキスト入力はキーボードレイアウトとモディファイアキーに従い、デッドキーによる文字の合成をサポートします。受信後、コードポイントをUTF-8やその他のお好みのエンコーディングにエンコードすることができます。</p>
+<p>GLFW がサポートするすべてのプラットフォームでは，符号なし int は 32 ビット長なので，コードポイント引数はネイティブエンディアンの UTF-32 として扱うことができる．</p>
+<p>通常のテキスト入力を行いたい場合は、文字コールバックを設定する。</p>
+<pre><code class="lang-c">glfwSetCharCallback(window, character_callback);
+</code></pre>
+<p>コールバック関数は、通常のテキスト入力につながるはずのキーイベントのUnicodeコードポイントを受け取り、一般にそのプラットフォームの標準的なテキストフィールドとして動作するようにします。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">character_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> codepoint)</span>
+</span>{
+}
+</code></pre>
+<h3 id="主な名称">主な名称</h3>
+<p>キーを名前で参照したい場合、glfwGetKeyNameでキーボードレイアウトに依存する印刷可能なキーの名前を問い合わせることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* key_name = glfwGetKeyName(GLFW_KEY_W, <span class="hljs-number">0</span>);
+show_tutorial_hint(<span class="hljs-string">&quot;Press %s to move forward&quot;</span>, key_name);
+</code></pre>
+<p>この関数は、キーとスキャンコードの両方を扱うことができる。指定されたキーが GLFW_KEY_UNKNOWN である場合はスキャンコードが使用され、そうでない場合は無視される。これは、キーコールバックの動作と一致する。つまり、コールバックの引数は、常にこの関数に変更されずに渡すことができる。</p>
+<h2 id="マウス入力">マウス入力</h2>
+<p>マウス入力には、マウスの動き、ボタンの押し方、スクロールのオフセットなど、さまざまな形式があります。カーソルの外観も、カスタム画像やシステムテーマの標準的なカーソル形状に変更することができます。</p>
+<h3 id="カーソル位置">カーソル位置</h3>
+<p>カーソルがウィンドウ上を移動したときに通知を受けたい場合は、カーソル位置のコールバックを設定する。</p>
+<pre><code class="lang-c">glfwSetCursorPosCallback(window, cursor_position_callback);
+</code></pre>
+<p>コールバック関数は、スクリーン座標で測定されたカーソル位置（ウィンドウコンテンツ領域の左上隅を基準とする）を受け取ります。これを提供するプラットフォームでは、完全なサブピクセルのカーソル位置が渡されます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cursor_position_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">double</span> xpos, <span class="hljs-keyword">double</span> ypos)</span>
+</span>{
+}
+</code></pre>
+<p>カーソル位置はウィンドウごとに保存され、glfwGetCursorPosでポーリングすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">double</span> xpos, ypos;
+glfwGetCursorPos(window, &amp;xpos, &amp;ypos);
+</code></pre>
+<h3 id="カーソルモード">カーソルモード</h3>
+<p>GLFW_CURSOR 入力モードは、特別な形式のマウス動作入力のために、いくつかのカーソルモードを提供する。デフォルトでは、カーソルモードは GLFW_CURSOR_NORMAL で、通常の矢印カーソル（または glfwSetCursor で設定された別のカーソル）が使われ、カーソルの動きは制限されないことを意味します。</p>
+<p>マウスモーションによるカメラ制御や、無制限にマウスを動かす必要がある他の入力方式を実装したい場合は、カーソルモードをGLFW_CURSOR_DISABLEDに設定する。</p>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+</code></pre>
+<p>これはカーソルを隠し、指定されたウィンドウにロックします。GLFWはその後、カーソルの再中心化、オフセット計算、アプリケーションへの仮想カーソル位置の提供など、すべての詳細を引き受けます。この仮想位置は、通常カーソル位置コールバックとポーリングの両方を通して提供されます。</p>
+<blockquote>
+<p>GLFWの他の機能を使って、この機能の独自のバージョンを実装してはならない。これは、サポートされておらず、GLFW_CURSOR_DISABLEDのように堅牢に動作することはない。
+もし、カーソルがウィンドウの上にあるときだけ隠されるようにしたいが、それでも通常の動作をさせたい場合は、カーソルモードをGLFW_CURSOR_HIDDENに設定すること。</p>
+</blockquote>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+</code></pre>
+<p>カーソルの動きに制限を設けないモードです。</p>
+<p>これらの特別なモードを終了するには、GLFW_CURSOR_NORMALカーソルモードを復元する。</p>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+</code></pre>
+<h3 id="生のマウス動作">生のマウス動作</h3>
+<p>カーソルが無効の場合、生の（スケールされていない、加速されていない）マウスモーションが利用可能であれば、有効にすることができます。</p>
+<p>生のマウスモーションは、表面を横切るマウスの実際の動きに近いです。デスクトップカーソルの動きに適用されるスケーリングとアクセラレーションの影響を受けません。この処理はカーソルに適している一方、生の動きは、例えば3Dカメラの制御に適しています。このため、生のマウスモーションはカーソルが無効になっているときのみ提供されます。</p>
+<p>glfwRawMouseMotionSupported を呼び出して、現在のマシンが生のモーションを提供するかどうかを調べ、GLFW_RAW_MOUSE_MOTION 入力モードを設定して有効にする。デフォルトでは無効になっている．</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (glfwRawMouseMotionSupported())
+    glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
+</code></pre>
+<p>サポートされている場合、生のマウスモーションはウィンドウごとに、いつでも有効または無効にできますが、カーソルが無効になっている場合にのみ提供されます。</p>
+<h3 id="カーソルオブジェクト">カーソルオブジェクト</h3>
+<p>GLFW は、GLFWcursor オブジェクトとしてカプセル化された、カスタムカーソルと システムテーマのカーソルイメージの両方を作成することをサポートしています。それらは glfwCreateCursor または glfwCreateStandardCursor で作成され、もし残っていれば glfwDestroyCursor または glfwTerminate で破壊されます。</p>
+<h4 id="カスタムカーソルの作成">カスタムカーソルの作成</h4>
+<p>カスタムカーソルは glfwCreateCursor で作成され、作成されたカーソルオブジェクトへのハンドルが返されます。例えば、これは左上隅にホットスポットを持つ16x16の白い正方形のカーソルを作成します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> pixels[<span class="hljs-number">16</span> * <span class="hljs-number">16</span> * <span class="hljs-number">4</span>];
+<span class="hljs-built_in">memset</span>(pixels, <span class="hljs-number">0xff</span>, <span class="hljs-keyword">sizeof</span>(pixels));
+
+GLFWimage image;
+image.width = <span class="hljs-number">16</span>;
+image.height = <span class="hljs-number">16</span>;
+image.pixels = pixels;
+
+GLFWcursor* cursor = glfwCreateCursor(&amp;image, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+</code></pre>
+<p>カーソル作成に失敗した場合は NULL を返すので、戻り値の確認が必要である。</p>
+<p>画像データは，32ビット，リトルエンディアン，非前乗算のRGBA，すなわち，赤チャンネルを先頭とする各チャンネル8ビットである．画素は，左上隅から順に，正規の行として配置される。</p>
+<h4 id="標準カーソル作成">標準カーソル作成</h4>
+<p>現在のシステムカーソルのテーマから標準的な形状のカーソルは、glfwCreateStandardCursorで作成することができます。</p>
+<pre><code class="lang-c">GLFWcursor* cursor = glfwCreateStandardCursor(GLFW_HRESIZE_CURSOR);
+</code></pre>
+<p>これらのカーソルオブジェクトは、システムカーソルテーマが実際のイメージを提供することを除いて、glfwCreateCursorで作成されたものと全く同じように動作する。</p>
+<h4 id="カーソル破壊">カーソル破壊</h4>
+<p>カーソルが不要になったら、glfwDestroyCursor で破棄する。</p>
+<pre><code class="lang-c">glfwDestroyCursor(cursor);
+</code></pre>
+<p>カーソルの破壊は常に成功する。カーソルが任意のウィンドウでカレントである場合、そのウィンドウはデフォルトカーソルに戻ります。これは、カーソルモードには影響しません。残りの全てのカーソルは、glfwTerminateが呼ばれたときに破壊されます。</p>
+<h4 id="カーソル設定">カーソル設定</h4>
+<p>glfwSetCursorにより、ウィンドウのカレントカーソルを設定することができます。</p>
+<pre><code class="lang-c">glfwSetCursor(window, cursor);
+</code></pre>
+<p>一度設定されると、システムカーソルがウィンドウのコンテンツ領域上にあり、カーソルモードがGLFW_CURSOR_NORMALに設定されている限り、カーソル画像が使用されるようになる。</p>
+<p>1つのカーソルは、任意の数のウィンドウに設定することができる。</p>
+<p>デフォルトカーソルに戻すには、そのウィンドウのカーソルをNULLに設定する。</p>
+<pre><code class="lang-c">glfwSetCursor(window, <span class="hljs-literal">NULL</span>);
+</code></pre>
+<p>カーソルが破壊されると、カーソルが設定されているウィンドウはすべてデフォルトのカーソルに戻されます。これは、カーソルモードには影響しません。</p>
+<h3 id="カーソル入退室イベント">カーソル入退室イベント</h3>
+<p>カーソルがウィンドウのコンテンツ領域に入ったとき、またはコンテンツ領域から出たときに通知を受けたい場合は、カーソルの入力/離脱コールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetCursorEnterCallback(window, cursor_enter_callback);
+</code></pre>
+<p>コールバック関数は、カーソルの新しい分類を受け取ります。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">cursor_enter_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> entered)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (entered)
+    {
+        <span class="hljs-comment">// The cursor entered the content area of the window</span>
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-comment">// The cursor left the content area of the window</span>
+    }
+}
+</code></pre>
+<p>GLFW_HOVEREDウィンドウ属性で、カーソルが現在ウィンドウのコンテンツ領域内にあるかどうかを問い合わせることができる。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (glfwGetWindowAttrib(window, GLFW_HOVERED))
+{
+    highlight_interface();
+}
+</code></pre>
+<h3 id="マウスボタン入力">マウスボタン入力</h3>
+<p>マウスボタンが押されたり離されたりしたときに通知を受けたい場合は、マウスボタンコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetMouseButtonCallback(window, mouse_button_callback);
+</code></pre>
+<p>コールバック関数は、マウスボタン、ボタンアクション、モディファイアのビットを受け取ります。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">mouse_button_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> button, <span class="hljs-keyword">int</span> action, <span class="hljs-keyword">int</span> mods)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (button == GLFW_MOUSE_BUTTON_RIGHT &amp;&amp; action == GLFW_PRESS)
+        popup_menu();
+}
+</code></pre>
+<p>アクションは GLFW_PRESS または GLFW_RELEASE のいずれかである。</p>
+<p>指定されたボタンのマウスボタンの状態は、glfwGetMouseButtonでポーリングできるウィンドウごとの状態配列に保存されます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> state = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);
+<span class="hljs-keyword">if</span> (state == GLFW_PRESS)
+{
+    upgrade_cow();
+}
+</code></pre>
+<p>返される状態は GLFW_PRESS または GLFW_RELEASE のいずれかである。</p>
+<p>この関数は、キャッシュされたマウスボタンのイベントの状態を返すだけである。マウスボタンの現在の状態について、システムをポーリングすることはありません。</p>
+<p>状態をポーリングするときはいつでも、探している状態の変化を見逃す危険があります。もし押されたマウスボタンが、その状態をポーリングする前に再び離された場合、ボタンが押されたことを見逃してしまうことになります。これに対する推奨される解決策は、マウスボタンのコールバックを使うことですが、GLFW_STICKY_MOUSE_BUTTONS 入力モードもあります。</p>
+<pre><code class="lang-c">glfwSetInputMode(window, GLFW_STICKY_MOUSE_BUTTONS, GLFW_TRUE);
+</code></pre>
+<p>スティッキーマウスボタンモードが有効なとき、マウスボタンの状態が glfwGetMouseButton でポーリングされるまで、ポーリング可能な状態は GLFW_PRESS のままである。いったんポーリングされると、もしその間にマウスボタンのリリースイベントが処理されていたなら、状態はGLFW_RELEASEにリセットされ、そうでなければGLFW_PRESSのままになります。</p>
+<p>GLFW_MOUSE_BUTTON_LAST定数は、任意の名前のボタンの最高値を保持する。</p>
+<h3 id="スクロール入力">スクロール入力</h3>
+<p>マウスホイールやタッチパッドのジェスチャーでユーザーがスクロールしたときに通知を受けたい場合は、スクロールコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetScrollCallback(window, scroll_callback);
+</code></pre>
+<p>コールバック関数は、2次元のスクロールオフセットを受け取る。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">scroll_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">double</span> xoffset, <span class="hljs-keyword">double</span> yoffset)</span>
+</span>{
+}
+</code></pre>
+<p>通常のマウスホイールは垂直であるため、Y軸に沿ったオフセットが得られます。</p>
+<h2 id="ジョイスティック入力">ジョイスティック入力</h2>
+<p>ジョイスティック機能は、接続されたジョイスティックとコントローラを公開するもので、どちらもジョイスティックと呼ばれます。GLFW_JOYSTICK_1, GLFW_JOYSTICK_2 から、 GLFW_JOYSTICK_16, GLFW_JOYSTICK_LASTまで、最大16本のジョイスティックをサポートします。ジョイスティックがあるかどうかは、glfwJoystickPresentで調べることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> present = glfwJoystickPresent(GLFW_JOYSTICK_1);
+</code></pre>
+<p>各ジョイスティックは、0以上の軸、0以上のボタン、0以上の帽子、人間が読める名前、ユーザポインタ、SDL互換のGUIDを持つ。</p>
+<p>GLFWの初期化時に、検出されたジョイスティックが配列の先頭に追加される。一度検出されたジョイスティックは、接続が切れるかライブラリが終了するまで割り当てられたIDを保持するため、 ジョイスティックの接続・切断に伴いIDにずれが生じる可能性があります。</p>
+<p>ジョイスティックの軸、ボタン、ハットの状態はポーリングされると更新され、ウィンドウを作成したりイベントを処理したりする必要はありません。ただし、ジョイスティックの接続・切断イベントをジョイスティックコールバックに確実に届けたい場合は、イベント処理を行う必要があります。</p>
+<p>接続されたすべてのジョイスティックのプロパティをリアルタイムに確認するには、 joysticksテストプログラムを実行します。</p>
+<h3 id="ジョイスティック軸の状態">ジョイスティック軸の状態</h3>
+<p>ジョイスティックの全軸の位置はglfwGetJoystickAxesで返されます。返される配列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> count;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span>* axes = glfwGetJoystickAxes(GLFW_JOYSTICK_5, &amp;count);
+</code></pre>
+<p>返される配列の各要素は、-1.0 から 1.0 までの値である。</p>
+<h3 id="ジョイスティックボタンの状態">ジョイスティックボタンの状態</h3>
+<p>ジョイスティックの全ボタンの状態はglfwGetJoystickButtonsで返されます。返される配列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> count;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>* buttons = glfwGetJoystickButtons(GLFW_JOYSTICK_3, &amp;count);
+</code></pre>
+<p>返された配列の各要素は、GLFW_PRESS または GLFW_RELEASE のいずれかである。</p>
+<p>glfwGetJoystickHats がなかった以前のバージョンとの後方互換性のために、デフォルトでボタンの配列はすべての帽子も含んでいます。詳細は、glfwGetJoystickButtonsのリファレンスドキュメントを参照してください。</p>
+<h3 id="ジョイスティックハットの状態">ジョイスティックハットの状態</h3>
+<p>全てのハットの状態がglfwGetJoystickHatsによって返されます。返される配列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> count;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>* hats = glfwGetJoystickHats(GLFW_JOYSTICK_7, &amp;count);
+</code></pre>
+<p>返された配列の各要素は、以下のいずれかである。</p>
+<p>Name    Value
+GLFW_HAT_CENTERED    0
+GLFW_HAT_UP    1
+GLFW_HAT_RIGHT    2
+GLFW_HAT_DOWN    4
+GLFW_HAT_LEFT    8
+GLFW_HAT_RIGHT_UP    GLFW_HAT_RIGHT | GLFW_HAT_UP
+GLFW_HAT_RIGHT_DOWN    GLFW_HAT_RIGHT | GLFW_HAT_DOWN
+GLFW_HAT_LEFT_UP    GLFW_HAT_LEFT | GLFW_HAT_UP
+GLFW_HAT_LEFT_DOWN    GLFW_HAT_LEFT | GLFW_HAT_DOWN</p>
+<p>斜めの方向は、主な方向（上、右、下、左）のビット単位の組み合わせで、対応する方向とANDすることで個別にテストすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (hats[<span class="hljs-number">2</span>] &amp; GLFW_HAT_RIGHT)
+{
+    <span class="hljs-comment">// State of hat 2 could be right-up, right or right-down</span>
+}
+</code></pre>
+<p>glfwGetJoystickHats がなかった以前のバージョンとの後方互換性のために、すべての帽子はデフォルトでボタン配列にも含まれます。詳細はglfwGetJoystickButtonsのリファレンスドキュメントを参照してください。</p>
+<h3 id="ジョイスティック名">ジョイスティック名</h3>
+<p>ジョイスティックの名称をUTF-8でエンコードしたものをglfwGetJoystickNameで返します。返される文字列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name = glfwGetJoystickName(GLFW_JOYSTICK_4);
+</code></pre>
+<p>ジョイスティックの名称は一意であることを保証するものではありません。同じモデル、同じメーカーのジョイスティックでも、同じ名前になることがあります。ジョイスティックIDだけは、そのジョイスティックが接続されなくなるまで一意であることが保証されています。</p>
+<h3 id="ジョイスティック・ユーザーポインター">ジョイスティック・ユーザーポインター</h3>
+<p>各ジョイスティックにはユーザポインタがあり、glfwSetJoystickUserPointerで設定し、 glfwGetJoystickUserPointerで取得することができます。これは必要な用途に使うことができ、GLFWで変更されることはありません。この値は、ジョイスティックの接続が切れるか、ライブラリが終了するまで保持されます。</p>
+<p>ポインタの初期値はNULLである。</p>
+<h3 id="ジョイスティックの設定変更">ジョイスティックの設定変更</h3>
+<p>ジョイスティックの接続、切断時に通知を受けたい場合は、ジョイスティックコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetJoystickCallback(joystick_callback);
+</code></pre>
+<p>コールバック関数は、接続・切断されたジョイスティックのID、および発生したイベントを受け取ります。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">joystick_callback</span><span class="hljs-params">(<span class="hljs-keyword">int</span> jid, <span class="hljs-keyword">int</span> event)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (event == GLFW_CONNECTED)
+    {
+        <span class="hljs-comment">// The joystick was connected</span>
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (event == GLFW_DISCONNECTED)
+    {
+        <span class="hljs-comment">// The joystick was disconnected</span>
+    }
+}
+</code></pre>
+<p>ジョイスティックの接続・切断イベントをすべてのプラットフォームで配信するためには、イベント処理関数のいずれかを呼び出す必要がある。ジョイスティックの切断を検知して、ジョイスティック関数からコールバックを呼び出すこともできる。この場合、関数はジョイスティックが切断されたときに返すものをそのまま返します。</p>
+<p>glfwGetJoystickNameとglfwGetJoystickUserPointerのみが、ジョイスティック切断時に有用な値を返し、 monitorコールバックが返される前に返されるだけです。</p>
+<h3 id="ゲームパッド入力">ゲームパッド入力</h3>
+<p>ジョイスティックの機能には、軸、ボタン、ハットなどのラベルがなく、デバイスのどこに配置されているのかもわかりません。また、同じデバイスであっても、プラットフォームによって順番が異なる場合があります。</p>
+<p>この問題を解決するために、SDLコミュニティはSDL_GameControllerDBプロジェクトをクラウドソーシングしました。これは、さまざまなデバイスからXboxのようなゲームパッドへのマッピングを集めたデータベースです。</p>
+<p>GLFWはこのマッピング形式をサポートしており、リリース時に利用可能なマッピングのコピーが含まれています。実行時にこれを更新する方法については、Gamepad mappingsを参照してください。ジョイスティックが接続されたり、マッピングが更新されたりすると、 マッピングは自動的にジョイスティックに割り当てられます。</p>
+<p>ジョイスティックが存在し、かつゲームパッドマッピングがあるかどうかは、 glfwJoystickIsGamepadで確認することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (glfwJoystickIsGamepad(GLFW_JOYSTICK_2))
+{
+    <span class="hljs-comment">// Use as gamepad</span>
+}
+</code></pre>
+<p>ゲームパッド入力にのみ興味がある場合は、glfwJoystickPresentの代わりにこの関数を使用することができます。</p>
+<p>glfwGetGamepadNameで、ゲームパッドマッピングが提供する人間にとって読みやすい名前を問い合わせることができます。これはジョイスティック名と同じかもしれませんし、違うかもしれません。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name = glfwGetGamepadName(GLFW_JOYSTICK_7);
+</code></pre>
+<p>ジョイスティックのゲームパッド状態を取得するには、glfwGetGamepadStateを呼び出します。</p>
+<pre><code class="lang-c">GLFWgamepadstate state;
+
+<span class="hljs-keyword">if</span> (glfwGetGamepadState(GLFW_JOYSTICK_3, &amp;state))
+{
+    <span class="hljs-keyword">if</span> (state.buttons[GLFW_GAMEPAD_BUTTON_A])
+    {
+        input_jump();
+    }
+
+    input_speed(state.axes[GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER]);
+}
+</code></pre>
+<p>GLFWgamepadstate構造体は、ボタンの状態と軸の状態の2つの配列を持っています。各ボタンと軸の値は、glfwGetJoystickButtons と glfwGetJoystickAxes 関数と同じで、つまり、ボタンは GLFW_PRESS または GLFW_RELEASE 、軸は -1.0 ～ 1.0 (含む) です。</p>
+<p>配列のサイズと各配列内の位置は固定である．</p>
+<p>ボタンのインデックスは GLFW_GAMEPAD_BUTTON_A, GLFW_GAMEPAD_BUTTON_B, GLFW_GAMEPAD_BUTTON_X, GLFW_GAMEPAD_BUTTON_Y, GLFW_GAMEPAD_BUTTON_LEFT_BUMPER, GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER, GLFW_GAMEPAD_BUTTON_BACK, GLFW_GAMEPAD_BUTTON_START, GLFW_GAMEPAD_BUTTON_GUIDE, GLFW_GAMEPAD_BUTTON_LEFT_THUMB, GLFW_GAMEPAD_BUTTON_RIGHT_THUMB, GLFW_GAMEPAD_BUTTON_DPAD_UP, GLFW_GAMEPAD_BUTTON_DPAD_RIGHT, GLFW_GAMEPAD_BUTTON_DPAD_DOWN and GLFW_GAMEPAD_BUTTON_DPAD_LEFT.</p>
+<p>お好みで、A、B、X、YボタンのインデックスにGLFW_GAMEPAD_BUTTON_CROSS、GLFW_GAMEPAD_BUTTON_CIRCLE、GLFW_GAMEPAD_BUTTON_SQUARE、GLFW_GAMEPAD_BUTTON_TRIANGLEというエイリアスも存在します。</p>
+<p>軸索は GLFW_GAMEPAD_AXIS_LEFT_X, GLFW_GAMEPAD_AXIS_LEFT_Y, GLFW_GAMEPAD_AXIS_RIGHT_X, GLFW_GAMEPAD_AXIS_RIGHT_Y, GLFW_GAMEPAD_AXIS_LEFT_TRIGGER and GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER.</p>
+<p>GLFW_GAMEPAD_BUTTON_LAST と GLFW_GAMEPAD_AXIS_LAST 定数は、各配列で利用可能な最大のインデックスに等しい。</p>
+<h3 id="ゲームパッドマッピング">ゲームパッドマッピング</h3>
+<p>GLFWは、リリース時にSDL_GameControllerDBで利用可能なマッピングのコピーを含んでいます。新しいマッピングはglfwUpdateGamepadMappingsで実行時に追加することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* mappings = load_file_contents(<span class="hljs-string">&quot;game/data/gamecontrollerdb.txt&quot;</span>);
+
+glfwUpdateGamepadMappings(mappings);
+</code></pre>
+<p>この機能は、1行から、gamecontrollerdb.txtファイル全体の未修正の内容まで、すべてをサポートします。</p>
+<p>GLFWをソースからCMakeでコンパイルする場合、update_mappingsターゲットをビルドすることで組み込みのマッピングを更新することができます。これはGenerateMappings.cmake CMakeスクリプトを実行し、gamecontrollerdb.txtをダウンロードし、mappings.hヘッダーファイルを再生成するものです。</p>
+<p>以下は、マッピングのフォーマットについての説明です。この記述は権威あるものではないことに注意してください。このフォーマットはSDLおよびSDL_GameControllerDBプロジェクトによって定義されており、それらのドキュメントやコードが優先されます。</p>
+<p>各マッピングは、ゲームパッドの GUID、名前、レイアウトを記述するカンマ区切りの値で構成される一行で構成されます。16進数で始まらない行は無視されます。</p>
+<p>最初の値は常にゲームパッドのGUIDで、通常、メーカー、モデル、リビジョン、コンピューターとの接続タイプを特定する32文字長の16進文字列です。この情報がない場合、GUIDはゲームパッド名から生成される。GLFWはSDL 2.0.5+のGUID形式を使用していますが、古い形式からの変換も可能です。</p>
+<p>2番目の値は常にゲームパッドの人間にとって読みやすい名前である。</p>
+<p>後続の値はすべて<field>:<value>の形式であり，マッピングのレイアウトを記述する。これらのフィールドはすべて存在するとは限らず、またどのような順序で出現してもよい。</value></field></p>
+<p>ボタンのフィールドは、a, b, x, y, back, start, guide, dpup, dpright, dpdown, dpleft, leftshoulder, rightshoulder, leftstick, rightstickである。</p>
+<p>軸のフィールドは、leftx, lefty, rightx, righty, lefttrigger, righttrigger です。</p>
+<p>axisまたはbuttonフィールドの値は、ジョイスティックボタン、ジョイスティック軸、ハットビットマスク、または空であることができます。ジョイスティックボタンはbNで指定し、例えば第3ボタンはb2である。ジョイスティック軸はaNで指定し、例えば第8ボタンはa7とする。ジョイスティックハットビットマスクはhN.Nとして指定され、例えばh0.8は最初のハットの左を意味します。マスクには複数のビットを設定することができます。</p>
+<p>軸の前に + または - の範囲修飾子があり、たとえば4軸の正の半分は +a3 となります。これは、ジョイスティック軸の正または負の半分に入力を制限するものです。軸または半軸の後に、~inversion修飾子がある場合があります。 for example a2~ or -a7~. ゲームパッド軸の値を否定します。</p>
+<p>ハットビットマスクはジョイスティックファンクションのハット状態と一致します。</p>
+<p>また、マッピングが有効なプラットフォームを指定する特別なプラットフォームフィールドがあります。指定可能な値は、Windows、Mac OS X、Linuxです。</p>
+<p>以下は、ゲームパッドのマッピングの例です。これは、WindowsのXInput API経由でアクセスするXboxコントローラのためにGLFWに組み込まれたものです。この例は、ページに収まるようにいくつかの行に分かれていますが、実際のゲームパッドマッピングは1行でなければなりません。</p>
+<pre><code>78696e70757401000000000000000000,XInput Gamepad (GLFW),platform:Windows,a:b0,
+b:b1,x:b2,y:b3,leftshoulder:b4,rightshoulder:b5,back:b6,start:b7,leftstick:b8,
+rightstick:b9,leftx:a0,lefty:a1,rightx:a2,righty:a3,lefttrigger:a4,
+righttrigger:a5,dpup:h0.1,dpright:h0.2,dpdown:h0.4,dpleft:h0.8,
+</code></pre><blockquote>
+<p>GLFW は、最近 SDL に追加された出力範囲と修飾子 + と - をまだサポートしていません。入力修飾子 +, - および ~ はサポートされており、上で説明したとおりです。</p>
+</blockquote>
+<h2 id="時間入力">時間入力</h2>
+<p>GLFWはglfwGetTimeにより、秒単位の高分解能な時間入力を提供します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">double</span> seconds = glfwGetTime();
+</code></pre>
+<p>glfwInitでライブラリが初期化されてからの秒数を返す。使用されるプラットフォーム固有の時間ソースは、通常、マイクロ秒またはナノ秒の分解能を持つ。</p>
+<p>基準時刻はglfwSetTimeで変更することができます。</p>
+<pre><code class="lang-c">glfwSetTime(<span class="hljs-number">4.0</span>);
+</code></pre>
+<p>これは、指定された時間（秒）を設定し、そこからカウントを続けるものです。</p>
+<p>また、glfwGetTimerValueを使用すると、上記の関数を実装するために使用された生のタイマーにアクセスすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">uint64_t</span> value = glfwGetTimerValue();
+</code></pre>
+<p>この値は、1 / 周波数秒単位です。生タイマーの周波数は、オペレーティングシステムとハードウェアに依存します。glfwGetTimerFrequencyで周波数をHzで問い合わせることができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">uint64_t</span> frequency = glfwGetTimerFrequency();
+</code></pre>
+<h2 id="クリップボードの入出力">クリップボードの入出力</h2>
+<p>システムのクリップボードにUTF-8でエンコードされた文字列がある場合、またはそれに変換できる場合、glfwGetClipboardStringでそれを取得することができます。返される文字列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* text = glfwGetClipboardString(<span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (text)
+{
+    insert_text(text);
+}
+</code></pre>
+<p>クリップボードが空の場合、またはその内容を変換できなかった場合は、NULL を返す。</p>
+<p>システムクリップボードの内容は、glfwSetClipboardString によって UTF-8 でエンコードされた文字列に設定することができます。</p>
+<pre><code class="lang-c">glfwSetClipboardString(<span class="hljs-literal">NULL</span>, <span class="hljs-string">&quot;A string with words in it&quot;</span>);
+</code></pre>
+<h2 id="パスドロップ入力">パスドロップ入力</h2>
+<p>ウィンドウにドロップされたファイルやディレクトリのパスを受け取りたい場合、ファイルドロップのコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetDropCallback(window, drop_callback);
+</code></pre>
+<p>コールバック関数は、UTF-8 でエンコードされたパスの配列を受け取る。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drop_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> count, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>** paths)</span>
+</span>{
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>;  i &lt; count;  i++)
+        handle_dropped_file(paths[i]);
+}
+</code></pre>
+<p>パスの配列とその文字列は、ファイルドロップコールバックが返されるまでの間のみ有効で、そのイベントのために特別に生成されている可能性があります。パスを保持したい場合は、配列のディープコピーを作成する必要があります。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="monitor_guide.html" class="navigation navigation-prev " aria-label="Previous page: モニターガイド">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Reference/" class="navigation navigation-next " aria-label="Next page: 目次">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"入力ガイド","level":"2.6","depth":1,"next":{"title":"目次","level":"3.1","depth":1,"path":"Reference/README.md","ref":"Reference/README.md","articles":[]},"previous":{"title":"モニターガイド","level":"2.5","depth":1,"path":"Guides/monitor_guide.md","ref":"Guides/monitor_guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Guides/input_guide.md","mtime":"2022-10-18T06:52:38.597Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:21:34.811Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

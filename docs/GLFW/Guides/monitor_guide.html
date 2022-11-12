@@ -1,0 +1,539 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>モニターガイド · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="input_guide.html" />
+    
+    
+    <link rel="prev" href="context_guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    GLFWドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Tutorial/">
+            
+                <a href="../Tutorial/">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">プログラミングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="introduction_to_the_api.html">
+            
+                <a href="introduction_to_the_api.html">
+            
+                    
+                    API入門
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="window_guide.html">
+            
+                <a href="window_guide.html">
+            
+                    
+                    ウィンドウガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="context_guide.html">
+            
+                <a href="context_guide.html">
+            
+                    
+                    コンテキストガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="monitor_guide.html">
+            
+                <a href="monitor_guide.html">
+            
+                    
+                    モニターガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="input_guide.html">
+            
+                <a href="input_guide.html">
+            
+                    
+                    入力ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Reference/">
+            
+                <a href="../Reference/">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://www.glfw.org/documentation.html">
+            
+                    
+                    本家ウェブサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >モニターガイド</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="glfwモニターガイド（日本語訳）">GLFWモニターガイド（日本語訳）</h1>
+<p><a href="https://www.glfw.org/docs/latest/monitor_guide.html" target="_blank">原文</a></p>
+<p>このガイドでは、GLFWのモニター関連機能を紹介しています。このカテゴリの特定の機能の詳細については、<a href="https://www.glfw.org/docs/latest/group__monitor.html" target="_blank">モニタのリファレンス</a>を参照してください。また、GLFWの他の領域のガイドもあります。</p>
+<ul>
+<li><a href="https://www.glfw.org/docs/latest/intro_guide.html" target="_blank">Introduction to the API</a></li>
+<li><a href="https://www.glfw.org/docs/latest/window_guide.html" target="_blank">Window guide</a></li>
+<li><a href="https://www.glfw.org/docs/latest/context_guide.html" target="_blank">Context guide</a></li>
+<li><a href="https://www.glfw.org/docs/latest/vulkan_guide.html" target="_blank">Vulkan guide</a></li>
+<li><a href="https://www.glfw.org/docs/latest/input_guide.html" target="_blank">Input guide</a></li>
+</ul>
+<h2 id="モニター対象">モニター対象</h2>
+<p>モニター・オブジェクトは現在接続されているモニターを表し、不透明な型GLFWmonitorへのポインタとして表現されます。モニターオブジェクトは、アプリケーションによって作成または破棄されることはなく、それらが表すモニターが切断されるか、ライブラリが終了するまで、そのアドレスが保持されます。</p>
+<p>各モニターは、現在のビデオモード、サポートされているビデオモードのリスト、仮想位置、人間が読める名前、推定物理サイズ、ガンマランプを持ちます。モニタの1つがプライマリモニタである。</p>
+<p>モニターの仮想位置はスクリーン座標で、現在のビデオモードとともに、接続されたモニターがそれらにまたがる仮想デスクトップに提供するビューポートを記述しています。</p>
+<p>GLFWがあなたのモニターセットアップとその利用可能なビデオモードをどのように見るかを見るには、モニターテストプログラムを実行してください。</p>
+<h3 id="モニターを取得する">モニターを取得する</h3>
+<p>プライマリモニタは、glfwGetPrimaryMonitorによって返されます。これはユーザーが好んで使用するモニターで、通常はタスクバーやメニューバーのようなグローバルなUI要素を持つものです。</p>
+<pre><code class="lang-c">GLFWmonitor* primary = glfwGetPrimaryMonitor();
+</code></pre>
+<p>glfwGetMonitors で現在接続されているすべてのモニターを取得できます。返される配列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> count;
+GLFWmonitor** monitors = glfwGetMonitors(&amp;count);
+</code></pre>
+<p>プライマリモニタは常に返された配列の最初のモニタですが、モニタが接続または切断されると、他のモニタは別のインデックスに移動されることがあります。</p>
+<h3 id="コンフィギュレーション変更の監視">コンフィギュレーション変更の監視</h3>
+<p>モニターの接続、切断時に通知を受けたい場合は、モニターコールバックを設定します。</p>
+<pre><code class="lang-c">glfwSetMonitorCallback(monitor_callback);
+</code></pre>
+<p>コールバック関数は、接続または切断されたモニターのハンドルと発生したイベントを受信します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">monitor_callback</span><span class="hljs-params">(GLFWmonitor* monitor, <span class="hljs-keyword">int</span> event)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (event == GLFW_CONNECTED)
+    {
+        <span class="hljs-comment">// The monitor was connected</span>
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (event == GLFW_DISCONNECTED)
+    {
+        <span class="hljs-comment">// The monitor was disconnected</span>
+    }
+}
+</code></pre>
+<p>モニタが切断された場合、そのモニタ上でフルスクリーンになっているすべてのウィンドウは、コールバックが呼び出される前にウィンドウモードに切り替わります。glfwGetMonitorNameとglfwGetMonitorUserPointerだけが、切断されたモニターに対して、モニターコールバックが戻る前に、有用な値を返します。</p>
+<h2 id="モニタープロパティ">モニタープロパティ</h2>
+<p>各モニターは、現在のビデオモード、サポートされているビデオモードのリスト、仮想位置、コンテンツスケール、人間が読める名前、ユーザーポインタ、推定物理サイズ、ガンマランプを持つ。</p>
+<h3 id="ビデオモード">ビデオモード</h3>
+<p>GLFWは一般に、フルスクリーンウィンドウを作成したり、そのビデオモードを変更したり、ウィンドウのものをフルスクリーンにするときに、適切なビデオモードを選択するのに良い仕事をしますが、どのビデオモードがサポートされているかを正確に知っておくと便利な場合があります。</p>
+<p>ビデオモードは GLFWvidmode 構造体として表現されます。モニターがサポートするビデオモードの配列は、glfwGetVideoModesで得ることができます。返される配列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> count;
+GLFWvidmode* modes = glfwGetVideoModes(monitor, &amp;count);
+</code></pre>
+<p>モニタの現在のビデオモードを取得するには、glfwGetVideoModeを呼び出します。返されるポインタの寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> GLFWvidmode* mode = glfwGetVideoMode(monitor);
+</code></pre>
+<p>ビデオモードの解像度はピクセルではなく、画面座標で指定します。</p>
+<h3 id="物理サイズ">物理サイズ</h3>
+<p>ミリメートル単位のモニタの物理的サイズ、またはその推定値は、glfwGetMonitorPhysicalSizeで取得することができる。これは、現在の解像度、すなわち現在のビデオモードの幅と高さとは関係ない。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> width_mm, height_mm;
+glfwGetMonitorPhysicalSize(monitor, &amp;width_mm, &amp;height_mm);
+</code></pre>
+<p>これはモニターの生のDPIを計算するために使用することができますが、多くの場合、これは有用ではありません。代わりに、モニターコンテンツスケールとウィンドウコンテンツスケールを使用して、コンテンツをスケーリングしてください。</p>
+<h3 id="コンテンツスケール">コンテンツスケール</h3>
+<p>モニターのコンテンツスケールは、glfwGetMonitorContentScaleで取得することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">float</span> xscale, yscale;
+glfwGetMonitorContentScale(monitor, &amp;xscale, &amp;yscale);
+</code></pre>
+<p>コンテンツスケールは、現在のDPIとプラットフォームのデフォルトDPIとの比率です。これは、テキストやUI要素で特に重要です。この比率でスケーリングされたUIのピクセル寸法があなたのマシンで適切に見えるなら、他のマシンではDPIやスケーリング設定に関係なく、妥当な大きさで表示されるはずです。これは、システムのDPIとスケーリング設定がある程度正しいことが前提になります。</p>
+<p>コンテンツのスケールは、モニターの解像度とピクセル密度、およびユーザーの設定の両方に依存する場合があります。物理的なサイズと現在の解像度から計算される生のDPIとは大きく異なる場合があります。</p>
+<h3 id="バーチャルポジション">バーチャルポジション</h3>
+<p>仮想デスクトップ上のモニターの位置を画面座標で取得するには、glfwGetMonitorPosを使用します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> xpos, ypos;
+glfwGetMonitorPos(monitor, &amp;xpos, &amp;ypos);
+</code></pre>
+<h3 id="作業領域">作業領域</h3>
+<p>グローバルタスクバーやメニューバーによって占有されていないモニタの領域は、ワークエリアです。これはスクリーン座標で指定され、glfwGetMonitorWorkareaで取得することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> xpos, ypos, width, height;
+glfwGetMonitorWorkarea(monitor, &amp;xpos, &amp;ypos, &amp;width, &amp;height);
+</code></pre>
+<h3 id="読みやすい名前">読みやすい名前</h3>
+<p>人間が読める、UTF-8でエンコードされたモニターの名前は、glfwGetMonitorNameによって返されます。返される文字列の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* name = glfwGetMonitorName(monitor);
+</code></pre>
+<p>モニターの名前は一意であることを保証するものではありません。同じモデル、メーカーの2台のモニターが同じ名前を持つことがあります。一意であることが保証されるのは、そのモニターが切断されるまでのモニターハンドルだけです。</p>
+<h3 id="ユーザーポインタ">ユーザーポインタ</h3>
+<p>各モニターは、glfwSetMonitorUserPointerで設定し、glfwGetMonitorUserPointerで問い合わせることができるユーザーポインタを持っています。これは必要な目的に使用することができ、GLFWによって変更されることはありません。この値は，モニタが切断されるか，ライブラリが終了するまで保持されます．</p>
+<p>ポインタの初期値はNULLである．</p>
+<h3 id="ガンマランプ">ガンマランプ</h3>
+<p>モニターのガンマランプは、モニターハンドルとGLFWgammaramp構造体へのポインタを受け付けるglfwSetGammaRampで設定することができます。</p>
+<pre><code class="lang-c">GLFWgammaramp ramp;
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span> red[<span class="hljs-number">256</span>], green[<span class="hljs-number">256</span>], blue[<span class="hljs-number">256</span>];
+
+ramp.size = <span class="hljs-number">256</span>;
+ramp.red = red;
+ramp.green = green;
+ramp.blue = blue;
+
+<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>;  i &lt; ramp.size;  i++)
+{
+    <span class="hljs-comment">// ガンマランプアレイを任意に設定する。</span>
+}
+
+glfwSetGammaRamp(monitor, &amp;ramp);
+</code></pre>
+<p>ガンマランプデータは関数が戻る前にコピーされるので、ランプが設定された後にそれを保持する必要はありません。</p>
+<p>ガンマランプは、そのモニタの現在のガンマランプと同じサイズにすることをお勧めします。</p>
+<p>モニタの現在のガンマランプは、glfwGetGammaRampによって返されます。返された構造体の寿命については、リファレンスドキュメントを参照してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> GLFWgammaramp* ramp = glfwGetGammaRamp(monitor);
+</code></pre>
+<p>もし、通常のガンマランプを設定したい場合は、glfwSetGamma を使って、希望する指数から GLFW に計算させることができ、その結果得られたランプで glfwSetGammaRamp を呼び出すことができます。</p>
+<pre><code class="lang-c">glfwSetGamma(monitor, <span class="hljs-number">1.0</span>);
+</code></pre>
+<p>glfwSetGamma関数によるガンマ補正を試すには、ガンマテストプログラムを実行します。</p>
+<blockquote>
+<p>ソフトウェアで制御されるガンマランプは、ハードウェアのガンマ補正に加えて適用され、今日では通常 sRGB のガンマに近似しています。つまり、完全に直線的なランプ、つまりガンマ 1.0 を設定すると、デフォルトの（通常 sRGB に近い）動作になります。</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="context_guide.html" class="navigation navigation-prev " aria-label="Previous page: コンテキストガイド">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="input_guide.html" class="navigation navigation-next " aria-label="Next page: 入力ガイド">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"モニターガイド","level":"2.5","depth":1,"next":{"title":"入力ガイド","level":"2.6","depth":1,"path":"Guides/input_guide.md","ref":"Guides/input_guide.md","articles":[]},"previous":{"title":"コンテキストガイド","level":"2.4","depth":1,"path":"Guides/context_guide.md","ref":"Guides/context_guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Guides/monitor_guide.md","mtime":"2022-10-18T05:49:49.284Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:21:34.811Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

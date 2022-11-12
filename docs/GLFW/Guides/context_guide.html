@@ -1,0 +1,576 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>コンテキストガイド · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="monitor_guide.html" />
+    
+    
+    <link rel="prev" href="window_guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    GLFWドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Tutorial/">
+            
+                <a href="../Tutorial/">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">プログラミングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="introduction_to_the_api.html">
+            
+                <a href="introduction_to_the_api.html">
+            
+                    
+                    API入門
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="window_guide.html">
+            
+                <a href="window_guide.html">
+            
+                    
+                    ウィンドウガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="context_guide.html">
+            
+                <a href="context_guide.html">
+            
+                    
+                    コンテキストガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="monitor_guide.html">
+            
+                <a href="monitor_guide.html">
+            
+                    
+                    モニターガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="input_guide.html">
+            
+                <a href="input_guide.html">
+            
+                    
+                    入力ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Reference/">
+            
+                <a href="../Reference/">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://www.glfw.org/documentation.html">
+            
+                    
+                    本家ウェブサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >コンテキストガイド</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="glfwコンテキストガイド（日本語訳）">GLFWコンテキストガイド（日本語訳）</h1>
+<p><a href="https://www.glfw.org/docs/latest/context_guide.html" target="_blank">原文</a></p>
+<p>このガイドでは，GLFWのOpenGLおよびOpenGL ESのコンテキスト関連機能を紹介する．このカテゴリの特定の関数の詳細については、<a href="https://www.glfw.org/docs/latest/group__context.html" target="_blank">コンテキストのリファレンス</a>を参照してください。また、GLFW API の他の領域のガイドもあります。</p>
+<ul>
+<li><a href="https://www.glfw.org/docs/latest/intro_guide.html" target="_blank">API紹介</a></li>
+<li><a href="https://www.glfw.org/docs/latest/window_guide.html" target="_blank">ウィンドウズガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/vulkan_guide.html" target="_blank">Vulkanガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/monitor_guide.html" target="_blank">モニターガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/input_guide.html" target="_blank">入力ガイド</a></li>
+</ul>
+<h2 id="コンテキストオブジェクト">コンテキストオブジェクト</h2>
+<p>ウィンドウオブジェクトはトップレベルのウィンドウとOpenGLまたはOpenGL ESのコンテキストをカプセル化します。作成は<a href="https://www.glfw.org/docs/latest/group__window.html#ga3555a418df92ad53f917597fe2f64aeb" target="_blank">glfwCreateWindow</a>で、破棄は<a href="https://www.glfw.org/docs/latest/group__window.html#gacdf43e51376051d2c091662e9fe3d7b2" target="_blank">glfwDestroyWindow</a>または<a href="https://www.glfw.org/docs/latest/group__init.html#gaaae48c0a18607ea4a4ba951d939f0901" target="_blank">glfwTerminate</a>で行います。より詳細な情報は<a href="https://www.glfw.org/docs/latest/window_guide.html#window_creation" target="_blank">ウィンドウの作成</a>を参照してください．</p>
+<p>ウィンドウとコンテキストは不可分にリンクされているので、ウィンドウオブジェクトはコンテキストハンドルとßしても機能します。</p>
+<p>さまざまな種類のコンテキストの作成をテストし、そのプロパティを見るには、glfwinfo テストプログラムを実行してください。</p>
+<blockquote>
+<p>Vulkan はコンテキストを持たず、Vulkan インスタンスは Vulkan API 自体を経由して作成されます。Vulkan を使用してウィンドウにレンダリングする場合は、GLFW_CLIENT_API ヒントを GLFW_NO_API に設定することで、コンテキストの生成を無効にしてください。詳細については、Vulkan ガイドを参照してください。</p>
+</blockquote>
+<h3 id="コンテキスト作成のヒント">コンテキスト作成のヒント</h3>
+<p>どのようなコンテキストが作成されるかに関連する、<a href="https://www.glfw.org/docs/latest/group__window.html#ga7d9c8c62384b1e2821c4dc48952d2033" target="_blank">glfwWindowHint</a>を使用して指定されるいくつかのヒントがあります。ウィンドウガイドの<a href="https://www.glfw.org/docs/latest/window_guide.html#window_hints_ctx" target="_blank">コンテキスト関連のヒント</a>を参照してください。</p>
+<h2 id="コンテキストオブジェクトの共有">コンテキストオブジェクトの共有</h2>
+<p><a href="https://www.glfw.org/docs/latest/group__window.html#ga3555a418df92ad53f917597fe2f64aeb" target="_blank">glfwCreateWindow</a>でウィンドウとそのOpenGLまたはOpenGL ESコンテキストを作成するとき、新しいウィンドウがそのオブジェクト（テクスチャ、頂点と要素バッファなど）を共有する必要がある別のウィンドウのコンテキストを指定することができます。</p>
+<pre><code class="lang-c">GLFWwindow* second_window = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;Second Window&quot;</span>, <span class="hljs-literal">NULL</span>, first_window);
+</code></pre>
+<p>オブジェクトの共有は、オペレーティングシステムとグラフィックスドライバによって実装されます。どのタイプのオブジェクトを共有するかを選択できるプラットフォームでは、GLFWはすべてのタイプのオブジェクトを共有するよう要求する。</p>
+<p>詳しくは<a href="https://www.opengl.org/registry/" target="_blank">OpenGL</a>または<a href="https://www.khronos.org/opengles/" target="_blank">OpenGL ES</a>のリファレンスドキュメントの関連する章を参照してください。この章の名前と番号は、残念ながらバージョンとAPIによって異なりますが、共有オブジェクトとマルチコンテキストという名前だったこともあります。</p>
+<p>GLFWには、sharingと呼ばれる素のオブジェクト共有のサンプルプログラムが付属しています。</p>
+<h3 id="オフスクリーンコンテキスト">オフスクリーンコンテキスト</h3>
+<p>GLFW は、関連するウィンドウのないコンテキストの作成をサポートしていない。しかし、隠されたウィンドウを持つコンテキストは、<a href="https://www.glfw.org/docs/latest/window_guide.html#GLFW_VISIBLE_hint" target="_blank">GLFW_VISIBLE</a>ウィンドウヒントを用いて作成することができる。</p>
+<pre><code class="lang-c">glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+
+GLFWwindow* offscreen_context = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+</code></pre>
+<p>ウィンドウは決して表示する必要がなく、そのコンテキストはプレーンなオフスクリーンコンテキストとして使用することができます。ウィンドウマネージャによっては、隠されたウィンドウのフレームバッファのサイズを使用または変更できないことがあるので、そのようなコンテキストでレンダリングする場合はフレームバッファオブジェクトを使用することをお勧めします。</p>
+<p>少なくとも1つのウィンドウがある限り、たとえどのウィンドウも表示されていなくても、<a href="https://www.glfw.org/docs/latest/input_guide.html#events" target="_blank">イベントを処理</a>する必要があります。</p>
+<p>macOS: 最初にウィンドウを作成するときに、メニューバーが作成されます。これは、例えば、コマンドラインのみのアプリケーションを書くときには望ましくありません。メニューバーの作成は、<a href="https://www.glfw.org/docs/latest/group__init.html#ga71e0b4ce2f2696a84a9b8c5e12dc70cf" target="_blank">GLFW_COCOA_MENUBAR</a>initヒントで無効にすることができます。</p>
+<h3 id="コンテキストのないウィンドウ">コンテキストのないウィンドウ</h3>
+<p><a href="https://www.glfw.org/docs/latest/window_guide.html#GLFW_CLIENT_API_hint" target="_blank">GLFW_CLIENT_API</a>ヒントを GLFW_NO_API に設定することにより、 コンテキストの生成を無効にすることができる。コンテキストのない Windows は <a href="https://www.glfw.org/docs/latest/group__context.html#ga1c04dc242268f827290fe40aa1c91157" target="_blank">glfwMakeContextCurrent</a> や <a href="https://www.glfw.org/docs/latest/group__window.html#ga15a5a1ee5b3c2ca6b15ca209a12efd14" target="_blank">glfwSwapBuffers</a> に渡してはならない．</p>
+<h2 id="現在の状況">現在の状況</h2>
+<p>OpenGLやOpenGL ESの呼び出しを行う前に、正しいタイプの現在のコンテキストを持つ必要があります。コンテキストは一度に1つのスレッドに対してのみカレントとなり、スレッドは一度に1つのコンテキストしかカレントとすることができません。</p>
+<p>スレッド間でコンテキストを移動する場合、古いスレッドで非カレントにしてから新しいスレッドでカレントにする必要があります。</p>
+<p>ウィンドウのコンテキストは <a href="https://www.glfw.org/docs/latest/group__context.html#ga1c04dc242268f827290fe40aa1c91157" target="_blank">glfwMakeContextCurrent</a> でカレントにされる。</p>
+<pre><code class="lang-c">glfwMakeContextCurrent(window);
+</code></pre>
+<p>現在のコンテキストのウィンドウは <a href="https://www.glfw.org/docs/latest/group__context.html#gad94e80185397a6cf5fe2ab30567af71c" target="_blank">glfwGetCurrentContext</a> で返されます。</p>
+<pre><code class="lang-c">GLFWwindow* window = glfwGetCurrentContext();
+</code></pre>
+<p>以下の GLFW 関数は、現在のコンテキストを必要とします。現在のコンテキストを持たずにこれらの関数を呼び出すと、 <a href="https://www.glfw.org/docs/latest/group__errors.html#gaa8290386e9528ccb9e42a3a4e16fc0d0" target="_blank">GLFW_NO_CURRENT_CONTEXT</a> エラーが発生する。</p>
+<ul>
+<li><a href="https://www.glfw.org/docs/latest/group__context.html#ga6d4e0cdf151b5e579bd67f13202994ed" target="_blank">glfwSwapInterval</a></li>
+<li><a href="https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa" target="_blank">glfwExtensionSupported</a></li>
+<li><a href="https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163" target="_blank">glfwGetProcAddress</a></li>
+</ul>
+<h2 id="バッファスワッピング">バッファスワッピング</h2>
+<p>ウィンドウガイドの<a href="https://www.glfw.org/docs/latest/window_guide.html#buffer_swap" target="_blank">バッファスワッピング</a>を参照してください。</p>
+<h2 id="openglおよびopengl-esの拡張機能">OpenGLおよびOpenGL ESの拡張機能</h2>
+<p>OpenGLとOpenGL ESの利点の1つは、その拡張性です。ハードウェアベンダは、その機能がOpenGLまたはOpenGL ES仕様の新バージョンに含まれる前に、APIを拡張する拡張機能をその実装に含めることができます。また、拡張機能の中には、決して含まれず、陳腐化するまで拡張機能のままであるものもあります。</p>
+<p>拡張機能は次のように定義されます。</p>
+<ul>
+<li>An extension name (e.g. GL_ARB_gl_spirv)</li>
+<li>New OpenGL tokens (e.g. GL_SPIR_V_BINARY_ARB)</li>
+<li>New OpenGL functions (e.g. glSpecializeShaderARB)</li>
+</ul>
+<p>ARBのアフィックスは、Architecture Review Boardの略で、公式の拡張子に使用されることに注意してください。上の拡張子はARBによって作成されたものですが、NvidiaにはNV、AMDにはAMDというように、さまざまな接頭辞が存在します。また、どのグループも一般的なEXT接頭辞を使用することができます。拡張機能の一覧とその仕様は、<a href="https://www.opengl.org/registry/" target="_blank">OpenGL Registry</a>と<a href="https://www.khronos.org/registry/gles/" target="_blank">OpenGL ES Registry</a>に掲載されています。</p>
+<h3 id="ローダーライブラリで拡張機能をロードする">ローダーライブラリで拡張機能をロードする</h3>
+<p>拡張ローダーライブラリは、OpenGLとOpenGL ESの拡張と、コアOpenGLまたはOpenGL ES APIの現代版の両方にアクセスする最も簡単で最良の方法です。彼らは、あなたが必要とするすべてのものを宣言し、ロードするためのすべての詳細を引き受けます。そのようなライブラリの1つがgladで、他にもいくつかあります。</p>
+<p>以下の例では、gladを使用しますが、すべての拡張ローダーライブラリは同様に動作します。</p>
+<p>まず、glad Pythonスクリプトを使用してソースファイルを生成する必要があります。この例では、任意のバージョンのOpenGL用のローダーを生成しています。これはGLFWとgladの両方のデフォルトですが、OpenGL ES用のローダーや、特定のAPIバージョンと拡張セット用のローダーも生成可能です。生成されたファイルは出力ディレクトリに書き込まれます。</p>
+<pre><code class="lang-c">python main.py --generator c --no-loader --out-path output
+</code></pre>
+<p>--no-loader オプションが追加されたのは、GLFWがすでにOpenGLとOpenGL ESの関数ポインタを読み込むための関数を提供しており、選択したコンテキスト作成APIを自動的に使用するもので、gladは独自に実装する代わりにこれを呼び出すことができるからです。他にもいくつかのコマンドラインオプションがあります。詳しくはgladのドキュメントを参照してください。</p>
+<p>生成された output/src/glad.c, output/include/glad/glad.h, output/include/KHR/khrplatform.h ファイルをビルドに追加してください。次に、開発環境のOpenGLヘッダを置き換えるgladヘッダファイルをインクルードする必要があります。gladヘッダをGLFWヘッダの前にインクルードすることで、開発環境のOpenGLまたはOpenGL ESヘッダを抑制することができます。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;glad/glad.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+</code></pre>
+<p>最後に、適切な現在のコンテキストが得られたら、gladを初期化する必要があります。</p>
+<pre><code class="lang-c">window = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;My Window&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (!window)
+{
+    ...
+}
+
+glfwMakeContextCurrent(window);
+
+gladLoadGLLoader((GLADloadproc) glfwGetProcAddress);
+</code></pre>
+<p>gladがロードされると、作成したコンテキストと生成したgladローダーの両方がサポートするすべてのOpenGLコアおよび拡張関数にアクセスできるようになり、レンダリングを開始する準備ができます。</p>
+<p><a href="https://www.glfw.org/docs/latest/window_guide.html#window_hints_ctx" target="_blank">コンテキストヒント</a>で、最低限必要なOpenGLまたはOpenGL ESバージョンを指定することができます。より複雑なニーズがある場合は、<a href="https://www.glfw.org/docs/latest/window_guide.html#window_attribs_ctx" target="_blank">コンテキスト属性</a>で実際のOpenGLまたはOpenGL ESのバージョンを確認するか、またはGLAD_GL_VERSION_x_xブール値を使用して特定のバージョンが現在のコンテキストでサポートされているかどうかを確認することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (GLAD_GL_VERSION_3_2)
+{
+    <span class="hljs-comment">// Call OpenGL 3.2+ specific code</span>
+}
+</code></pre>
+<p>特定の拡張機能がサポートされているかどうかを確認するには、GLAD_GL_xxxブール値を使用します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (GLAD_GL_ARB_gl_spirv)
+{
+    <span class="hljs-comment">// Use GL_ARB_gl_spirv</span>
+}
+</code></pre>
+<h3 id="拡張機能を手動で読み込む">拡張機能を手動で読み込む</h3>
+<p>絶対に必要な場合以外は、このテクニックを使わないでください。<a href="https://www.glfw.org/docs/latest/context_guide.html#context_glext_auto" target="_blank">拡張ローダーライブラリ</a>を使えば、面倒で繰り返しの多い、エラーを起こしやすい作業を大幅に減らすことができます。</p>
+<p>ある拡張機能を使うには、まずコンテキストがその拡張機能をサポートしているか どうか確認し、新しい関数が導入されていれば、その関数へのポインタを取得する必要があ ります。GLFW は，拡張や新しい API 関数を手動で読み込むために，<a href="https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa" target="_blank">glfwExtensionSupported</a> と <a href="https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163" target="_blank">glfwGetProcAddress</a> を提供しています．</p>
+<p>このセクションでは、OpenGL拡張の手動ロードを実演します。OpenGL ES拡張のロードは、拡張ヘッダーの名前以外は同じです。</p>
+<h4 id="glexth-ヘッダー">glext.h ヘッダー</h4>
+<p>glext.h拡張ヘッダーは、すべてのOpenGL拡張のためのインターフェイスを定義する継続的に更新されるファイルです。これの最新版は、常に<a href="https://www.opengl.org/registry/" target="_blank">OpenGLレジストリ</a>で見つけることができます。また、OpenGL ESのさまざまなバージョンのための拡張ヘッダが<a href="https://www.khronos.org/registry/gles/" target="_blank">OpenGL ES Registry</a>にあります。開発環境に含まれているものは数年前のものであったり、使いたい拡張機能が含まれていない可能性があるので、拡張ヘッダーのコピーを自分で使うことを強くお勧めします。</p>
+<p>ヘッダーは、サポートするすべての拡張機能のすべての関数に対する関数ポインタの型を定義しています。これらはPFNGLSPECIALIZESHADERARBPROC（glSpecializeShaderARB用）のような名前で、つまり名前を大文字にしてPFN（関数へのポインタ）とPROC（手続き）を末尾に追加しています。</p>
+<p>拡張ヘッダをインクルードするには、GLFWヘッダをインクルードする前に、<a href="https://www.glfw.org/docs/latest/build_guide.html#GLFW_INCLUDE_GLEXT" target="_blank">GLFW_INCLUDE_GLEXT</a>を定義してください。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> GLFW_INCLUDE_GLEXT</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+</code></pre>
+<h4 id="拡張子のチェック">拡張子のチェック</h4>
+<p>与えられたマシンは、実際には拡張機能をサポートしていないかもしれません (古いドライバや必要なハードウェア機能が不足しているグラフィックカードを使っているかもしれません) 。これは <a href="https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa" target="_blank">glfwExtensionSupported</a> で行われます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (glfwExtensionSupported(<span class="hljs-string">&quot;GL_ARB_gl_spirv&quot;</span>))
+{
+    <span class="hljs-comment">// The extension is supported by the current context</span>
+}
+</code></pre>
+<p>引数はヌル文字で終端する ASCII 文字列で、拡張機能名を指定する。拡張機能がサポートされている場合、<a href="https://www.glfw.org/docs/latest/group__context.html#ga87425065c011cef1ebd6aac75e059dfa" target="_blank">glfwExtensionSupported</a> は GLFW_TRUE を返し、そうでない場合は GLFW_FALSE を返します。</p>
+<h4 id="関数ポインタの取得">関数ポインタの取得</h4>
+<p>すべてではありませんが、多くの拡張機能では、新しい OpenGL 関数を使用する必要があります。これらの関数は、オペレーティングシステムのクライアントAPIライブラリにエントリポイントを持たないことが多く、実行時にそれらを取得する必要があります。これらの関数へのポインタは、<a href="https://www.glfw.org/docs/latest/group__context.html#ga35f1837e6f666781842483937612f163" target="_blank">glfwGetProcAddress</a>で取得することができます。</p>
+<pre><code class="lang-c">PFNGLSPECIALIZESHADERARBPROC pfnSpecializeShaderARB = glfwGetProcAddress(<span class="hljs-string">&quot;glSpecializeShaderARB&quot;</span>);
+</code></pre>
+<p>一般に、関数ポインタ変数に関数と（全く）同じ名前をつけるのは避けるべきです。その代わり、上記のような別の接頭辞をつけるか、他の命名法を用いることができます。</p>
+<p>さて、すべてのパーツが紹介されましたが、これらを一緒に使用するとどのようになるでしょうか。</p>
+<pre><code class="lang-cß">#define GLFW_INCLUDE_GLEXT
+#include &lt;GLFW/glfw3.h&gt;
+
+#define glSpecializeShaderARB pfnSpecializeShaderARB
+PFNGLSPECIALIZESHADERARBPROC pfnSpecializeShaderARB;
+
+// Flag indicating whether the extension is supported
+int has_ARB_gl_spirv = 0;
+
+void load_extensions(void)
+{
+    if (glfwExtensionSupported(&quot;GL_ARB_gl_spirv&quot;))
+    {
+        pfnSpecializeShaderARB = (PFNGLSPECIALIZESHADERARBPROC)
+            glfwGetProcAddress(&quot;glSpecializeShaderARB&quot;);
+        has_ARB_gl_spirv = 1;
+    }
+}
+
+void some_function(void)
+{
+    if (has_ARB_gl_spirv)
+    {
+        // Now the extension function can be called as usual
+        glSpecializeShaderARB(...);
+    }
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="window_guide.html" class="navigation navigation-prev " aria-label="Previous page: ウィンドウガイド">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="monitor_guide.html" class="navigation navigation-next " aria-label="Next page: モニターガイド">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"コンテキストガイド","level":"2.4","depth":1,"next":{"title":"モニターガイド","level":"2.5","depth":1,"path":"Guides/monitor_guide.md","ref":"Guides/monitor_guide.md","articles":[]},"previous":{"title":"ウィンドウガイド","level":"2.3","depth":1,"path":"Guides/window_guide.md","ref":"Guides/window_guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Guides/context_guide.md","mtime":"2022-10-07T11:52:53.445Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:21:34.811Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

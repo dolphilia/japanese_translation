@@ -1,0 +1,709 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>チュートリアル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Guides/" />
+    
+    
+    <link rel="prev" href="../introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    GLFWドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction.html">
+            
+                <a href="../introduction.html">
+            
+                    
+                    イントロダクション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">プログラミングガイド</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Guides/">
+            
+                <a href="../Guides/">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../Guides/introduction_to_the_api.html">
+            
+                <a href="../Guides/introduction_to_the_api.html">
+            
+                    
+                    API入門
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../Guides/window_guide.html">
+            
+                <a href="../Guides/window_guide.html">
+            
+                    
+                    ウィンドウガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Guides/context_guide.html">
+            
+                <a href="../Guides/context_guide.html">
+            
+                    
+                    コンテキストガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../Guides/monitor_guide.html">
+            
+                <a href="../Guides/monitor_guide.html">
+            
+                    
+                    モニターガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Guides/input_guide.html">
+            
+                <a href="../Guides/input_guide.html">
+            
+                    
+                    入力ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">リファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Reference/">
+            
+                <a href="../Reference/">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <a target="_blank" href="https://www.glfw.org/documentation.html">
+            
+                    
+                    本家ウェブサイト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >チュートリアル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="glfwチュートリアル（日本語訳）">GLFWチュートリアル（日本語訳）</h1>
+<p><a href="https://www.glfw.org/docs/latest/quick_guide.html" target="_blank">原文</a></p>
+<p>このガイドではGLFW3を使った簡単なアプリケーションの書き方を説明します。 このアプリケーションはウィンドウとOpenGLコンテキストを作成し、回転する三角形を描画して、ユーザがウィンドウを閉じるかEscapeキーを押すと終了するようになっています。このガイドでは最もよく使われる関数をいくつか紹介しますが、他にもたくさんあります。</p>
+<p>このガイドは以前のバージョンのGLFWの経験がないことを前提にしています。過去にGLFW2を使っていた人は、<a href="https://www.glfw.org/docs/latest/moving_guide.html" target="_blank">GLFW2から3への移行</a>を読んでください。GLFW3ではいくつかの関数の動作が異なるからです。</p>
+<h2 id="ステップ・バイ・ステップ">ステップ・バイ・ステップ</h2>
+<h3 id="glfwヘッダーをインクルードする">GLFWヘッダーをインクルードする</h3>
+<p>GLFWを使用するアプリケーションのソースファイルで、そのヘッダファイルをインクルードする必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+</code></pre>
+<p>このヘッダはGLFW APIのすべての定数・型・関数プロトタイプを提供します。</p>
+<p>デフォルトではあなたの開発環境のOpenGLヘッダも含まれます。いくつかのプラットフォームでは、このヘッダーはOpenGLの古いバージョンしかサポートしていません。最も極端なケースはWindowsで、通常OpenGL1.2しかサポートしていません。</p>
+<p>ほとんどのプログラムは代わりに<a href="https://www.glfw.org/docs/latest/context_guide.html#context_glext_auto" target="_blank">拡張ローダーライブラリ</a>を使用し、そのヘッダを含めます。この例では<a href="https://gen.glad.sh/" target="_blank">glad</a>によって生成されたファイルを使用しています。GLFWヘッダはそのようなヘッダが最初にインクルードされていれば、そのほとんどを検出し、開発環境からのヘッダをインクルードしないようにすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;glad/gl.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+</code></pre>
+<p>ヘッダーの衝突がないことを確認するために、GLFWヘッダーの前に<a href="https://www.glfw.org/docs/latest/build_guide.html#GLFW_INCLUDE_NONE" target="_blank">GLFW_INCLUDE_NONE</a>を定義して、開発環境ヘッダーを含めることを明示的に禁止することができます。これにより、2つのヘッダを任意の順番でインクルードすることもできます。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> GLFW_INCLUDE_NONE</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;glad/gl.h&gt;</span></span>
+</code></pre>
+<h3 id="glfwの初期化と終了">GLFWの初期化と終了</h3>
+<p>ほとんどのGLFW関数は使用する前にライブラリを初期化する必要があります。初期化に成功するとGLFW_TRUEが返されます。エラーが発生した場合はGLFW_FALSEが返されます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (!glfwInit())
+{
+    <span class="hljs-comment">// 初期化に失敗しました</span>
+}
+</code></pre>
+<p>GLFW_TRUEとGLFW_FALSEは常に1と0であることに注意してください。</p>
+<p>GLFWを使い終わったら、通常はアプリケーションが終了する直前にGLFWを終了させる必要があります。</p>
+<pre><code class="lang-c">glfwTerminate();
+</code></pre>
+<p>これは残っているウィンドウをすべて破棄し、GLFWによって割り当てられたその他のリソースを解放します。この呼び出しの後、それを必要とするGLFW関数を使う前に、再びGLFWを初期化する必要があります。</p>
+<h3 id="エラーコールバックを設定する">エラーコールバックを設定する</h3>
+<p>ほとんどのイベントはキーが押された・GLFWウィンドウが移動した・エラーが発生したなどのコールバックを通じて報告されます。コールバックは、イベントを記述した引数でGLFWによって呼び出されるC関数（またはC++の静的メソッド）です。</p>
+<p>GLFWの関数が失敗した場合、GLFWのエラーコールバックにエラーが報告されます。これらの報告はエラーコールバックで受け取ることができます。この関数は以下のシグネチャを持つ必要がありますが、他のコールバックで許可されていることは何でもできます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">error_callback</span><span class="hljs-params">(<span class="hljs-keyword">int</span> error, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* description)</span>
+</span>{
+    <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">&quot;Error: %s\n&quot;</span>, description);
+}
+</code></pre>
+<p>コールバック関数はセットする必要があり、GLFWはそれらを呼び出すことができます。エラーコールバックを設定する関数は初期化前に呼び出すことができる数少ないGLFW関数のひとつで、これにより初期化中と初期化後の両方でエラーが通知されるようになります。</p>
+<pre><code class="lang-c">glfwSetErrorCallback(error_callback);
+</code></pre>
+<h3 id="ウィンドウとコンテキストの作成">ウィンドウとコンテキストの作成</h3>
+<p>ウィンドウとそのOpenGLコンテキストは<a href="https://www.glfw.org/docs/latest/group__window.html#ga3555a418df92ad53f917597fe2f64aeb" target="_blank">glfwCreateWindow</a>を1回呼び出すだけで作成され、作成されたウィンドウとコンテキストを組み合わせたオブジェクトへのハンドルが返されます。</p>
+<pre><code class="lang-c">GLFWwindow* window = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;My Title&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (!window)
+{
+    <span class="hljs-comment">// ウィンドウまたはOpenGLコンテキストの作成に失敗しました</span>
+}
+</code></pre>
+<p>この例では、640 x 480 のウィンドウモード・ウィンドウとOpenGLコンテキストを作成しています。ウィンドウやOpenGLコンテキストの作成に失敗した場合はNULLが返されます。常に戻り値をチェックする必要があります。ウィンドウの作成に失敗することはほとんどありませんが、 コンテキストの作成は適切にインストールされたドライバに依存し、 必要なハードウェアを備えたマシンであっても失敗することがあります。</p>
+<p>デフォルトでは、GLFWが作成するOpenGLコンテキストは任意のバージョンを持つことができます。作成前にGLFW_CONTEXT_VERSION_MAJORとGLFW_CONTEXT_VERSION_MINORヒントを設定することにより、最小限のOpenGLバージョンを要求することができます。必要な最小バージョンがマシンでサポートされていない場合、コンテキスト（およびウィンドウ）の作成は失敗します。</p>
+<pre><code class="lang-c">glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="hljs-number">2</span>);
+glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="hljs-number">0</span>);
+GLFWwindow* window = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;My Title&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+<span class="hljs-keyword">if</span> (!window)
+{
+    <span class="hljs-comment">// ウィンドウまたはコンテキストの作成に失敗しました</span>
+}
+</code></pre>
+<p>ウィンドウハンドルはウィンドウに関連するすべての関数に渡され、ウィンドウに関連するすべてのコールバックに提供されるため、どのウィンドウがイベントを受け取ったかを知ることができます。</p>
+<p>ウィンドウとコンテキストが不要になったら、それを破棄します。</p>
+<pre><code class="lang-c">glfwDestroyWindow(window);
+</code></pre>
+<p>この関数が呼ばれるとウィンドウのイベントは配信されなくなり、ハンドルは無効になります。</p>
+<h3 id="openglコンテキストのカレント化">OpenGLコンテキストのカレント化</h3>
+<p>OpenGL APIを使用する前に現在のOpenGLコンテキストを持つ必要があります。</p>
+<pre><code class="lang-c">glfwMakeContextCurrent(window);
+</code></pre>
+<p>このコンテキストは他のコンテキストをカレントにするか、現在のコンテキストを所有するウィンドウが破壊されるまでカレントのままです。</p>
+<p>OpenGLにアクセスするために<a href="https://www.glfw.org/docs/latest/context_guide.html#context_glext_auto" target="_blank">拡張ローダーライブラリ</a>を使用している場合、ローダーはロードするために現在のコンテキストを必要とします。この例では<a href="https://github.com/Dav1dde/glad" target="_blank">glad</a>を使用していますが、このようなライブラリにはすべて同じルールが適用されます。</p>
+<pre><code class="lang-c">gladLoadGL(glfwGetProcAddress);
+</code></pre>
+<h3 id="ウィンドウクローズ・フラグの確認">ウィンドウクローズ・フラグの確認</h3>
+<p>各ウィンドウにはそのウィンドウを閉じるかどうかを示すフラグがあります。</p>
+<p>ユーザーがタイトルバーのクローズボタンを押すか、 Alt+F4などのキーコンビネーションでウィンドウを閉じようとすると、このフラグが1にセットされます。ウィンドウは実際には閉じないので、このフラグを監視してウィンドウを破棄するか、ユーザーに何らかのフィードバックを与えることが期待されていることに注意してください。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">while</span> (!glfwWindowShouldClose(window))
+{
+    <span class="hljs-comment">// 実行し続ける</span>
+}
+</code></pre>
+<p><a href="https://www.glfw.org/docs/latest/group__window.html#gada646d775a7776a95ac000cfc1885331" target="_blank">glfwSetWindowCloseCallback</a>でクローズコールバックを設定することにより、ユーザがウィンドウを閉じようとするときに通知を受けることができます。コールバックはクローズフラグが設定された直後に呼び出されます。</p>
+<p>また<a href="https://www.glfw.org/docs/latest/group__window.html#ga49c449dde2a6f87d996f4daaa09d6708" target="_blank">glfwSetWindowShouldClose</a>を使って自分で設定することもできます。これは、例えばEscapeキーを押すような、他の種類の入力をウィンドウを閉じるものとして解釈したい場合に便利です。</p>
+<h3 id="入力イベントの受信">入力イベントの受信</h3>
+<p>各ウィンドウには多数のコールバック関数があり、様々な種類のイベントをすべて受信できるように設定することができます。キーを押したり離したりするイベントを受信するには、キーコールバック関数を作成します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">key_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> scancode, <span class="hljs-keyword">int</span> action, <span class="hljs-keyword">int</span> mods)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (key == GLFW_KEY_ESCAPE &amp;&amp; action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+</code></pre>
+<p>キーコールバックは他のウィンドウ関連のコールバックと同様にウィンドウごとに設定されます。</p>
+<pre><code class="lang-c">glfwSetKeyCallback(window, key_callback);
+</code></pre>
+<p>イベント発生時にイベントコールバックを呼び出すためにはイベントを設定する必要があります。</p>
+<h3 id="openglによるレンダリング">OpenGLによるレンダリング</h3>
+<p>現在のOpenGLのコンテキストがあれば問題なくOpenGLを使うことができます。このチュートリアルでは多色の回転する三角形がレンダリングされます。glViewportのためにフレームバッファサイズを取得する必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> width, height;
+glfwGetFramebufferSize(window, &amp;width, &amp;height);
+glViewport(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, width, height);
+</code></pre>
+<p>また<a href="https://www.glfw.org/docs/latest/group__window.html#gab3fb7c3366577daef18c0023e2a8591f" target="_blank">glfwSetFramebufferSizeCallback</a>を使用してフレームバッファサイズコールバックを設定し、サイズが変更されたときに通知されるようにすることができます。</p>
+<p>OpenGLでレンダリングする方法の詳細はこのチュートリアルの範囲外ですが、最新のOpenGLを学ぶための優れたリソースはたくさんあります。ここではそのうちのいくつかを紹介します。</p>
+<ul>
+<li><a href="https://antongerdelan.net/opengl/" target="_blank">AntonのOpenGL 4チュートリアル</a></li>
+<li><a href="https://learnopengl.com/" target="_blank">OpenGLを学ぶ</a></li>
+<li><a href="https://open.gl/" target="_blank">Open.GL</a></li>
+</ul>
+<p>これらはすべてたまたまGLFWを使用していますが、OpenGL自体はあなたがウィンドウとコンテキストを作成するために使用するどのようなAPIでも同じように動作します。</p>
+<h3 id="タイマーの読み取り">タイマーの読み取り</h3>
+<p>滑らかなアニメーションを作るには時間のソースが必要です。GLFWは初期化からの秒数を返すタイマーを提供しています。使用する時間ソースは各プラットフォームで最も正確なもので、一般にマイクロ秒またはナノ秒の分解能を持っています。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">double</span> time = glfwGetTime();
+</code></pre>
+<h3 id="バッファの入れ替え">バッファの入れ替え</h3>
+<p>GLFWウィンドウはデフォルトでダブルバッファリングを使用します。つまり、各ウィンドウはフロントバッファとバックバッファの2つのレンダリングバッファを持っています。フロントバッファは表示されるもので、バックバッファはレンダリングされるものです。</p>
+<p>フレーム全体のレンダリングが完了したら、バッファを入れ替える必要があります。バックバッファがフロントバッファになり、その逆もまた然りです。</p>
+<pre><code class="lang-c">glfwSwapBuffers(window);
+</code></pre>
+<p>swap intervalはバッファのスワップ（一般にvsyncとして知られている）まで何フレーム待つかを示します。デフォルトではswap intervalは0であり、バッファのスワップが即座に行われることを意味します。高速なマシンではこれらのフレームの多くは決して表示されません。なぜなら画面は通常1秒間に60～75回しか更新されないので、多くのCPUとGPUサイクルを浪費するからです。</p>
+<p>また画面更新の途中でバッファが入れ替わるため、<a href="https://en.wikipedia.org/wiki/Screen_tearing" target="_blank">画面のテアリング</a>が発生します。</p>
+<p>これらの理由からアプリケーションは通常、スワップ間隔を1に設定することを望むでしょう。それ以上の値に設定することも可能ですが、入力遅延が発生するため、通常は推奨されません。</p>
+<pre><code class="lang-c">glfwSwapInterval(<span class="hljs-number">1</span>);
+</code></pre>
+<p>この関数は現在のコンテキストに対して動作し、コンテキストが存在しない場合は失敗します。</p>
+<h3 id="イベントの処理">イベントの処理</h3>
+<p>GLFWはイベントを受け取るためと、アプリケーションがロックアップしていないことを示すために、ウィンドウシステムと定期的に通信する必要があります。イベント処理は表示可能なウィンドウがある間は定期的に行われなければならず、通常はバッファスワップの後に各フレームで行われます。</p>
+<p>保留中のイベントを処理する方法には、ポーリングとウェイトの2つがあります。この例ではイベントポーリングを使用します。これは、すでに受信したイベントのみを処理し、すぐにリターンします。</p>
+<pre><code class="lang-c">glfwPollEvents();
+</code></pre>
+<p>ほとんどのゲームのように継続的にレンダリングする場合はこれが最適な選択です。その代わりに、新しい入力を受け取ったときだけレンダリングを更新する必要がある場合は、<a href="https://www.glfw.org/docs/latest/group__window.html#ga554e37d781f0a997656c26b2c56c835e" target="_blank">glfwWaitEvents</a>がより良い選択となります。これは、少なくとも1つのイベントが受信されるまで待機し、その間スレッドをスリープさせ、受信したすべてのイベントを処理します。これは非常に多くのCPUサイクルを節約し、例えば多くの種類の編集ツールに有用です。</p>
+<h3 id="組み立てる">組み立てる</h3>
+<p>GLFWの初期化・ウィンドウの作成・キーボード入力のポーリングの方法がわかったので簡単なプログラムを作成することができます。</p>
+<p>このプログラムは、640×480のウィンドウモードのウィンドウを作成し、画面をクリアして三角形を描画し、ユーザーがEscapeを押すかウィンドウを閉じるまでイベントを処理するループを開始します。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;glad/gl.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> GLFW_INCLUDE_NONE</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;GLFW/glfw3.h&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;linmath.h&quot;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>
+{</span>
+    <span class="hljs-keyword">float</span> x, y;
+    <span class="hljs-keyword">float</span> r, g, b;
+} vertices[<span class="hljs-number">3</span>] =
+{
+    { <span class="hljs-number">-0.6f</span>, <span class="hljs-number">-0.4f</span>, <span class="hljs-number">1.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span> },
+    {  <span class="hljs-number">0.6f</span>, <span class="hljs-number">-0.4f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">1.f</span>, <span class="hljs-number">0.f</span> },
+    {   <span class="hljs-number">0.f</span>,  <span class="hljs-number">0.6f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">0.f</span>, <span class="hljs-number">1.f</span> }
+};
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* vertex_shader_text =
+<span class="hljs-string">&quot;#version 110\n&quot;</span>
+<span class="hljs-string">&quot;uniform mat4 MVP;\n&quot;</span>
+<span class="hljs-string">&quot;attribute vec3 vCol;\n&quot;</span>
+<span class="hljs-string">&quot;attribute vec2 vPos;\n&quot;</span>
+<span class="hljs-string">&quot;varying vec3 color;\n&quot;</span>
+<span class="hljs-string">&quot;void main()\n&quot;</span>
+<span class="hljs-string">&quot;{\n&quot;</span>
+<span class="hljs-string">&quot;    gl_Position = MVP * vec4(vPos, 0.0, 1.0);\n&quot;</span>
+<span class="hljs-string">&quot;    color = vCol;\n&quot;</span>
+<span class="hljs-string">&quot;}\n&quot;</span>;
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* fragment_shader_text =
+<span class="hljs-string">&quot;#version 110\n&quot;</span>
+<span class="hljs-string">&quot;varying vec3 color;\n&quot;</span>
+<span class="hljs-string">&quot;void main()\n&quot;</span>
+<span class="hljs-string">&quot;{\n&quot;</span>
+<span class="hljs-string">&quot;    gl_FragColor = vec4(color, 1.0);\n&quot;</span>
+<span class="hljs-string">&quot;}\n&quot;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">error_callback</span><span class="hljs-params">(<span class="hljs-keyword">int</span> error, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* description)</span>
+</span>{
+    <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stderr</span>, <span class="hljs-string">&quot;Error: %s\n&quot;</span>, description);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">key_callback</span><span class="hljs-params">(GLFWwindow* window, <span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> scancode, <span class="hljs-keyword">int</span> action, <span class="hljs-keyword">int</span> mods)</span>
+</span>{
+    <span class="hljs-keyword">if</span> (key == GLFW_KEY_ESCAPE &amp;&amp; action == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, GLFW_TRUE);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+</span>{
+    GLFWwindow* window;
+    GLuint vertex_buffer, vertex_shader, fragment_shader, program;
+    GLint mvp_location, vpos_location, vcol_location;
+
+    glfwSetErrorCallback(error_callback);
+
+    <span class="hljs-keyword">if</span> (!glfwInit())
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, <span class="hljs-number">2</span>);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, <span class="hljs-number">0</span>);
+
+    window = glfwCreateWindow(<span class="hljs-number">640</span>, <span class="hljs-number">480</span>, <span class="hljs-string">&quot;Simple example&quot;</span>, <span class="hljs-literal">NULL</span>, <span class="hljs-literal">NULL</span>);
+    <span class="hljs-keyword">if</span> (!window)
+    {
+        glfwTerminate();
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    }
+
+    glfwSetKeyCallback(window, key_callback);
+
+    glfwMakeContextCurrent(window);
+    gladLoadGL(glfwGetProcAddress);
+    glfwSwapInterval(<span class="hljs-number">1</span>);
+
+    <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> OpenGL error checks have been omitted for brevity</span>
+
+    glGenBuffers(<span class="hljs-number">1</span>, &amp;vertex_buffer);
+    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+    glBufferData(GL_ARRAY_BUFFER, <span class="hljs-keyword">sizeof</span>(vertices), vertices, GL_STATIC_DRAW);
+
+    vertex_shader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertex_shader, <span class="hljs-number">1</span>, &amp;vertex_shader_text, <span class="hljs-literal">NULL</span>);
+    glCompileShader(vertex_shader);
+
+    fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragment_shader, <span class="hljs-number">1</span>, &amp;fragment_shader_text, <span class="hljs-literal">NULL</span>);
+    glCompileShader(fragment_shader);
+
+    program = glCreateProgram();
+    glAttachShader(program, vertex_shader);
+    glAttachShader(program, fragment_shader);
+    glLinkProgram(program);
+
+    mvp_location = glGetUniformLocation(program, <span class="hljs-string">&quot;MVP&quot;</span>);
+    vpos_location = glGetAttribLocation(program, <span class="hljs-string">&quot;vPos&quot;</span>);
+    vcol_location = glGetAttribLocation(program, <span class="hljs-string">&quot;vCol&quot;</span>);
+
+    glEnableVertexAttribArray(vpos_location);
+    glVertexAttribPointer(vpos_location, <span class="hljs-number">2</span>, GL_FLOAT, GL_FALSE,
+                          <span class="hljs-keyword">sizeof</span>(vertices[<span class="hljs-number">0</span>]), (<span class="hljs-keyword">void</span>*) <span class="hljs-number">0</span>);
+    glEnableVertexAttribArray(vcol_location);
+    glVertexAttribPointer(vcol_location, <span class="hljs-number">3</span>, GL_FLOAT, GL_FALSE,
+                          <span class="hljs-keyword">sizeof</span>(vertices[<span class="hljs-number">0</span>]), (<span class="hljs-keyword">void</span>*) (<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">float</span>) * <span class="hljs-number">2</span>));
+
+    <span class="hljs-keyword">while</span> (!glfwWindowShouldClose(window))
+    {
+        <span class="hljs-keyword">float</span> ratio;
+        <span class="hljs-keyword">int</span> width, height;
+        mat4x4 m, p, mvp;
+
+        glfwGetFramebufferSize(window, &amp;width, &amp;height);
+        ratio = width / (<span class="hljs-keyword">float</span>) height;
+
+        glViewport(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, width, height);
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        mat4x4_identity(m);
+        mat4x4_rotate_Z(m, m, (<span class="hljs-keyword">float</span>) glfwGetTime());
+        mat4x4_ortho(p, -ratio, ratio, <span class="hljs-number">-1.f</span>, <span class="hljs-number">1.f</span>, <span class="hljs-number">1.f</span>, <span class="hljs-number">-1.f</span>);
+        mat4x4_mul(mvp, p, m);
+
+        glUseProgram(program);
+        glUniformMatrix4fv(mvp_location, <span class="hljs-number">1</span>, GL_FALSE, (<span class="hljs-keyword">const</span> GLfloat*) mvp);
+        glDrawArrays(GL_TRIANGLES, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>);
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+    glfwDestroyWindow(window);
+
+    glfwTerminate();
+    <span class="hljs-built_in">exit</span>(EXIT_SUCCESS);
+}
+</code></pre>
+<p>上のプログラムは<a href="https://www.glfw.org/download.html" target="_blank">ソースパッケージ</a>のexamples/simple.cにあり、GLFWをビルドするときに他のすべてのサンプルと一緒にコンパイルされます。GLFWをソースパッケージからビルドした場合、Windowsではsimple.exe、Linuxではsimple、macOSではsimple.appとして、すでにこのプログラムが存在しています。</p>
+<p>このチュートリアルでは、GLFWが提供する多くの機能のうち、ほんの一部だけを使いました。GLFWがカバーする各分野のガイドがあります。それぞれのガイドでは、そのカテゴリの全機能を紹介しています。</p>
+<ul>
+<li><a href="https://www.glfw.org/docs/latest/intro_guide.html" target="_blank">API紹介</a></li>
+<li><a href="https://www.glfw.org/docs/latest/window_guide.html" target="_blank">ウィンドウガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/context_guide.html" target="_blank">コンテキストガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/monitor_guide.html" target="_blank">モニターガイド</a></li>
+<li><a href="https://www.glfw.org/docs/latest/input_guide.html" target="_blank">入力ガイド</a></li>
+</ul>
+<p>GLFWの関数をクリックすると、その機能のリファレンスドキュメントにアクセスでき、各関数のリファレンスは、関連する関数やガイドのセクションにリンクしています。</p>
+<p>チュートリアルはここで終了です。GLFWを使うプログラムを書いたら、それをコンパイルしリンクする必要があります。その方法は、あなたが使っている開発環境に依存し、その環境のドキュメントで最もよく説明されています。GLFWに特有の詳細については、アプリケーションのビルドを参照してください。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../introduction.html" class="navigation navigation-prev " aria-label="Previous page: イントロダクション">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Guides/" class="navigation navigation-next " aria-label="Next page: 目次">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"チュートリアル","level":"1.3","depth":1,"next":{"title":"目次","level":"2.1","depth":1,"path":"Guides/README.md","ref":"Guides/README.md","articles":[]},"previous":{"title":"イントロダクション","level":"1.2","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Tutorial/README.md","mtime":"2022-10-06T22:34:12.847Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:21:34.811Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
