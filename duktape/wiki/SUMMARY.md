@@ -23,7 +23,7 @@
 * [関数呼び出しの方法](how_to_make_function_calls.md)
 * [仮想プロパティの使い方](how_to_use_virtual_properties.md)
 * [ファイナライゼーションの使い方](how_to_use_finalization.md)
-* バッファの扱い方 (Duktape 1.x、[Duktape 2.x](how_to_work_with_buffers_in_duktape_2x.md))
+* [バッファの扱い方](how_to_work_with_buffers_in_duktape_2x.md))
 * [lightfuncsの使い方](how_to_work_with_lightfuncs.md)
 * [モジュールの使い方](how_to_modules.md)
 * [コルーチンの使い方](how_to_coroutines.md)
