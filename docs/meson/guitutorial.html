@@ -1,0 +1,435 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>SDLチュートリアル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="tutorial.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="simplestart.html">
+            
+                <a href="simplestart.html">
+            
+                    
+                    初心者ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    [インストール][getting_meson.md]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="quick_guide.html">
+            
+                <a href="quick_guide.html">
+            
+                    
+                    クイックスタート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="tutorial.html">
+            
+                <a href="tutorial.html">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="guitutorial.html">
+            
+                <a href="guitutorial.html">
+            
+                    
+                    SDLチュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SDLチュートリアル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="シンプルなsdl2アプリをゼロから作る">シンプルなSDL2アプリをゼロから作る</h2>
+<p>このページでは、Meson だけを使用して SDL2 GUI アプリケーションを定義し構築する方法を一から説明します。このドキュメントは、最も複雑なプラットフォームである Windows 用に書かれていますが、Linux や macOS でも同じ基本的な考え方が通用するはずです。</p>
+<p>SDL 2 も C で書かれているため、サンプルアプリケーションはプレーン C で書かれています。もし C++ が好きなら、変換は非常に簡単なので、読者の練習問題として残しておきます。</p>
+<p>このドキュメントは、Visual Studio と Meson の両方がすでにインストールされていることを前提にしています。</p>
+<h2 id="ビルドディレクトリの設定">ビルドディレクトリの設定</h2>
+<p>まず、すべてのものを格納する空のディレクトリを作成する必要があります。Visual Studioのツールチェーンは少し変わっていて、特定のシェルからビルドを実行する必要があります。これは、アプリケーションメニューを開き、<code>Visual Studio &lt;year&gt; -&gt; x86_64 native tools</code> コマンドプロンプトを選択することで見つけることができます。</p>
+<p>変なディレクトリに移動してしまうので、ホームディレクトリに移動する必要があります。</p>
+<pre><code>cd \users\yourusername
+</code></pre><p>通常、<code>cd \users</code> と入力し、tabulator キーを押してユーザー名をシェルに自動補完させます。これが完了したら、ディレクトリを作成できます。</p>
+<pre><code>mkdir sdldemo
+cd sdldemo
+</code></pre><h2 id="creating-the-sample-program">Creating the sample program</h2>
+<p>ここで、ソースファイルと Meson ビルド定義ファイルを作成する必要があります。ここでは SDL をまったく使用せず、テキストを表示するだけの簡単なプログラムから始めます。一度動作させれば、グラフィックを行うように拡張できます。ソースは <code>sdlprog.c</code> というファイルに入っており、次のような内容になっています。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span> </span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;App is running.\n&quot;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>ビルドの定義はmeson.buildというファイルに入っていて、以下のような感じになっています。</p>
+<pre><code>project(&apos;sdldemo&apos;, &apos;c&apos;)
+
+executable(&apos;sdlprog&apos;, &apos;sdlprog.c&apos;)
+</code></pre><p>これで、次のコマンドでビルドを開始することができます。</p>
+<pre><code>meson setup builddir
+</code></pre><p>ここで<code>builddir</code>はビルドディレクトリで、ビルド中に生成されるものは全てこのディレクトリに置かれます。実行すると、次のようになります。</p>
+<p>サンプルアプリケーションの設定</p>
+<p>プログラムはこれでコンパイルされます。</p>
+<pre><code>meson compile -C builddir
+</code></pre><p>C 引数は、設定されたビルドディレクトリがどこにあるかを Meson に知らせます。</p>
+<p>プログラムはビルドディレクトリに置かれ、次のように実行することができます。</p>
+<pre><code>builddir\sdlprog
+</code></pre><p>このように出力されるはずです。</p>
+<p>サンプルアプリケーションの実行</p>
+<h2 id="sdlを使用するためにプログラムをアップグレードする">SDLを使用するためにプログラムをアップグレードする</h2>
+<p>SDLを起動するために必要なコードは少し複雑なので、その仕組みについては割愛します。単に<code>sdlprog.c</code>の内容を次のように置き換えるだけです。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;SDL.h&quot;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
+</span>{
+    SDL_Window *window;
+    SDL_Renderer *renderer;
+    SDL_Surface *surface;
+    SDL_Event event;
+
+    <span class="hljs-keyword">if</span> (SDL_Init(SDL_INIT_VIDEO) &lt; <span class="hljs-number">0</span>) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, <span class="hljs-string">&quot;Couldn&apos;t initialize SDL: %s&quot;</span>, SDL_GetError());
+        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+    }
+
+    <span class="hljs-keyword">if</span> (SDL_CreateWindowAndRenderer(<span class="hljs-number">320</span>, <span class="hljs-number">240</span>, SDL_WINDOW_RESIZABLE, &amp;window, &amp;renderer)) {
+        SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, <span class="hljs-string">&quot;Couldn&apos;t create window and renderer: %s&quot;</span>, SDL_GetError());
+        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+    }
+
+    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+        SDL_PollEvent(&amp;event);
+        <span class="hljs-keyword">if</span> (event.type == SDL_QUIT) {
+            <span class="hljs-keyword">break</span>;
+        }
+        SDL_SetRenderDrawColor(renderer, <span class="hljs-number">0x00</span>, <span class="hljs-number">0x00</span>, <span class="hljs-number">0x00</span>, <span class="hljs-number">0x00</span>);
+        SDL_RenderClear(renderer);
+        SDL_RenderPresent(renderer);
+    }
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+
+    SDL_Quit();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>もう一度、meson compile -C builddirを実行して、これをコンパイルしてみましょう。</p>
+<p>SDLアプリのビルドに失敗しました</p>
+<p>失敗しました。この理由は、実はSDLが現在利用できないからです。何らかの方法で入手する必要があります。専門用語では SDL2 は外部依存であり、それを取得することを依存関係の解決と呼びます。</p>
+<p>Meson には、WrapDB と呼ばれる依存関係をダウンロードして (必要なら) 構築するための Web サービスがあります。これは SDL2 を提供するので、それを直接使用することができます。まず最初に subprojects ディレクトリを作成する必要があります。Meson では一貫性を保つために、このようなサブプロジェクトはすべてこのディレクトリに保存する必要があるからです。</p>
+<pre><code>mkdir subprojects
+</code></pre><p>そして、依存関係をインストールすることができます。</p>
+<pre><code>meson wrap install sdl2
+</code></pre><p>こんな感じです。</p>
+<p>WrapDB から SDL2 を取得する。</p>
+<p>最後のステップとして、新しく取得した依存関係を使用するためにビルド定義ファイルを更新する必要があります。</p>
+<pre><code>project(&apos;sdldemo&apos;, &apos;c&apos;,
+        default_options: &apos;default_library=static&apos;)
+
+sdl2_dep = dependency(&apos;sdl2&apos;)
+
+executable(&apos;sdlprog&apos;, &apos;sdlprog.c&apos;,
+           win_subsystem: &apos;windows&apos;,
+           dependencies: sdl2_dep)
+</code></pre><p>依存関係に加え、他にもいくつかの変更があります。まず、ヘルパーライブラリを静的にビルドするように指定しています。このような単純なプロジェクトでは、これによって物事がよりシンプルになります。また、構築するプログラムがコンソールアプリケーションではなく、Windows GUI アプリケーションであることを Meson に伝える必要があります。</p>
+<p>これだけで、再び meson compile を実行できるようになります。まず、システムは SDL2 をダウンロードし、設定します。</p>
+<p>サンプルアプリケーションの実行</p>
+<p>少しして、コンパイルが正常に終了しました。</p>
+<p>サンプルアプリケーションの実行</p>
+<h2 id="プログラム終了">プログラム終了</h2>
+<p>これで、アプリケーションを</p>
+<pre><code>builddir\sdlprog
+</code></pre><p>最終的には、黒いSDLウィンドウが表示されます。</p>
+<p>サンプルアプリケーションを実行する</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tutorial.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: チュートリアル">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SDLチュートリアル","level":"1.6","depth":1,"previous":{"title":"チュートリアル","level":"1.5","depth":1,"path":"tutorial.md","ref":"tutorial.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"guitutorial.md","mtime":"2022-10-25T06:52:57.230Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:30:40.485Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

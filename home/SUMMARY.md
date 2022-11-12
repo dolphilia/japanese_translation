@@ -16,15 +16,15 @@
 * [GLFW](https://dolphilia.github.io/japanese_translation/GLFW/)
 * [HonKit](https://dolphilia.github.io/japanese_translation/honkit/)
 * [HSPリファレンス](https://dolphilia.github.io/japanese_translation/hsp/)
-* [JavaScriptベストプラクティス](https://dolphilia.github.io/japanese_translation/javascript_best)
+* [JavaScriptベストプラクティス](https://dolphilia.github.io/japanese_translation/javascript_best/)
+* [Meson](https://dolphilia.github.io/japanese_translation/meson/)
 * [Natural Docs](https://dolphilia.github.io/japanese_translation/natural_docs/)
 * [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)
 * [Processing](https://dolphilia.github.io/japanese_translation/processing/)
 * [pygameリファレンス](https://dolphilia.github.io/japanese_translation/pygame/)
+* [stb](https://dolphilia.github.io/japanese_translation/stb/)
 
 ### リポジトリ
 
-* [stb](https://github.com/dolphilia/japanese_translation/tree/main/stb)
-* [Meson](https://github.com/dolphilia/japanese_translation/tree/main/meson)
 * [Mermaid](https://github.com/dolphilia/japanese_translation/tree/main/mermaid)
 * [WG14-C](https://github.com/dolphilia/japanese_translation/tree/main/WG14-C)

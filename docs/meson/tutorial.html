@@ -1,0 +1,446 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>チュートリアル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="guitutorial.html" />
+    
+    
+    <link rel="prev" href="quick_guide.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="simplestart.html">
+            
+                <a href="simplestart.html">
+            
+                    
+                    初心者ガイド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    [インストール][getting_meson.md]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="quick_guide.html">
+            
+                <a href="quick_guide.html">
+            
+                    
+                    クイックスタート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="tutorial.html">
+            
+                <a href="tutorial.html">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="guitutorial.html">
+            
+                <a href="guitutorial.html">
+            
+                    
+                    SDLチュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >チュートリアル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="チュートリアル">チュートリアル</h1>
+<p>このページでは、単純なプロジェクトの Meson ビルド定義を作成する方法を一から説明します。そして、それを拡張して外部の依存関係を使用し、いかに簡単にプロジェクトに統合できるかを紹介します。</p>
+<p>このチュートリアルは、主に Linux での使用を想定して書かれています。システム上に GTK 開発ライブラリーがあることを想定しています。UbuntuのようなDebian由来のシステムでは、以下のコマンドでインストールすることができます。</p>
+<pre><code>sudo apt install libgtk-3-dev
+</code></pre><p>WindowsやmacOSなど、他のプラットフォームでGUIアプリケーションを構築することも可能ですが、必要な依存関係をインストールする必要があります。</p>
+<h2 id="謙虚な始まり">謙虚な始まり</h2>
+<p>最も基本的なプログラム、古典的なhelloの例から始めましょう。まず、ソースを格納するファイルmain.cを作成します。これは次のようなものです。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
+
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// mainはすべてのプログラムの実行を開始する場所</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span> </span>{
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello there.\n&quot;</span>);
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<p>次に、Mesonのビルド記述を作成し、同じディレクトリのmeson.buildというファイルに記述します。その内容は以下の通りです。</p>
+<pre><code>project(&apos;tutorial&apos;, &apos;c&apos;)
+executable(&apos;demo&apos;, &apos;main.c&apos;)
+</code></pre><p>以上です。Autotoolsとは異なり、ソースヘッダをソースのリストに追加する必要はないことに注意してください。</p>
+<p>これで、アプリケーションをビルドする準備ができました。まず、ソースディレクトリに移動して、以下のコマンドを実行して、ビルドを初期化する必要があります。</p>
+<pre><code>$ meson setup builddir
+</code></pre><p>コンパイラの出力をすべて保持するために、別のビルドディレクトリを作成します。Meson は他のいくつかのビルドシステムと異なり、インソースビルドを許可していません。常に別のビルドディレクトリを作成する必要があります。一般的な慣例では、デフォルトのビルドディレクトリをトップレベルのソースディレクトリのサブディレクトリに配置します。</p>
+<p>Mesonを実行すると、次のような出力が表示されます。</p>
+<pre><code>The Meson build system
+ version: 0.13.0-research
+Source dir: /home/jpakkane/mesontutorial
+Build dir: /home/jpakkane/mesontutorial/builddir
+Build type: native build
+Project name is &quot;tutorial&quot;.
+Using native c compiler &quot;ccache cc&quot;. (gcc 4.8.2)
+Creating build target &quot;demo&quot; with 1 files.
+</code></pre><p>これで、コードをビルドする準備ができました。</p>
+<pre><code>$ cd builddir
+$ ninja
+</code></pre><p>Meson のバージョンが 0.55.0 より新しい場合、新しい backend-agnostic ビルドコマンドを使用することができます。</p>
+<pre><code>$ cd builddir
+$ meson compile
+</code></pre><p>この文書では、後者の形式を使用します。</p>
+<p>実行ファイルがビルドされたら、それを実行することができます。</p>
+<pre><code>$ ./demo
+</code></pre><p>これにより、期待通りの出力が得られます。</p>
+<pre><code>Hello there.
+</code></pre><h2 id="依存関係の追加">依存関係の追加</h2>
+<p>テキストを印刷するだけでは少し古い。代わりにグラフィカルなウィンドウを作成するようにプログラムを更新してみましょう。GTK+ ウィジェットツールキットを使いましょう。まず、メインファイルを編集してGTK+を使うようにします。新しいバージョンは次のようなものです。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;gtk/gtk.h&gt;</span></span>
+
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Should provided the active view for a GTK application</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">activate</span><span class="hljs-params">(GtkApplication* app, gpointer user_data)</span>
+</span>{
+  GtkWidget *window;
+  GtkWidget *label;
+
+  window = gtk_application_window_new (app);
+  label = gtk_label_new(<span class="hljs-string">&quot;Hello GNOME!&quot;</span>);
+  gtk_container_add (GTK_CONTAINER (window), label);
+  gtk_window_set_title(GTK_WINDOW (window), <span class="hljs-string">&quot;Welcome to GNOME&quot;</span>);
+  gtk_window_set_default_size(GTK_WINDOW (window), <span class="hljs-number">400</span>, <span class="hljs-number">200</span>);
+  gtk_widget_show_all(window);
+} <span class="hljs-comment">// end of function activate</span>
+
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// main is where all program execution starts</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> **argv)</span>
+</span>{
+  GtkApplication *app;
+  <span class="hljs-keyword">int</span> status;
+
+  app = gtk_application_new(<span class="hljs-literal">NULL</span>, G_APPLICATION_FLAGS_NONE);
+  g_signal_connect(app, <span class="hljs-string">&quot;activate&quot;</span>, G_CALLBACK(activate), <span class="hljs-literal">NULL</span>);
+  status = g_application_run(G_APPLICATION(app), argc, argv);
+  g_object_unref(app);
+
+  <span class="hljs-keyword">return</span> status;
+} <span class="hljs-comment">// end of function main</span>
+</code></pre>
+<p>次に、Meson ファイルを編集して、GTK+ ライブラリを見つけて使用するように指示します。</p>
+<pre><code>project(&apos;tutorial&apos;, &apos;c&apos;)
+gtkdep = dependency(&apos;gtk+-3.0&apos;)
+executable(&apos;demo&apos;, &apos;main.c&apos;, dependencies : gtkdep)
+</code></pre><p>アプリで複数のライブラリを使用する必要がある場合、以下のようにそれぞれ別のdependency()コールを使用する必要があります。</p>
+<pre><code>gtkdeps = [dependency(&apos;gtk+-3.0&apos;), dependency(&apos;gtksourceview-3.0&apos;)]
+</code></pre><p>今の例では必要ない。</p>
+<p>これでビルドの準備ができました。ここで注目すべきは、ビルドディレクトリを再作成したり、魔法のようなコマンドを実行したりする必要がないことです。代わりに、ビルドシステムを変更せずに、コードを再構築するのと全く同じコマンドを入力するだけです。</p>
+<pre><code>$ meson compile
+</code></pre><p>最初にビルド・ディレクトリを設定したら、もう二度とmesonコマンドを実行する必要はありません。いつも meson compile を実行するだけです。ビルド定義に変更があった場合、Mesonが自動的に検出し、ユーザーが気にしなくていいように、すべてを処理します。この場合、次のような出力が得られます。</p>
+<pre><code>[1/1] Regenerating build files
+The Meson build system
+ version: 0.13.0-research
+Source dir: /home/jpakkane/mesontutorial
+Build dir: /home/jpakkane/mesontutorial/builddir
+Build type: native build
+Project name is &quot;tutorial&quot;.
+Using native c compiler &quot;ccache cc&quot;. (gcc 4.8.2)
+Found pkg-config version 0.26.
+Dependency gtk+-3.0 found: YES
+Creating build target &quot;demo&quot; with 1 files.
+[1/2] Compiling c object demo.dir/main.c.o
+[2/2] Linking target demo
+</code></pre><p>Mesonがビルド定義が変更されたことに気づき、自動的に再実行したことにご注目ください。これでプログラムを実行する準備ができました。</p>
+<pre><code>$ ./demo
+</code></pre><p>これにより、以下のようなGUIアプリケーションが作成されます。</p>
+<p>GTK+サンプルアプリケーションのスクリーンショット</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="quick_guide.html" class="navigation navigation-prev " aria-label="Previous page: クイックスタート">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="guitutorial.html" class="navigation navigation-next " aria-label="Next page: SDLチュートリアル">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"チュートリアル","level":"1.5","depth":1,"next":{"title":"SDLチュートリアル","level":"1.6","depth":1,"path":"guitutorial.md","ref":"guitutorial.md","articles":[]},"previous":{"title":"クイックスタート","level":"1.4","depth":1,"path":"quick_guide.md","ref":"quick_guide.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tutorial.md","mtime":"2022-10-25T06:47:56.948Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:30:40.485Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

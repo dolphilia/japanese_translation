@@ -1,0 +1,2463 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>シングルファイル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="stb.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="why_public_domain.html">
+            
+                <a href="why_public_domain.html">
+            
+                    
+                    パブリックドメイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="stb.html">
+            
+                <a href="stb.html">
+            
+                    
+                    stb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="single_file_libs.html">
+            
+                <a href="single_file_libs.html">
+            
+                    
+                    シングルファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >シングルファイル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="シングルファイルのパブリックドメインオープンソースライブラリで、最小限の依存性">シングルファイルのパブリックドメイン/オープンソースライブラリで、最小限の依存性</h1>
+<p>私は、多数の<a href="https://github.com/nothings/stb" target="_blank">シングルファイルC/C++パブリックドメインライブラリ</a>の作者です。
+このようなライブラリを書いているのは私だけではないので、以下に他の類似のライブラリを紹介します。</p>
+<p>一般的に以下はCやC++から使用可能で、32ビットと64ビットの両方のプラットフォームでコンパイルできる、小さく、統合しやすい、移植可能なライブラリのリストです。しかし私は、特定のライブラリが宣伝どおりであるかどうか、高品質のソフトウェアであるかどうか、個人的に検証したわけではありません。</p>
+<h3 id="ルール">ルール</h3>
+<ul>
+<li>CまたはC++から利用可能なライブラリであること（理想は両方）。</li>
+<li>複数のプラットフォームで利用可能であること (理想的には、すべての主要なデスクトップおよび/またはすべての主要なモバイル)</li>
+<li>ライブラリは32ビットと64ビットの両方のプラットフォームでコンパイルでき、動作すること。</li>
+<li>ライブラリは最大でも2つのファイル（ヘッダーとソース）を使用すること。</li>
+</ul>
+<p>正当な理由がある場合は例外を認めます。</p>
+<h3 id="最近の追加情報">最近の追加情報</h3>
+<p>最近追加されたものには、左列にアスタリスクが付けられています。</p>
+<h3 id="新しいライブラリと訂正">新しいライブラリと訂正</h3>
+<p>リストの後にあるディスカッションをご覧ください。</p>
+<h3 id="jsonパース">JSONパース</h3>
+<p>ここには多くのJSONパーサーがリストアップされています。いくつかの解析とパフォーマンス結果については<a href="https://github.com/miloyip/nativejson-benchmarkをご覧ください。" target="_blank">https://github.com/miloyip/nativejson-benchmarkをご覧ください。</a></p>
+<h3 id="その他のリスト">その他のリスト</h3>
+<p>また関連する別のリストにも興味があるかもしれません。</p>
+<ul>
+<li><a href="https://github.com/clibs/clib/wiki/Packages" target="_blank">clib</a>: コンパクトな単一のC関数リスト (ライセンスはリストアップされていません)</li>
+<li><a href="https://ccodearchive.net/list.html" target="_blank">CCAN</a>: 共有可能なC関数のパッケージ (混合ライセンス)</li>
+</ul>
+<h3 id="ライブラリのリスト">ライブラリのリスト</h3>
+<p><strong>CおよびC++から利用可能なパブリックドメインのシングルファイルライブラリは太字で表示されています。</strong> その他のライブラリは、パブリックドメインでないか、2ファイルであるか、CとC++の両方から使えないか、3つとも使えないかのいずれかです。2ファイル以上のライブラリは、ほとんど禁止されています。</p>
+<p>API欄では&quot;C&quot;はCのみ、&quot;C++&quot;はC++のみ、&quot;C/C++&quot;はどちらからでも使えるC/C++を意味します。いくつかのファイルはCまたはC++として<strong>ビルド</strong>する必要がありますが、ヘッダーファイルが動作するように <code>extern &quot;C&quot;</code> を使っていれば&quot;C/C++&quot;として適格です。(場合によっては、ヘッダーファイルのみのライブラリはCまたはC++としてコンパイルされますが、<code>extern &quot;C&quot;</code>が使用されていないため、どちらか一方からしか呼び出せない実装を生成します。この場合、ほとんどのユーザーにとって障害とならないため、表はまだそれをC/C++として修飾します)</p>
+<h3 id="カテゴリー">カテゴリー:</h3>
+<ul>
+<li>汎用<ul>
+<li><a href="#data-structures">データ構造</a></li>
+<li><a href="#strings">文字列処理</a></li>
+<li><a href="#scripting">スクリプト</a></li>
+<li><a href="#hashing">ハッシュ</a></li>
+</ul>
+</li>
+<li>数学<ul>
+<li><a href="#vectors">ベクトル数学</a></li>
+<li><a href="#geometry-math">幾何学数学</a></li>
+<li><a href="#math">一般数学</a></li>
+</ul>
+</li>
+<li>パーサー<ul>
+<li><a href="#json">JSON</a></li>
+<li><a href="#yaml">YAML</a></li>
+<li><a href="#csv">CSV</a></li>
+<li><a href="#serialization">その他のシリアライズ</a></li>
+<li><a href="#argv">argv引数処理</a></li>
+<li><a href="#parsing">その他のパーサー</a></li>
+</ul>
+</li>
+<li>グラフィクス<ul>
+<li><a href="#graphics-text">テキストモード</a></li>
+<li><a href="#graphics-2d">2Dグラフィックス</a></li>
+<li><a href="#graphics-3d">3Dグラフィックス</a></li>
+<li><a href="#geometry-file">3Dジオメトリファイルの処理</a></li>
+<li><a href="#images">画像の読み込み・保存・処理</a></li>
+</ul>
+</li>
+<li>オーディオ/ビデオ/データ圧縮<ul>
+<li><a href="#compression">圧縮</a></li>
+<li><a href="#audio">オーディオ処理とファイル</a></li>
+<li><a href="#video">ビデオ</a></li>
+</ul>
+</li>
+<li><a href="#videogames">ビデオゲーム</a></li>
+<li>オペレーティングシステム機能<ul>
+<li><a href="#files--filenames">ファイルおよびファイル名</a></li>
+<li><a href="#multithreading">マルチスレッド</a></li>
+<li><a href="#network">ネットワーク</a></li>
+<li><a href="#hardware">ハードウェア・インターフェイス</a></li>
+</ul>
+</li>
+<li>デバッグ・プロファイリング・テスト<ul>
+<li><a href="#debugging">デバッグ</a></li>
+<li><a href="#profiling">プロファイリング</a></li>
+<li><a href="#unit-testing">ユニットテストなど</a></li>
+</ul>
+</li>
+<li>その他<ul>
+<li><a href="#ai">AI</a></li>
+<li><a href="#crypto">暗号技術</a></li>
+<li><a href="#user-interface">ユーザーインターフェース</a></li>
+<li><a href="#miscellaneous">雑多</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="ai">AI</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/codeplea/genann" target="_blank">Genann</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>シンプルニューラルネットワーク (ANN)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/attractivechaos/kann" target="_blank">KANN</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>自動微分 (2ファイル)</td>
+</tr>
+<tr>
+<td><a href="http://www.grinninglizard.com/MicroPather/" target="_blank">micropather</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>* でパスファインディング</td>
+</tr>
+</tbody>
+</table>
+<h1 id="argv">argv</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/adishavit/argh" target="_blank">Argh!</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/catchorg/Clara" target="_blank">Clara</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++ 11 以降に対応したコマンドラインパーサ。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/CLIUtils/CLI11" target="_blank">CLI11</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>モダンなC++11で機能豊富なCLI構文解析を実現</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tanakh/cmdline" target="_blank">cmdline</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sailormoon/flags" target="_blank">flags</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kgabis/kgflags" target="_blank">kgflags</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hernandp/linkom" target="_blank">linkom</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析 w/ DOS風オプション</td>
+</tr>
+<tr>
+<td><a href="http://optionparser.sourceforge.net/" target="_blank">optionparser</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jibsen/parg" target="_blank">parg</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>コマンドライン引数解析</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Fytch/ProgramOptions.hxx" target="_blank">ProgramOptions.hxx</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コマンドライン引数解析</td>
+</tr>
+</tbody>
+</table>
+<h1 id="audio">audio</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/afterwise/aw-ima/blob/master/aw-ima.h" target="_blank">aw_ima.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>IMA-ADPCM オーディオデコーダ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cr88192/bgbtech_misc/blob/master/mini/btac1c_mini0.h" target="_blank">btac1c</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>MS-IMA_ADPCM バリアント</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mackron/dr_libs" target="_blank">dr_flac</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>FLACオーディオデコーダー</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mackron/dr_libs" target="_blank">dr_wav</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>WAVオーディオローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/KrzysztofSzewczyk/Geneva" target="_blank">Geneva</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>各種8ビット波形を生成するライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lieff/minimp3" target="_blank">minimp3</a></td>
+<td style="text-align:center">CC0</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>sse/neonをサポートするミニマルなMP3デコーダ</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/dr-soft/miniaudio" target="_blank">miniaudio</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>オーディオ再生・キャプチャライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rombankzero/pocketmod" target="_blank">pocketmod</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ProTracker MODファイルレンダラー</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/kieselsteini/sts" target="_blank">sts_mixer</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>簡易ステレオオーディオミキサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/RandyGaul/tinyheaders" target="_blank">tinysound</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ダイレクトサウンドオーディオミキサー＆WAVローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/schellingb/TinySoundFont" target="_blank">TinySoundFont</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>SoundFont2 ローダー＆シンセサイザー</td>
+</tr>
+</tbody>
+</table>
+<h1 id="圧縮">圧縮</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/DrMcCoy/dmc_unrar" target="_blank">dmc_unrar</a></td>
+<td style="text-align:center">GPLv2+</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>RARファイルの解凍</td>
+</tr>
+<tr>
+<td><a href="https://code.google.com/archive/p/fastlz/source/default/source" target="_blank">fastlz</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>高速だが大きなLZ圧縮</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lz4/lz4" target="_blank">lz4</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>高速だが大きなLZ圧縮</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/richgel999/miniz" target="_blank">miniz.c</a></strong></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>圧縮、解凍、ZIPファイル、PNG書き込み</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rxi/microtar" target="_blank">microtar</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>軽量tarライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/johnezang/pithy" target="_blank">pithy</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>高速だが大きなLZ圧縮</td>
+</tr>
+</tbody>
+</table>
+<h1 id="暗号">暗号</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://monocypher.org" target="_blank">Monocypher</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>高品質な小型暗号ライブラリ</td>
+</tr>
+<tr>
+<td><a href="http://tweetnacl.cr.yp.to/software.html" target="_blank">TweetNaCl</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>高品質な小型暗号ライブラリ</td>
+</tr>
+</tbody>
+</table>
+<h1 id="データ構造">データ構造</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/etherealvisage/avl" target="_blank">avl</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>AVLツリー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/lduck11007/c-bool-value" target="_blank">c-bool-value</a></td>
+<td style="text-align:center"><strong>WTFPLv2</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">1</td>
+<td>標準C言語によるシンプルで簡単なブーリアン値</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Chobolabs/chobo-shl" target="_blank">chobo-shl</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++11標準のライブラリやヘルパーのようなもの。</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/DanielGibson/Snippets/" target="_blank">DG_dynarr.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>プレーン C のためのタイプセーフな動的配列 (std::vector のような)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ArjArav98/DynaVar" target="_blank">DynaVar</a></td>
+<td style="text-align:center">GPL-3.0</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">1</td>
+<td>任意の種類のプリミティブデータ型を格納することができるオブジェクト</td>
+</tr>
+<tr>
+<td><a href="http://attractivechaos.github.io/klib/" target="_blank">klib</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>多くの 2 ファイルライブラリ: ハッシュ、ソート、Bツリー、その他</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vy/libpqueue" target="_blank">libpqueue</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>優先順位待ち行列（ヒープ）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ccxvii/minilibs" target="_blank">minilibs</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>2ファイルバイナリートレス (also regex, etc)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/gpakosz/PackedArray" target="_blank">PackedArray</a></td>
+<td style="text-align:center"><strong>WTFPLv2</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>非Pow2ビット数でメモリ効率の良い要素配列</td>
+</tr>
+<tr>
+<td><a href="http://mij.oltrelinux.com/devel/simclist" target="_blank">simclist</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>リンクつきリスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ennorehling/clibs" target="_blank">selist</a></td>
+<td style="text-align:center">ISC</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>スペース効率に優れたリンクリスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hardikp/cpp-mempool" target="_blank">mempool</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++の効率的な最小メモリプール実装</td>
+</tr>
+<tr>
+<td><a href="https://github.com/troydhanson/uthash" target="_blank">uthash</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>1ヘッダ、1ライセンスファイルのライブラリ: 汎用ハッシュ、リスト、その他</td>
+</tr>
+</tbody>
+</table>
+<h1 id="デバッグ">デバッグ</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/wc-duck/dbgtools" target="_blank">dbgtools</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>クロスプラットフォームデバッグユーティリティライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/foonathan/debug_assert" target="_blank">debug-assert</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>モジュール式アサーションマクロ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/scottt/debugbreak" target="_blank">debugbreak</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>プログラムデバッグブレーク</td>
+</tr>
+<tr>
+<td><a href="https://github.com/emilk/loguru" target="_blank">loguru</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>フレキシブルロギング</td>
+</tr>
+<tr>
+<td><a href="https://github.com/gpakosz/Assert" target="_blank">pempek_assert.cpp</a></td>
+<td style="text-align:center"><strong>WTFPLv2</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>フレキシブルアサーション</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ファイルおよびファイル名">ファイルおよびファイル名</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/DanielGibson/Snippets/" target="_blank">DG_misc.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Daniel Gibson の stb.h 風のクロスプラットフォームヘルパー: path/file、文字列</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tronkko/dirent" target="_blank">dirent</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>dirent for Windows: ファイルとディレクトリの情報を取得します。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rec/tfile" target="_blank">tfile</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>FILE* ラッパーが read-write-append-seek-close を行う (Win/Mac/Unix)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cxong/tinydir" target="_blank">TinyDir</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォームでのディレクトリ読み込み（Win/POSIX/MinGW)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/RandyGaul/tinyheaders" target="_blank">tinyfiles</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォームでのディレクトリ読み込み（Win/Mac/Unix）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/gpakosz/whereami" target="_blank">whereami</a></td>
+<td style="text-align:center"><strong>WTFPLv2</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>実行ファイルやモジュールのパスやファイル名を取得する。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ジオメトリファイル">ジオメトリファイル</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/jkuhlmann/cgltf" target="_blank">cgltf</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>glTF 2.0 ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/thisistherk/fast_obj" target="_blank">fast_obj.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>wavefront OBJ ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jpcy/objzero" target="_blank">objzero</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>wavefront OBJ ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ddiakopoulos/tinyply" target="_blank">tinyply</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>PLY メッシュファイルローダ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/syoyo/tinyobjloader" target="_blank">tinyobjloader</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>wavefront OBJ ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/syoyo/tinyobjloader-c" target="_blank">tinyobjloader-c</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>wavefront OBJ ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/joeld42/tk_objfile" target="_blank">tk_objfile</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>OBJ ファイルローダー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xelatihy/yocto-gl" target="_blank">yocto_obj.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>wavefront OBJ ファイルローダー</td>
+</tr>
+</tbody>
+</table>
+<h1 id="幾何学数学">幾何学数学</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.angusj.com/delphi/clipper.php" target="_blank">Clipper</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>ライン・ポリゴンのクリッピングとオフセット</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/983/df" target="_blank">df</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ボロノイ領域を格子の大きさの線形時間で見つける。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/JCash/voronoi" target="_blank">jc_voronoi</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>float/double データからボロノイ領域を探す</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jlblancoc/nanoflann" target="_blank">nanoflann</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>点群のKDツリーを構築する</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.icculus.org/~mordred/nvlib/" target="_blank">nv_voronoi.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>整数入力の格子上のボロノイ領域の探索</td>
+</tr>
+<tr>
+<td><a href="https://github.com/prideout/par" target="_blank">par_msquares</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>二値化された画像を三角形に変換する</td>
+</tr>
+<tr>
+<td><a href="http://github.prideout.net/shapes" target="_blank">par_shapes</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>様々な3次元幾何学形状を生成</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ivanfratric/polypartition" target="_blank">PolyPartition</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>ポリゴンの三角形分割、パーティショニング</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/rmitton/rjm" target="_blank">rjm_mc.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>マーチングキューブ三角測量機</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/Marc-B-Reynolds/Stand-alone-junk/" target="_blank">sobol.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ソボルと層別サンプリングシーケンス</td>
+</tr>
+<tr>
+<td><a href="https://github.com/memononen/SDF" target="_blank">sdf.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>アンチエイリアス画像から符号付き距離フィールドを計算する</td>
+</tr>
+<tr>
+<td><a href="http://tinyurl.com/ht79ndj" target="_blank">Tomas Akenine-Moller snippets</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>様々な3D交差点計算、lib化されていない</td>
+</tr>
+<tr>
+<td><a href="https://github.com/karimnaaji/voxelizer" target="_blank">Voxelizer</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>三角形メッシュをボクセル三角形メッシュに変換する</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jpcy/xatlas" target="_blank">xatlas</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>メッシュパラメタリゼーション</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xelatihy/yocto-gl" target="_blank">yocto_bvh.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>線型キャストと境界ボリューム階層の最も近い要素クエリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xelatihy/yocto-gl" target="_blank">yocto_shape.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>シェイプ生成、テッセレーション、法線など。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="グラフィック（テキスト）">グラフィック（テキスト）</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/agauniyal/rang" target="_blank">rang</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォーム・カラーコンソールテキスト</td>
+</tr>
+</tbody>
+</table>
+<h1 id="グラフィクス-2d">グラフィクス (2d)</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://bitbucket.org/duangle/oui-blendish/src" target="_blank">blendish</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">1</td>
+<td>NanoVGを使ったブレンダースタイルウィジェットレンダリング</td>
+</tr>
+<tr>
+<td><a href="http://cimg.eu/" target="_blank">Cimg</a></td>
+<td style="text-align:center">CeCILL/CeCILL-C</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>画像処理ツールキット(60K LoC)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/npiegdon/immediate2d" target="_blank">Immediate2D</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>Windows用ゼロコンフィギュレーション、イミディエイトモード2Dグラフィックス</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guillaumechereau/noc" target="_blank">noc_turtle</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>手続き型グラフィックスジェネレータ</td>
+</tr>
+<tr>
+<td><a href="https://bitbucket.org/rmitton/tigr/src" target="_blank">tigr</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>WindowsとmacOSのためのクイック＆ダーティなウィンドウテキスト/グラフィックス</td>
+</tr>
+</tbody>
+</table>
+<h1 id="グラフィクス-3d">グラフィクス (3d)</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/glampert/debug-draw" target="_blank">debug-draw</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>APIにとらわれない即時モードデバッグレンダリング</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/ands/lightmapper#lightmapper" target="_blank">lightmapper</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>OpenGLレンダラを使ってオフラインでライトマップを焼く</td>
+</tr>
+<tr>
+<td><a href="https://developer.blender.org/diffusion/B/browse/master/intern/mikktspace" target="_blank">mikktspace</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>法線マッピングのための接線空間を計算する</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rmitton/rjm" target="_blank">rjm_raytrace.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>オフラインベーキングのための最小限のSSEパケットレイトレーサー</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/ands/seamoptimizer" target="_blank">seamoptimizer</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ライトマップデータを修正して継ぎ目を隠す</td>
+</tr>
+<tr>
+<td><a href="https://github.com/floooh/sokol" target="_blank">sokol_gfx.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォーム 3D API ラッパー (GLES2+3/GL3/D3D11/Metal)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Cultrarius/Swarmz" target="_blank">Swarmz</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>スウォーミング/フロッキングアルゴリズム</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ddiakopoulos/tinygizmo" target="_blank">tinygizmo</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>3D変換をインタラクティブに編集するためのギズモオブジェクト</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/Sigkill79/sts" target="_blank">Vertex Cache Optimizer</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>メッシュの頂点キャッシュ最適化</td>
+</tr>
+<tr>
+<td><a href="https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator" target="_blank">Vulkan Memory Allocator</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Vulkan用メモリアロケータ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xelatihy/yocto-gl" target="_blank">yocto_trace.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>物理ベース単方向パストレーサー（ダイレクトライト用MIS付き</td>
+</tr>
+<tr>
+<td><a href="https://github.com/xelatihy/yocto-gl" target="_blank">yocto_symrigid.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>剛体シミュレータ（逐次インパルス/PGS）、凹型オブジェクト対応</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ハード">ハード</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/ApoorvaJ/EasyTab" target="_blank">EasyTab</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>マルチプラットフォーム・タブレット入力</td>
+</tr>
+<tr>
+<td><a href="https://github.com/houqp/libue" target="_blank">libue</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">1</td>
+<td>Linuxデバイスのホットプラグアイベント用ヘルパーライブラリ</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ハッシュ化">ハッシュ化</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/Cyan4973/xxHash" target="_blank">xxHash</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>高速ハッシュ関数</td>
+</tr>
+</tbody>
+</table>
+<h1 id="画像">画像</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXR <a href="https://github.com/aras-p/miniexr" target="_blank">miniexr</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>OpenEXRライター、ヘッダーファイルが必要</td>
+</tr>
+<tr>
+<td>EXR <a href="https://github.com/syoyo/tinyexr" target="_blank">tinyexr</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>EXRイメージの読み込み/書き込み、内部でminizを使用</td>
+</tr>
+<tr>
+<td>GIF <a href="https://github.com/ginsweater/gif-h" target="_blank">gif.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>アニメーションGIFライター（1回のみ搭載可能）</td>
+</tr>
+<tr>
+<td>GIF <strong><a href="https://github.com/hidefromkgb/gif_load" target="_blank">gif_load</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>(アニメーション) GIFリーダー</td>
+</tr>
+<tr>
+<td>GIF <a href="http://www.jonolick.com/home/gif-writer" target="_blank">jo_gif.cpp</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>アニメーションGIFライター（CPPファイルはHファイルとしても使用可）</td>
+</tr>
+<tr>
+<td>JPG <a href="https://github.com/richgel999/jpeg-compressor" target="_blank">jpeg-compressor</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>2ファイルJPEG圧縮、2ファイルJPEG伸張</td>
+</tr>
+<tr>
+<td>JPG <a href="http://keyj.emphy.de/nanojpeg/" target="_blank">NanoJPEG</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JPEGデコーダ</td>
+</tr>
+<tr>
+<td>JPG <strong><a href="https://github.com/serge-rgb/TinyJPEG/" target="_blank">tiny_jpeg.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JPEGエンコーダ</td>
+</tr>
+<tr>
+<td>JPG EXIF <a href="https://github.com/mayanklahiri/easyexif" target="_blank">easyexif</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>JPEG画像用EXIFメタデータ抽出ツール</td>
+</tr>
+<tr>
+<td>JPG EXIF <a href="https://github.com/cdcseacave/TinyEXIF" target="_blank">TinyEXIF</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>JPEG (XMP w/ TinyXML2 lib) からの EXIF データのパース</td>
+</tr>
+<tr>
+<td>PDF <a href="https://github.com/AndreRenaud/PDFGen" target="_blank">PDFgen</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>PDFライター</td>
+</tr>
+<tr>
+<td>PNG <a href="http://lodev.org/lodepng/" target="_blank">lodepng</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>PNGエンコーダー/デコーダー</td>
+</tr>
+<tr>
+<td>PNG <a href="http://lodev.org/lodepng/picopng.cpp" target="_blank">picopng.cpp</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>ちっちゃなPNGローダー</td>
+</tr>
+<tr>
+<td>PNG <a href="https://www.nayuki.io/page/tiny-png-output" target="_blank">TinyPngOutput</a></td>
+<td style="text-align:center">LGPLv3</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>PNGライター</td>
+</tr>
+<tr>
+<td>PNM <a href="https://github.com/dmilos/PNM" target="_blank">PNM</a></td>
+<td style="text-align:center">Apache 2.0</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">1</td>
+<td>PBM、PGM、PPMのリーダ／ライタ</td>
+</tr>
+<tr>
+<td>SVG <a href="https://github.com/memononen/nanosvg" target="_blank">nanoSVG</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>1ファイルSVGパーサ、1ファイルSVGラスタライザ</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/thebeast33/cro_lib" target="_blank">cro_mipmap.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>平均、最小、最大ミップマップジェネレータ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rmitton/rjm" target="_blank">rjm_texbleed.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>alpha=0となる画素の色を塗りつぶす。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="数学">数学</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/starwing/amoeba" target="_blank">amoeba</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>制約ソルバー（Cassowary）、Luaバインディング付き</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wareya/fft" target="_blank">fft</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>高速フーリエ変換</td>
+</tr>
+<tr>
+<td><a href="https://github.com/corporateshark/poisson-disk-generator" target="_blank">PoissonGenerator.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ポアソン円盤点生成器（円盤または矩形）</td>
+</tr>
+<tr>
+<td><a href="http://marc-b-reynolds.github.io/shf/2016/04/19/prns.html" target="_blank">prns.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>シーク可能な擬似乱数列</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">rnd.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>擬似乱数生成</td>
+</tr>
+<tr>
+<td><a href="https://github.com/michaldrobot/ShaderFastLibs" target="_blank">ShaderFastLibs</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>(HLSLでも) シェーダ用に最適化された近似超越関数 (特にGCN)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/roukaour/simrank" target="_blank">simrank.hpp</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>SimRankグラフ類似性アルゴリズム</td>
+</tr>
+<tr>
+<td><a href="https://github.com/corporateshark/Summed-Area-Table.git" target="_blank">SummedAreaTable</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Summed-Area Tableの生成とsum/avgクエリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/codeplea/tinyexpr" target="_blank">TinyExpr</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>文字列から数式を評価する</td>
+</tr>
+</tbody>
+</table>
+<h1 id="マルチスレッド">マルチスレッド</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/DanEngelbrecht/bikeshed" target="_blank">bikeshed.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォーム ロックフリー 固定メモリ 階層型作業スケジューラ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vurtun/mmx" target="_blank">mm_sched.h</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td><a href="https://github.com/dougbinks/enkiTS" target="_blank">enkiTS</a> をベースとしたクロスプラットフォームなマルチスレッドタスクスケジューラ。</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">thread.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォーム・スレッドプリミティブ</td>
+</tr>
+<tr>
+<td><a href="https://tinycthread.github.io/" target="_blank">TinyCThread</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>C11 Threads API のクロスプラットフォーム実装</td>
+</tr>
+<tr>
+<td><a href="https://tinythreadpp.bitsnbites.eu/" target="_blank">TinyThread++</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>C++11 Threads API のクロスプラットフォーム実装</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ネットワーク">ネットワーク</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/civetweb/civetweb" target="_blank">civetweb</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>HTTP サーバ、Mongoose のフォーク</td>
+</tr>
+<tr>
+<td><a href="https://github.com/hellerf/EmbeddableWebServer" target="_blank">EWS</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>HTTPサーバー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Zintinio/HappyHTTP" target="_blank">happyhttp</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>HTTPクライアントリクエスト</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">http</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>HTTP get/post</td>
+</tr>
+<tr>
+<td><a href="https://github.com/chrberger/libcluon" target="_blank">libcluon</a></td>
+<td style="text-align:center">MPL-2.0</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/" target="_blank">Protobuf</a>, <a href="http://lcm-proj.github.io/type_specification.html" target="_blank">LCM</a>/<a href="http://zerocm.github.io/zcm/" target="_blank">ZCM</a>, JSON, <a href="https://msgpack.org" target="_blank">MsgPack</a> のシリアライズ/デシリアライズをネイティブ実装したクロスプラットフォームのソケットラッパーとデータマーシャリング。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/corporateshark/LUrlParser" target="_blank">LUrlParser</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>軽量URL・URIパーサ RFC 1738, RFC 3986</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vurtun/mmx" target="_blank">mm_web.h</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>軽量ウェブサーバ、webby のフォーク</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cesanta/mongoose" target="_blank">mongoose</a></td>
+<td style="text-align:center">GPLv2</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>HTTPサーバー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/prideout/par" target="_blank">par_easycurl.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>cURL ラッパー</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/kieselsteini/sts" target="_blank">sts_net</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォームソケットラッパー（ソケットセット、パケットAPI）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tom-seddon/yhs" target="_blank">yocto</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>非プロダクションユースのHTTPサーバー</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/Smilex/zed_net" target="_blank">zed_net</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォームソケットラッパー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/starwing/znet" target="_blank">znet</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Luaバインディングによるクロスプラットフォームネットワーキング</td>
+</tr>
+</tbody>
+</table>
+<h1 id="シリアライズ">シリアライズ</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/voidah/archive" target="_blank">archive</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>STLサポートによるバイナリー・シリアライズとデシリアライズ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/chrberger/libcluon" target="_blank">libcluon</a></td>
+<td style="text-align:center">MPL-2.0</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td><a href="https://developers.google.com/protocol-buffers/" target="_blank">Protobuf</a>, <a href="http://lcm-proj.github.io/type_specification.html" target="_blank">LCM</a>/<a href="http://zerocm.github.io/zcm/" target="_blank">ZCM</a>, JSON, <a href="https://msgpack.org" target="_blank">MsgPack</a> のネイティブ実装によるクロスプラットフォームなデータシリアライズ/デシリアライゼーション。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="json">json</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/lordoffox/ajson" target="_blank">ajson</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JSONのシリアライズとデシリアライズ、STLのサポート</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/cjson/" target="_blank">cJSON</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JSONパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sheredom/json.h" target="_blank">json.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>JSONパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nlohmann/json" target="_blank">json.hpp</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JSONのパース、シリアライズ、デシリアライズ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Zguy/Jzon" target="_blank">jzon.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>JSONパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kazuho/picojson" target="_blank">PicoJSON</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>JSONパース/シリアライザ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/kgabis/parson" target="_blank">parson</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>JSONパーサーとシリアライザー</td>
+</tr>
+</tbody>
+</table>
+<h1 id="yaml">yaml</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/jimmiebergmann/mini-yaml" target="_blank">mini-yaml</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>YAML パーサーとシリアライザー</td>
+</tr>
+</tbody>
+</table>
+<h1 id="csv">csv</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/awdeorio/csvstream/" target="_blank">CSVstream</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>CSVパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ben-strasser/fast-cpp-csv-parser" target="_blank">Fast C++ CSV Parser</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>CSVパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/d99kris/rapidcsv/" target="_blank">Rapidcsv</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>CSVパーサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vincentlaucsb/csv-parser" target="_blank">Vince&apos;s CSV Parser</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>CSVパーサおよびシリアライザ</td>
+</tr>
+</tbody>
+</table>
+<h1 id="パーサー">パーサー</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/camgunz/cmp" target="_blank">cmp</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>MessagePack パーサおよびシリアライザ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/benhoyt/inih" target="_blank">inih</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>.iniファイルパーサ</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">ini.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>.iniファイルパーサ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ccxvii/minilibs" target="_blank">minilibs</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>2ファイル正規表現</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vurtun/mmx" target="_blank">mm_lexer.h</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C言語風言語レキサー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cesanta/slre" target="_blank">SLRE</a></td>
+<td style="text-align:center"><em>GPLv2</em></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>正規表現マッチャー</td>
+</tr>
+<tr>
+<td><a href="https://github.com/RandyGaul/tinyheaders" target="_blank">tinymemfile</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>インメモリファイルのfscanf</td>
+</tr>
+</tbody>
+</table>
+<h1 id="プロファイリング">プロファイリング</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/jonasmr/microprofile" target="_blank">MicroProfile</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2-4</td>
+<td>CPU(とGPU?)プロファイラ、1-3ヘッダファイル、内部でminizを使用。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cyrus-and/prof" target="_blank">prof</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Linux用プロファイラ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Celtoys/Remotery" target="_blank">Remotery</a></td>
+<td style="text-align:center">Apache 2.0</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>CPU/GPUプロファイラ Win/Mac/Linux、ビューワはWebブラウザを使用。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="スクリプト">スクリプト</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://duktape.org/" target="_blank">Duktape</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>埋め込み型JavaScriptエンジン</td>
+</tr>
+<tr>
+<td><a href="https://github.com/paladin-t/my_basic/" target="_blank">MY-BASIC</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>BASIC方言のスクリプト言語用インタプリタ</td>
+</tr>
+<tr>
+<td><a href="http://runtimeterror.com/tech/lil/" target="_blank">LIL</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>Tcl ライクなスクリプト言語用インタプリタ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/user1095108/lualite" target="_blank">lualite</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++でLuaバインディングを生成</td>
+</tr>
+<tr>
+<td><a href="https://chiselapp.com/user/dbohdan/repository/picol/" target="_blank">Picol</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Tcl ライクなスクリプト言語用インタプリタ</td>
+</tr>
+<tr>
+<td><a href="https://ccrma.stanford.edu/software/snd/snd/s7.html" target="_blank">s7</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>Schemeのサブセット(R5RS/R7RS)用のインタプリタです。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="文字列">文字列</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://bjoern.hoehrmann.de/utf-8/decoder/dfa/" target="_blank">dfa</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>高速 UTF-8 デコーダ (ヘッダファイルが必要)</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/DanielGibson/Snippets/" target="_blank">DG_misc.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Daniel Gibson の stb.h 風のクロスプラットフォームヘルパー: path/file、文字列</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/gingerBill/gb" target="_blank">gb_string.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>動的文字列</td>
+</tr>
+<tr>
+<td><a href="https://github.com/adamyaxley/Obfuscate" target="_blank">Obfuscate</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++14用コンパイル保証型文字列リテラル難読化ライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pantor/inja" target="_blank">inja.hpp</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>テンプレートエンジン</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">strpool.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>文字列インターン</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sawickiap/str_view" target="_blank">str_view.hpp</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>null-termination-aware string-view class</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/sheredom/utf8.h" target="_blank">utf8</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>UTF-8文字列ライブラリ</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ユニットテスト">ユニットテスト</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/philsquared/Catch" target="_blank">catch</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/catchorg/Catch2/" target="_blank">catch2</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/onqtam/doctest" target="_blank">doctest</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/imb/fctx" target="_blank">fctx</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/silentbicycle/greatest" target="_blank">greatest</a></td>
+<td style="text-align:center">iSC</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dascandy/hippomocks" target="_blank">hippomocks</a></td>
+<td style="text-align:center">LGPL</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/squarewave/labrat" target="_blank">labrat</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/codeplea/minctest" target="_blank">minctest</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nemequ/munit" target="_blank">munit</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="http://www.lingua-systems.com/unit-testing/" target="_blank">SPUT</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rollbear/trompeloeil" target="_blank">trompeloeil</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><a href="https://github.com/evolutional/utest" target="_blank">utest</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/sheredom/utest.h" target="_blank">utest.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ユニットテスト</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ユーザーインターフェース">ユーザーインターフェース</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ocornut/imgui" target="_blank">dear imgui</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">9</td>
+<td>以前は &quot;ImGui&quot; と呼ばれていた即時モードGUI。; <a href="https://github.com/Extrawurst/cimgui" target="_blank">サードパーティ製C言語ラッパー</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ronen25/libcmdf" target="_blank">libcmdf</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>CLI アプリケーションを書くための小さなライブラリ</td>
+</tr>
+<tr>
+<td><a href="https://github.com/antirez/linenoise" target="_blank">linenoise</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>ターミナルの読み出しと履歴など</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guillaumechereau/noc" target="_blank">noc_file_dialog.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">1</td>
+<td>ファイルを開く/保存するダイアログ（Win/Mac/Linux）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vurtun/nuklear" target="_blank">nuklear</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>最小限のGUIツールキット</td>
+</tr>
+<tr>
+<td><a href="https://sourceforge.net/projects/tinyfiledialogs/" target="_blank">tinyfiledialogs</a></td>
+<td style="text-align:center">ZLIB</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>モーダルダイアログ、ファイルオープン/セーブ (Win/Mac/Linux)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/joshuarubin/wcwidth9" target="_blank">wcwidth9</a></td>
+<td style="text-align:center">Apache 2.0</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">1</td>
+<td>プラットフォーム非依存の wcwidth で unicode 9 を完全サポート</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ベクトル">ベクトル</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.animats.com/source/graphics/algebra3.h" target="_blank">algebra3.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>2、3、4 要素ベクトル用ベクトルユーティリティ（すべてインライン化</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/jobtalle/ccVector" target="_blank">ccVector.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ベクトル、クォータニオン、行列の計算</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/gingerBill/gb/blob/master/gb_math.h" target="_blank">gb_math</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ベクトル、四元数、行列の計算をmath.hなしで行う。</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/StrangeZak/Handmade-Math" target="_blank">Handmade Math</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ベクトル数学</td>
+</tr>
+<tr>
+<td><a href="https://github.com/sgorsten/linalg" target="_blank">linalg.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ベクトル/マトリックス/クォータニオン数学</td>
+</tr>
+<tr>
+<td><a href="https://github.com/ilyak/linalg" target="_blank">linalg</a></td>
+<td style="text-align:center">ISC</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>ベクトル/マトリックス/クォータニオン数学</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vurtun/mmx" target="_blank">mm_vec.h</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>SIMDベクトル演算</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ビデオ">ビデオ</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.jonolick.com/home/mpeg-video-writer" target="_blank">jo_mpeg</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>MPEGファイルライター</td>
+</tr>
+</tbody>
+</table>
+<h1 id="ビデオゲーム">ビデオゲーム</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="https://github.com/mattiasgustavsson/libs" target="_blank">app.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>Windows専用だが、クロスプラットフォームのゲーム的なフレームワークであること。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="雑多">雑多</h1>
+<table>
+<thead>
+<tr>
+<th>library</th>
+<th style="text-align:center">license</th>
+<th style="text-align:center">API</th>
+<th style="text-align:center">files</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mobius3/asap" target="_blank">ASAP</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>日付の解析、印刷、反復処理、操作を行うためのライブラリです。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/c-smile/cpp-generators" target="_blank">cpp-generators</a></td>
+<td style="text-align:center">BSD</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>C++のジェネレータ</td>
+</tr>
+<tr>
+<td><a href="https://nemequ.github.io/hedley/" target="_blank">Hedley</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>コンパイラの移植性、最適化、静的解析など。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wooorm/levenshtein.c" target="_blank">levenshtein</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center">2</td>
+<td>2つの文字列間の編集距離を計算する</td>
+</tr>
+<tr>
+<td><a href="http://www.humus.name/3D/MakeID.h" target="_blank">MakeID.h</a></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>小さな整数IDを効率的に割り当て/解放する。</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iboB/picobench" target="_blank">picobench</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>マイクロベンチマーキング</td>
+</tr>
+<tr>
+<td><a href="https://github.com/codeplea/pluscallback" target="_blank">PlusCallback</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>関数/メソッドコールバック</td>
+</tr>
+<tr>
+<td><strong><a href="https://github.com/sheredom/process.h" target="_blank">process.h</a></strong></td>
+<td style="text-align:center"><strong>public domain</strong></td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>プロセスコントロールAPI</td>
+</tr>
+<tr>
+<td><a href="https://github.com/effolkronium/random" target="_blank">random</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>乱数のための便利なAPI</td>
+</tr>
+<tr>
+<td><a href="https://github.com/floooh/sokol" target="_blank">sokol_time.h</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クロスプラットフォームでの時間計測</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wooorm/stmr.c" target="_blank">stmr</a></td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">2</td>
+<td>英単語の語幹を抽出する</td>
+</tr>
+<tr>
+<td><a href="https://github.com/c42f/tinyformat" target="_blank">tinyformat</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>タイプセーフprintf</td>
+</tr>
+<tr>
+<td><a href="https://github.com/RandyGaul/tinyheaders" target="_blank">tinytime</a></td>
+<td style="text-align:center">zlib</td>
+<td style="text-align:center">C/C++</td>
+<td style="text-align:center"><strong>1</strong></td>
+<td>クイック＆ダーティタイム経過時間</td>
+</tr>
+<tr>
+<td><a href="https://github.com/cbeck88/visit_struct" target="_blank">visit_struct</a></td>
+<td style="text-align:center">Boost</td>
+<td style="text-align:center">C++</td>
+<td style="text-align:center">2</td>
+<td>struct-field reflection</td>
+</tr>
+</tbody>
+</table>
+<p>このようなXMLライブラリもありますが、私はXMLが著しく苦手なので、よく考えてもらうために一番下に記しました。</p>
+<ul>
+<li>パース: <a href="https://github.com/leethomason/tinyxml2" target="_blank">tinyxml2</a>: XML (zlib license)</li>
+<li>パース: <a href="http://pugixml.org/" target="_blank">pugixml</a>: XML (MIT license)</li>
+<li>パース: <a href="https://dev.yorhel.nl/yxml" target="_blank">yxml</a>: XML (MIT license)</li>
+</ul>
+<h2 id="新しいライブラリと訂正">新しいライブラリと訂正</h2>
+<p>新しいライブラリの投稿課題として、またはプルリクエストとして提出することができます。ヘッダーファイルとソースファイルは2ファイルですが、ヘッダーファイル、ソースファイル、LICENSE（ライセンスがソースファイルにない場合）は3ファイルとなり、2ファイルではないので受け入れられませんのでご注意ください。しかし、実際には「LICENSE」はライブラリだけにスコープされているわけではないので、いずれにせよソースツリーにライブラリをドロップするだけでは問題です。したがって、ライブラリ作者は、ライセンスをソースファイルに含め、別にLICENSEを要求しないことが推奨されています。</p>
+<p>訂正：上記のライブラリの情報が間違っている場合、issue、pull request、またはe-mailで訂正をお送りください。なお、このリストでC/C++の両方から動作するとされているライブラリが、そうでない場合、これはリストの誤りか、ライブラリのバグである可能性があります。あるライブラリが32ビットまたは64ビットで動作しないことがわかった場合、そのライブラリのバグでない限り、そのライブラリはこのリストから削除されるべきです。</p>
+<h2 id="リストfaq"><em>リストFAQ</em></h2>
+<h3 id="このリストに直接リンクすることはできますか？">このリストに直接リンクすることはできますか？</h3>
+<p>はい。 <a href="https://github.com/nothings/single_file_libs" target="_blank">このリンクが優先されます。</a></p>
+<h3 id="3つ以上のファイルから構成されるライブラリxxxは、なぜこのリストにないのですか？">3つ以上のファイルから構成されるライブラリXXXは、なぜこのリストにないのですか？</h3>
+<p>私は任意に最大2ファイルまでと線引きしています。(2つのファイルに見えるライブラリの中には、別のLICENSEファイルを必要とするものがあり、それを除外していることに注意してください）。これらのライブラリの中には、プロジェクトにドロップしてビルドするのが簡単なものもありますから、それでも構わないかもしれません。しかし、stbに来る人は、シングルファイルのパブリックドメインライブラリを求めているので、私たちがここでやっていることから離れすぎているような気がするのです。</p>
+<h3 id="なぜ、最大で2つのファイルからなり、他の依存関係が最小のライブラリxxxがこのリストにないのでしょうか？">なぜ、最大で2つのファイルからなり、他の依存関係が最小のライブラリXXXがこのリストにないのでしょうか？</h3>
+<p>おそらく私が知らないからだと思いますが、プルリクエスト、イシュー、メール、ツイートでお気軽にお寄せください（あなた自身のライブラリでも他の人のライブラリでもかまいません）。しかし、「他の依存関係が最小限」であることや「軽量」であることなど、他のさまざまな理由から、私はそれを含めないかもしれません。</p>
+<h3 id="なぜsqliteのamalgamated-buildはこのリストにないのですか？">なぜSQLiteのamalgamated buildはこのリストにないのですか？</h3>
+<p>さあ？</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="stb.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: stb">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"シングルファイル","level":"1.4","depth":1,"previous":{"title":"stb","level":"1.3","depth":1,"path":"stb.md","ref":"stb.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"single_file_libs.md","mtime":"2022-10-24T06:33:47.907Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-12T17:35:27.520Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
