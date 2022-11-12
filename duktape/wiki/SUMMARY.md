@@ -6,8 +6,8 @@
 
 ### ドキュメンテーション
 
-* [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/): http://duktape.org/guide.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
-* [Duktape APIリファレンス](https://dolphilia.github.io/japanese_translation/duktape/api/): http://duktape.org/api.html - 過去のバージョン: 1.5 1.4 1.3 1.2 1.1 1.0
+* [Duktapeプログラミングガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/)
+* [Duktape APIリファレンス](https://dolphilia.github.io/japanese_translation/duktape/api/)
 
 
 ### はじめに
