@@ -2,7 +2,7 @@
 
 このリポジトリには日本語に翻訳した文書を置いています。
 
-## 目録
+## ソースコード
 
 - [JavaScript ベストプラクティス](https://github.com/dolphilia/japanese_translation/tree/main/JavaScript)
 - [C言語 ベストプラクティス](https://github.com/dolphilia/japanese_translation/tree/main/C-Language)
