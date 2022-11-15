@@ -5,7 +5,7 @@
 
 * [このドキュメントについて](README.md)
 
-### GitHub Pages
+### 目次
 
 * [ANGLE](https://dolphilia.github.io/japanese_translation/angle/)
 * [C言語ベストプラクティス](https://dolphilia.github.io/japanese_translation/c_best/)
@@ -23,8 +23,9 @@
 * [Processing](https://dolphilia.github.io/japanese_translation/processing/)
 * [pygameリファレンス](https://dolphilia.github.io/japanese_translation/pygame/)
 * [stb](https://dolphilia.github.io/japanese_translation/stb/)
+* [VitePress](https://dolphilia.github.io/japanese_translation/VitePress/)
 
-### リポジトリ
+### まだドキュメント化していない文書
 
 * [Mermaid](https://github.com/dolphilia/japanese_translation/tree/main/mermaid)
 * [WG14-C](https://github.com/dolphilia/japanese_translation/tree/main/WG14-C)

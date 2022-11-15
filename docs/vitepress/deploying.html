@@ -1,0 +1,771 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>デプロイメント · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="markdown.html" />
+    
+    
+    <link rel="prev" href="configuration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what-is-vitepress.html">
+            
+                <a href="what-is-vitepress.html">
+            
+                    
+                    VitePressとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    コンフィギュレーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="deploying.html">
+            
+                <a href="deploying.html">
+            
+                    
+                    デプロイメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ライティング</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="markdown.html">
+            
+                <a href="markdown.html">
+            
+                    
+                    Markdownの拡張機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="asset-handling.html">
+            
+                <a href="asset-handling.html">
+            
+                    
+                    アセットハンドリング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="frontmatter.html">
+            
+                <a href="frontmatter.html">
+            
+                    
+                    フロントマター
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="using-vue.html">
+            
+                <a href="using-vue.html">
+            
+                    
+                    MarkdownでVueを使用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">テーマ</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="theme-introduction.html">
+            
+                <a href="theme-introduction.html">
+            
+                    
+                    テーマ紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="theme-nav.html">
+            
+                <a href="theme-nav.html">
+            
+                    
+                    Nav
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="theme-sidebar.html">
+            
+                <a href="theme-sidebar.html">
+            
+                    
+                    Sidebar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="theme-prev-next-link.html">
+            
+                <a href="theme-prev-next-link.html">
+            
+                    
+                    Prev Next Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="theme-edit-link.html">
+            
+                <a href="theme-edit-link.html">
+            
+                    
+                    Edit Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="theme-last-updated.html">
+            
+                <a href="theme-last-updated.html">
+            
+                    
+                    Last Updated
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="theme-layout.html">
+            
+                <a href="theme-layout.html">
+            
+                    
+                    Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="theme-home-page.html">
+            
+                <a href="theme-home-page.html">
+            
+                    
+                    Home Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="theme-team-page.html">
+            
+                <a href="theme-team-page.html">
+            
+                    
+                    Team Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="theme-badge.html">
+            
+                <a href="theme-badge.html">
+            
+                    
+                    Badge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="theme-footer.html">
+            
+                <a href="theme-footer.html">
+            
+                    
+                    Footer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="theme-search.html">
+            
+                <a href="theme-search.html">
+            
+                    
+                    Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="theme-carbon-ads.html">
+            
+                <a href="theme-carbon-ads.html">
+            
+                    
+                    Carbon Ads
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移行</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="migration-from-vuepress.html">
+            
+                <a href="migration-from-vuepress.html">
+            
+                    
+                    VuePressからの移行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="migration-from-vitepress-0.html">
+            
+                <a href="migration-from-vitepress-0.html">
+            
+                    
+                    VitePress 0.xからの移行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >デプロイメント</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="デプロイメント">デプロイメント</h1>
+<p>以下のガイドはいくつかの共通の前提に基づくものです。</p>
+<ul>
+<li>プロジェクトのdocsディレクトリの中にドキュメントを配置するのです。</li>
+<li>デフォルトのビルド出力場所（.vitepress/dist）を使用しています。</li>
+<li>VitePressはプロジェクトのローカル依存関係としてインストールされ、package.jsonに以下のスクリプトが設定されています。</li>
+</ul>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;docs:build&quot;</span>: <span class="hljs-string">&quot;vitepress build docs&quot;</span>,
+    <span class="hljs-string">&quot;docs:serve&quot;</span>: <span class="hljs-string">&quot;vitepress serve docs&quot;</span>
+  }
+}
+</code></pre>
+<blockquote>
+<p>ヒント：あなたのサイトがサブディレクトリ（<a href="https://example.com/subdir/）で提供される場合、あなたのdocs/.vitepress/config.jsで" target="_blank">https://example.com/subdir/）で提供される場合、あなたのdocs/.vitepress/config.jsで</a> &apos;/subdir/&apos; をベースとして設定する必要があります。例えば、Github (または GitLab) ページを使用していて user.github.io/repo/ にデプロイしている場合は、ベースを /repo/ に設定します。</p>
+</blockquote>
+<h2 id="ローカルでのビルドとテスト">ローカルでのビルドとテスト</h2>
+<ul>
+<li>このコマンドを実行するとドキュメントをビルドすることができます。</li>
+</ul>
+<pre><code class="lang-sh">$ yarn docs:build
+</code></pre>
+<ul>
+<li>ドキュメントをビルドしたらローカルで実行することでテストすることができます。</li>
+</ul>
+<pre><code class="lang-sh">$ yarn docs:serve
+</code></pre>
+<p>serve コマンドはローカルの静的ウェブサーバを起動し.vitepress/dist にあるファイルを <a href="http://localhost:4173" target="_blank">http://localhost:4173</a> で配信します。これは本番環境のビルドがあなたのローカル環境で問題なく見えるかどうかをチェックする簡単な方法です。</p>
+<ul>
+<li>引数に --port を渡すと、サーバーのポートを設定することができます。</li>
+</ul>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;scripts&quot;</span>: {
+    <span class="hljs-string">&quot;docs:serve&quot;</span>: <span class="hljs-string">&quot;vitepress serve docs --port 8080&quot;</span>
+  }
+}
+</code></pre>
+<p>これでdocs:serveメソッドは <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> でサーバーを起動するようになります。</p>
+<h2 id="netlify-vercel-aws-amplify-cloudflare-pages-render">Netlify, Vercel, AWS Amplify, Cloudflare Pages, Render</h2>
+<p>新しいプロジェクトを立ち上げ、ダッシュボードを使用してこれらの設定を変更します。</p>
+<ul>
+<li>ビルドコマンド：yarn docs:build</li>
+<li>出力ディレクトリ: docs/.vitepress/dist</li>
+<li>Node Version: 14 (またはそれ以上。デフォルトでは通常14または16になりますが、Cloudflare Pagesではデフォルトはまだ12なので、変更する必要があるかもしれません)</li>
+</ul>
+<blockquote>
+<p>警告: HTMLコードの自動最小化などのオプションは有効にしないでください。Vueにとって意味のあるコメントを出力から削除してしまいます。 削除された場合、ハイドレーションミスマッチエラーが表示されることがあります。</p>
+</blockquote>
+<h2 id="github-pages">GitHub Pages</h2>
+<h3 id="github-actionsを利用する">GitHub Actionsを利用する</h3>
+<ol>
+<li>テーマの設定ファイル docs/.vitepress/config.js で、base プロパティを GitHub リポジトリの名前に設定します。<a href="https://foo.github.io/bar/" target="_blank">https://foo.github.io/bar/</a> にサイトをデプロイする予定なら、base を &apos;/bar/&apos; に設定します。常にスラッシュで始まり、スラッシュで終わる必要があります。</li>
+<li>プロジェクトの .github/workflows ディレクトリ内に deploy.yml というファイルを作成し、以下の内容を記述します。</li>
+</ol>
+<pre><code class="lang-yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>
+
+<span class="hljs-attr">on:</span>
+  <span class="hljs-attr">push:</span>
+    <span class="hljs-attr">branches:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">main</span>
+
+<span class="hljs-attr">jobs:</span>
+  <span class="hljs-attr">deploy:</span>
+    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span>
+    <span class="hljs-attr">steps:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v3</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">fetch-depth:</span> <span class="hljs-number">0</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v3</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">node-version:</span> <span class="hljs-number">16</span>
+          <span class="hljs-attr">cache:</span> <span class="hljs-string">yarn</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">run:</span> <span class="hljs-string">yarn</span> <span class="hljs-string">install</span> <span class="hljs-string">--frozen-lockfile</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Build</span>
+        <span class="hljs-attr">run:</span> <span class="hljs-string">yarn</span> <span class="hljs-string">docs:build</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>
+        <span class="hljs-attr">uses:</span> <span class="hljs-string">peaceiris/actions-gh-pages@v3</span>
+        <span class="hljs-attr">with:</span>
+          <span class="hljs-attr">github_token:</span> <span class="hljs-string">${{</span> <span class="hljs-string">secrets.GITHUB_TOKEN</span> <span class="hljs-string">}}</span>
+          <span class="hljs-attr">publish_dir:</span> <span class="hljs-string">docs/.vitepress/dist</span>
+          <span class="hljs-comment"># cname: example.com # if wanna deploy to custom domain</span>
+</code></pre>
+<blockquote>
+<p>ヒント: 対応するブランチ名を置き換えてください。たとえば、ビルドしたいブランチが master であれば、上記のファイルでは main を master に置き換えてください。</p>
+</blockquote>
+<ol>
+<li>コードをコミットして、mainブランチにプッシュします。</li>
+<li>アクションが完了するのを待ちます。</li>
+<li>リポジトリの「設定」の「ページ」メニューで、GitHub Pages のソースとして gh-pages ブランチを選択します。これで、プッシュするたびにドキュメントが自動的にデプロイされるようになります。</li>
+</ol>
+<h2 id="gitlab-pages">GitLab Pages</h2>
+<h3 id="gitlab-ciを利用する">GitLab CIを利用する</h3>
+<ol>
+<li>docs/.vitepress/config.js の outDir を ../public に設定します。</li>
+<li>.gitlab-ci.yml というファイルをプロジェクトのルートに作成し、以下のような内容を記述します。これにより、コンテンツに変更を加えるたびに、サイトがビルドされ、デプロイされます。</li>
+</ol>
+<pre><code class="lang-yaml"><span class="hljs-attr">image:</span> <span class="hljs-string">node:16</span>
+<span class="hljs-attr">pages:</span>
+  <span class="hljs-attr">cache:</span>
+    <span class="hljs-attr">paths:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">node_modules/</span>
+  <span class="hljs-attr">script:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">yarn</span> <span class="hljs-string">install</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">yarn</span> <span class="hljs-string">docs:build</span>
+  <span class="hljs-attr">artifacts:</span>
+    <span class="hljs-attr">paths:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">public</span>
+  <span class="hljs-attr">only:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">main</span>
+</code></pre>
+<h2 id="azure-static-web-apps">Azure Static Web Apps</h2>
+<ol>
+<li>公式ドキュメントに従う。</li>
+<li><p>設定ファイルにこれらの値を設定する（api_locationのような不要なものは削除する）。</p>
+</li>
+<li><p>app_location:/</p>
+</li>
+<li>output_location: docs/.vitepress/dist</li>
+<li>app_build_command: yarn docs:build</li>
+</ol>
+<h2 id="firebase">Firebase</h2>
+<ol>
+<li>プロジェクトのルートにfirebase.jsonと.firebasercを作成します。</li>
+</ol>
+<p>firebase.json:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;hosting&quot;</span>: {
+    <span class="hljs-string">&quot;public&quot;</span>: <span class="hljs-string">&quot;docs/.vitepress/dist&quot;</span>,
+    <span class="hljs-string">&quot;ignore&quot;</span>: []
+  }
+}
+</code></pre>
+<p>.firebaserc:</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;projects&quot;</span>: {
+    <span class="hljs-string">&quot;default&quot;</span>: <span class="hljs-string">&quot;&lt;YOUR_FIREBASE_ID&gt;&quot;</span>
+  }
+}
+</code></pre>
+<ol>
+<li>yarn docs:buildを実行した後、このコマンドを実行するとデプロイされます。</li>
+</ol>
+<pre><code class="lang-sh">firebase deploy
+</code></pre>
+<h2 id="surge">Surge</h2>
+<ol>
+<li>yarn docs:buildを実行した後、このコマンドを実行するとデプロイされます。</li>
+</ol>
+<pre><code class="lang-sh">npx surge docs/.vitepress/dist
+</code></pre>
+<h2 id="heroku">Heroku</h2>
+<ol>
+<li>heroku-buildpack-static にあるドキュメントとガイドに従ってください。</li>
+<li>プロジェクトのルートにstatic.jsonというファイルを作成し、以下の内容を記述します。</li>
+</ol>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;root&quot;</span>: <span class="hljs-string">&quot;docs/.vitepress/dist&quot;</span>
+}
+</code></pre>
+<h2 id="layer0">Layer0</h2>
+<p>Layer0を使ったVitePressアプリの作成とデプロイを参照してください。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="configuration.html" class="navigation navigation-prev " aria-label="Previous page: コンフィギュレーション">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="markdown.html" class="navigation navigation-next " aria-label="Next page: Markdownの拡張機能">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"デプロイメント","level":"1.5","depth":1,"next":{"title":"Markdownの拡張機能","level":"2.1","depth":1,"path":"markdown.md","ref":"markdown.md","articles":[]},"previous":{"title":"コンフィギュレーション","level":"1.4","depth":1,"path":"configuration.md","ref":"configuration.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"deploying.md","mtime":"2022-11-14T15:56:40.300Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-15T06:44:03.503Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

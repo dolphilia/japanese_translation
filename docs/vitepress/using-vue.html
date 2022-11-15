@@ -1,0 +1,789 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>MarkdownでVueを使用する · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="api.html" />
+    
+    
+    <link rel="prev" href="frontmatter.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">はじめに</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what-is-vitepress.html">
+            
+                <a href="what-is-vitepress.html">
+            
+                    
+                    VitePressとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="getting-started.html">
+            
+                <a href="getting-started.html">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="configuration.html">
+            
+                <a href="configuration.html">
+            
+                    
+                    コンフィギュレーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="deploying.html">
+            
+                <a href="deploying.html">
+            
+                    
+                    デプロイメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ライティング</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="markdown.html">
+            
+                <a href="markdown.html">
+            
+                    
+                    Markdownの拡張機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="asset-handling.html">
+            
+                <a href="asset-handling.html">
+            
+                    
+                    アセットハンドリング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="frontmatter.html">
+            
+                <a href="frontmatter.html">
+            
+                    
+                    フロントマター
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="using-vue.html">
+            
+                <a href="using-vue.html">
+            
+                    
+                    MarkdownでVueを使用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="api.html">
+            
+                <a href="api.html">
+            
+                    
+                    APIリファレンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">テーマ</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="theme-introduction.html">
+            
+                <a href="theme-introduction.html">
+            
+                    
+                    テーマ紹介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="theme-nav.html">
+            
+                <a href="theme-nav.html">
+            
+                    
+                    Nav
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="theme-sidebar.html">
+            
+                <a href="theme-sidebar.html">
+            
+                    
+                    Sidebar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="theme-prev-next-link.html">
+            
+                <a href="theme-prev-next-link.html">
+            
+                    
+                    Prev Next Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="theme-edit-link.html">
+            
+                <a href="theme-edit-link.html">
+            
+                    
+                    Edit Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="theme-last-updated.html">
+            
+                <a href="theme-last-updated.html">
+            
+                    
+                    Last Updated
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="theme-layout.html">
+            
+                <a href="theme-layout.html">
+            
+                    
+                    Layout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="theme-home-page.html">
+            
+                <a href="theme-home-page.html">
+            
+                    
+                    Home Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="theme-team-page.html">
+            
+                <a href="theme-team-page.html">
+            
+                    
+                    Team Page
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="theme-badge.html">
+            
+                <a href="theme-badge.html">
+            
+                    
+                    Badge
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="theme-footer.html">
+            
+                <a href="theme-footer.html">
+            
+                    
+                    Footer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="theme-search.html">
+            
+                <a href="theme-search.html">
+            
+                    
+                    Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.13" data-path="theme-carbon-ads.html">
+            
+                <a href="theme-carbon-ads.html">
+            
+                    
+                    Carbon Ads
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">移行</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="migration-from-vuepress.html">
+            
+                <a href="migration-from-vuepress.html">
+            
+                    
+                    VuePressからの移行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="migration-from-vitepress-0.html">
+            
+                <a href="migration-from-vitepress-0.html">
+            
+                    
+                    VitePress 0.xからの移行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >MarkdownでVueを使用する</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="markdownでvueを使用する">MarkdownでVueを使用する</h1>
+<p>VitePressでは、各マークダウンファイルはHTMLにコンパイルされ、Vue Single-File Componentとして処理されます。つまり、マークダウン内で動的テンプレート、Vueコンポーネントの使用、または<code>&lt;script&gt;</code>タグを追加することによる任意のページ内Vueコンポーネントロジックなど、あらゆるVue機能を使用することができます。</p>
+<p>また、VitePressはVue 3のコンパイラを利用して、マークダウンの純粋に静的な部分を自動的に検出し、最適化することも重要なポイントです。静的なコンテンツは単一のプレースホルダーノードに最適化され、ページのJavaScriptペイロードから排除されます。また、クライアントサイドのハイドレーションでもスキップされます。要するに、どのページでも、動的な部分に対してのみ支払いが発生するのです。</p>
+<h2 id="templating">Templating</h2>
+<h2 id="補間">補間</h2>
+<p>各Markdownファイルは、まずHTMLにコンパイルされ、その後VueコンポーネントとしてViteのプロセスパイプラインに渡されます。つまり、テキストにVueスタイルの補間が使えるということです。</p>
+<p>Input</p>
+<pre><code class="lang-md">{{ 1 + 1 }}
+</code></pre>
+<p>Output</p>
+<pre><code>2
+</code></pre><h3 id="ディレクティブ">ディレクティブ</h3>
+<p>ディレクティブも有効です。</p>
+<p>Input</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;i in 3&quot;</span>&gt;</span>{{ i }}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<p>Output</p>
+<pre><code>1 2 3
+</code></pre><h3 id="サイト・ページデータへのアクセス">サイト・ページデータへのアクセス</h3>
+<p>useDataヘルパーを<code>&lt;script&gt;</code>ブロック内で使用し、データをページに公開することができます。</p>
+<p>Input</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> { useData } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vitepress&apos;</span>
+
+<span class="hljs-keyword">const</span> { page } = useData()
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span>{{ page }}<span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+</code></pre>
+<p>Output</p>
+<pre><code class="lang-json">{
+  <span class="hljs-string">&quot;path&quot;</span>: <span class="hljs-string">&quot;/using-vue.html&quot;</span>,
+  <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Using Vue in Markdown&quot;</span>,
+  <span class="hljs-string">&quot;frontmatter&quot;</span>: {}
+}
+</code></pre>
+<h3 id="エスケープ">エスケープ</h3>
+<p>デフォルトでは、フェンスで囲まれたコードブロックは、自動的にv-preでラップされます。インラインのコード・スニペットやプレーン・テキストの中に生のヒゲやVue固有の構文を表示するには、v-preカスタム・コンテナで段落をラップする必要があります。</p>
+<p>Input</p>
+<pre><code class="lang-md">::: v-pre
+<span class="hljs-code">`{{ This will be displayed as-is }}`</span>
+:::
+</code></pre>
+<p>Output</p>
+<pre><code>{{ This will be displayed as-is }}
+</code></pre><h2 id="コンポーネントの使用">コンポーネントの使用</h2>
+<p>より柔軟性が必要な場合、VitePressは独自のVue Componentsでオーサリングツールボックスを拡張することができます。</p>
+<h3 id="マークダウンでコンポーネントをインポートする">マークダウンでコンポーネントをインポートする</h3>
+<p>コンポーネントの使用箇所が少ない場合は、使用するファイル内でコンポーネントをインポートする方法が推奨されます。</p>
+<pre><code class="lang-md"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">setup</span>&gt;</span></span>
+import CustomComponent from &apos;../components/CustomComponent.vue&apos;
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+
+<span class="hljs-section"># Docs</span>
+
+This is a .md using a custom component
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">CustomComponent</span> /&gt;</span></span>
+
+<span class="hljs-section">## More docs</span>
+
+...
+</code></pre>
+<h3 id="テーマへのグローバルコンポーネントの登録">テーマへのグローバルコンポーネントの登録</h3>
+<p>もしコンポーネントがdocsの複数のページにわたって使用されるのであれば、テーマにグローバルに登録することができます（または、VitePressのデフォルトテーマを拡張する一環として登録できます）。詳細については、テーマガイドをご覧ください。</p>
+<p>.vitepress/theme/index.jsでは、enhanceApp関数がVueアプリのインスタンスを受け取るので、通常のVueアプリで行うようにコンポーネントを登録することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> DefaultTheme <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;vitepress/theme&apos;</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  ...DefaultTheme,
+  <span class="hljs-function"><span class="hljs-title">enhanceApp</span>(<span class="hljs-params">ctx</span>)</span> {
+    DefaultTheme.enhanceApp(ctx)
+    ctx.app.component(<span class="hljs-string">&apos;VueClickAwayExample&apos;</span>, VueClickAwayExample)
+  }
+}
+</code></pre>
+<p>マークダウンファイルの後半では、コンポーネントをコンテンツの間に挟み込むことができます。</p>
+<pre><code class="lang-md"><span class="hljs-section"># Vue Click Away</span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">VueClickAwayExample</span> /&gt;</span></span>
+</code></pre>
+<blockquote>
+<p>重要: カスタムコンポーネントの名前にハイフンが含まれているか、PascalCase であることを確認してください。さもなければ、インライン要素として扱われ、 <code>&lt;p&gt;</code> タグで囲まれます。これは、 <code>&lt;p&gt;</code> がその中にブロック要素を置くことを許さないため、水和の不一致につながります。</p>
+</blockquote>
+<h3 id="ヘッダーでコンポーネントを使用する-⚡">ヘッダーでコンポーネントを使用する ⚡</h3>
+<p>Vueのコンポーネントをヘッダで使用することができますが、以下の構文の違いに注意してください。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown</th>
+<th>Output HTML</th>
+<th>Parsed Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td># text <code>&lt;Tag/&gt;</code></td>
+<td><code>&lt;h1&gt;text &lt;Tag/&gt;&lt;/h1&gt;</code></td>
+<td>text</td>
+</tr>
+<tr>
+<td># text `<code>&lt;Tag/&gt;</code>`</td>
+<td><code>&lt;h1&gt;text &lt;code&gt;&amp;lt;Tag/&amp;gt;&lt;/code&gt;&lt;/h1&gt;</code></td>
+<td><code>text &lt;Tag/&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;code&gt;</code> でラップされたHTMLはそのまま表示され、ラップされていないHTMLのみがVueによってパースされます。</p>
+<blockquote>
+<p>ヒント: 出力されたHTMLはmarkdown-itによって実現され、解析されたヘッダーはVitePressによって処理されます（そしてサイドバーと文書タイトルの両方に使用されます）。</p>
+</blockquote>
+<h2 id="cssプリプロセッサーを利用する">CSSプリプロセッサーを利用する</h2>
+<p>VitePressは、CSSプリプロセッサー（.scss, .sass, .less, .styl, .stylusファイル）をビルトインでサポートしています。Vite特有のプラグインをインストールする必要はありませんが、対応するプリプロセッサー自体をインストールする必要があります。</p>
+<pre><code># .scss and .sass
+npm install -D sass
+
+# .less
+npm install -D less
+
+# .styl and .stylus
+npm install -D stylus
+</code></pre><p>そして、Markdownやテーマのコンポーネントで以下のように使用することができます。</p>
+<pre><code class="lang-vue">&lt;style lang=&quot;sass&quot;&gt;
+.title
+  font-size: 20px
+&lt;/style&gt;
+</code></pre>
+<h2 id="スクリプト＆スタイル-ホイスティング">スクリプト＆スタイル ホイスティング</h2>
+<p>時々、いくつかのJavaScriptまたはCSSを現在のページのみに適用する必要がある場合があります。そのような場合、Markdownファイルに直接ルートレベルの <code>&lt;script&gt;</code> または <code>&lt;style&gt;</code> ブロックを記述することができます。これらはコンパイルされたHTMLからホイストされ、結果として得られるVueの単一ファイルコンポーネントの <code>&lt;script&gt;</code> および <code>&lt;style&gt;</code> ブロックとして使用されます。</p>
+<p>これは、インラインスクリプトでレンダリングされ、インラインCSSでスタイルされます。</p>
+<h2 id="組み込みコンポーネント">組み込みコンポーネント</h2>
+<p>VitePressは、ClientOnlyやOutboundLinkのようなVueの組み込みコンポーネントを提供しています。詳細については、グローバルコンポーネントガイドをご覧ください。</p>
+<p>また、こちらもご覧ください。</p>
+<ul>
+<li>ヘッダーでコンポーネントを使用する</li>
+</ul>
+<h2 id="ブラウザapiアクセス制限">ブラウザAPIアクセス制限</h2>
+<p>VitePressアプリケーションは、静的ビルドを生成する際にNode.jsでサーバーレンダリングされるため、Vueの使用はユニバーサルコード要件に準拠する必要があります。つまり、Browser / DOM APIへのアクセスは、beforeMountまたはmountされたフックに限定するようにしてください。</p>
+<p>SSRフレンドリーでないコンポーネント（例えば、カスタムディレクティブを含む）を使用またはデモする場合は、組み込みの <code>&lt;ClientOnly&gt;</code> コンポーネントの中にそれらをラップすることができます。</p>
+<pre><code class="lang-md"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ClientOnly</span>&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">NonSSRFriendlyComponent</span> /&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">ClientOnly</span>&gt;</span></span>
+</code></pre>
+<p>これは、インポート時にブラウザAPIにアクセスするコンポーネントやライブラリを修正するものではないことに注意してください。インポート時にブラウザ環境を仮定するコードを使用するには、適切なライフサイクルフックでそれらを動的にインポートする必要があります。</p>
+<pre><code class="lang-vue">&lt;script&gt;
+export default {
+  mounted() {
+    import(&apos;./lib-that-access-window-on-import&apos;).then((module) =&gt; {
+      // use code
+    })
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>モジュールエクスポートのデフォルトがVueコンポーネントであれば、動的に登録することができます。</p>
+<pre><code class="lang-vue">&lt;template&gt;
+  &lt;component
+    v-if=&quot;dynamicComponent&quot;
+    :is=&quot;dynamicComponent&quot;&gt;
+  &lt;/component&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      dynamicComponent: null
+    }
+  },
+
+  mounted() {
+    import(&apos;./lib-that-access-window-on-import&apos;).then((module) =&gt; {
+      this.dynamicComponent = module.default
+    })
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<p>こちらもご覧ください。</p>
+<ul>
+<li>Vue.js &gt; Dynamic Components</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="frontmatter.html" class="navigation navigation-prev " aria-label="Previous page: フロントマター">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="api.html" class="navigation navigation-next " aria-label="Next page: APIリファレンス">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MarkdownでVueを使用する","level":"2.4","depth":1,"next":{"title":"APIリファレンス","level":"2.5","depth":1,"path":"api.md","ref":"api.md","articles":[]},"previous":{"title":"フロントマター","level":"2.3","depth":1,"path":"frontmatter.md","ref":"frontmatter.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"using-vue.md","mtime":"2022-11-15T05:49:41.735Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-15T06:44:03.503Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
