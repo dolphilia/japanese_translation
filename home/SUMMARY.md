@@ -23,7 +23,7 @@
 * [Processing](https://dolphilia.github.io/japanese_translation/processing/)
 * [pygameリファレンス](https://dolphilia.github.io/japanese_translation/pygame/)
 * [stb](https://dolphilia.github.io/japanese_translation/stb/)
-* [VitePress](https://dolphilia.github.io/japanese_translation/VitePress/)
+* [VitePress](https://dolphilia.github.io/japanese_translation/vitepress/)
 
 ### まだドキュメント化していない文書
 
