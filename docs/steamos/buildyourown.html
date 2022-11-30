@@ -1,0 +1,367 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Steamマシンを組み立てる · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="oem.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="buildyourown.html">
+            
+                <a href="buildyourown.html">
+            
+                    
+                    Steamマシンを組み立てる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="oem.html">
+            
+                <a href="oem.html">
+            
+                    
+                    OEM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Steamマシンを組み立てる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="自分だけのsteam-machineを組み立てる">自分だけのSteam Machineを組み立てる</h1>
+<p>SteamOS は、弊社の Linux ベースのオペレーティングシステムです。根幹となるシステムは Debian 8 （コードネームは Debian Jessie) を利用しています。 SteamOS は堅牢な Debian コアの上に築かれており、リビングルームでの使用に最適化されています。さらに、SteamOS は利用者に完全な管理権限があるオープンな Linux プラットフォームです。自分のシステムを管理し、お好きなように新しいソフトウェアやコンテンツをインストールすることができます。</p>
+<h2 id="steamos-をインストール・カスタマイズする">SteamOS をインストール・カスタマイズする</h2>
+<h3 id="steamos-のハードウェア要件は？">SteamOS のハードウェア要件は？</h3>
+<ul>
+<li>プロセッサー: Intel あるいは AMD の 64bit 対応プロセッサ </li>
+<li>メモリー: 4GB 以上の RAM </li>
+<li>ハードディスク: 200GB 以上のディスク容量 </li>
+<li>ビデオカード: <ul>
+<li>NVIDIA グラフィックスカード</li>
+<li>AMD グラフィックスカード (RADEON 8500 以降)</li>
+<li>Intel グラフィックス </li>
+</ul>
+</li>
+<li>追加要件: インストール用の USB ポート</li>
+<li>UEFI ファームウェア (推奨) </li>
+</ul>
+<blockquote>
+<p>注：このイメージはSteam Deckと互換性がありません。Steam Deckのリカバリーイメージをお探しの場合は、<a href="https://help.steampowered.com/faqs/view/1B71-EDF2-EB6D-2BB3" target="_blank">こちらのリンク</a>を開いてください。</p>
+</blockquote>
+<h3 id="steam-os-をインストールする方法は？">Steam OS をインストールする方法は？</h3>
+<p>Steam OS をインストールする方法は二種類存在します。推奨されるのは自動インストールの方法で、こちらはデフォルトのディスク設定を使ってインストールを行います。もう一つはエキスパートの方法で、Debian インストーラを利用した自動インストールの後に一部の設定が可能です。以下の方法より 1 つお選び下さい。</p>
+<blockquote>
+<p>警告: いずれのインストール方法も対象のコンピュータ内の全データを消去します</p>
+</blockquote>
+<h3 id="自動インストール">自動インストール</h3>
+<ol>
+<li><a href="https://store.steampowered.com/steamos/download/?ver=custom" target="_blank">SteamOS インストーラをダウンロードする</a></li>
+<li>SteamOS.zip ファイルを FAT32 でフォーマットされた空の USB メモリに解凍します。必ず MBR パーティションを使用してください。</li>
+<li>対象のコンピュータへその USB メモリを挿し込みます。コンピュータを起動し、BIOS に USB メモリから起動するよう指示します。(大抵はF8、F11、F12などのキーで BIOS のブートメニューを呼び出せます。)</li>
+<li>必ず UEFI を選択して下さい。&quot;UEFI: Patriot Memory PMAP&quot;などのように記載されています。UEFI が存在しなければ、BIOS の設定から UEFI サポートを有効化する必要があります。</li>
+<li>メニューから&quot;自動インストール (ディスクは消去されます！)&quot;を選択します。</li>
+<li>残りのインストール作業は全て自動で行われ、ドライブの再パーティションと SteamOS のインストールが完了します。</li>
+<li>インストールが完了したら、システムが再起動した後自動的にログインされ Steam がインストールされます。このときインターネット接続が必要になります。インターネットに接続している場合、Steam は自動でインストールされます。インターネットに接続していない場合(例えば、Wi-Fi アクセスポイントに接続する必要がある場合など)、そのことを通知するポップアップが表示されます。ポップアップを閉じるとネットワーク設定ができる UI が表示されます。インターネットに接続した後にその UI を閉じると Steam が自動でインストールされます。</li>
+<li>Steam のインストールが完了したら、システムは自動で再起動しシステムパーティションのバックアップが作成されます。</li>
+<li>バックアップが完了した後に、&quot;再起動&quot;を選択すると新たにインストールされた SteamOS の利用を開始できます。</li>
+</ol>
+<h3 id="エキスパートインストール">エキスパートインストール</h3>
+<ol>
+<li><a href="https://store.steampowered.com/steamos/download/?ver=custom" target="_blank">SteamOS インストーラをダウンロードする</a></li>
+<li>SteamOS.zip ファイルを FAT32 でフォーマットされた空の USB メモリに解凍します。必ず MBR パーティションを使用してください。</li>
+<li>対象のコンピュータへその USB メモリを挿し込みます。コンピュータを起動し、BIOS に USB メモリから起動するよう指示します。(大抵はF8、F11、F12などのキーで BIOS のブートメニューを呼び出せます。)</li>
+<li>必ず UEFI を選択して下さい。&quot;UEFI: Patriot Memory PMAP&quot;などのように記載されています。UEFI が存在しなければ、BIOS の設定から UEFI サポートを有効化する必要があります。</li>
+<li>メニューから&quot;エキスパートインストール&quot;を選択します。</li>
+<li>使用言語、場所、キーボードレイアウトを選択します。</li>
+<li>ここでデフォルトのディスクパーティションを変更することもできます。</li>
+<li>残りのインストール作業は全て自動で行われ、SteamOS のインストールが完了します。</li>
+<li>インストールが完了したら、システムが再起動した後自動的にログインされ Steam がインストールされます。このときインターネット接続が必要になります。インターネットに接続している場合、Steam は自動でインストールされます。インターネットに接続していない場合(例えば、Wi-Fi アクセスポイントに接続する必要がある場合など)、そのことを通知するポップアップが表示されます。ポップアップを閉じるとネットワーク設定ができる UI が表示されます。インターネットに接続した後にその UI を閉じると Steam が自動でインストールされます。</li>
+<li>Steam のインストールが完了したら、システムは自動で再起動しシステムパーティションのバックアップが作成されます。</li>
+<li>バックアップが完了した後に、&quot;再起動&quot;を選択すると新たにインストールされた SteamOS の利用を開始できます。</li>
+</ol>
+<hr>
+<h2 id="スレッド">スレッド</h2>
+<p>他の SteamOS ユーザーとの対話に参加しよう</p>
+<p><a href="https://steamcommunity.com/groups/steamuniverse/discussions/1/" target="_blank">スレッドに参加</a></p>
+<h2 id="詳細">詳細</h2>
+<p>SteamOS の詳細</p>
+<p><a href="https://steamcommunity.com/groups/steamuniverse/discussions/1/648814395741989999/" target="_blank">SteamOS FAQ</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: はじめに">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="oem.html" class="navigation navigation-next " aria-label="Next page: OEM">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Steamマシンを組み立てる","level":"1.2","depth":1,"next":{"title":"OEM","level":"1.3","depth":1,"path":"oem.md","ref":"oem.md","articles":[]},"previous":{"title":"はじめに","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"buildyourown.md","mtime":"2022-11-30T14:10:19.409Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-11-30T14:10:36.687Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
