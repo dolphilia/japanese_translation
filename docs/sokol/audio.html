@@ -1,0 +1,769 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>audio · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fetch.html" />
+    
+    
+    <link rel="prev" href="time.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">コアライブラリ</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="gfx.html">
+            
+                <a href="gfx.html">
+            
+                    
+                    gfx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="app.html">
+            
+                <a href="app.html">
+            
+                    
+                    app
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="time.html">
+            
+                <a href="time.html">
+            
+                    
+                    time
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="audio.html">
+            
+                <a href="audio.html">
+            
+                    
+                    audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="fetch.html">
+            
+                <a href="fetch.html">
+            
+                    
+                    fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="args.html">
+            
+                <a href="args.html">
+            
+                    
+                    args
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="glue.html">
+            
+                <a href="glue.html">
+            
+                    
+                    glue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">ユーティリティ</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="imgui.html">
+            
+                <a href="imgui.html">
+            
+                    
+                    imgui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="nuklear.html">
+            
+                <a href="nuklear.html">
+            
+                    
+                    nuklear
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="gl.html">
+            
+                <a href="gl.html">
+            
+                    
+                    gl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="fontstash.html">
+            
+                <a href="fontstash.html">
+            
+                    
+                    fontstash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="gfx_imgui.html">
+            
+                <a href="gfx_imgui.html">
+            
+                    
+                    gfx_imgui
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="debugtext.html">
+            
+                <a href="debugtext.html">
+            
+                    
+                    debugtext
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="memtrack.html">
+            
+                <a href="memtrack.html">
+            
+                    
+                    memtrack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="shape.html">
+            
+                <a href="shape.html">
+            
+                    
+                    shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="color.html">
+            
+                <a href="color.html">
+            
+                    
+                    color
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="spine.html">
+            
+                <a href="spine.html">
+            
+                    
+                    spine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >audio</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="sokolaudioh">sokol_audio.h</h2>
+<p>クロスプラットフォーム・オーディオストリーミングAPI</p>
+<p>プロジェクトURL: <a href="https://github.com/floooh/sokol" target="_blank">https://github.com/floooh/sokol</a></p>
+<p>このファイルをCまたはC++ファイルにインクルードする前に記述してください。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SOKOL_IMPL</span>
+</code></pre>
+<p>または</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> SOKOL_AUDIO_IMPL</span>
+</code></pre>
+<p>オプションとして以下の定義を独自の実装で提供する:</p>
+<ul>
+<li>SOKOL_DUMMY_BACKEND  - ダミーバックエンドを使用する</li>
+<li>SOKOL_ASSERT(c)      - 独自のアサートマクロ (デフォルト: assert(c))</li>
+<li>SOKOL_AUDIO_API_DECL - 公開関数宣言のプレフィックス (デフォルト: extern)</li>
+<li>SOKOL_API_DECL       - SOKOL_AUDIO_API_DECL と同じです。</li>
+<li><p>SOKOL_API_IMPL       - public 関数実装の接頭辞（デフォルト：-）。</p>
+</li>
+<li><p>SAUDIO_RING_MAX_SLOTS           - プッシュオーディオリングバッファの最大スロット数 (デフォルト 1024)</p>
+</li>
+<li>SAUDIO_OSX_USE_SYSTEM_HEADERS   - macOS で埋め込み CoreAudio 宣言の代わりにシステムヘッダを強制的にインクルードするために、これを定義します。</li>
+</ul>
+<p>sokol_audio.hがDLLとしてコンパイルされる場合、宣言または実装を含む前に以下を定義してください。:</p>
+<pre><code class="lang-c">SOKOL_DLL
+</code></pre>
+<p>Windowsでは、SOKOL_DLLは、必要に応じてSOKOL_AUDIO_API_DECLを<strong>declspec(dllexport) または </strong>declspec(dllimport) として定義します。</p>
+<p>以下のライブラリーとリンクしています。</p>
+<ul>
+<li>macOS: AudioToolbox</li>
+<li>iOS: AudioToolbox, AVFoundation</li>
+<li>Linux: asound</li>
+<li>Android: OpenSLESとのリンク</li>
+<li>Windows + MSVC または Clang ツールチェイン: pragma-comment-libによりソース内で定義されるため、何もする必要はありません。</li>
+<li>Windows + MINGW/MSYS2 + gcc: mwin32 でコンパイルし、-lole32 でリンクする。</li>
+</ul>
+<h2 id="機能概要">機能概要</h2>
+<p>32ビットフロートサンプルのモノラルまたはステレオストリームを提供し、Sokol Audioがプラットフォーム固有のオーディオバックエンドにフィードします:</p>
+<ul>
+<li>Windows: WASAPI</li>
+<li>Linux: ALSA</li>
+<li>macOS: CoreAudio</li>
+<li>iOS: CoreAudio + AVAudioSession</li>
+<li>emscripten: ScriptProcessorNodeを使ったWebAudio</li>
+<li>Android: OpenSLES</li>
+</ul>
+<p>Sokol-Audioは、バッファミキシングやボリュームコントロールは行いませんので、複数の独立したサンプルデータの入力ストリームがある場合は、Sokol Audioにデータを転送する前に自分でミキシングを行う必要があります。</p>
+<p>サンプルデータの提供方法には、次の2つがあります。:</p>
+<ol>
+<li>コールバックモデル。Sokol Audioが新しいサンプルを必要とするときに呼び出されるコールバック関数を提供します。emscriptenを除くすべてのプラットフォームで、この関数は別のスレッドから呼び出されます。</li>
+<li>プッシュモデル。サンプルデータの小さなブロックを、メインループや作成したスレッドからプッシュするコードです。プッシュされたデータはリングバッファに格納され、必要なときにバックエンドのコードによって引き出されます。</li>
+</ol>
+<p>コールバックモデルは、サンプルデータをオーディオバックエンドに送り込む最も直接的な方法であり、また可動部が少ない（あなたのコードとオーディオバックエンドの間にリングバッファがない）ため、好まれます。</p>
+<p>時には、別のスレッドで実行されるコールバック関数で直接オーディオストリームを生成することができない場合があります。このような場合、Sokol Audioは便利なプッシュモデルを提供します。</p>
+<h2 id="sokol-audio-soloud-と-miniaudio">sokol-audio, SoLoud と MiniAudio</h2>
+<p>WASAPI, ALSA, OpenSLES, CoreAudio のバックエンドコードは SoLoud ライブラリから引用しています (若干の修正を加えているので、バグがあれば私のせいです)。もし、より高機能なオーディオソリューションが必要であれば、SoLoud をチェックしてみてください、素晴らしいです。</p>
+<p><a href="https://github.com/jarikomppa/soloud" target="_blank">https://github.com/jarikomppa/soloud</a></p>
+<p>SoLoudとsokol-audioの中間的な機能を持つMiniAudioは、もう一つの選択肢です:</p>
+<p><a href="https://github.com/mackron/miniaudio" target="_blank">https://github.com/mackron/miniaudio</a></p>
+<h2 id="用語集">用語集</h2>
+<ul>
+<li>stream buffer:</li>
+</ul>
+<p>内部のオーディオデータバッファで、通常はバックエンド API によって提供されます。ストリームバッファのサイズは基本レイテンシーを定義し、より小さなバッファはより低いレイテンシーを持ちますが、オーディオグリッチを引き起こす可能性があります。より大きなバッファはグリッチを軽減または除去しますが、より高い基本レイテンシを持ちます。</p>
+<ul>
+<li>stream callback:</li>
+</ul>
+<p>Sokol Audioが新しいサンプルを必要とするときに呼び出される、オプションのコールバック関数です。Windows、macOS/iOS、Linuxでは、これは別のスレッドで呼び出され、WebAudioでは、ブラウザのスレッドでフレームごとに呼び出されます。</p>
+<ul>
+<li>channel:</li>
+</ul>
+<p>オーディオデータのディスクリートトラックで、現在1チャンネル（モノラル）、2チャンネル（ステレオ）をサポートし、テストしています。</p>
+<ul>
+<li>sample:</li>
+</ul>
+<p>ある時間における、あるチャンネルのオーディオ信号の大きさ。Sokol Audioでは、サンプルは-1.0から+1.0の範囲にある32ビット浮動小数点数である。</p>
+<ul>
+<li>frame:</li>
+</ul>
+<p>ある時間における全チャンネルのサンプルの密な集合。モノラルでは1フレームは1サンプルです。ステレオの場合、1フレームは2サンプルです。</p>
+<ul>
+<li>packet:</li>
+</ul>
+<p>Sokol Audioでは、メインスレッドが新しいオーディオデータを提供する速度と、ストリーミングスレッドがオーディオデータを消費する速度を切り離すために、オーディオデータの小さなチャンクがメインスレッドからオーディオストリーミングスレッドに移動されます。</p>
+<h2 id="sokol-audioとの連携">sokol-audioとの連携</h2>
+<p>まず、お好みのオーディオ再生オプションで saudio_setup() を呼び出します。ほとんどの場合、デフォルト値のままでかまいません。これらは、すべてのオーディオバックエンドにおいて、低遅延とグリッチのない再生の良いバランスを提供します。</p>
+<p>コールバックモデルを使用したい場合は、saudio_desc.stream_cb または saudio_desc.stream_userdata_cb でストリームコールバック関数を提供する必要があり、それ以外の場合は両方の関数ポインタをゼロ初期化にしておく。</p>
+<p>プッシュ型とデフォルトの再生パラメータを使用:</p>
+<pre><code class="lang-c">saudio_setup(&amp;(saudio_desc){<span class="hljs-number">0</span>});
+</code></pre>
+<p>ストリームコールバックモデルとデフォルトの再生パラメータを使用する:</p>
+<pre><code class="lang-c">saudio_setup(&amp;(saudio_desc){
+    .stream_cb = my_stream_callback
+});
+</code></pre>
+<p>標準のストリームコールバックはユーザーデータ引数を持ちませんので、必要な場合は代替の stream_userdata_cb を使用し、user_data ポインタも設定します。:</p>
+<pre><code class="lang-c">saudio_setup(&amp;(saudio_desc){
+    .stream_userdata_cb = my_stream_callback,
+    .user_data = &amp;my_data
+});
+</code></pre>
+<p>saudio_desc 構造体を通じて、以下の再生パラメータを提供することができる。:</p>
+<p>一般的なパラメータ（Stream-callbackとPush-modelの両方）。:</p>
+<p><code>int sample_rate</code>     -- サンプルレート（Hz）、デフォルト：44100
+<code>int num_channels</code>    -- チャンネル数，デフォルト：1（モノラル）
+<code>int buffer_frames</code>   -- ストリーミングバッファのフレーム数、デフォルト：2048</p>
+<p>ストリームコールバックプロトタイプ（ユーザーデータあり、またはなし）:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">void</span> (*stream_cb)(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels)
+<span class="hljs-keyword">void</span> (*stream_userdata_cb)(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels, <span class="hljs-keyword">void</span>* user_data)
+</code></pre>
+<p>ユーザ提供ストリームコールバックへの関数ポインタ。</p>
+<p>プッシュモデルのパラメータ。</p>
+<p><code>int packet_frames</code>   -- パケット内のフレーム数、デフォルト：128
+<code>int num_packets</code>     -- リングバッファのパケット数、デフォルト：64</p>
+<p>sample_rate と num_channels パラメータはオーディオバックエンド用のヒントであり、実際の再生に使用される値であることは保証されない。</p>
+<p>実際のパラメータを取得するには、saudio_setup()の後に以下の関数を呼び出してください。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">saudio_sample_rate</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
+<span class="hljs-keyword">int</span> <span class="hljs-title">saudio_channels</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>;
+</code></pre>
+<p>チャンネル数が要求と異なることはまずありませんが、サンプルレートが異なることは珍しいことではありません。</p>
+<p>(注：オーディオバックエンドが、例えばブルートゥースヘッドセットを接続するなど、出力デバイスを切り替えたときに、異なるサンプルレートに切り替える可能性があるという未解決の問題がありますが、このケースは現在Sokol Audioでは扱われていません）。</p>
+<p>オーディオの初期化が成功したかどうかは saudio_isvalid() で確認することができます。何らかの理由でバックエンドの初期化に失敗した場合(例えば、マシンにオーディオデバイスがない場合)、これはfalseを返します。初期化に失敗した後にSokol Audioの関数が呼ばれても、黙って失敗するので、音声出力がないことを除けば、何も悪いことは起こりません。</p>
+<p>アプリケーションが終了する前に</p>
+<pre><code class="lang-c">saudio_shutdown();
+</code></pre>
+<p>これにより、オーディオスレッドが停止し（Linux、Windows、macOS/iOS）、オーディオバックエンドが適切にシャットダウンされます。</p>
+<h2 id="ストリームコールバックモデル">ストリームコールバックモデル</h2>
+<p>Sokol Audioをストリームコールバックモードで使用するには、 saudio_setup()を呼び出すときに、saudio_desc構造体に以下のようなコールバック関数を指定します。:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stream_cb</span><span class="hljs-params">(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels)</span> </span>{
+    ...
+}
+</code></pre>
+<p>または、ユーザーデータ引数を指定した代替バージョン:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stream_userdata_cb</span><span class="hljs-params">(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels, <span class="hljs-keyword">void</span>* user_data)</span> </span>{
+    <span class="hljs-keyword">my_data_t</span>* my_data = (<span class="hljs-keyword">my_data_t</span>*) user_data;
+    ...
+}
+</code></pre>
+<p>コールバック関数の仕事は、<em>buffer</em>を32ビットfloatサンプル値で満たすことです。</p>
+<p>無音を出力するには、バッファをゼロで埋めます。:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stream_cb</span><span class="hljs-params">(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels)</span> </span>{
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> num_samples = num_frames * num_channels;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num_samples; i++) {
+        buffer[i] = <span class="hljs-number">0.0f</span>;
+    }
+}
+</code></pre>
+<p>ステレオ出力（num_channels == 2）の場合，左チャンネルと右チャンネルのサンプルはインターリーブされます:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stream_cb</span><span class="hljs-params">(<span class="hljs-keyword">float</span>* buffer, <span class="hljs-keyword">int</span> num_frames, <span class="hljs-keyword">int</span> num_channels)</span> </span>{
+    assert(<span class="hljs-number">2</span> == num_channels);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num_frames; i++) {
+        buffer[<span class="hljs-number">2</span>*i + <span class="hljs-number">0</span>] = ...;  <span class="hljs-comment">// left channel</span>
+        buffer[<span class="hljs-number">2</span>*i + <span class="hljs-number">1</span>] = ...;  <span class="hljs-comment">// right channel</span>
+    }
+}
+</code></pre>
+<p>ストリームコールバック関数は別のスレッドで実行されていることに留意してください。もしメインスレッドとデータを共有する必要がある場合は、共有データへのアクセスをスレッドセーフにするために自分で注意する必要があります!</p>
+<h2 id="プッシュ・モデル">プッシュ・モデル</h2>
+<p>音声データの提供に push モデルを使用するには、saudio_setup() を呼び出す際に saudio_desc 構造体の stream_cb フィールドを設定しない (ゼロ初期化にしておく) だけです。</p>
+<p>プッシュモデルでサンプルデータを提供するには、一定の間隔で(例えば1フレームに1回)saudio_push()関数を呼び出します。saudio_expect()関数を呼んで、Sokol Audioにリングバッファの空き容量を問い合わせることもできますが、正しいサンプルレートで連続的にデータを提供するなら、saudio_expect()は必要ありません（サンプル生成コードを再生レートと同期/スロットルする簡単な方法ですが）。</p>
+<p>saudio_push() では、個々のサンプル値をプッシュするのはあまり効率的ではないので、独自の中間サンプルバッファを維持する必要があるかもしれません。次の例は、sokol-samples (<a href="https://github.com/floooh/sokol-samples" target="_blank">https://github.com/floooh/sokol-samples</a>) の MOD player サンプルのものです。:</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> num_frames = saudio_expect();
+<span class="hljs-keyword">if</span> (num_frames &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> num_samples = num_frames * saudio_channels();
+    read_samples(flt_buf, num_samples);
+    saudio_push(flt_buf, num_frames);
+}
+</code></pre>
+<p>もうひとつの方法は、saudio_expect() を無視して、小さなバッチで生成されたサンプルをそのままプッシュすることです。この場合、正しいサンプルレートでサンプルを生成する必要があります。:</p>
+<p>次の例は、Tiny Emulators プロジェクト (<a href="https://github.com/floooh/chips-test" target="_blank">https://github.com/floooh/chips-test</a>) から引用したものです。これはモノラル再生のため、 (num_samples == num_frames) となります。:</p>
+<pre><code class="lang-c"><span class="hljs-comment">// tick the sound generator</span>
+<span class="hljs-keyword">if</span> (ay38910_tick(&amp;sys-&gt;psg)) {
+    <span class="hljs-comment">// new sample is ready</span>
+    sys-&gt;sample_buffer[sys-&gt;sample_pos++] = sys-&gt;psg.sample;
+    <span class="hljs-keyword">if</span> (sys-&gt;sample_pos == sys-&gt;num_samples) {
+        <span class="hljs-comment">// new sample packet is ready</span>
+        saudio_push(sys-&gt;sample_buffer, sys-&gt;num_samples);
+        sys-&gt;sample_pos = <span class="hljs-number">0</span>;
+    }
+}
+</code></pre>
+<h2 id="webaudio-バックエンド">webaudio バックエンド</h2>
+<p>WebAudio バックエンドは、現在 ScriptProcessorNode コールバックを使用してサンプルデータを WebAudio に送り込んでいます。ScriptProcessorNodeはメインスレッドから実行されるため、しばらく非推奨でしたが、デフォルトの初期化パラメータを使えば「かなり」うまくいきます。最終的にSokol AudioはAudio Workletsを使用する予定ですが、これにはもう少し必要なものがあります（Audio Workletsをあらゆるところに実装し、SharedArrayBuffersを再び有効にし、Audio WorkletsはScriptProcessorNodeよりもずっと複雑なので、オーディオデータがメインスレッドから来る必要があるなら実装作業の観点から「低コスト」の解決法を見いだす必要があります）。</p>
+<p>emscripten用にコンパイルする場合、WebAudioバックエンドが自動的に選択されます（<strong>EMSCRIPTEN</strong>定義が存在します）。</p>
+<ul>
+<li><a href="https://developers.google.com/web/updates/2017/12/audio-worklet" target="_blank">https://developers.google.com/web/updates/2017/12/audio-worklet</a></li>
+<li><a href="https://developers.google.com/web/updates/2018/06/audio-worklet-design-pattern" target="_blank">https://developers.google.com/web/updates/2018/06/audio-worklet-design-pattern</a></li>
+</ul>
+<p>&quot;Blob URLs&quot;: <a href="https://www.html5rocks.com/en/tutorials/workers/basics/" target="_blank">https://www.html5rocks.com/en/tutorials/workers/basics/</a></p>
+<p>Also see: <a href="https://blog.paul.cx/post/a-wait-free-spsc-ringbuffer-for-the-web/" target="_blank">https://blog.paul.cx/post/a-wait-free-spsc-ringbuffer-for-the-web/</a></p>
+<h2 id="coreaudioのバックエンド">CoreAudioのバックエンド</h2>
+<p>macOSとiOSではCoreAudioバックエンドが選択されています(<strong>APPLE</strong>が定義されています)。macOSではCoreAudioのAPIはCで実装されているため（Objective-Cではない）、Sokol Audioの実装部分をCのソースファイルに含めることが可能です。</p>
+<p>しかし、iOSでは、AVAudioSessionオブジェクトに依存しているため、Sokol AudioはObjective-Cとしてコンパイルする必要があります。iOSのコードパスは、ARC（Automatic Reference Counting）の有無にかかわらず、コンパイルすることができます。</p>
+<p>スレッドの同期には、CoreAudioバックエンドはpthread<em>mutex</em>*関数を使用します。</p>
+<p>入力された浮動小数点サンプルは、さらに変換されることなく、直接CoreAudioに転送されます。</p>
+<p>Sokol Audioを使用するmacOSおよびiOSアプリケーションは、AudioToolboxフレームワークと連携する必要があります。</p>
+<h2 id="wasapiバックエンド">WASAPIバックエンド</h2>
+<p>Windowsでコンパイルする場合、WASAPIバックエンドが自動的に選択されます（_WIN32が定義されています）。</p>
+<p>スレッドの同期にはWin32のクリティカルセクションが使用されます。</p>
+<p>WASAPIは要求されたものとは異なるサイズのストリーミングバッファを使用することがあるので、基本レイテンシは若干大きくなるかもしれません。現在のバックエンドの実装では、入力される浮動小数点サンプル値は符号付き16ビット整数に変換されます。</p>
+<p>必要なWindowsシステムDLLは#pragma comment(lib, ...)でリンクされているので、ビルド時に追加のリンカーライブを追加する必要はありません（そうでなければ、これはsokol_audio.hで修正されるべきバグとなります）。</p>
+<h2 id="alsaバックエンド">ALSAバックエンド</h2>
+<p>Linux でコンパイルする場合、ALSA バックエンドが自動的に選択されます (&apos;linux&apos; が定義されています)。</p>
+<p>スレッドの同期には pthread<em>mutex</em>* 関数が使用されます。</p>
+<p>サンプルは 32-bit float フォーマットで ALSA に直接フォワードされ、それ以上の変換は行われません。</p>
+<p>asound&apos; ライブラリとリンクする必要があり、 <code>&lt;alsa/asoundlib.h&gt;</code> ヘッダが存在しなければなりません (通常、両方とも ALSA の開発パッケージの中にインストールされています)。</p>
+<h2 id="メモリ割り当てオーバーライド">メモリ割り当てオーバーライド</h2>
+<p>初期化時のメモリ割り当て関数は、以下のようにオーバーライドすることができます。:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span>* <span class="hljs-title">my_alloc</span><span class="hljs-params">(<span class="hljs-keyword">size_t</span> size, <span class="hljs-keyword">void</span>* user_data)</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">malloc</span>(size);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">my_free</span><span class="hljs-params">(<span class="hljs-keyword">void</span>* ptr, <span class="hljs-keyword">void</span>* user_data)</span> </span>{
+    <span class="hljs-built_in">free</span>(ptr);
+}
+
+...
+    saudio_setup(&amp;(saudio_desc){
+        <span class="hljs-comment">// ...</span>
+        .allocator = {
+            .alloc = my_alloc,
+            .<span class="hljs-built_in">free</span> = my_free,
+            .user_data = ...,
+        }
+    });
+...
+</code></pre>
+<p>オーバーライドが提供されない場合、malloc と free が使用されます。</p>
+<p>ただし、これはsokol_audio.h自身によって行われるメモリ割り当ての呼び出しにのみ影響し、OSライブラリでの割り当ては行われません。</p>
+<p>メモリ確保は saudio_setup() が呼ばれたのと同じスレッドでのみ行われるので、スレッドセーフについて心配する必要はありません。</p>
+<h2 id="ログ関数オーバーライド">ログ関数オーバーライド</h2>
+<p>初期化時に以下のようにログ関数をオーバーライドすることができます:</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">my_log</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* message, <span class="hljs-keyword">void</span>* user_data)</span> </span>{
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;saudio says: \s\n&quot;</span>, message);
+}
+
+...
+    saudio_setup(&amp;(saudio_desc){
+        <span class="hljs-comment">// ...</span>
+        .logger = {
+            .log_cb = my_log,
+            .user_data = ...,
+        }
+    });
+...
+</code></pre>
+<p>オーバーライドが提供されない場合、ほとんどのプラットフォームでputsが使用されます。Android では、代わりに __android_log_write が使用されます。</p>
+<h2 id="license">LICENSE</h2>
+<p>zlib/libpng license</p>
+<p>Copyright (c) 2018 Andre Weissflog</p>
+<p>This software is provided &apos;as-is&apos;, without any express or implied warranty.
+In no event will the authors be held liable for any damages arising from the
+use of this software.</p>
+<p>Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:</p>
+<pre><code>1. The origin of this software must not be misrepresented; you must not
+claim that you wrote the original software. If you use this software in a
+product, an acknowledgment in the product documentation would be
+appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not
+be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+distribution.
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="time.html" class="navigation navigation-prev " aria-label="Previous page: time">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fetch.html" class="navigation navigation-next " aria-label="Next page: fetch">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"audio","level":"2.4","depth":1,"next":{"title":"fetch","level":"2.5","depth":1,"path":"fetch.md","ref":"fetch.md","articles":[]},"previous":{"title":"time","level":"2.3","depth":1,"path":"time.md","ref":"time.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"audio.md","mtime":"2022-12-08T02:30:18.708Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-12-15T06:38:06.519Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -22,6 +22,7 @@
 * [Ninja](https://dolphilia.github.io/japanese_translation/ninja/)
 * [Processing](https://dolphilia.github.io/japanese_translation/processing/)
 * [pygameリファレンス](https://dolphilia.github.io/japanese_translation/pygame/)
+* [sokol](https://dolphilia.github.io/japanese_translation/sokol/)
 * [stb](https://dolphilia.github.io/japanese_translation/stb/)
 * [SteamOS](https://dolphilia.github.io/japanese_translation/steamos/)
 * [VitePress](https://dolphilia.github.io/japanese_translation/vitepress/)
