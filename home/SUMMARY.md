@@ -8,6 +8,7 @@
 ### 目次
 
 * [ANGLE](https://dolphilia.github.io/japanese_translation/angle/)
+* [CivetWeb](https://dolphilia.github.io/japanese_translation/civetweb/)
 * [C言語ベストプラクティス](https://dolphilia.github.io/japanese_translation/c_best/)
 * [Duktapeプログラマーズガイド](https://dolphilia.github.io/japanese_translation/duktape/guide/)
 * [Duktape APIリファレンス](https://dolphilia.github.io/japanese_translation/duktape/api/)

@@ -1,0 +1,1602 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>OpenSSL · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="APIReference.html" />
+    
+    
+    <link rel="prev" href="embedding.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">目次</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="installing.html">
+            
+                <a href="installing.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="building.html">
+            
+                <a href="building.html">
+            
+                    
+                    ビルド
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="embedding.html">
+            
+                <a href="embedding.html">
+            
+                    
+                    組み込み
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="openssl.html">
+            
+                <a href="openssl.html">
+            
+                    
+                    OpenSSL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">APIリファレンス</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="APIReference.html">
+            
+                <a href="APIReference.html">
+            
+                    
+                    目次
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Structures</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="api/mg_callbacks.html">
+            
+                <a href="api/mg_callbacks.html">
+            
+                    
+                    struct mg_callbacks;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="api/mg_client_cert.html">
+            
+                <a href="api/mg_client_cert.html">
+            
+                    
+                    struct mg_client_cert;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="api/mg_client_options.html">
+            
+                <a href="api/mg_client_options.html">
+            
+                    
+                    struct mg_client_options;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="api/mg_error_data.html">
+            
+                <a href="api/mg_error_data.html">
+            
+                    
+                    struct mg_error_data;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="api/mg_form_data_handler.html">
+            
+                <a href="api/mg_form_data_handler.html">
+            
+                    
+                    struct mg_form_data_handler;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="api/mg_header.html">
+            
+                <a href="api/mg_header.html">
+            
+                    
+                    struct mg_header;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="api/mg_init_data.html">
+            
+                <a href="api/mg_init_data.html">
+            
+                    
+                    struct mg_init_data;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="api/mg_option.html">
+            
+                <a href="api/mg_option.html">
+            
+                    
+                    struct mg_option;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.9" data-path="api/mg_request_info.html">
+            
+                <a href="api/mg_request_info.html">
+            
+                    
+                    struct mg_request_info;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.10" data-path="api/mg_response_info.html">
+            
+                <a href="api/mg_response_info.html">
+            
+                    
+                    struct mg_response_info;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.11" data-path="api/mg_server_port.html">
+            
+                <a href="api/mg_server_port.html">
+            
+                    
+                    struct mg_server_port;
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.12" data-path="api/mg_websocket_subprotocols.html">
+            
+                <a href="api/mg_websocket_subprotocols.html">
+            
+                    
+                    struct mg_websocket_subprotocols;
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Library API Functions</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="api/mg_init_library.html">
+            
+                <a href="api/mg_init_library.html">
+            
+                    
+                    mg_init_library( feature );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="api/mg_exit_library.html">
+            
+                <a href="api/mg_exit_library.html">
+            
+                    
+                    mg_exit_library( feature );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="api/mg_check_feature.html">
+            
+                <a href="api/mg_check_feature.html">
+            
+                    
+                    mg_check_feature( feature );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="api/mg_version.html">
+            
+                <a href="api/mg_version.html">
+            
+                    
+                    mg_version();
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Server API Functions</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="api/mg_start.html">
+            
+                <a href="api/mg_start.html">
+            
+                    
+                    mg_start( callbacks, user_data, options );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="api/mg_start2.md">
+            
+                <span>
+            
+                    
+                    mg_start2( init, error );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="api/mg_start_domain.md">
+            
+                <span>
+            
+                    
+                    mg_start_domain( ctx, configuration_options );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="api/mg_start_domain2.md">
+            
+                <span>
+            
+                    
+                    mg_start_domain2( ctx, configuration_options, error );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="api/mg_stop.html">
+            
+                <a href="api/mg_stop.html">
+            
+                    
+                    mg_stop( ctx );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="api/mg_get_builtin_mime_type.html">
+            
+                <a href="api/mg_get_builtin_mime_type.html">
+            
+                    
+                    mg_get_builtin_mime_type( file_name );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="api/mg_get_option.html">
+            
+                <a href="api/mg_get_option.html">
+            
+                    
+                    mg_get_option( ctx, name );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="api/mg_get_server_ports.html">
+            
+                <a href="api/mg_get_server_ports.html">
+            
+                    
+                    mg_get_server_ports( ctx, size, ports );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="api/mg_get_user_data.html">
+            
+                <a href="api/mg_get_user_data.html">
+            
+                    
+                    mg_get_user_data( ctx );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="api/mg_set_auth_handler.html">
+            
+                <a href="api/mg_set_auth_handler.html">
+            
+                    
+                    mg_set_auth_handler( ctx, uri, handler, cbdata );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.11" data-path="api/mg_set_request_handler.html">
+            
+                <a href="api/mg_set_request_handler.html">
+            
+                    
+                    mg_set_request_handler( ctx, uri, handler, cbdata );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.12" data-path="api/mg_set_websocket_handler.html">
+            
+                <a href="api/mg_set_websocket_handler.html">
+            
+                    
+                    mg_set_websocket_handler( ctx, uri, connect_handler, ready_handler, data_handler, close_handler, cbdata );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.13" data-path="api/mg_set_websocket_handler_with_subprotocols.html">
+            
+                <a href="api/mg_set_websocket_handler_with_subprotocols.html">
+            
+                    
+                    mg_set_websocket_handler_with_subprotocols( ctx, uri, subprotocols, connect_handler, ready_handler, data_handler, close_handler, cbdata );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.14" data-path="api/mg_lock_context.html">
+            
+                <a href="api/mg_lock_context.html">
+            
+                    
+                    mg_lock_context( ctx );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.15" data-path="api/mg_unlock_context.html">
+            
+                <a href="api/mg_unlock_context.html">
+            
+                    
+                    mg_unlock_context( ctx );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.16" data-path="api/mg_get_context.html">
+            
+                <a href="api/mg_get_context.html">
+            
+                    
+                    mg_get_context( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.17" data-path="api/mg_send_http_error.html">
+            
+                <a href="api/mg_send_http_error.html">
+            
+                    
+                    mg_send_http_error( conn, status_code, fmt, ... );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.18" data-path="api/mg_send_http_ok.html">
+            
+                <a href="api/mg_send_http_ok.html">
+            
+                    
+                    mg_send_http_ok( conn, mime_type, content_length );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.19" data-path="api/mg_send_http_redirect.html">
+            
+                <a href="api/mg_send_http_redirect.html">
+            
+                    
+                    mg_send_http_redirect( conn, target_url, redirect_code );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.20" data-path="api/mg_send_digest_access_authentication_request.html">
+            
+                <a href="api/mg_send_digest_access_authentication_request.html">
+            
+                    
+                    mg_send_digest_access_authentication_request( conn, realm );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.21" data-path="api/mg_check_digest_access_authentication.html">
+            
+                <a href="api/mg_check_digest_access_authentication.html">
+            
+                    
+                    mg_check_digest_access_authentication( conn, realm, filename );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.22" data-path="api/mg_modify_passwords_file.html">
+            
+                <a href="api/mg_modify_passwords_file.html">
+            
+                    
+                    mg_modify_passwords_file( passwords_file_name, realm, user, password );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.23" data-path="api/mg_modify_passwords_file_ha1.html">
+            
+                <a href="api/mg_modify_passwords_file_ha1.html">
+            
+                    
+                    mg_modify_passwords_file_ha1( passwords_file_name, realm, user, ha1 );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.24" data-path="api/mg_get_request_info.html">
+            
+                <a href="api/mg_get_request_info.html">
+            
+                    
+                    mg_get_request_info( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.25" data-path="api/mg_get_request_link.html">
+            
+                <a href="api/mg_get_request_link.html">
+            
+                    
+                    mg_get_request_link( conn, buf, buflen );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.26" data-path="api/mg_handle_form_request.html">
+            
+                <a href="api/mg_handle_form_request.html">
+            
+                    
+                    mg_handle_form_request( conn, fdh );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.27" data-path="api/mg_send_file.html">
+            
+                <a href="api/mg_send_file.html">
+            
+                    
+                    mg_send_file( conn, path );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.28" data-path="api/mg_send_mime_file.html">
+            
+                <a href="api/mg_send_mime_file.html">
+            
+                    
+                    mg_send_mime_file( conn, path, mime_type );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.29" data-path="api/mg_send_mime_file2.html">
+            
+                <a href="api/mg_send_mime_file2.html">
+            
+                    
+                    mg_send_mime_file2( conn, path, mime_type, additional_headers );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.30" data-path="api/mg_websocket_write.html">
+            
+                <a href="api/mg_websocket_write.html">
+            
+                    
+                    mg_websocket_write( conn, opcode, data, data_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.31" data-path="api/mg_response_header_X.html">
+            
+                <a href="api/mg_response_header_X.html">
+            
+                    
+                    mg_response_header_*();
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Client API Functions</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="api/mg_connect_client.html">
+            
+                <a href="api/mg_connect_client.html">
+            
+                    
+                    mg_connect_client( host, port, use_ssl, error_buffer, error_buffer_size );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="api/mg_connect_client_secure.html">
+            
+                <a href="api/mg_connect_client_secure.html">
+            
+                    
+                    mg_connect_client_secure( client_options, error_buffer, error_buffer_size );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="api/mg_connect_websocket_client.html">
+            
+                <a href="api/mg_connect_websocket_client.html">
+            
+                    
+                    mg_connect_websocket_client( host, port, use_ssl, error_buffer, error_buffer_size, path, origin, data_func, close_func, user_data);
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="api/mg_websocket_client_write.html">
+            
+                <a href="api/mg_websocket_client_write.html">
+            
+                    
+                    mg_websocket_client_write( conn, opcode, data, data_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="api/mg_download.html">
+            
+                <a href="api/mg_download.html">
+            
+                    
+                    mg_download( host, port, use_ssl, error_buffer, error_buffer_size, fmt, ... );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="api/mg_get_response.html">
+            
+                <a href="api/mg_get_response.html">
+            
+                    
+                    mg_get_response( conn, ebuf, ebuf_len, timeout );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="api/mg_get_response_info.html">
+            
+                <a href="api/mg_get_response_info.html">
+            
+                    
+                    mg_get_response_info( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="api/mg_connect_client2.md">
+            
+                <span>
+            
+                    
+                    mg_connect_client2( host, protocol, port, path, init, error );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="api/mg_get_response2.md">
+            
+                <span>
+            
+                    
+                    mg_get_response2( conn, error, timeout );
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Common API Functions</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="api/mg_close_connection.html">
+            
+                <a href="api/mg_close_connection.html">
+            
+                    
+                    mg_close_connection( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="api/mg_cry.html">
+            
+                <a href="api/mg_cry.html">
+            
+                    
+                    mg_cry( conn, fmt, ... );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="api/mg_get_cookie.html">
+            
+                <a href="api/mg_get_cookie.html">
+            
+                    
+                    mg_get_cookie( cookie, var_name, buf, buf_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="api/mg_get_header.html">
+            
+                <a href="api/mg_get_header.html">
+            
+                    
+                    mg_get_header( conn, name );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="api/mg_get_response_code_text.html">
+            
+                <a href="api/mg_get_response_code_text.html">
+            
+                    
+                    mg_get_response_code_text( conn, response_code );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="api/mg_get_user_connection_data.html">
+            
+                <a href="api/mg_get_user_connection_data.html">
+            
+                    
+                    mg_get_user_connection_data( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="api/mg_get_valid_options.html">
+            
+                <a href="api/mg_get_valid_options.html">
+            
+                    
+                    mg_get_valid_options();
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.8" data-path="api/mg_get_var.html">
+            
+                <a href="api/mg_get_var.html">
+            
+                    
+                    mg_get_var( data, data_len, var_name, dst, dst_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.9" data-path="api/mg_get_var2.html">
+            
+                <a href="api/mg_get_var2.html">
+            
+                    
+                    mg_get_var2( data, data_len, var_name, dst, dst_len, occurrence );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.10" data-path="api/mg_lock_connection.html">
+            
+                <a href="api/mg_lock_connection.html">
+            
+                    
+                    mg_lock_connection( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.11" data-path="api/mg_md5.html">
+            
+                <a href="api/mg_md5.html">
+            
+                    
+                    mg_md5( buf, ... );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.12" data-path="api/mg_printf.html">
+            
+                <a href="api/mg_printf.html">
+            
+                    
+                    mg_printf( conn, fmt, ... );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.13" data-path="api/mg_read.html">
+            
+                <a href="api/mg_read.html">
+            
+                    
+                    mg_read( conn, buf, len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.14" data-path="api/mg_send_chunk.html">
+            
+                <a href="api/mg_send_chunk.html">
+            
+                    
+                    mg_send_chunk( conn, buf, len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.15" data-path="api/mg_send_file_body.html">
+            
+                <a href="api/mg_send_file_body.html">
+            
+                    
+                    mg_send_file_body( conn, path );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.16" data-path="api/mg_set_user_connection_data.html">
+            
+                <a href="api/mg_set_user_connection_data.html">
+            
+                    
+                    mg_set_user_connection_data( conn, data );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.17" data-path="api/mg_split_form_urlencoded.html">
+            
+                <a href="api/mg_split_form_urlencoded.html">
+            
+                    
+                    mg_split_form_urlencoded( data, form_fields, num_form_fields);
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.18" data-path="api/mg_start_thread.html">
+            
+                <a href="api/mg_start_thread.html">
+            
+                    
+                    mg_start_thread( f, p );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.19" data-path="api/mg_store_body.html">
+            
+                <a href="api/mg_store_body.html">
+            
+                    
+                    mg_store_body( conn, path );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.20" data-path="api/mg_strcasecmp.html">
+            
+                <a href="api/mg_strcasecmp.html">
+            
+                    
+                    mg_strcasecmp( s1, s2 );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.21" data-path="api/mg_strncasecmp.html">
+            
+                <a href="api/mg_strncasecmp.html">
+            
+                    
+                    mg_strncasecmp( s1, s2, len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.22" data-path="api/mg_unlock_connection.html">
+            
+                <a href="api/mg_unlock_connection.html">
+            
+                    
+                    mg_unlock_connection( conn );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.23" data-path="api/mg_url_decode.html">
+            
+                <a href="api/mg_url_decode.html">
+            
+                    
+                    mg_url_decode( src, src_len, dst, dst_len, is_form_url_encoded );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.24" data-path="api/mg_url_encode.html">
+            
+                <a href="api/mg_url_encode.html">
+            
+                    
+                    mg_url_encode( src, dst, dst_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.25" data-path="api/mg_write.html">
+            
+                <a href="api/mg_write.html">
+            
+                    
+                    mg_write( conn, buf, len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Diagnosis Functions</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="api/mg_get_system_info.html">
+            
+                <a href="api/mg_get_system_info.html">
+            
+                    
+                    mg_get_system_info( buffer, buf_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="api/mg_get_context_info.html">
+            
+                <a href="api/mg_get_context_info.html">
+            
+                    
+                    mg_get_context_info( ctx, buffer, buf_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="api/mg_get_connection_info.html">
+            
+                <a href="api/mg_get_connection_info.html">
+            
+                    
+                    mg_get_connection_info( ctx, idx, buffer, buf_len );
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Deprecated / removed:</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="api/mg_get_valid_option_names.html">
+            
+                <a href="api/mg_get_valid_option_names.html">
+            
+                    
+                    mg_get_valid_option_names();
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="api/mg_upload.html">
+            
+                <a href="api/mg_upload.html">
+            
+                    
+                    mg_upload( conn, destination_dir );
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="api/mg_get_ports.html">
+            
+                <a href="api/mg_get_ports.html">
+            
+                    
+                    mg_get_ports( ctx, size, ports, ssl);
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >OpenSSL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="openssl-サポートの追加">OpenSSL サポートの追加</h1>
+<p>Civetwebは、OpenSSLトランスポートレイヤーセキュリティ（TLS）ライブラリを使用した<em>HTTPS</em>接続をサポートしています。OpenSSLはフリーでオープンソースのライブラリです（<a href="http://www.openssl.org/" target="_blank">http://www.openssl.org/</a> 参照）．OpenSSL以外のTLSライブラリ（gnuTLSやwolfSSLなど）もありますが、CivetWebの新しいTLS機能はOpenSSLのみを使用してテストされています。</p>
+<h2 id="はじめに">はじめに</h2>
+<ul>
+<li>OpenSSLをシステムにインストールします。Windows用のセットアップと同様に、すべての主要なLinuxディストリビューション用のOpenSSLインストールパッケージがあります。</li>
+<li>civetweb ウェブサーバのデフォルトのビルド構成では、HTTPS 証明書が設定されている場合、必要な OpenSSL ライブラリがロードされます。</li>
+</ul>
+<h2 id="civetwebの構成">Civetwebの構成</h2>
+<p>設定ファイルには、ポート番号に &apos;s&apos; が付加された https ポートを含める必要があります。httpとhttpsをそれぞれの標準ポートから提供するには、設定ファイル&apos;civetweb.conf&apos;で次の行を使用してください。</p>
+<pre><code>listening_ports 80, 443s
+</code></pre><p>https のみで提供する場合。</p>
+<pre><code>listening_ports 443s
+</code></pre><p>さらに、SSL証明書ファイルを設定する必要があります。</p>
+<pre><code>ssl_certificate d:\civetweb\certificate\server.pem
+</code></pre><h2 id="自己署名入り証明書の作成">自己署名入り証明書の作成</h2>
+<p>OpenSSLはコマンドラインインタフェースを提供しており，これを用いてcivetwebが必要とする証明書ファイル(server.pem)を作成することができます．</p>
+<p>Windowsでは以下の手順で作成します（Linuxでは「copy」を「cp」に、「type」を「cat」に置き換えてください）。</p>
+<pre><code>openssl genrsa -des3 -out server.key 1024
+
+openssl req -new -key server.key -out server.csr
+
+copy server.key server.key.orig
+
+openssl rsa -in server.key.orig -out server.key
+
+openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+
+copy server.crt server.pem
+
+type server.key &gt;&gt; server.pem
+</code></pre><p>作成したserver.pemファイルには、「CERTIFICATE」セクションと「RSA PRIVATE KEY」セクションを含める必要があります。以下のようになります（xはBASE64でエンコードされたデータ）。</p>
+<pre><code>-----BEGIN CERTIFICATE-----
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-----END CERTIFICATE-----
+-----BEGIN RSA PRIVATE KEY-----
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+-----END RSA PRIVATE KEY-----
+</code></pre><p>その他の便利なOpenSSLコマンドは、こちら（<a href="https://geekflare.com/openssl-commands-certificates/）をご覧ください。" target="_blank">https://geekflare.com/openssl-commands-certificates/）をご覧ください。</a></p>
+<p>証明書には、複数のウェブサイトをサポートするために、<a href="https://en.wikipedia.org/wiki/Subject_Alternative_Name" target="_blank">サブジェクト代替名 (SAN)</a> を含めることができます: <a href="https://geekflare.com/san-ssl-certificate/" target="_blank">https://geekflare.com/san-ssl-certificate/</a></p>
+<h2 id="認証局からの証明書を含む">認証局からの証明書を含む</h2>
+<p>CivetWeb では、PEM 形式の証明書ファイルが 1 つ必要です。もし、認証局から複数のファイルを入手した場合は、それらの内容を1つのファイルにまとめてコピーする必要があります。このファイルには，BEGIN RSA PRIVATE KEY / END RSA PRIVATE KEYのセクションと，BEGIN CERTIFICATE / END CERTIFICATEのセクションが最低でも1つあることを確認してください．BEGIN PRIVATE KEY / END PRIVATE KEYのセクションを持つファイルを受け取った場合、手動でRSAの文字を追加することで適切なファイルを得ることができます。</p>
+<p>設定パラメータ &quot;ssl_certificate &quot;に、生成された*.pemファイルのファイル名（パスを含む）を設定します。</p>
+<p>このファイルは「自己署名入り証明書の作成」の項にあるファイルのように見える必要がありますが、BEGIN CERTIFICATE / END CERTIFICATEセクションをいくつか持つことになります。</p>
+<h2 id="よくある問題">よくある問題</h2>
+<p>OpenSSLの設定が正しく行われていない場合、サーバーは起動しません。「civetweb.conf」でエラーログファイルを設定し、詳細な情報を取得します。</p>
+<pre><code>error_log_file error.log
+</code></pre><p>「error.log」の内容を確認する。</p>
+<pre><code>load_dll: cannot load libeay32.*/libcrypto.*/ssleay32.*/libssl.*
+</code></pre><p>このエラーメッセージは、SSLライブラリが（正しく）インストールされていないことを意味します。Windowsでは、ビルド済みのバイナリを使用することができます。OpenSSLプロジェクトのホームページ(<a href="http://www.openssl.org/related/binaries.html)にリンクがあります。Windowsのシステムフォルダをインストールディレクトリとして選択します" target="_blank">http://www.openssl.org/related/binaries.html)にリンクがあります。Windowsのシステムフォルダをインストールディレクトリとして選択します</a> - これがデフォルトの場所です。</p>
+<pre><code>set_ssl_option: cannot open server.pem: error:PEM routines:*:PEM_read_bio:no start line
+set_ssl_option: cannot open server.pem: error:PEM routines:*:PEM_read_bio:bad end line
+</code></pre><p>これらのエラーメッセージは、ssl_certificateファイルのフォーマットが、SSLライブラリの期待値と一致しないことを示しています。PEM ファイルは &apos;CERTIFICATE&apos; と &apos;RSA PRIVATE KEY&apos; の両方のセクションを含んでいなければなりません。それはバイト順マークのない厳密なASCIIファイルであるべきです。上記の手順は、有効な ssl_certificate ファイルを作成するために使用されます。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="embedding.html" class="navigation navigation-prev " aria-label="Previous page: 組み込み">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="APIReference.html" class="navigation navigation-next " aria-label="Next page: 目次">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OpenSSL","level":"1.5","depth":1,"next":{"title":"目次","level":"2.1","depth":1,"path":"APIReference.md","ref":"APIReference.md","articles":[]},"previous":{"title":"組み込み","level":"1.4","depth":1,"path":"embedding.md","ref":"embedding.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"openssl.md","mtime":"2022-12-17T05:30:31.010Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2022-12-17T06:34:15.489Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
