@@ -1,0 +1,4785 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>ドキュメント · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="doc.html">
+            
+                <a href="doc.html">
+            
+                    
+                    ドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ドキュメント</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nuklear">Nuklear</h1>
+<p><img src="https://cloud.githubusercontent.com/assets/8057201/11761525/ae06f0ca-a0c6-11e5-819d-5610b25f6ef4.gif" alt></p>
+<h2 id="内容">内容</h2>
+<ol>
+<li>セクションについて</li>
+<li>ハイライト編</li>
+<li>特集</li>
+<li>使用法編<ol>
+<li>フラグセクション</li>
+<li>定数セクション</li>
+<li>依存関係セクション</li>
+</ol>
+</li>
+<li>例題編</li>
+<li>APIセクション<ol>
+<li>コンテキストセクション</li>
+<li>入力部</li>
+<li>描画部</li>
+<li>ウィンドウ部</li>
+<li>レイアウト部</li>
+<li>グループセクション</li>
+<li>ツリーセクション</li>
+<li>プロパティセクション</li>
+</ol>
+</li>
+<li>ライセンスセクション</li>
+<li>変更履歴セクション</li>
+<li>ギャラリーセクション</li>
+<li>クレジットセクション</li>
+</ol>
+<h2 id="nuklearについて">Nuklearについて</h2>
+<p>これは、ANSI C で書かれ、パブリックドメインの下でライセンスされた、最小限の状態の即時モードのグラフィカルユーザーインターフェイスツールキットです。アプリケーションに組み込むためのシンプルなユーザインタフェースとして設計されており、依存関係やデフォルトのレンダーバックエンド、OSのウィンドウや入力処理を持たず、代わりにシンプルな入力状態を入力に、プリミティブな図形を記述した描画コマンドを出力に使用する、非常にモジュール的なライブラリアプローチを提供します。そのため、多くのプラットフォームやレンダーバックエンドを抽象化しようとするレイヤーライブラリを提供する代わりに、実際のUIにのみフォーカスしています。</p>
+<h2 id="ハイライト">ハイライト</h2>
+<ul>
+<li>グラフィカル・ユーザー・インターフェイス・ツールキット</li>
+<li>シングルヘッダーライブラリ</li>
+<li>C89 (別名 ANSI C または ISO C90) で書かれています。</li>
+<li>小さなコードベース (~18kLOC)</li>
+<li>移植性、効率性、単純性に重点を置く</li>
+<li>依存性がない (必要なければ標準ライブラリでさえも)</li>
+<li>完全なスキニングとカスタマイズが可能</li>
+<li>低メモリフットプリントで、必要であればメモリを完全に制御可能</li>
+<li>UTF-8のサポート</li>
+<li>グローバルまたは非表示の状態なし</li>
+<li>カスタマイズ可能なライブラリモジュール（必要なものだけをコンパイルして使用することができます。）</li>
+<li>オプションのフォントベーカーと頂点バッファ出力</li>
+</ul>
+<h2 id="特徴">特徴</h2>
+<ul>
+<li>プラットフォーム依存のコードを一切排除</li>
+<li>メモリ管理はfrom/toまで制御可能<ul>
+<li>標準ライブラリから全てアロケートすることによる使い勝手の良さ</li>
+<li>ライブラリ内のメモリを1バイト単位で制御</li>
+</ul>
+</li>
+<li>フォント処理の制御（～/～まで<ul>
+<li>独自のフォント実装を使用可能</li>
+<li>本ライブラリ内部のフォントベイクおよび処理APIの利用</li>
+</ul>
+</li>
+<li>描画出力の制御（～/～）が可能<ul>
+<li>描画機能を持つ高レベルのAPIのためのシンプルな形状</li>
+<li>ハードウェアからアクセス可能なアンチエイリアス頂点バッファ出力</li>
+</ul>
+</li>
+<li>カスタマイズ可能な色とプロパティ（～/～まで<ul>
+<li>シンプルなカラーテーブルを埋めることによる簡単な色の変更</li>
+<li>ウィジェットを装飾するためのスキニング機能による完全な制御</li>
+</ul>
+</li>
+<li>曲げられるUIライブラリ、ウィジェットの種類は以下の通りです。<ul>
+<li>ボタン、チェックボックス、スライダーなどの基本的なウィジェット</li>
+<li>抽象的なコンボボックス、コンテクストメニューなどの高度なウィジェット</li>
+</ul>
+</li>
+<li>必要なものだけをコンパイルするためのコンパイル時設定<ul>
+<li>標準ライブラリをリンクまたは使用したくない場合に使用できるサブセット</li>
+</ul>
+</li>
+<li>フレーム更新の代わりにユーザ入力のみで更新するように簡単に変更可能</li>
+</ul>
+<h2 id="使用方法">使用方法</h2>
+<p>このライブラリは、1つのヘッダーファイルに含まれており、ヘッダーのみ、または実装モードのいずれかで使用することができます。ヘッダーのみモードは、デフォルトで使用され、他のヘッダーにこのヘッダーを含めることができ、実際の実装は含まれていません。</p>
+<p>実装モードでは、プリプロセッサマクロ NK_IMPLEMENTATION を .c/.cpp ファイルに *定義してから #このファイルをインクルードする必要があります、例．</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NK_IMPLEMENTATION</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;nuklear.h&quot;</span></span>
+</code></pre>
+<p>また、追加機能を使用したい場合や、ライブラリの制御を強化したい場合には、ヘッダーモードおよび実装モードで、以下の「OPTIONAL DEFINES」のセクションに記載されているシンボルをオプションで定義してください。</p>
+<p>警告: nuklear が含まれるたびに、同じコンパイラ・フラグを定義してください。これは非常に重要です。そうしないと、コンパイラーエラーや、さらに悪いことにスタック破壊を引き起こす可能性があります。</p>
+<h3 id="フラグ">フラグ</h3>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_PRIVATE</td>
+<td>定義されている場合、すべての関数は static と宣言され、実装を含むファイル内でのみアクセスすることができます。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_FIXED_TYPES</td>
+<td>定義されていれば、固定サイズの型のためのヘッダー <code>&lt;stdint.h&gt;</code> をインクルードします。これが失敗するとコンパイラエラーが発生し、自分で正しい型を選択する必要があります。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_DEFAULT_ALLOCATOR</td>
+<td>定義された場合、ヘッダ <code>&lt;stdlib.h&gt;</code> をインクルードし、メモリ割り当て制御を気にせずにこのライブラリを使用するための追加機能を提供し、メモリ管理を容易にします。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_STANDARD_IO</td>
+<td>定義されていれば、ヘッダ <code>&lt;stdio.h&gt;</code> をインクルードし、ファイルの読み込みに応じた追加機能を提供する。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_STANDARD_VARARGS</td>
+<td>定義された場合、ヘッダー <code>&lt;stdio.h&gt;</code> をインクルードし、ファイルの読み込みに応じて追加の機能を提供します。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_VERTEX_BUFFER_OUTPUT</td>
+<td>これを定義すると、このライブラリに頂点描画コマンドリストバックエンドが追加され、キューコマンドを頂点描画コマンドに変換することができるようになります。これは主に、OpenGL、DirectX、Vulkan、Metal、...でハードウェアからアクセス可能な形式が必要な場合に使用します。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_FONT_BAKING</td>
+<td>これを定義すると、このライブラリに <code>stb_truetype</code> と <code>stb_rect_pack</code> の実装が追加され、フォントベイクとレンダリングを行うことができるようになる。すでにフォントハンドリングを行っている場合や、このフォントハンドリングを使用したくない場合は、定義する必要はない。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_DEFAULT_FONT</td>
+<td>これを定義すると、デフォルトのフォントが追加されます。ProggyClean.ttf をこのライブラリに追加します。これはフォントアトラスに読み込むことができ、truetype フォントを持たずにこのライブラリを使用できるようになります。</td>
+</tr>
+<tr>
+<td>NK_INCLUDE_COMMAND_USERDATA</td>
+<td>これを定義すると、各コマンドにuserdataポインタが追加されます。例えば、使用するウィジェットに応じたカスタムシェーダを提供したい場合に便利です。スタイル構造体と組み合わせることができます。</td>
+</tr>
+<tr>
+<td>NK_BUTTON_TRIGGER_ON_RELEASE</td>
+<td>プラットフォームによって、ボタンのクリックは、ボタンが押されたとき（上→下）か、離されたとき（下→上）に発生する必要があります。デフォルトでは、このライブラリはボタンが押されたときに反応しますが、これを定義すると、ボタンが離されたときのみトリガーされるようになります。</td>
+</tr>
+<tr>
+<td>NK_ZERO_COMMAND_MEMORY</td>
+<td>これを定義すると、(nk_command_buffer_push 内で) 描画キューに追加される各描画コマンドのメモリがゼロになります。コマンドメモリをゼロにすることは、コマンドバッファが等しいかどうかを (memcmp を使って) 高速にチェックし、前のフレームから画面上に何も変化がないときにフレームを描画するのを避けるために非常に便利です。</td>
+</tr>
+<tr>
+<td>NK_UINT_DRAW_INDEX</td>
+<td>これを定義すると、NK_VERTEX_BUFFER_OUTPUT使用時の頂点インデックス要素のサイズがデフォルトの16bitではなく、32bitに設定されます。</td>
+</tr>
+<tr>
+<td>NK_KEYSTATE_BASED_INPUT</td>
+<td>バックエンドがキーの押下/離脱イベントではなく、各フレームのキーステートを使用する場合に定義します。</td>
+</tr>
+</tbody>
+</table>
+<p>警告：以下のフラグは、標準Cライブラリを引き込みます。</p>
+<ul>
+<li>NK_INCLUDE_DEFAULT_ALLOCATOR</li>
+<li>NK_INCLUDE_STANDARD_IO</li>
+<li>NK_INCLUDE_STANDARD_VARARGS</li>
+</ul>
+<p>警告: 以下のフラグが定義されている場合、ヘッダーと実装の両方で定義する必要があります。</p>
+<ul>
+<li>NK_INCLUDE_FIXED_TYPES</li>
+<li>NK_INCLUDE_DEFAULT_ALLOCATOR</li>
+<li>NK_INCLUDE_STANDARD_VARARGS</li>
+<li>NK_INCLUDE_VERTEX_BUFFER_OUTPUT</li>
+<li>NK_INCLUDE_FONT_BAKING</li>
+<li>NK_INCLUDE_DEFAULT_FONT</li>
+<li>NK_INCLUDE_STANDARD_VARARGS</li>
+<li>NK_INCLUDE_COMMAND_USERDATA</li>
+<li>NK_UINT_DRAW_INDEX</li>
+</ul>
+<h3 id="constants">Constants</h3>
+<table>
+<thead>
+<tr>
+<th>Define</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_BUFFER_DEFAULT_INITIAL_SIZE</td>
+<td>NK_INCLUDE_DEFAULT_ALLOCATOR を定義することによって含まれるデフォルトのアロケータ関数を使用している間、すべてのバッファで割り当てられる初期バッファサイズ。もし、デフォルトの4kメモリを割り当てたくない場合は、再定義してください。</td>
+</tr>
+<tr>
+<td>NK_MAX_NUMBER_BUFFER</td>
+<td>floatとstring間の変換バッファの最大バッファサイズ 通常の環境下では、十分すぎるほどであるべきである。</td>
+</tr>
+<tr>
+<td>NK_INPUT_MAX</td>
+<td>1フレームにテキスト入力として追加できる最大バイト数を定義します。通常の場合、これは十分すぎるほどである。</td>
+</tr>
+</tbody>
+</table>
+<p>警告: 以下の定数が定義されている場合、ヘッダーと実装の両方で定義する必要があります。</p>
+<ul>
+<li>NK_MAX_NUMBER_BUFFER</li>
+<li>NK_BUFFER_DEFAULT_INITIAL_SIZE</li>
+<li>NK_INPUT_MAX</li>
+</ul>
+<h3 id="依存関係">依存関係</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_ASSERT</td>
+<td>これを定義しないと、nuklear は assert() で <assert.h> を使用する。</assert.h></td>
+</tr>
+<tr>
+<td>NK_MEMSET</td>
+<td>これは &apos;memset&apos; またはあなた自身の memset 実装の代替に定義することができます。そうしないと、nuklear は独自のバージョンを使用します。</td>
+</tr>
+<tr>
+<td>NK_MEMCPY</td>
+<td>これは &apos;memcpy&apos; またはあなた自身の memcpy 実装の代替に定義できます。そうしないと、nuklear は独自のバージョンを使用します。</td>
+</tr>
+<tr>
+<td>NK_SQRT</td>
+<td>これを &apos;sqrt&apos; に定義するか、あるいは独自の sqrt 実装に置き換えることができます。そうしないと、nuklear は独自の遅くて精度の低いバージョンを使用する。</td>
+</tr>
+<tr>
+<td>NK_SIN</td>
+<td>これは &apos;sinf&apos; またはあなた自身のサイン実装の置き換えに定義することができます。そうしないと、nuklear は独自の近似実装を使用する。</td>
+</tr>
+<tr>
+<td>NK_COS</td>
+<td>cosf&apos; または独自のコサイン実装の置き換えを定義することができます。そうしないと、nuklear は独自の近似実装を使用します。</td>
+</tr>
+<tr>
+<td>NK_STRTOD</td>
+<td>これは <code>strtod</code> またはあなた自身の文字列をダブル変換する実装の置き換えとして定義することができる。定義されていない場合、nuklear はそれ自身の不正確で、おそらく安全でないバージョンを使用します (nan や infinity は扱えません!)。</td>
+</tr>
+<tr>
+<td>NK_DTOA</td>
+<td>これは <code>dtoa</code> か、あるいはあなた自身の double から string への変換実装を置き換えるために定義することができます。定義されていない場合、nuklear はそれ自身の不正確で、おそらく安全でないバージョンを使用します (nan や無限大を処理しません!)。</td>
+</tr>
+<tr>
+<td>NK_VSNPRINTF</td>
+<td><code>NK_INCLUDE_STANDARD_VARARGS</code> と <code>NK_INCLUDE_STANDARD_IO</code> を定義し、安全性を確保したい場合、C や C++ の遅いバージョンをサポートするコンパイラでは、これを <code>vsnprintf</code> に定義してください。デフォルトでは C の stdlib のバージョンと C++ のコンパイラのバージョンをチェックします。もし、<code>vsnprintf</code>があれば、直接<code>vsnprintf</code>に定義します。もし、定義されておらず、古いバージョンのCやC++を使用している場合は、安全でない<code>vsprintf</code>に定義されます。</td>
+</tr>
+</tbody>
+</table>
+<p>警告：以下の依存関係は、再定義しない場合、標準Cライブラリに引き込まれます。</p>
+<ul>
+<li>NK_ASSERT</li>
+</ul>
+<p>警告: 以下の依存関係が定義されている場合は、ヘッダーと実装の両方で定義する必要があります。</p>
+<ul>
+<li>NK_ASSERT</li>
+</ul>
+<p>警告：以下の依存関係が定義されている場合は、実装部に対してのみ定義する必要があります。</p>
+<ul>
+<li>NK_MEMSET</li>
+<li>NK_MEMCPY</li>
+<li>NK_SQRT</li>
+<li>NK_SIN</li>
+<li>NK_COS</li>
+<li>NK_STRTOD</li>
+<li>NK_DTOA</li>
+<li>NK_VSNPRINTF</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="lang-c"><span class="hljs-comment">// init gui state</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> {</span>EASY, HARD};
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> op = EASY;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> value = <span class="hljs-number">0.6f</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> i =  <span class="hljs-number">20</span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_fixed(&amp;ctx, <span class="hljs-built_in">calloc</span>(<span class="hljs-number">1</span>, MAX_MEMORY), MAX_MEMORY, &amp;font);
+<span class="hljs-keyword">if</span> (nk_begin(&amp;ctx, <span class="hljs-string">&quot;Show&quot;</span>, nk_rect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">220</span>, <span class="hljs-number">220</span>),
+    NK_WINDOW_BORDER|NK_WINDOW_MOVABLE|NK_WINDOW_CLOSABLE)) {
+    <span class="hljs-comment">// fixed widget pixel width</span>
+    nk_layout_row_static(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (nk_button_label(&amp;ctx, <span class="hljs-string">&quot;button&quot;</span>)) {
+        <span class="hljs-comment">// event handling</span>
+    }
+    <span class="hljs-comment">// fixed widget window ratio width</span>
+    nk_layout_row_dynamic(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>);
+    <span class="hljs-keyword">if</span> (nk_option_label(&amp;ctx, <span class="hljs-string">&quot;easy&quot;</span>, op == EASY)) op = EASY;
+    <span class="hljs-keyword">if</span> (nk_option_label(&amp;ctx, <span class="hljs-string">&quot;hard&quot;</span>, op == HARD)) op = HARD;
+    <span class="hljs-comment">// custom widget pixel width</span>
+    nk_layout_row_begin(&amp;ctx, NK_STATIC, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>);
+    {
+        nk_layout_row_push(&amp;ctx, <span class="hljs-number">50</span>);
+        nk_label(&amp;ctx, <span class="hljs-string">&quot;Volume:&quot;</span>, NK_TEXT_LEFT);
+        nk_layout_row_push(&amp;ctx, <span class="hljs-number">110</span>);
+        nk_slider_float(&amp;ctx, <span class="hljs-number">0</span>, &amp;value, <span class="hljs-number">1.0f</span>, <span class="hljs-number">0.1f</span>);
+    }
+    nk_layout_row_end(&amp;ctx);
+}
+nk_end(&amp;ctx);
+</code></pre>
+<p><img src="https://cloud.githubusercontent.com/assets/8057201/10187981/584ecd68-675c-11e5-897c-822ef534a876.png" alt></p>
+<h2 id="api">API</h2>
+<h3 id="コンテキスト">コンテキスト</h3>
+<p>コンテキストは nuklear の主要なエントリポイントであり、必要なすべての状態を含んでいる。これらはウィンドウ、メモリ、入力、スタイル、スタック、コマンド、時間管理に使用され、すべての nuklear GUI 固有の関数に渡される必要がある。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>コンテキストを使用するには、まず最初に <code>nk_init_default</code>, <code>nk_init_fixed</code>, <code>nk_init</code>, <code>nk_init_custom</code> のいずれかを呼び出して初期化する必要があります。それぞれ、フォントハンドルと特定のメモリ処理方法を受け取ります。メモリ制御は、標準ライブラリから、nuklear が自分自身で管理しなければならない固定サイズのメモリブロックを指定するものまであります。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-comment">// [...]</span>
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>nk_init_default</strong></td>
+<td>標準ライブラリのメモリ割り当て（malloc,free）でコンテキストを初期化する。</td>
+</tr>
+<tr>
+<td><strong>nk_init_fixed</strong></td>
+<td>固定サイズのメモリブロック1つからコンテキストを初期化</td>
+</tr>
+<tr>
+<td><strong>nk_init</strong></td>
+<td>alloc と free のためのメモリアロケータコールバックでコンテキストを初期化する。</td>
+</tr>
+<tr>
+<td><strong>nk_init_custom</strong></td>
+<td>2つのバッファからコンテキストを初期化する。一つは描画コマンド用、もう一つはウィンドウ/パネル/テーブルの割り当て用です。</td>
+</tr>
+<tr>
+<td><strong>nk_clear</strong></td>
+<td>フレームの終了時に呼び出され、コンテキストをリセットして次のフレームに備える</td>
+</tr>
+<tr>
+<td><strong>nk_free</strong></td>
+<td>コンテキスト内に割り当てられたすべてのメモリをシャットダウンし、解放します。</td>
+</tr>
+<tr>
+<td><strong>nk_set_user_data</strong></td>
+<td>描画コマンドにユーザデータを渡すユーティリティ関数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinitdefault">nk_init_default</h4>
+<p>デフォルトの標準ライブラリアロケータで <code>nk_context</code> 構造体を初期化する。nuklear でメモリ管理に煩わされたくない場合に使用する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_init_default</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> struct nk_user_font *font)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>スタックまたはヒープに確保された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td>以前に初期化されたフォントハンドルを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>失敗したら <code>false(0)</code> を、成功したら <code>true(1)</code> を返します。</p>
+<h4 id="nkinitfixed">nk_init_fixed</h4>
+<p>固定サイズのメモリブロックから <code>nk_context</code> 構造体を初期化する。 nuklear のメモリ管理を完全に制御したい場合に使用する必要がある。特に、メモリが少ないシステムや、仮想メモリを使用するシステムで使用することを推奨します。後者の場合、例えば 16MB の仮想メモリを確保するだけで、必要な量のメモリのみが実際にコミットされる。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_init_fixed</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">void</span> *memory, nk_size size, <span class="hljs-keyword">const</span> struct nk_user_font *font)</span></span>;
+</code></pre>
+<p>警告: <code>nk_draw_commands</code> に渡されたメモリブロックが正しくアラインメントされていることを確認してください。</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>スタックまたはヒープに確保された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>memory</strong></td>
+<td>以前に割り当てられたメモリブロックを指す必要がある</td>
+</tr>
+<tr>
+<td><strong>size</strong></td>
+<td>メモリ__の総サイズを含む必要があります。</td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td>以前に初期化されたフォントハンドルを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>失敗したら <code>false(0)</code> を、成功したら <code>true(1)</code> を返します。</p>
+<h4 id="nkinit">nk_init</h4>
+<p>nuklear がメモリを確保するためのコールバックを持つ <code>nk_context</code> 構造体を初期化する。内部的には <code>nk_init_default</code> で使用され、nuklear にキッチンシンク的なメモリ割り当てインタフェースを提供する。メモリの消費を監視するような場合に便利である。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_init</span><span class="hljs-params">(struct nk_context *ctx, struct nk_allocator *alloc, <span class="hljs-keyword">const</span> struct nk_user_font *font)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>スタックまたはヒープに確保された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>alloc</strong></td>
+<td>以前に割り当てられたメモリアロケータを指す必要がある</td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td>以前に初期化されたフォントハンドルを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>失敗したら <code>false(0)</code> を、成功したら <code>true(1)</code> を返します。</p>
+<h4 id="nkinitcustom">nk_init_custom</h4>
+<p>2 つの異なる固定またはグロウンバッファから <code>nk_context</code> 構造体を初期化します。最初のバッファは描画コマンドを割り当てるためのもので、2番目のバッファはウィンドウ、パネル、ステートテーブルを割り当てるために使用されます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_init_custom</span><span class="hljs-params">(struct nk_context *ctx, struct nk_buffer *cmds, struct nk_buffer *pool, <span class="hljs-keyword">const</span> struct nk_user_font *font)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>スタックまたはヒープに確保された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>cmds</strong></td>
+<td>描画コマンドを格納するために、事前に初期化されたメモリバッファ（固定または動的）を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>pool</strong></td>
+<td>ウィンドウ、パネル、テーブルを格納するために、事前に初期化された固定または動的メモリバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>font</strong></td>
+<td>以前に初期化されたフォントハンドルを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>失敗したら <code>false(0)</code> を、成功したら <code>true(1)</code> を返します。</p>
+<h4 id="nkclear">nk_clear</h4>
+<p>フレームの終了時にコンテキストの状態をリセットします。これには、ウィンドウの削除や、呼び出されていないテーブルの削除など、ガベージコレクタのタスクが主に含まれます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_clear</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkfree">nk_free</h4>
+<p>nuklear によって割り当てられた全てのメモリを解放します。コンテキストが <code>nk_init_fixed</code> で初期化されている場合は不要です。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_free</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nksetuserdata">nk_set_user_data</h4>
+<p>各描画コマンドに引き渡される、現在渡されたユーザーデータを設定します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_set_user_data</span><span class="hljs-params">(struct nk_context *ctx, nk_handle data)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>data</strong></td>
+<td>各描画コマンドに渡されるポインタまたはインデックスを持つハンドル。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="入力">入力</h3>
+<p>入力 API は、マウス、キー、テキスト入力の各状態からなる現在の入力状態を保持する役割を担う。注目すべきは、nuklear では OS やウィンドウを直接扱わないことである。代わりに、すべての入力状態はプラットフォーム固有のコードによって提供されなければならない。これは一方ではユーザの作業を増やし、使い方を複雑にするが、他方では多くのプラットフォームやライブラリ、その他既に提供されている機能に対する簡単な抽象化を提供する。</p>
+<pre><code class="lang-c">nk_input_begin(&amp;ctx);
+<span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+    <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+        nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+        <span class="hljs-comment">// [...]</span>
+    }
+} nk_input_end(&amp;ctx);
+</code></pre>
+<h4 id="使用方法">使用方法</h4>
+<p>入力状態は、最初に <code>nk_input_begin</code> を呼んで nuklear に提供する必要があります。これはマウスの位置の差分やボタンの遷移などの内部状態をリセットします。<code>nk_input_begin</code> の後に、現在のすべての入力状態を提供する必要があります。これには、マウスの動き、ボタンやキーの押下と解放、テキスト入力やスクロールが含まれます。この API では <code>イベントベース</code> と <code>ステートベース</code> のどちらの入力処理もサポートされており、問題なく動作するはずです。最後に、すべての入力状態がミラーリングされた後に <code>nk_input_end</code> を呼び出して入力処理を終了させる必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    Event evt;
+    nk_input_begin(&amp;ctx);
+    <span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+        <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+            nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+            <span class="hljs-comment">// [...]</span>
+        }
+    }
+    nk_input_end(&amp;ctx);
+    <span class="hljs-comment">// [...]</span>
+    nk_clear(&amp;ctx);
+} nk_free(&amp;ctx);
+</code></pre>
+<h4 id="reference">Reference</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>nk_input_begin</strong></td>
+<td>入力のミラーリング処理を開始する。他のすべての <code>nk_input_xxx</code> の呼び出しの前に呼び出される必要があります。</td>
+</tr>
+<tr>
+<td><strong>nk_input_motion</strong></td>
+<td>マウスカーソル位置のミラーリング</td>
+</tr>
+<tr>
+<td><strong>nk_input_key</strong></td>
+<td>キーが押されているか離されているかの状態をミラーリング</td>
+</tr>
+<tr>
+<td><strong>nk_input_button</strong></td>
+<td>マウスボタンが押されているか離されているかの状態をミラーリングします。</td>
+</tr>
+<tr>
+<td><strong>nk_input_scroll</strong></td>
+<td>マウスのスクロール値をミラーリング</td>
+</tr>
+<tr>
+<td><strong>nk_input_char</strong></td>
+<td>内部テキストバッファにASCIIテキストを1文字追加します。</td>
+</tr>
+<tr>
+<td><strong>nk_input_glyph</strong></td>
+<td>内部テキストバッファにマルチバイトのUTF-8文字を1文字追加する。</td>
+</tr>
+<tr>
+<td><strong>nk_input_unicode</strong></td>
+<td>単一のUnicodeルーンを内部テキストバッファに追加します。</td>
+</tr>
+<tr>
+<td><strong>nk_input_end</strong></td>
+<td>状態の変化を計算して、入力ミラーリング処理を終了する。この呼び出しの後は、上記で参照した <code>nk_input_xxx</code> 関数を一切呼び出さないでください。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputbegin">nk_input_begin</h4>
+<p>テキスト、スクロールマウス、前のマウスの位置と動き、キーの状態遷移をリセットして、入力のミラーリング処理を開始します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_begin</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputmotion">nk_input_motion</h4>
+<p>マウスの現在位置をnuklearにミラーリングする</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_motion</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>x</strong></td>
+<td>現在のマウスカーソルの x 位置を表す整数を保持する必要があります。</td>
+</tr>
+<tr>
+<td><strong>y</strong></td>
+<td>現在のマウスカーソルの Y 位置を表す整数を保持する必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputkey">nk_input_key</h4>
+<p>特定のキーの状態をnuklearにミラーリングします。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_key</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_keys key, <span class="hljs-keyword">int</span> down)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>key</strong></td>
+<td>enum <code>nk_keys</code> で指定された、ミラーリングが必要な任意の値でなければならない。</td>
+</tr>
+<tr>
+<td><strong>down</strong></td>
+<td>キーがアップしている場合は0、ダウンしている場合は1でなければなりません。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputbutton">nk_input_button</h4>
+<p>特定のマウスボタンの状態をnuklearにミラーリングする</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_button</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">enum</span> nk_buttons btn, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> down)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>btn</strong></td>
+<td>enum <code>nk_buttons</code> で指定された、ミラーリングが必要な任意の値でなければならない。</td>
+</tr>
+<tr>
+<td><strong>x</strong></td>
+<td>上下にクリックしたときのマウスカーソルの x 位置を表す整数が含まれている必要がある</td>
+</tr>
+<tr>
+<td><strong>y</strong></td>
+<td>上下にクリックしたときのマウスカーソルの y 位置を表す整数を含む必要がある。</td>
+</tr>
+<tr>
+<td><strong>down</strong></td>
+<td>キーがアップしている場合は0、ダウンしている場合は1でなければなりません。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputscroll">nk_input_scroll</h4>
+<p>最後のマウススクロール値をnuklearにコピーする。一般的にスクロールの値です。だから、マウスから来る必要はありませんし、起源になる可能性もあります TODO この文章を終える</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_scroll</span><span class="hljs-params">(struct nk_context *ctx, struct nk_vec2 val)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>ベクターで、XとYの両方のスクロール値を持つ。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputchar">nk_input_char</h4>
+<p>ASCII 文字 1 文字を内部テキストバッファにコピーする これは基本的に、ASCII 文字を素早く nuklear に押し込むためのヘルパー関数である。</p>
+<p>Note: <code>nk_input_begin</code> と <code>nk_input_end</code> の間に最大で NK_INPUT_MAX バイトを格納する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_char</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">char</span> c)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>c</strong></td>
+<td>ASCII文字（印刷可能な文字）であることが望ましい。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputglyph">nk_input_glyph</h4>
+<p>エンコードされたUnicodeのルーンをUTF-8に変換し、結果を内部のテキストバッファにコピーする。</p>
+<p>注意: <code>nk_input_begin</code> と <code>nk_input_end</code> の間に最大で NK_INPUT_MAX バイトを格納する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_glyph</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> nk_glyph g)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>g</strong></td>
+<td>UTF-32ユニコードコードポイント</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputunicode">nk_input_unicode</h4>
+<p>unicodeのルーンをUTF-8に変換し、結果を内部のテキストバッファにコピーします。</p>
+<p>Note: <code>nk_input_begin</code> と <code>nk_input_end</code> の間に最大で NK_INPUT_MAX バイトを格納する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_unicode</span><span class="hljs-params">(struct nk_context*, nk_rune rune)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>rune</strong></td>
+<td>UTF-32ユニコードコードポイント</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkinputend">nk_input_end</h4>
+<p>マウスカーソルが無制限に掴まれないように、マウスグラビング状態をリセットして入力ミラーリング処理を終了します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_input_end</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>あらかじめ初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="描画">描画</h3>
+<p>このライブラリは、レンダーバックエンドに依存しないように設計されており、画面には直接何も描画しません。その代わり、描画されたすべての図形、ウィジェットは、メモリにバッファリングされ、コマンドキューを構成しています。したがって、各フレームは、ユーザーと彼自身のレンダーバックエンドによって実行される必要がある描画コマンドでコマンドバッファを満たします。その後、コマンドバッファはクリアされる必要があり、新しいフレームを開始することができます。コマンドバッファは主要な描画 API であり、オプションの頂点バッファ API はこの形式を受け取り、ハードウェアがアクセスできる形式に変換するだけであることに注意することが重要でしょう。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>フレームに蓄積されたすべての描画コマンドを描画するには、多くの2Dプリミティブを描画できる独自のレンダーバックエンドが必要です。これには、少なくとも塗りつぶしや描画のある矩形、円、テキスト、線、三角形、はさみなどが含まれます。この基準が満たされると、各描画コマンドを反復処理し、インタプリタのような方法で各描画コマンドを実行できるようになります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_command</span> *<span class="hljs-title">cmd</span> =</span> <span class="hljs-number">0</span>;
+nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-function"><span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        <span class="hljs-title">your_draw_rect_function</span><span class="hljs-params">(...)</span>
+        <span class="hljs-keyword">break</span></span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-comment">//...:</span>
+        <span class="hljs-comment">//[...]</span>
+    }
+}
+</code></pre>
+<p>プログラムフローのコンテキストでは、描画コマンドは入力が収集され、ウィンドウとそれに含まれるウィジェットを含む完全な UI が実行された後、以前に割り当てられたすべての描画コマンドを解放する <code>nk_clear</code> を呼び出す前に実行される必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    Event evt;
+    nk_input_begin(&amp;ctx);
+    <span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+        <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+            nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+            [...]
+        }
+    }
+    nk_input_end(&amp;ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// [...]</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_command</span> *<span class="hljs-title">cmd</span> =</span> <span class="hljs-number">0</span>;
+    nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-function"><span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        <span class="hljs-title">your_draw_rect_function</span><span class="hljs-params">(...)</span>
+        <span class="hljs-keyword">break</span></span>;
+    <span class="hljs-keyword">case</span> ...:
+        <span class="hljs-comment">// [...]</span>
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<p>フレームごとにすべてのUIを描画する必要があり、非常に無駄が多いことにお気づきでしょう。実際のUI更新ループは非常に高速ですが、実際にUIを必要としないレンダリングは高速ではありません。そこで、できることは複数あります。まず、入力があったときだけ更新する方法です。もちろん、これはアプリケーションがUIにのみ依存し、外部からの計算を必要としない場合にのみ有効なオプションです。実際に入力時にのみ更新する場合は、各フレームで2回UIを更新し、最初のパスの後に直接 <code>nk_clear</code> を呼び出し、2回目のパスでは描画のみを行うようにしてください。さらに、UIが1秒間に一定のフレーム数以上描画されないように、追加のタイマーを追加することをお勧めします。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-comment">// [...wait for input ]</span>
+    <span class="hljs-comment">// [...do two UI passes ...]</span>
+    do_ui(...)
+    nk_clear(&amp;ctx);
+    do_ui(...)
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// draw</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_command</span> *<span class="hljs-title">cmd</span> =</span> <span class="hljs-number">0</span>;
+    nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-function"><span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        <span class="hljs-title">your_draw_rect_function</span><span class="hljs-params">(...)</span>
+        <span class="hljs-keyword">break</span></span>;
+    <span class="hljs-keyword">case</span> ...:
+        <span class="hljs-comment">//[...]</span>
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<p>2 番目の、おそらくより応用的なトリックは、何か変化があったときだけ描画することです。これは連続的な描画ループを持つアプリケーションではあまり役に立ちませんが、デスクトップアプリケーションではかなり役に立ちます。実際に nuklear に変更時のみ描画させるためには、まず <code>NK_ZERO_COMMAND_MEMORY</code> を定義し、各独自の描画出力を格納するメモリバッファを割り当てる必要があります。各フレームの後、ライブラリ内の描画コマンドメモリと割り当てられたバッファを memcmp で比較します。memcmp が違いを検出した場合、コマンドバッファを割り当てられたバッファにコピーし、通常のように描画する必要があります (この例では固定メモリを使用していますが、動的に割り当てられたメモリを使用することも可能です)。</p>
+<pre><code class="lang-c"><span class="hljs-comment">//[... other defines ...]</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NK_ZERO_COMMAND_MEMORY</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;nuklear.h&quot;</span></span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// setup context</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+<span class="hljs-keyword">void</span> *last = <span class="hljs-built_in">calloc</span>(<span class="hljs-number">1</span>,<span class="hljs-number">64</span>*<span class="hljs-number">1024</span>);
+<span class="hljs-keyword">void</span> *buf = <span class="hljs-built_in">calloc</span>(<span class="hljs-number">1</span>,<span class="hljs-number">64</span>*<span class="hljs-number">1024</span>);
+nk_init_fixed(&amp;ctx, buf, <span class="hljs-number">64</span>*<span class="hljs-number">1024</span>);
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// loop</span>
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-comment">// [...input...]</span>
+    <span class="hljs-comment">// [...ui...]</span>
+    <span class="hljs-keyword">void</span> *cmds = nk_buffer_memory(&amp;ctx.memory);
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">memcmp</span>(cmds, last, ctx.memory.allocated)) {
+        <span class="hljs-built_in">memcpy</span>(last,cmds,ctx.memory.allocated);
+        <span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_command</span> *<span class="hljs-title">cmd</span> =</span> <span class="hljs-number">0</span>;
+        nk_foreach(cmd, &amp;ctx) {
+            <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+            <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+                your_draw_line_function(...)
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-function"><span class="hljs-keyword">case</span> NK_COMMAND_RECT
+                <span class="hljs-title">your_draw_rect_function</span><span class="hljs-params">(...)</span>
+                <span class="hljs-keyword">break</span></span>;
+            <span class="hljs-keyword">case</span> ...:
+                <span class="hljs-comment">// [...]</span>
+            }
+        }
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<p>最後に、X11 や Win32 のような抽象度の高いプラットフォームや描画ライブラリでは、描画コマンドを使用することは理にかなっていますが、グラフィックスハードウェアを直接使用することが望ましい場合も多くあります。そのため、オプションの頂点出力を含む <code>NK_INCLUDE_VERTEX_BUFFER_OUTPUT</code> を定義することが可能になっています。頂点出力にアクセスするには、まず <code>nk_convert</code> を呼び出して、すべての描画コマンドを頂点に変換する必要があります。すべての描画コマンドの変換に成功したら、すべての頂点の描画コマンドを繰り返し実行します。</p>
+<pre><code class="lang-c"><span class="hljs-comment">// fill configuration</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">your_vertex</span>
+{</span>
+    <span class="hljs-keyword">float</span> pos[<span class="hljs-number">2</span>]; <span class="hljs-comment">// important to keep it to 2 floats</span>
+    <span class="hljs-keyword">float</span> uv[<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> col[<span class="hljs-number">4</span>];
+};
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_convert_config</span> <span class="hljs-title">cfg</span> =</span> {};
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_draw_vertex_layout_element</span> <span class="hljs-title">vertex_layout</span>[] =</span> {
+    {NK_VERTEX_POSITION, NK_FORMAT_FLOAT, NK_OFFSETOF(struct your_vertex, pos)},
+    {NK_VERTEX_TEXCOORD, NK_FORMAT_FLOAT, NK_OFFSETOF(struct your_vertex, uv)},
+    {NK_VERTEX_COLOR, NK_FORMAT_R8G8B8A8, NK_OFFSETOF(struct your_vertex, col)},
+    {NK_VERTEX_LAYOUT_END}
+};
+cfg.shape_AA = NK_ANTI_ALIASING_ON;
+cfg.line_AA = NK_ANTI_ALIASING_ON;
+cfg.vertex_layout = vertex_layout;
+cfg.vertex_size = <span class="hljs-keyword">sizeof</span>(struct your_vertex);
+cfg.vertex_alignment = NK_ALIGNOF(struct your_vertex);
+cfg.circle_segment_count = <span class="hljs-number">22</span>;
+cfg.curve_segment_count = <span class="hljs-number">22</span>;
+cfg.arc_segment_count = <span class="hljs-number">22</span>;
+cfg.global_alpha = <span class="hljs-number">1.0f</span>;
+cfg.tex_null = dev-&gt;tex_null;
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// setup buffers and convert</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_buffer</span> <span class="hljs-title">cmds</span>, <span class="hljs-title">verts</span>, <span class="hljs-title">idx</span>;</span>
+nk_buffer_init_default(&amp;cmds);
+nk_buffer_init_default(&amp;verts);
+nk_buffer_init_default(&amp;idx);
+nk_convert(&amp;ctx, &amp;cmds, &amp;verts, &amp;idx, &amp;cfg);
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// draw</span>
+nk_draw_foreach(cmd, &amp;ctx, &amp;cmds) {
+<span class="hljs-keyword">if</span> (!cmd-&gt;elem_count) <span class="hljs-keyword">continue</span>;
+    <span class="hljs-comment">//[...]</span>
+}
+nk_buffer_free(&amp;cms);
+nk_buffer_free(&amp;verts);
+nk_buffer_free(&amp;idx);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>nk</strong>begin__</td>
+<td>コンテクスト描画コマンドリストのうち、最初に描画される描画コマンドを返します。</td>
+</tr>
+<tr>
+<td><strong>nk</strong>next__</td>
+<td>描画コマンドのイテレータを、コンテキストの描画コマンドリストの次のコマンドまでインクリメントします。</td>
+</tr>
+<tr>
+<td><strong>nk_foreach</strong></td>
+<td>コンテキストの描画コマンドリスト内の各描画コマンドを反復処理します。</td>
+</tr>
+<tr>
+<td><strong>nk_convert</strong></td>
+<td>抽象的な描画コマンドリストから、ハードウェアからアクセス可能な頂点フォーマットに変換する。</td>
+</tr>
+<tr>
+<td><strong>nk_draw_begin</strong></td>
+<td>コンテキスト頂点描画リストで最初に実行される頂点コマンドを返します。</td>
+</tr>
+<tr>
+<td><strong>nk</strong>draw<em>next_</em></td>
+<td>頂点コマンドのイテレータを、コンテキスト頂点コマンドリスト内の次のコマンドまでインクリメントします。</td>
+</tr>
+<tr>
+<td><strong>nk</strong>draw<em>end_</em></td>
+<td>頂点描画リストの終端を返します。</td>
+</tr>
+<tr>
+<td><strong>nk_draw_foreach</strong></td>
+<td>頂点描画リスト内の各頂点描画コマンドを反復処理する。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkbegin">nk__begin</h4>
+<p>1フレームに蓄積されたすべての描画コマンドを反復する描画コマンドリストイテレータを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">const</span> struct nk_command* <span class="hljs-title">nk__begin</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームが終了した時点で、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>描画コマンドリスト内の最初のコマンドを指す描画コマンドポインタを返します。</p>
+<h4 id="nknext">nk__next</h4>
+<p>描画コマンドリスト内の次のコマンドを指す描画コマンドポインタを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">const</span> struct nk_command* <span class="hljs-title">nk__next</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> struct nk_command*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>cmd</strong></td>
+<td>nk<strong>begin<code>または</code>nk</strong>next` によって返される以前の描画コマンドを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>描画コマンドリスト内の次のコマンドを指す描画コマンドポインタを返します。</p>
+<h4 id="nkforeach">nk_foreach</h4>
+<p>コンテキストの描画コマンドリスト内の各描画コマンドを反復処理します。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_foreach(c, ctx)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>cmd</strong></td>
+<td>コマンドポインタをNULLに初期化</td>
+</tr>
+</tbody>
+</table>
+<p>コンテキストの描画コマンドリスト内の各描画コマンドを反復処理します。</p>
+<h4 id="nkconvert">nk_convert</h4>
+<p>すべての内部描画コマンドを頂点描画コマンドに変換し、3つのバッファを頂点、頂点描画コマンド、頂点インデックスで埋めます。頂点のフォーマットやその他の設定値は <code>nk_convert_config</code> 構造体を埋めて設定する必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-function">nk_flags <span class="hljs-title">nk_convert</span><span class="hljs-params">(struct nk_context *ctx, struct nk_buffer *cmds,
+    struct nk_buffer *vertices, struct nk_buffer *elements, <span class="hljs-keyword">const</span> struct nk_convert_config*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>cmds</strong></td>
+<td>変換された頂点描画コマンドを保持するために、事前に初期化されたバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>vertices</strong></td>
+<td>生成されたすべての頂点を保持するために，あらかじめ初期化されたバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>elements</strong></td>
+<td>生成されたすべての頂点インデックスを保持するために、事前に初期化されたバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>config</strong></td>
+<td>変換処理を設定するために、入力された <code>nk_config</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>enum nk_convert_result のエラーコードのいずれかを返します。</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_CONVERT_SUCCESS</td>
+<td>描画コマンドから頂点バッファへの変換が正常に行われたことを示す。</td>
+</tr>
+<tr>
+<td>NK_CONVERT_INVALID_PARAM</td>
+<td>関数呼び出しの際に無効な引数が渡された</td>
+</tr>
+<tr>
+<td>NK_CONVERT_COMMAND_BUFFER_FULL</td>
+<td>描画コマンドを格納するための提供されたバッファが満杯であるか、より多くのメモリを割り当てることに失敗しました。</td>
+</tr>
+<tr>
+<td>NK_CONVERT_VERTEX_BUFFER_FULL</td>
+<td>頂点を格納するために提供されたバッファが満杯であるか、より多くのメモリを割り当てることに失敗した</td>
+</tr>
+<tr>
+<td>NK_CONVERT_ELEMENT_BUFFER_FULL</td>
+<td>インデックスを格納するための提供されたバッファが満杯であるか、より多くのメモリを割り当てることに失敗しました。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkdrawbegin">nk__draw_begin</h4>
+<p>頂点描画コマンドバッファを反復処理するためのイテレータを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">const</span> struct nk_draw_command* <span class="hljs-title">nk__draw_begin</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context*, <span class="hljs-keyword">const</span> struct nk_buffer*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>buf</strong></td>
+<td>以前に <code>nk_convert</code> によって埋め尽くされた頂点描画コマンドバッファを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>頂点描画コマンドバッファ内の最初のコマンドを指す頂点描画コマンドポインタを返します。</p>
+<h4 id="nkdrawend">nk__draw_end</h4>
+<p>頂点描画コマンドバッファの終端にある頂点描画コマンドを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">const</span> struct nk_draw_command* <span class="hljs-title">nk__draw_end</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx, <span class="hljs-keyword">const</span> struct nk_buffer *buf)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>buf</strong></td>
+<td>以前に <code>nk_convert</code> によって埋め尽くされた頂点描画コマンドバッファを指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>頂点描画コマンドバッファ内の最後の頂点描画コマンドの終端を指す頂点描画コマンドポインタを返します。</p>
+<h4 id="nkdrawnext">nk__draw_next</h4>
+<p>頂点描画コマンドバッファイテレータをインクリメントします。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">const</span> struct nk_draw_command* <span class="hljs-title">nk__draw_next</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_draw_command*, <span class="hljs-keyword">const</span> struct nk_buffer*, <span class="hljs-keyword">const</span> struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cmd</strong></td>
+<td>以前に <code>nk__draw_begin</code> または <code>nk__draw_next</code> によって返された頂点描画コマンドを指している必要があります。</td>
+</tr>
+<tr>
+<td><strong>buf</strong></td>
+<td>以前に <code>nk_convert</code> によって埋め尽くされた頂点描画コマンドバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>頂点描画コマンドバッファ内の最後の頂点描画コマンドの終端を指す頂点描画コマンドポインタを返します。</p>
+<h4 id="nkdrawforeach">nk_draw_foreach</h4>
+<p>頂点描画コマンドバッファ内の各頂点描画コマンドを繰り返し処理します。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_draw_foreach(cmd,ctx, b)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cmd</strong></td>
+<td>nk_draw_command` のイテレータが NULL に設定されました。</td>
+</tr>
+<tr>
+<td><strong>buf</strong></td>
+<td>以前に <code>nk_convert</code> によって埋め尽くされた頂点描画コマンドバッファを指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>ctx</strong></td>
+<td>フレームの最後には、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ウィンドウ">ウィンドウ</h3>
+<p>ウィンドウは nuklear の内部で使用される主な永続的な状態であり、各フレームごとにウィンドウを「リタッチ」（すなわち呼び出し）するだけでライフタイム制御が可能です。nuklear 内のすべてのウィジェットは、関数ペア <code>nk_begin_xxx</code> と <code>nk_end</code> の内部でのみ追加することができます。この2つの関数の外でウィジェットを呼び出すと、デバッグモードではアサートされ、リリースモードでは状態が変化しないことになります。</p>
+<p>各ウィンドウは、位置、サイズ、フラグ、ステートテーブル、およびガベージコレクションされた内部永続ウィジェットステートのようなフレームの永続的な状態を保持します。各ウィンドウは、描画とオーバーラップの順序を決定するウィンドウ スタック リストにリンクされています。これにより、一番上のウィンドウが現在アクティブなウィンドウとなります。</p>
+<p>スタック内のウィンドウの位置を変更するには、ユーザがクリックすることで自動的に行われるか、プログラムによって <code>nk_window_focus</code> を呼び出すことで行われます。デフォルトのウィンドウは、フラグ <code>NK_WINDOW_HIDDEN</code> で明示的に定義されているか、フラグ <code>NK_WINDOW_CLOSABLE</code> のウィンドウでユーザが閉じるボタンをクリックしたか、または <code>nk_window_show</code> を呼び出して明示的にウィンドウを隠さない限り、可視状態になっています。明示的にウィンドウを閉じて破棄するには、 <code>nk_window_close</code> を呼び出します。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>ウィンドウを作成して保持するには、ウィンドウの宣言を開始するために 2 つの <code>nk_begin_xxx</code> 関数のいずれかを呼び出し、終了時に <code>nk_end</code> 関数を呼び出す必要があります。さらに、<code>nk_begin_xxx</code>の戻り値をチェックして、その値が0でない場合にのみウィンドウ内のウィジェットを処理することをお勧めします。いずれにせよ、ウィンドウの宣言の最後に <code>nk_end</code> を呼び出す必要があります。さらに、<code>nk_begin_xxx</code> の呼び出しを入れ子にしないようにしてください。うまくいけばアサートが発生し、そうでなければセグメンテーションフォールトが発生します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// [... widgets ...]</span>
+}
+nk_end(ctx);
+</code></pre>
+<p>ウィンドウやウィジェットの宣言は、入力処理の後、画面への描画の前に行うのが基本です。そうしないと、レイテンシーが高くなったり、最悪の場合、動作がおかしくなったりします。さらに、<code>nk_clear</code> がフレームの終わりで呼ばれることを確認してください。nuklear のデフォルトのプラットフォームバックエンドは既に <code>nk_clear</code> を呼び出していますが、独自のバックエンドを作成する場合は <code>nk_clear</code> を呼び出さないと、アサートや最悪の場合未定義の動作が発生する可能性があります。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    Event evt;
+    nk_input_begin(&amp;ctx);
+    <span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+        <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+            nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+            nk_input_xxx(...);
+        }
+    }
+    nk_input_end(&amp;ctx);
+    <span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+        <span class="hljs-comment">//[...]</span>
+    }
+    nk_end(ctx);
+    <span class="hljs-keyword">const</span> struct nk_command *cmd = <span class="hljs-number">0</span>;
+    nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        your_draw_rect_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-comment">//...:</span>
+        <span class="hljs-comment">//[...]</span>
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nk_begin</td>
+<td>新しいウィンドウを開始します。（非表示でない限り）すべてのウィンドウに対してフレームごとに呼び出される必要があり、さもなければウィンドウが削除されます</td>
+</tr>
+<tr>
+<td>nk_begin_titled</td>
+<td>タイトルと識別子を分離してウィンドウを開始する機能を拡張し、タイトルが同じでない複数のウィンドウを使用できるようにしました。</td>
+</tr>
+<tr>
+<td>nk_end</td>
+<td>ウィンドウ構築処理の最後に呼び出され、スケーリング、スクロールバー、および一般的なクリーンアップを処理する必要があります。</td>
+</tr>
+<tr>
+<td>nk_window_find</td>
+<td>指定された名前のウィンドウを検索して返します。</td>
+</tr>
+<tr>
+<td>nk_window_get_bounds</td>
+<td>現在処理中のウィンドウの画面位置と大きさを矩形で返す。</td>
+</tr>
+<tr>
+<td>nk_window_get_position</td>
+<td>現在処理中のウィンドウの位置を返す</td>
+</tr>
+<tr>
+<td>nk_window_get_size</td>
+<td>現在処理中のウィンドウのサイズを幅と高さで返します。</td>
+</tr>
+<tr>
+<td>nk_window_get_width</td>
+<td>現在処理中のウィンドウの幅を返す</td>
+</tr>
+<tr>
+<td>nk_window_get_height</td>
+<td>現在処理中のウィンドウの高さを返します。</td>
+</tr>
+<tr>
+<td>nk_window_get_panel</td>
+<td>現在のウィンドウの全ての処理状態を含むパネルを返します。</td>
+</tr>
+<tr>
+<td>nk_window_get_content_region</td>
+<td>現在処理中のウィンドウ内で、現在表示されている非クリップ空間の位置と大きさを返す</td>
+</tr>
+<tr>
+<td>nk_window_get_content_region_min</td>
+<td>現在処理中のウィンドウ内で、現在表示されている非クリップ空間の上部矩形位置を返す</td>
+</tr>
+<tr>
+<td>nk_window_get_content_region_max</td>
+<td>現在処理中のウィンドウ内で、現在表示されている非クリップ空間の上部矩形位置を返す</td>
+</tr>
+<tr>
+<td>nk_window_get_content_region_size</td>
+<td>現在処理中のウィンドウ内の可視かつ非クリップ空間の大きさを返す</td>
+</tr>
+<tr>
+<td>nk_window_get_canvas</td>
+<td>描画コマンドバッファを返します。カスタムウィジェットの描画に使用できる</td>
+</tr>
+<tr>
+<td>nk_window_get_scroll</td>
+<td>現在のウィンドウのスクロールオフセットを取得する</td>
+</tr>
+<tr>
+<td>nk_window_has_focus</td>
+<td>現在処理中のウィンドウがアクティブであるか否かを返す</td>
+</tr>
+<tr>
+<td>nk_window_is_collapsed</td>
+<td>指定された名前のウィンドウが現在最小化/折りたたみされているかどうかを返します。</td>
+</tr>
+<tr>
+<td>nk_window_is_closed</td>
+<td>現在処理中のウィンドウが閉じられたかどうかを返します</td>
+</tr>
+<tr>
+<td>nk_window_is_hidden</td>
+<td>現在処理中のウィンドウが非表示であったかどうかを返します</td>
+</tr>
+<tr>
+<td>nk_window_is_active</td>
+<td>なぜか <code>nk_window_has_focus</code> と同じです。</td>
+</tr>
+<tr>
+<td>nk_window_is_hovered</td>
+<td>現在処理中のウィンドウがマウスでホバーされているかどうかを返します。</td>
+</tr>
+<tr>
+<td>nk_window_is_any_hovered</td>
+<td>現在ホバリングしているウィンドウがあるかどうかを返す</td>
+</tr>
+<tr>
+<td>nk_item_is_any_active</td>
+<td>ウィンドウまたはウィジェットが現在ホバーされているか、またはアクティブであるかを返します。</td>
+</tr>
+<tr>
+<td>nk_window_set_bounds</td>
+<td>現在処理中のウィンドウの位置とサイズを更新する</td>
+</tr>
+<tr>
+<td>nk_window_set_position</td>
+<td>現在処理中のウィンドウの位置を更新する</td>
+</tr>
+<tr>
+<td>nk_window_set_size</td>
+<td>現在処理中のウィンドウのサイズを更新する</td>
+</tr>
+<tr>
+<td>nk_window_set_focus</td>
+<td>現在処理中のウィンドウをアクティブウィンドウに設定する</td>
+</tr>
+<tr>
+<td>nk_window_set_scroll</td>
+<td>現在のウィンドウのスクロールオフセットを設定する</td>
+</tr>
+<tr>
+<td>nk_window_close</td>
+<td>指定されたウィンドウ名でウィンドウを閉じ、フレームの最後にウィンドウを削除します。</td>
+</tr>
+<tr>
+<td>nk_window_collapse</td>
+<td>指定されたウィンドウ名でウィンドウを折りたたみます</td>
+</tr>
+<tr>
+<td>nk_window_collapse_if</td>
+<td>指定された条件を満たした場合に、指定されたウィンドウ名でウィンドウを折りたたみます。</td>
+</tr>
+<tr>
+<td>nk_window_show</td>
+<td>表示されているウィンドウを非表示にしたり、非表示になっているウィンドウを再表示にしたりします。</td>
+</tr>
+<tr>
+<td>nk_window_show_if</td>
+<td>条件によってウィンドウを表示/非表示にする</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkpanelflags">nk_panel_flags</h4>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_WINDOW_BORDER</td>
+<td>ウィンドウの周囲にボーダーを描き、ウィンドウと背景を視覚的に分離します</td>
+</tr>
+<tr>
+<td>NK_WINDOW_MOVABLE</td>
+<td>可動フラグは、ユーザー入力またはウィンドウヘッダーのドラッグによってウィンドウを移動できることを示す。</td>
+</tr>
+<tr>
+<td>NK_WINDOW_SCALABLE</td>
+<td>スケーラブルフラグは、ウィンドウのボタンにあるスケーラアイコンをドラッグすることで、ユーザー入力によりウィンドウを拡大縮小できることを示します</td>
+</tr>
+<tr>
+<td>NK_WINDOW_CLOSABLE</td>
+<td>ヘッダーにクローズ可能なアイコンを追加する</td>
+</tr>
+<tr>
+<td>NK_WINDOW_MINIMIZABLE</td>
+<td>ヘッダーに最小化アイコンを追加</td>
+</tr>
+<tr>
+<td>NK_WINDOW_NO_SCROLLBAR</td>
+<td>ウィンドウからスクロールバーを削除する</td>
+</tr>
+<tr>
+<td>NK_WINDOW_TITLE</td>
+<td>ウィンドウの上部にタイトルを示すヘッダーを強制的に表示します。</td>
+</tr>
+<tr>
+<td>NK_WINDOW_SCROLL_AUTO_HIDE</td>
+<td>ユーザーインタラクションがない場合、ウィンドウスクロールバーを自動的に隠す: 各フレームで <code>nk_context</code> にデルタタイムを設定する必要もある</td>
+</tr>
+<tr>
+<td>NK_WINDOW_BACKGROUND</td>
+<td>ウィンドウを常にバックグラウンドで表示</td>
+</tr>
+<tr>
+<td>NK_WINDOW_SCALE_LEFT</td>
+<td>ウィンドウスケーラーを右下ではなく左下に配置する</td>
+</tr>
+<tr>
+<td>NK_WINDOW_NO_INPUT</td>
+<td>ウィンドウの拡大縮小、移動、フォーカスの取得を防止します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkcollapsestates">nk_collapse_states</h4>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NK_MINIMIZED</strong></td>
+<td>UIセクションが折りたたまれ、最大化されるまで表示されない</td>
+</tr>
+<tr>
+<td><strong>NK_MAXIMIZED</strong></td>
+<td>UIセクションは拡張され、最小化されるまで表示されます。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkbegin">nk_begin</h4>
+<p>新しいウィンドウを開始します。（非表示でない限り）すべてのウィンドウに対してフレームごとに呼び出される必要があり、さもなければウィンドウが削除されます</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_begin</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, struct nk_rect bounds, nk_flags flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ウィンドウのタイトルと識別子。ウィンドウを識別するために、フレーム間で持続する必要があります。</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>初期位置とウィンドウサイズです。ただし、 <code>NK_WINDOW_SCALABLE</code> や <code>NK_WINDOW_MOVABLE</code> を定義しない場合は、ウィンドウの位置とサイズをフレームごとに設定することができます。</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flags セクションで定義されたウィンドウのフラグで、さまざまなウィンドウの動作があります。</td>
+</tr>
+</tbody>
+</table>
+<p>この時点から <code>nk_end</code> までの間にウィンドウをウィジェットで埋め尽くすことができれば <code>true(1)</code> を、そうでなければ <code>false(0)</code> を返します (例えば最小化されている場合など)。</p>
+<h4 id="nkbegintitled">nk_begin_titled</h4>
+<p>タイトルと識別子を分離してウィンドウを開始できるように拡張し、同じタイトルで名前がないウィンドウを複数作成できるようにしました。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_begin_titled</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, struct nk_rect bounds, nk_flags flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ウィンドウの識別子。ウィンドウを識別するためにフレーム間で永続的である必要があります。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>フラグ <code>NK_WINDOW_TITLE</code> または <code>NK_WINDOW_CLOSABLE</code> か <code>NK_WINDOW_MINIMIZED</code> が設定されている場合に、ウィンドウのタイトルがヘッダ内に表示される。</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>初期位置とウィンドウサイズです。ただし、 <code>NK_WINDOW_SCALABLE</code> や <code>NK_WINDOW_MOVABLE</code> を定義しない場合は、ウィンドウの位置とサイズをフレームごとに設定することができます。</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flags セクションで定義されたウィンドウのフラグで、さまざまなウィンドウの動作があります。</td>
+</tr>
+</tbody>
+</table>
+<p>この時点から <code>nk_end</code> までの間にウィンドウをウィジェットで埋め尽くすことができれば <code>true(1)</code> を、そうでなければ <code>false(0)</code> を返します (例えば最小化されている場合など)。</p>
+<h4 id="nkend">nk_end</h4>
+<p>スケーリング、スクロールバー、一般的なクリーンアップを処理するために、ウィンドウ構築プロセスの最後に呼び出される必要がある。この関数の後にウィジェットを呼び出すと、アサートが発生するか、状態が変化しない。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_end</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowfind">nk_window_find</h4>
+<p>渡された名前からウィンドウを検索して返す</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_window *<span class="hljs-title">nk_window_find</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<p>指定したウィンドウを指す <code>nk_window</code> 構造体を返します。指定した名前のウィンドウが見つからない場合は NULL を返します。</p>
+<h4 id="nkwindowgetbounds">nk_window_get_bounds</h4>
+<p>現在処理中のウィンドウの画面位置と大きさを矩形で返す</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_window_get_bounds</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウの左上端の位置とサイズを持つ <code>nk_rect</code> 構造体を返す。</p>
+<h4 id="nkwindowgetposition">nk_window_get_position</h4>
+<p>現在処理中のウィンドウの位置を返します。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間でのみコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_window_get_position</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウの左上端を持つ <code>nk_vec2</code> 構造体を返す。</p>
+<h4 id="nkwindowgetsize">nk_window_get_size</h4>
+<p>現在処理中のウィンドウのサイズを幅と高さで返します。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間でのみコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_window_get_size</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウの幅と高さを持つ <code>nk_vec2</code> 構造体を返す。</p>
+<h4 id="nkwindowgetwidth">nk_window_get_width</h4>
+<p>現在処理中のウィンドウの幅を返します。</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">nk_window_get_width</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウ幅を返す</p>
+<h4 id="nkwindowgetheight">nk_window_get_height</h4>
+<p>現在処理中のウィンドウの高さを返します。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間でのみコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">nk_window_get_height</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウの高さを返します。</p>
+<h4 id="nkwindowgetpanel">nk_window_get_panel</h4>
+<p>現在のウィンドウのすべての処理状態を含む基礎となるパネルを返します。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の間のみにコールしてください。
+警告: 返されたパネルポインタを保持しないでください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_panel* <span class="hljs-title">nk_window_get_panel</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウ内部の <code>nk_panel</code> 状態へのポインタを返します。</p>
+<h4 id="nkwindowgetcontentregion">nk_window_get_content_region</h4>
+<p>現在処理中のウィンドウ内で、現在表示されている非クリップ空間の位置と大きさを返す。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の間のみにコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_window_get_content_region</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウ内の可視領域の画面位置とサイズ (スクロールバーオフセットなし) を含む <code>nk_rect</code> 構造体を返す。</p>
+<h4 id="nkwindowgetcontentregionmin">nk_window_get_content_region_min</h4>
+<p>現在処理中のウィンドウ内の可視かつ非クリップ空間の左上位置を返す。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の間のみにコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_window_get_content_region_min</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウの可視領域の左上隅の位置（スクロールバーのオフセットなし）を <code>nk_vec2</code> 構造体として返します。</p>
+<h4 id="nkwindowgetcontentregionmax">nk_window_get_content_region_max</h4>
+<p>現在処理中のウィンドウ内で、現在表示されている非クリップ空間の画面右下の位置を返します。</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_window_get_content_region_max</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウの右下にある可視領域の位置 (スクロールバーオフセットなし) を <code>nk_vec2</code> 構造体に格納した結果を返します。</p>
+<h4 id="nkwindowgetcontentregionsize">nk_window_get_content_region_size</h4>
+<p>現在処理中のウィンドウ内の可視かつ非クリップ空間の大きさを返す</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_window_get_content_region_size</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウの可視領域をサイズ指定した <code>nk_vec2</code> 構造体を返します。</p>
+<h4 id="nkwindowgetcanvas">nk_window_get_canvas</h4>
+<p>描画コマンドバッファを返します。カスタムウィジェットの描画に使用できる</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の間にのみ呼び出してください。
+警告: 返されたコマンドバッファポインタは <code>nk_end</code> までしか有効ではないので、その周りに保持しないでください。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_command_buffer* <span class="hljs-title">nk_window_get_canvas</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>描画キャンバスとして使用されるウィンドウ内部の <code>nk_command_buffer</code> 構造体へのポインタを返します。カスタム描画を行うために使用することができます。</p>
+<h4 id="nkwindowgetscroll">nk_window_get_scroll</h4>
+<p>現在のウィンドウのスクロールオフセットを取得します。</p>
+<p>警告: この関数は <code>nk_begin_xxx</code> と <code>nk_end</code> の間にのみコールしてください。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_get_scroll</span><span class="hljs-params">(struct nk_context *ctx, nk_uint *offset_x, nk_uint *offset_y)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>offset_x</strong></td>
+<td>x オフセット出力へのポインタ（または無視する場合は NULL）</td>
+</tr>
+<tr>
+<td><strong>offset_y</strong></td>
+<td>y オフセット出力へのポインタ（無視する場合は NULL）．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowhasfocus">nk_window_has_focus</h4>
+<p>現在処理中のウィンドウがアクティブであるか否かを返す</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_has_focus</span><span class="hljs-params">(<span class="hljs-keyword">const</span> struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウがアクティブでない場合は <code>false(0)</code> を、アクティブな場合は <code>true(1)</code> を返します。</p>
+<h4 id="nkwindowishovered">nk_window_is_hovered</h4>
+<p>現在のウィンドウがホバーされているかどうかを返す</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_hovered</span><span class="hljs-params">(struct nk_context *ctx)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>Must point to an previously initialized <code>nk_context</code> struct</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウがホバリングされている場合は <code>true(1)</code> 、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowiscollapsed">nk_window_is_collapsed</h4>
+<p>指定された名前のウィンドウが現在最小化/折りたたみされているかどうかを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_collapsed</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>折りたたまれているかどうかを確認したいウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウが最小化されていれば <code>true(1)</code> を、ウィンドウが見つからなかったり最小化されていなければ <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowisclosed">nk_window_is_closed</h4>
+<p>与えられた名前のウィンドウが <code>nk_close</code> を呼び出して閉じられたかどうかを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_closed</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>閉じているかどうかを確認したいウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウが閉じていれば <code>true(1)</code> を、ウィンドウが見つからないか閉じていなければ <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowishidden">nk_window_is_hidden</h4>
+<p>指定された名前のウィンドウが非表示であるかどうかを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_hidden</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>非表示になっているかどうかを確認したいウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<p>現在のウィンドウが非表示であれば <code>true(1)</code> を、ウィンドウが見つからないか表示されていれば <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowisactive">nk_window_is_active</h4>
+<p>なぜか <code>nk_window_has_focus</code> と同じです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_active</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>アクティブかどうかを確認したいウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<p>カレントウィンドウがアクティブであれば <code>true(1)</code> を、ウィンドウが見つからないかアクティブでなければ <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowisanyhovered">nk_window_is_any_hovered</h4>
+<p>任意のウィンドウがホバーされているかどうかを返します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_window_is_any_hovered</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウがホバリングされた場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkitemisanyactive">nk_item_is_any_active</h4>
+<p>任意のウィンドウがホバーされているか、または任意のウィジェットが現在アクティブであるかを返します。入力がUIで処理されるか、特定の入力処理で処理されるかを決定するために使用することができます。例えば、3D空間内を移動するために、UIと3Dカメラを使用することができます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_item_is_any_active</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィンドウがホバーされているか、アイテムがアクティブであれば <code>true(1)</code> を、そうでなければ <code>false(0)</code> を返します。</p>
+<h4 id="nkwindowsetbounds">nk_window_set_bounds</h4>
+<p>渡された名前でウィンドウの位置と大きさを更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_set_bounds</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, struct nk_rect bounds)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>位置とサイズの両方を変更するウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>新しい位置とサイズを持つ <code>nk_rect</code> 構造体を指す必要があります．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowsetposition">nk_window_set_position</h4>
+<p>渡された名前を持つウィンドウの位置を更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_set_position</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, struct nk_vec2 pos)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>両者の位置を変更するウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>pos</strong></td>
+<td>新しい位置を持つ <code>nk_vec2</code> 構造体を指す必要があります．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowsetsize">nk_window_set_size</h4>
+<p>渡された名前を持つウィンドウのサイズを更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_set_size</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, struct nk_vec2)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ウィンドウサイズを変更するウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>size</strong></td>
+<td>新しいウィンドウサイズを持つ <code>nk_vec2</code> 構造体を指す必要があります．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowsetfocus">nk_window_set_focus</h4>
+<p>指定された名前のウィンドウをアクティブとして設定する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_set_focus</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>フォーカスを設定するウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowsetscroll">nk_window_set_scroll</h4>
+<p>現在のウィンドウのスクロールオフセットを設定します</p>
+<p>警告: この関数は、<code>nk_begin_xxx</code> と <code>nk_end</code> の呼び出しの間だけ呼び出します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_set_scroll</span><span class="hljs-params">(struct nk_context *ctx, nk_uint offset_x, nk_uint offset_y)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>offset_x</strong></td>
+<td>スクロールするためのXオフセット</td>
+</tr>
+<tr>
+<td><strong>offset_y</strong></td>
+<td>スクロール先のyオフセット</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowclose">nk_window_close</h4>
+<p>ウィンドウを閉じ、フレーム終了時に解放されるようにマークします。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_close</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>閉じるウィンドウの識別子</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowcollapse">nk_window_collapse</h4>
+<p>指定された名前のウィンドウの崩壊状態を更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_collapse</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">enum</span> nk_collapse_states state)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>閉じるウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_states セクションから取り出した値。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowcollapseif">nk_window_collapse_if</h4>
+<p>指定された条件が満たされた場合、指定された名前のウィンドウの崩壊状態を更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_collapse_if</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">enum</span> nk_collapse_states, <span class="hljs-keyword">int</span> cond)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>折りたたみまたは最大化するウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_states セクションから値を取り出し、ウィンドウを以下の状態にします。</td>
+</tr>
+<tr>
+<td><strong>cond</strong></td>
+<td>崩壊状態変更を実際にコミットするために満たさなければならない条件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowshow">nk_window_show</h4>
+<p>指定された名前のウィンドウの可視性状態を更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_show</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">enum</span> nk_show_states)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>折りたたみまたは最大化するウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>でウィンドウを変更する場合は、visible または hidden のいずれかを指定します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkwindowshowif">nk_window_show_if</h4>
+<p>指定された条件を満たす場合、指定された名前のウィンドウの可視性状態を更新する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_window_show_if</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">enum</span> nk_show_states, <span class="hljs-keyword">int</span> cond)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>表示/非表示を切り替えるウィンドウの識別子</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>でウィンドウを変更する場合は、visible または hidden のいずれかを指定します。</td>
+</tr>
+<tr>
+<td><strong>cond</strong></td>
+<td>可視性の状態変化を実際にコミットするために満たさなければならない条件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="レイアウト">レイアウト</h3>
+<p>レイアウトは、一般的にウィジェットをウィンドウ内に位置とサイズで配置することを説明します。この実装では、レイアウトのための5つの異なるAPIがあり、それぞれ制御と使いやすさの間で異なるトレードオフがあります。</p>
+<p>このライブラリに含まれるすべてのレイアウトメソッドは、行という概念に基づいています。行は、ウィンドウの高さと列の数を持ち、各レイアウトメソッドは、各ウィジェットがどのように行の中に配置されるかを指定します。レイアウト関数を呼び出して行を割り当てた後、ウィジェットを配置すると、割り当てた行の上に内部ポインタが進みます。</p>
+<p>実際にレイアウトを定義するには、適切なレイアウト関数を呼び出すだけで、その後の各ウィジェット呼び出しは、指定されたとおりにウィジェットを配置します。ここで重要なのは、もしウィジェットの数がレイアウト関数の中で定義された列よりも多い場合、別のレイアウト関数を呼び出すことなく次の行が割り当てられるということです。</p>
+<p><code>nk_layout_space_xxx</code> API の外でこれらの API を使用する際の最大の制限は、それぞれの行の高さを定義しなければならないことです。しかし、行の高さはしばしばフォントの高さに依存します。</p>
+<p>この問題を解決するために、nuklear は内部的に、現在アクティブなフォントの高さにパディングを加えた値を最小行高として使用し、行高が 0 の場合はその値を上書きしています。</p>
+<p>手動で行の高さの最小値を変更したい場合は nk_layout_set_min_row_height を使用し、 nk_layout_reset_min_row_height でそれをリセットしてフォントの高さに由来するものに戻します。</p>
+<p>また、nuklearでフォントを変更すると、自動的に最小行の高さが変更されます。つまり、フォントを変更しても、行の高さをフォントより小さくしたい場合は、値を再投入しなければなりません。</p>
+<p>より高度なUIのためには、<code>nk_layout_space_xxx</code>レイアウトメソッドとcassowary制約ソルバー（githubにライセンスモデルを許可したバージョンがあります）を組み合わせて、ウィジェットレイアウトのすべての制御を自分で行うこともお勧めします。しかし、素早く、汚いレイアウトを行うには、他のすべてのレイアウト関数を使用しても問題ないでしょう。</p>
+<h4 id="使用方法">使用方法</h4>
+<ol>
+<li><strong>nk_layout_row_dynamic</strong></li>
+</ol>
+<p>最も簡単なレイアウト関数は、<code>nk_layout_row_dynamic</code> です。これは、各ウィジェットに同じ水平方向のスペースを提供し、ウィンドウの幅が大きくなると動的に拡大されます。つまり、列の数によって、各ウィジェットのサイズが動的に計算式で決定されます。</p>
+<pre><code class="lang-c">widget_width = (window_width - padding - spacing) * (<span class="hljs-number">1</span>/colum_count)
+</code></pre>
+<p>他のレイアウトAPIと同様に、ウィジェットがカラムより多く定義された場合、このライブラリは新しい行を割り当て、以前に定義されたすべてのレイアウトパラメータを維持します。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// first row with height: 30 composed of two widgets</span>
+    nk_layout_row_dynamic(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>);
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// second row with same parameter as defined above</span>
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// third row uses 0 for height which will use auto layouting</span>
+    nk_layout_row_dynamic(&amp;ctx, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+    nk_widget(...);
+    nk_widget(...);
+}
+nk_end(...);
+</code></pre>
+<ol>
+<li><strong>nk_layout_row_static</strong></li>
+</ol>
+<p>もうひとつの簡単なレイアウト関数は <code>nk_layout_row_static</code> です。これは、各ウィジェットが行の中で同じ水平方向のピクセル幅を持つようにし、所有するウィンドウが小さくなったり大きくなったりしても、ウィジェットが大きくならないようにします。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// first row with height: 30 composed of two widgets with width: 80</span>
+    nk_layout_row_static(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>, <span class="hljs-number">2</span>);
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// second row with same parameter as defined above</span>
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// third row uses 0 for height which will use auto layouting</span>
+    nk_layout_row_static(&amp;ctx, <span class="hljs-number">0</span>, <span class="hljs-number">80</span>, <span class="hljs-number">2</span>);
+    nk_widget(...);
+    nk_widget(...);
+}
+nk_end(...);
+</code></pre>
+<ol>
+<li><strong>nk_layout_row_xxx</strong></li>
+</ol>
+<p>もう少し高度なレイアウト API として、関数 <code>nk_layout_row_begin</code>, <code>nk_layout_row_push</code>, <code>nk_layout_row_end</code> が用意されています。これらの関数では、行の各カラムピクセルやウィンドウの比率を直接指定することができます。カラムごとのピクセル幅を直接指定するか、ウィジェットのウィンドウ比率を直接指定するかをサポートしますが、両方を指定することはできません。さらに、これは即時モードAPIなので、各値はウィジェットを呼び出す前に直接プッシュされます。したがって、前2つのレイアウト関数のように、レイアウトが自動的に繰り返されることはありません。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// first row with height: 25 composed of two widgets with width 60 and 40</span>
+    nk_layout_row_begin(ctx, NK_STATIC, <span class="hljs-number">25</span>, <span class="hljs-number">2</span>);
+    nk_layout_row_push(ctx, <span class="hljs-number">60</span>);
+    nk_widget(...);
+    nk_layout_row_push(ctx, <span class="hljs-number">40</span>);
+    nk_widget(...);
+    nk_layout_row_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// second row with height: 25 composed of two widgets with window ratio 0.25 and 0.75</span>
+    nk_layout_row_begin(ctx, NK_DYNAMIC, <span class="hljs-number">25</span>, <span class="hljs-number">2</span>);
+    nk_layout_row_push(ctx, <span class="hljs-number">0.25f</span>);
+    nk_widget(...);
+    nk_layout_row_push(ctx, <span class="hljs-number">0.75f</span>);
+    nk_widget(...);
+    nk_layout_row_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// third row with auto generated height: composed of two widgets with window ratio 0.25 and 0.75</span>
+    nk_layout_row_begin(ctx, NK_DYNAMIC, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+    nk_layout_row_push(ctx, <span class="hljs-number">0.25f</span>);
+    nk_widget(...);
+    nk_layout_row_push(ctx, <span class="hljs-number">0.75f</span>);
+    nk_widget(...);
+    nk_layout_row_end(ctx);
+}
+nk_end(...);
+</code></pre>
+<ol>
+<li><strong>nk_layout_row</strong></li>
+</ol>
+<p>API nk_layout_row_xxx に対応する配列は、単一の nk_layout_row 関数です。すべてのウィジェットにピクセルやウィンドウの比率を指定する代わりに、配列で定義することができます。コントロールが少なくなる代わりに、<code>nk_layout_row</code> は自動的に繰り返されます。それ以外の動作は同じです。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// two rows with height: 30 composed of two widgets with width 60 and 40</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> size[] = {<span class="hljs-number">60</span>,<span class="hljs-number">40</span>};
+    nk_layout_row(ctx, NK_STATIC, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>, ratio);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// two rows with height: 30 composed of two widgets with window ratio 0.25 and 0.75</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> ratio[] = {<span class="hljs-number">0.25</span>, <span class="hljs-number">0.75</span>};
+    nk_layout_row(ctx, NK_DYNAMIC, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>, ratio);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// two rows with auto generated height composed of two widgets with window ratio 0.25 and 0.75</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> ratio[] = {<span class="hljs-number">0.25</span>, <span class="hljs-number">0.75</span>};
+    nk_layout_row(ctx, NK_DYNAMIC, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>, ratio);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+}
+nk_end(...);
+</code></pre>
+<ol>
+<li><strong>nk_layout_row_template_xxx</strong></li>
+</ol>
+<p>最も複雑で 2 番目に柔軟な API は、動的なウィジェットのための行の折り返しやウェイトがない、簡略化されたフレックスボックスのバージョンです。これは即時モードの API ですが、<code>nk_layout_row_xxx</code> とは異なり、オートリピート動作があり、テンプレート化されたウィジェットを呼び出す前に呼び出す必要があります。行テンプレートのレイアウトには、ウィジェットごとに 3 種類のサイズ指定があります。2 つ目のサイズ指定は <code>nk_layout_row_template_push_variable</code> で、これはウィジェットの最小サイズを定義しますが、他のウィジェットによって占有されていないスペースがあれば、大きくすることができます。最後に動的なウィジェットとして <code>nk_layout_row_template_push_dynamic</code> があります。これは完全に柔軟で、可変ウィジェットとは異なり、十分なスペースがない場合はゼロまで縮小することができます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// two rows with height: 30 composed of three widgets</span>
+    nk_layout_row_template_begin(ctx, <span class="hljs-number">30</span>);
+    nk_layout_row_template_push_dynamic(ctx);
+    nk_layout_row_template_push_variable(ctx, <span class="hljs-number">80</span>);
+    nk_layout_row_template_push_static(ctx, <span class="hljs-number">80</span>);
+    nk_layout_row_template_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// first row</span>
+    nk_widget(...); <span class="hljs-comment">// dynamic widget can go to zero if not enough space</span>
+    nk_widget(...); <span class="hljs-comment">// variable widget with min 80 pixel but can grow bigger if enough space</span>
+    nk_widget(...); <span class="hljs-comment">// static widget with fixed 80 pixel width</span>
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// second row same layout</span>
+    nk_widget(...);
+    nk_widget(...);
+    nk_widget(...);
+}
+nk_end(...);
+</code></pre>
+<ol>
+<li><strong>nk_layout_space_xxx</strong></li>
+</ol>
+<p>最後に最も柔軟なAPIは、ウィジェットを直接ウィンドウ内に配置できるようにするものです。スペースレイアウトAPIは、行の自動繰り返しをサポートしない即時モードAPIで、ウィジェットの位置と大きさを直接設定します。位置とサイズは、割り当てられたスペースに対する比率で指定するか、割り当てられたスペースのローカルな位置とピクセルサイズで指定することができます。このAPIは非常に強力なので、利用可能なスペースを取得したり、ローカルな割り当てスペースとスクリーンスペースを変換するためのユーティリティ関数が多数用意されています。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+    <span class="hljs-comment">// static row with height: 500 (you can set column count to INT_MAX if you don&apos;t want to be bothered)</span>
+    nk_layout_space_begin(ctx, NK_STATIC, <span class="hljs-number">500</span>, INT_MAX);
+    nk_layout_space_push(ctx, nk_rect(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">150</span>,<span class="hljs-number">200</span>));
+    nk_widget(...);
+    nk_layout_space_push(ctx, nk_rect(<span class="hljs-number">200</span>,<span class="hljs-number">200</span>,<span class="hljs-number">100</span>,<span class="hljs-number">200</span>));
+    nk_widget(...);
+    nk_layout_space_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// dynamic row with height: 500 (you can set column count to INT_MAX if you don&apos;t want to be bothered)</span>
+    nk_layout_space_begin(ctx, NK_DYNAMIC, <span class="hljs-number">500</span>, INT_MAX);
+    nk_layout_space_push(ctx, nk_rect(<span class="hljs-number">0.5</span>,<span class="hljs-number">0.5</span>,<span class="hljs-number">0.1</span>,<span class="hljs-number">0.1</span>));
+    nk_widget(...);
+    nk_layout_space_push(ctx, nk_rect(<span class="hljs-number">0.7</span>,<span class="hljs-number">0.6</span>,<span class="hljs-number">0.1</span>,<span class="hljs-number">0.1</span>));
+    nk_widget(...);
+}
+nk_end(...);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nk_layout_set_min_row_height</td>
+<td>現在使用されている最小行の高さを指定した値に設定する</td>
+</tr>
+<tr>
+<td>nk_layout_reset_min_row_height</td>
+<td>現在使用されている最小行の高さをフォントの高さにリセットします。</td>
+</tr>
+<tr>
+<td>nk_layout_widget_bounds</td>
+<td>静的レイアウトの行がウィンドウ内に収まる現在の幅を計算します。</td>
+</tr>
+<tr>
+<td>nk_layout_ratio_from_pixel</td>
+<td>画素サイズからウィンドウ比を計算するユーティリティ関数</td>
+</tr>
+<tr>
+<td>nk_layout_row_dynamic</td>
+<td>現在のレイアウトは、同じ大きさの成長する列がn個に分割されています。</td>
+</tr>
+<tr>
+<td>nk_layout_row_static</td>
+<td>現在のレイアウトは、同じ固定サイズのカラムに分割されています。</td>
+</tr>
+<tr>
+<td>nk_layout_row_begin</td>
+<td>指定された高さと列数で新しい行を開始します。</td>
+</tr>
+<tr>
+<td>nk_layout_row_push</td>
+<td>指定されたサイズまたはウィンドウの比率で別の列をプッシュします。</td>
+</tr>
+<tr>
+<td>nk_layout_row_end</td>
+<td>先に開始した行を終了させる</td>
+</tr>
+<tr>
+<td>nk_layout_row</td>
+<td>配列の行と列を、ウィンドウの比率またはサイズで指定する。</td>
+</tr>
+<tr>
+<td>nk_layout_row_template_begin</td>
+<td>行テンプレートの宣言を開始する</td>
+</tr>
+<tr>
+<td>nk_layout_row_template_push_dynamic</td>
+<td>動的に増加するカラムを追加し、十分なスペースがない場合はゼロにすることができます。</td>
+</tr>
+<tr>
+<td>nk_layout_row_template_push_variable</td>
+<td>指定したピクセル幅より小さくはならないが、動的に大きくなる可変カラムを追加する。</td>
+</tr>
+<tr>
+<td>nk_layout_row_template_push_static</td>
+<td>成長せず、常に同じサイズを持つ静的カラムを追加します。</td>
+</tr>
+<tr>
+<td>nk_layout_row_template_end</td>
+<td>行テンプレートの終端をマークする</td>
+</tr>
+<tr>
+<td>nk_layout_space_begin</td>
+<td>各ウィジェットの位置や大きさを指定できるレイアウトスペースを新たに追加</td>
+</tr>
+<tr>
+<td>nk_layout_space_push</td>
+<td>次のウィジェットの位置と大きさを、ピクセルまたは比率で、自分の座標空間にプッシュします。</td>
+</tr>
+<tr>
+<td>nk_layout_space_end</td>
+<td>レイアウト空間の終了を示すマーク</td>
+</tr>
+<tr>
+<td>nk_layout_space_bounds</td>
+<td>nk_layout_space_begin の後に呼び出され、割り当てられた空間の合計を返す。</td>
+</tr>
+<tr>
+<td>nk_layout_space_to_screen</td>
+<td>nk_layout_space 座標空間から画面空間へベクトルを変換する。</td>
+</tr>
+<tr>
+<td>nk_layout_space_to_local</td>
+<td>スクリーン空間から nk_layout_space 座標にベクトルを変換する。</td>
+</tr>
+<tr>
+<td>nk_layout_space_rect_to_screen</td>
+<td>矩形を nk_layout_space の座標空間から画面空間に変換する。</td>
+</tr>
+<tr>
+<td>nk_layout_space_rect_to_local</td>
+<td>矩形を画面空間から nk_layout_space の座標に変換する。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutsetminrowheight">nk_layout_set_min_row_height</h4>
+<p>現在使用されている行の高さの最小値を設定します。</p>
+<p>警告: 渡された高さは、希望する行の高さとパディングの両方を含む必要があります。内部パディングは追加されない。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_set_min_row_height</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> height)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>行の高さの自動生成に使用される新しい最小行の高さ</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutresetminrowheight">nk_layout_reset_min_row_height</h4>
+<p>現在使われている行の最小の高さを <code>font_height + text_padding + padding</code> に戻す。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_reset_min_row_height</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutwidgetbounds">nk_layout_widget_bounds</h4>
+<p>レイアウト関数のいずれかによって確保された次の行の幅を返します。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_layout_widget_bounds</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>次の行の位置とサイズを指定して <code>nk_rect</code> を返す。</p>
+<h4 id="nklayoutratiofrompixel">nk_layout_ratio_from_pixel</h4>
+<p>画素サイズからウィンドウ比を計算するユーティリティ関数</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">nk_layout_ratio_from_pixel</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> pixel_width)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>pixel</strong></td>
+<td>ウィンドウの比率に変換するためのピクセル幅</td>
+</tr>
+</tbody>
+</table>
+<p>次の行の位置とサイズを指定して <code>nk_rect</code> を返します。</p>
+<h4 id="nklayoutrowdynamic">nk_layout_row_dynamic</h4>
+<p>cols 個のウィジェットの間で水平方向のスペースを均等に共有するために、現在の行のレイアウトを設定します。一度呼び出されると、それ以降に呼び出されたウィジェットが @cols より大きい場合は、同じレイアウトで新しい行が割り当てられます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_dynamic</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">float</span> height, <span class="hljs-keyword">int</span> cols)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持、または自動レイアウトの場合は0を保持</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>行内のウィジェットの数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowstatic">nk_layout_row_static</h4>
+<p>現在の行のレイアウトを、同じ @item_width の水平サイズで、行内のウィジェットの数 @cols だけ埋めるように設定します。一度呼び出されると、それ以降に呼び出されたウィジェットが @cols より大きい場合は、同じレイアウトで新しい行が割り当てられます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_static</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">float</span> height, <span class="hljs-keyword">int</span> item_width, <span class="hljs-keyword">int</span> cols)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持、または自動レイアウトの場合は0を保持</td>
+</tr>
+<tr>
+<td><strong>width</strong></td>
+<td>行内の各ウィジェットのピクセル幅を保持します。</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>行内のウィジェットの数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowbegin">nk_layout_row_begin</h4>
+<p>指定された高さと列数で、新しい動的または固定的な行を開始します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_begin</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">enum</span> nk_layout_format fmt, <span class="hljs-keyword">float</span> row_height, <span class="hljs-keyword">int</span> cols)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>fmt</strong></td>
+<td>ウィンドウの比率を指定する場合は <code>NK_DYNAMIC</code> を、固定サイズのカラムを指定する場合は <code>NK_STATIC</code> を指定する。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持します。自動レイアウトの場合は0となります。</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>行内のウィジェットの数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowpush">nk_layout_row_push</h4>
+<p>ウィンドウの比率または1列の幅を指定します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_push</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> value)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>value</strong></td>
+<td>前の <code>nk_layout_row_begin</code> 呼び出しの @fmt に依存して、ウィンドウの比率または固定幅になります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowend">nk_layout_row_end</h4>
+<p>先に開始した行を終了させる</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_end</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrow">nk_layout_row</h4>
+<p>配列の行と列を、ウィンドウの比率またはサイズで指定する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_layout_format, <span class="hljs-keyword">float</span> height, <span class="hljs-keyword">int</span> cols, <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> *ratio)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>fmt</strong></td>
+<td>ウィンドウの比率を指定する場合は <code>NK_DYNAMIC</code> 、固定サイズのカラムを指定する場合は <code>NK_STATIC</code> のいずれかを指定する。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持します。</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>行内のウィジェットの数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowtemplatebegin">nk_layout_row_template_begin</h4>
+<p>行テンプレート宣言の開始</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_template_begin</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> row_height)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowtemplatepushdynamic">nk_layout_row_template_push_dynamic</h4>
+<p>動的に増加するカラムを追加し、十分なスペースがない場合はゼロにすることができます。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_template_push_dynamic</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_begin_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持、または自動レイアウトの場合は0を保持</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowtemplatepushvariable">nk_layout_row_template_push_variable</h4>
+<p>指定したピクセル幅より小さくはならないが、動的に大きくなる可変カラムを追加する。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_template_push_variable</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> min_width)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>width</strong></td>
+<td>次の列の最小ピクセル幅を常に保持します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowtemplatepushstatic">nk_layout_row_template_push_static</h4>
+<p>成長せず、常に同じサイズを持つ静的カラムを追加します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_template_push_static</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">float</span> width)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>width</strong></td>
+<td>次の列のピクセル幅の絶対値を保持する。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutrowtemplateend">nk_layout_row_template_end</h4>
+<p>行テンプレートの終端をマークする</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_row_template_end</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutspacebegin">nk_layout_space_begin</h4>
+<p>各ウィジェットの位置や大きさを指定できる新しいレイアウト空間を開始します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_space_begin</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_layout_format, <span class="hljs-keyword">float</span> height, <span class="hljs-keyword">int</span> widget_count)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_begin_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>fmt</strong></td>
+<td>ウィンドウの比率を指定する場合は <code>NK_DYNAMIC</code> 、固定サイズのカラムを指定する場合は <code>NK_STATIC</code> のいずれかを指定する。</td>
+</tr>
+<tr>
+<td><strong>height</strong></td>
+<td>各ウィジェットの行の高さを保持、または自動レイアウトの場合は0を保持</td>
+</tr>
+<tr>
+<td><strong>columns</strong></td>
+<td>行内のウィジェットの数</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutspacepush">nk_layout_space_push</h4>
+<p>次のウィジェットの位置と大きさを、ピクセルまたは比率で、自分の座標空間にプッシュします。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_space_push</span><span class="hljs-params">(struct nk_context *ctx, struct nk_rect bounds)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>LAOYUT空間における位置と大きさ ローカル座標</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutspaceend">nk_layout_space_end</h4>
+<p>レイアウト空間の終端を示すマーク</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_layout_space_end</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nklayoutspacebounds">nk_layout_space_bounds</h4>
+<p><code>nk_layout_space</code> に割り当てられた空間の総量を計算するユーティリティ関数</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_layout_space_bounds</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<p>割り当てられた領域の合計を <code>nk_rect</code> として返す。</p>
+<h4 id="nklayoutspacetoscreen">nk_layout_space_to_screen</h4>
+<p>nk_layout_space 座標空間から画面空間へベクトルを変換する。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_layout_space_to_screen</span><span class="hljs-params">(struct nk_context*, struct nk_vec2)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>vec</strong></td>
+<td>レイアウト空間から画面座標空間へ変換する位置</td>
+</tr>
+</tbody>
+</table>
+<p>変換後の <code>nk_vec2</code> をスクリーン空間座標で返す。</p>
+<h4 id="nklayoutspacetolocal">nk_layout_space_to_local</h4>
+<p>ベクターをレイアウト空間から画面空間に変換します。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_vec2 <span class="hljs-title">nk_layout_space_to_local</span><span class="hljs-params">(struct nk_context*, struct nk_vec2)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>vec</strong></td>
+<td>画面空間からレイアウト座標空間へ変換する位置</td>
+</tr>
+</tbody>
+</table>
+<p>変換後の <code>nk_vec2</code> をレイアウト空間座標系で返す。</p>
+<h4 id="nklayoutspacerecttoscreen">nk_layout_space_rect_to_screen</h4>
+<p>矩形を画面空間からレイアウト空間に変換する</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_layout_space_rect_to_screen</span><span class="hljs-params">(struct nk_context*, struct nk_rect)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>レイアウト空間から画面空間に変換するための矩形</td>
+</tr>
+</tbody>
+</table>
+<p>変換後の <code>nk_rect</code> をスクリーン空間座標で返す。</p>
+<h4 id="nklayoutspacerecttolocal">nk_layout_space_rect_to_local</h4>
+<p>矩形をレイアウト空間から画面空間に変換する。</p>
+<pre><code class="lang-c"><span class="hljs-function">struct nk_rect <span class="hljs-title">nk_layout_space_rect_to_local</span><span class="hljs-params">(struct nk_context*, struct nk_rect)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_layout_space_begin</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>bounds</strong></td>
+<td>レイアウト空間から画面空間に変換するための矩形</td>
+</tr>
+</tbody>
+</table>
+<p>変換された <code>nk_rect</code> をレイアウト空間座標系で返します。</p>
+<h3 id="グループ">グループ</h3>
+<p>グループは、基本的にウィンドウの中にあるウィンドウです。ウィンドウ内のスペースを細分化し、ウィジェットをグループとしてレイアウトすることができます。ウィジェットレイアウトの複雑な要件は、グループと基本的なレイアウト機能で解決できます。グループはウィンドウと同様に一意の名前で識別され、デフォルトではスクロールバーのオフセットを内部で追跡します。しかし、スクロールバーを直接管理するための追加バージョンも提供されています。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>グループを作成するには、3つの <code>nk_group_begin_xxx</code> 関数のいずれかを呼び出してグループ宣言を開始し、 <code>nk_group_end</code> を終了する必要があります。さらに、<code>nk_group_begin_xxx</code> の戻り値をチェックし、その値が 0 でない場合にのみウィンドウ内のウィジェットを処理することが要求されます。多くのレイアウトスキームがネストによってのみ実現できるため、グループのネストは可能であり、推奨されています。グループはウィンドウとは異なり、対応する <code>nk_group_begin_xxx</code> が 0 を返さない場合にのみ <code>nk_group_end</code> が呼ばれる必要があります。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_group_begin_xxx(ctx, ...) {
+    <span class="hljs-comment">// [... widgets ...]</span>
+    nk_group_end(ctx);
+}
+</code></pre>
+<p>グランドコンセプトでは、グループは <code>nk_begin_xxx</code> でウィンドウを起動した後、 <code>nk_end</code> を呼び出す前に呼び出すことができます。</p>
+<pre><code class="lang-c"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-comment">// Input</span>
+    Event evt;
+    nk_input_begin(&amp;ctx);
+    <span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+        <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+            nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+            nk_input_xxx(...);
+        }
+    }
+    nk_input_end(&amp;ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// Window</span>
+    <span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+        <span class="hljs-comment">// [...widgets...]</span>
+        nk_layout_row_dynamic(...);
+        <span class="hljs-keyword">if</span> (nk_group_begin_xxx(ctx, ...) {
+            <span class="hljs-comment">//[... widgets ...]</span>
+            nk_group_end(ctx);
+        }
+    }
+    nk_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// Draw</span>
+    <span class="hljs-keyword">const</span> struct nk_command *cmd = <span class="hljs-number">0</span>;
+    nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        your_draw_rect_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> ...:
+        <span class="hljs-comment">// [...]</span>
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nk_group_begin</td>
+<td>内部スクロールバー処理による新しいグループの開始</td>
+</tr>
+<tr>
+<td>nk_group_begin_titled</td>
+<td>名前とタイトルを分離し、内部スクロールバーを処理する新しいグループを開始する</td>
+</tr>
+<tr>
+<td>nk_group_end</td>
+<td>グループを終了させる。nk_group_begin が 0 以外を返した場合にのみ呼び出される必要がある。</td>
+</tr>
+<tr>
+<td>nk_group_scrolled_offset_begin</td>
+<td>スクロールバーのXオフセットとYオフセットを手動で分離して処理する新規グループの開始</td>
+</tr>
+<tr>
+<td>nk_group_scrolled_begin</td>
+<td>スクロールバーを手動で操作して新しいグループを開始する</td>
+</tr>
+<tr>
+<td>nk_group_scrolled_end</td>
+<td>手動スクロールバー処理でグループを終了させる。nk_group_begin が 0 以外を返した場合のみ呼び出されるべきである。</td>
+</tr>
+<tr>
+<td>nk_group_get_scroll</td>
+<td>指定されたグループのスクロールオフセットを取得します。</td>
+</tr>
+<tr>
+<td>nk_group_set_scroll</td>
+<td>指定されたグループのスクロールオフセットを設定します</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkgroupbegin">nk_group_begin</h4>
+<p>新しいウィジェットグループを開始します。pos/sizeを指定するために、以前のレイアウト機能が必要です。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_group_begin</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, nk_flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>グループヘッダにも使用される、このグループに固有の識別子である必要があります。</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flags セクションで定義されたウィンドウ・フラグで、さまざまなグループ動作があります。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkgroupbegintitled">nk_group_begin_titled</h4>
+<p>新しいウィジェットグループを開始します。pos/sizeを指定するために、以前のレイアウト機能が必要です。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_group_begin_titled</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, nk_flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>このグループに対して一意な識別子でなければならない</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>グループヘッダーのタイトル</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flags セクションで定義されたウィンドウ・フラグで、さまざまなグループ動作があります。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkgroupend">nk_group_end</h4>
+<p>ウィジェットグループを終了する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_group_end</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkgroupscrolledoffsetbegin">nk_group_scrolled_offset_begin</h4>
+<p>新しいウィジェットグループを開始します。サイズを指定するために、以前のレイアウト機能を必要とします。スクロールバーを追跡しません。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_group_scrolled_offset_begin</span><span class="hljs-params">(struct nk_context*, nk_uint *x_offset, nk_uint *y_offset, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, nk_flags flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>x_offset</strong></td>
+<td>グループ内のすべてのウィジェットを水平方向にオフセットするスクロールバーのx-offsetを指定します。</td>
+</tr>
+<tr>
+<td><strong>y_offset</strong></td>
+<td>グループ内のすべてのウィジェットを垂直方向にオフセットするスクロールバーのyオフセット</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>グループヘッダに表示されるウィンドウ固有のグループタイトル。</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flagsセクションのウィンドウ・フラグ</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkgroupscrolledbegin">nk_group_scrolled_begin</h4>
+<p>新しいウィジェットグループを開始します。サイズを指定するために、以前のレイアウト機能が必要です。スクロールバーを追跡しません。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_group_scrolled_begin</span><span class="hljs-params">(struct nk_context*, struct nk_scroll *off, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, nk_flags)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>off</strong></td>
+<td>x、yの両スクロールオフセット。手動でのスクロールバーコントロールを可能にする</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>グループヘッダに表示されるウィンドウ固有のグループタイトル。</td>
+</tr>
+<tr>
+<td><strong>flags</strong></td>
+<td>nk_panel_flags セクションのウィンドウ・フラグ</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nkgroupscrolledend">nk_group_scrolled_end</h4>
+<p>nk_group_scrolled_offset_begin や nk_group_scrolled_begin を呼び出した後、ウィジェットグループを終了します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_group_scrolled_end</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkgroupgetscroll">nk_group_get_scroll</h4>
+<p>指定されたグループのスクロール位置を取得します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_group_get_scroll</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *id, nk_uint *x_offset, nk_uint *y_offset)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>スクロール位置を取得するグループの ID。</td>
+</tr>
+<tr>
+<td><strong>x_offset</strong></td>
+<td>x オフセット出力へのポインタ（または無視する場合は NULL）</td>
+</tr>
+<tr>
+<td><strong>y_offset</strong></td>
+<td>y オフセット出力へのポインタ（無視する場合は NULL）．</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkgroupsetscroll">nk_group_set_scroll</h4>
+<p>指定されたグループのスクロール位置を設定します。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_group_set_scroll</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *id, nk_uint x_offset, nk_uint y_offset)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>スクロールするグループのID</td>
+</tr>
+<tr>
+<td><strong>x_offset</strong></td>
+<td>スクロールするためのXオフセット</td>
+</tr>
+<tr>
+<td><strong>y_offset</strong></td>
+<td>スクロール先のyオフセット</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ツリー">ツリー</h3>
+<p>ツリーは、2つの異なる概念を表しています。まず、折り畳み可能なUIセクションの概念で、非表示または表示状態のいずれかにすることができる。これにより、UIユーザーは、現在表示されているUIのセットを選択的に最小化して理解することができます。もうひとつは、ツリーを視覚的に表現するためのツリーウィジェットです。</p>
+<p>ツリーは、ネストして表現することができ、複数のネストした折りたたみ可能なUIセクションを持つことができます。すべてのツリーは、 <code>nk_tree_xxx_push_tree</code> 関数を呼び出すことで始まり、 <code>nk_tree_xxx_pop_xxx()</code> 関数のいずれかを呼び出すことで終了します。それぞれの開始関数は、タイトルラベルと、オプションとして表示される画像、そして nk_collapse_states セクションにある初期折りたたみ状態を受け取ります。</p>
+<p>ツリーの実行時の状態は、呼び出し元がライブラリの外部に保存するか、一意のIDを必要とする内部に保存するかのいずれかである。一意の ID は、関数 <code>nk_tree_push</code> によって <code>__FILE__</code> と <code>__LINE__</code> から自動的に生成されるか、関数 <code>nk_tree_push_id</code> によって <code>__FILE__</code> とループインデックスなどのユーザ提供 ID によって生成されるか、関数 <code>nk_tree_push_hashed</code> によって完全にユーザから提供されるかのいずれかである。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>ツリーを作成するには、7つの <code>nk_tree_xxx_push_xxx</code> 関数のいずれかを呼び出して折りたたみ可能なUIセクションを開始し、 <code>nk_tree_xxx_pop</code> で終了します。それぞれの開始関数は、ツリーが折りたたまれているか隠れていてコンテンツで埋める必要がなければ <code>false(0)</code> 、見えていて埋める必要があれば <code>true(1)</code> を返すようになっています。</p>
+<p>注意: ツリーヘッダーはレイアウト関数を必要とせず、代わりに現在使用されているフォントサイズに基づいて自動高さを計算します。 ツリーの終了関数は、ツリーのコンテンツが実際に表示されている場合にのみ呼び出される必要があります。したがって、ツリーのプッシュ関数は <code>if</code> でガードし、ポップ関数はツリーが表示されているときだけ呼び出されるようにします。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">if</span> (nk_tree_push(ctx, NK_TREE_TAB, <span class="hljs-string">&quot;Tree&quot;</span>, NK_MINIMIZED)) {
+    nk_layout_row_dynamic(...);
+    nk_widget(...);
+    nk_tree_pop(ctx);
+}
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nk_tree_push</td>
+<td>内部状態管理で折りたたみ可能なUIセクションを開始する</td>
+</tr>
+<tr>
+<td>nk_tree_push_id</td>
+<td>内部状態管理呼び出し可能な折りたたみ式UIセクションをルックで開始する</td>
+</tr>
+<tr>
+<td>nk_tree_push_hashed</td>
+<td>状態を保存するために使用する内部ユニークIDを完全に制御して、内部状態管理を行う折りたたみ式UIセクションを開始する</td>
+</tr>
+<tr>
+<td>nk_tree_image_push</td>
+<td>画像とラベルのヘッダーを持つ折りたたみ可能なUIセクションを開始する</td>
+</tr>
+<tr>
+<td>nk_tree_image_push_id</td>
+<td>画像とラベルのヘッダーと内部状態管理の callable を持つ折りたたみ可能な UI セクションをルックで開始する</td>
+</tr>
+<tr>
+<td>nk_tree_image_push_hashed</td>
+<td>画像とラベルのヘッダーを持つ折りたたみ可能なUIセクションを開始し、状態を保存するために使用する内部ユニークIDを完全に制御する内部状態管理</td>
+</tr>
+<tr>
+<td>nk_tree_pop</td>
+<td>折りたたみ可能なUIセクションを終了する</td>
+</tr>
+<tr>
+<td>nk_tree_state_push</td>
+<td>外部状態管理で折りたたみ可能なUIセクションを起動する</td>
+</tr>
+<tr>
+<td>nk_tree_state_image_push</td>
+<td>画像とラベルのヘッダーと外部状態管理で折りたたみ可能なUIセクションを開始する</td>
+</tr>
+<tr>
+<td>nk_tree_state_pop</td>
+<td>折りたたみ式UIセクションの終了</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nktreetype">nk_tree_type</h4>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NK_TREE_NODE</td>
+<td>折りたたみ可能なUIセクションをマークするハイライトされたツリーヘッダー</td>
+</tr>
+<tr>
+<td>NK_TREE_TAB</td>
+<td>ハイライトされていないツリーヘッダーをツリー表現に近づける。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nktreepush">nk_tree_push</h4>
+<p>内部状態管理で折りたたみ可能なUIセクションを起動する</p>
+<p>警告: ランタイムツリーの折りたたみ状態を記録するために、この関数は <code>__FILE__</code> と <code>__LINE__</code> の定義を使って一意の ID を生成します。この関数をループで呼び出したい場合は、代わりに <code>nk_tree_push_id</code> または <code>nk_tree_push_hashed</code> を使ってください。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_tree_push(ctx, type, title, state)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreepushid">nk_tree_push_id</h4>
+<p>ルックで内部状態管理を呼び出し可能な折りたたみ式UIセクションを開始します。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_tree_push_id(ctx, type, title, state, id)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>この関数がループ内で呼び出された場合のループカウンタのインデックス</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreepushhashed">nk_tree_push_hashed</h4>
+<p>状態を保存するために使用される内部ユニークIDを完全に制御する内部状態管理で折りたたみ可能なUIセクションを開始する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_tree_push_hashed</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_tree_type, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, <span class="hljs-keyword">enum</span> nk_collapse_states initial_state, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *hash, <span class="hljs-keyword">int</span> len,<span class="hljs-keyword">int</span> seed)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+<tr>
+<td><strong>hash</strong></td>
+<td>IDを生成するためのメモリブロックまたは文字列</td>
+</tr>
+<tr>
+<td><strong>len</strong></td>
+<td>渡されたメモリブロックまたは文字列のサイズ(<strong>hash</strong>)</td>
+</tr>
+<tr>
+<td><strong>seed</strong></td>
+<td>この関数がループ内で呼ばれた場合のシード値、またはデフォルトは <code>0</code> 。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreeimagepush">nk_tree_image_push</h4>
+<p>画像とラベルのヘッダーを持つ折りたたみ可能なUIセクションを開始する</p>
+<p>警告: ランタイムツリーの折りたたみ状態を記録するために、この関数は <code>__FILE__</code> と <code>__LINE__</code> の定義を使って一意の ID を生成します。この関数をループで呼び出したい場合は、代わりに <code>nk_tree_image_push_id</code> または <code>nk_tree_image_push_hashed</code> を使ってください。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_tree_image_push(ctx, type, img, title, state)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>img</strong></td>
+<td>ラベルの左側のヘッダー内に表示する画像</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreeimagepushid">nk_tree_image_push_id</h4>
+<p>画像とラベルのヘッダーと内部状態管理の callable を持つ折りたたみ可能な UI セクションをルックで開始する</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> nk_tree_image_push_id(ctx, type, img, title, state, id)</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>img</strong></td>
+<td>ラベルの左側のヘッダー内に表示する画像</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+<tr>
+<td><strong>id</strong></td>
+<td>この関数がループ内で呼び出された場合のループカウンタのインデックス</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreeimagepushhashed">nk_tree_image_push_hashed</h4>
+<p>状態を保存するために使用される内部ユニークIDを完全に制御する内部状態管理で折りたたみ可能なUIセクションを開始する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_tree_image_push_hashed</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_tree_type, struct nk_image, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, <span class="hljs-keyword">enum</span> nk_collapse_states initial_state, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *hash, <span class="hljs-keyword">int</span> len,<span class="hljs-keyword">int</span> seed)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>以前に初期化された <code>nk_context</code> 構造体を指す必要がある。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>img</strong></td>
+<td>ラベルの左側のヘッダー内に表示する画像</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>nk_collapse_statesのうち、ツリー状態の初期値</td>
+</tr>
+<tr>
+<td><strong>hash</strong></td>
+<td>IDを生成するためのメモリブロックまたは文字列</td>
+</tr>
+<tr>
+<td><strong>len</strong></td>
+<td>渡されたメモリブロックまたは文字列のサイズ(<strong>hash</strong>)</td>
+</tr>
+<tr>
+<td><strong>seed</strong></td>
+<td>この関数がループ内で呼ばれた場合のシード値、またはデフォルトは <code>0</code> 。</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreepop">nk_tree_pop</h4>
+<p>折りたたみ式UIセクションの終了</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_tree_pop</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_tree_xxx_push_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nktreestatepush">nk_tree_state_push</h4>
+<p>外部状態管理で折りたたみ可能なUIセクションを起動する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_tree_state_push</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_tree_type, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, <span class="hljs-keyword">enum</span> nk_collapse_states *state)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>nk_tree_xxx_push_xxx<code>を呼び出した後は、以前に初期化された</code>nk_context` 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>更新する永続的な状態</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreestateimagepush">nk_tree_state_image_push</h4>
+<p>画像とラベルのヘッダーと外部状態管理で折りたたみ可能なUIセクションを開始する</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_tree_state_image_push</span><span class="hljs-params">(struct nk_context*, <span class="hljs-keyword">enum</span> nk_tree_type, struct nk_image, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *title, <span class="hljs-keyword">enum</span> nk_collapse_states *state)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_tree_xxx_push_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>img</strong></td>
+<td>ラベルの左側のヘッダー内に表示する画像</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>nk_tree_type セクションの値で、ツリーノードのヘッダを折りたたみ可能なUIセクションまたはツリーノードのいずれかとして視覚的にマークする。</td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td>ツリーのヘッダーに印刷されるラベル</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>更新する永続的な状態</td>
+</tr>
+</tbody>
+</table>
+<p>ウィジェットが表示され、かつフィルできる場合は <code>true(1)</code> を、そうでない場合は <code>false(0)</code> を返します。</p>
+<h4 id="nktreestatepop">nk_tree_state_pop</h4>
+<p>折りたたみ式UIセクションの終了</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_tree_state_pop</span><span class="hljs-params">(struct nk_context*)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td><code>nk_tree_xxx_push_xxx</code> を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="プロパティ">プロパティ</h3>
+<p>プロパティは、Nuklear の主要な値変更ウィジェットです。値の変更は、ドラッグ、ボタンクリックによる段階的な追加・削除、数値の直接入力で行うことができます。</p>
+<h4 id="使用方法">使用方法</h4>
+<p>各プロパティには、識別のためのユニークな名前が必要で、それはラベルを表示するためにも使用されます。同じ名前を複数回使用したい場合は、名前の前に&apos;#&apos;を付けてください。この&apos;#&apos;は表示されませんが、一意のIDを生成します。また、各プロパティには、最小値と最大値が設定されています。もし、ある型のすべての数値範囲を使用したい場合は、 <code>limits.h</code> から提供されている型制限を使用すればよい。例えば、 <code>nk_property_int</code> と <code>nk_propertyi</code> には <code>INT_MIN</code> と <code>INT_MAX</code> を指定します。さらに、各プロパティはインクリメントボタンがクリックされたときに加算または減算されるインクリメント値を受け取ります。最後に、ドラッグされたピクセルあたりの増分値があり、その値から加減されます。</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> value = <span class="hljs-number">0</span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_xxx(&amp;ctx, ...);
+<span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>) {
+    <span class="hljs-comment">// Input</span>
+    Event evt;
+    nk_input_begin(&amp;ctx);
+    <span class="hljs-keyword">while</span> (GetEvent(&amp;evt)) {
+        <span class="hljs-keyword">if</span> (evt.type == MOUSE_MOVE)
+            nk_input_motion(&amp;ctx, evt.motion.x, evt.motion.y);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (evt.type == [...]) {
+            nk_input_xxx(...);
+        }
+    }
+    nk_input_end(&amp;ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// Window</span>
+    <span class="hljs-keyword">if</span> (nk_begin_xxx(...) {
+        <span class="hljs-comment">// Property</span>
+        nk_layout_row_dynamic(...);
+        nk_property_int(ctx, <span class="hljs-string">&quot;ID&quot;</span>, INT_MIN, &amp;value, INT_MAX, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+    }
+    nk_end(ctx);
+    <span class="hljs-comment">//</span>
+    <span class="hljs-comment">// Draw</span>
+    <span class="hljs-keyword">const</span> struct nk_command *cmd = <span class="hljs-number">0</span>;
+    nk_foreach(cmd, &amp;ctx) {
+    <span class="hljs-keyword">switch</span> (cmd-&gt;type) {
+    <span class="hljs-keyword">case</span> NK_COMMAND_LINE:
+        your_draw_line_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> NK_COMMAND_RECT
+        your_draw_rect_function(...)
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> ...:
+        <span class="hljs-comment">// [...]</span>
+    }
+    nk_clear(&amp;ctx);
+}
+nk_free(&amp;ctx);
+</code></pre>
+<h4 id="リファレンス">リファレンス</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nk_property_int</td>
+<td>渡された値を直接変更する整数プロパティ</td>
+</tr>
+<tr>
+<td>nk_property_float</td>
+<td>渡された値を直接変更するFloatプロパティ</td>
+</tr>
+<tr>
+<td>nk_property_double</td>
+<td>渡された値を直接変更するダブルプロパティ</td>
+</tr>
+<tr>
+<td>nk_propertyi</td>
+<td>修正後の int 値を返す整数型プロパティ</td>
+</tr>
+<tr>
+<td>nk_propertyf</td>
+<td>修正後の浮動小数点値を返す Float プロパティ</td>
+</tr>
+<tr>
+<td>nk_propertyd</td>
+<td>Double プロパティは、変更後の Double 値を返す。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkpropertyint">nk_property_int</h4>
+<p>渡された値を直接変更する整数プロパティ</p>
+<p>警告：同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_property_int</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">int</span> min, <span class="hljs-keyword">int</span> *val, <span class="hljs-keyword">int</span> max, <span class="hljs-keyword">int</span> step, <span class="hljs-keyword">float</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>変更する整数ポインタ</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントを加算、減算する。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkpropertyfloat">nk_property_float</h4>
+<p>渡された値を直接変更するFloatプロパティ</p>
+<p>警告：同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_property_float</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> *val, <span class="hljs-keyword">float</span> max, <span class="hljs-keyword">float</span> step, <span class="hljs-keyword">float</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>変更するフロートポインタ</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントを加算、減算する。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkpropertydouble">nk_property_double</h4>
+<p>渡された値を直接変更するダブルプロパティ</p>
+<p>警告：同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nk_property_double</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">double</span> min, <span class="hljs-keyword">double</span> *val, <span class="hljs-keyword">double</span> max, <span class="hljs-keyword">double</span> step, <span class="hljs-keyword">double</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>変更されるダブルポインタ</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントの加算、減算を行う。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<h4 id="nkpropertyi">nk_propertyi</h4>
+<p>整数型プロパティで、渡された値を変更し、新しい値を返します。</p>
+<p>警告: 同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nk_propertyi</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">int</span> min, <span class="hljs-keyword">int</span> val, <span class="hljs-keyword">int</span> max, <span class="hljs-keyword">int</span> step, <span class="hljs-keyword">float</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>修正されて返される現在の整数値</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントを加算、減算する。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<p>変更後の新しい整数値を返す</p>
+<h4 id="nkpropertyf">nk_propertyf</h4>
+<p>Float プロパティは、渡された値を変更し、新しい値を返します。</p>
+<p>警告：同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">nk_propertyf</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">float</span> min, <span class="hljs-keyword">float</span> val, <span class="hljs-keyword">float</span> max, <span class="hljs-keyword">float</span> step, <span class="hljs-keyword">float</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>修正されて返される現在のフロート値</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントを加算、減算する。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<p>変更された新しい浮動小数点数値を返す</p>
+<h4 id="nkpropertyd">nk_propertyd</h4>
+<p>Float プロパティは、渡された値を変更し、新しい値を返します。</p>
+<p>警告：同じラベルを使用してユニークなプロパティIDを生成するには、先頭に <code>#</code> を挿入することを確認してください。これは表示されませんが、正しい動作を保証するものです。</p>
+<pre><code class="lang-c"><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">nk_propertyd</span><span class="hljs-params">(struct nk_context *ctx, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *name, <span class="hljs-keyword">double</span> min, <span class="hljs-keyword">double</span> val, <span class="hljs-keyword">double</span> max, <span class="hljs-keyword">double</span> step, <span class="hljs-keyword">double</span> inc_per_pixel)</span></span>;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ctx</strong></td>
+<td>レイアウト関数を呼び出した後は、以前に初期化された <code>nk_context</code> 構造体を指す必要があります。</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>ラベルとして、またユニークな識別子として使用される文字列</td>
+</tr>
+<tr>
+<td><strong>min</strong></td>
+<td>アンダーフローが許されない最小値</td>
+</tr>
+<tr>
+<td><strong>val</strong></td>
+<td>修正されて返される現在のdouble値</td>
+</tr>
+<tr>
+<td><strong>max</strong></td>
+<td>オーバーフローが許されない最大値</td>
+</tr>
+<tr>
+<td><strong>step</strong></td>
+<td>インクリメントボタン、デクリメントボタンでインクリメントの加算、減算を行う。</td>
+</tr>
+<tr>
+<td><strong>inc_per_pixel</strong></td>
+<td>ドラッグ時の1画素あたりの加算・減算値</td>
+</tr>
+</tbody>
+</table>
+<p>新しい修正後の double 値を返す</p>
+<pre><code>    -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X&quot;
+</code></pre><p>X...XXXXXXXXXXXXX...X -           &quot;</p>
+<h2 id="license">License</h2>
+<pre><code>------------------------------------------------------------------------------
+This software is available under 2 licenses -- choose whichever you prefer.
+------------------------------------------------------------------------------
+ALTERNATIVE A - MIT License
+Copyright (c) 2016-2018 Micha Mettke
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+------------------------------------------------------------------------------
+ALTERNATIVE B - Public Domain (www.unlicense.org)
+This is free and unencumbered software released into the public domain.
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
+software, either in source code form or as a compiled binary, for any purpose,
+commercial or non-commercial, and by any means.
+In jurisdictions that recognize copyright laws, the author or authors of this
+software dedicate any and all copyright interest in the software to the public
+domain. We make this dedication for the benefit of the public at large and to
+the detriment of our heirs and successors. We intend this dedication to be an
+overt act of relinquishment in perpetuity of all present and future rights to
+this software under copyright law.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+------------------------------------------------------------------------------
+</code></pre><h2 id="changelog">Changelog</h2>
+<pre><code>[date][x.yy.zz]-[description]
+-[date]: date on which the change has been pushed
+-[x.yy.zz]: Numerical version string representation. Each version number on the right
+            resets back to zero if version on the left is incremented.
+   - [x]: Major version with API and library breaking changes
+   - [yy]: Minor version with non-breaking API and library changes
+   - [zz]: Bug fix version with no direct changes to API
+- 2020/04/09 (4.02.1) - Removed unused nk_sqrt function to fix compiler warnings
+                      - Fixed compiler warnings if you bring your own methods for
+                       nk_cos/nk_sin/nk_strtod/nk_memset/nk_memcopy/nk_dtoa
+- 2020/04/06 (4.01.10) - Fix bug: Do not use pool before checking for NULL
+- 2020/03/22 (4.01.9) - Fix bug where layout state wasn&apos;t restored correctly after
+                       popping a tree.
+- 2020/03/11 (4.01.8) - Fix bug where padding is subtracted from widget
+- 2020/03/06 (4.01.7) - Fix bug where width padding was applied twice
+- 2020/02/06 (4.01.6) - Update stb_truetype.h and stb_rect_pack.h and separate them
+- 2019/12/10 (4.01.5) - Fix off-by-one error in NK_INTERSECT
+- 2019/10/09 (4.01.4) - Fix bug for autoscrolling in nk_do_edit
+- 2019/09/20 (4.01.3) - Fixed a bug wherein combobox cannot be closed by clicking the header
+                       when NK_BUTTON_TRIGGER_ON_RELEASE is defined.
+- 2019/09/10 (4.01.2) - Fixed the nk_cos function, which deviated significantly.
+- 2019/09/08 (4.01.1) - Fixed a bug wherein re-baking of fonts caused a segmentation
+                       fault due to dst_font-&gt;glyph_count not being zeroed on subsequent
+                       bakes of the same set of fonts.
+- 2019/06/23 (4.01.0) - Added nk_***_get_scroll and nk_***_set_scroll for groups, windows, and popups.
+- 2019/06/12 (4.00.3) - Fix panel background drawing bug.
+- 2018/10/31 (4.00.2) - Added NK_KEYSTATE_BASED_INPUT to &quot;fix&quot; state based backends
+                       like GLFW without breaking key repeat behavior on event based.
+- 2018/04/01 (4.00.1) - Fixed calling `nk_convert` multiple time per single frame.
+- 2018/04/01 (4.00.0) - BREAKING CHANGE: nk_draw_list_clear no longer tries to
+                       clear provided buffers. So make sure to either free
+                       or clear each passed buffer after calling nk_convert.
+- 2018/02/23 (3.00.6) - Fixed slider dragging behavior.
+- 2018/01/31 (3.00.5) - Fixed overcalculation of cursor data in font baking process.
+- 2018/01/31 (3.00.4) - Removed name collision with stb_truetype.
+- 2018/01/28 (3.00.3) - Fixed panel window border drawing bug.
+- 2018/01/12 (3.00.2) - Added `nk_group_begin_titled` for separated group identifier and title.
+- 2018/01/07 (3.00.1) - Started to change documentation style.
+- 2018/01/05 (3.00.0) - BREAKING CHANGE: The previous color picker API was broken
+                       because of conversions between float and byte color representation.
+                       Color pickers now use floating point values to represent
+                       HSV values. To get back the old behavior I added some additional
+                       color conversion functions to cast between nk_color and
+                       nk_colorf.
+- 2017/12/23 (2.00.7) - Fixed small warning.
+- 2017/12/23 (2.00.7) - Fixed `nk_edit_buffer` behavior if activated to allow input.
+- 2017/12/23 (2.00.7) - Fixed modifyable progressbar dragging visuals and input behavior.
+- 2017/12/04 (2.00.6) - Added formatted string tooltip widget.
+- 2017/11/18 (2.00.5) - Fixed window becoming hidden with flag `NK_WINDOW_NO_INPUT`.
+- 2017/11/15 (2.00.4) - Fixed font merging.
+- 2017/11/07 (2.00.3) - Fixed window size and position modifier functions.
+- 2017/09/14 (2.00.2) - Fixed `nk_edit_buffer` and `nk_edit_focus` behavior.
+- 2017/09/14 (2.00.1) - Fixed window closing behavior.
+- 2017/09/14 (2.00.0) - BREAKING CHANGE: Modifying window position and size functions now
+                       require the name of the window and must happen outside the window
+                       building process (between function call nk_begin and nk_end).
+- 2017/09/11 (1.40.9) - Fixed window background flag if background window is declared last.
+- 2017/08/27 (1.40.8) - Fixed `nk_item_is_any_active` for hidden windows.
+- 2017/08/27 (1.40.7) - Fixed window background flag.
+- 2017/07/07 (1.40.6) - Fixed missing clipping rect check for hovering/clicked
+                       query for widgets.
+- 2017/07/07 (1.40.5) - Fixed drawing bug for vertex output for lines and stroked
+                       and filled rectangles.
+- 2017/07/07 (1.40.4) - Fixed bug in nk_convert trying to add windows that are in
+                       process of being destroyed.
+- 2017/07/07 (1.40.3) - Fixed table internal bug caused by storing table size in
+                       window instead of directly in table.
+- 2017/06/30 (1.40.2) - Removed unneeded semicolon in C++ NK_ALIGNOF macro.
+- 2017/06/30 (1.40.1) - Fixed drawing lines smaller or equal zero.
+- 2017/06/08 (1.40.0) - Removed the breaking part of last commit. Auto layout now only
+                       comes in effect if you pass in zero was row height argument.
+- 2017/06/08 (1.40.0) - BREAKING CHANGE: while not directly API breaking it will change
+                       how layouting works. From now there will be an internal minimum
+                       row height derived from font height. If you need a row smaller than
+                       that you can directly set it by `nk_layout_set_min_row_height` and
+                       reset the value back by calling `nk_layout_reset_min_row_height.
+- 2017/06/08 (1.39.1) - Fixed property text edit handling bug caused by past `nk_widget` fix.
+- 2017/06/08 (1.39.0) - Added function to retrieve window space without calling a `nk_layout_xxx` function.
+- 2017/06/06 (1.38.5) - Fixed `nk_convert` return flag for command buffer.
+- 2017/05/23 (1.38.4) - Fixed activation behavior for widgets partially clipped.
+- 2017/05/10 (1.38.3) - Fixed wrong min window size mouse scaling over boundaries.
+- 2017/05/09 (1.38.2) - Fixed vertical scrollbar drawing with not enough space.
+- 2017/05/09 (1.38.1) - Fixed scaler dragging behavior if window size hits minimum size.
+- 2017/05/06 (1.38.0) - Added platform double-click support.
+- 2017/04/20 (1.37.1) - Fixed key repeat found inside glfw demo backends.
+- 2017/04/20 (1.37.0) - Extended properties with selection and clipboard support.
+- 2017/04/20 (1.36.2) - Fixed #405 overlapping rows with zero padding and spacing.
+- 2017/04/09 (1.36.1) - Fixed #403 with another widget float error.
+- 2017/04/09 (1.36.0) - Added window `NK_WINDOW_NO_INPUT` and `NK_WINDOW_NOT_INTERACTIVE` flags.
+- 2017/04/09 (1.35.3) - Fixed buffer heap corruption.
+- 2017/03/25 (1.35.2) - Fixed popup overlapping for `NK_WINDOW_BACKGROUND` windows.
+- 2017/03/25 (1.35.1) - Fixed windows closing behavior.
+- 2017/03/18 (1.35.0) - Added horizontal scroll requested in #377.
+- 2017/03/18 (1.34.3) - Fixed long window header titles.
+- 2017/03/04 (1.34.2) - Fixed text edit filtering.
+- 2017/03/04 (1.34.1) - Fixed group closable flag.
+- 2017/02/25 (1.34.0) - Added custom draw command for better language binding support.
+- 2017/01/24 (1.33.0) - Added programmatic way to remove edit focus.
+- 2017/01/24 (1.32.3) - Fixed wrong define for basic type definitions for windows.
+- 2017/01/21 (1.32.2) - Fixed input capture from hidden or closed windows.
+- 2017/01/21 (1.32.1) - Fixed slider behavior and drawing.
+- 2017/01/13 (1.32.0) - Added flag to put scaler into the bottom left corner.
+- 2017/01/13 (1.31.0) - Added additional row layouting method to combine both
+                       dynamic and static widgets.
+- 2016/12/31 (1.30.0) - Extended scrollbar offset from 16-bit to 32-bit.
+- 2016/12/31 (1.29.2) - Fixed closing window bug of minimized windows.
+- 2016/12/03 (1.29.1) - Fixed wrapped text with no seperator and C89 error.
+- 2016/12/03 (1.29.0) - Changed text wrapping to process words not characters.
+- 2016/11/22 (1.28.6) - Fixed window minimized closing bug.
+- 2016/11/19 (1.28.5) - Fixed abstract combo box closing behavior.
+- 2016/11/19 (1.28.4) - Fixed tooltip flickering.
+- 2016/11/19 (1.28.3) - Fixed memory leak caused by popup repeated closing.
+- 2016/11/18 (1.28.2) - Fixed memory leak caused by popup panel allocation.
+- 2016/11/10 (1.28.1) - Fixed some warnings and C++ error.
+- 2016/11/10 (1.28.0) - Added additional `nk_button` versions which allows to directly
+                       pass in a style struct to change buttons visual.
+- 2016/11/10 (1.27.0) - Added additional `nk_tree` versions to support external state
+                       storage. Just like last the `nk_group` commit the main
+                       advantage is that you optionally can minimize nuklears runtime
+                       memory consumption or handle hash collisions.
+- 2016/11/09 (1.26.0) - Added additional `nk_group` version to support external scrollbar
+                       offset storage. Main advantage is that you can externalize
+                       the memory management for the offset. It could also be helpful
+                       if you have a hash collision in `nk_group_begin` but really
+                       want the name. In addition I added `nk_list_view` which allows
+                       to draw big lists inside a group without actually having to
+                       commit the whole list to nuklear (issue #269).
+- 2016/10/30 (1.25.1) - Fixed clipping rectangle bug inside `nk_draw_list`.
+- 2016/10/29 (1.25.0) - Pulled `nk_panel` memory management into nuklear and out of
+                       the hands of the user. From now on users don&apos;t have to care
+                       about panels unless they care about some information. If you
+                       still need the panel just call `nk_window_get_panel`.
+- 2016/10/21 (1.24.0) - Changed widget border drawing to stroked rectangle from filled
+                       rectangle for less overdraw and widget background transparency.
+- 2016/10/18 (1.23.0) - Added `nk_edit_focus` for manually edit widget focus control.
+- 2016/09/29 (1.22.7) - Fixed deduction of basic type in non `&lt;stdint.h&gt;` compilation.
+- 2016/09/29 (1.22.6) - Fixed edit widget UTF-8 text cursor drawing bug.
+- 2016/09/28 (1.22.5) - Fixed edit widget UTF-8 text appending/inserting/removing.
+- 2016/09/28 (1.22.4) - Fixed drawing bug inside edit widgets which offset all text
+                       text in every edit widget if one of them is scrolled.
+- 2016/09/28 (1.22.3) - Fixed small bug in edit widgets if not active. The wrong
+                       text length is passed. It should have been in bytes but
+                       was passed as glyphs.
+- 2016/09/20 (1.22.2) - Fixed color button size calculation.
+- 2016/09/20 (1.22.1) - Fixed some `nk_vsnprintf` behavior bugs and removed `&lt;stdio.h&gt;`
+                       again from `NK_INCLUDE_STANDARD_VARARGS`.
+- 2016/09/18 (1.22.0) - C89 does not support vsnprintf only C99 and newer as well
+                       as C++11 and newer. In addition to use vsnprintf you have
+                       to include &lt;stdio.h&gt;. So just defining `NK_INCLUDE_STD_VAR_ARGS`
+                       is not enough. That behavior is now fixed. By default if
+                       both varargs as well as stdio is selected I try to use
+                       vsnprintf if not possible I will revert to vsprintf. If
+                       varargs but not stdio was defined I will use my own function.
+- 2016/09/15 (1.21.2) - Fixed panel `close` behavior for deeper panel levels.
+- 2016/09/15 (1.21.1) - Fixed C++ errors and wrong argument to `nk_panel_get_xxxx`.
+- 2016/09/13 (1.21.0) - !BREAKING! Fixed nonblocking popup behavior in menu, combo,
+                       and contextual which prevented closing in y-direction if
+                       popup did not reach max height.
+                       In addition the height parameter was changed into vec2
+                       for width and height to have more control over the popup size.
+- 2016/09/13 (1.20.3) - Cleaned up and extended type selection.
+- 2016/09/13 (1.20.2) - Fixed slider behavior hopefully for the last time. This time
+                       all calculation are correct so no more hackery.
+- 2016/09/13 (1.20.1) - Internal change to divide window/panel flags into panel flags and types.
+                       Suprisinly spend years in C and still happened to confuse types
+                       with flags. Probably something to take note.
+- 2016/09/08 (1.20.0) - Added additional helper function to make it easier to just
+                       take the produced buffers from `nk_convert` and unplug the
+                       iteration process from `nk_context`. So now you can
+                       just use the vertex,element and command buffer + two pointer
+                       inside the command buffer retrieved by calls `nk__draw_begin`
+                       and `nk__draw_end` and macro `nk_draw_foreach_bounded`.
+- 2016/09/08 (1.19.0) - Added additional asserts to make sure every `nk_xxx_begin` call
+                       for windows, popups, combobox, menu and contextual is guarded by
+                       `if` condition and does not produce false drawing output.
+- 2016/09/08 (1.18.0) - Changed confusing name for `NK_SYMBOL_RECT_FILLED`, `NK_SYMBOL_RECT`
+                       to hopefully easier to understand `NK_SYMBOL_RECT_FILLED` and
+                       `NK_SYMBOL_RECT_OUTLINE`.
+- 2016/09/08 (1.17.0) - Changed confusing name for `NK_SYMBOL_CIRLCE_FILLED`, `NK_SYMBOL_CIRCLE`
+                       to hopefully easier to understand `NK_SYMBOL_CIRCLE_FILLED` and
+                       `NK_SYMBOL_CIRCLE_OUTLINE`.
+- 2016/09/08 (1.16.0) - Added additional checks to select correct types if `NK_INCLUDE_FIXED_TYPES`
+                       is not defined by supporting the biggest compiler GCC, clang and MSVC.
+- 2016/09/07 (1.15.3) - Fixed `NK_INCLUDE_COMMAND_USERDATA` define to not cause an error.
+- 2016/09/04 (1.15.2) - Fixed wrong combobox height calculation.
+- 2016/09/03 (1.15.1) - Fixed gaps inside combo boxes in OpenGL.
+- 2016/09/02 (1.15.0) - Changed nuklear to not have any default vertex layout and
+                       instead made it user provided. The range of types to convert
+                       to is quite limited at the moment, but I would be more than
+                       happy to accept PRs to add additional.
+- 2016/08/30 (1.14.2) - Removed unused variables.
+- 2016/08/30 (1.14.1) - Fixed C++ build errors.
+- 2016/08/30 (1.14.0) - Removed mouse dragging from SDL demo since it does not work correctly.
+- 2016/08/30 (1.13.4) - Tweaked some default styling variables.
+- 2016/08/30 (1.13.3) - Hopefully fixed drawing bug in slider, in general I would
+                       refrain from using slider with a big number of steps.
+- 2016/08/30 (1.13.2) - Fixed close and minimize button which would fire even if the
+                       window was in Read Only Mode.
+- 2016/08/30 (1.13.1) - Fixed popup panel padding handling which was previously just
+                       a hack for combo box and menu.
+- 2016/08/30 (1.13.0) - Removed `NK_WINDOW_DYNAMIC` flag from public API since
+                       it is bugged and causes issues in window selection.
+- 2016/08/30 (1.12.0) - Removed scaler size. The size of the scaler is now
+                       determined by the scrollbar size.
+- 2016/08/30 (1.11.2) - Fixed some drawing bugs caused by changes from 1.11.0.
+- 2016/08/30 (1.11.1) - Fixed overlapping minimized window selection.
+- 2016/08/30 (1.11.0) - Removed some internal complexity and overly complex code
+                       handling panel padding and panel border.
+- 2016/08/29 (1.10.0) - Added additional height parameter to `nk_combobox_xxx`.
+- 2016/08/29 (1.10.0) - Fixed drawing bug in dynamic popups.
+- 2016/08/29 (1.10.0) - Added experimental mouse scrolling to popups, menus and comboboxes.
+- 2016/08/26 (1.10.0) - Added window name string prepresentation to account for
+                       hash collisions. Currently limited to `NK_WINDOW_MAX_NAME`
+                       which in term can be redefined if not big enough.
+- 2016/08/26 (1.10.0) - Added stacks for temporary style/UI changes in code.
+- 2016/08/25 (1.10.0) - Changed `nk_input_is_key_pressed` and &apos;nk_input_is_key_released&apos;
+                       to account for key press and release happening in one frame.
+- 2016/08/25 (1.10.0) - Added additional nk_edit flag to directly jump to the end on activate.
+- 2016/08/17 (1.09.6) - Removed invalid check for value zero in `nk_propertyx`.
+- 2016/08/16 (1.09.5) - Fixed ROM mode for deeper levels of popup windows parents.
+- 2016/08/15 (1.09.4) - Editbox are now still active if enter was pressed with flag
+                       `NK_EDIT_SIG_ENTER`. Main reasoning is to be able to keep
+                       typing after committing.
+- 2016/08/15 (1.09.4) - Removed redundant code.
+- 2016/08/15 (1.09.4) - Fixed negative numbers in `nk_strtoi` and remove unused variable.
+- 2016/08/15 (1.09.3) - Fixed `NK_WINDOW_BACKGROUND` flag behavior to select a background
+                       window only as selected by hovering and not by clicking.
+- 2016/08/14 (1.09.2) - Fixed a bug in font atlas which caused wrong loading
+                       of glyphs for font with multiple ranges.
+- 2016/08/12 (1.09.1) - Added additional function to check if window is currently
+                       hidden and therefore not visible.
+- 2016/08/12 (1.09.1) - nk_window_is_closed now queries the correct flag `NK_WINDOW_CLOSED`
+                       instead of the old flag `NK_WINDOW_HIDDEN`.
+- 2016/08/09 (1.09.0) - Added additional double version to nk_property and changed
+                       the underlying implementation to not cast to float and instead
+                       work directly on the given values.
+- 2016/08/09 (1.08.0) - Added additional define to overwrite library internal
+                       floating pointer number to string conversion for additional
+                       precision.
+- 2016/08/09 (1.08.0) - Added additional define to overwrite library internal
+                       string to floating point number conversion for additional
+                       precision.
+- 2016/08/08 (1.07.2) - Fixed compiling error without define `NK_INCLUDE_FIXED_TYPE`.
+- 2016/08/08 (1.07.1) - Fixed possible floating point error inside `nk_widget` leading
+                       to wrong wiget width calculation which results in widgets falsely
+                       becoming tagged as not inside window and cannot be accessed.
+- 2016/08/08 (1.07.0) - Nuklear now differentiates between hiding a window (NK_WINDOW_HIDDEN) and
+                       closing a window (NK_WINDOW_CLOSED). A window can be hidden/shown
+                       by using `nk_window_show` and closed by either clicking the close
+                       icon in a window or by calling `nk_window_close`. Only closed
+                       windows get removed at the end of the frame while hidden windows
+                       remain.
+- 2016/08/08 (1.06.0) - Added `nk_edit_string_zero_terminated` as a second option to
+                       `nk_edit_string` which takes, edits and outputs a &apos;\0&apos; terminated string.
+- 2016/08/08 (1.05.4) - Fixed scrollbar auto hiding behavior.
+- 2016/08/08 (1.05.3) - Fixed wrong panel padding selection in `nk_layout_widget_space`.
+- 2016/08/07 (1.05.2) - Fixed old bug in dynamic immediate mode layout API, calculating
+                       wrong item spacing and panel width.
+- 2016/08/07 (1.05.1) - Hopefully finally fixed combobox popup drawing bug.
+- 2016/08/07 (1.05.0) - Split varargs away from `NK_INCLUDE_STANDARD_IO` into own
+                       define `NK_INCLUDE_STANDARD_VARARGS` to allow more fine
+                       grained controlled over library includes.
+- 2016/08/06 (1.04.5) - Changed memset calls to `NK_MEMSET`.
+- 2016/08/04 (1.04.4) - Fixed fast window scaling behavior.
+- 2016/08/04 (1.04.3) - Fixed window scaling, movement bug which appears if you
+                       move/scale a window and another window is behind it.
+                       If you are fast enough then the window behind gets activated
+                       and the operation is blocked. I now require activating
+                       by hovering only if mouse is not pressed.
+- 2016/08/04 (1.04.2) - Fixed changing fonts.
+- 2016/08/03 (1.04.1) - Fixed `NK_WINDOW_BACKGROUND` behavior.
+- 2016/08/03 (1.04.0) - Added color parameter to `nk_draw_image`.
+- 2016/08/03 (1.04.0) - Added additional window padding style attributes for
+                       sub windows (combo, menu, ...).
+- 2016/08/03 (1.04.0) - Added functions to show/hide software cursor.
+- 2016/08/03 (1.04.0) - Added `NK_WINDOW_BACKGROUND` flag to force a window
+                       to be always in the background of the screen.
+- 2016/08/03 (1.03.2) - Removed invalid assert macro for NK_RGB color picker.
+- 2016/08/01 (1.03.1) - Added helper macros into header include guard.
+- 2016/07/29 (1.03.0) - Moved the window/table pool into the header part to
+                       simplify memory management by removing the need to
+                       allocate the pool.
+- 2016/07/29 (1.02.0) - Added auto scrollbar hiding window flag which if enabled
+                       will hide the window scrollbar after NK_SCROLLBAR_HIDING_TIMEOUT
+                       seconds without window interaction. To make it work
+                       you have to also set a delta time inside the `nk_context`.
+- 2016/07/25 (1.01.1) - Fixed small panel and panel border drawing bugs.
+- 2016/07/15 (1.01.0) - Added software cursor to `nk_style` and `nk_context`.
+- 2016/07/15 (1.01.0) - Added const correctness to `nk_buffer_push&apos; data argument.
+- 2016/07/15 (1.01.0) - Removed internal font baking API and simplified
+                       font atlas memory management by converting pointer
+                       arrays for fonts and font configurations to lists.
+- 2016/07/15 (1.00.0) - Changed button API to use context dependent button
+                       behavior instead of passing it for every function call.
+</code></pre><h2 id="gallery">Gallery</h2>
+<p><img src="https://cloud.githubusercontent.com/assets/8057201/13538240/acd96876-e249-11e5-9547-5ac0b19667a0.png" alt="Figure [blue]: Feature overview with blue color styling">
+<img src="https://cloud.githubusercontent.com/assets/8057201/13538243/b04acd4c-e249-11e5-8fd2-ad7744a5b446.png" alt="Figure [red]: Feature overview with red color styling">
+<img src="https://cloud.githubusercontent.com/assets/8057201/11282359/3325e3c6-8eff-11e5-86cb-cf02b0596087.png" alt="Figure [widgets]: Widget overview">
+<img src="https://cloud.githubusercontent.com/assets/8057201/11033668/59ab5d04-86e5-11e5-8091-c56f16411565.png" alt="Figure [blackwhite]: Black and white">
+<img src="https://cloud.githubusercontent.com/assets/8057201/10718115/02a9ba08-7b6b-11e5-950f-adacdd637739.png" alt="Figure [filexp]: File explorer">
+<img src="https://cloud.githubusercontent.com/assets/8057201/12779619/2a20d72c-ca69-11e5-95fe-4edecf820d5c.png" alt="Figure [opengl]: OpenGL Editor">
+<img src="https://cloud.githubusercontent.com/assets/8057201/9976995/e81ac04a-5ef7-11e5-872b-acd54fbeee03.gif" alt="Figure [nodedit]: Node Editor">
+<img src="https://cloud.githubusercontent.com/assets/8057201/15991632/76494854-30b8-11e6-9555-a69840d0d50b.png" alt="Figure [skinning]: Using skinning in Nuklear">
+<img src="https://cloud.githubusercontent.com/assets/8057201/14902576/339926a8-0d9c-11e6-9fee-a8b73af04473.png" alt="Figure [bf]: Heavy modified version"></p>
+<h2 id="credits">Credits</h2>
+<p>Developed by Micha Mettke and every direct or indirect github contributor. </p>
+<p>Embeds <a href="https://github.com/nothings/stb/blob/master/stb_textedit.h" target="_blank">stb_texedit</a>, <a href="https://github.com/nothings/stb/blob/master/stb_truetype.h" target="_blank">stb_truetype</a> and <a href="https://github.com/nothings/stb/blob/master/stb_rect_pack.h" target="_blank">stb_rectpack</a> by Sean Barret (public domain) </p>
+<p>Uses <a href="https://github.com/r-lyeh/stddoc.c" target="_blank">stddoc.c</a> from r-lyeh@github.com for documentation generation</p>
+<p>Embeds ProggyClean.ttf font by Tristan Grimmer (MIT license).</p>
+<p>Big thank you to Omar Cornut (ocornut@github) for his <a href="https://github.com/ocornut/imgui" target="_blank">imgui library</a> and giving me the inspiration for this library, Casey Muratori for handmade hero and his original immediate mode graphical user interface idea and Sean Barret for his amazing single header libraries which restored my faith in libraries and brought me to create some of my own. Finally Apoorva Joshi for his single header file packer.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: はじめに">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ドキュメント","level":"1.2","depth":1,"previous":{"title":"はじめに","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"doc.md","mtime":"2023-01-14T15:10:36.098Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T15:14:53.428Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

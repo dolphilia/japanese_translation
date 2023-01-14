@@ -1,0 +1,451 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>はじめに · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="doc.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="doc.html">
+            
+                <a href="doc.html">
+            
+                    
+                    ドキュメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >はじめに</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="nuklear">Nuklear</h1>
+<p><a href="https://github.com/Immediate-Mode-UI/Nuklear/actions" target="_blank"><img src="https://github.com/Immediate-Mode-UI/Nuklear/workflows/C%2FC++%20CI/badge.svg" alt></a></p>
+<p>これは、ANSI C で書かれたミニマルステート、イミディエイトモードのグラフィカルユーザーインターフェースツールキットで、パブリックドメインの下でライセンスされています。アプリケーションに簡単に組み込めるユーザインタフェースとして設計され、依存関係やデフォルトのレンダーバックエンド、OSのウィンドウ／入力処理を持たず、代わりに高度にモジュール化されたライブラリベースのアプローチを提供し、入力にはシンプルな入力ステート、出力にはプリミティブな形状を記述したドローコマンドを使用するようになっています。そのため、多くのプラットフォームやレンダーバックエンドを抽象化しようとするレイヤーライブラリを提供する代わりに、実際のUIにのみフォーカスしています。</p>
+<h2 id="特徴">特徴</h2>
+<ul>
+<li>イミディエイトモード・グラフィカルユーザーインターフェース・ツールキット</li>
+<li>シングルヘッダーライブラリ</li>
+<li>C89 (ANSI C) で書かれています。</li>
+<li>小さなコードベース (~18kLOC)</li>
+<li>移植性、効率性、単純性に重点を置く</li>
+<li>依存性なし (必要なければ標準ライブラリさえも)</li>
+<li>完全なスキニングとカスタマイズが可能</li>
+<li>低メモリフットプリントで、必要であればメモリ使用量を完全に制御可能</li>
+<li>UTF-8のサポート</li>
+<li>グローバルまたは非表示の状態なし</li>
+<li>カスタマイズ可能なライブラリモジュール（必要なものだけをコンパイルして使用することができます。）</li>
+<li>オプションでフォントベーカーと頂点バッファの出力が可能</li>
+<li><a href="https://Immediate-Mode-UI.github.io/Nuklear/doc/nuklear.html" target="_blank">ドキュメント</a></li>
+</ul>
+<h2 id="建物">建物</h2>
+<p>このライブラリは、1つのヘッダーファイルに自己完結しており、ヘッダーのみで使用するモードと、実装モードで使用するモードがあります。ヘッダーのみモードは、インクルード時にデフォルトで使用され、他のヘッダーの中にこのヘッダーを含めることができ、実際の実装は含まれません。</p>
+<p>実装モードでは、プリプロセッサマクロ <code>NK_IMPLEMENTATION</code> を <em>one</em> .c/.cpp ファイルに定義してから、このファイルを <code>#include</code> する必要があります、例えば。</p>
+<pre><code class="lang-c"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> NK_IMPLEMENTATION</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;nuklear.h&quot;</span></span>
+</code></pre>
+<p>重要：&quot;nuklear.h&quot; をインクルードするたびに、同じオプションのフラグを定義する必要があります。これは非常に重要なことで、これを行わないとコンパイラーエラーや、さらに悪いことにスタック破壊を引き起こす。</p>
+<h2 id="ギャラリー">ギャラリー</h2>
+<p><img src="https://cloud.githubusercontent.com/assets/8057201/11761525/ae06f0ca-a0c6-11e5-819d-5610b25f6ef4.gif" alt="screenshot">
+<img src="https://cloud.githubusercontent.com/assets/8057201/13538240/acd96876-e249-11e5-9547-5ac0b19667a0.png" alt="screen">
+<img src="https://cloud.githubusercontent.com/assets/8057201/13538243/b04acd4c-e249-11e5-8fd2-ad7744a5b446.png" alt="screen2">
+<img src="https://cloud.githubusercontent.com/assets/8057201/9976995/e81ac04a-5ef7-11e5-872b-acd54fbeee03.gif" alt="node">
+<img src="https://cloud.githubusercontent.com/assets/8057201/15991632/76494854-30b8-11e6-9555-a69840d0d50b.png" alt="skinning">
+<img src="https://cloud.githubusercontent.com/assets/8057201/14902576/339926a8-0d9c-11e6-9fee-a8b73af04473.png" alt="gamepad"></p>
+<h2 id="例">例</h2>
+<pre><code class="lang-c"><span class="hljs-comment">/* init gui state */</span>
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">nk_context</span> <span class="hljs-title">ctx</span>;</span>
+nk_init_fixed(&amp;ctx, <span class="hljs-built_in">calloc</span>(<span class="hljs-number">1</span>, MAX_MEMORY), MAX_MEMORY, &amp;font);
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> {</span>EASY, HARD};
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> op = EASY;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">float</span> value = <span class="hljs-number">0.6f</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> i =  <span class="hljs-number">20</span>;
+
+<span class="hljs-keyword">if</span> (nk_begin(&amp;ctx, <span class="hljs-string">&quot;Show&quot;</span>, nk_rect(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>, <span class="hljs-number">220</span>, <span class="hljs-number">220</span>),
+    NK_WINDOW_BORDER|NK_WINDOW_MOVABLE|NK_WINDOW_CLOSABLE)) {
+    <span class="hljs-comment">/* fixed widget pixel width */</span>
+    nk_layout_row_static(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">80</span>, <span class="hljs-number">1</span>);
+    <span class="hljs-keyword">if</span> (nk_button_label(&amp;ctx, <span class="hljs-string">&quot;button&quot;</span>)) {
+        <span class="hljs-comment">/* event handling */</span>
+    }
+
+    <span class="hljs-comment">/* fixed widget window ratio width */</span>
+    nk_layout_row_dynamic(&amp;ctx, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>);
+    <span class="hljs-keyword">if</span> (nk_option_label(&amp;ctx, <span class="hljs-string">&quot;easy&quot;</span>, op == EASY)) op = EASY;
+    <span class="hljs-keyword">if</span> (nk_option_label(&amp;ctx, <span class="hljs-string">&quot;hard&quot;</span>, op == HARD)) op = HARD;
+
+    <span class="hljs-comment">/* custom widget pixel width */</span>
+    nk_layout_row_begin(&amp;ctx, NK_STATIC, <span class="hljs-number">30</span>, <span class="hljs-number">2</span>);
+    {
+        nk_layout_row_push(&amp;ctx, <span class="hljs-number">50</span>);
+        nk_label(&amp;ctx, <span class="hljs-string">&quot;Volume:&quot;</span>, NK_TEXT_LEFT);
+        nk_layout_row_push(&amp;ctx, <span class="hljs-number">110</span>);
+        nk_slider_float(&amp;ctx, <span class="hljs-number">0</span>, &amp;value, <span class="hljs-number">1.0f</span>, <span class="hljs-number">0.1f</span>);
+    }
+    nk_layout_row_end(&amp;ctx);
+}
+nk_end(&amp;ctx);
+</code></pre>
+<p><img src="https://cloud.githubusercontent.com/assets/8057201/10187981/584ecd68-675c-11e5-897c-822ef534a876.png" alt="example"></p>
+<h2 id="バインディング">バインディング</h2>
+<p>他の作者によって、さまざまな言語用のnuklearバインディングが作成されています。私はこれらの言語のいずれにも精通しているわけではないので、その品質を保証することはできません。また、すべてのバインディングが常に最新である保証はありません。</p>
+<ul>
+<li><a href="https://github.com/glegris/nuklear4j" target="_blank">Java</a> by Guillaume Legris</li>
+<li><a href="https://github.com/Timu5/bindbc-nuklear" target="_blank">D</a> by Mateusz Muszyński</li>
+<li><a href="https://github.com/golang-ui/nuklear" target="_blank">Golang</a> by golang-ui@github.com</li>
+<li><a href="https://github.com/snuk182/nuklear-rust" target="_blank">Rust</a> by snuk182@github.com</li>
+<li><a href="https://github.com/wasamasa/nuklear" target="_blank">Chicken</a> by wasamasa@github.com</li>
+<li><a href="https://github.com/zacharycarter/nuklear-nim" target="_blank">Nim</a> by zacharycarter@github.com</li>
+<li>Lua<ul>
+<li><a href="https://github.com/keharriso/love-nuklear" target="_blank">LÖVE-Nuklear</a> by Kevin Harrison</li>
+<li><a href="https://github.com/stetre/moonnuklear" target="_blank">MoonNuklear</a> by Stefano Trettel</li>
+</ul>
+</li>
+<li>Python<ul>
+<li><a href="https://github.com/billsix/pyNuklear" target="_blank">pyNuklear</a> by William Emerison Six (ctypes-based wrapper)</li>
+<li><a href="https://github.com/nathanrw/nuklear-cffi" target="_blank">pynk</a> by nathanrw@github.com (cffi binding)</li>
+</ul>
+</li>
+<li><a href="https://github.com/cartman300/NuklearDotNet" target="_blank">CSharp/.NET</a> by cartman300@github.com</li>
+<li><a href="https://github.com/nsauzede/vnk" target="_blank">V</a> by Nicolas Sauzede</li>
+</ul>
+<h2 id="クレジット">クレジット</h2>
+<p>開発：Micha Mettke、およびGitHubに直接または間接的に貢献したすべての人々。</p>
+<p>Sean Barrett氏による <code>stb_texedit</code>、<code>stb_truetype</code>、<code>stb_rectpack</code> を埋め込みます（パブリックドメイン） Tristan Grimmer氏による <code>ProggyClean.ttf</code> フォントを埋め込みます（MITライセンス）。</p>
+<p>Omar Cornut (ocornut@github) の <a href="https://github.com/ocornut/imgui" target="_blank">imgui</a> ライブラリとこのライブラリのインスピレーション、Casey Muratori の handmade hero と彼のオリジナル即時モードグラフィックユーザーインターフェースのアイデア、Sean Barrett の素晴らしいシングルヘッダ <a href="https://github.com/nothings/stb" target="_blank">libraries</a> は私のライブラリへの信頼を取り戻し、私自身のライブラリを作成するきっかけとなりました。最後に、Apoorva Joshi のシングルヘッダ <a href="http://apoorvaj.io/single-header-packer.html" target="_blank">file packer</a>です。</p>
+<h2 id="license">License</h2>
+<pre><code>------------------------------------------------------------------------------
+This software is available under 2 licenses -- choose whichever you prefer.
+------------------------------------------------------------------------------
+ALTERNATIVE A - MIT License
+Copyright (c) 2017 Micha Mettke
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+------------------------------------------------------------------------------
+ALTERNATIVE B - Public Domain (www.unlicense.org)
+This is free and unencumbered software released into the public domain.
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
+software, either in source code form or as a compiled binary, for any purpose,
+commercial or non-commercial, and by any means.
+In jurisdictions that recognize copyright laws, the author or authors of this
+software dedicate any and all copyright interest in the software to the public
+domain. We make this dedication for the benefit of the public at large and to
+the detriment of our heirs and successors. We intend this dedication to be an
+overt act of relinquishment in perpetuity of all present and future rights to
+this software under copyright law.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-----------------------------------------------------------------------------
+</code></pre><h2 id="reviewers-guide">Reviewers guide</h2>
+<p>When reviewing pull request there are common things a reviewer should keep
+in mind.</p>
+<p>Reviewing changes to <code>src/*</code> and <code>nuklear.h</code>:</p>
+<ul>
+<li>Ensure C89 compatibility.</li>
+<li>The code should work for several backends to an acceptable degree.</li>
+<li>Check no other parts of <code>nuklear.h</code> are related to the PR and thus nothing is missing.</li>
+<li>Recommend simple optimizations.<ul>
+<li>Pass small structs by value instead of by pointer.</li>
+<li>Use local buffers over heap allocation when possible.</li>
+</ul>
+</li>
+<li>Check that the coding style is consistent with code around it.<ul>
+<li>Variable/function name casing.</li>
+<li>Indentation.</li>
+<li>Curly bracket (<code>{}</code>) placement.</li>
+</ul>
+</li>
+<li>Ensure that the contributor has bumped the appropriate version in
+<a href="https://github.com/Immediate-Mode-UI/Nuklear/blob/master/clib.json" target="_blank">clib.json</a>
+and added their changes to the
+<a href="https://github.com/Immediate-Mode-UI/Nuklear/blob/master/src/CHANGELOG" target="_blank">CHANGELOG</a>.</li>
+<li>Have at least one other person review the changes before merging.</li>
+</ul>
+<p>Reviewing changes to <code>demo/*</code>, <code>example/*</code> and other files in the repo:</p>
+<ul>
+<li>Focus on getting working code merged.<ul>
+<li>We want to make it easy for people to get started with Nuklear, and any
+<code>demo</code> and <code>example</code> improvements helps in this regard.</li>
+</ul>
+</li>
+<li>Use of newer C features, or even other languages is not discouraged.<ul>
+<li>If another language is used, ensure that the build process is easy to figure out.</li>
+</ul>
+</li>
+<li>Messy or less efficient code can be merged so long as these outliers are pointed out
+and easy to find.</li>
+<li>Version shouldn&apos;t be bumped for these changes.</li>
+<li>Changes that improves code to be more inline with <code>nuklear.h</code> are ofc always welcome.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="doc.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ドキュメント">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"はじめに","level":"1.1","depth":1,"next":{"title":"ドキュメント","level":"1.2","depth":1,"path":"doc.md","ref":"doc.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2023-01-14T09:51:06.612Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-14T15:14:53.428Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
