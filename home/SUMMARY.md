@@ -27,6 +27,7 @@
 * [sokol](https://dolphilia.github.io/japanese_translation/sokol/)
 * [stb](https://dolphilia.github.io/japanese_translation/stb/)
 * [SteamOS](https://dolphilia.github.io/japanese_translation/steamos/)
+* [Svelte](https://dolphilia.github.io/japanese_translation/svelte/)
 * [VitePress](https://dolphilia.github.io/japanese_translation/vitepress/)
 
 ### まだドキュメント化していない文書

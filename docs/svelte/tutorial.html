@@ -1,0 +1,1691 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>チュートリアル · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 4.0.4">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="tutorial.html">
+            
+                <a href="tutorial.html">
+            
+                    
+                    チュートリアル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >チュートリアル</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="チュートリアル">チュートリアル</h1>
+<h2 id="はじめに">はじめに</h2>
+<h3 id="基本">基本</h3>
+<p>Svelteチュートリアルへようこそ。このチュートリアルでは、高速で小さなWebアプリケーションを簡単に構築するために必要なすべてのことを学びます。</p>
+<p>また、APIドキュメントやサンプルを参考にすることもできますし、ローカルでマシンをハックするのが億劫な場合は、60秒のクイックスタートもあります。</p>
+<h4 id="svelteとは？">Svelteとは？</h4>
+<p>Svelteは、高速なWebアプリケーションを構築するためのツールです。</p>
+<p>ReactやVueなどのJavaScriptフレームワークと似ており、洗練されたインタラクティブなユーザーインターフェースを簡単に構築することを目的としています。</p>
+<p>しかし、決定的な違いがあります。Svelteは、実行時にアプリケーションのコードを解釈するのではなく、ビルド時に理想的なJavaScriptに変換します。つまり、フレームワークの抽象化によるパフォーマンスコストを支払う必要がなく、アプリの初回ロード時にペナルティが発生することもないのです。</p>
+<p>Svelteは、アプリ全体を構築することも、既存のコードベースに段階的に追加することも可能です。また、従来のフレームワークに依存することなく、どこでも動作するスタンドアロンパッケージとしてコンポーネントを出荷することができます。</p>
+<h4 id="このチュートリアルの使用方法">このチュートリアルの使用方法</h4>
+<p>Svelteを理解するために、HTML、CSS、JavaScriptの基本的な知識が必要です。</p>
+<p>チュートリアルを進めていくと、新しい機能を説明するためのミニ演習が表示されます。チュートリアルを進めていくと、新しい機能を説明するためのミニエクササイズが表示されます。必要であれば、上のドロップダウンから移動することができます（「入門/基本」をクリック）。</p>
+<p>各チュートリアルの章には「Show me」ボタンがあり、説明に行き詰まったときにクリックすることができます。このボタンに頼り過ぎないようにしてください。提案されたコードブロックをどこに置けばいいかを考え、それをエディターに手入力することで、より早く習得することができます。</p>
+<h4 id="コンポーネントを理解する">コンポーネントを理解する</h4>
+<p>Svelteでは、アプリケーションは1つまたは複数のコンポーネントから構成されます。コンポーネントとは、再利用可能な自己完結型のコードブロックのことで、一緒に属するHTML、CSS、JavaScriptをカプセル化し、.svelteファイルに書き込んだものです。コードエディタにある&apos;hello world&apos;の例は、単純なコンポーネントです。</p>
+<h3 id="データの追加">データの追加</h3>
+<p>静的なマークアップをレンダリングするだけのコンポーネントは、あまり面白くありません。何かデータを追加してみましょう。</p>
+<p>まず、コンポーネントにscriptタグを追加して、name変数を宣言します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> name = <span class="hljs-string">&apos;world&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello world!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>そして、マークアップの中でnameを参照することができる。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {name}!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>中括弧の中には、好きなJavaScriptを入れることができる。nameをname.toUpperCase()に変更すると、よりシャイな挨拶ができる。</p>
+<h3 id="dynamic-attricutes">Dynamic attricutes</h3>
+<p>中括弧は、テキストを制御するのと同じように、要素の属性を制御するために使用することができます。</p>
+<p>この画像にはsrc属性がありません。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{src}</span>&gt;</span>
+</code></pre>
+<p>そのほうがいい。しかし、Svelteは警告を発しているのだ。</p>
+<pre><code>A11y: &lt;img&gt; element should have an alt attribute
+</code></pre><p>ウェブアプリケーションを構築する場合、視覚や動作に障害がある人、強力なハードウェアや良好なインターネット接続を持たない人など、できるだけ多くのユーザーがアクセスできるようにすることが重要です。アクセシビリティ（a11yと略す）を正しく理解することは必ずしも容易ではありませんが、Svelteは、アクセシビリティに欠けるマークアップを記述した場合に警告することで、その実現を支援します。</p>
+<p>この場合、スクリーンリーダーを使用している人や、インターネット接続が遅い、または不安定で画像をダウンロードできない人のために、画像を説明するalt属性が不足しているのです。追加してみよう。</p>
+<pre><code>&lt;img src={src} alt=&quot;A man dances.&quot;&gt;
+</code></pre><p>属性の中では中括弧を使うことができるんだ。&quot;{name} dances.&quot; に変更してみてください。- は、<code>&lt;script&gt;</code>ブロックの中でname変数を宣言することを忘れないでください。</p>
+<h4 id="短縮形属性">短縮形属性</h4>
+<p>src={src}のように、名前と値が同じである属性はよくあることです。Svelteでは、このような場合に便利な省略記法を用意しています。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> {<span class="hljs-attr">src</span>} <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;A man dances.&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="スタイリング">スタイリング</h3>
+<p>HTMLと同じように、<code>&lt;style&gt;</code> タグをコンポーネントに追加することができます。ここでは、<code>&lt;p&gt;</code>要素にスタイルを追加してみましょう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">color</span>: purple;
+        <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&apos;Comic Sans MS&apos;</span>, cursive;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">2em</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>重要なのは、これらのルールはコンポーネントにスコープされていることです。次のステップで説明するように、誤ってアプリ内の他の場所で <code>&lt;p&gt;</code> 要素のスタイルを変更することはありません。</p>
+<h3 id="ネストされたコンポーネント">ネストされたコンポーネント</h3>
+<p>アプリ全体を1つのコンポーネントに収めるのは非現実的です。その代わり、他のファイルからコンポーネントをインポートして、まるで要素を含むかのように使用することができます。</p>
+<p>右側のエディタ（上のバー）をクリックすると、App.svelteとNested.svelteという2つのファイルが表示されるようになりました。</p>
+<p>それぞれの.svelteファイルには、再利用可能な自己完結型のコードブロックであるコンポーネントが含まれており、一緒になっているHTML、CSS、JavaScriptをカプセル化しています。</p>
+<p>App.svelteに<code>&lt;script&gt;</code>タグを追加して、Nested.svelteをアプリにインポートしてみましょう...。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> Nested <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Nested.svelte&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>...そして、アプリのマークアップでコンポーネントNestedを使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Nested</span>/&gt;</span>
+</code></pre>
+<p>Nested.svelteに<code>&lt;p&gt;</code>要素があっても、App.svelteのスタイルが漏れてこないことに注意してください。</p>
+<p>また、コンポーネント名Nestedが大文字になっていることにも注目してください。これは、ユーザー定義のコンポーネントと通常のHTMLタグを区別できるようにするために採用された規則です。</p>
+<h3 id="htmlタグ">HTMLタグ</h3>
+<p>通常、文字列はプレーンテキストとして挿入され、&lt;や&gt;などの文字は特別な意味を持ちません。</p>
+<p>しかし、時にはHTMLを直接コンポーネントにレンダリングする必要がある場合があります。例えば、あなたが今読んでいる単語はマークダウンファイルの中にあり、HTMLの塊としてこのページに取り込まれます。</p>
+<p>Svelteでは、特別な{@html ...}タグを使用してこれを行います。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{@html string}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>Svelteは、DOMに挿入される前に{@html ...}内の式のサニタイズ処理を行いません。言い換えれば、この機能を使用する場合、信頼できないソースから来たHTMLを手動でエスケープすることが重要で、そうでなければユーザをXSS攻撃にさらす危険性があります。</p>
+</blockquote>
+<h3 id="アプリを作る">アプリを作る</h3>
+<p>このチュートリアルは、コンポーネントの書き方に慣れるためのものです。しかし、ある時点で、自分のテキストエディタで快適にコンポーネントを書き始めたいと思うでしょう。</p>
+<p>まず、Svelteとビルドツールを統合する必要があります。SvelteKitを使うと、Viteとvite-plugin-svelteをセットアップすることができますので、おすすめです。</p>
+<pre><code class="lang-sh">npm create svelte@latest myapp
+</code></pre>
+<p>また、コミュニティによって維持されている統合機能も数多くあります。</p>
+<p>ウェブ開発の経験が浅く、これらのツールを使用したことがない場合でも心配はいりません。Svelte for new developers という簡単なステップバイステップのガイドを用意しましたので、そちらを参考にしてください。</p>
+<p>また、テキストエディタの設定も必要です。公式のVS Codeエクステンションだけでなく、多くの一般的なエディタ用のプラグインも用意されています。</p>
+<p>そして、プロジェクトの設定が完了したら、Svelteコンポーネントの使用は簡単です。コンパイラは各コンポーネントを通常のJavaScriptクラスとして扱います。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./App.svelte&apos;</span>;
+
+<span class="hljs-keyword">const</span> app = <span class="hljs-keyword">new</span> App({
+    <span class="hljs-attr">target</span>: <span class="hljs-built_in">document</span>.body,
+    <span class="hljs-attr">props</span>: {
+        <span class="hljs-comment">// we&apos;ll learn about props later</span>
+        <span class="hljs-attr">answer</span>: <span class="hljs-number">42</span>
+    }
+});
+</code></pre>
+<p>その後、必要であればコンポーネントAPIを使ってアプリとやり取りすることができます。</p>
+<h2 id="反応性">反応性</h2>
+<h3 id="課題">課題</h3>
+<p>Svelteの核となるのは、イベントなどに応じてDOMをアプリケーションの状態と同期させるための強力なリアクティブシステムです。</p>
+<p>これを実現するためには、まずイベントハンドラを作成する必要があります。9行目を次のように書き換えてください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{incrementCount}</span>&gt;</span>
+</code></pre>
+<p>incrementCount関数の内部では、countの値を変更するだけでよい。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">incrementCount</span>(<span class="hljs-params"></span>) </span>{
+    count += <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p>Svelteはこの課題を、DOMの更新が必要であることを伝えるいくつかのコードで「計測」します。</p>
+<h3 id="宣言文">宣言文</h3>
+<p>Svelteの反応性は、前のセクションで示したようにDOMとアプリケーションの変数の同期を保つだけでなく、反応宣言を使って変数同士の同期を保つことができます。これは次のようなものです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+$: doubled = count * <span class="hljs-number">2</span>;
+</code></pre>
+<blockquote>
+<p>ちょっと異質に見えるかもしれませんが、ご心配なく。Svelteは、「参照する値が変わるたびにこのコードを再実行する」という意味で解釈しているのです。一度慣れてしまえば、もう元には戻れない。</p>
+</blockquote>
+<p>マークアップに2倍速を使ってみよう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{count} doubled is {doubled}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>もちろん、マークアップで{count * 2}と書くこともできます。リアクティブな値は、複数回参照する必要がある場合や、他のリアクティブな値に依存する値がある場合に、特に価値が高くなる。</p>
+<h3 id="ステートメント">ステートメント</h3>
+<p>リアクティブな値を宣言するだけでなく、任意のステートメントをリアクティブに実行することもできる。例えば、countの値が変化するたびにログを記録することができる。</p>
+<pre><code class="lang-js">$: <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;the count is &apos;</span> + count);
+</code></pre>
+<p>ブロックを使って簡単にステートメントをグループ化することができます。</p>
+<pre><code class="lang-js">$: {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;the count is &apos;</span> + count);
+    alert(<span class="hljs-string">&apos;I SAID THE COUNT IS &apos;</span> + count);
+}
+</code></pre>
+<p>ifブロックのようなものの前に$:をつけることもできます。</p>
+<pre><code class="lang-js">$: <span class="hljs-keyword">if</span> (count &gt;= <span class="hljs-number">10</span>) {
+    alert(<span class="hljs-string">&apos;count is dangerously high!&apos;</span>);
+    count = <span class="hljs-number">9</span>;
+}
+</code></pre>
+<h3 id="配列とオブジェクトの更新">配列とオブジェクトの更新</h3>
+<p>Svelteの反応性は代入がトリガーとなります。配列やオブジェクトを変更するメソッドは、それ自体では更新をトリガーしません。</p>
+<p>この例では、「数値を追加する」ボタンをクリックすると、addNumber関数が呼び出され、配列に数値が追加されますが、sumの再計算はトリガーされません。</p>
+<p>これを解決する一つの方法は、それ自体に数値を代入して、コンパイラに変更したことを伝えることです。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addNumber</span>(<span class="hljs-params"></span>) </span>{
+    numbers.push(numbers.length + <span class="hljs-number">1</span>);
+    numbers = numbers;
+}
+</code></pre>
+<p>ES6の拡散構文を使えば、もっと簡潔に書くこともできます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addNumber</span>(<span class="hljs-params"></span>) </span>{
+    numbers = [...numbers, numbers.length + <span class="hljs-number">1</span>];
+}
+</code></pre>
+<p>pop, shift, splice などの配列メソッドや、Map.set, Set.add などのオブジェクトメソッドも同じルールです。</p>
+<p>配列やオブジェクトのプロパティへの代入、例えば obj.foo += 1 や array[i] = x は、値そのものへの代入と同じように働きます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addNumber</span>(<span class="hljs-params"></span>) </span>{
+    numbers[numbers.length] = numbers.length + <span class="hljs-number">1</span>;
+}
+</code></pre>
+<p>しかし、このような参考文献への間接的なアサインは......。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> foo = obj.foo;
+foo.bar = <span class="hljs-string">&apos;baz&apos;</span>;
+</code></pre>
+<p>または</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">quox</span>(<span class="hljs-params">thing</span>) </span>{
+    thing.foo.bar = <span class="hljs-string">&apos;baz&apos;</span>;
+}
+quox(obj);
+</code></pre>
+<p>...は、obj = obj.foo.barと続けない限り、obj.foo.barに対する反応性を発動させない。</p>
+<p>単純な経験則ですが、更新された変数は、代入の左側に直接表示されなければなりません。</p>
+<h2 id="プロップ">プロップ</h2>
+<h3 id="プロップの宣言">プロップの宣言</h3>
+<p>ここまでは、内部状態のみを扱ってきました。つまり、与えられたコンポーネントの中でのみアクセス可能な値です。</p>
+<p>実際のアプリケーションでは、あるコンポーネントからその子コンポーネントにデータを渡す必要があります。そのためには、プロパティを宣言する必要があります。一般的には「プロップ」と短縮されます。Svelteでは、exportキーワードを使用してこれを行います。Nested.svelteコンポーネントを編集してください。</p>
+<pre><code class="lang-js">&lt;script&gt;
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> answer;
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>$: と同じように、これは最初はちょっと変に感じるかもしれません。JavaScriptモジュールでは、通常exportはこのように動作しないのです。すぐに自然に使えるようになりますよ。</p>
+</blockquote>
+<h3 id="初期設定値">初期設定値</h3>
+<p>Nested.svelteでは、propsにデフォルト値を簡単に指定することができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">let</span> answer = <span class="hljs-string">&apos;a mystery&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>今、回答プロップなしで2番目のコンポーネントを追加すると、デフォルトにフォールバックします。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Nested</span> <span class="hljs-attr">answer</span>=<span class="hljs-string">{42}/</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">Nested</span>/&gt;</span>
+</code></pre>
+<h3 id="スプレッドプロップス">スプレッドプロップス</h3>
+<p>プロパティのオブジェクトがある場合、それぞれを指定する代わりに、それらをコンポーネント上に「スプレッド」することができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Info</span> {<span class="hljs-attr">...pkg</span>}/&gt;</span>
+</code></pre>
+<p>逆に、exportで宣言されていないものも含め、コンポーネントに渡されたすべてのpropを参照する必要がある場合は、$$propsに直接アクセスすることで可能です。Svelteが最適化しにくいので、一般的にはお勧めしませんが、稀に便利な場合もあります。</p>
+<h2 id="ロジック">ロジック</h2>
+<h3 id="ifブロック">ifブロック</h3>
+<p>HTMLには条件分岐やループなどのロジックを表現する方法がない。Svelteにはあります。</p>
+<p>あるマークアップを条件付きでレンダリングするには、ifブロックで囲みます。</p>
+<pre><code class="lang-html">{#if user.loggedIn}
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{toggle}</span>&gt;</span>
+        Log out
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+{/if}
+
+{#if !user.loggedIn}
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{toggle}</span>&gt;</span>
+        Log in
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+{/if}
+</code></pre>
+<p>試しに、コンポーネントを更新して、ボタンをクリックしてみてください。</p>
+<h3 id="elseブロック">elseブロック</h3>
+<p>if user.loggedIn と if !user.loggedIn の2つの条件は互いに排他的なので、elseブロックを使ってこのコンポーネントを少し簡略化することができます。</p>
+<pre><code class="lang-html">{#if user.loggedIn}
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{toggle}</span>&gt;</span>
+        Log out
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+{:else}
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{toggle}</span>&gt;</span>
+        Log in
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+{/if}
+</code></pre>
+<p><code>#</code>の文字は常にブロックの開始タグを示します。<code>/</code>文字は常にブロックの閉じタグを示します。else}のような <code>:</code> 文字は、ブロック継続タグを示します。SvelteがHTMLに追加するほとんどの構文はすでに学んでいますので、ご心配なく。</p>
+<h3 id="else-ifブロック">else-ifブロック</h3>
+<p>複数の条件をelse ifで「連鎖」させることができる。</p>
+<pre><code class="lang-html">{#if x &gt; 10}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{x} is greater than 10<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{:else if 5 &gt; x}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{x} is less than 5<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{:else}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{x} is between 5 and 10<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{/if}
+</code></pre>
+<h3 id="eachブロック">eachブロック</h3>
+<p>データのリストをループする必要がある場合は、eachブロックを使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    {#each cats as cat}
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.youtube.com/watch?v={cat.id}&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;noreferrer&quot;</span>&gt;</span>
+            {cat.name}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    {/each}
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>式（この場合はcats）は任意の配列または配列に似たオブジェクト（つまりlengthプロパティを持つ）であることが可能です。一般的な反復記号は，each [... iterable] でループさせることができる．</p>
+</blockquote>
+<p>次のように、第2引数として現在のインデックスを取得することができます。</p>
+<pre><code class="lang-html">{#each cats as cat, i}
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.youtube.com/watch?v={cat.id}&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;noreferrer&quot;</span>&gt;</span>
+        {i + 1}: {cat.name}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+{/each}
+</code></pre>
+<p>必要であれば、cats を { id, name } とするデストラクチャリングも可能です。- として、cat.id と cat.name を id と name に置き換えます。</p>
+<h3 id="keyed-each-ブロック">Keyed each ブロック</h3>
+<p>デフォルトでは、eachブロックの値を変更すると、ブロックの末尾にある項目を追加・削除し、変更された値を更新するようになっています。これは、あなたが望むことではないのかもしれません。</p>
+<p>説明するよりも、その理由を示す方が簡単です。Remove first thing&apos; ボタンを数回クリックすると、何が起こるかわかります。最初の <code>&lt;Thing&gt;</code> コンポーネントを削除するのではなく、最後の DOM ノードを削除します。そして、残りのDOMノードにある名前の値を更新しますが、絵文字は更新しません。</p>
+<p>その代わりに、最初の <code>&lt;Thing&gt;</code> コンポーネントとその DOM ノードだけを削除して、他のものは影響を受けないようにしたいと思います。</p>
+<p>そのために、各ブロックに一意な識別子（または「キー」）を指定する。</p>
+<pre><code class="lang-html">{#each things as thing (thing.id)}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Thing</span> <span class="hljs-attr">name</span>=<span class="hljs-string">{thing.name}/</span>&gt;</span>
+{/each}
+</code></pre>
+<p>ここで、(thing.id)はキーであり、コンポーネントが更新されたときにどのDOMノードを変更すべきかをSvelteに伝えるものです。</p>
+<blockquote>
+<p>Svelteは内部的にMapを使用しているため、キーとして任意のオブジェクトを使用することができます。しかし、文字列や数値を使用する方が一般的に安全です。なぜなら、APIサーバーからの新鮮なデータで更新する場合などに、同一性が参照関係なしに持続するからです。</p>
+</blockquote>
+<h3 id="awaitブロック">Awaitブロック</h3>
+<p>ほとんどのWebアプリケーションは、ある時点で非同期データを処理する必要があります。Svelteを使えば、マークアップの中で直接プロミスの値を待つことが簡単にできるようになります。</p>
+<pre><code class="lang-html">{#await promise}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>...waiting<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{:then number}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>The number is {number}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{:catch error}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red&quot;</span>&gt;</span>{error.message}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{/await}
+</code></pre>
+<blockquote>
+<p>最新の約束事のみを考慮するため、レースコンディションを気にする必要がない。</p>
+</blockquote>
+<p>もしプロミスが拒否できないことが分かっている場合は、catchブロックを省略することができます。また、プロミスが解決するまで何も表示したくない場合は、最初のブロックを省略することができます。</p>
+<pre><code class="lang-html">{#await promise then number}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>the number is {number}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{/await}
+</code></pre>
+<h2 id="イベント">イベント</h2>
+<h3 id="domイベント">DOMイベント</h3>
+<p>すでに簡単に見てきたように、on: ディレクティブを使用すると、要素上の任意のイベントをリッスンすることができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">on:mousemove</span>=<span class="hljs-string">{handleMousemove}</span>&gt;</span>
+    The mouse position is {m.x} x {m.y}
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="インラインハンドラ">インラインハンドラ</h3>
+<p>イベントハンドラをインラインで宣言することもできます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">on:mousemove</span>=<span class="hljs-string">&quot;{e =&gt; m = { x: e.clientX, y: e.clientY }}&quot;</span>&gt;</span>
+    The mouse position is {m.x} x {m.y}
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>引用符は任意ですが、環境によってはシンタックスハイライトに便利です。</p>
+<p>フレームワークによっては、パフォーマンス上の理由からインラインイベントハンドラを避けるよう推奨されている場合があります。特にループの内部では注意が必要です。Svelteではそのようなアドバイスはありません。コンパイラは、どのような形式を選択しても、常に正しい処理を行います。</p>
+<h3 id="イベントモディファイア">イベントモディファイア</h3>
+<p>DOM イベントハンドラには、その振る舞いを変更する修飾子をつけることができます。例えば、once 修飾子を持つハンドラは一度だけ実行されます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleClick</span>(<span class="hljs-params"></span>) </span>{
+        alert(<span class="hljs-string">&apos;no more alerts&apos;</span>)
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>|<span class="hljs-attr">once</span>=<span class="hljs-string">{handleClick}</span>&gt;</span>
+    Click me
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>モディファイアの全リストです。</p>
+<ul>
+<li>preventDefault - ハンドラを実行する前に event.preventDefault() をコールします。例えば、クライアントサイドのフォーム処理に便利です。</li>
+<li>stopPropagation - event.stopPropagation()を呼び出し、イベントが次の要素に到達するのを防ぎます。</li>
+<li>passive - タッチ/ホイールイベント時のスクロールのパフォーマンスを向上させます（Svelteは、安全な場所に自動的に追加します）。</li>
+<li>nonpassive - 明示的にpassive: falseを設定します。</li>
+<li>capture - バブリングフェーズではなく、キャプチャフェーズでハンドラを起動する (MDN docs)</li>
+<li>once - ハンドラを最初に実行した後に削除します。</li>
+<li>self - event.targetが要素自身の場合にのみ、ハンドラをトリガします。</li>
+<li>trusted - event.isTrustedがtrueのときのみハンドラをトリガする。つまり、イベントがユーザーアクションによってトリガーされた場合。</li>
+</ul>
+<p>on:click|once|capture={...}のように修飾子を連鎖させることができます。</p>
+<h3 id="コンポーネントイベント">コンポーネントイベント</h3>
+<p>コンポーネントは、イベントをディスパッチすることもできます。これを行うには、イベントディスパッチャを作成する必要があります。Inner.svelte を更新してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { createEventDispatcher } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+
+    <span class="hljs-keyword">const</span> dispatch = createEventDispatcher();
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span>(<span class="hljs-params"></span>) </span>{
+        dispatch(<span class="hljs-string">&apos;message&apos;</span>, {
+            <span class="hljs-attr">text</span>: <span class="hljs-string">&apos;Hello!&apos;</span>
+        });
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>createEventDispatcher は、コンポーネントが最初にインスタンス化されたときに呼び出される必要があります - setTimeout コールバックなどの内部で後から実行することはできません。これは、ディスパッチをコンポーネントのインスタンスにリンクします。
+App コンポーネントは、on:message ディレクティブによって Inner コンポーネントによってディスパッチされたメッセージをリスンしていることに注意してください。このディレクティブは、on: の後にディスパッチするイベント名（この場合、message）を付けた属性です。</p>
+<p>この属性がないと、メッセージはディスパッチされますが、アプリはそれに反応しません。on:message属性を削除して、もう一度ボタンを押してみてください。</p>
+<p>また、イベント名を他のものに変えてみることもできます。例えば、Inner.svelteの dispatch(&apos;message&apos;) を dispatch(&apos;myevent&apos;) に変更し、App.svelteコンポーネントの属性名を on:message から on:myevent に変更します。</p>
+<h3 id="イベント転送">イベント転送</h3>
+<p>DOM イベントとは異なり、コンポーネントイベントはバブルではありません。深くネストされたコンポーネントのイベントをリスニングしたい場合は、中間コンポーネントがイベントを転送する必要があります。</p>
+<p>この場合、前章と同じ App.svelte と Inner.svelte がありますが、<code>&lt;Inner/&gt;</code> を含む Outer.svelte コンポーネントが存在することになります。</p>
+<p>この問題を解決する一つの方法は、Outer.svelteにcreateEventDispatcherを追加し、メッセージイベントをリスニングし、そのハンドラを作成することです。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> Inner <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Inner.svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> { createEventDispatcher } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+
+    <span class="hljs-keyword">const</span> dispatch = createEventDispatcher();
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">forward</span>(<span class="hljs-params">event</span>) </span>{
+        dispatch(<span class="hljs-string">&apos;message&apos;</span>, event.detail);
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">Inner</span> <span class="hljs-attr">on:message</span>=<span class="hljs-string">{forward}/</span>&gt;</span>
+</code></pre>
+<p>しかし、これは多くのコードを書くことになるので、Svelteは同等の略記法を用意しています。値なしのon:messageイベント指示は、「すべてのメッセージイベントを転送する」ことを意味します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> Inner <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Inner.svelte&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">Inner</span> <span class="hljs-attr">on:message</span>/&gt;</span>
+</code></pre>
+<h3 id="domイベント転送">DOMイベント転送</h3>
+<p>イベント転送は、DOMイベントに対しても機能します。</p>
+<p><custombutton> がクリックされた時に通知を受けたい - そのためには、CustomButton.svelte で <button> 要素のクリックイベントを転送すればよいのです。</button></custombutton></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>&gt;</span>
+    Click me
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<h2 id="バインディング">バインディング</h2>
+<h3 id="テキスト入力">テキスト入力</h3>
+<p>Svelteのデータフローは原則としてトップダウンで、親コンポーネントは子コンポーネントにpropsを設定でき、コンポーネントは要素に属性を設定できますが、その逆はできません。</p>
+<p>しかし、時にはこのルールを破ることが有効な場合があります。このコンポーネントの <input> 要素の場合、name の値を event.target.value に設定する on:input イベントハンドラを追加できますが、これはちょっと...お決まりの方法ですね。他のフォーム要素では、これから見るようにさらに悪くなります。</p>
+<p>その代わり、bind:valueディレクティブを使うことができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{name}</span>&gt;</span>
+</code></pre>
+<p>これは、nameの値を変更すると入力値が更新されるだけでなく、入力値を変更するとnameも更新されることを意味する。</p>
+<h3 id="数値入力">数値入力</h3>
+<p>DOMでは、すべてが文字列です。type=&quot;number &quot;やtype=&quot;range &quot;といった数値入力を扱う際には、この文字列は役に立ちません。なぜなら、入力値を使う前に、入力値を強制することを忘れないようにしなければならないからです。</p>
+<p>bind:valueを使えば、Svelteがそれを代行してくれます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">number</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{a}</span> <span class="hljs-attr">min</span>=<span class="hljs-string">0</span> <span class="hljs-attr">max</span>=<span class="hljs-string">10</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">range</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{a}</span> <span class="hljs-attr">min</span>=<span class="hljs-string">0</span> <span class="hljs-attr">max</span>=<span class="hljs-string">10</span>&gt;</span>
+</code></pre>
+<h3 id="チェックボックス入力">チェックボックス入力</h3>
+<p>チェックボックスは状態を切り替えるために使用されます。input.valueにバインドするのではなく、input.checkedにバインドします。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">checkbox</span> <span class="hljs-attr">bind:checked</span>=<span class="hljs-string">{yes}</span>&gt;</span>
+</code></pre>
+<h3 id="グループ入力">グループ入力</h3>
+<p>同じ値に関連する複数の入力がある場合、value属性とともにbind:groupを使用することができます。同じグループのラジオ入力は相互に排他的であり、同じグループのチェックボックス入力は選択された値の配列を形成します。</p>
+<p>各入力にbind:groupを追加します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">radio</span> <span class="hljs-attr">bind:group</span>=<span class="hljs-string">{scoops}</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;scoops&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{1}</span>&gt;</span>
+</code></pre>
+<p>この場合、チェックボックスの入力を各ブロックに移動することで、よりシンプルなコードにすることができます。まず、<code>&lt;script&gt;</code> ブロックにメニュー変数を追加します...</p>
+<pre><code class="lang-html">let menu = [
+    &apos;Cookies and cream&apos;,
+    &apos;Mint choc chip&apos;,
+    &apos;Raspberry ripple&apos;
+];
+</code></pre>
+<p>...その後、2番目のセクションを交換します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Flavours<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+{#each menu as flavour}
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">checkbox</span> <span class="hljs-attr">bind:group</span>=<span class="hljs-string">{flavours}</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;flavours&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{flavour}</span>&gt;</span>
+        {flavour}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+{/each}
+</code></pre>
+<p>アイスクリームメニューの新たな展開が容易にできるようになったのです。</p>
+<h3 id="テキストエリア入力">テキストエリア入力</h3>
+<p><textarea>` 要素は、Svelte のテキスト入力と同様の動作をします - bind:value を使用します。</textarea></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{value}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+</code></pre>
+<p>このように、名前が一致する場合には、省略形を用いることもできる。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">bind:value</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+</code></pre>
+<p>これは、textareasだけでなく、すべてのバインディングに適用されます。</p>
+<h3 id="select-バインディング">Select バインディング</h3>
+<p>bind:value は <code>&lt;select&gt;</code> 要素でも使うことができます。20行目を更新。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{selected}</span> <span class="hljs-attr">on:change</span>=<span class="hljs-string">&quot;{() =&gt; answer = &apos;&apos;}&quot;</span>&gt;</span>
+</code></pre>
+<p>なお、<code>&lt;option&gt;</code> の値は文字列ではなくオブジェクトであることに注意してください。Svelteは気にしません。</p>
+<p>selectedの初期値を設定していないので、バインディングは自動的にデフォルト値（リストの最初の値）に設定します。バインディングが初期化されるまで、selectedは未定義のままなので、テンプレート内でselected.idなどをやみくもに参照することはできません。ユースケースが許すのであれば、この問題を回避するために初期値を設定することもできます。</p>
+<h3 id="select-multiple">Select multiple</h3>
+<p>selectはmultiple属性を持つことができ、その場合、単一の値を選択するのではなく、配列に入力されます。</p>
+<p>先ほどのアイスクリームの例に戻ると、チェックボックスを <code>&lt;select multiple&gt;</code> で置き換えることができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Flavours<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{flavours}</span>&gt;</span>
+    {#each menu as flavour}
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">{flavour}</span>&gt;</span>
+            {flavour}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    {/each}
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
+</code></pre>
+<p>コントロールキー（MacOSではコマンドキー）を押しながら、複数の選択肢を選ぶことができます。</p>
+<h3 id="コンテンタブルバインディング">コンテンタブルバインディング</h3>
+<p>contenteditable=&quot;true&quot; 属性を持つ要素は、textContent と innerHTML のバインディングをサポートしています。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+    <span class="hljs-attr">contenteditable</span>=<span class="hljs-string">&quot;true&quot;</span>
+    <span class="hljs-attr">bind:innerHTML</span>=<span class="hljs-string">{html}</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="each-block-バインディング">Each block バインディング</h3>
+<p>eachブロックの中でプロパティにバインドすることも可能です。</p>
+<pre><code class="lang-html">{#each todos as todo}
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class:done</span>=<span class="hljs-string">{todo.done}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+            <span class="hljs-attr">type</span>=<span class="hljs-string">checkbox</span>
+            <span class="hljs-attr">bind:checked</span>=<span class="hljs-string">{todo.done}</span>
+        &gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span>
+            <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;What needs to be done?&quot;</span>
+            <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{todo.text}</span>
+        &gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+{/each}
+</code></pre>
+<p>これらの <code>&lt;input&gt;</code> 要素を操作すると、配列が変更されることに注意してください。もし、イミュータブルなデータを扱いたいのであれば、これらのバインディングを避け、代わりにイベントハンドラを使用すべきです。</p>
+<h3 id="メディア要素">メディア要素</h3>
+<p><code>&lt;audio&gt;</code> と <code>&lt;video&gt;</code> 要素には、バインドすることができるいくつかのプロパティがあります。この例では、そのうちのいくつかを紹介します。</p>
+<p>62行目で、currentTime={time}、duration、pausedのバインディングを追加しています。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">video</span>
+    <span class="hljs-attr">poster</span>=<span class="hljs-string">&quot;https://sveltejs.github.io/assets/caminandes-llamigos.jpg&quot;</span>
+    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://sveltejs.github.io/assets/caminandes-llamigos.mp4&quot;</span>
+    <span class="hljs-attr">on:mousemove</span>=<span class="hljs-string">{handleMove}</span>
+    <span class="hljs-attr">on:touchmove</span>|<span class="hljs-attr">preventDefault</span>=<span class="hljs-string">{handleMove}</span>
+    <span class="hljs-attr">on:mousedown</span>=<span class="hljs-string">{handleMousedown}</span>
+    <span class="hljs-attr">on:mouseup</span>=<span class="hljs-string">{handleMouseup}</span>
+    <span class="hljs-attr">bind:currentTime</span>=<span class="hljs-string">{time}</span>
+    <span class="hljs-attr">bind:duration</span>
+    <span class="hljs-attr">bind:paused</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">track</span> <span class="hljs-attr">kind</span>=<span class="hljs-string">&quot;captions&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">video</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>bind:duration は bind:duration={duration} と同じです。</p>
+</blockquote>
+<p>これで、ビデオをクリックすると、時間、継続時間、一時停止が適宜更新されます。つまり、それらを使ってカスタムコントロールを構築することができるのです。</p>
+<blockquote>
+<p>通常、Web上ではtimeupdateイベントをリッスンすることでcurrentTimeを追跡します。しかし、これらのイベントの発生頻度が低すぎるため、UIがぎこちなくなってしまう。Svelteでは、requestAnimationFrameを使用してcurrentTimeをチェックすることで、より良い方法を実現している。</p>
+</blockquote>
+<p><code>&lt;audio&gt;</code> と <code>&lt;video&gt;</code> のバインディングの完全なセットは以下の通りです - 6つの読み取り専用のバインディング...</p>
+<ul>
+<li>duration (readonly) — 動画の総時間を秒単位で表したもの</li>
+<li>buffered (readonly) — {start, end} オブジェクトの配列</li>
+<li>seekable (readonly) — 同上</li>
+<li>played (readonly) — 同上</li>
+<li>seeking (readonly) — boolean</li>
+<li>ended (readonly) — boolean</li>
+</ul>
+<p>...そして5つの2ウェイバインディング。</p>
+<ul>
+<li>currentTime — ビデオの現在の位置（秒単位</li>
+<li>playbackRate — 動画の再生速度（1が「通常」）。</li>
+<li>paused — これは自明のことであろう</li>
+<li>volume — 0から1までの値</li>
+<li>muted — ブール値で、true を指定するとミュートされます。</li>
+</ul>
+<p>動画には、さらに videoWidth と videoHeight を readonly で指定することができる。</p>
+<h3 id="dimensions">Dimensions</h3>
+<p>すべてのブロックレベル要素はclientWidth, clientHeight, offsetWidth, offsetHeightのバインディングを持っています。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">bind:clientWidth</span>=<span class="hljs-string">{w}</span> <span class="hljs-attr">bind:clientHeight</span>=<span class="hljs-string">{h}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: {size}px&quot;</span>&gt;</span>{text}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>これらのバインディングは読み取り専用で、wとhの値を変更しても何の効果もない。</p>
+<p>要素は、これに似た手法で計測されます。多少のオーバーヘッドが発生するので、大量の要素に使用するのはお勧めしません。</p>
+<p>display: インライン要素はこの手法では測定できません。また、他の要素を含むことができない要素 (<code>&lt;canvas&gt;</code> など) も測定できません。また、他の要素を含むことができない要素 (<code>&lt;canvas&gt;</code> など) も測定できません。このような場合は、代わりにラッパー要素を測定する必要があります。</p>
+<h3 id="this">This</h3>
+<p>readonly の this バインディングはすべての要素（およびコンポーネント）に適用され、レンダリングされた要素への参照を取得することができます。たとえば、<code>&lt;canvas&gt;</code> 要素への参照を取得することができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">canvas</span>
+    <span class="hljs-attr">bind:this</span>=<span class="hljs-string">{canvas}</span>
+    <span class="hljs-attr">width</span>=<span class="hljs-string">{32}</span>
+    <span class="hljs-attr">height</span>=<span class="hljs-string">{32}</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+</code></pre>
+<p>canvas の値はコンポーネントがマウントされるまで未定義であるため、このロジックを onMount ライフサイクル関数内に置くことに注意してください。</p>
+<h3 id="コンポーネントバインディング">コンポーネントバインディング</h3>
+<p>DOM 要素のプロパティにバインドできるのと同じように、コンポーネントのプロップにバインドすることができます。例えば、この <code>&lt;Keypad&gt;</code> コンポーネントの value プロパティには、あたかもフォーム要素のようにバインドすることができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Keypad</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{pin}</span> <span class="hljs-attr">on:submit</span>=<span class="hljs-string">{handleSubmit}/</span>&gt;</span>
+</code></pre>
+<p>これで、ユーザーがキーパッドを操作すると、親コンポーネントのpinの値が即座に更新されるようになりました。</p>
+<blockquote>
+<p>コンポーネントバインディングの使用は控えめに。コンポーネントバインディングが多すぎると、アプリケーション内のデータの流れを追跡するのが難しくなります。</p>
+</blockquote>
+<h3 id="コンポーネントインスタンスへのバインディング">コンポーネントインスタンスへのバインディング</h3>
+<p>DOM 要素にバインドするのと同じように、コンポーネントのインスタンスそのものにバインドすることができます。例えば、 <code>&lt;InputField&gt;</code> のインスタンスを、DOM 要素をバインドするときと同じように、field という変数にバインドすることができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> field;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">InputField</span> <span class="hljs-attr">bind:this</span>=<span class="hljs-string">{field}</span> /&gt;</span>
+</code></pre>
+<p>これで、field を使ってこのコンポーネントをプログラムで操作できるようになりました。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">&quot;{() =&gt; field.focus()}&quot;</span>&gt;</span>
+    Focus field
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>なお、ボタンが最初にレンダリングされるときにはfieldは未定義であり、エラーを投げるので、{field.focus}はできない。</p>
+</blockquote>
+<h2 id="ライフサイクル">ライフサイクル</h2>
+<h3 id="onmount">onMount</h3>
+<p>すべてのコンポーネントは、作成時に始まり、破棄時に終了するライフサイクルを持ちます。そのライフサイクルの中で、重要なタイミングでコードを実行できる関数がいくつかあります。</p>
+<p>最も頻繁に使用するのは onMount で、これはコンポーネントが最初に DOM にレンダリングされた後に実行されます。先ほど、レンダリング後に <code>&lt;canvas&gt;</code> 要素と対話する必要があったときに、この関数を簡単に使用しました。</p>
+<p>ここでは、ネットワーク経由でデータをロードする onMount ハンドラを追加します。</p>
+<pre><code class="lang-js">&lt;script&gt;
+    <span class="hljs-keyword">import</span> { onMount } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+
+    <span class="hljs-keyword">let</span> photos = [];
+
+    onMount(<span class="hljs-keyword">async</span> () =&gt; {
+        <span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> fetch(<span class="hljs-string">`/tutorial/api/album`</span>);
+        photos = <span class="hljs-keyword">await</span> res.json();
+    });
+&lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>サーバサイドレンダリング (SSR) のため、フェッチを <code>&lt;script&gt;</code> のトップレベルではなく、onMount に置くことを推奨しています。onDestroy を除いて、ライフサイクル関数は SSR の間は実行されないので、コンポーネントが DOM にマウントされた時点で遅延ロードされるべきデータのフェッチを回避することができます。</p>
+</blockquote>
+<p>ライフサイクル関数は、コンポーネントの初期化中にコールバックがコンポーネントインスタンスにバインドされるように呼び出す必要があります（例えば、setTimeoutではありません）。</p>
+<p>onMountコールバックが関数を返す場合、その関数はコンポーネントが破棄されるときに呼び出されます。</p>
+<h3 id="ondestroy">onDestroy</h3>
+<p>コンポーネントが破壊されたときにコードを実行するには、onDestroyを使用します。</p>
+<p>例えば、コンポーネントの初期化時にsetInterval関数を追加し、それが不要になったらクリーンアップすることができます。こうすることで、メモリリークを防ぐことができる。</p>
+<pre><code class="lang-js">&lt;script&gt;
+    <span class="hljs-keyword">import</span> { onDestroy } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+
+    <span class="hljs-keyword">let</span> counter = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">const</span> interval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> counter += <span class="hljs-number">1</span>, <span class="hljs-number">1000</span>);
+
+    onDestroy(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">clearInterval</span>(interval));
+&lt;/script&gt;
+</code></pre>
+<p>コンポーネントの初期化時にライフサイクル関数を呼び出すことは重要ですが、どこから呼び出すかは重要ではありません。そこで、もし望めば、間隔ロジックをutils.jsのヘルパー関数に抽象化することができる...</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { onDestroy } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">onInterval</span>(<span class="hljs-params">callback, milliseconds</span>) </span>{
+    <span class="hljs-keyword">const</span> interval = <span class="hljs-built_in">setInterval</span>(callback, milliseconds);
+
+    onDestroy(<span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-built_in">clearInterval</span>(interval);
+    });
+}
+</code></pre>
+<p>...そして、それを私たちのコンポーネントにインポートしてください。</p>
+<pre><code class="lang-js">&lt;script&gt;
+    <span class="hljs-keyword">import</span> { onInterval } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./utils.js&apos;</span>;
+
+    <span class="hljs-keyword">let</span> counter = <span class="hljs-number">0</span>;
+    onInterval(<span class="hljs-function">() =&gt;</span> counter += <span class="hljs-number">1</span>, <span class="hljs-number">1000</span>);
+&lt;/script&gt;
+</code></pre>
+<p>タイマーを数回開いたり閉じたりして、カウンターが回り続け、CPU負荷が上昇することを確認してください。これは、以前のタイマーが削除されていないため、メモリーリークが発生していることが原因です。例題を解く前に、ページを更新することを忘れないでください。</p>
+<h3 id="beforeupdate-と-afterupdate">beforeUpdate と afterUpdate</h3>
+<p>beforeUpdate関数は、DOMが更新される直前の作業をスケジュールします。afterUpdateは、これと対になる関数で、DOMがデータと同期した後にコードを実行するために使用します。</p>
+<p>この関数は、要素のスクロール位置の更新など、純粋にステートドリブンな方法では実現が困難なことを命令的に実行するのに便利です。</p>
+<p>この Eliza チャットボットは、チャットウィンドウをスクロールし続けなければならないので、使い勝手が悪いです。それを解決しましょう。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> div;
+<span class="hljs-keyword">let</span> autoscroll;
+
+beforeUpdate(<span class="hljs-function">() =&gt;</span> {
+    autoscroll = div &amp;&amp; (div.offsetHeight + div.scrollTop) &gt; (div.scrollHeight - <span class="hljs-number">20</span>);
+});
+
+afterUpdate(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">if</span> (autoscroll) div.scrollTo(<span class="hljs-number">0</span>, div.scrollHeight);
+});
+</code></pre>
+<p>beforeUpdateはコンポーネントがマウントされる前に最初に実行されるので、プロパティを読み込む前にdivの存在をチェックする必要があることに注意してください。</p>
+<h3 id="tick">tick</h3>
+<p>tick 関数は他のライフサイクル関数とは異なり、コンポーネントが最初に初期化されたときだけでなく、いつでも呼び出すことができます。保留中の状態変化が DOM に適用されるとすぐに（または保留中の状態変化がない場合はすぐに）解決されるプロミスを返します。</p>
+<p>Svelteでコンポーネントの状態を更新しても、すぐにDOMが更新されるわけではありません。その代わり、次のマイクロタスクまで待機し、他のコンポーネントを含め、適用する必要がある他の変更があるかどうかを確認します。こうすることで、不要な作業を回避し、ブラウザがより効率的にバッチ処理を行うことができます。</p>
+<p>この例でその挙動を見ることができます。テキストの範囲を選択して、タブキーを押してください。<code>&lt;textarea&gt;</code> の値が変わるので、現在の選択範囲はクリアされ、カーソルは厄介にも末尾にジャンプしてしまいます。これを解決するには、tick... をインポートします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { tick } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+</code></pre>
+<p>...そして、handleKeydown の最後に this.selectionStart と this.selectionEnd を設定する直前に実行します。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">await</span> tick();
+<span class="hljs-built_in">this</span>.selectionStart = selectionStart;
+<span class="hljs-built_in">this</span>.selectionEnd = selectionEnd;
+</code></pre>
+<h2 id="stores">Stores</h2>
+<h3 id="書き込み可能なストア">書き込み可能なストア</h3>
+<p>アプリケーションの状態が、すべてアプリケーションのコンポーネント階層の中にあるわけではありません。時には、無関係な複数のコンポーネントや、通常のJavaScriptモジュールからアクセスする必要がある値もあるでしょう。</p>
+<p>Svelteでは、これをストアで実現します。ストアは単純にオブジェクトで、ストアの値が変更されたときに関係者に通知するためのsubscribeメソッドを備えています。App.svelteでは、countがストアであり、count.subscribeコールバックでcountValueをセットしています。</p>
+<p>stores.jsタブをクリックすると、countの定義が表示されます。これは書き込み可能なストアであり、subscribeに加えてsetとupdateのメソッドを持っていることを意味します。</p>
+<p>次にIncrementer.svelteタブを開いて、+ボタンの配線を行います。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">increment</span>(<span class="hljs-params"></span>) </span>{
+    count.update(<span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n + <span class="hljs-number">1</span>);
+}
+</code></pre>
+<p>ボタンをクリックすると、カウントが更新されるはずです。Decrementer.svelteの場合は逆を実行します。</p>
+<p>最後に、Resetter.svelteで、resetを実装します。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reset</span>(<span class="hljs-params"></span>) </span>{
+    count.set(<span class="hljs-number">0</span>);
+}
+</code></pre>
+<h3 id="オートサブスクリプション">オートサブスクリプション</h3>
+<p>前の例のアプリは動作しますが、微妙なバグがあります。ストアは購読されていますが、購読を解除されることはありません。このコンポーネントは何度もインスタンス化され、破棄された場合、メモリリークを引き起こします。</p>
+<p>まずはApp.svelteでunsubscribeを宣言するところから始めましょう。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> unsubscribe = count.subscribe(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+    countValue = value;
+});
+</code></pre>
+<blockquote>
+<p>subscribe メソッドを呼び出すと、unsubscribe 関数が返される。</p>
+</blockquote>
+<p>これで、unsubscribe を宣言しましたが、onDestroy ライフサイクルフックなどを通じて、まだ呼び出される必要があります。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { onDestroy } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> { count } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./stores.js&apos;</span>;
+    <span class="hljs-keyword">import</span> Incrementer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Incrementer.svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> Decrementer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Decrementer.svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> Resetter <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Resetter.svelte&apos;</span>;
+
+    <span class="hljs-keyword">let</span> countValue;
+
+    <span class="hljs-keyword">const</span> unsubscribe = count.subscribe(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+        countValue = value;
+    });
+
+    onDestroy(unsubscribe);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>The count is {countValue}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>しかし、特にコンポーネントが複数のストアを購読している場合は、少し煩雑になり始めます。その代わり、Svelteにはトリックがあります。ストア名の前に$をつけることで、ストアの値を参照することができるのです。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { count } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./stores.js&apos;</span>;
+    <span class="hljs-keyword">import</span> Incrementer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Incrementer.svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> Decrementer <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Decrementer.svelte&apos;</span>;
+    <span class="hljs-keyword">import</span> Resetter <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./Resetter.svelte&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>The count is {$count}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>自動サブスクリプションは、コンポーネントの最上位スコープで宣言（またはインポート）されているストア変数に対してのみ機能します。</p>
+</blockquote>
+<p>イベントハンドラやリアクティブ宣言など、<code>&lt;script&gt;</code> 内の任意の場所で使用することができます。</p>
+<p>イベントハンドラやリアクティブ宣言など、<code>&lt;script&gt;</code> 内の任意の場所で使用できます。これは事実上の予約文字です。Svelteは、独自の変数を$の接頭辞で宣言することを禁止しています。</p>
+<h3 id="リーダブルストア">リーダブルストア</h3>
+<p>すべてのストアが、そのストアを参照している人から書き込み可能であるべきではありません。例えば、マウスの位置やユーザーの位置情報を表すストアがあったとして、それらの値を「外から」設定できるのは意味がありません。そのような場合のために、読み取り可能なストアを用意しています。</p>
+<p>stores.jsタブをクリックしてください。readableの最初の引数は初期値で、まだ持っていない場合はnullかundefinedにすることができる。第2引数は、設定されたコールバックを受け取り、stop関数を返すstart関数です。start関数は、ストアが最初の購読者を獲得したときに呼び出され、stop関数は、最後の購読者が購読を停止したときに呼び出されます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> time = readable(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">start</span>(<span class="hljs-params">set</span>) </span>{
+    <span class="hljs-keyword">const</span> interval = <span class="hljs-built_in">setInterval</span>(<span class="hljs-function">() =&gt;</span> {
+        set(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());
+    }, <span class="hljs-number">1000</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stop</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">clearInterval</span>(interval);
+    };
+});
+</code></pre>
+<h3 id="派生ストア">派生ストア</h3>
+<p>derivedを使用すると、1つまたは複数の他のストアの値を基にしたストアを作成できます。先ほどの例から、ページを開いた時間を派生させたストアを作成することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> elapsed = derived(
+    time,
+    $time =&gt; <span class="hljs-built_in">Math</span>.round(($time - start) / <span class="hljs-number">1000</span>)
+);
+</code></pre>
+<blockquote>
+<p>複数の入力からストアを派生させることも可能で、値を返す代わりに明示的に設定することもできる（これは非同期に値を派生させる場合に有効）。詳細はAPIリファレンスを参照すること。</p>
+</blockquote>
+<h3 id="カスタムストア">カスタムストア</h3>
+<p>オブジェクトがsubscribeメソッドを正しく実装している限り、それはストアである。それ以上は何でもありだ。したがって、ドメイン固有のロジックを持つカスタムストアを作成することは非常に簡単である。</p>
+<p>例えば、先ほどの count ストアに increment, decrement, reset メソッドを追加し、set と update を表示しないようにすることができます。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createCount</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> { subscribe, set, update } = writable(<span class="hljs-number">0</span>);
+
+    <span class="hljs-keyword">return</span> {
+        subscribe,
+        <span class="hljs-attr">increment</span>: <span class="hljs-function">() =&gt;</span> update(<span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n + <span class="hljs-number">1</span>),
+        <span class="hljs-attr">decrement</span>: <span class="hljs-function">() =&gt;</span> update(<span class="hljs-function"><span class="hljs-params">n</span> =&gt;</span> n - <span class="hljs-number">1</span>),
+        <span class="hljs-attr">reset</span>: <span class="hljs-function">() =&gt;</span> set(<span class="hljs-number">0</span>)
+    };
+}
+</code></pre>
+<h3 id="ストアバインディング">ストアバインディング</h3>
+<p>ストアが書き込み可能な場合、つまり set メソッドがある場合は、ローカルコンポーネントの状態と同じようにその値にバインドすることができます。</p>
+<p>この例では、書き込み可能なストア名と、派生したストアの挨拶文があります。&lt;<input>` 要素を更新します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">bind:value</span>=<span class="hljs-string">{$name}</span>&gt;</span>
+</code></pre>
+<p>入力値を変更すると、nameとその依存関係がすべて更新されるようになりました。</p>
+<p>また、コンポーネント内に値を保存するために直接代入することもできます。<button>` 要素を追加します。</button></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">&quot;{() =&gt; $name += &apos;!&apos;}&quot;</span>&gt;</span>
+    Add exclamation mark!
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>name += &apos;!&apos; の代入は name.set($name + &apos;!&apos;) と同じ意味です。</p>
+<h2 id="モーション">モーション</h2>
+<h3 id="tweened">Tweened</h3>
+<p>値を設定し、DOMが自動的に更新されるのを見るのはクールです。もっとクールなことは？その値をトゥイーンさせることです。Svelteには、アニメーションを用いて変化を伝えるスマートなユーザーインターフェイスを構築するためのツールが用意されています。</p>
+<p>まずは、プログレスストアをトゥイーン値に変更するところから始めましょう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { tweened } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/motion&apos;</span>;
+
+    <span class="hljs-keyword">const</span> progress = tweened(<span class="hljs-number">0</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>ボタンをクリックすると、プログレスバーがアニメーションして新しい値を表示します。しかし、これは少しロボット的で満足のいくものではありません。イージング機能を追加する必要があります。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { tweened } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/motion&apos;</span>;
+    <span class="hljs-keyword">import</span> { cubicOut } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/easing&apos;</span>;
+
+    <span class="hljs-keyword">const</span> progress = tweened(<span class="hljs-number">0</span>, {
+        <span class="hljs-attr">duration</span>: <span class="hljs-number">400</span>,
+        <span class="hljs-attr">easing</span>: cubicOut
+    });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>svelte/easing モジュールには Penner のイージング方程式が含まれていますが、p と t を 0 から 1 の間の値とする独自の p =&gt; t 関数を提供することもできます。</p>
+</blockquote>
+<p>tweenedで利用可能なオプションのフルセットです。</p>
+<ul>
+<li>delay - トゥイーンが始まるまでのミリ秒です。</li>
+<li>duration - トゥイーンの継続時間（ミリ秒）、または (from, to) =&gt; milliseconds 関数で、より大きな値の変化に対してより長いトゥイーンを指定します。</li>
+<li>easing - p =&gt; t 関数です。</li>
+<li>interpolate - 任意の値の間を補間するためのカスタム (from, to) =&gt; t =&gt; value 関数です。デフォルトでは、Svelteは数字、日付、同じ形の配列やオブジェクトの間を補間します（数字と日付、または他の有効な配列やオブジェクトだけを含む限り）。色文字列や変換行列を補間したい場合は、カスタムインターポレーターを指定します。</li>
+</ul>
+<p>これらのオプションは、progress.set と progress.update に第2引数として渡すこともできます。setメソッドとupdateメソッドは、トゥイーンが完了したときに解決されるプロミスを返します。</p>
+<h3 id="spring">Spring</h3>
+<p>spring関数は、tweenedの代わりに、頻繁に変化する値に対してより効果的に機能することが多い。</p>
+<p>この例では、円の座標と大きさを表す2つのストアがあります。これらをスプリングに変換してみましょう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { spring } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/motion&apos;</span>;
+
+    <span class="hljs-keyword">let</span> coords = spring({ <span class="hljs-attr">x</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">50</span> });
+    <span class="hljs-keyword">let</span> size = spring(<span class="hljs-number">10</span>);
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>どちらのスプリングもデフォルトで剛性とダンピングの値が設定されており、スプリングの「バネ性」をコントロールします。初期値を指定することができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> coords = spring({ <span class="hljs-attr">x</span>: <span class="hljs-number">50</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">50</span> }, {
+    <span class="hljs-attr">stiffness</span>: <span class="hljs-number">0.1</span>,
+    <span class="hljs-attr">damping</span>: <span class="hljs-number">0.25</span>
+});
+</code></pre>
+<p>マウスを動かして、スライダーをドラッグして、スプリングの挙動にどのような影響を与えるかを感じてみてください。スプリングが動いている間でも、値を調整することができることに注意してください。</p>
+<p>詳しくはAPIリファレンスを参照してください。</p>
+<h2 id="トランジション">トランジション</h2>
+<h3 id="transitionディレクティブ">transitionディレクティブ</h3>
+<p>DOMへの要素の出入りを優雅に遷移させることで、より魅力的なユーザインタフェースを作ることができます。Svelteでは、transitionディレクティブにより、これを非常に簡単に行うことができます。</p>
+<p>まず、svelte/transition...からfade関数をインポートします。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { fade } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/transition&apos;</span>;
+    <span class="hljs-keyword">let</span> visible = <span class="hljs-literal">true</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>...そして、それを <code>&lt;p&gt;</code> 要素に追加してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">transition:fade</span>&gt;</span>Fades in and out<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="パラメータの追加">パラメータの追加</h3>
+<p>トランジション関数には、パラメータを指定することができます。フェードトランジションをフライに置き換える...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { fly } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/transition&apos;</span>;
+    <span class="hljs-keyword">let</span> visible = <span class="hljs-literal">true</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>...そして、それをいくつかのオプションとともに <code>&lt;p&gt;</code> に適用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">transition:fly</span>=<span class="hljs-string">&quot;{{ y: 200, duration: 2000 }}&quot;</span>&gt;</span>
+    Flies in and out
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>遷移は可逆的であることに注意してください。遷移中にチェックボックスを切り替えると、始まりや終わりではなく、現在のポイントから遷移します。</p>
+<h3 id="in-と-out">In と out</h3>
+<p>transition ディレクティブの代わりに、要素に in ディレクティブまたは out ディレクティブ、あるいは両方を一緒に指定することができます。インポート fade が fly と並ぶ...</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { fade, fly } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/transition&apos;</span>;
+</code></pre>
+<p>...その後、トランジションディレクティブをインとアウトの別々のディレクティブに置き換えます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">in:fly</span>=<span class="hljs-string">&quot;{{ y: 200, duration: 2000 }}&quot;</span> <span class="hljs-attr">out:fade</span>&gt;</span>
+    Flies in, fades out
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>この場合、遷移は逆ではありません。</p>
+<h3 id="custom-css-transitions">Custom CSS transitions</h3>
+<p>svelte/transitionモジュールには、いくつかの組み込みトランジションがありますが、自分で作成することも非常に簡単です。例として、フェードトランジションのソースはこれです。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fade</span>(<span class="hljs-params">node, {
+    delay = <span class="hljs-number">0</span>,
+    duration = <span class="hljs-number">400</span>
+}</span>) </span>{
+    <span class="hljs-keyword">const</span> o = +getComputedStyle(node).opacity;
+
+    <span class="hljs-keyword">return</span> {
+        delay,
+        duration,
+        <span class="hljs-attr">css</span>: <span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> <span class="hljs-string">`opacity: <span class="hljs-subst">${t * o}</span>`</span>
+    };
+}
+</code></pre>
+<p>この関数は2つの引数（トランジションが適用されるノードと、渡された任意のパラメータ）を取り、以下のプロパティを持つことができるトランジションオブジェクトを返します。</p>
+<ul>
+<li>delay — 遷移開始のミリ秒前</li>
+<li>duration — 遷移の長さ（単位：ミリ秒</li>
+<li>easing — a p =&gt; t イージング機能 (トゥイーンの章を参照)</li>
+<li>css — a (t, u) =&gt; css関数、ここでu === 1 - t</li>
+<li>tick — a (t, u) =&gt; ノードに何らかの効果を与える{...}関数</li>
+</ul>
+<p>t値は、イントロの始まりとアウトロの終わりで0、イントロの終わりとアウトロの始まりで1になります。</p>
+<p>ほとんどの場合、tickプロパティではなく、cssプロパティを返すべきです。CSSアニメーションは、可能な限りジャンキングを防ぐためにメインスレッドから実行されるからです。Svelteは、トランジションを「シミュレート」してCSSアニメーションを作成し、それを実行させます。</p>
+<p>例えば、フェード遷移は以下のようなCSSアニメーションを生成します。</p>
+<pre><code class="lang-css"><span class="hljs-number">0%</span> { <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0</span> }
+<span class="hljs-number">10%</span> { <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.1</span> }
+<span class="hljs-number">20%</span> { <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.2</span> }
+<span class="hljs-comment">/* ... */</span>
+<span class="hljs-number">100%</span> { <span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span> }
+</code></pre>
+<p>でも、もっともっとクリエイティブになれるはず。本当にありがたいものを作ろう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> { fade } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/transition&apos;</span>;
+    <span class="hljs-keyword">import</span> { elasticOut } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/easing&apos;</span>;
+
+    <span class="hljs-keyword">let</span> visible = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">spin</span>(<span class="hljs-params">node, { duration }</span>) </span>{
+        <span class="hljs-keyword">return</span> {
+            duration,
+            <span class="hljs-attr">css</span>: <span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> {
+                <span class="hljs-keyword">const</span> eased = elasticOut(t);
+
+                <span class="hljs-keyword">return</span> <span class="hljs-string">`
+                    transform: scale(<span class="hljs-subst">${eased}</span>) rotate(<span class="hljs-subst">${eased * <span class="hljs-number">1080</span>}</span>deg);
+                    color: hsl(
+                        <span class="hljs-subst">${<span class="hljs-built_in">Math</span>.trunc(t * <span class="hljs-number">360</span>)}</span>,
+                        <span class="hljs-subst">${<span class="hljs-built_in">Math</span>.min(<span class="hljs-number">100</span>, <span class="hljs-number">1000</span> - <span class="hljs-number">1000</span> * t)}</span>%,
+                        <span class="hljs-subst">${<span class="hljs-built_in">Math</span>.min(<span class="hljs-number">50</span>, <span class="hljs-number">500</span> - <span class="hljs-number">500</span> * t)}</span>%
+                    );`</span>
+            }
+        };
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>大きな力には、大きな責任が伴うことを忘れないでください。</p>
+<h3 id="カスタムjsトランジション">カスタムJSトランジション</h3>
+<p>遷移はできるだけCSSで行うのが一般的ですが、タイプライター効果など、JavaScriptでないと実現できない効果もあります。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">typewriter</span>(<span class="hljs-params">node, { speed = <span class="hljs-number">1</span> }</span>) </span>{
+    <span class="hljs-keyword">const</span> valid = (
+        node.childNodes.length === <span class="hljs-number">1</span> &amp;&amp;
+        node.childNodes[<span class="hljs-number">0</span>].nodeType === Node.TEXT_NODE
+    );
+
+    <span class="hljs-keyword">if</span> (!valid) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">`This transition only works on elements with a single text node child`</span>);
+    }
+
+    <span class="hljs-keyword">const</span> text = node.textContent;
+    <span class="hljs-keyword">const</span> duration = text.length / (speed * <span class="hljs-number">0.01</span>);
+
+    <span class="hljs-keyword">return</span> {
+        duration,
+        <span class="hljs-attr">tick</span>: <span class="hljs-function"><span class="hljs-params">t</span> =&gt;</span> {
+            <span class="hljs-keyword">const</span> i = <span class="hljs-built_in">Math</span>.trunc(text.length * t);
+            node.textContent = text.slice(<span class="hljs-number">0</span>, i);
+        }
+    };
+}
+</code></pre>
+<h3 id="トランジションイベント">トランジションイベント</h3>
+<p>トランジションがいつ始まり、いつ終わるのかを知ることは、とても便利なことです。Svelteは、他のDOMイベントと同様に聞くことができるイベントをディスパッチします。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>
+    <span class="hljs-attr">transition:fly</span>=<span class="hljs-string">&quot;{{ y: 200, duration: 2000 }}&quot;</span>
+    <span class="hljs-attr">on:introstart</span>=<span class="hljs-string">&quot;{() =&gt; status = &apos;intro started&apos;}&quot;</span>
+    <span class="hljs-attr">on:outrostart</span>=<span class="hljs-string">&quot;{() =&gt; status = &apos;outro started&apos;}&quot;</span>
+    <span class="hljs-attr">on:introend</span>=<span class="hljs-string">&quot;{() =&gt; status = &apos;intro ended&apos;}&quot;</span>
+    <span class="hljs-attr">on:outroend</span>=<span class="hljs-string">&quot;{() =&gt; status = &apos;outro ended&apos;}&quot;</span>
+&gt;</span>
+    Flies in and out
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<h3 id="ローカルトランジション">ローカルトランジション</h3>
+<p>通常、トランジションはコンテナブロックが追加されたり破壊されたりしたときに、要素に対して実行されます。この例では、リスト全体の可視性を切り替えると、個々のリスト要素にもトランジションが適用されます。</p>
+<p>そこで、個々のアイテムが追加・削除されたとき、つまりユーザーがスライダーをドラッグしたときにのみ、トランジションを発生させるようにします。</p>
+<p>これを実現するには、トランジションが設定されたブロックが追加または削除されたときにのみ再生される、ローカルトランジションを使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">transition:slide</span>|<span class="hljs-attr">local</span>&gt;</span>
+    {item}
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="deferredトランジション">Deferredトランジション</h3>
+<p>Svelteのトランジションエンジンで特に強力なのは、トランジションを延期して、複数の要素間で連携させる機能です。</p>
+<p>例えば、この2つのTodoリストでは、Todoをトグルすると反対側のリストへ移動します。現実の世界では、オブジェクトはこのように動作しません。消えて別の場所に現れるのではなく、一連の中間位置を移動します。モーションは、アプリの中で何が起こっているかをユーザーに理解してもらうのに、大きな助けとなります。</p>
+<p>この効果は、クロスフェード機能を使って実現できます。クロスフェード機能は、送信と受信という2つのトランジションを作成します。ある要素が「送信」されると、対応する要素が「受信」されるのを探し、その要素を相手の位置に変換してフェードアウトさせるトランジションを生成します。要素が「受信」されると、その逆が起こる。対応する要素がない場合は、フォールバックトランジションが使用されます。</p>
+<p>65行目の <code>&lt;label&gt;</code> 要素を見つけて、送信トランジションと受信トランジションを追加します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>
+    <span class="hljs-attr">in:receive</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">out:send</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+&gt;</span>
+</code></pre>
+<p>次の <code>&lt;label&gt;</code> 要素にも同じことをします。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;done&quot;</span>
+    <span class="hljs-attr">in:receive</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">out:send</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+&gt;</span>
+</code></pre>
+<p>これで、アイテムを切り替えると、新しい場所にスムーズに移動するようになりました。非移行のアイテムはまだぎこちなく飛び跳ねていますが、これは次の章で修正します。</p>
+<h3 id="キーブロック">キーブロック</h3>
+<p>キーブロックは、式の値が変わると、その内容を破棄して再作成する。</p>
+<pre><code class="lang-html">{#key value}
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">transition:fade</span>&gt;</span>{value}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+{/key}
+</code></pre>
+<p>これは、ある要素が DOM に入るときや出るときだけでなく、値が変化するたびにトランジションを再生させたい場合に便利です。</p>
+<p>数値に応じて <code>&lt;span&gt;</code> 要素をキーブロックで囲みます。これにより、インクリメントボタンを押すたびにアニメーションが再生されるようになります。</p>
+<h2 id="アニメーション">アニメーション</h2>
+<h3 id="animate-ディレクティブ">animate ディレクティブ</h3>
+<p>前章では、遅延遷移を利用して、あるTodoリストから他のTodoリストへ要素が移動する際の動きの錯覚を表現しました。</p>
+<p>このイリュージョンを完成させるには、遷移しない要素に動きをつける必要があります。そのために、 animate ディレクティブを使用します。</p>
+<p>まず、svelte/animate から flip 関数（flip は &apos;First, Last, Invert, Play&apos; の略）をインポートします。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { flip } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte/animate&apos;</span>;
+</code></pre>
+<p>Then add it to the <code>&lt;label&gt;</code> elements:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>
+    <span class="hljs-attr">in:receive</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">out:send</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">animate:flip</span>
+&gt;</span>
+</code></pre>
+<p>この場合、動きが少し遅いので、durationパラメータを追加します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span>
+    <span class="hljs-attr">in:receive</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">out:send</span>=<span class="hljs-string">&quot;{{key: todo.id}}&quot;</span>
+    <span class="hljs-attr">animate:flip</span>=<span class="hljs-string">&quot;{{duration: 200}}&quot;</span>
+&gt;</span>
+</code></pre>
+<p>duration は d =&gt; milliseconds の関数で、d は要素が移動しなければならないピクセル数です。
+すべての遷移とアニメーションは、JavaScript ではなく CSS で適用されていることに注意してください。</p>
+<h2 id="アクション">アクション</h2>
+<h3 id="useディレクティブ">useディレクティブ</h3>
+<p>アクションは、基本的に要素レベルのライフサイクル機能です。以下のようなことに役立ちます。</p>
+<ul>
+<li>サードパーティライブラリとのインターフェイス</li>
+<li>遅延ロードされた画像</li>
+<li>ツールチップ</li>
+<li>カスタムイベントハンドラの追加</li>
+</ul>
+<p>このアプリでは、ユーザーが外をクリックするとオレンジ色のモーダルが閉じるようにしたいのです。outclick イベント用のイベント ハンドラがありますが、これはネイティブの DOM イベントではありません。このイベントを自分でディスパッチする必要があります。まず、clickOutside 関数をインポートしてください...</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { clickOutside } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./click_outside.js&quot;</span>;
+</code></pre>
+<p>...その後、エレメントで使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span> <span class="hljs-attr">use:clickOutside</span> <span class="hljs-attr">on:outclick</span>=<span class="hljs-string">&quot;{() =&gt; (showModal = false)}&quot;</span>&gt;</span>
+    Click outside me!
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>click_outside.js ファイルを開いてください。transition関数と同様に、アクション関数はnode（アクションが適用される要素）といくつかのオプションのパラメータを受け取り、アクションオブジェクトを返します。このオブジェクトはdestroy関数を持つことができ、要素がアンマウントされたときに呼び出されます。</p>
+<p>ユーザーがオレンジ色の枠の外をクリックしたときに、outclick イベントを発生させたいと思います。一つの実装として、次のようなものが考えられる。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickOutside</span>(<span class="hljs-params">node</span>) </span>{
+    <span class="hljs-keyword">const</span> handleClick = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (!node.contains(event.target)) {
+            node.dispatchEvent(<span class="hljs-keyword">new</span> CustomEvent(<span class="hljs-string">&quot;outclick&quot;</span>));
+        }
+    };
+
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">&quot;click&quot;</span>, handleClick, <span class="hljs-literal">true</span>);
+
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-function"><span class="hljs-title">destroy</span>(<span class="hljs-params"></span>)</span> {
+            <span class="hljs-built_in">document</span>.removeEventListener(<span class="hljs-string">&quot;click&quot;</span>, handleClick, <span class="hljs-literal">true</span>);
+        },
+    };
+}
+</code></pre>
+<p>clickOutside関数を更新し、ボタンをクリックしてモーダルを表示し、その外側をクリックしてモーダルを閉じます。</p>
+<h3 id="パラメータの追加">パラメータの追加</h3>
+<p>トランジションやアニメーションと同様に、アクションは引数を取ることができ、アクション関数はその引数が属する要素とともに呼び出されます。</p>
+<p>ここでは、ユーザーがボタンを一定時間押し続けるたびに、同じ名前のイベントを発生させる longpress アクションを使用しています。現在、longpress.js ファイルに切り替えると、このイベントが 500ms にハードコードされていることがわかります。</p>
+<p>アクション関数を変更して、第2引数として継続時間を受け取り、その継続時間をsetTimeoutの呼び出しに渡すことができます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">longpress</span>(<span class="hljs-params">node, duration</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+
+    <span class="hljs-keyword">const</span> handleMousedown = <span class="hljs-function">() =&gt;</span> {
+        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+            node.dispatchEvent(
+                <span class="hljs-keyword">new</span> CustomEvent(<span class="hljs-string">&apos;longpress&apos;</span>)
+            );
+        }, duration);
+    };
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>App.svelteに戻ると、durationの値をアクションに渡せるようになります。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">use:longpress</span>=<span class="hljs-string">{duration}</span>
+</span></code></pre>
+<p>これで、イベントは2秒後にしか発生しなくなり、ほぼ成功しました。しかし、継続時間を下にスライドさせると、まだ2秒かかることになります。</p>
+<p>これを変更するには、longpress.js に update メソッドを追加します。これは、引数が変更されるたびに呼び出されます。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">return</span> {
+    <span class="hljs-function"><span class="hljs-title">update</span>(<span class="hljs-params">newDuration</span>)</span> {
+        duration = newDuration;
+    },
+    <span class="hljs-comment">// ...</span>
+};
+</code></pre>
+<blockquote>
+<p>アクションに複数の引数を渡す必要がある場合は、use:longpress={duration, spiciness}}のように1つのオブジェクトにまとめます。</p>
+</blockquote>
+<h2 id="高度なスタイリング">高度なスタイリング</h2>
+<h3 id="classディレクティブ">classディレクティブ</h3>
+<p>他の属性と同様に、JavaScriptの属性でクラスを指定することができます（こちら）。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;{current === &apos;foo&apos; ? &apos;selected&apos; : &apos;&apos;}&quot;</span>
+    <span class="hljs-attr">on:click</span>=<span class="hljs-string">&quot;{() =&gt; current = &apos;foo&apos;}&quot;</span>
+&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>これはUI開発でよくあるパターンなので、Svelteではこれを簡略化するための特別なディレクティブを用意しています。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>
+    <span class="hljs-attr">class:selected</span>=<span class="hljs-string">&quot;{current === &apos;foo&apos;}&quot;</span>
+    <span class="hljs-attr">on:click</span>=<span class="hljs-string">&quot;{() =&gt; current = &apos;foo&apos;}&quot;</span>
+&gt;</span>foo<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>selectedクラスは、式の値が真である場合は要素に追加され、偽である場合は削除されます。</p>
+<h3 id="shorthand-class-ディレクティブ">Shorthand class ディレクティブ</h3>
+<p>多くの場合、クラスの名前は、それが依存する値の名前と同じになります。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class:big</span>=<span class="hljs-string">{big}</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>そのような場合は、省略形を使うことができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class:big</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="インラインスタイル">インラインスタイル</h3>
+<h3 id="styleディレクティブ">Styleディレクティブ</h3>
+<p>スタイルタグの中にスタイルを追加する以外に、style属性を使って個々の要素にスタイルを追加することもできます。通常はCSSでスタイルを指定しますが、CSSのカスタムプロパティと組み合わせることで、動的なスタイルに便利です。</p>
+<p>段落要素に次のstyle属性を追加します：style=&quot;color: {color}; --opacity:{bgOpacity};&quot;</p>
+<p>素晴らしい！これで、考えられる値ごとにクラスを作ることなく、入力に応じて変化する変数を使用して段落にスタイルを設定することができます。</p>
+<h2 id="component-composition">Component composition</h2>
+<h3 id="スロット">スロット</h3>
+<p>要素がが子を持てるように...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I&apos;m a child of the div<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>...コンポーネントも同様です。しかし、コンポーネントが子供を受け入れる前に、子供をどこに置くかを知っておく必要があります。これは <code>&lt;slot&gt;</code> 要素で行います。これをBox.svelteの中に入れる。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>物を入れられるようになりました。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Box</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a box. It can contain anything.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Box</span>&gt;</span>
+</code></pre>
+<h3 id="スロットのフォールバック">スロットのフォールバック</h3>
+<p>コンポーネントは、<code>&lt;slot&gt;</code> 要素の中にコンテンツを入れることで、空のままのスロットにフォールバックを指定することができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>no content was provided<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>これで、子要素を持たない <code>&lt;Box&gt;</code> のインスタンスを作成できるようになりました。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Box</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is a box. It can contain anything.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Box</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">Box</span>/&gt;</span>
+</code></pre>
+<h3 id="ネームドスロット">ネームドスロット</h3>
+<p>前の例では、デフォルトのスロットが含まれており、コンポーネントの直接の子をレンダリングしていました。時には、この <code>&lt;ContactCard&gt;</code> のように、配置をより細かく制御する必要がある場合があります。そのような場合には、名前付きスロットを使用することができます。</p>
+<p>ContactCard.svelte で、各スロットに name 属性を追加してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;contact-card&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;missing&quot;</span>&gt;</span>Unknown name<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;address&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;address&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;missing&quot;</span>&gt;</span>Unknown address<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;missing&quot;</span>&gt;</span>Unknown email<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+</code></pre>
+<p>次に、<code>&lt;ContactCard&gt;</code> コンポーネントの中に、対応する slot=&quot;...&quot; 属性を持つ要素を追加します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ContactCard</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>
+        P. Sherman
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;address&quot;</span>&gt;</span>
+        42 Wallaby Way<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+        Sydney
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ContactCard</span>&gt;</span>
+</code></pre>
+<h3 id="スロットの内容を確認する">スロットの内容を確認する</h3>
+<p>場合によっては、親があるスロットのコンテンツを渡したかどうかで、コンポーネントの一部を制御したいことがあります。例えば、そのスロットの周囲にラッパーがあり、スロットが空の場合はそれをレンダリングしないようにしたい場合です。あるいは、スロットが存在する場合にのみクラスを適用したい場合もあるでしょう。これは、特別な変数$$slotsのプロパティをチェックすることによって行うことができます。</p>
+<p>slotsは、親コンポーネントから渡されたスロットの名前をキーとするオブジェクトです。親コンポーネントがスロットを空にすると、$$slotsにはそのスロットの項目がありません。</p>
+<p>この例では、<code>&lt;Project&gt;</code>のインスタンスは両方ともコメント用のコンテナと通知ドットをレンダリングしていますが、コメントを持っているのは片方だけであることに注意してください。親である<app>がコメントスロットにコンテンツを渡したときだけ、これらの要素を表示するように$$slotを使用したいのです。</app></p>
+<p>Project.svelte で、<code>&lt;article&gt;</code> の class:has-discussion ディレクティブを更新してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">article</span> <span class="hljs-attr">class:has-discussion</span>=<span class="hljs-string">{$$slots.comments}</span>&gt;</span>
+</code></pre>
+<p>次に、コメントスロットとそれを包む <code>&lt;div&gt;</code> を、$$slot をチェックする if ブロックで囲みます。</p>
+<pre><code class="lang-html">{#if $$slots.comments}
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;discussion&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Comments<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comments&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+{/if}
+</code></pre>
+<p>これで、<code>&lt;App&gt;</code> がコメントスロットを空にしたときに、コメントコンテナと通知ドットがレンダリングされないようになりました。</p>
+<h3 id="スロットのプロップ">スロットのプロップ</h3>
+<p>このアプリでは、マウスが現在その上にあるかどうかを追跡する <code>&lt;Hoverable&gt;</code> コンポーネントを使用しています。そのデータを親コンポーネントに戻して、スロットされたコンテンツを更新できるようにする必要があります。</p>
+<p>このために、スロットプロップスを使用します。Hoverable.svelteで、ホバリング値をスロットに渡します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">on:mouseenter</span>=<span class="hljs-string">{enter}</span> <span class="hljs-attr">on:mouseleave</span>=<span class="hljs-string">{leave}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">hovering</span>=<span class="hljs-string">{hovering}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>また、{hovering}という略記も使えることを忘れないでください。</p>
+</blockquote>
+<p>次に、<code>&lt;Hoverable&gt;</code> コンポーネントのコンテンツにホバリングを適用するために、let ディレクティブを使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Hoverable</span> <span class="hljs-attr">let:hovering</span>=<span class="hljs-string">{hovering}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class:active</span>=<span class="hljs-string">{hovering}</span>&gt;</span>
+        {#if hovering}
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am being hovered upon.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        {:else}
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hover over me!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        {/if}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Hoverable</span>&gt;</span>
+</code></pre>
+<p>必要であれば、変数の名前を変更することができます。親コンポーネントでは、activeと呼ぶことにしましょう。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">Hoverable</span> <span class="hljs-attr">let:hovering</span>=<span class="hljs-string">{active}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class:active</span>&gt;</span>
+        {#if active}
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am being hovered upon.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        {:else}
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hover over me!<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        {/if}
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">Hoverable</span>&gt;</span>
+</code></pre>
+<p>これらのコンポーネントはいくつでも持つことができ、スロットプロップはそれらが宣言されたコンポーネントにローカルに残ります。</p>
+<blockquote>
+<p>名前付きスロットはプロップを持つこともできます。コンポーネントそのものではなく、slot=&quot;... &quot;属性を持つ要素にletディレクティブを使用してください。</p>
+</blockquote>
+<h2 id="context-api">Context API</h2>
+<h3 id="setcontext-and-getcontext">setContext and getContext</h3>
+<p>コンテキストAPIは、データや関数をpropとして渡したり、多くのイベントをディスパッチすることなく、コンポーネント同士が「会話」するための仕組みを提供する。これは高度な機能だが、便利な機能だ。</p>
+<p>MapboxのGLマップを使用したアプリの例を見てみましょう。マーカーを表示するには <code>&lt;MapMarker&gt;</code> コンポーネントを使用しますが、各コンポーネントのプロップとして基盤となる Mapbox インスタンスへの参照を渡さなくてもよいようにします。</p>
+<p>コンテキスト API には setContext と getContext という 2 つの部分がある。あるコンポーネントが setContext(key, context) を呼び出すと、子コンポーネントは const context = getContext(key) でコンテキストを取得することができる。</p>
+<p>まず、コンテキストを設定しよう。Map.svelteでsvelteからimport setContext、mapbox.jsからkeyを取得し、setContextを呼び出す。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { onDestroy, setContext } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+<span class="hljs-keyword">import</span> { mapbox, key } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./mapbox.js&apos;</span>;
+
+setContext(key, {
+    <span class="hljs-attr">getMap</span>: <span class="hljs-function">() =&gt;</span> map
+});
+</code></pre>
+<p>コンテキストオブジェクトは、任意のものを指定することができます。ライフサイクル関数と同様に、 setContext と getContext はコンポーネントの初期化時にコールする必要があります。その後に呼び出すと、例えば onMount の内部で呼び出すと、エラーが発生します。この例では、map はコンポーネントがマウントされるまで作成されないので、コンテキストオブジェクトには map 自体ではなく、getMap 関数が含まれています。</p>
+<p>一方、MapMarker.svelteでは、Mapboxインスタンスへの参照を取得できるようになった。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { getContext } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;svelte&apos;</span>;
+<span class="hljs-keyword">import</span> { mapbox, key } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./mapbox.js&apos;</span>;
+
+<span class="hljs-keyword">const</span> { getMap } = getContext(key);
+<span class="hljs-keyword">const</span> map = getMap();
+</code></pre>
+<p>マーカーは地図に自分で追加できるようになりました。</p>
+<blockquote>
+<p>より完成度の高い <mapmarker> のバージョンでは、削除やプロップの変更も扱えますが、ここでは文脈を示すだけです。</mapmarker></p>
+</blockquote>
+<h4 id="コンテキストキー">コンテキストキー</h4>
+<p>mapbox.jsの中に、このような行があります。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> key = <span class="hljs-built_in">Symbol</span>();
+</code></pre>
+<p>技術的には、どんな値でもキーとして使用できます。たとえば、setContext(&apos;mapbox&apos;, ...)とすることができます。 一方、シンボルを使用すると、シンボルは本質的に一意な識別子であるため、多くのコンポーネント層で複数の異なるコンテキストが動作している場合でも、いかなる状況でもキーが衝突しないことが保証されることになる。</p>
+<h4 id="contexts-vs-stores">Contexts vs. stores</h4>
+<p>コンテキストとストアは似ているように見えます。違いは、ストアはアプリのどの部分でも利用できるのに対し、コンテキストはコンポーネントとその子孫だけが利用できることです。これは、あるコンポーネントの状態が他のコンポーネントの状態に干渉することなく、複数のインスタンスを使用したい場合に便利です。</p>
+<p>実際、この二つを一緒に使うこともあります。コンテキストは反応的なものではないので、時間の経過とともに変化する値はストアとして表現されるべきです。</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> { these, are, stores } = getContext(...);
+</code></pre>
+<h2 id="special-elements">Special elements</h2>
+<h3 id="svelteself"><code>&lt;svelte:self&gt;</code></h3>
+<p>Svelteは様々な組み込み要素を提供しています。最初の <code>&lt;svelte:self&gt;</code> は、コンポーネントが自分自身を再帰的に含むことができるようにします。</p>
+<p>これは、フォルダのツリー表示のように、フォルダが他のフォルダを含むことができるような場合に便利です。Folder.svelteでは、次のようなことができるようにしたいと思います。</p>
+<pre><code class="lang-html">{#if file.files}
+    <span class="hljs-tag">&lt;<span class="hljs-name">Folder</span> {<span class="hljs-attr">...file</span>}/&gt;</span>
+{:else}
+    <span class="hljs-tag">&lt;<span class="hljs-name">File</span> {<span class="hljs-attr">...file</span>}/&gt;</span>
+{/if}
+</code></pre>
+<p>...しかし、それは不可能です。なぜなら、モジュールは自分自身をインポートできないからです。代わりに、<code>&lt;svelte:self&gt;</code> を使用します。</p>
+<pre><code class="lang-html">{#if file.files}
+    <span class="hljs-tag">&lt;<span class="hljs-name">svelte:self</span> {<span class="hljs-attr">...file</span>}/&gt;</span>
+{:else}
+    <span class="hljs-tag">&lt;<span class="hljs-name">File</span> {<span class="hljs-attr">...file</span>}/&gt;</span>
+{/if}
+</code></pre>
+<h3 id="sveltecomponent"><code>&lt;svelte:component&gt;</code></h3>
+<p>コンポーネントは <code>&lt;svelte:component&gt;</code> でカテゴリを完全に変更することができます。一連のifブロックの代わりに...</p>
+<pre><code class="lang-html">{#if selected.color === &apos;red&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">RedThing</span>/&gt;</span>
+{:else if selected.color === &apos;green&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">GreenThing</span>/&gt;</span>
+{:else if selected.color === &apos;blue&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">BlueThing</span>/&gt;</span>
+{/if}
+</code></pre>
+<p>...1つのダイナミックコンポーネントを持つことができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:component</span> <span class="hljs-attr">this</span>=<span class="hljs-string">{selected.component}/</span>&gt;</span>
+</code></pre>
+<p>この値は、任意のコンポーネントコンストラクタ、またはfalsy値で、falsyの場合はコンポーネントがレンダリングされません。</p>
+<h3 id="svelteelement"><code>&lt;svelte:element&gt;</code></h3>
+<p>どのようなDOM要素をレンダリングすればよいのか、事前にわからないことがあります。このような場合には、 <code>&lt;svelte:element&gt;</code> が役に立ちます。一連の if ブロックの代わりに...</p>
+<pre><code class="lang-html">{#if selected === &apos;h1&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>I&apos;m a h1 tag<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+{:else if selected === &apos;h3&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>I&apos;m a h3 tag<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+{:else if selected === &apos;p&apos;}
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I&apos;m a p tag<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+{/if}
+</code></pre>
+<p>...1つのダイナミックコンポーネントを持つことができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:element</span> <span class="hljs-attr">this</span>=<span class="hljs-string">{selected}</span>&gt;</span>I&apos;m a {selected} tag<span class="hljs-tag">&lt;/<span class="hljs-name">svelte:element</span>&gt;</span>
+</code></pre>
+<p>この値は任意の文字列、またはfalsy値で、falsyの場合は要素がレンダリングされない。</p>
+<h3 id="sveltewindow"><code>&lt;svelte:window&gt;</code></h3>
+<p>任意のDOM要素にイベントリスナーを追加できるのと同様に、<code>&lt;svelte:window&gt;</code>でwindowオブジェクトにイベントリスナーを追加することができます。</p>
+<p>11行目で、キーダウンのリスナーを追加します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:window</span> <span class="hljs-attr">on:keydown</span>=<span class="hljs-string">{handleKeydown}/</span>&gt;</span>
+</code></pre>
+<p>DOM要素と同様に、preventDefaultのようなイベントモディファイアを追加することができます。</p>
+<h3 id="sceltewindow-bindings"><code>&lt;scelte:window&gt;</code> bindings</h3>
+<p>また、scrollYなど、windowの特定のプロパティにバインドすることも可能です。7行目を更新。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:window</span> <span class="hljs-attr">bind:scrollY</span>=<span class="hljs-string">{y}/</span>&gt;</span>
+</code></pre>
+<p>バインド可能なプロパティの一覧は以下の通りです。</p>
+<ul>
+<li>innerWidth</li>
+<li>innerHeight</li>
+<li>outerWidth</li>
+<li>outerHeight</li>
+<li>scrollX</li>
+<li>scrollY</li>
+<li>online — window.navigator.onLine のエイリアス。</li>
+</ul>
+<p>scrollX と scrollY 以外は readonly である。</p>
+<h3 id="sveltebody"><code>&lt;svelte:body&gt;</code></h3>
+<p><code>&lt;svelte:window&gt;</code> と同様に、 <code>&lt;svelte:body&gt;</code> 要素は document.body 上で発生するイベントをリスニングすることができます。これは、window 上で発生しない mouseenter と mouseleave イベントで便利です。</p>
+<p>mouseenterとmouseleaveのハンドラを<code>&lt;svelte:body&gt;</code>タグに追加してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:body</span>
+    <span class="hljs-attr">on:mouseenter</span>=<span class="hljs-string">{handleMouseenter}</span>
+    <span class="hljs-attr">on:mouseleave</span>=<span class="hljs-string">{handleMouseleave}</span>
+/&gt;</span>
+</code></pre>
+<h3 id="sveltehead"><code>&lt;svelte:head&gt;</code></h3>
+<p><code>&lt;svelte:head&gt;</code> 要素を使うと、ドキュメントの <code>&lt;head&gt;</code> 内に要素を挿入することができます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/tutorial/dark-theme.css&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svelte:head</span>&gt;</span>
+</code></pre>
+<p>サーバーサイドレンダリング（SSR）モードでは、<code>&lt;svelte:head&gt;</code>のコンテンツは、残りのHTMLとは別に返されます。</p>
+<h3 id="svelteoptions"><code>&lt;svelte:options&gt;</code></h3>
+<p>&lt;<svelte:options>` 要素は、コンパイラのオプションを指定するためのものです。</svelte:options></p>
+<p>ここでは、例としてimmutableオプションを使用します。このアプリでは、<code>&lt;Todo&gt;</code> コンポーネントが新しいデータを受信するたびに点滅します。項目の一つをクリックすると、更新された todos 配列が作成され、その done 状態が切り替わります。これにより、他の <code>&lt;Todo&gt;</code> アイテムが点滅しますが、結局 DOM には何も変更が加えられていません。</p>
+<p>これを最適化するには、<code>&lt;Todo&gt;</code> コンポーネントに immutable データを期待するように指示します。つまり、todo の prop を変更しないことを約束し、その代わりに状況が変わるたびに新しい todo オブジェクトを作成します。</p>
+<p>これを Todo.svelte ファイルの先頭に追加してください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:options</span> <span class="hljs-attr">immutable</span>=<span class="hljs-string">{true}/</span>&gt;</span>
+</code></pre>
+<blockquote>
+<p>お好みで <code>&lt;svelte:options immutable/&gt;</code> と短縮することも可能です。</p>
+</blockquote>
+<p>これで、Todoをクリックで切り替えると、更新されたコンポーネントだけが点滅するようになりました。</p>
+<p>ここで設定できるオプションは以下の通りです。</p>
+<ul>
+<li>immutable={true} — 変更可能なデータを使用しないので、コンパイラは値が変更されたかどうかを判断するために簡単な参照整合性チェックを行うことができます。</li>
+<li>immutable={false} — デフォルト。Svelteはミュータブルオブジェクトが変更されたかどうかに関して、より保守的になります</li>
+<li>accessors={true} — コンポーネントのプロップス用のゲッターとセッターを追加します。</li>
+<li>accessors={false} — デフォルト</li>
+<li>namespace=&quot;...&quot; — このコンポーネントが使用される名前空間、通常は &quot;svg&quot; です。</li>
+<li>tag=&quot;...&quot; — このコンポーネントをカスタム要素としてコンパイルする際に使用する名前。</li>
+</ul>
+<p>これらのオプションの詳細については、APIリファレンスを参照してください。</p>
+<h3 id="sveltefragment"><code>&lt;svelte:fragment&gt;</code></h3>
+<p><code>&lt;svelte:fragment&gt;</code> 要素を使用すると、コンテナDOM要素でラップすることなく、指定したスロットにコンテンツを配置することができます。これにより、ドキュメントのフローレイアウトが損なわれることはありません。</p>
+<p>この例では、ボックスに1emのギャップを持つフレックスレイアウトを適用していることに注目してください。</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- Box.svelte --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>No header was provided<span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some content between header and footer<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-class">.box</span> {        
+        <span class="hljs-attribute">display</span>: flex;
+        <span class="hljs-attribute">flex-direction</span>: column;
+        gap: <span class="hljs-number">1em</span>;
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</code></pre>
+<p>しかし、フッターのコンテンツは、divで囲むことで新たなフローレイアウトが生まれ、このリズムに沿った間隔にならない。</p>
+<p>これを解決するには、Appコンポーネントの<code>&lt;div slot=&quot;footer&quot;&gt;</code>を変更します。<code>&lt;div&gt;</code> を <code>&lt;svelte:fragment&gt;</code> に置き換えてください。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">svelte:fragment</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>All rights reserved.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Copyright (c) 2019 Svelte Industries<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svelte:fragment</span>&gt;</span>
+</code></pre>
+<h2 id="モジュールコンテキスト">モジュールコンテキスト</h2>
+<h3 id="共有コード">共有コード</h3>
+<p>これまで見てきたすべての例では、<code>&lt;script&gt;</code> ブロックには、各コンポーネントのインスタンスが初期化されるときに実行されるコードが含まれています。大半のコンポーネントでは、これだけで十分です。</p>
+<p>ごくたまに、個々のコンポーネントインスタンスの外側でコードを実行する必要がある場合があります。例えば、5つのオーディオプレーヤーを同時に再生することができます。1つを再生すると他のすべてのプレーヤーが停止するような場合です。</p>
+<p>これを行うには、<code>&lt;script context=&quot;module&quot;&gt;</code> ブロックを宣言します。その中に含まれるコードは、コンポーネントがインスタンス化されたときではなく、モジュールが最初に評価されたときに、一度だけ実行されます。これをAudioPlayer.svelteの一番上に置きます。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">context</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> current;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>これで、状態管理なしにコンポーネント同士が「会話」できるようになりました。</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stopOthers</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (current &amp;&amp; current !== audio) current.pause();
+    current = audio;
+}
+</code></pre>
+<h3 id="exports">Exports</h3>
+<p>context=&quot;module&quot; のスクリプトブロックからエクスポートされたものは、そのモジュール自体からエクスポートされたものになります。もし、AudioPlayer.svelte...からstopAll関数をエクスポートしたら...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">context</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">const</span> elements = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>();
+
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stopAll</span>(<span class="hljs-params"></span>) </span>{
+        elements.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
+            element.pause();
+        });
+    }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>...それをApp.svelteでインポートすることができます...</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">import</span> AudioPlayer, { stopAll } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./AudioPlayer.svelte&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<p>...そして、それをイベントハンドラで使用します。</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=<span class="hljs-string">{stopAll}</span>&gt;</span>
+    stop all audio
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>コンポーネントはデフォルトのエクスポートであるため、デフォルトのエクスポートを持つことはできません。</p>
+<h2 id="デバッギング">デバッギング</h2>
+<h3 id="debug-タグ">@debug タグ</h3>
+<p>時には、アプリの中を流れるデータの一部を検査することが有効な場合があります。</p>
+<p>マークアップの中でconsole.log(...)を使用するのも一つの方法です。しかし、実行を一時停止したい場合は、{@debug ...}タグに、検査したい値をカンマで区切って指定します。</p>
+<pre><code class="lang-html">{@debug user}
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello {user.firstname}!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>ここでdevtoolsを開いて<code>&lt;input&gt;</code>要素とのやりとりを始めると、userの値が変化したときにデバッガが起動することになります。</p>
+<h2 id="次のステップ">次のステップ</h2>
+<h3 id="おめでとうございます">おめでとうございます</h3>
+<p>これでSvelteのチュートリアルは終了し、アプリを作り始める準備ができました。各章はいつでも参照できますし（上のタイトルをクリックするとドロップダウンが表示されます）、APIリファレンス、サンプル、ブログで学習を継続することも可能です。Twitterユーザーであれば、@sveltejs経由で最新情報を得ることができます。</p>
+<p>ローカル開発環境でのセットアップには、クイックスタートガイドをご覧ください。</p>
+<p>ルーティング、サーバーサイドレンダリングなど、より拡張性の高いフレームワークをお探しの場合は、SvelteKitをご覧ください。</p>
+<p>最も重要なことは、あなたがSvelteコミュニティの一員になったのですから、私たちのフレンドリーなDiscordチャットルームに参加することです。そこで、仲間のSvelteユーザを見つけることができますし、フレームワークの将来を計画する場所でもあります。</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: はじめに">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"チュートリアル","level":"1.2","depth":1,"previous":{"title":"はじめに","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tutorial.md","mtime":"2023-01-26T00:27:50.604Z","type":"markdown"},"gitbook":{"version":"4.0.4","time":"2023-01-26T00:45:17.070Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
