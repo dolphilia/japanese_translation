@@ -1,23 +1,21 @@
-===========================
-Duktape C module convention
+=========================== Duktape C module convention
 ===========================
 
-Overview
-========
+# Overview
 
-This document provides a recommended convention for writing an init function
-for a C module.  The convention allows modules to be used with both static
-linking and DLL loading, and either as part of Duktape's CommonJS module
-loading or outside of it.
+This document provides a recommended convention for writing an init
+function for a C module. The convention allows modules to be used with
+both static linking and DLL loading, and either as part of Duktape's
+CommonJS module loading or outside of it.
 
 The convention is in no way mandatory and it's perfectly fine to use a
-different module loader convention for your project.  However, modules
+different module loader convention for your project. However, modules
 following this convention will be easier to share between projects.
 
-Module init function
-====================
+# Module init function
 
-The init function for a module ``my_module`` should have the following form::
+The init function for a module `my_module` should have the following
+form::
 
     duk_ret_t dukopen_my_module(duk_context *ctx) {
         /* Initialize module in whatever way is most appropriate.
@@ -39,7 +37,7 @@ The init function for a module ``my_module`` should have the following form::
         return 1;  /* return module value */
     }
 
-The init function is called as a Duktape/C function.  When initializing
+The init function is called as a Duktape/C function. When initializing
 the module manually, you should use::
 
     duk_push_c_function(ctx, dukopen_my_module, 0 /*nargs*/);
@@ -51,115 +49,115 @@ A DLL loader should use the same convention to call the init function
 after figuring out the init function name and locating it from the DLL
 symbol table.
 
-DLL name
-========
+# DLL name
 
 When a C module is compiled into a DLL, the DLL filename should include
-the module name (``my_module`` in the running example) with any platform
-specific prefix and suffix.  For example::
+the module name (`my_module` in the running example) with any platform
+specific prefix and suffix. For example::
 
     my_module.so   # Linux
     my_module.dll  # Windows
 
-A DLL loader should assume that the init function name is ``dukopen_``
+A DLL loader should assume that the init function name is `dukopen_`
 followed by the module name part extracted from the DLL filename (here,
-``dukopen_my_module()``).
+`dukopen_my_module()`).
 
-Module name
-===========
+# Module name
 
-To avoid case conversion and special character issues, module names should
-have the form::
+To avoid case conversion and special character issues, module names
+should have the form::
 
     [a-zA-Z_][0-9a-zA-Z_-]*
 
 This should minimize platform issues.
 
-Mixed ECMAScript / C modules
-============================
+# Mixed ECMAScript / C modules
 
-When a module is being initialized by a CommonJS aware module loader, the
-loader can support mixed modules containing both C and ECMAScript code.
-For example::
+When a module is being initialized by a CommonJS aware module loader,
+the loader can support mixed modules containing both C and ECMAScript
+code. For example::
 
     my_module.so   # C module
     my_module.js   # ECMAScript module (CommonJS)
 
-To support mixed modules, a Duktape 1.x ``modSearch()`` function should:
+To support mixed modules, a Duktape 1.x `modSearch()` function should:
 
-* First load the C module normally, yielding a return value RET.
+-   First load the C module normally, yielding a return value RET.
 
-* If RET is an object, copy the own properties of RET into the ``exports``
-  value created by Duktape.  It should then return the source code of the
-  ECMAScript module; when executed, further symbols get added to the same
-  ``exports`` value.
+-   If RET is an object, copy the own properties of RET into the
+    `exports` value created by Duktape. It should then return the source
+    code of the ECMAScript module; when executed, further symbols get
+    added to the same `exports` value.
 
-* If RET is not an object, ignore it and load the ECMAScript module normally.
-  (Alternatively, write RET to a fixed export name to make it accessible,
-  e.g. ``exports.value``.)
+-   If RET is not an object, ignore it and load the ECMAScript module
+    normally. (Alternatively, write RET to a fixed export name to make
+    it accessible, e.g. `exports.value`.)
 
-The algorithm for Duktape 2.0 is still under design, but at a high level:
+The algorithm for Duktape 2.0 is still under design, but at a high
+level:
 
-* First load the C module normally, yielding a return value RET.
+-   First load the C module normally, yielding a return value RET.
 
-* If RET is an object, use it to initialize the CommonJS ``exports`` value
-  before loading the ECMAScript module.  The ECMAScript module can then
-  use whatever symbols the C modules registered, and add further symbols to
-  the same ``exports`` value.
+-   If RET is an object, use it to initialize the CommonJS `exports`
+    value before loading the ECMAScript module. The ECMAScript module
+    can then use whatever symbols the C modules registered, and add
+    further symbols to the same `exports` value.
 
-* If RET is not an object, ignore it and load the ECMAScript module normally.
-  (Alternatively, expose RET with a fixed name, e.g. initialize ``exports``
-  as ``{ value: RET }``.)
+-   If RET is not an object, ignore it and load the ECMAScript module
+    normally. (Alternatively, expose RET with a fixed name,
+    e.g. initialize `exports` as `{ value: RET }`.)
 
-Since Duktape 1.3 the ``modSearch()`` function can overwrite ``module.exports``
-which allows you to implement the Duktape 2.0 approach in Duktape 1.x too.
+Since Duktape 1.3 the `modSearch()` function can overwrite
+`module.exports` which allows you to implement the Duktape 2.0 approach
+in Duktape 1.x too.
 
-Duktape 1.x CommonJS notes
-==========================
+# Duktape 1.x CommonJS notes
 
-Duktape 1.3 and above
----------------------
+## Duktape 1.3 and above
 
-In Duktape 1.3 you can replace ``module.exports`` with the object returned
-by the native module initialization function.  That value then becomes the
-result of the original ``require()`` call.
+In Duktape 1.3 you can replace `module.exports` with the object returned
+by the native module initialization function. That value then becomes
+the result of the original `require()` call.
 
-For an example, see: https://github.com/svaarala/duktape/blob/master/tests/api/test-dev-cmodule-guide.c.
+For an example, see:
+https://github.com/svaarala/duktape/blob/master/tests/api/test-dev-cmodule-guide.c.
 
-Prior to Duktape 1.3
---------------------
+## Prior to Duktape 1.3
 
-Prior to Duktape 1.3 the module ``exports`` value is always an object created
-by Duktape, and cannot be replaced by modSearch().  modSearch() can only add
-symbols to the pre-created object.  This has two implications for
-implementing modSearch():
+Prior to Duktape 1.3 the module `exports` value is always an object
+created by Duktape, and cannot be replaced by modSearch(). modSearch()
+can only add symbols to the pre-created object. This has two
+implications for implementing modSearch():
 
-- When a C module returns an object, the symbols from the object must be
-  copied to the pre-created ``exports`` value manually by the modSearch()
-  function.
+-   When a C module returns an object, the symbols from the object must
+    be copied to the pre-created `exports` value manually by the
+    modSearch() function.
 
-- When a C module returns a non-object, there are several alternatives:
+-   When a C module returns a non-object, there are several
+    alternatives:
 
-  + The modSearch() function can ignore the module value.  This will make
-    the module value inaccessible (unless the C module init function registered
-    symbols directly to the global object or similar).
+    -   The modSearch() function can ignore the module value. This will
+        make the module value inaccessible (unless the C module init
+        function registered symbols directly to the global object or
+        similar).
 
-  + The modSearch() function can copy the module value into a fixed name in
-    the ``exports`` table.  Suggested name is ``exports.value``.
+    -   The modSearch() function can copy the module value into a fixed
+        name in the `exports` table. Suggested name is `exports.value`.
 
-Limitations
-===========
+# Limitations
 
-* The convention may not work on all platforms where Duktape itself ports to.
-  For instance, a platform might have no DLL support or have filename
-  restrictions that don't allow DLLs to be named as specified above.
+-   The convention may not work on all platforms where Duktape itself
+    ports to. For instance, a platform might have no DLL support or have
+    filename restrictions that don't allow DLLs to be named as specified
+    above.
 
-* The convention is not "CommonJS native": a C module doesn't get an exports
-  table and cannot load sub-modules (at least relative to its own CommonJS
-  identifier).  This trade-off is intentional to keep the C module convention
-  as simple as possible.
+-   The convention is not "CommonJS native": a C module doesn't get an
+    exports table and cannot load sub-modules (at least relative to its
+    own CommonJS identifier). This trade-off is intentional to keep the
+    C module convention as simple as possible.
 
-* CommonJS module loading prior to Duktape 1.3 doesn't support modules with
-  a non-object return value (i.e. all modules return an ``exports`` table).
-  This module convention is not limited to object return values so that
-  non-object modules can be supported in Duktape 1.3 and above.
+-   CommonJS module loading prior to Duktape 1.3 doesn't support modules
+    with a non-object return value (i.e. all modules return an `exports`
+    table). This module convention is not limited to object return
+    values so that non-object modules can be supported in Duktape 1.3
+    and above.
